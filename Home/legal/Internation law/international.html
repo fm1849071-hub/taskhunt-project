@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>international law| TaskHunt</title>
+  <link rel="stylesheet" href="international.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../Home.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="title-banner">
+  <div class="container">
+    <span class="category-path">Legal |</span>
+    <h1 class="main-title">International Law Professionals</h1>
+</div>
+  </section>
+  
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+      <option value="all">All International Practices</option>
+      <option value="arbitration">International Arbitration</option>
+       <option value="trade">International Trade & Customs</option>
+        <option value="maritime">Maritime & Shipping Law</option> 
+        <option value="humanrights">International Human Rights</option>
+         <option value="investment">Cross-border Investment</option>
+         </select>
+
+    <select id="levelFilter">
+      <option value="all">Expertise Level</option>
+      <option value="junior">Legal Researcher</option>
+       <option value="mid">International Consultant</option>
+        <option value="senior">Senior Arbitrator / Partner</option> 
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $100</option>
+      <option value="mid">$100 – $250</option>
+      <option value="high">Above $250</option>
+    </select>
+
+    <button id="applyFilter">Apply Filter</button>
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#">Change Management Specialists</a></li>
+    <li><a href="#">Employee Engagement Specialists</a></li>
+    <li><a href="#">Facilitators</a></li>
+    <li><a href="#">Interviewers</a></li>
+    <li><a href="#">Leadership Development Specialists</a></li>
+    <li><a href="#">QHSE Specialists</a></li>
+    <li><a href="#">SCORM Specialists</a></li>
+    <li><a href="#">Technical Recruiters</a></li>
+
+    <li><a href="#">Curriculum Developers</a></li>
+    <li><a href="#">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-skill="arbitration" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=51" class="avatar" alt="Dr. Robert McAllister">
+    <div class="user-info">
+      <h3>Dr. Robert McAllister</h3>
+      <span class="location">Geneva, Switzerland</span>
+      <div class="stats">
+        <span class="price">$350/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 45 Tribunals</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior International Arbitrator. Specializing in ICC and LCIA commercial disputes. Expert in cross-border treaty interpretations and investment protection.</p>
+  <div class="tags">
+    <span>International Arbitration</span>
+    <span>ICC Expert</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 2 -->
+<div class="up-card" data-skill="trade" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Adv. Chen Wei">
+    <div class="user-info">
+      <h3>Adv. Chen Wei</h3>
+      <span class="location">Shanghai / Singapore</span>
+      <div class="stats">
+        <span class="price">$180/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 68 Import/Export Cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚢 Global Trade Specialist. Expert in WTO regulations, international sales of goods (CISG), and customs compliance between Asia and Europe. Managing complex supply chain legalities.</p>
+  <div class="tags">
+    <span>International Trade</span>
+    <span>Customs Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="investment" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar" alt="Linda Sutherland">
+    <div class="user-info">
+      <h3>Linda Sutherland</h3>
+      <span class="location">New York / Dubai</span>
+      <div class="stats">
+        <span class="price">$290/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 32 M&A Deals</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏗️ Cross-border Investment Lawyer. Specialist in Foreign Direct Investment (FDI), International M&A, and offshore corporate structuring. Expertise in Bilateral Investment Treaties (BITs).</p>
+  <div class="tags">
+    <span>Investment Law</span>
+    <span>M&A Specialist</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 4 -->
+<div class="up-card" data-skill="maritime" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=32" class="avatar" alt="Capt. Jonathan Drake">
+    <div class="user-info">
+      <h3>Capt. Jonathan Drake</h3>
+      <span class="location">London / Rotterdam</span>
+      <div class="stats">
+        <span class="price">$310/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 120 Maritime Disputes</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚓ Maritime & Admiralty Law Specialist. Expert in charterparty disputes, cargo claims, and marine insurance. Advising on UNCLOS and international shipping regulations.</p>
+  <div class="tags">
+    <span>Maritime Law</span>
+    <span>Shipping Expert</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 5 -->
+<div class="up-card" data-skill="humanrights" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=25" class="avatar" alt="Dr. Amara Okoro">
+    <div class="user-info">
+      <h3>Dr. Amara Okoro</h3>
+      <span class="location">The Hague, Netherlands</span>
+      <div class="stats">
+        <span class="price">$95/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 54 NGO Cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌍 Human Rights Advocate. Specializing in international humanitarian law, refugee protection, and cases before the ICC. Dedicated to social justice and global legal advocacy.</p>
+  <div class="tags">
+    <span>Human Rights</span>
+    <span>ICC Advocacy</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="arbitration" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Lukas Becker">
+    <div class="user-info">
+      <h3>Lukas Becker</h3>
+      <span class="location">Vienna, Austria</span>
+      <div class="stats">
+        <span class="price">$65/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 18 Research Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔍 International Law Researcher. Providing support in jurisdictional analysis, case law research for arbitration, and drafting preliminary legal memos for cross-border disputes.</p>
+  <div class="tags">
+    <span>Legal Research</span>
+    <span>Case Analysis</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 7 (NEW) -->
+<div class="up-card hidden-card" data-skill="trade" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=33" class="avatar" alt="Dr. Elena Volkova">
+    <div class="user-info">
+      <h3>Dr. Elena Volkova</h3>
+      <span class="location">Tallinn, Estonia</span>
+      <div class="stats">
+        <span class="price">$145/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 42 Cyber-Legal Cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌐 International Cyber-Law Consultant. Expert in cross-border digital jurisdiction, data sovereignty, and international treaties on cybercrime. Helping firms navigate legal disputes in the digital space.</p>
+  <div class="tags">
+    <span>Cyber Jurisdiction</span>
+    <span>Digital Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="trade" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=15" class="avatar" alt="Capt. Marcus Sterling">
+    <div class="user-info">
+      <h3>Capt. Marcus Sterling</h3>
+      <span class="location">Montreal, Canada / HQ</span>
+      <div class="stats">
+        <span class="price">$380/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 95 Aviation Claims</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">✈️ Senior Aviation Law Expert. Specializing in ICAO regulations, aircraft leasing contracts, and international air carrier liability. Expert in Montreal Convention litigation.</p>
+  <div class="tags">
+    <span>Aviation Law</span>
+    <span>ICAO Compliance</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="investment" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Dr. Faisal Al-Saud">
+    <div class="user-info">
+      <h3>Dr. Faisal Al-Saud</h3>
+      <span class="location">Riyadh, KSA / London, UK</span>
+      <div class="stats">
+        <span class="price">$420/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 110 Energy Projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛢️ International Energy & Infrastructure Counsel. Specialist in Oil & Gas Concessions, Renewable Energy PPAs, and mining law across emerging markets. Expert in OPEC+ regulatory frameworks.</p>
+  <div class="tags">
+    <span>Energy Law</span>
+    <span>Infrastructure</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="trade" data-level="mid" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Sophie Laurent">
+    <div class="user-info">
+      <h3>Sophie Laurent</h3>
+      <span class="location">Luxembourg / Paris</span>
+      <div class="stats">
+        <span class="price">$260/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 73 Tax Structures</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💶 International Tax Strategist. Specialist in cross-border tax compliance, transfer pricing, and VAT regulations within the EU. Helping corporations optimize tax efficiency while staying legal.</p>
+  <div class="tags">
+    <span>International Tax</span>
+    <span>Transfer Pricing</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="trade" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Dr. Aris Thorne">
+    <div class="user-info">
+      <h3>Dr. Aris Thorne</h3>
+      <span class="location">Silicon Valley, USA / Tokyo, Japan</span>
+      <div class="stats">
+        <span class="price">$210/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 88 Patent Filings</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ International IP Strategist. Expert in Madrid Protocol (Trademarks) and PCT (Patents). Managing global IP portfolios and defending against cross-border infringement for tech giants.</p>
+  <div class="tags">
+    <span>International IP</span>
+    <span>Patent Strategy</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="humanrights" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=60" class="avatar" alt="Prof. Julian Vane">
+    <div class="user-info">
+      <h3>Prof. Julian Vane</h3>
+      <span class="location">The Hague / Brussels</span>
+      <div class="stats">
+        <span class="price">$320/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 28 Tribunal Cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior International Criminal Lawyer. Expert in extradition treaties, Interpol Red Notices, and international humanitarian law. Extensive experience at the International Criminal Court (ICC).</p>
+  <div class="tags">
+    <span>Criminal Law</span>
+    <span>Interpol Defense</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="trade" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Dr. Sofia">
+    <div class="user-info">
+      <h3>Dr. Sofia Rossi</h3>
+      <span class="location">Rome, Italy</span>
+      <div class="stats">
+        <span class="price">$450/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 62 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚢 Global expert in international trade law, WTO regulations, and cross-border customs disputes. Advisor to multinational shipping corporations.</p>
+  <div class="tags">
+    <span>Trade Law</span>
+    <span>Customs</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="maritime" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=14" class="avatar" alt="Coun. Hans">
+    <div class="user-info">
+      <h3>Coun. Hans Mueller</h3>
+      <span class="location">Hamburg, Germany</span>
+      <div class="stats">
+        <span class="price">$280/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 37 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌊 Specialized in maritime law, shipping contracts, and international waters jurisdiction. Handling salvage claims and vessel arrests.</p>
+  <div class="tags">
+    <span>Maritime</span>
+    <span>Shipping</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="humanrights" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=22" class="avatar" alt="Coun. Amina">
+    <div class="user-info">
+      <h3>Coun. Amina Mansour</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$95/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 14 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Passionate advocate for international human rights and refugee law. Working with NGOs to provide legal aid in asylum seeking processes.</p>
+  <div class="tags">
+    <span>Human Rights</span>
+    <span>Junior</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">load more International lawyers</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire International Lawyers Experts from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Global Jurisdiction Expertise</h4>
+        <p>Access lawyers who specialize in cross-border disputes, international treaties, and multi-country legal frameworks.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Multilingual Legal Support</h4>
+        <p>Our experts communicate in multiple languages and understand the cultural nuances of different legal systems (Common Law vs Civil Law).</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Verified Global Credentials</h4>
+        <p>We verify licenses from international bar associations and specialist bodies like ICC, ICAO, and maritime registries.</p>
+      </div>
+    </div>
+</section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Conflict Analysis & Jurisdiction Review</div>
+      <div class="step">2️⃣ Expert Selection & Strategy Briefing</div>
+      <div class="step">3️⃣ International Filing & Global Representation</div>
+    </div>
+</section>
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How do I know which country's law applies to my contract?</summary>
+      <p>Our experts analyze "Choice of Law" clauses and international treaties like the CISG to determine the governing jurisdiction for your specific cross-border agreement.</p>
+    </details>
+
+    <details>
+      <summary>Can your experts help with Interpol Red Notices or extradition?</summary>
+      <p>Yes, we have specialists in International Criminal Law who handle Interpol challenges, extradition defense, and cross-border human rights advocacy.</p>
+    </details>
+</section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+<script src="international.js"></script>
+
+</body>
+</html>

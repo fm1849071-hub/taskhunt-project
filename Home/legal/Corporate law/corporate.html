@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Corporate Lawyers| TaskHunt</title>
+  <link rel="stylesheet" href="corporate.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../Home.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="title-banner">
+  <div class="container">
+    <span class="category-path">Legal |</span>
+    <h1 class="main-title">Corporate Law Professionals</h1>
+</div>
+  </section>
+  
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+      <option value="all">All Specializations</option>
+      <option value="formation">Company Formation</option>
+      <option value="contracts">Commercial Contracts</option>
+      <option value="governance">Corporate Governance</option>
+      <option value="taxation">Tax Law</option>
+      <option value="ip">Intellectual Property</option>
+    </select>
+
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="Junior">Junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior</option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $150</option>
+      <option value="mid">  $150-250</option>
+      <option value="high">Above $250</option>
+    </select>
+
+    <button id="applyFilter">Apply Filter</button>
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#">Change Management Specialists</a></li>
+    <li><a href="#">Employee Engagement Specialists</a></li>
+    <li><a href="#">Facilitators</a></li>
+    <li><a href="#">Interviewers</a></li>
+    <li><a href="#">Leadership Development Specialists</a></li>
+    <li><a href="#">QHSE Specialists</a></li>
+    <li><a href="#">SCORM Specialists</a></li>
+    <li><a href="#">Technical Recruiters</a></li>
+
+    <li><a href="#">Curriculum Developers</a></li>
+    <li><a href="#">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+   <div class="up-card hidden-card" data-skill="taxation" data-level="senior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Hassan Reda">
+    <div class="user-info">
+      <h3>Coun. Hassan Reda</h3>
+      <span class="location">Fayoum, Egypt</span>
+      <div class="stats">
+        <span class="price">$65/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 42 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Corporate tax specialist focused on tax planning, litigation, and financial regulatory compliance for multi-national firms.</p>
+  <div class="tags">
+    <span>Tax Law</span>
+    <span>Compliance</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-skill="taxation" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Laila Hassan">
+    <div class="user-info">
+      <h3>Coun. Laila Hassan</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$100/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 32 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌍 Expert in international commercial arbitration and cross-border trade legalities, representing companies in disputes.</p>
+  <div class="tags">
+    <span>Tax law</span>
+    <span>Trade Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="formation" data-level="Junior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Omar Khaled">
+    <div class="user-info">
+      <h3>Coun. Omar Khaled</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$200/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 25 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚀 Specialized in startup legal support, company formation, and seed funding agreements for entrepreneurs.</p>
+  <div class="tags">
+    <span>Startups</span>
+    <span>Formation</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 4 -->
+   <div class="up-card" data-skill="governance" data-level="senior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=32" class="avatar" alt="Sarah El-Din">
+    <div class="user-info">
+      <h3>Coun. Sarah El-Din</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats">
+        <span class="price">$300/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 40 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Corporate governance expert with a focus on regulatory compliance, board advisory, and internal policies.</p>
+  <div class="tags">
+    <span>Governance</span>
+    <span>Compliance</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  
+
+  <!-- CARD 5 -->
+  <div class="up-card" data-skill="contracts" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=53" class="avatar" alt="Islam Hafez">
+    <div class="user-info">
+      <h3>Coun. Islam Hafez</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$350/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 45 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📜 Expert in drafting and reviewing complex commercial contracts, joint ventures, and non-disclosure agreements (NDAs).</p>
+  <div class="tags">
+    <span>Contracts</span>
+    <span>Legal Review</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="ip" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Mostafa Radi">
+    <div class="user-info">
+      <h3>Coun. Mostafa Radi</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 38 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Intellectual Property expert specialized in trademark registration, patent protection, and IP litigation for corporations.</p>
+  <div class="tags">
+    <span>Intellectual Property</span>
+    <span>Trademarks</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 7 (NEW) -->
+   <div class="up-card" data-skill="contracts" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=15" class="avatar" alt="Ahmed Mansour">
+    <div class="user-info">
+      <h3>Coun. Ahmed Mansour</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 48 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior corporate lawyer specializing in Mergers & Acquisitions (M&A) and business restructuring with 10+ years of experience.</p>
+  <div class="tags">
+    <span>Contracts</span>
+    <span>Restructuring</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="contracts" data-level="Junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=59" class="avatar" alt="Amr Talaat">
+    <div class="user-info">
+      <h3>Coun. Amr Talaat</h3>
+      <span class="location">Asyut, Egypt</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 35 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">👥 Specialized in labor law, employment contracts, and resolving workplace disputes for major corporations.</p>
+  <div class="tags">
+    <span>Contracts</span>
+    <span>HR Legal</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="formation" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar" alt="Mahmoud Naguib">
+    <div class="user-info">
+      <h3>Coun. Mahmoud Naguib</h3>
+      <span class="location">Sohag, Egypt</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 36 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚀 Legal advisor for foreign direct investment (FDI), capital markets, and international business joint ventures.</p>
+  <div class="tags">
+    <span>Formation </span>
+    <span>Capital Markets</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="taxation" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=13" class="avatar" alt="Adel Fahmy">
+    <div class="user-info">
+      <h3>Coun. Adel Fahmy</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 50 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧩 Banking and finance specialist focusing on corporate loan agreements, project finance, and regulatory banking advice.</p>
+  <div class="tags">
+    <span>Banking Law</span>
+    <span>Tax law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="taxation" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=54" class="avatar" alt="Saad Mansour">
+    <div class="user-info">
+      <h3>Coun. Saad Mansour</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$50/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 30 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔗 Specialist in commercial real estate transactions, industrial leasing, and property acquisition for business expansions.</p>
+  <div class="tags">
+    <span>Real Estate</span>
+    <span>Tax Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="ip" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=60" class="avatar" alt="Mohamed Zaki">
+    <div class="user-info">
+      <h3>Coun. Mohamed Zaki</h3>
+      <span class="location">Beni Suef, Egypt</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 34 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Expert in data privacy laws (GDPR), technology licensing, and cybersecurity legal frameworks for digital businesses and startups.</p>
+  <div class="tags">
+    <span>Data Privacy</span>
+    <span>IP</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card" data-skill="taxation" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=33" class="avatar" alt="Dr. Nadia Salem">
+    <div class="user-info">
+      <h3>Coun. Nadia Salem</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$320/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 55 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior Tax Consultant specializing in international corporate structures and VAT compliance for large enterprises.</p>
+  <div class="tags">
+    <span>Tax Law</span>
+    <span>Strategy</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card" data-skill="ip" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=18" class="avatar" alt="Kareem Adel">
+    <div class="user-info">
+      <h3>Coun. Kareem Adel</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$180/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 29 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💡 Intellectual Property specialist. I handle trademark registration, patent filings, and copyright protection for startups.</p>
+  <div class="tags">
+    <span>IP Law</span>
+    <span>Trademarks</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card" data-skill="formation" data-level="Junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar" alt="Hoda Ezzat">
+    <div class="user-info">
+      <h3>Coun. Hoda Ezzat</h3>
+      <span class="location">Ismailia, Egypt</span>
+      <div class="stats">
+        <span class="price">$120/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 15 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚀 Junior corporate lawyer dedicated to assisting new entrepreneurs with company registration and legal licensing.</p>
+  <div class="tags">
+    <span>Formation</span>
+    <span>Startup Help</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Corporate Lawyers</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire Corporate Lawyers from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Verified Talent</h4>
+        <p>All legal professionals are licensed, verified, and background-checked.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Flexible Pricing</h4>
+        <p>Hourly or fixed-price legal consultations that fit your business budget.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Secure Payments</h4>
+        <p>Pay only when you are satisfied with the legal advice or documents provided.</p>
+      </div>
+    </div>
+  </section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣  Post your legal case</div>
+      <div class="step">2️⃣ Choose your legal expert</div>
+      <div class="step">3️⃣ Get your legal work done</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How much does it cost to hire a corporate lawyer?</summary>
+      <p>Rates vary depending on experience, starting from $40/hr up to $150/hr for senior partners.</p>
+    </details>
+
+    <details>
+      <summary>Can I hire lawyers for one-time consultations?</summary>
+      <p>Yes, you can hire experts for a single contract review, company formation, or long-term advisory.</p>
+    </details>
+  </section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+<script src="corporate.js"></script>
+
+</body>
+</html>

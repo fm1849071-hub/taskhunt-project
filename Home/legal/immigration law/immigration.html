@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Immigration Law | TaskHunt</title>
+  <link rel="stylesheet" href="immigration.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../Home.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="title-banner">
+  <div class="container">
+    <span class="category-path">Legal |</span>
+    <h1 class="main-title">Immigration Law Professional</h1>
+</div>
+  </section>
+  
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+    <select id="skillFilter">
+      <option value="all">All Visa Types</option>
+      <option value="work">Work Permits & Skilled Labor</option>
+      <option value="citizenship">Citizenship & Residency</option>
+      <option value="family">Family Reunification</option>
+      <option value="asylum">Asylum & Humanitarian</option>
+    </select>
+
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior </option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Consultation Fee</option>
+      <option value="low">Under $100</option>
+      <option value="mid">$100 – $250</option>
+      <option value="high">Over $250</option>
+    </select>
+    <button id="applyFilter">Apply Filter</button>
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+
+<!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#">Change Management Specialists</a></li>
+    <li><a href="#">Employee Engagement Specialists</a></li>
+    <li><a href="#">Facilitators</a></li>
+    <li><a href="#">Interviewers</a></li>
+    <li><a href="#">Leadership Development Specialists</a></li>
+    <li><a href="#">QHSE Specialists</a></li>
+    <li><a href="#">SCORM Specialists</a></li>
+    <li><a href="#">Technical Recruiters</a></li>
+
+    <li><a href="#">Curriculum Developers</a></li>
+    <li><a href="#">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+ <div class="up-card" data-skill="work" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=60" class="avatar" alt="Amina Al-Farsi">
+    <div class="user-info">
+      <h3>Amina Al-Farsi</h3>
+      <span class="location">Dubai / Canada Specialist</span>
+      <div class="stats">
+        <span class="price">$200/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 150+ Successful Visas</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🇨🇦 Regulated Canadian Immigration Consultant (RCIC). Specialist in Express Entry, PNPs, and LMIA work permits with a 98% success rate.</p>
+  <div class="tags">
+    <span>Canada Immigration</span>
+    <span>Work Permits</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-skill="citizenship" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Robert Sterling">
+    <div class="user-info">
+      <h3>Robert Sterling</h3>
+      <span class="location">New York, USA</span>
+      <div class="stats">
+        <span class="price">$300/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 210 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🇺🇸 US Immigration Attorney specializing in EB-5 Investment Visas, L-1 Intra-company transfers, and Green Card petitions through extraordinary ability (EB-1).</p>
+  <div class="tags">
+    <span>US Green Card</span>
+    <span>Investment Visa</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="work" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar" alt="Klaus Müller">
+    <div class="user-info">
+      <h3>Klaus Müller</h3>
+      <span class="location">Berlin, Germany</span>
+      <div class="stats">
+        <span class="price">$120/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 135 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🇩🇪 EU Blue Card Specialist. Expert in Germany's Skilled Immigration Act, Opportunity Card (Chancenkarte), and degree recognition procedures (Anabin/ZAB).</p>
+  <div class="tags">
+    <span>EU Blue Card</span>
+    <span>Germany Work Visa</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+
+  <!-- CARD 4 -->
+   <div class="up-card" data-skill="work" data-level="junior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=32" class="avatar" alt="Sarah Jenkins">
+    <div class="user-info">
+      <h3>Sarah Jenkins</h3>
+      <span class="location">Sydney, Australia</span>
+      <div class="stats">
+        <span class="price">$140/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 180+ Success Cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🇦🇺 Registered Migration Agent (MARA). Specialist in Skilled Independent Visas (189, 190, 491) and Employer Nomination Schemes. Expert in Points-test optimization.</p>
+  <div class="tags">
+    <span>Skilled Migration</span>
+    <span>MARA Registered</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+  <!-- CARD 5 -->
+  <div class="up-card" data-skill="work" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=3" class="avatar" alt="James Worthington">
+    <div class="user-info">
+      <h3>James Worthington</h3>
+      <span class="location">London, UK</span>
+      <div class="stats">
+        <span class="price">$110/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 95 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🇬🇧 OISC Level 3 Advisor. Expert in UK Skilled Worker Visas, Health and Care Worker visas, and Spouse Visas. Specialist in Home Office audits and appeals.</p>
+  <div class="tags">
+    <span>UK Skilled Worker</span>
+    <span>OISC Certified</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="citizenship" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=13" class="avatar" alt="Adv. Fatima Al-Zahra">
+    <div class="user-info">
+      <h3>Adv. Fatima Al-Zahra</h3>
+      <span class="location">Dubai, UAE</span>
+      <div class="stats">
+        <span class="price">$250/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 320 Golden Visas</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🇦🇪 UAE Legal Consultant. Specialist in Golden Visa applications for investors, doctors, and coders. Expert in Dubai South and ADGM corporate residency setups.</p>
+  <div class="tags">
+    <span>Golden Visa</span>
+    <span>Corporate Residency</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+  <!-- CARD 7 (NEW) -->
+<div class="up-card hidden-card" data-skill="asylum" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar" alt="Elena Rodriguez">
+    <div class="user-info">
+      <h3>Elena Rodriguez</h3>
+      <span class="location">Madrid, Spain</span>
+      <div class="stats">
+        <span class="price">$180/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 112 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Human Rights & Asylum Lawyer. Expert in EU refugee law, political asylum petitions, and humanitarian visas. Specialized in family reunification for displaced persons.</p>
+  <div class="tags">
+    <span>Asylum Law</span>
+    <span>Human Rights</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="citizenship" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=17" class="avatar" alt="Marcus Thorne">
+    <div class="user-info">
+      <h3>Marcus Thorne</h3>
+      <span class="location">London / St. Kitts & Nevis</span>
+      <div class="stats">
+        <span class="price">$220/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 145 Passports Issued</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌍 Global Mobility Expert. Specialist in Citizenship by Investment (CBI) for Turkey, Caribbean nations (Grenada, St. Kitts), and Vanuatu. Professional wealth & tax migration advisor.</p>
+  <div class="tags">
+    <span>Second Passport</span>
+    <span>CBI Specialist</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="family" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Dr. Aris Petrov">
+    <div class="user-info">
+      <h3>Dr. Aris Petrov</h3>
+      <span class="location">Sofia, Bulgaria / EU Academic Advisor</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 240+ Students Placed</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🎓 Study Abroad Specialist. Expert in EU Student Visas, University Admissions, and post-graduate work search permits. Specialized in Medical and Engineering programs in Eastern Europe.</p>
+  <div class="tags">
+    <span>Student Visa</span>
+    <span>Education Consultant</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="work" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Julianne Moore">
+    <div class="user-info">
+      <h3>Julianne Moore</h3>
+      <span class="location">Los Angeles, USA</span>
+      <div class="stats">
+        <span class="price">$275/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 85 Talent Petitions</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌟 Talent Visa Architect. Specialized in O-1 Extraordinary Ability visas for artists and tech founders. Expert in EB-1A self-petitions and NIW (National Interest Waiver) cases.</p>
+  <div class="tags">
+    <span>O-1 Visa</span>
+    <span>Global Talent</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="family" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar" alt="Sophie Tremblay">
+    <div class="user-info">
+      <h3>Sophie Tremblay</h3>
+      <span class="location">Montreal, Canada</span>
+      <div class="stats">
+        <span class="price">$130/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 190 Families Reunited</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">❤️ Family Sponsorship Specialist. Expert in Spousal Sponsorship, Parent/Grandparent Super Visas, and Dependent Child applications. Helping families navigate IRCC with ease.</p>
+  <div class="tags">
+    <span>Family Reunification</span>
+    <span>Canada Super Visa</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="work" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=33" class="avatar" alt="Marco Rossi">
+    <div class="user-info">
+      <h3>Marco Rossi</h3>
+      <span class="location">Lisbon, Portugal</span>
+      <div class="stats">
+        <span class="price">$115/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 165 Nomads Assisted</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌍 Digital Nomad Visa Consultant. Specialized in Portugal’s D8/D7 visas, Spain’s Remote Work visa, and tax residency for remote workers. Live where you want while you work.</p>
+  <div class="tags">
+    <span>Digital Nomad</span>
+    <span>Tax Residency</span>
+  </div>
+  <a href="#" class="profile-btn">See Profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="citizenship" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=13" class="avatar" alt="Coun. Kareem">
+    <div class="user-info">
+      <h3>Coun. Kareem Hassan</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$300/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 45 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌍 Expert in Citizenship by Investment and Golden Visa programs across Europe and the Caribbean for high-net-worth individuals.</p>
+  <div class="tags">
+    <span>Investment</span>
+    <span>Citizenship</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="work" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar" alt="Coun. Sara">
+    <div class="user-info">
+      <h3>Coun. Sara Mahmoud</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$150/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 29 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🎓 Specialized in student visas, work permits, and skilled labor migration to Canada, Australia, and the UK.</p>
+  <div class="tags">
+    <span>Work Permit</span>
+    <span>Education</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="family" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=17" class="avatar" alt="Coun. Omar">
+    <div class="user-info">
+      <h3>Coun. Omar Ali</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$80/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 15 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏠 Dedicated to helping families reunite through spouse visas and dependency claims. Providing affordable legal support for families.</p>
+  <div class="tags">
+    <span>Family Visa</span>
+    <span>Junior</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load More Immigration Lawyers</button>
+      </div>
+
+    </section>
+  </div>
+ <section class="why-section">
+    <h2>Why hire Immigration Law Professionals from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Certified Legal Counsel</h4>
+        <p>Connect with licensed attorneys and registered migration agents (MARA, RCIC, OISC) who know the latest policy changes.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Minimize Rejection Risks</h4>
+        <p>A single mistake can lead to years of bans. Our experts meticulously audit every document to ensure a 100% decision-ready file.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Tailored Migration Pathways</h4>
+        <p>Don't settle for "one size fits all." Get a personalized strategy based on your unique background, points, and career goals.</p>
+      </div>
+    </div>
+</section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Eligibility Assessment & Case Strategy</div>
+      <div class="step">2️⃣ Document Gathering & Legal Review</div>
+      <div class="step">3️⃣ Visa Submission & Government Liaison</div>
+    </div>
+</section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>Can an immigration professional guarantee my visa approval?</summary>
+      <p>No ethical lawyer or consultant can guarantee an approval, as the final decision rests with the government. However, our experts maximize your chances by ensuring your file is 100% compliant and presenting your case in the strongest legal light.</p>
+    </details>
+
+    <details>
+      <summary>What is the difference between a Lawyer and a Migration Agent?</summary>
+      <p>An Immigration Lawyer has a full legal degree and can represent you in court appeals. A Migration Agent is a licensed specialist (like RCIC in Canada or MARA in Australia) focused specifically on visa applications and government processing.</p>
+    </details>
+
+</section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+<script src="immigration.js"></script>
+
+</body>
+</html>

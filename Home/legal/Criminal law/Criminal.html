@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Criminal Lawyers| TaskHunt</title>
+  <link rel="stylesheet" href="criminal.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../Home.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="title-banner">
+  <div class="container">
+    <span class="category-path">Legal |</span>
+    <h1 class="main-title">Criminal Law Professionals</h1>
+</div>
+  </section>
+  
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+      <option value="all">All Criminal Cases</option>
+      <option value="felony">Felonies</option>
+      <option value="cyber">Cybercrimes</option>
+      <option value="financial">Financial Crimes</option>
+      <option value="misdemeanor">Misdemeanors</option>
+    </select>
+
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior</option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $50</option>
+      <option value="mid">$50 – $60</option>
+      <option value="high">Above $60</option>
+    </select>
+
+    <button id="applyFilter">Apply Filter</button>
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#">Change Management Specialists</a></li>
+    <li><a href="#">Employee Engagement Specialists</a></li>
+    <li><a href="#">Facilitators</a></li>
+    <li><a href="#">Interviewers</a></li>
+    <li><a href="#">Leadership Development Specialists</a></li>
+    <li><a href="#">QHSE Specialists</a></li>
+    <li><a href="#">SCORM Specialists</a></li>
+    <li><a href="#">Technical Recruiters</a></li>
+
+    <li><a href="#">Curriculum Developers</a></li>
+    <li><a href="#">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-skill="felony" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Dr. Khaled Mansour">
+    <div class="user-info">
+      <h3>Dr. Khaled Mansour</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$80/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 120 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior Criminal Defense Lawyer specialized in high-profile felony cases, homicide defense, and constitutional rights.</p>
+  <div class="tags">
+    <span>Felony Defense</span>
+    <span>Court Representation</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-skill="misdemeanor" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Laila El-Fayed">
+    <div class="user-info">
+      <h3>Coun. Laila El-Fayed</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 64 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Expert in misdemeanor defense, including traffic violations, minor disputes, and theft cases. Quick legal intervention and bail procedures.</p>
+  <div class="tags">
+    <span>Misdemeanors</span>
+    <span>Legal Advice</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="cyber" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Youssef El-Shamy">
+    <div class="user-info">
+      <h3>Coun. Youssef El-Shamy</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats">
+        <span class="price">$50/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 42 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💻 Specialized in digital forensics and cybercrime defense. Expert in handling online defamation, hacking cases, and electronic fraud.</p>
+  <div class="tags">
+    <span>Cybercrimes</span>
+    <span>Digital Privacy</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 4 -->
+   <div class="up-card" data-skill="financial" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=33" class="avatar" alt="Dr. Hazem El-Ghandour">
+    <div class="user-info">
+      <h3>Dr. Hazem El-Ghandour</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$90/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 88 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💰 Senior expert in white-collar crimes, money laundering defense, and corporate fraud investigations. 20+ years of experience in financial litigation.</p>
+  <div class="tags">
+    <span>Financial Crimes</span>
+    <span>Money Laundering</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  
+
+  <!-- CARD 5 -->
+<div class="up-card" data-skill="felony" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar" alt="Mona El-Sawy">
+    <div class="user-info">
+      <h3>Coun. Mona El-Sawy</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 52 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Focused on criminal procedure law and human rights defense. Specialized in felony trials and providing strong legal representation in court.</p>
+  <div class="tags">
+    <span>Felony Defense</span>
+    <span>Court Trials</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="misdemeanor" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Ahmed Refaat">
+    <div class="user-info">
+      <h3>Coun. Ahmed Refaat</h3>
+      <span class="location">Ismailia, Egypt</span>
+      <div class="stats">
+        <span class="price">$25/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 28 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Dedicated criminal lawyer focusing on misdemeanors, theft cases, and immediate legal assistance. Known for efficiency in handling fast-track legal procedures.</p>
+  <div class="tags">
+    <span>Misdemeanors</span>
+    <span>Fast Response</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 7 (NEW) -->
+<div class="up-card hidden-card" data-skill="cyber" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar" alt="Dr. Maryam Zaki">
+    <div class="user-info">
+      <h3>Dr. Maryam Zaki</h3>
+      <span class="location">New Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$95/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 105 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Expert in international cybercrime law and data protection. Specialized in defending high-stakes cases involving financial technology and digital identity theft.</p>
+  <div class="tags">
+    <span>Cybercrimes</span>
+    <span>Data Protection</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="felony" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=51" class="avatar" alt="Coun. Mahmoud El-Banna">
+    <div class="user-info">
+      <h3>Coun. Mahmoud El-Banna</h3>
+      <span class="location">Suez, Egypt</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 94 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior criminal litigator with extensive experience in self-defense cases and serious felony charges. Expert in analyzing forensic evidence and witness testimonies.</p>
+  <div class="tags">
+    <span>Felony Defense</span>
+    <span>Forensic Analysis</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="financial" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=59" class="avatar" alt="Coun. Nadia Ibrahim">
+    <div class="user-info">
+      <h3>Coun. Nadia Ibrahim</h3>
+      <span class="location">Port Said, Egypt</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 39 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Specialized in anti-corruption law and public funds protection. Expert in defending cases related to administrative fraud and financial irregularities.</p>
+  <div class="tags">
+    <span>Financial Crimes</span>
+    <span>Anti-Corruption</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="misdemeanor" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=53" class="avatar" alt="Coun. Omar El-Sherif">
+    <div class="user-info">
+      <h3>Coun. Omar El-Sherif</h3>
+      <span class="location">Assiut, Egypt</span>
+      <div class="stats">
+        <span class="price">$70/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 61 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Professional in misdemeanor litigation, focus on amicable settlements and legal disputes. Expert in handling cases of unintentional harm and traffic law.</p>
+  <div class="tags">
+    <span>misdemeanors</span>
+    <span>Settlements</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="felony" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=54" class="avatar" alt="Dr. Adel El-Masry">
+    <div class="user-info">
+      <h3>Dr. Adel El-Masry</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$100/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 150 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏛️ Senior Criminal Attorney specializing in Court of Cassation appeals and major felony defense. Expert in overturning unfair judgments and legal technicalities.</p>
+  <div class="tags">
+    <span>Cassation Appeals</span>
+    <span>felony Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="cyber" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=43" class="avatar" alt="Coun. Sara El-Din">
+    <div class="user-info">
+      <h3>Coun. Sara El-Din</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$30/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 22 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Focused on digital privacy and protection against online harassment and extortion. Providing immediate legal support for cybercrime victims.</p>
+  <div class="tags">
+    <span>Online Extortion</span>
+    <span>Cyber Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="cyber" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=3" class="avatar" alt="Dr. Yasin Zaki">
+    <div class="user-info">
+      <h3>Coun. Yasin Zaki</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$350/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 60 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💻 Expert in cybercrimes, data breaches, and digital forensics. Representing corporate clients in high-stakes technology disputes.</p>
+  <div class="tags">
+    <span>Cybercrime</span>
+    <span>Digital Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="felony" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Mona El-Sherif">
+    <div class="user-info">
+      <h3>Coun. Mona El-Sherif</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$180/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 33 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Specialized in felony defense and court of appeals cases with a focus on human rights and procedural justice.</p>
+  <div class="tags">
+    <span>Felony</span>
+    <span>Appeals</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="felony" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=51" class="avatar" alt="Tarek Helmy">
+    <div class="user-info">
+      <h3>Coun. Tarek Helmy</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$90/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 12 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Dedicated to juvenile defense and misdemeanor cases. Providing affordable and personalized legal support for young clients.</p>
+  <div class="tags">
+    <span>Juvenile</span>
+    <span>Defense</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Criminal Lawyers</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire criminal Lawyers from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Strict Confidentiality</h4>
+        <p>We understand the sensitivity of criminal cases. Your information and communication with lawyers are protected and private.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Proven Court Experience</h4>
+        <p>Access a network of lawyers with years of experience defending clients in felonies and misdemeanors within Egyptian courts.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Urgent Legal Support</h4>
+        <p>Find lawyers ready for immediate intervention in urgent matters like bails, investigations, and fast-track legal procedures.</p>
+      </div>
+    </div>
+  </section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Filter by Case Type</div>
+      <div class="step">2️⃣ Consult your Lawyer</div>
+      <div class="step">3️⃣ Secure your Defense</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How are legal fees calculated for criminal cases?</summary>
+      <p>Fees depend on the complexity of the case (Felony vs. Misdemeanor) and the lawyer's experience. You can find options ranging from $25/hr for consultations to fixed rates for full trial representation.</p>
+    </details>
+
+    <details>
+      <summary>Do these lawyers handle urgent investigations?</summary>
+      <p>Yes, many of our criminal experts are available for immediate assistance during police investigations, bail hearings, and urgent court sessions.</p>
+    </details>
+  </section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+<script src="criminal.js"></script>
+
+</body>
+</html>

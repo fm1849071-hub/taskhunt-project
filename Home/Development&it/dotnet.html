@@ -3,9 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>.NET Developers | TaskHunt</title>
+ <title>.NET Developers | TaskHunt</title>
+
 
   <style>
+    :root {
+      --c1: #00A8FF;
+      --c2: #0090E0;
+      --c3: #0077B8;
+      --c4: #051923;
+      --c5: #ffffff;
+      --white: #ffffff;
+      --light: #e6f7ff;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,9 +25,10 @@
     }
 
     body {
-      background: #ffffff;
+      background: #f9fafb;
       color: #111827;
     }
+
 
 
     /* NAVBAR */
@@ -51,6 +63,46 @@
     nav ul li a:hover {
       color: var(--c1);
     }
+
+
+    .hero-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 60px 6% 30px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hero-title h2 {
+      font-size: 20px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .hero-title h1 {
+      font-size: 38px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .hero-divider {
+      font-size: 26px;
+      color: #9ca3af;
+    }
+
+    /* موبايل */
+    @media (max-width:768px) {
+      .hero-title {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .hero-divider {
+        display: none;
+      }
+    }
+
 
     /* ===== FILTER BAR ===== */
     .filter-bar {
@@ -101,51 +153,28 @@
       background: #004666;
     }
 
+    /* Responsive */
+    @media (max-width: 768px) {
+      .filter-container {
+        flex-direction: column;
+        width: 100%;
+      }
 
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 70px 10%;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .hero-rating {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .hero-rating .stars {
-      color: #f59e0b;
-      margin: 0 6px;
-    }
-
-    .reviews {
-      color: #6b7280;
-      margin-bottom: 25px;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      background: #005b84;
-      color: white;
-      padding: 14px 34px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
+      .filter-container select,
+      .filter-container button {
+        width: 100%;
+      }
     }
 
     /* PAGE LAYOUT */
     .page-layout {
       display: flex;
       gap: 30px;
-      padding: 40px 6%;
+      padding: 40px 6% 10px;
+      /* ✅ قلل المسافة تحت */
       align-items: flex-start;
     }
+
 
     /* SIDEBAR */
     .sidebar {
@@ -340,6 +369,9 @@
       }
     }
 
+
+
+
     /* Footer */
     .footer {
       background: #051923;
@@ -432,6 +464,172 @@
         width: 100%;
       }
     }
+
+    .load-more {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+
+    .load-more button {
+      padding: 14px 40px;
+      background: #005b84;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+
+    }
+
+    .load-more button:hover {
+      background: #004666;
+    }
+
+    /* ===== WHY SECTION ===== */
+    .why-section {
+      padding: 70px 6%;
+
+      text-align: center;
+    }
+
+    .why-section h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .why-box {
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .why-box h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #005b84;
+    }
+
+    .why-box p {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps {
+      padding: 70px 6%;
+      text-align: center;
+    }
+
+    .steps h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 30px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 70px 6%;
+
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .faq details {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+    }
+
+    .faq summary {
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .faq p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .hidden-card {
+      display: none;
+    }
+
+
+    /* ===== CTA ===== */
+    .cta {
+      padding: 80px 6%;
+      text-align: center;
+
+      color: #ffffff;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 25px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 45px;
+      background: #005b84;
+      color: #ffffff;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+
+      .why-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -450,16 +648,25 @@
       <li><a href="../../login/Login_page.html">Login</a></li>
     </ul>
   </nav>
+ <section class="hero-title">
+  <h2>Development & IT</h2>
+  <span class="hero-divider">|</span>
+  <h1>.NET Developers</h1>
+</section>
+
   <!-- FILTER BAR -->
   <section class="filter-bar">
     <div class="filter-container">
 
-      <select id="skillFilter">
-        <option value="all">All Skills</option>
-        <option value="kotlin">Kotlin</option>
-        <option value="java">Java</option>
-        <option value="firebase">Firebase</option>
-      </select>
+     <select id="skillFilter">
+  <option value="all">All Skills</option>
+  <option value="csharp">C#</option>
+  <option value="aspnet">ASP.NET</option>
+  <option value="mvc">MVC</option>
+  <option value="webapi">Web API</option>
+  <option value="sql">SQL Server</option>
+</select>
+
 
       <select id="levelFilter">
         <option value="all">Experience Level</option>
@@ -479,14 +686,14 @@
 
     </div>
   </section>
+
   <div class="page-layout">
 
     <aside class="sidebar">
       <h3>Categories</h3>
 
-      
       <!-- Data & AI -->
-      <div class="category">
+        <div class="category">
         <button class="category-btn">Data & AI <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
@@ -510,13 +717,13 @@
           <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
           <li><a href="../Development&it/ai.html">AI Developers</a></li>
           <li><a href="../Development&it/android.html">Android Developers</a></li>
-          <li><a href="#">Backend Developers</a></li>
-          <li><a href="#">Bubble.io Developers</a></li>
-          <li><a href="#">Chatbot Developers</a></li>
-          <li><a href="#">Cyber Security Engineers</a></li>
-          <li><a href="#">Data Engineers</a></li>
-          <li><a href="#">DevOps Engineers</a></li>
-          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
          
         </ul>
       </div>
@@ -611,16 +818,16 @@
       <div class="category">
         <button class="category-btn">Legal <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Corporate Law Professionals</a></li>
-          <li><a href="#">Criminal Law Professionals</a></li>
-          <li><a href="#">Family Law Professionals</a></li>
-          <li><a href="#">Fraud Analysts</a></li>
-          <li><a href="#">GDPR Specialists</a></li>
-          <li><a href="#">Immigration Law Professionals</a></li>
-          <li><a href="#">International Law Professionals</a></li>
-          <li><a href="#">Legal Advisors</a></li>
-          <li><a href="#">Legal Assistants</a></li>
-          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="../legal/Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../legal/Criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../legal/Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../legal/Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../legal/GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../legal/immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../legal/Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../legal/Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../legal/Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../legal/Legal consultants/consultants.html">Legal Consultants</a></li>
         </ul>
       </div>
 
@@ -643,7 +850,7 @@
 </div>
 
       <!-- Engineering & Architecture -->
-<div class="category">
+    <div class="category">
         <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
@@ -660,128 +867,364 @@
       </div>
     </aside>
 
-    <!-- CARDS -->
+
+
     <section class="cards-wrapper">
-      <div class="cards-grid"> <!-- CARD 1 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=1" class="avatar">
-            <div class="user-info">
-              <h3>Ahmed M.</h3> <span class="location">Cairo, Egypt</span>
-              <div class="stats"> <span class="price">$30/hr</span> <span class="rating">⭐ 4.9</span> <span
-                  class="jobs">💼 28 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ Senior .NET developer delivering scalable and secure web solutions. </p>
-          <div class="tags"> <span>ASP.NET</span><span>Web API</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div> <!-- CARD 2 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=2" class="avatar">
-            <div class="user-info">
-              <h3>Mohamed A.</h3> <span class="location">Alexandria, Egypt</span>
-              <div class="stats"> <span class="price">$25/hr</span> <span class="rating">⭐ 4.8</span> <span
-                  class="jobs">💼 19 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ Backend-focused .NET developer with clean architecture mindset. </p>
-          <div class="tags"> <span>C#</span><span>Entity Framework</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div> <!-- CARD 3 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=3" class="avatar">
-            <div class="user-info">
-              <h3>Youssef K.</h3> <span class="location">Giza, Egypt</span>
-              <div class="stats"> <span class="price">$35/hr</span> <span class="rating">⭐ 5.0</span> <span
-                  class="jobs">💼 14 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ Full Stack .NET developer for modern web applications. </p>
-          <div class="tags"> <span>Blazor</span><span>ASP.NET</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div> <!-- CARD 4 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=4" class="avatar">
-            <div class="user-info">
-              <h3>Omar S.</h3> <span class="location">Mansoura, Egypt</span>
-              <div class="stats"> <span class="price">$22/hr</span> <span class="rating">⭐ 4.7</span> <span
-                  class="jobs">💼 21 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ Reliable .NET developer for APIs and integrations. </p>
-          <div class="tags"> <span>REST API</span><span>SQL Server</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div> <!-- CARD 5 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=5" class="avatar">
-            <div class="user-info">
-              <h3>Karim H.</h3> <span class="location">Tanta, Egypt</span>
-              <div class="stats"> <span class="price">$28/hr</span> <span class="rating">⭐ 4.9</span> <span
-                  class="jobs">💼 32 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ Expert in enterprise-level .NET systems. </p>
-          <div class="tags"> <span>ASP.NET Core</span><span>Azure</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div> <!-- CARD 6 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=6" class="avatar">
-            <div class="user-info">
-              <h3>Mostafa E.</h3> <span class="location">Zagazig, Egypt</span>
-              <div class="stats"> <span class="price">$20/hr</span> <span class="rating">⭐ 4.6</span> <span
-                  class="jobs">💼 16 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ Junior-to-mid .NET developer for small & medium projects. </p>
-          <div class="tags"> <span>C#</span><span>ASP.NET</span> </div> <a href="#" class="profile-btn">See profile</a>
-        </div> <!-- CARD 7 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=7" class="avatar">
-            <div class="user-info">
-              <h3>Hassan R.</h3> <span class="location">Fayoum, Egypt</span>
-              <div class="stats"> <span class="price">$27/hr</span> <span class="rating">⭐ 4.8</span> <span
-                  class="jobs">💼 23 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ API & database optimization specialist. </p>
-          <div class="tags"> <span>Web API</span><span>EF Core</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div> <!-- CARD 8 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=8" class="avatar">
-            <div class="user-info">
-              <h3>Amr T.</h3> <span class="location">Asyut, Egypt</span>
-              <div class="stats"> <span class="price">$26/hr</span> <span class="rating">⭐ 4.7</span> <span
-                  class="jobs">💼 18 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ Clean code lover & performance-focused .NET developer. </p>
-          <div class="tags"> <span>ASP.NET</span><span>SQL Server</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div> <!-- CARD 9 -->
-        <div class="up-card">
-          <div class="card-header"> <img src="https://i.pravatar.cc/100?img=9" class="avatar">
-            <div class="user-info">
-              <h3>Mahmoud N.</h3> <span class="location">Sohag, Egypt</span>
-              <div class="stats"> <span class="price">$24/hr</span> <span class="rating">⭐ 4.8</span> <span
-                  class="jobs">💼 20 jobs</span> </div>
-            </div>
-          </div>
-          <p class="description"> ✅ ASP.NET Core developer for scalable business apps. </p>
-          <div class="tags"> <span>ASP.NET Core</span><span>Web API</span> </div> <a href="#" class="profile-btn">See
-            profile</a>
-        </div>
+
+      <div class="cards-grid">
+
+       <!-- CARD 1 -->
+<div class="up-card" data-skill="csharp aspnet mvc" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar">
+    <div class="user-info">
+      <h3>Ahmed K.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$32/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 27 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚙️ Senior .NET Developer building enterprise applications.</p>
+  <div class="tags"><span>C#</span><span>ASP.NET</span><span>MVC</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 2 -->
+<div class="up-card" data-skill="csharp webapi sql" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=42" class="avatar">
+    <div class="user-info">
+      <h3>Mohamed S.</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$28/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 21 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔗 .NET Developer specialized in RESTful APIs.</p>
+  <div class="tags"><span>C#</span><span>Web API</span><span>SQL</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 3 -->
+<div class="up-card" data-skill="aspnet mvc sql" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=43" class="avatar">
+    <div class="user-info">
+      <h3>Mostafa H.</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$22/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 14 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧩 Junior .NET Developer working with MVC projects.</p>
+  <div class="tags"><span>ASP.NET</span><span>MVC</span><span>SQL</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 4 -->
+<div class="up-card" data-skill="csharp aspnetcore" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar">
+    <div class="user-info">
+      <h3>Omar F.</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$29/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 19 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚀 ASP.NET Core Developer for scalable web apps.</p>
+  <div class="tags"><span>C#</span><span>ASP.NET Core</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 5 -->
+<div class="up-card" data-skill="csharp blazor" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar">
+    <div class="user-info">
+      <h3>Hassan R.</h3>
+      <span class="location">Fayoum, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 30 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧠 Expert Blazor Developer building modern UIs.</p>
+  <div class="tags"><span>C#</span><span>Blazor</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 6 -->
+<div class="up-card" data-skill="sql entityframework" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=46" class="avatar">
+    <div class="user-info">
+      <h3>Islam M.</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$27/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 20 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🗄️ .NET Developer with strong database experience.</p>
+  <div class="tags"><span>SQL Server</span><span>EF Core</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 7 -->
+<div class="up-card" data-skill="csharp webapi" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar">
+    <div class="user-info">
+      <h3>Youssef A.</h3>
+      <span class="location">Asyut, Egypt</span>
+      <div class="stats">
+        <span class="price">$23/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 13 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔌 Junior .NET Developer integrating APIs.</p>
+  <div class="tags"><span>C#</span><span>Web API</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 8 -->
+<div class="up-card" data-skill="aspnetcore mvc" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=48" class="avatar">
+    <div class="user-info">
+      <h3>Karim E.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$30/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 25 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏗️ .NET Developer building clean MVC systems.</p>
+  <div class="tags"><span>ASP.NET Core</span><span>MVC</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 9 -->
+<div class="up-card" data-skill="csharp sql" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=49" class="avatar">
+    <div class="user-info">
+      <h3>Saad M.</h3>
+      <span class="location">Sohag, Egypt</span>
+      <div class="stats">
+        <span class="price">$21/hr</span>
+        <span class="rating">⭐ 4.5</span>
+        <span class="jobs">💼 11 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📊 Junior .NET Developer focused on databases.</p>
+  <div class="tags"><span>C#</span><span>SQL Server</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 10 -->
+<div class="up-card" data-skill="aspnetcore webapi" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=50" class="avatar">
+    <div class="user-info">
+      <h3>Adel F.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$34/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 29 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧩 Senior .NET Architect for large systems.</p>
+  <div class="tags"><span>ASP.NET Core</span><span>Web API</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+<div class="up-card" data-skill="csharp entityframework" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=51" class="avatar">
+    <div class="user-info">
+      <h3>Mahmoud N.</h3>
+      <span class="location">Beni Suef, Egypt</span>
+      <div class="stats">
+        <span class="price">$26/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 18 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🗃️ .NET Developer with EF Core expertise.</p>
+  <div class="tags"><span>C#</span><span>EF Core</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 12 -->
+<div class="up-card" data-skill="blazor csharp" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar">
+    <div class="user-info">
+      <h3>Mohamed Z.</h3>
+      <span class="location">Ismailia, Egypt</span>
+      <div class="stats">
+        <span class="price">$28/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 22 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🎨 Blazor Developer creating interactive dashboards.</p>
+  <div class="tags"><span>Blazor</span><span>C#</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card" data-skill="aspnet sql webapi" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=53" class="avatar">
+    <div class="user-info">
+      <h3>Karim S.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$33/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 26 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏢 Enterprise .NET solutions & integrations.</p>
+  <div class="tags"><span>ASP.NET</span><span>SQL</span><span>Web API</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card" data-skill="csharp aspnetcore" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=54" class="avatar">
+    <div class="user-info">
+      <h3>Yehia A.</h3>
+      <span class="location">Damietta, Egypt</span>
+      <div class="stats">
+        <span class="price">$24/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 12 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚀 Junior ASP.NET Core Developer.</p>
+  <div class="tags"><span>C#</span><span>ASP.NET Core</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card" data-skill="csharp mvc sql" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=55" class="avatar">
+    <div class="user-info">
+      <h3>Amr T.</h3>
+      <span class="location">Aswan, Egypt</span>
+      <div class="stats">
+        <span class="price">$27/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 20 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚙️ .NET Developer focused on clean MVC design.</p>
+  <div class="tags"><span>C#</span><span>MVC</span><span>SQL</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+      </div>
+
+
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more .NET developers</button>
+
+      </div>
+
     </section>
   </div>
+  
+  <section class="why-section">
+  <h2>Why hire .NET developers from TaskHunt?</h2>
 
+  <div class="why-grid">
+    <div class="why-box">
+      <h4>✔ Verified Talent</h4>
+      <p>All .NET developers are carefully screened and technically tested.</p>
+    </div>
+
+    <div class="why-box">
+      <h4>✔ Flexible Pricing</h4>
+      <p>Hire .NET developers on an hourly or fixed-price basis that fits your budget.</p>
+    </div>
+
+    <div class="why-box">
+      <h4>✔ Secure Payments</h4>
+      <p>Release payments only when you’re fully satisfied with the delivered work.</p>
+    </div>
   </div>
+</section>
 
-  <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.classList.toggle("active");
-      });
-    });
-  </script>
+<section class="steps">
+  <h2>How it works</h2>
+
+  <div class="steps-grid">
+    <div class="step">1️⃣ Post your .NET project</div>
+    <div class="step">2️⃣ Choose your .NET developer</div>
+    <div class="step">3️⃣ Start building your system</div>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>How much does it cost to hire a .NET developer?</summary>
+    <p>The cost depends on the developer’s experience level and your project requirements.</p>
+  </details>
+
+  <details>
+    <summary>Can I hire .NET developers on an hourly basis?</summary>
+    <p>Yes, TaskHunt supports both hourly and fixed-price contracts.</p>
+  </details>
+
+  <details>
+    <summary>What technologies do TaskHunt .NET developers use?</summary>
+    <p>They work with C#, ASP.NET, ASP.NET Core, MVC, Web API, SQL Server, Blazor, and more.</p>
+  </details>
+</section>
+
+
+
+
+
   <footer class="footer">
     <div class="footer-container">
 
@@ -821,6 +1264,115 @@
       <p>© 2025 Task Hunt — All rights reserved</p>
     </div>
   </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===============================
+     CARDS + FILTER + LOAD MORE
+  =============================== */
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const applyFilterBtn = document.getElementById("applyFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      /* ===== SKILL FILTER ===== */
+      const skills = (card.dataset.skill || "").toLowerCase();
+      const skillValue = skillFilter.value.toLowerCase();
+      const skillMatch =
+        skillValue === "all" || skills.includes(skillValue);
+
+      /* ===== LEVEL FILTER (FIXED) ===== */
+      const level = (card.dataset.level || "").toLowerCase();
+      const levelValue = levelFilter.value.toLowerCase();
+      const levelMatch =
+        levelValue === "all" || level === "" || level === levelValue;
+
+      /* ===== PRICE FILTER ===== */
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 30;
+      if (priceFilter.value === "high") priceMatch = price > 30;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    // اخفاء كل الكاردات
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    // اظهار العدد المناسب فقط
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    // التحكم في Load More
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ===== APPLY FILTER BUTTON ===== */
+  if (applyFilterBtn) {
+    applyFilterBtn.addEventListener("click", () => {
+      visible = 6;
+      updateCards();
+    });
+  }
+
+  /* ===== LOAD MORE ===== */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  /* ===== INIT ===== */
+  updateCards();
+
+
+  /* ===============================
+     SIDEBAR ACCORDION (FIXED)
+  =============================== */
+
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const currentCategory = btn.closest(".category");
+
+      // اقفل كل الأقسام التانية
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== currentCategory) {
+          cat.classList.remove("active");
+        }
+      });
+
+      // افتح / اقفل القسم الحالي
+      currentCategory.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+
 </body>
 
 </html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Family Lawyers | TaskHunt</title>
+  <link rel="stylesheet" href="family.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../Home.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="title-banner">
+  <div class="container">
+    <span class="category-path">Legal |</span>
+    <h1 class="main-title">Family Law </h1>
+</div>
+  </section>
+  
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+      <option value="all">All Family Cases</option>
+      <option value="divorce">Divorce & Separation</option>
+      <option value="custody">Child Custody</option>
+      <option value="alimony">Alimony & Support</option>
+      <option value="inheritance">Inheritance</option>
+      
+    </select>
+
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior</option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $50</option>
+      <option value="mid">$50 – $60</option>
+      <option value="high">Above $60</option>
+    </select>
+
+    <button id="applyFilter">Apply Filter</button>
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#">Change Management Specialists</a></li>
+    <li><a href="#">Employee Engagement Specialists</a></li>
+    <li><a href="#">Facilitators</a></li>
+    <li><a href="#">Interviewers</a></li>
+    <li><a href="#">Leadership Development Specialists</a></li>
+    <li><a href="#">QHSE Specialists</a></li>
+    <li><a href="#">SCORM Specialists</a></li>
+    <li><a href="#">Technical Recruiters</a></li>
+
+    <li><a href="#">Curriculum Developers</a></li>
+    <li><a href="#">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-skill="divorce" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=32" class="avatar" alt="Coun. Fatma El-Zahraa">
+    <div class="user-info">
+      <h3>Coun. Fatma El-Zahraa</h3>
+      <span class="location">Maadi, Cairo</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 142 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior Family Law expert with 15+ years of experience in complex divorce cases, child custody disputes, and alimony litigation. Known for a compassionate yet firm approach.</p>
+  <div class="tags">
+    <span>Divorce</span>
+    <span>Child Custody</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-skill="inheritance" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Coun. Ibrahim Khalil">
+    <div class="user-info">
+      <h3>Coun. Ibrahim Khalil</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$85/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 118 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Expert in inheritance law and estate distribution. Specialized in resolving complex family disputes over assets and ensuring legal Sharia compliance.</p>
+  <div class="tags">
+    <span>Inheritance</span>
+    <span>Estate Planning</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="alimony" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Coun. Yasmin Nour">
+    <div class="user-info">
+      <h3>Coun. Yasmin Nour</h3>
+      <span class="location">Dokki, Giza</span>
+      <div class="stats">
+        <span class="price">$50/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 64 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Dedicated advocate for child support and alimony rights. Expert in financial investigation to ensure fair support for families and educational expenses.</p>
+  <div class="tags">
+    <span>Alimony</span>
+    <span>Child Support</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 4 -->
+   <div class="up-card" data-skill="custody" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=60" class="avatar" alt="Coun. Hany Mansour">
+    <div class="user-info">
+      <h3>Coun. Hany Mansour</h3>
+      <span class="location">Heliopolis, Cairo</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 41 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Specialist in child custody and visitation rights. Committed to protecting the best interests of children during parental disputes and legal transitions.</p>
+  <div class="tags">
+    <span>Child Custody</span>
+    <span>Visitation Rights</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 5 -->
+  <div class="up-card" data-skill="divorce" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar" alt="Coun. Amira Kamal">
+    <div class="user-info">
+      <h3>Coun. Amira Kamal</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 37 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Expert in marriage registration and prenuptial agreements. Specialized in foreign marriage documentation and legalizing family status for expats.</p>
+  <div class="tags">
+    <span>Marriage Contracts</span>
+    <span>Legal Documentation</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="divorce" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=13" class="avatar" alt="Coun. Kareem Fouad">
+    <div class="user-info">
+      <h3>Coun. Kareem Fouad</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$30/hr</span>
+        <span class="rating">⭐ 4.5</span>
+        <span class="jobs">💼 19 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Dynamic family lawyer specializing in "Khul" and divorce for harm cases. Focused on achieving quick legal resolutions and protecting client rights during separation.</p>
+  <div class="tags">
+    <span>Divorce</span>
+    <span>Khul Cases</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 7 (NEW) -->
+<div class="up-card hidden-card" data-skill="inheritance" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=38" class="avatar" alt="Coun. Nadia Sultan">
+    <div class="user-info">
+      <h3>Coun. Nadia Sultan</h3>
+      <span class="location">Zamalek, Cairo</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 15 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Junior attorney with a focus on inheritance distribution and Sharia-compliant wills. Providing detailed legal research for complex family estate cases.</p>
+  <div class="tags">
+    <span>Inheritance</span>
+    <span>Legal Research</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="divorce" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Coun. Youssef El-Sawy">
+    <div class="user-info">
+      <h3>Coun. Youssef El-Sawy</h3>
+      <span class="location">New Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$90/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 89 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior expert in international family law. Specialized in cross-border divorce, international child abduction cases, and foreign judgment enforcement.</p>
+  <div class="tags">
+    <span>International Law</span>
+    <span>Family Disputes</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="divorce" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=22" class="avatar" alt="Coun. Mariam Hassan">
+    <div class="user-info">
+      <h3>Coun. Mariam Hassan</h3>
+      <span class="location">Sheraton, Cairo</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 53 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Professional Family Mediator helping couples reach amicable settlements. Specialized in drafting out-of-court agreements for custody and assets.</p>
+  <div class="tags">
+    <span>Mediation</span>
+    <span>Settlements</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="inheritance" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar" alt="Coun. Mahmoud Hegazi">
+    <div class="user-info">
+      <h3>Coun. Mahmoud Hegazi</h3>
+      <span class="location">Nasr City, Cairo</span>
+      <div class="stats">
+        <span class="price">$50/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 44 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Specialist in legal guardianship and asset management for minors. Expert in handling cases before the Prosecution of Minors and securing inheritance rights.</p>
+  <div class="tags">
+    <span>Guardianship</span>
+    <span>Minors' Rights</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+ <div class="up-card hidden-card" data-skill="custody" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar" alt="Coun. Sara El-Ghandour">
+    <div class="user-info">
+      <h3>Coun. Sara El-Ghandour</h3>
+      <span class="location">Assiut, Egypt</span>
+      <div class="stats">
+        <span class="price">$30/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 12 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Focused on family status documentation and paternity lawsuits. Dedicated to helping families navigate complex legal procedures for civil registration.</p>
+  <div class="tags">
+    <span>Paternity Law</span>
+    <span>Family Status</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="divorce" data-level="senior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=59" class="avatar" alt="Coun. Ahmed El-Deeb">
+    <div class="user-info">
+      <h3>Coun. Ahmed El-Deeb</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$65/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 95 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior attorney specializing in marital rights and visitation enforcement. Expert in handling complex family litigation and achieving fair court orders for parents.</p>
+  <div class="tags">
+    <span>Visitation Rights</span>
+    <span>Marital Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="alimony" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=32" class="avatar" alt="Coun. Nadia">
+    <div class="user-info">
+      <h3>Coun. Nadia Ezzat</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 58 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Senior expert in complex alimony, child support cases, and financial settlements within family courts.</p>
+  <div class="tags">
+    <span>Alimony</span>
+    <span>Family Finance</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="divorce" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Coun. Laila">
+    <div class="user-info">
+      <h3>Coun. Laila Youssef</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 41 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏛️ Specialized in divorce cases, including Khul' and separation, with a high success rate in swift legal settlements.</p>
+  <div class="tags">
+    <span>Divorce</span>
+    <span>Khul' Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="custody" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Coun. Mostafa">
+    <div class="user-info">
+      <h3>Coun. Mostafa Radi</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$25/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 19 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Passionate juvenile defense and child custody advocate, focusing on the best interests of the children in legal disputes.</p>
+  <div class="tags">
+    <span>Custody</span>
+    <span>Junior Law</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Family Lawyers</button>
+      </div>
+
+    </section>
+  </div>
+<section class="why-section">
+    <h2>Why hire Family Lawyers from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Absolute Privacy</h4>
+        <p>We understand the sensitivity of family matters; your data and consultations are strictly confidential.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Compassionate Experts</h4>
+        <p>Connect with lawyers who combine legal strength with a supportive approach for your family's well-being.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Transparent Fees</h4>
+        <p>Access high-quality legal support with clear pricing that suits your personal financial situation.</p>
+      </div>
+    </div>
+</section>
+
+<section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Select your case category</div>
+      <div class="step">2️⃣ Book a private consultation</div>
+      <div class="step">3️⃣ Resolve your family matter</div>
+    </div>
+</section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How are family law fees determined?</summary>
+      <p>Fees are based on the case type and complexity. You can book an initial consultation at a fixed rate, or agree on a total fee for full representation in court.</p>
+    </details>
+
+    <details>
+      <summary>Can I get a legal consultation for inheritance division?</summary>
+      <p>Yes, we have specialized inheritance lawyers who can provide Sharia-compliant calculations and help resolve estate disputes through mediation or court.</p>
+    </details>
+</section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+<script src="family.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fraud Analysts| TaskHunt</title>
+  <link rel="stylesheet" href="Fraud.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../Home.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="title-banner">
+  <div class="container">
+    <span class="category-path">Legal |</span>
+    <h1 class="main-title">Fraud Analysts</h1>
+</div>
+  </section>
+  
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+      <option value="all">All Specialties</option>
+      <option value="cyber">Cyber Fraud & Hacking</option>
+      <option value="financial">Financial Audit & AML</option>
+      <option value="identity">Identity Theft</option>
+      <option value="forgery">Document Forgery</option>
+    </select>
+
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior Analyst</option>
+      <option value="mid">Mid-Level Investigator</option>
+      <option value="senior">Senior Forensic Expert</option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $60</option>
+      <option value="mid">$60 – $100</option>
+      <option value="high">Above $100</option>
+    </select>
+
+    <button id="applyFilter">Apply Filter</button>
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#">Change Management Specialists</a></li>
+    <li><a href="#">Employee Engagement Specialists</a></li>
+    <li><a href="#">Facilitators</a></li>
+    <li><a href="#">Interviewers</a></li>
+    <li><a href="#">Leadership Development Specialists</a></li>
+    <li><a href="#">QHSE Specialists</a></li>
+    <li><a href="#">SCORM Specialists</a></li>
+    <li><a href="#">Technical Recruiters</a></li>
+
+    <li><a href="#">Curriculum Developers</a></li>
+    <li><a href="#">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-skill="financial" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Dr. Omar El-Saeed">
+    <div class="user-info">
+      <h3>Dr. Omar El-Saeed</h3>
+      <span class="location">Dubai / Cairo</span>
+      <div class="stats">
+        <span class="price">$120/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 142 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔍 Senior Forensic Auditor and AML Specialist. Expert in tracing hidden assets, detecting corporate embezzlement, and investigating complex financial fraud.</p>
+  <div class="tags">
+    <span>Anti-Money Laundering</span>
+    <span>Forensic Audit</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-skill="cyber" data-level="mid" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=33" class="avatar" alt="Eng. Laila Farouk">
+    <div class="user-info">
+      <h3>Eng. Laila Farouk</h3>
+      <span class="location">Smart Village, Giza</span>
+      <div class="stats">
+        <span class="price">$105/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 87 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Cyber Fraud Investigator specializing in digital forensics and online payment security. Expert in recovering compromised accounts and investigating phishing attacks.</p>
+  <div class="tags">
+    <span>Cyber Forensics</span>
+    <span>Phishing Expert</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="identity" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=53" class="avatar" alt="Coun. Sherif Hamad">
+    <div class="user-info">
+      <h3>Coun. Sherif Hamad</h3>
+      <span class="location">Maadi, Cairo</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 56 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🆔 Identity Theft Specialist. I help individuals and businesses recover from data breaches, resolve impersonation cases, and implement advanced identity protection protocols.</p>
+  <div class="tags">
+    <span>Identity Protection</span>
+    <span>Fraud Recovery</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 4 -->
+   <div class="up-card" data-skill="financial" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=100&h=100" class="avatar" alt="Dr. Sarah Kamel">
+    <div class="user-info">
+      <h3>Dr. Sarah Kamel</h3>
+      <span class="location">Sheikh Zayed, Giza</span>
+      <div class="stats">
+        <span class="price">$110/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 94 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Insurance Fraud Investigator & Risk Auditor. Specialized in detecting fraudulent medical claims and staged accident reports for major insurance providers.</p>
+  <div class="tags">
+    <span>Insurance Fraud</span>
+    <span>Risk Audit</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 5 -->
+  <div class="up-card" data-skill="financial" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=18" class="avatar" alt="Analyst Tarek Zaid">
+    <div class="user-info">
+      <h3>Analyst Tarek Zaid</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 28 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💳 Junior Fraud Analyst focused on transaction monitoring and credit card fraud detection. Specialist in identifying suspicious patterns and securing e-commerce gateways.</p>
+  <div class="tags">
+    <span>Card Fraud</span>
+    <span>Pattern Analysis</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="financial" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Coun. Nadia Mansour">
+    <div class="user-info">
+      <h3>Coun. Nadia Mansour</h3>
+      <span class="location">Zamalek, Cairo</span>
+      <div class="stats">
+        <span class="price">$130/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 115 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔍 Corporate Fraud Investigator & Legal Consultant. Expert in internal theft, bribery investigations, and due diligence for high-stakes business mergers.</p>
+  <div class="tags">
+    <span>Internal Audit</span>
+    <span>Anti-Bribery</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 7 (NEW) -->
+<div class="up-card hidden-card" data-skill="financial" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar" alt="Coun. Kareem Fahmy">
+    <div class="user-info">
+      <h3>Coun. Kareem Fahmy</h3>
+      <span class="location">Heliopolis, Cairo</span>
+      <div class="stats">
+        <span class="price">$80/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 42 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚖️ Insurance Fraud Specialist. Expert in investigating fraudulent claims, staged accidents, and medical insurance scams with a proven track record of asset recovery.</p>
+  <div class="tags">
+    <span>Insurance Fraud</span>
+    <span>Claim Investigation</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="cyber" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=60" class="avatar" alt="Eng. Adam El-Gawad">
+    <div class="user-info">
+      <h3>Eng. Adam El-Gawad</h3>
+      <span class="location">Remote / Global</span>
+      <div class="stats">
+        <span class="price">$150/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 64 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌐 Crypto Fraud & Blockchain Investigator. Expert in tracing stolen cryptocurrency, analyzing smart contract vulnerabilities, and recovering funds from fraudulent ICOs.</p>
+  <div class="tags">
+    <span>Blockchain Forensics</span>
+    <span>Crypto Recovery</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="financial" data-level="senior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Coun. Mona Abdel-Aziz">
+    <div class="user-info">
+      <h3>Coun. Mona Abdel-Aziz</h3>
+      <span class="location">Fifth Settlement, Cairo</span>
+      <div class="stats">
+        <span class="price">$85/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 71 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏠 Real Estate Fraud Investigator. Specialized in uncovering title deed forgery, double-selling scams, and verifying land registration authenticity for investors.</p>
+  <div class="tags">
+    <span>Title Fraud</span>
+    <span>Real Estate Audit</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="identity" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=14" class="avatar" alt="Analyst Ramy Soliman">
+    <div class="user-info">
+      <h3>Analyst Ramy Soliman</h3>
+      <span class="location">Maadi, Cairo</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 39 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💼 Employment Fraud Investigator. Specialist in background check verification, detecting resume falsification, and investigating fraudulent recruitment schemes.</p>
+  <div class="tags">
+    <span>Background Checks</span>
+    <span>Recruitment Scams</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="financial" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar" alt="Coun. Youssef Mansour">
+    <div class="user-info">
+      <h3>Coun. Youssef Mansour</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$140/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 128 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💰 Certified AML Specialist. I provide deep-dive investigations into financial sources, compliance auditing, and legal protection against money laundering allegations.</p>
+  <div class="tags">
+    <span>AML Compliance</span>
+    <span>Financial Crime</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="financial" data-level="senior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=69" class="avatar" alt="Dr. Sameh El-Gohary">
+    <div class="user-info">
+      <h3>Dr. Sameh El-Gohary</h3>
+      <span class="location">Downtown, Cairo</span>
+      <div class="stats">
+        <span class="price">$90/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 112 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💎 Counterfeit Specialist. Expert in detecting fake currency, laboratory testing for precious metals, and verifying the authenticity of high-value luxury assets.</p>
+  <div class="tags">
+    <span>Counterfeit Detection</span>
+    <span>Asset Verification</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="forgery" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Dr. Adel">
+    <div class="user-info">
+      <h3>Dr. Adel Mansour</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$120/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 55 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔍 Expert in investigating insurance fraud, staged accidents, and false claims. Providing detailed forensic reports for insurance companies.</p>
+  <div class="tags">
+    <span>Insurance Fraud</span>
+    <span>Forensics</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="financial" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=15" class="avatar" alt="Mona">
+    <div class="user-info">
+      <h3>Analyst Mona Khalil</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$85/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 38 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💰 Certified AML (Anti-Money Laundering) specialist. Helping banks and financial institutions detect and report suspicious transactions.</p>
+  <div class="tags">
+    <span>AML</span>
+    <span>Financial Audit</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="identity" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar" alt="Omar">
+    <div class="user-info">
+      <h3>Analyst Omar Saeed</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 14 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Focused on identity theft recovery and personal data protection. Helping individual victims restore their digital identities safely.</p>
+  <div class="tags">
+    <span>Identity Theft</span>
+    <span>Data Protection</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Fraud Analysts</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire Fraud Analysts from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Certified Investigators</h4>
+        <p>Our analysts hold global certifications (like CFE & AML) and are vetted for extreme accuracy.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Advanced Forensics</h4>
+        <p>Access modern digital and financial tools to trace hidden assets and detect sophisticated scams.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Discreet Operations</h4>
+        <p>Investigations are handled with 100% discretion to protect your reputation and financial integrity.</p>
+      </div>
+    </div>
+</section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Submit your suspicious case</div>
+      <div class="step">2️⃣ Match with a forensic analyst</div>
+      <div class="step">3️⃣ Receive a detailed fraud report</div>
+    </div>
+</section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>Can these fraud reports be used in court?</summary>
+      <p>Yes, our senior analysts provide forensic reports and evidence documentation that can support your legal position in litigation or police reports.</p>
+    </details>
+
+    <details>
+      <summary>How do you trace stolen cryptocurrency or digital funds?</summary>
+      <p>We use advanced blockchain forensics and transaction mapping tools to track the movement of funds across wallets and exchanges globally.</p>
+    </details>
+
+</section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+<script src="Fraud.js"></script>
+
+</body>
+</html>

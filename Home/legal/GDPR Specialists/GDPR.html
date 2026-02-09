@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GDPR Specialists | TaskHunt</title>
+  <link rel="stylesheet" href="GDPR.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../Home.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="title-banner">
+  <div class="container">
+    <span class="category-path">Legal |</span>
+    <h1 class="main-title">GDPR Specialists</h1>
+</div>
+  </section>
+  
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+      <option value="all">All Privacy Skills</option>
+      <option value="compliance">GDPR & Regulatory Compliance</option>
+      <option value="audit">Data Protection Audits</option>
+      <option value="dpo">External DPO Services</option>
+      <option value="training">Privacy Training & Culture</option>
+    </select>
+
+    <select id="levelFilter">
+      <option value="all">Expertise Level</option>
+      <option value="junior">junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior </option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $150</option>
+      <option value="mid">$150 – $250</option>
+      <option value="high">Above $250</option>
+    </select>
+    <button id="applyFilter">Apply Filter</button>
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#">Change Management Specialists</a></li>
+    <li><a href="#">Employee Engagement Specialists</a></li>
+    <li><a href="#">Facilitators</a></li>
+    <li><a href="#">Interviewers</a></li>
+    <li><a href="#">Leadership Development Specialists</a></li>
+    <li><a href="#">QHSE Specialists</a></li>
+    <li><a href="#">SCORM Specialists</a></li>
+    <li><a href="#">Technical Recruiters</a></li>
+
+    <li><a href="#">Curriculum Developers</a></li>
+    <li><a href="#">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-skill="compliance" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=32" class="avatar" alt="Dr. Elena Rossi">
+    <div class="user-info">
+      <h3>Dr. Elena Rossi</h3>
+      <span class="location">Milan / Remote</span>
+      <div class="stats">
+        <span class="price">$160/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 112 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🇪🇺 Senior Data Privacy Strategist & CIPP/E Expert. Specializing in full-scale GDPR implementation, international data transfer agreements (SCCs), and regulatory representation.</p>
+  <div class="tags">
+    <span>GDPR Strategy</span>
+    <span>Global Compliance</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-skill="audit" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=17" class="avatar" alt="Eng. Marc Nielsen">
+    <div class="user-info">
+      <h3>Eng. Marc Nielsen</h3>
+      <span class="location">Copenhagen, Denmark</span>
+      <div class="stats">
+        <span class="price">$95/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 64 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💻 Technical Privacy Architect. Expert in "Privacy by Design" implementation, Cookie Consent management, and end-to-end data encryption for SaaS platforms.</p>
+  <div class="tags">
+    <span>Cookie Compliance</span>
+    <span>Encryption</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="dpo" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Adv. Julian Thorne">
+    <div class="user-info">
+      <h3>Adv. Julian Thorne</h3>
+      <span class="location">Berlin, Germany</span>
+      <div class="stats">
+        <span class="price">$130/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 82 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Virtual Data Protection Officer (vDPO). Providing ongoing regulatory oversight, managing Subject Access Requests (SARs), and acting as a liaison with Data Protection Authorities.</p>
+  <div class="tags">
+    <span>Virtual DPO</span>
+    <span>Data Rights</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 4 -->
+   <div class="up-card" data-skill="audit" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Sophia Van der Berg">
+    <div class="user-info">
+      <h3>Sophia Van der Berg</h3>
+      <span class="location">Amsterdam, Netherlands</span>
+      <div class="stats">
+        <span class="price">$300/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 47 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📊 DPIA Specialist. Expert in conducting Data Protection Impact Assessments for AI projects, cloud migrations, and high-risk data processing activities.</p>
+  <div class="tags">
+    <span>Data Auditrs</span>
+    <span>Risk Assessment</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 5 -->
+  <div class="up-card" data-skill="training" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=5" class="avatar" alt="Liam O'Connor">
+    <div class="user-info">
+      <h3>Liam O'Connor</h3>
+      <span class="location">Dublin, Ireland</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 53 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🎓 Privacy Awareness Trainer. Specialist in building a "Privacy-First" culture through employee workshops, phishing simulations, and GDPR compliance handbooks.</p>
+  <div class="tags">
+    <span>Staff Training</span>
+    <span>Privacy Culture</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="compliance" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar" alt="Coun. Beatrice Dupont">
+    <div class="user-info">
+      <h3>Coun. Beatrice Dupont</h3>
+      <span class="location">Paris, France</span>
+      <div class="stats">
+        <span class="price">$155/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 89 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚨 Data Breach & Crisis Manager. Expert in 72-hour regulatory notifications, breach impact mitigation, and legal defense against GDPR non-compliance fines.</p>
+  <div class="tags">
+    <span>Incident Response</span>
+    <span>Crisis Legal</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 7 (NEW) -->
+<div class="up-card hidden-card" data-skill="compliance" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=49" class="avatar" alt="Thomas Weber">
+    <div class="user-info">
+      <h3>Thomas Weber</h3>
+      <span class="location">Vienna, Austria</span>
+      <div class="stats">
+        <span class="price">$90/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 37 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📣 AdTech Privacy Specialist. Expert in GDPR-compliant marketing tracking, Facebook Pixel auditing, and building sustainable first-party data strategies.</p>
+  <div class="tags">
+    <span>Marketing Privacy</span>
+    <span>AdTech Audit</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="compliance" data-level="junior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=33" class="avatar" alt="Dr. Hannah Fischer">
+    <div class="user-info">
+      <h3>Dr. Hannah Fischer</h3>
+      <span class="location">Zurich, Switzerland</span>
+      <div class="stats">
+        <span class="price">$170/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 62 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏥 Medical Data Privacy Expert. Specialized in GDPR for healthcare providers, HIPAA cross-compliance, and securing sensitive patient biometric data.</p>
+  <div class="tags">
+    <span>Healthcare GDPR</span>
+    <span>Biometric Security</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="dpo" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Alexandre Dubois">
+    <div class="user-info">
+      <h3>Alexandre Dubois</h3>
+      <span class="location">Lyon, France</span>
+      <div class="stats">
+        <span class="price">$125/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 75 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🤖 Privacy Tech Integrator. Expert in implementing OneTrust and TrustArc platforms to automate data mapping, consent management, and compliance reporting.</p>
+  <div class="tags">
+    <span>Privacy Automation</span>
+    <span>OneTrust Expert</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="compliance" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=22" class="avatar" alt="Marta Kovacs">
+    <div class="user-info">
+      <h3>Marta Kovacs</h3>
+      <span class="location">Budapest, Hungary</span>
+      <div class="stats">
+        <span class="price">$50/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 142 stores</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛒 E-commerce Compliance Expert. Specialized in GDPR for Shopify & WooCommerce, setting up legal checkouts, and managing international customer data flow.</p>
+  <div class="tags">
+    <span>E-commerce Law</span>
+    <span>Shopify GDPR</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="audit" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Lukas Weber">
+    <div class="user-info">
+      <h3>Lukas Weber</h3>
+      <span class="location">Frankfurt, Germany</span>
+      <div class="stats">
+        <span class="price">$150/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 88 projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">☁️ Cloud Compliance Architect. Expert in securing multi-cloud environments, ensuring GDPR sovereignty in AWS/Azure, and drafting Data Processing Agreements (DPAs).</p>
+  <div class="tags">
+    <span>Data Audit</span>
+    <span>DPA Drafting</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="compliance" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=38" class="avatar" alt="Dr. Sofia Conti">
+    <div class="user-info">
+      <h3>Dr. Sofia Conti</h3>
+      <span class="location">Rome, Italy</span>
+      <div class="stats">
+        <span class="price">$185/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 42 AI Audits</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🤖 AI Governance & Privacy Expert. Specialized in the EU AI Act compliance, ethical data training sets, and mitigating privacy risks in Large Language Models (LLMs).</p>
+  <div class="tags">
+    <span>AI Compliance</span>
+    <span>Data Ethics</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="compliance" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=12" class="avatar" alt="Dr. Zeyad">
+    <div class="user-info">
+      <h3>Dr. Zeyad Mansour</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$155/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 48 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Senior Data Protection Officer (DPO) specializing in large-scale GDPR implementation and cross-border data transfer legalities.</p>
+  <div class="tags">
+    <span>DPO</span>
+    <span>Compliance</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="audit" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=5" class="avatar" alt="Eng. Salma">
+    <div class="user-info">
+      <h3>Analyst Salma Ahmed</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$95/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 31 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔍 Specialist in technical data audits, privacy by design, and assessing security measures for GDPR-compliant software development.</p>
+  <div class="tags">
+    <span>Data Audit</span>
+    <span>Privacy</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="training" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Ahmed">
+    <div class="user-info">
+      <h3>Analyst Ahmed Fawzy</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 12 cases</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📄 Focused on drafting privacy policies, cookie consents, and data processing agreements (DPAs) for small businesses and startups.</p>
+  <div class="tags">
+    <span>Policy Drafting</span>
+    <span>Junior</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more GDPR Specialists</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire GDPR Specialists from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Avoid Heavy Fines</h4>
+        <p>Stay compliant with EU regulations to avoid penalties that can reach up to €20M or 4% of global turnover.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Privacy by Design</h4>
+        <p>Our experts integrate data protection directly into your products, building trust with your global customers.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Global Expertise</h4>
+        <p>Access certified DPOs and legal tech consultants familiar with GDPR, CCPA, and international data laws.</p>
+      </div>
+    </div>
+</section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Gap Analysis & Risk Assessment</div>
+      <div class="step">2️⃣ Match with a Certified DPO</div>
+      <div class="step">3️⃣ Implementation & Compliance Certification</div>
+    </div>
+</section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>Does my company need GDPR compliance if we are based outside Europe?</summary>
+      <p>Yes. GDPR applies to any business, regardless of location, that processes the personal data of individuals located in the EU. If you have European users or customers, you must comply.</p>
+    </details>
+
+    <details>
+      <summary>How can a GDPR specialist help avoid the 4% global turnover fine?</summary>
+      <p>Specialists conduct Gap Analysis, implement data mapping, and set up incident response plans. These proactive steps demonstrate "good faith" to authorities and can significantly reduce or eliminate potential penalties.</p>
+    </details>
+</section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+<script src="GDPR.js"></script>
+
+</body>
+</html>
