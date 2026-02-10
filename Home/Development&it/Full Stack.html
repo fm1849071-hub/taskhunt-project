@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>DevOps Engineers | TaskHunt</title>
+    <title>Full Stack Engineers | TaskHunt</title>
+
 
 
 
@@ -653,23 +654,25 @@
     <section class="hero-title">
         <h2>Development & IT</h2>
         <span class="hero-divider">|</span>
-        <h1>DevOps Engineers</h1>
+        <h1>Full Stack Engineers</h1>
     </section>
 
 
+
     <!-- FILTER BAR -->
-    <section class="filter-bar">
-        <div class="filter-container">
-            <select id="skillFilter">
-                <option value="all">All Skills</option>
-                <option value="docker">Docker</option>
-                <option value="kubernetes">Kubernetes</option>
-                <option value="ci">CI/CD</option>
-                <option value="aws">AWS</option>
-                <option value="azure">Azure</option>
-                <option value="terraform">Terraform</option>
-                <option value="linux">Linux</option>
-            </select>
+    <select id="skillFilter">
+        <option value="all">All Skills</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="react">React</option>
+        <option value="node">Node.js</option>
+        <option value="php">PHP</option>
+        <option value="laravel">Laravel</option>
+        <option value="python">Python</option>
+        <option value="django">Django</option>
+        <option value="sql">SQL</option>
+    </select>
 
 
 
@@ -677,23 +680,23 @@
 
 
 
-            <select id="levelFilter">
-                <option value="all">Experience Level</option>
-                <option value="junior">Junior</option>
-                <option value="mid">Mid</option>
-                <option value="senior">Senior</option>
-            </select>
+    <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior</option>
+        <option value="mid">Mid</option>
+        <option value="senior">Senior</option>
+    </select>
 
-            <select id="priceFilter">
-                <option value="all">Hourly Rate</option>
-                <option value="low">Under $25</option>
-                <option value="mid">$25 – $30</option>
-                <option value="high">Above $30</option>
-            </select>
+    <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $30</option>
+        <option value="high">Above $30</option>
+    </select>
 
-            <button id="applyFilter">Apply Filter</button>
+    <button id="applyFilter">Apply Filter</button>
 
-        </div>
+    </div>
     </section>
 
     <div class="page-layout">
@@ -889,291 +892,293 @@
         <section class="cards-wrapper">
 
             <div class="cards-grid">
-
                 <!-- CARD 1 -->
-                <div class="up-card" data-skill="html css javascript react node mysql" data-level="senior">
+                <div class="up-card" data-skill="html css javascript react node sql" data-level="senior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=11" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=21" class="avatar">
                         <div class="user-info">
-                            <h3>Ahmed K.</h3>
+                            <h3>Ahmed S.</h3>
                             <span class="location">Cairo, Egypt</span>
                             <div class="stats">
                                 <span class="price">$45/hr</span>
                                 <span class="rating">⭐ 4.9</span>
-                                <span class="jobs">💼 60 jobs</span>
+                                <span class="jobs">💼 72 jobs</span>
                             </div>
                         </div>
                     </div>
                     <p class="description">💻 Senior Full Stack Engineer (React & Node.js).</p>
-                    <div class="tags"><span>React</span><span>Node.js</span><span>MySQL</span></div>
+                    <div class="tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Node.js</span>
+                    </div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="up-card" data-skill="html css javascript php laravel mysql" data-level="mid">
+                <div class="up-card" data-skill="html css javascript php laravel sql" data-level="mid">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=12" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=22" class="avatar">
                         <div class="user-info">
-                            <h3>Omar S.</h3>
+                            <h3>Mohamed R.</h3>
                             <span class="location">Giza, Egypt</span>
                             <div class="stats">
                                 <span class="price">$30/hr</span>
                                 <span class="rating">⭐ 4.8</span>
-                                <span class="jobs">💼 42 jobs</span>
+                                <span class="jobs">💼 40 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">⚙️ Full Stack Developer (Laravel).</p>
-                    <div class="tags"><span>PHP</span><span>Laravel</span><span>MySQL</span></div>
+                    <p class="description">⚙️ Full Stack PHP & Laravel Developer.</p>
+                    <div class="tags"><span>PHP</span><span>Laravel</span><span>JavaScript</span><span>SQL</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 3 -->
-                <div class="up-card" data-skill="html css javascript react firebase" data-level="junior">
+                <div class="up-card" data-skill="html css javascript react python django" data-level="junior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=13" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=23" class="avatar">
                         <div class="user-info">
                             <h3>Youssef M.</h3>
                             <span class="location">Minya, Egypt</span>
                             <div class="stats">
                                 <span class="price">$22/hr</span>
                                 <span class="rating">⭐ 4.6</span>
-                                <span class="jobs">💼 20 jobs</span>
+                                <span class="jobs">💼 18 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🚀 Junior Full Stack Developer (React).</p>
-                    <div class="tags"><span>HTML</span><span>CSS</span><span>React</span></div>
+                    <p class="description">🚀 Junior Full Stack (React & Django).</p>
+                    <div class="tags"><span>React</span><span>Python</span><span>Django</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 4 -->
-                <div class="up-card" data-skill="html css javascript angular dotnet sql" data-level="senior">
+                <div class="up-card" data-skill="html css javascript react next node" data-level="senior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=14" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=24" class="avatar">
                         <div class="user-info">
-                            <h3>Mostafa H.</h3>
+                            <h3>Omar A.</h3>
                             <span class="location">Alexandria, Egypt</span>
                             <div class="stats">
                                 <span class="price">$48/hr</span>
-                                <span class="rating">⭐ 4.9</span>
-                                <span class="jobs">💼 55 jobs</span>
+                                <span class="rating">⭐ 5.0</span>
+                                <span class="jobs">💼 65 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🏗️ Full Stack Engineer (.NET & Angular).</p>
-                    <div class="tags"><span>.NET</span><span>Angular</span><span>SQL</span></div>
+                    <p class="description">🔥 Next.js & Node Full Stack Architect.</p>
+                    <div class="tags"><span>React</span><span>Next.js</span><span>Node.js</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 5 -->
-                <div class="up-card" data-skill="html css javascript vue node mongo" data-level="mid">
+                <div class="up-card" data-skill="html css javascript vue node sql" data-level="mid">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=15" class="avatar">
-                        <div class="user-info">
-                            <h3>Karim A.</h3>
-                            <span class="location">Cairo, Egypt</span>
-                            <div class="stats">
-                                <span class="price">$29/hr</span>
-                                <span class="rating">⭐ 4.7</span>
-                                <span class="jobs">💼 33 jobs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="description">🌐 Full Stack Developer (Vue & Node).</p>
-                    <div class="tags"><span>Vue</span><span>Node.js</span><span>MongoDB</span></div>
-                    <a href="#" class="profile-btn">See profile</a>
-                </div>
-
-                <!-- CARD 6 -->
-                <div class="up-card" data-skill="html css javascript react nextjs" data-level="junior">
-                    <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=16" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=25" class="avatar">
                         <div class="user-info">
                             <h3>Hassan R.</h3>
                             <span class="location">Fayoum, Egypt</span>
                             <div class="stats">
-                                <span class="price">$21/hr</span>
-                                <span class="rating">⭐ 4.5</span>
-                                <span class="jobs">💼 17 jobs</span>
+                                <span class="price">$28/hr</span>
+                                <span class="rating">⭐ 4.7</span>
+                                <span class="jobs">💼 29 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🧪 Junior Full Stack (Next.js).</p>
-                    <div class="tags"><span>Next.js</span><span>React</span><span>CSS</span></div>
+                    <p class="description">🧩 Vue.js & Node Full Stack Developer.</p>
+                    <div class="tags"><span>Vue.js</span><span>Node.js</span><span>SQL</span></div>
+                    <a href="#" class="profile-btn">See profile</a>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="up-card" data-skill="html css javascript react firebase" data-level="junior">
+                    <div class="card-header">
+                        <img src="https://i.pravatar.cc/100?img=26" class="avatar">
+                        <div class="user-info">
+                            <h3>Mahmoud N.</h3>
+                            <span class="location">Beni Suef, Egypt</span>
+                            <div class="stats">
+                                <span class="price">$20/hr</span>
+                                <span class="rating">⭐ 4.5</span>
+                                <span class="jobs">💼 15 jobs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="description">⚡ Frontend + Firebase Full Stack.</p>
+                    <div class="tags"><span>React</span><span>Firebase</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 7 -->
                 <div class="up-card" data-skill="html css javascript node express mongo" data-level="mid">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=17" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=27" class="avatar">
                         <div class="user-info">
                             <h3>Saad M.</h3>
                             <span class="location">Sohag, Egypt</span>
                             <div class="stats">
-                                <span class="price">$28/hr</span>
+                                <span class="price">$31/hr</span>
                                 <span class="rating">⭐ 4.7</span>
-                                <span class="jobs">💼 26 jobs</span>
+                                <span class="jobs">💼 34 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">⚡ Backend-focused Full Stack Engineer.</p>
+                    <p class="description">🌐 MERN Stack Developer.</p>
                     <div class="tags"><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 8 -->
-                <div class="up-card" data-skill="html css javascript react node postgresql" data-level="senior">
+                <div class="up-card" data-skill="html css javascript react sql" data-level="senior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=18" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=28" class="avatar">
                         <div class="user-info">
                             <h3>Adel F.</h3>
                             <span class="location">Cairo, Egypt</span>
                             <div class="stats">
                                 <span class="price">$44/hr</span>
-                                <span class="rating">⭐ 4.8</span>
-                                <span class="jobs">💼 47 jobs</span>
+                                <span class="rating">⭐ 4.9</span>
+                                <span class="jobs">💼 58 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🔄 Full Stack Architect.</p>
-                    <div class="tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div>
+                    <p class="description">🏗️ Scalable Web Applications Expert.</p>
+                    <div class="tags"><span>React</span><span>SQL</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 9 -->
-                <div class="up-card" data-skill="html css javascript php wordpress" data-level="mid">
+                <div class="up-card" data-skill="html css javascript python django sql" data-level="senior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=19" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=29" class="avatar">
                         <div class="user-info">
                             <h3>Islam H.</h3>
                             <span class="location">Tanta, Egypt</span>
                             <div class="stats">
-                                <span class="price">$27/hr</span>
-                                <span class="rating">⭐ 4.6</span>
-                                <span class="jobs">💼 38 jobs</span>
+                                <span class="price">$46/hr</span>
+                                <span class="rating">⭐ 5.0</span>
+                                <span class="jobs">💼 70 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🧩 WordPress Full Stack Developer.</p>
-                    <div class="tags"><span>PHP</span><span>WordPress</span><span>MySQL</span></div>
+                    <p class="description">🐍 Python Django Full Stack Lead.</p>
+                    <div class="tags"><span>Python</span><span>Django</span><span>SQL</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 10 -->
-                <div class="up-card" data-skill="html css javascript react node" data-level="junior">
+                <div class="up-card" data-skill="html css javascript react node" data-level="mid">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=20" class="avatar">
-                        <div class="user-info">
-                            <h3>Mahmoud N.</h3>
-                            <span class="location">Beni Suef, Egypt</span>
-                            <div class="stats">
-                                <span class="price">$20/hr</span>
-                                <span class="rating">⭐ 4.4</span>
-                                <span class="jobs">💼 14 jobs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="description">👨‍💻 Entry-level Full Stack Developer.</p>
-                    <div class="tags"><span>JavaScript</span><span>React</span><span>Node</span></div>
-                    <a href="#" class="profile-btn">See profile</a>
-                </div>
-
-                <!-- CARD 11 -->
-                <div class="up-card" data-skill="html css javascript react dotnet sql" data-level="senior">
-                    <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=21" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=30" class="avatar">
                         <div class="user-info">
                             <h3>Amr T.</h3>
                             <span class="location">Aswan, Egypt</span>
                             <div class="stats">
-                                <span class="price">$46/hr</span>
-                                <span class="rating">⭐ 4.9</span>
-                                <span class="jobs">💼 52 jobs</span>
+                                <span class="price">$29/hr</span>
+                                <span class="rating">⭐ 4.8</span>
+                                <span class="jobs">💼 33 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🏆 Enterprise Full Stack Engineer.</p>
-                    <div class="tags"><span>.NET</span><span>React</span><span>SQL</span></div>
+                    <p class="description">⚡ Modern React & Node Apps.</p>
+                    <div class="tags"><span>React</span><span>Node.js</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
-                <!-- CARD 12 -->
-                <div class="up-card" data-skill="html css javascript angular node" data-level="mid">
+                <!-- CARD 11 -->
+                <div class="up-card" data-skill="html css javascript php sql" data-level="junior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=22" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=31" class="avatar">
                         <div class="user-info">
                             <h3>Karim S.</h3>
                             <span class="location">Cairo, Egypt</span>
                             <div class="stats">
-                                <span class="price">$31/hr</span>
-                                <span class="rating">⭐ 4.8</span>
-                                <span class="jobs">💼 29 jobs</span>
+                                <span class="price">$21/hr</span>
+                                <span class="rating">⭐ 4.6</span>
+                                <span class="jobs">💼 17 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🔧 Angular Full Stack Developer.</p>
-                    <div class="tags"><span>Angular</span><span>Node.js</span><span>MongoDB</span></div>
+                    <p class="description">📘 Junior PHP Full Stack Developer.</p>
+                    <div class="tags"><span>PHP</span><span>SQL</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
-                <!-- CARD 13 -->
-                <div class="up-card" data-skill="html css javascript react firebase" data-level="mid">
+                <!-- CARD 12 -->
+                <div class="up-card" data-skill="html css javascript node sql" data-level="mid">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=23" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=32" class="avatar">
                         <div class="user-info">
                             <h3>Fady M.</h3>
                             <span class="location">Mansoura, Egypt</span>
                             <div class="stats">
-                                <span class="price">$26/hr</span>
+                                <span class="price">$27/hr</span>
                                 <span class="rating">⭐ 4.6</span>
                                 <span class="jobs">💼 24 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🔥 Full Stack Firebase Specialist.</p>
-                    <div class="tags"><span>React</span><span>Firebase</span><span>JavaScript</span></div>
+                    <p class="description">🔗 API & Backend Focused Full Stack.</p>
+                    <div class="tags"><span>Node.js</span><span>SQL</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
-                <!-- CARD 14 -->
-                <div class="up-card" data-skill="html css javascript php laravel" data-level="junior">
+                <!-- CARD 13 -->
+                <div class="up-card" data-skill="html css javascript react" data-level="junior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=24" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=33" class="avatar">
                         <div class="user-info">
                             <h3>Mohab S.</h3>
                             <span class="location">Ismailia, Egypt</span>
                             <div class="stats">
                                 <span class="price">$23/hr</span>
-                                <span class="rating">⭐ 4.6</span>
-                                <span class="jobs">💼 18 jobs</span>
+                                <span class="rating">⭐ 4.5</span>
+                                <span class="jobs">💼 19 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">📘 Junior Laravel Full Stack.</p>
-                    <div class="tags"><span>Laravel</span><span>PHP</span><span>MySQL</span></div>
+                    <p class="description">🎨 Frontend-focused Full Stack.</p>
+                    <div class="tags"><span>React</span><span>JavaScript</span></div>
+                    <a href="#" class="profile-btn">See profile</a>
+                </div>
+
+                <!-- CARD 14 -->
+                <div class="up-card" data-skill="html css javascript laravel sql" data-level="mid">
+                    <div class="card-header">
+                        <img src="https://i.pravatar.cc/100?img=34" class="avatar">
+                        <div class="user-info">
+                            <h3>Mostafa H.</h3>
+                            <span class="location">Minya, Egypt</span>
+                            <div class="stats">
+                                <span class="price">$26/hr</span>
+                                <span class="rating">⭐ 4.6</span>
+                                <span class="jobs">💼 21 jobs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="description">🧠 Laravel Web Applications.</p>
+                    <div class="tags"><span>Laravel</span><span>SQL</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
 
                 <!-- CARD 15 -->
-                <div class="up-card" data-skill="html css javascript react node aws" data-level="senior">
+                <div class="up-card" data-skill="html css javascript react node sql" data-level="senior">
                     <div class="card-header">
-                        <img src="https://i.pravatar.cc/100?img=25" class="avatar">
+                        <img src="https://i.pravatar.cc/100?img=35" class="avatar">
                         <div class="user-info">
                             <h3>Yehia A.</h3>
                             <span class="location">Damietta, Egypt</span>
                             <div class="stats">
                                 <span class="price">$47/hr</span>
                                 <span class="rating">⭐ 4.9</span>
-                                <span class="jobs">💼 50 jobs</span>
+                                <span class="jobs">💼 61 jobs</span>
                             </div>
                         </div>
                     </div>
-                    <p class="description">🚀 Cloud-ready Full Stack Engineer.</p>
-                    <div class="tags"><span>React</span><span>Node.js</span><span>AWS</span></div>
+                    <p class="description">🚀 Enterprise Full Stack Engineer.</p>
+                    <div class="tags"><span>React</span><span>Node.js</span><span>SQL</span></div>
                     <a href="#" class="profile-btn">See profile</a>
                 </div>
+
 
 
             </div>
@@ -1182,7 +1187,7 @@
 
             <!-- LOAD MORE BUTTON -->
             <div class="load-more">
-                <button id="loadMoreBtn">Load more DevOps Engineers</button>
+                <button id="loadMoreBtn">Load more Full Stack Engineers</button>
 
 
             </div>
@@ -1190,60 +1195,54 @@
         </section>
     </div>
     <section class="why-section">
-        <h2>Why hire Full Stack Engineers from TaskHunt?</h2>
+    <h2>Why hire Full Stack Engineers from TaskHunt?</h2>
 
-        <div class="why-grid">
-            <div class="why-box">
-                <h4>✔ Verified Full Stack Experts</h4>
-                <p>All Full Stack engineers are carefully vetted and tested on real-world frontend, backend, and
-                    database projects.</p>
-            </div>
-
-            <div class="why-box">
-                <h4>✔ End-to-End Development</h4>
-                <p>From responsive UI to powerful backend logic and databases, get complete web solutions in one place.
-                </p>
-            </div>
-
-            <div class="why-box">
-                <h4>✔ Secure & Transparent Payments</h4>
-                <p>Pay only when your web application features and milestones are delivered successfully.</p>
-            </div>
+    <div class="why-grid">
+        <div class="why-box">
+            <h4>✔ Verified Full Stack Experts</h4>
+            <p>All full stack engineers are carefully vetted and tested on real-world frontend and backend development tasks.</p>
         </div>
-    </section>
 
-    <section class="steps">
-        <h2>How it works</h2>
-
-        <div class="steps-grid">
-            <div class="step">1️⃣ Describe your website or application requirements</div>
-            <div class="step">2️⃣ Choose the right Full Stack engineer</div>
-            <div class="step">3️⃣ Build, test, and launch your web application</div>
+        <div class="why-box">
+            <h4>✔ End-to-End Development</h4>
+            <p>From responsive user interfaces to secure backend systems and APIs — everything built seamlessly.</p>
         </div>
-    </section>
 
-    <section class="faq">
-        <h2>Frequently Asked Questions</h2>
+        <div class="why-box">
+            <h4>✔ Scalable & High-Performance Apps</h4>
+            <p>Build fast, scalable, and maintainable web applications using modern frameworks and best practices.</p>
+        </div>
+    </div>
+</section>
 
-        <details>
-            <summary>How much does it cost to hire a Full Stack engineer?</summary>
-            <p>Pricing depends on project complexity, tech stack, features required, and the engineer’s experience
-                level.</p>
-        </details>
+<section class="steps">
+    <h2>How it works</h2>
 
-        <details>
-            <summary>What services do Full Stack engineers provide?</summary>
-            <p>Frontend & backend development, REST APIs, databases, authentication, dashboards, and deployment.</p>
-        </details>
+    <div class="steps-grid">
+        <div class="step">1️⃣ Describe your website or application requirements</div>
+        <div class="step">2️⃣ Choose the right Full Stack engineer</div>
+        <div class="step">3️⃣ Build, launch, and scale your product</div>
+    </div>
+</section>
 
-        <details>
-            <summary>Which technologies can Full Stack engineers work with?</summary>
-            <p>HTML, CSS, JavaScript, React, Angular, Vue, Node.js, PHP, Laravel, .NET, MySQL, MongoDB, PostgreSQL, and
-                cloud platforms.</p>
-        </details>
-    </section>
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
 
+    <details>
+        <summary>What does a Full Stack engineer do?</summary>
+        <p>Full stack engineers develop complete web applications, including frontend, backend, APIs, databases, and integrations.</p>
+    </details>
 
+    <details>
+        <summary>How much does it cost to hire a Full Stack engineer?</summary>
+        <p>Pricing depends on the engineer’s experience level, tech stack, project scope, and complexity.</p>
+    </details>
+
+    <details>
+        <summary>Which technologies do Full Stack engineers work with?</summary>
+        <p>HTML, CSS, JavaScript, React, Vue, Angular, Node.js, PHP, Laravel, Python, Django, SQL, MongoDB, and more.</p>
+    </details>
+</section>
 
 
     <footer class="footer">
