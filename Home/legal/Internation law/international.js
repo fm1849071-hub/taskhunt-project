@@ -1,70 +1,77 @@
-const cards = document.querySelectorAll(".up-card");
-const loadMoreBtn = document.getElementById("loadMoreBtn");
+document.addEventListener("DOMContentLoaded", () => {
 
-const skillFilter = document.getElementById("skillFilter");
-const levelFilter = document.getElementById("levelFilter"); // هيفعل ده
-const priceFilter = document.getElementById("priceFilter");
-const applyFilterBtn = document.getElementById("applyFilter");
+  const cards = Array.from(document.querySelectorAll(".up-card"));
 
-let visible = 6;
-const step = 6;
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-/* ===== HELPERS ===== */
-function getFilteredCards() {
-  return [...cards].filter(card => {
-    // 1. Skill Filter
-    const skillValue = skillFilter.value;
-    const cardSkill = card.dataset.skill || "";
-    const skillMatch = (skillValue === "all" || cardSkill === skillValue);
+  let visible = 6;
+  const step = 6;
 
-    // 2. Level Filter (إضافة الفلتر ده عشان يشتغل)
-    const levelValue = levelFilter.value;
-    const cardLevel = card.dataset.level || "";
-    const levelMatch = (levelValue === "all" || cardLevel === levelValue);
+  function getFilteredCards() {
+    return cards.filter(card => {
 
-    // 3. Price Filter (تعديل الأرقام لتناسب القانون الدولي)
-    let priceMatch = true;
-    const priceText = card.querySelector(".price")?.innerText || "";
-    const price = parseInt(priceText.replace(/\D/g, ""));
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
 
-    if (priceFilter.value === "low") priceMatch = price < 100;
-    if (priceFilter.value === "mid") priceMatch = (price >= 100 && price <= 250);
-    if (priceFilter.value === "high") priceMatch = price > 250;
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
 
-    return skillMatch && levelMatch && priceMatch;
-  });
-}
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
 
-function updateCards() {
-  const filteredCards = getFilteredCards();
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
 
-  // إخفاء الكل أولاً
-  cards.forEach(card => card.classList.add("hidden-card"));
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
 
-  // إظهار المفلتر فقط بناءً على المتاح
-  filteredCards.slice(0, visible).forEach(card => {
-    card.classList.remove("hidden-card");
-  });
+      if (priceFilter.value === "low")  priceMatch = price < 100;
+      if (priceFilter.value === "mid")  priceMatch = price >= 100 && price <= 250;
+      if (priceFilter.value === "high") priceMatch = price > 250;
 
-  // تحديث زرار Load More
-  if (loadMoreBtn) {
-    loadMoreBtn.style.display = (visible < filteredCards.length) ? "block" : "none";
+      return skillMatch && levelMatch && priceMatch;
+    });
   }
-}
 
-/* ===== APPLY FILTER BUTTON ===== */
-applyFilterBtn.addEventListener("click", () => {
-  visible = 6; // نرجعها 6 عند كل ضغطة فلتر جديدة عشان يبدأ من الأول
-  updateCards();
-});
+  function updateCards() {
+    const filteredCards = getFilteredCards();
 
-/* ===== LOAD MORE ===== */
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener("click", () => {
-    visible += step;
-    updateCards();
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
   });
-}
 
-/* ===== INIT ===== */
-updateCards();
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+
+
+});

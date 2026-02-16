@@ -1,72 +1,77 @@
-const cards = document.querySelectorAll(".up-card");
-const loadMoreBtn = document.getElementById("loadMoreBtn");
-const skillFilter = document.getElementById("skillFilter");
-const levelFilter = document.getElementById("levelFilter");
-const priceFilter = document.getElementById("priceFilter");
-const applyFilterBtn = document.getElementById("applyFilter");
+document.addEventListener("DOMContentLoaded", () => {
 
-let visible = 6; // البداية دايماً 6
-const step = 6;
+  const cards = Array.from(document.querySelectorAll(".up-card"));
 
-function getFilteredCards() {
-  return [...cards].filter(card => {
-    // 1. فلتر التخصص
-    const skillValue = skillFilter.value;
-    const cardSkill = card.dataset.skill || "";
-    const skillMatch = (skillValue === "all" || cardSkill === skillValue);
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-    // 2. فلتر المستوى (تأكدي من حالة الأحرف Junior)
-    const levelValue = levelFilter.value;
-    const cardLevel = card.dataset.level || "";
-    const levelMatch = (levelValue === "all" || cardLevel === levelValue);
+  let visible = 6;
+  const step = 6;
 
-    // 3. فلتر السعر
-    let priceMatch = true;
-    const priceText = card.querySelector(".price")?.innerText || "";
-    const price = parseInt(priceText.replace(/\D/g, ""));
+  function getFilteredCards() {
+    return cards.filter(card => {
 
-    if (priceFilter.value === "low") priceMatch = price < 150;
-    else if (priceFilter.value === "mid") priceMatch = (price >= 150 && price <= 250);
-    else if (priceFilter.value === "high") priceMatch = price > 250;
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
 
-    return skillMatch && levelMatch && priceMatch;
-  });
-}
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
 
-function updateCards(isFilterAction = false) {
-  const filteredCards = getFilteredCards();
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
 
-  // لو داس على الفلتر، بنعرض كل النتائج المتاحة (الـ 15 كلهم لو مطابقين)
-  if (isFilterAction) {
-    visible = filteredCards.length;
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 150;
+      if (priceFilter.value === "mid")  priceMatch = price >= 150 && price <= 250;
+      if (priceFilter.value === "high") priceMatch = price > 250;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
   }
 
-  // إخفاء الكل
-  cards.forEach(card => card.classList.add("hidden-card"));
+  function updateCards() {
+    const filteredCards = getFilteredCards();
 
-  // إظهار المفلتر بناءً على المسموح
-  filteredCards.slice(0, visible).forEach(card => {
-    card.classList.remove("hidden-card");
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
   });
 
-  // إخفاء الزرار لو مفيش زيادة
+  /* LOAD MORE */
   if (loadMoreBtn) {
-    loadMoreBtn.style.display = (visible < filteredCards.length) ? "block" : "none";
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
   }
-}
 
-// عند الضغط على Apply Filter
-applyFilterBtn.addEventListener("click", () => {
-  updateCards(true); // نرسل true عشان يفتح كل الكروت المطابقة
+  updateCards();
+
+
+
 });
-
-// عند الضغط على Load More
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener("click", () => {
-    visible += step; // يزود 6 في كل مرة (6 -> 12 -> 18)
-    updateCards(false); 
-  });
-}
-
-// البداية
-updateCards(false);

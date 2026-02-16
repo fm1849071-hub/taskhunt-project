@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data Entry Specialists | TaskHunt</title>
+
+  <style>
+    :root {
+      --c1: #00A8FF;
+      --c2: #0090E0;
+      --c3: #0077B8;
+      --c4: #051923;
+      --c5: #ffffff;
+      --white: #ffffff;
+      --light: #e6f7ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f9fafb;
+      color: #111827;
+    }
+
+
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 30px;
+      height: 50px;
+      background: var(--white);
+    }
+
+    .logo img {
+      height: 180px;
+      align-items: center;
+      padding-bottom: 25px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: var(--c4);
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--c1);
+    }
+
+
+    .hero-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 60px 6% 30px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hero-title h2 {
+      font-size: 20px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .hero-title h1 {
+      font-size: 38px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .hero-divider {
+      font-size: 26px;
+      color: #9ca3af;
+    }
+
+    /* موبايل */
+    @media (max-width:768px) {
+      .hero-title {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .hero-divider {
+        display: none;
+      }
+    }
+
+
+    /* ===== FILTER BAR ===== */
+    .filter-bar {
+      width: 100%;
+      padding: 25px 6%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .filter-container {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .filter-container select {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+    }
+
+    .filter-container select:focus {
+      border-color: #005b84;
+    }
+
+    .filter-container button {
+      padding: 12px 26px;
+      background: #005b84;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-container button:hover {
+      background: #004666;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .filter-container {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .filter-container select,
+      .filter-container button {
+        width: 100%;
+      }
+    }
+
+    /* PAGE LAYOUT */
+    .page-layout {
+      display: flex;
+      gap: 30px;
+      padding: 40px 6% 10px;
+      /* ✅ قلل المسافة تحت */
+      align-items: flex-start;
+    }
+
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      border-right: 1px solid #e5e7eb;
+      padding-right: 20px;
+    }
+
+    /* TITLE */
+    .sidebar h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* CATEGORY */
+    .category {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    /* CATEGORY BUTTON */
+    .category-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: #111827;
+    }
+
+    .category-btn:hover {
+      color: #005b84;
+    }
+
+    /* ARROW */
+    .arrow {
+      transition: transform 0.3s ease;
+      font-size: 18px;
+    }
+
+    /* SUB CATEGORIES */
+    .sub-categories {
+      list-style: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      padding-left: 10px;
+      margin-bottom: 6px;
+    }
+
+    /* LINK INSIDE LIST */
+    .sub-categories li a {
+      display: block;
+      font-size: 13px;
+      padding: 6px 0;
+      color: #374151;
+      text-decoration: none;
+      transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .sub-categories li a:hover {
+      color: #005b84;
+      padding-left: 6px;
+    }
+
+    /* ACTIVE STATE */
+    .category.active .sub-categories {
+      max-height: 900px;
+      /* كبير عشان كل القوائم */
+    }
+
+    .category.active .arrow {
+      transform: rotate(90deg);
+    }
+
+
+    /* CARDS */
+    .cards-wrapper {
+      flex: 1;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .up-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.25s;
+    }
+
+    .up-card:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .card-header {
+      display: flex;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+    }
+
+    .user-info h3 {
+      font-size: 15px;
+    }
+
+    .location {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .stats {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .rating {
+      color: #f59e0b;
+    }
+
+    .description {
+      font-size: 13px;
+      margin: 12px 0;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .tags span {
+      background: #f3f4f6;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+    }
+
+    .profile-btn {
+      margin-top: auto;
+      text-align: center;
+      padding: 12px;
+      background: #005b84;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 20px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+
+
+
+    /* Footer */
+    .footer {
+      background: #051923;
+      padding: 40px 20px;
+      font-family: "Cairo", sans-serif;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-col {
+      width: 30%;
+      min-width: 250px;
+    }
+
+    .footer-col h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .footer-col p {
+      color: #ddd;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin: 10px 0;
+    }
+
+    .footer-col ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      opacity: 0.8;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-col {
+        width: 100%;
+      }
+    }
+
+    .load-more {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+
+    .load-more button {
+      padding: 14px 40px;
+      background: #005b84;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+
+    }
+
+    .load-more button:hover {
+      background: #004666;
+    }
+
+    /* ===== WHY SECTION ===== */
+    .why-section {
+      padding: 70px 6%;
+
+      text-align: center;
+    }
+
+    .why-section h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .why-box {
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .why-box h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #005b84;
+    }
+
+    .why-box p {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps {
+      padding: 70px 6%;
+      text-align: center;
+    }
+
+    .steps h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 30px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 70px 6%;
+
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .faq details {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+    }
+
+    .faq summary {
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .faq p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .hidden-card {
+      display: none;
+    }
+
+
+    /* ===== CTA ===== */
+    .cta {
+      padding: 80px 6%;
+      text-align: center;
+
+      color: #ffffff;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 25px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 45px;
+      background: #005b84;
+      color: #ffffff;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+
+      .why-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../cont/contactus.html">Contact</a></li>
+      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
+      <li><a href="../../login/Login_page.html">Login</a></li>
+    </ul>
+  </nav>
+  <section class="hero-title">
+    <h2>Finance & Accounting</h2>
+    <span class="hero-divider">|</span>
+    <h1> Data Entry Specialists </h1>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <div class="filter-container">
+
+      <select id="skillFilter">
+        <option value="all">All Skills</option>
+        <option value="kotlin">Kotlin</option>
+        <option value="java">Java</option>
+        <option value="firebase">Firebase</option>
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior</option>
+        <option value="mid">Mid</option>
+        <option value="senior">Senior</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $30</option>
+        <option value="high">Above $30</option>
+      </select>
+
+      <button id="applyFilter">Apply Filter</button>
+
+    </div>
+  </section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+          <li><a href="#">LLM Specialist</a></li>
+          <li><a href="#">Computer Vision</a></li>
+          <li><a href="#">Python Automation</a></li>
+          <li><a href="#">AI Scripting</a></li>
+          <li><a href="#">Data Scraping & Cleaning</a></li>
+          <li><a href="#">Sentiment Analysis</a></li>
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href=".net.html">.NET Developers</a></li>
+          <li><a href="ai.html">AI Developers</a></li>
+          <li><a href="android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="#">Game Developers</a></li>
+          <li><a href="#">Golang Developers</a></li>
+          <li><a href="#">Java Developers</a></li>
+          <li><a href="#">Laravel Developers</a></li>
+          <li><a href="#">Minecraft Developers</a></li>
+          <li><a href="#">Next.js Developers</a></li>
+          <li><a href="#">Odoo Developers</a></li>
+          <li><a href="#">PHP Developers</a></li>
+          <li><a href="#">Product Managers</a></li>
+          <li><a href="#">QA Engineers</a></li>
+          <li><a href="#">React.js Developers</a></li>
+          <li><a href="#">Salesforce Developers</a></li>
+          <li><a href="#">WooCommerce Developers</a></li>
+          <li><a href="#">Zapier Automation Developers</a></li>
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+          <li><a href="#">Creative Strategy</a></li>
+          <li><a href="#">Layout Design</a></li>
+          <li><a href="#">Brand Guidelines</a></li>
+          <li><a href="#">Interaction Design</a></li>
+          <li><a href="#">Social Media Imagery</a></li>
+          <li><a href="#">Banner Ad Design</a></li>
+          <li><a href="#">Brand Identity & Guidelines</a></li>
+          <li><a href="#">User Interface Design</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+          <li><a href="#">Ghostwriters</a></li>
+          <li><a href="#">HubSpot Experts</a></li>
+          <li><a href="#">Market Researchers</a></li>
+          <li><a href="#">Marketing Managers</a></li>
+          <li><a href="#">Pitch Deck Writers</a></li>
+          <li><a href="#">Public Relations Specialists</a></li>
+          <li><a href="#">Sales Directors</a></li>
+          <li><a href="#">Sales Engineers</a></li>
+          <li><a href="#">Sales Representatives</a></li>
+          <li><a href="#">SEO Experts</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">T-Shirt Designers</a></li>
+          <li><a href="#">TikTok Experts</a></li>
+          <li><a href="#">Virtual Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+          <li><a href="#">Headline Writers</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Medical Writers</a></li>
+          <li><a href="#">Proposal Writers</a></li>
+          <li><a href="#">Report Writers</a></li>
+          <li><a href="#">Research Paper Writers</a></li>
+          <li><a href="#">Resume Writers</a></li>
+          <li><a href="#">Scientific Writers</a></li>
+          <li><a href="#">Screenwriters</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">Speech Writers</a></li>
+          <li><a href="#">Technical Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="#">Microsoft Outlook Specialists</a></li>
+          <li><a href="#">Microsoft Word Experts</a></li>
+          <li><a href="#">Personal Assistants</a></li>
+          <li><a href="#">PowerPoint Experts</a></li>
+          <li><a href="#">Project Managers</a></li>
+          <li><a href="#">Proofreaders</a></li>
+          <li><a href="#">Recruiters</a></li>
+          <li><a href="#">Research Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="Business Analysts.html">Business Analysts</a></li>
+          <li><a href="Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="Forex Traders.html">Forex Traders</a></li>
+          <li><a href="Management Consultants.html">Management Consultants</a></li>
+          <li><a href="Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- HR & Training -->
+      <div class="category">
+        <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+          <li><a href="#">Landscape Architects</a></li>
+          <li><a href="#">Polymer Engineers</a></li>
+          <li><a href="#">Architectural Rendering Specialists</a></li>
+          <li><a href="#">Design Engineers</a></li>
+          <li><a href="#">Fire Protection Engineers</a></li>
+          <li><a href="#">Infrastructure Engineers</a></li>
+          <li><a href="#">Naval Architects</a></li>
+          <li><a href="#">Structural Engineers</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+
+
+    <section class="cards-wrapper">
+
+      <div class="cards-grid">
+
+        <!-- CARD 1 -->
+        <div class="up-card" data-skill="kotlin">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=21" class="avatar">
+            <div class="user-info">
+              <h3>Coliate M.</h3>
+              <span class="location">Austtralia, Canberra</span>
+              <div class="stats">
+                <span class="price">$38/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 26 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">💼 Top Rated Virtual & Fractional CFO with 10+ years supporting SaaS</p>
+          <div class="tags"><span>Financial Forecasting</span><span>Business Consulting</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card hidden-card" data-skill="java">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=22" class="avatar">
+            <div class="user-info">
+              <h3>Mohamed E.</h3>
+              <span class="location">Sharm El Sheikh, Egypt</span>
+              <div class="stats">
+                <span class="price">$28/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 18 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">Top 1% Expert-Vetted Crowdfunding Expert $20M+ Raised Get 
+            30 minutes with a top 1% Expert Vetted Crowdfunding Strategist.</p>
+          <div class="tags"><span>Bookkeeping</span><span>Accounting</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card hidden-card" data-skill="kotlin mvvm">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=23" class="avatar">
+            <div class="user-info">
+              <h3>Presfon D.</h3>
+              <span class="location">Giza, Egypt</span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 14 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">Crowdfunding consultation is a valuable investment
+          that significantly improves the chances of running a successful crowdfunding campaign.</p>
+          <div class="tags"><span>Business Consulting</span><span>Legal Documents & contracts</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card hidden-card" data-skill="firebase">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=24" class="avatar">
+            <div class="user-info">
+              <h3>Milinoy K.</h3>
+              <span class="location">Austtralia, Canberra</span>
+              <div class="stats">
+                <span class="price">$50/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 21 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">✅With extensive experience in product design and 3D printing
+          technology,I offer specialized consultation services to help you succeed.</p>
+          <div class="tags"><span>General Legal Advice</span><span>Accounting</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card hidden-card" data-skill="firebase maps">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=25" class="avatar">
+            <div class="user-info">
+              <h3>Avyan E.</h3>
+              <span class="location"> Switzerland, Zurich</span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 29 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">Expert Consultation for Your eBook, Ghostwriting, 
+          Publishing, Crowdfunding & Grant Funding.</p>
+          <div class="tags"><span>Legal Application</span><span>Financial Analysis</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card hidden-card" data-skill="java sqlite">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=26" class="avatar">
+            <div class="user-info">
+              <h3>Lialy K.</h3>
+              <span class="location"> El Damam, Saudi Arabia</span>
+              <div class="stats">
+                <span class="price">$40/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 15 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">I have 10 years of experience working
+          in the television and film industry.</p>
+          <div class="tags"><span>Legal Disputes</span><span>Business Consulting</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 7 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=27" class="avatar">
+            <div class="user-info">
+              <h3>Mayada M.</h3>
+              <span class="location">Fayoum, Egypt</span>
+              <div class="stats">
+                <span class="price">$27/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 23 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">I've directed commercials with Fortune 500 companies and 
+          have had success with films I've produced as well as screenplays that I've written.</p>
+          <div class="tags"><span>General Legal Advice</span><span>Accounting</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 8 (NEW) -->
+        <div class="up-card hidden-card" data-skill="uiux material">
+          <div class="card-header">
+            <img src="2.jpg" class="avatar">
+            <div class="user-info">
+              <h3>Zakarya Z.</h3>
+              <span class="location"> Morocco, Rabat </span>
+              <div class="stats">
+                <span class="price">$42/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 18 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">Driven by a passion for innovation and a commitment to ethics, 
+          I provide comprehensive consultations in:  Financial Analysis & Modeling, business planning</p>
+          <div class="tags"><span>Legal Application</span><span>Business Consulting</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 9 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin firebase">
+          <div class="card-header">
+            <img src="66.jpg" class="avatar">
+            <div class="user-info">
+              <h3>Mahmoud N.</h3>
+              <span class="location">Sohag, Egypt</span>
+              <div class="stats">
+                <span class="price">$29/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 20 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">I am a professional accountant with over 8 years
+          of experience in Accounting and Bookkeeping.</p>
+          <div class="tags"><span>Oracle NetSuite</span><span>Oracle NetSuite</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+        <!-- CARD 10 -->
+        <div class="up-card hidden-card" data-skill="kotlin clean-architecture">
+          <div class="card-header">
+            <img src="8.jpg" class="avatar">
+            <div class="user-info">
+              <h3>Adel F.</h3>
+              <span class="location">Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$31/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 22 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">👉Crowdfunding Potential Backer or Investor Communities: 
+          Collecting Backer or Investor Leads Connecting & Using of these Leads Risk of Backer or 
+          Investor Database.</p>
+          <div class="tags"><span>Finance</span><span>Financial Model</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="up-card hidden-card" data-skill="java api">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=31" class="avatar">
+            <div class="user-info">
+              <h3>Seren A.</h3>
+              <span class="location">Minya, Egypt</span>
+              <div class="stats">
+                <span class="price">$23/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 17 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">I am responsible for two mega hits on the platform, one which raised 
+          $500,000 and another that raised $250,000 </p>
+          <div class="tags"><span>Accountants Payable</span><span>Zoho Book</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="up-card hidden-card" data-skill="firebase uiux">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=32" class="avatar">
+            <div class="user-info">
+              <h3>Zahraa N.</h3>
+              <span class="location">Beni Suef, Egypt</span>
+              <div class="stats">
+                <span class="price">$27/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 24 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">I can consult on anything related to film/TV 
+          production, screenwriting, commercials, film business, and Kickstarter videos.</p>
+          <div class="tags"><span>Strategy</span><span>Management Consulting</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+      </div>
+
+
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Finance & Accounting Specialties</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire Financial & accountant Managers from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Verified Talent</h4>
+        <p>All Financial & accountant Managers are screened and tested.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Flexible Pricing</h4>
+        <p>Hourly or fixed-price projects that fit your budget.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Secure Payments</h4>
+        <p>Pay only when you’re satisfied with the work.</p>
+      </div>
+    </div>
+  </section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Post your job</div>
+      <div class="step">2️⃣ Choose your Financial or accountant Managers </div>
+      <div class="step">3️⃣ Start building your app</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How much does it cost to hire an Financial & accountant Manager?</summary>
+      <p>Prices depend on experience and project scope.</p>
+    </details>
+
+    <details>
+      <summary>Can I hire Financial & accountant Managers hourly?</summary>
+      <p>Yes, both hourly and fixed-price contracts are available.</p>
+    </details>
+  </section>
+
+
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+  <script>
+    const cards = document.querySelectorAll(".up-card");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    const skillFilter = document.getElementById("skillFilter");
+    const levelFilter = document.getElementById("levelFilter");
+    const priceFilter = document.getElementById("priceFilter");
+    const applyFilterBtn = document.getElementById("applyFilter");
+
+    let visible = 6;
+    const step = 6;
+
+    /* ===== HELPERS ===== */
+    function getFilteredCards() {
+      return [...cards].filter(card => {
+        const skills = card.dataset.skill || "";
+
+        /* SKILL FILTER */
+        const skillMatch =
+          skillFilter.value === "all" ||
+          skills.includes(skillFilter.value);
+
+        /* PRICE FILTER */
+        let priceMatch = true;
+        const priceText = card.querySelector(".price")?.innerText || "";
+        const price = parseInt(priceText.replace(/\D/g, ""));
+
+        if (priceFilter.value === "low") priceMatch = price < 25;
+        if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 30;
+        if (priceFilter.value === "high") priceMatch = price > 30;
+
+        return skillMatch && priceMatch;
+      });
+    }
+
+    function updateCards() {
+      const filteredCards = getFilteredCards();
+
+      cards.forEach(card => card.classList.add("hidden-card"));
+
+      filteredCards.slice(0, visible).forEach(card => {
+        card.classList.remove("hidden-card");
+      });
+
+      if (loadMoreBtn) {
+        loadMoreBtn.style.display =
+          visible < filteredCards.length ? "block" : "none";
+      }
+    }
+
+    /* ===== APPLY FILTER BUTTON ===== */
+    applyFilterBtn.addEventListener("click", () => {
+      visible = 12;
+      updateCards();
+    });
+
+    /* ===== LOAD MORE ===== */
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener("click", () => {
+        visible += step;
+        updateCards();
+      });
+    }
+
+    /* ===== INIT ===== */
+    updateCards();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HR Training | TaskHunt</title>
+
+  <style>
+    :root {
+      --c1: #00A8FF;
+      --c2: #0090E0;
+      --c3: #0077B8;
+      --c4: #051923;
+      --c5: #ffffff;
+      --white: #ffffff;
+      --light: #e6f7ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f9fafb;
+      color: #111827
+    }
+
+/* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 30px;
+      height: 50px;
+      background: var(--white);
+    }
+    .logo img{
+      height: 180px;
+      align-items: center;
+      padding-bottom: 25px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: var(--c4);
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: var(--c1);
+    }
+    /* BUTTONS */
+    .btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .primary {
+    background: var(--c3);
+    color: #fff;
+    }
+
+    
+
+
+    .hero-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 60px 6% 30px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hero-title h2 {
+      font-size: 20px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .hero-title h1 {
+      font-size: 38px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .hero-divider {
+      font-size: 26px;
+      color: #9ca3af;
+    }
+
+    /* موبايل */
+    @media (max-width:768px) {
+      .hero-title {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .hero-divider {
+        display: none;
+      }
+    }
+
+
+    /* ===== FILTER BAR ===== */
+    .filter-bar {
+      width: 100%;
+      padding: 25px 6%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .filter-container {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .filter-container select {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+    }
+
+    .filter-container select:focus {
+      border-color: #005b84;
+    }
+
+    .filter-container button {
+      padding: 12px 26px;
+      background: #005b84;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-container button:hover {
+      background: #004666;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .filter-container {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .filter-container select,
+      .filter-container button {
+        width: 100%;
+      }
+    }
+
+    /* PAGE LAYOUT */
+    .page-layout {
+      display: flex;
+      gap: 30px;
+      padding: 40px 6% 10px;
+      /* ✅ قلل المسافة تحت */
+      align-items: flex-start;
+    }
+
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      border-right: 1px solid #e5e7eb;
+      padding-right: 20px;
+    }
+
+    /* TITLE */
+    .sidebar h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* CATEGORY */
+    .category {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    /* CATEGORY BUTTON */
+    .category-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: #111827;
+    }
+
+    .category-btn:hover {
+      color: #005b84;
+    }
+
+    /* ARROW */
+    .arrow {
+      transition: transform 0.3s ease;
+      font-size: 18px;
+    }
+
+    /* SUB CATEGORIES */
+    .sub-categories {
+      list-style: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      padding-left: 10px;
+      margin-bottom: 6px;
+    }
+
+    /* LINK INSIDE LIST */
+    .sub-categories li a {
+      display: block;
+      font-size: 13px;
+      padding: 6px 0;
+      color: #374151;
+      text-decoration: none;
+      transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .sub-categories li a:hover {
+      color: #005b84;
+      padding-left: 6px;
+    }
+
+    /* ACTIVE STATE */
+    .category.active .sub-categories {
+      max-height: 900px;
+      /* كبير عشان كل القوائم */
+    }
+
+    .category.active .arrow {
+      transform: rotate(90deg);
+    }
+
+
+    /* CARDS */
+    .cards-wrapper {
+      flex: 1;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .up-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.25s;
+    }
+
+    .up-card:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .card-header {
+      display: flex;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+    }
+
+    .user-info h3 {
+      font-size: 15px;
+    }
+
+    .location {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .stats {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .rating {
+      color: #f59e0b;
+    }
+
+    .description {
+      font-size: 13px;
+      margin: 12px 0;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .tags span {
+      background: #f3f4f6;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+    }
+
+    .profile-btn {
+      margin-top: auto;
+      text-align: center;
+      padding: 12px;
+      background: #005b84;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 20px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+
+
+
+    /* Footer */
+    .footer {
+      background: #051923;
+      padding: 40px 20px;
+      font-family: "Cairo", sans-serif;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-col {
+      width: 30%;
+      min-width: 250px;
+    }
+
+    .footer-col h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .footer-col p {
+      color: #ddd;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin: 10px 0;
+    }
+
+    .footer-col ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      opacity: 0.8;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-col {
+        width: 100%;
+      }
+    }
+
+    .load-more {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+
+    .load-more button {
+      padding: 14px 40px;
+      background: #005b84;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+
+    }
+
+    .load-more button:hover {
+      background: #004666;
+    }
+
+    /* ===== WHY SECTION ===== */
+    .why-section {
+      padding: 70px 6%;
+
+      text-align: center;
+    }
+
+    .why-section h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .why-box {
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .why-box h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #005b84;
+    }
+
+    .why-box p {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps {
+      padding: 70px 6%;
+      text-align: center;
+    }
+
+    .steps h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 30px;
+      font-size: 18px;
+      font-weight: 600; 
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 70px 6%;
+
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .faq details {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+    }
+
+    .faq summary {
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .faq p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .hidden-card {
+      display: none;
+    }
+
+
+    /* ===== CTA ===== */
+    .cta {
+      padding: 80px 6%;
+      text-align: center;
+
+      color: #ffffff;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 25px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 45px;
+      background: #005b84;
+      color: #ffffff;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+
+      .why-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+ <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html" class="logo">
+      <img src="../images/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+      <li><a href="#">Find Work</a></li>
+      <li><a href="#">Hire Talent</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../contactus/contactus.html">Contact</a></li>
+      <li><a href="../../login/login.html">Login</a></li>
+      <li>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="hero-title">
+    <h2>HR & Training</h2>
+    <span class="hero-divider">|</span>
+    <h1>QHSE & Safety Experts</h1>
+  </section>
+ <!-- FILTER BAR -->
+ <section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+  <option value="all">All QHSE Skills</option>
+  <option value="iso">ISO Auditing</option>
+  <option value="safety">Occupational Safety</option>
+  <option value="environment">Environmental MGMT</option>
+</select>
+
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid-Level</option>
+      <option value="senior">Senior</option>
+    </select>
+
+   <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $25</option>
+      <option value="mid">$25 – $50</option>
+      <option value="high">Above $50</option>
+    </select>
+
+
+
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      <!-- Data & AI -->
+       <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+   <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+        </ul>
+      </div>
+
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="change-management.html">Change Management Specialists</a></li>
+    <li><a href="engagement.html">Employee Engagement Specialists</a></li>
+    <li><a href="facilitators.html">Facilitators</a></li>
+    <li><a href="interviewers.html">Interviewers</a></li>
+    <li><a href="leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="qhse.html">QHSE Specialists</a></li>
+    <li><a href="scorm.html">SCORM Specialists</a></li>
+    <li><a href="tech-recruitment.html">Technical Recruiters</a></li>
+
+    <li><a href="curriculum.html">Curriculum Developers</a></li>
+    <li><a href="employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+
+    <section class="cards-wrapper">
+
+    <div class="cards-grid">
+
+<!-- CARD 1 -->
+<div class="up-card" data-skill="safety" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=40" class="avatar">
+    <div class="user-info">
+      <h3>Osama A.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 26 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Expert in ISO 45001 and workplace hazard identification.</p>
+  <div class="tags"><span>Safety</span><span>Audit</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 2 -->
+<div class="up-card hidden-card" data-skill="iso" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar">
+    <div class="user-info">
+      <h3>Talal N.</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$28/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 18 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💎 Specialist in ISO 9001 Quality Management Systems (QMS).</p>
+  <div class="tags"><span>Quality</span><span>ISO</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 3 -->
+<div class="up-card hidden-card" data-skill="environment" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=42" class="avatar">
+    <div class="user-info">
+      <h3>Hind W.</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 14 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌿 Environmental consultant specializing in ISO 14001 compliance.</p>
+  <div class="tags"><span>Environment</span><span>Eco</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 4 -->
+<div class="up-card hidden-card" data-skill="safety" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=43" class="avatar">
+    <div class="user-info">
+      <h3>Sabah V.</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats">
+        <span class="price">$24/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 21 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔥 Certified Fire Safety Professional and emergency response trainer.</p>
+  <div class="tags"><span>Fire Safety</span><span>Risk</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 5 -->
+<div class="up-card hidden-card" data-skill="iso" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar">
+    <div class="user-info">
+      <h3>Yusra C.</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$30/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 29 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📊 Expert in Total Quality Management (TQM) and Six Sigma.</p>
+  <div class="tags"><span>Quality</span><span>Process</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 6 -->
+<div class="up-card hidden-card" data-skill="safety" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar">
+    <div class="user-info">
+      <h3>Islam Y.</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$20/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 15 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏗️ Construction site safety officer with 10+ years experience.</p>
+  <div class="tags"><span>Construction</span><span>HSE</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 7 -->
+<div class="up-card hidden-card" data-skill="environment" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=46" class="avatar">
+    <div class="user-info">
+      <h3>Taha K.</h3>
+      <span class="location">Fayoum, Egypt</span>
+      <div class="stats">
+        <span class="price">$27/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 23 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">♻️ Specialist in industrial waste management and sustainability.</p>
+  <div class="tags"><span>Waste</span><span>Green</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 8 -->
+<div class="up-card hidden-card" data-skill="iso" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar">
+    <div class="user-info">
+      <h3>Ehab T.</h3>
+      <span class="location">Asyut, Egypt</span>
+      <div class="stats">
+        <span class="price">$26/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 18 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📋 Lead Auditor for integrated management systems (IMS).</p>
+  <div class="tags"><span>IMS</span><span>Auditing</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 9 -->
+<div class="up-card hidden-card" data-skill="safety" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=48" class="avatar">
+    <div class="user-info">
+      <h3>Amalina R.</h3>
+      <span class="location">Sohag, Egypt</span>
+      <div class="stats">
+        <span class="price">$29/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 20 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧪 Expert in chemical safety and COSHH assessments.</p>
+  <div class="tags"><span>Chemicals</span><span>Safety</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 10 -->
+<div class="up-card hidden-card" data-skill="safety" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=49" class="avatar">
+    <div class="user-info">
+      <h3>Wedad F.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$31/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 22 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📉 Specialist in root cause analysis (RCA) for industrial accidents.</p>
+  <div class="tags"><span>Investigation </span><span>HSE</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="environment" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=50" class="avatar">
+    <div class="user-info">
+      <h3>Iman U.</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$23/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 17 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌊 Environmental impact assessment (EIA) specialist.</p>
+  <div class="tags"><span>EIA</span><span>Environment</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="safety" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=51" class="avatar">
+    <div class="user-info">
+      <h3>Nahed M.</h3>
+      <span class="location">Beni Suef, Egypt</span>
+      <div class="stats">
+        <span class="price">$27/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 24 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛠️ Expert in machine safeguarding and operational safety.</p>
+  <div class="tags"><span>Machinery</span><span>Safety</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="safety" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar">
+    <div class="user-info">
+      <h3>Salah V.</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$34/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 28 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏢 Corporate wellness and office ergonomics specialist.</p>
+  <div class="tags"><span>Ergonomics</span><span>Health</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="environment" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=53" class="avatar">
+    <div class="user-info">
+      <h3>Saber O.</h3>
+      <span class="location">Damietta, Egypt</span>
+      <div class="stats">
+        <span class="price">$26/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 19 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌍 Carbon footprint reduction and renewable energy consultant.</p>
+  <div class="tags"><span>Carbon </span><span>Energy</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="iso" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=54" class="avatar">
+    <div class="user-info">
+      <h3>Rami Z.</h3>
+      <span class="location">Luxor, Egypt</span>
+      <div class="stats">
+        <span class="price">$22/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 12 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔝 Quality Assurance lead for manufacturing and supply chain.</p>
+  <div class="tags"><span>QA</span><span>Supply Chain</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+
+
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more QHSE Experts</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+<h2>Why hire QHSE Specialists from TaskHunt?</h2>
+    <div class="why-grid">
+      <div class="why-box">
+      <h4>✔ Compliance & Standards</h4>
+        <p>Ensure your company meets ISO standards and local health and safety regulations perfectly.</p>
+      </div>
+
+      <div class="why-box">
+       <h4>✔ Risk Mitigation</h4>
+        <p>Our experts identify potential hazards before they become costly accidents or legal issues.</p>
+      </div>
+
+      <div class="why-box">
+     <h4>✔ Sustainable Quality</h4>
+        <p>Build an environmental and quality management system that improves efficiency and reputation.</p>
+      </div>
+    </div>
+  </section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Request a safety or quality audit</div>
+      <div class="step">2️⃣ Connect with certified QHSE auditors</div>
+      <div class="step">3️⃣ Secure your workplace standards</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>Do you provide ISO certification consultants?</summary>
+      <p>Yes, we have specialists for ISO 9001 (Quality), ISO 14001 (Environment), and ISO 45001 (Safety).</p>
+    </details>
+    <details>
+      <summary>Can they conduct on-site safety inspections?</summary>
+      <p>Absolutely. Many of our experts offer both remote consultancy and on-site auditing services.</p>
+    </details>
+    <details>
+      <summary>What industries do your QHSE experts cover?</summary>
+      <p>They cover oil & gas, construction, manufacturing, and corporate office environments.</p>
+    </details>
+  </section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
+
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+<!--footer-->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+</body>
+
+</html>

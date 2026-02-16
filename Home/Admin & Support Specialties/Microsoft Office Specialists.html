@@ -29,9 +29,7 @@
       color: #111827;
     }
 
-
-
-    /* NAVBAR */
+/* NAVBAR */
     nav {
       display: flex;
       justify-content: space-between;
@@ -40,30 +38,37 @@
       height: 50px;
       background: var(--white);
     }
-
-    .logo img {
+    .logo img{
       height: 180px;
       align-items: center;
       padding-bottom: 25px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 30px;
     }
-
     nav ul li a {
       color: var(--c4);
       text-decoration: none;
       font-size: 18px;
       transition: 0.3s;
     }
-
     nav ul li a:hover {
       color: var(--c1);
     }
+    /* BUTTONS */
+    .btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    }
 
+    .primary {
+    background: var(--c3);
+    color: #fff;
+    }
 
     .hero-title {
       display: flex;
@@ -635,20 +640,20 @@
 
 <body>
 
-  <!-- NAVBAR -->
+ <!-- NAVBAR -->
   <nav class="nav">
     <div class="logo">
-      <a href="../Home/home.html" class="logo">
-      <img src="images/logo.png" alt="Logo"></a>
+      <a href="../../Home/home.html" class="logo">
+      <img src="../images/logo.png" alt="Logo"></a>
     </div>
     <ul>
       <li><a href="#">Find Work</a></li>
       <li><a href="#">Hire Talent</a></li>
-      <li><a href="../about/about.html">About</a></li>
-      <li><a href="../contactus/contactus.html">Contact</a></li>
-      <li><a href="../login/login.html">Login</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../contactus/contactus.html">Contact</a></li>
+      <li><a href="../../login/login.html">Login</a></li>
       <li>
-        <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
       </li>
     </ul>
   </nav>
@@ -690,7 +695,7 @@
       <option value="high">Above $30</option>
     </select>
 
-    <button id="applyFilter">Apply Filter</button>
+
 
   </div>
 </section>
@@ -1168,14 +1173,7 @@
     </details>
 </section>
 
-  <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.classList.toggle("active");
-      });
-    });
-  </script>
-
+  
   <footer class="footer">
     <div class="footer-container">
 
@@ -1216,71 +1214,109 @@
     </div>
   </footer>
   <script>
-  const cards = document.querySelectorAll(".up-card");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
+document.addEventListener("DOMContentLoaded", function () {
 
-  const editorFilter = document.getElementById("editorTypeFilter");
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+  const typeFilter  = document.getElementById("editorTypeFilter");
+  const levelFilter = document.getElementById("levelFilter");
   const priceFilter = document.getElementById("priceFilter");
-  const applyFilterBtn = document.getElementById("applyFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
   let visible = 6;
   const step = 6;
 
-  /* ===== HELPERS ===== */
   function getFilteredCards() {
-    return [...cards].filter(card => {
 
-      /* EDITOR TYPE FILTER */
-      const editor = card.dataset.editor || "";
-      const editorMatch =
-        editorFilter.value === "all" ||
-        editor === editorFilter.value;
+    return cards.filter(function(card){
 
-      /* PRICE FILTER */
+      /* TYPE */
+      const cardType = (card.dataset.editor || "").toLowerCase();
+      const selectedType = typeFilter ? typeFilter.value.toLowerCase() : "all";
+      const typeMatch = selectedType === "all" || cardType === selectedType;
+
+      /* LEVEL */
+      const cardLevel = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter ? levelFilter.value.toLowerCase() : "all";
+      const levelMatch = selectedLevel === "all" || cardLevel === selectedLevel;
+
+      /* PRICE */
+      const priceText = card.querySelector(".price") ?
+                        card.querySelector(".price").innerText : "";
+
+      const price = parseInt(priceText.replace(/\D/g,'')) || 0;
+
       let priceMatch = true;
-      const priceText = card.querySelector(".price")?.innerText || "";
-      const price = parseInt(priceText.replace(/\D/g, ""));
 
-     if (priceFilter.value === "low") priceMatch = price < 25;
-     if (priceFilter.value === "mid") priceMatch = price >= 15 && price <= 30;
-    if (priceFilter.value === "high") priceMatch = price > 30;
+      if (priceFilter){
+        if (priceFilter.value === "low")  priceMatch = price < 25;
+        if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+        if (priceFilter.value === "high") priceMatch = price > 40;
+      }
 
+      return typeMatch && levelMatch && priceMatch;
 
-      return editorMatch && priceMatch;
     });
+
   }
 
-  function updateCards() {
-    const filteredCards = getFilteredCards();
+  function updateCards(){
 
-    cards.forEach(card => card.classList.add("hidden-card"));
+    const filtered = getFilteredCards();
 
-    filteredCards.slice(0, visible).forEach(card => {
+    cards.forEach(function(card){
+      card.classList.add("hidden-card");
+    });
+
+    filtered.slice(0, visible).forEach(function(card){
       card.classList.remove("hidden-card");
     });
 
-    if (loadMoreBtn) {
+    if (loadMoreBtn){
       loadMoreBtn.style.display =
-        visible < filteredCards.length ? "block" : "none";
+        visible < filtered.length ? "block" : "none";
     }
   }
 
-  /* ===== APPLY FILTER ===== */
-  applyFilterBtn.addEventListener("click", () => {
-    visible = 6;
-    updateCards();
+  /* FILTER CHANGE */
+  [typeFilter, levelFilter, priceFilter].forEach(function(filter){
+    if (!filter) return;
+    filter.addEventListener("change", function(){
+      visible = 6;
+      updateCards();
+    });
   });
 
-  /* ===== LOAD MORE ===== */
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
+  /* LOAD MORE */
+  if (loadMoreBtn){
+    loadMoreBtn.addEventListener("click", function(){
       visible += step;
       updateCards();
     });
   }
 
-  /* ===== INIT ===== */
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(function(btn){
+
+    btn.addEventListener("click", function(){
+
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(function(cat){
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+
+    });
+
+  });
+
+  /* INIT */
   updateCards();
+
+});
 </script>
 
 </body>

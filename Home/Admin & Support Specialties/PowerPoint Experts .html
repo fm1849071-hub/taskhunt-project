@@ -27,9 +27,7 @@
       color: #111827;
     }
 
-
-
-    /* NAVBAR */
+/* NAVBAR */
     nav {
       display: flex;
       justify-content: space-between;
@@ -38,30 +36,37 @@
       height: 50px;
       background: var(--white);
     }
-
-    .logo img {
+    .logo img{
       height: 180px;
       align-items: center;
       padding-bottom: 25px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 30px;
     }
-
     nav ul li a {
       color: var(--c4);
       text-decoration: none;
       font-size: 18px;
       transition: 0.3s;
     }
-
     nav ul li a:hover {
       color: var(--c1);
     }
+    /* BUTTONS */
+    .btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    }
 
+    .primary {
+    background: var(--c3);
+    color: #fff;
+    }
 
     .hero-title {
       display: flex;
@@ -632,21 +637,20 @@
 </head>
 
 <body>
-
-  <!-- NAVBAR -->
+<!-- NAVBAR -->
   <nav class="nav">
     <div class="logo">
-      <a href="../Home/home.html" class="logo">
-      <img src="images/logo.png" alt="Logo"></a>
+      <a href="../../Home/home.html" class="logo">
+      <img src="../images/logo.png" alt="Logo"></a>
     </div>
     <ul>
       <li><a href="#">Find Work</a></li>
       <li><a href="#">Hire Talent</a></li>
-      <li><a href="../about/about.html">About</a></li>
-      <li><a href="../contactus/contactus.html">Contact</a></li>
-      <li><a href="../login/login.html">Login</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../contactus/contactus.html">Contact</a></li>
+      <li><a href="../../login/login.html">Login</a></li>
       <li>
-        <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
       </li>
     </ul>
   </nav>
@@ -688,7 +692,7 @@
       <option value="high">Above $30</option>
     </select>
 
-    <button id="applyFilter">Apply Filter</button>
+    
 
   </div>
 </section>
@@ -1205,113 +1209,106 @@
       <p>© 2025 Task Hunt — All rights reserved</p>
     </div>
   </footer>
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* =========================
-     ELEMENTS
-  ========================= */
   const cards = Array.from(document.querySelectorAll(".up-card"));
+  const typeFilter  = document.getElementById("editorTypeFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-  const editorFilter = document.getElementById("editorTypeFilter");
-  const levelFilter  = document.getElementById("levelFilter");
-  const priceFilter  = document.getElementById("priceFilter");
-  const applyFilterBtn = document.getElementById("applyFilter");
-
-  /* =========================
-     SETTINGS
-  ========================= */
   let visible = 6;
   const step = 6;
 
-  /* =========================
-     FILTER LOGIC
-  ========================= */
-  function getFilteredCards() {
-    return cards.filter(card => {
+  function getFilteredCards(){
 
-      /* ===== TYPE FILTER ===== */
-      const editor = (card.dataset.editor || "").toLowerCase();
-      const editorValue = editorFilter.value.toLowerCase();
-      const editorMatch =
-        editorValue === "all" || editor === editorValue;
+    return cards.filter(function(card){
 
-      /* ===== LEVEL FILTER ===== */
-      const level = card.dataset.level || "";
-      const levelMatch =
-        levelFilter.value === "all" || level === levelFilter.value;
+      /* TYPE */
+      const cardType = (card.dataset.editor || "").toLowerCase();
+      const selectedType = typeFilter ? typeFilter.value.toLowerCase() : "all";
+      const typeMatch = selectedType === "all" || cardType === selectedType;
 
-      /* ===== PRICE FILTER ===== */
-      const priceText = card.querySelector(".price")?.innerText || "";
-      const price = parseInt(priceText.replace(/\D/g, ""));
-      if (isNaN(price)) return false;
+      /* LEVEL */
+      const cardLevel = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter ? levelFilter.value.toLowerCase() : "all";
+      const levelMatch = selectedLevel === "all" || cardLevel === selectedLevel;
+
+      /* PRICE */
+      const priceEl = card.querySelector(".price");
+      const priceText = priceEl ? priceEl.innerText : "";
+      const price = parseInt(priceText.replace(/\D/g,'')) || 0;
 
       let priceMatch = true;
-      if (priceFilter.value === "low")  priceMatch = price < 15;
-      if (priceFilter.value === "mid")  priceMatch = price >= 15 && price <= 30;
-      if (priceFilter.value === "high") priceMatch = price > 30;
 
-      return editorMatch && levelMatch && priceMatch;
+      if (priceFilter){
+        if (priceFilter.value === "low")  priceMatch = price < 25;
+        if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+        if (priceFilter.value === "high") priceMatch = price > 40;
+      }
+
+      return typeMatch && levelMatch && priceMatch;
+
     });
+
   }
 
-  /* =========================
-     UPDATE CARDS
-  ========================= */
-  function updateCards() {
-    const filteredCards = getFilteredCards();
+  function updateCards(){
 
-    cards.forEach(card => card.classList.add("hidden-card"));
+    const filtered = getFilteredCards();
 
-    filteredCards.slice(0, visible).forEach(card => {
+    cards.forEach(function(card){
+      card.classList.add("hidden-card");
+    });
+
+    filtered.slice(0, visible).forEach(function(card){
       card.classList.remove("hidden-card");
     });
 
-    if (loadMoreBtn) {
+    if (loadMoreBtn){
       loadMoreBtn.style.display =
-        visible < filteredCards.length ? "block" : "none";
+        visible < filtered.length ? "block" : "none";
     }
   }
 
-  /* =========================
-     APPLY FILTER
-  ========================= */
-  applyFilterBtn.addEventListener("click", function () {
-    visible = 6;
-    updateCards();
+  /* FILTER CHANGE */
+  [typeFilter, levelFilter, priceFilter].forEach(function(filter){
+    if (!filter) return;
+    filter.addEventListener("change", function(){
+      visible = 6;
+      updateCards();
+    });
   });
 
-  /* =========================
-     LOAD MORE
-  ========================= */
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", function () {
+  /* LOAD MORE */
+  if (loadMoreBtn){
+    loadMoreBtn.addEventListener("click", function(){
       visible += step;
       updateCards();
     });
   }
 
-  /* =========================
-     SIDEBAR ACCORDION
-  ========================= */
-  document.querySelectorAll(".category-btn").forEach(btn => {
-    btn.addEventListener("click", function () {
-      const currentCategory = btn.closest(".category");
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
 
-      document.querySelectorAll(".category").forEach(cat => {
-        if (cat !== currentCategory) {
-          cat.classList.remove("active");
-        }
+  categoryButtons.forEach(function(btn){
+
+    btn.addEventListener("click", function(){
+
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(function(cat){
+        if (cat !== category) cat.classList.remove("active");
       });
 
-      currentCategory.classList.toggle("active");
+      category.classList.toggle("active");
+
     });
+
   });
 
-  /* =========================
-     INIT
-  ========================= */
+  /* INIT */
   updateCards();
 
 });

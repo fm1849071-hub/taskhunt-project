@@ -1,67 +1,77 @@
-const cards = document.querySelectorAll(".up-card");
-const loadMoreBtn = document.getElementById("loadMoreBtn");
+document.addEventListener("DOMContentLoaded", () => {
 
-const skillFilter = document.getElementById("skillFilter");
-const levelFilter = document.getElementById("levelFilter");
-const priceFilter = document.getElementById("priceFilter");
-const applyFilterBtn = document.getElementById("applyFilter");
+  const cards = Array.from(document.querySelectorAll(".up-card"));
 
-let visible = 6;
-const step = 6;
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-/* ===== HELPERS ===== */
-function getFilteredCards() {
-  return [...cards].filter(card => {
-    // 1. فلتر التخصص (Skill)
-    const cardSkill = card.dataset.skill || "";
-    const skillMatch = (skillFilter.value === "all" || cardSkill === skillFilter.value);
+  let visible = 6;
+  const step = 6;
 
-    // 2. فلتر مستوى الخبرة (Level)
-    const cardLevel = card.dataset.level || "";
-    const levelMatch = (levelFilter.value === "all" || cardLevel === levelFilter.value);
+  function getFilteredCards() {
+    return cards.filter(card => {
 
-    // 3. فلتر السعر (متناسب مع أسعار المحامين الدوليين)
-    let priceMatch = true;
-    const priceText = card.querySelector(".price")?.innerText || "";
-    const price = parseInt(priceText.replace(/\D/g, ""));
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
 
-    if (priceFilter.value === "low") priceMatch = price < 50;
-    if (priceFilter.value === "mid") priceMatch = (price >= 50 && price <= 60);
-    if (priceFilter.value === "high") priceMatch = price > 60;
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
 
-    return skillMatch && levelMatch && priceMatch;
-  });
-}
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
 
-function updateCards() {
-  const filteredCards = getFilteredCards();
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
 
-  // إخفاء الكل
-  cards.forEach(card => card.classList.add("hidden-card"));
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
 
-  // إظهار المفلتر فقط
-  filteredCards.slice(0, visible).forEach(card => {
-    card.classList.remove("hidden-card");
-  });
+      if (priceFilter.value === "low")  priceMatch = price < 50;
+      if (priceFilter.value === "mid")  priceMatch = price >= 50 && price <= 60;
+      if (priceFilter.value === "high") priceMatch = price > 60;
 
-  // تحديث زرار التحميل
-  if (loadMoreBtn) {
-    loadMoreBtn.style.display = (visible < filteredCards.length) ? "block" : "none";
+      return skillMatch && levelMatch && priceMatch;
+    });
   }
-}
 
-/* ===== EVENTS ===== */
-applyFilterBtn.addEventListener("click", () => {
-  visible = 6; // نرجع للعدد الافتراضي عند الفلترة
-  updateCards();
-});
+  function updateCards() {
+    const filteredCards = getFilteredCards();
 
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener("click", () => {
-    visible += step;
-    updateCards();
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
   });
-}
 
-// تشغيل عند البداية
-updateCards();
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+
+
+});

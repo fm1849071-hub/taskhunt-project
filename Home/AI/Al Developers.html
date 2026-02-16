@@ -6,12 +6,12 @@
   <title>AI Developers | TaskHunt</title>
 
   <style>
-     :root {
+      :root {
       --c1: #00A8FF;
       --c2: #0090E0;
       --c3: #0077B8;
       --c4: #051923;
-      --c5: #ffffff;
+      --c5 : #ffffff;
       --white: #ffffff;
       --light: #e6f7ff;
     }
@@ -37,29 +37,38 @@
       height: 50px;
       background: var(--white);
     }
-
-    .logo img {
+    .logo img{
       height: 180px;
       align-items: center;
       padding-bottom: 25px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 30px;
     }
-
     nav ul li a {
       color: var(--c4);
       text-decoration: none;
       font-size: 18px;
       transition: 0.3s;
     }
-
     nav ul li a:hover {
       color: var(--c1);
     }
+    /* BUTTONS */
+    .btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .primary {
+    background: var(--c3);
+    color: #fff;
+    }
+
 
     .hero-title {
       display: flex;
@@ -603,7 +612,7 @@
   <nav class="nav">
     <div class="logo">
       <a href="../Home/home.html" class="logo">
-      <img src="images/logo.png" alt="Logo"></a>
+      <img src="../images/logo.png" alt="Logo"></a>
     </div>
     <ul>
       <li><a href="#">Find Work</a></li>
@@ -612,7 +621,7 @@
       <li><a href="../contactus/contactus.html">Contact</a></li>
       <li><a href="../login/login.html">Login</a></li>
       <li>
-        <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='#'">Sign Up</button></a>
       </li>
     </ul>
   </nav>

@@ -168,21 +168,39 @@
 </div>
 
 <script>
-    const cards = document.querySelectorAll(".card");
-    const radios = document.querySelectorAll("input[name='user-type']");
-    const joinBtn = document.getElementById("joinBtn");
+const cards = document.querySelectorAll(".card");
+const radios = document.querySelectorAll("input[name='user-type']");
+const joinBtn = document.getElementById("joinBtn");
 
-    cards.forEach((card, index) => {
-        card.addEventListener("click", () => {
-            cards.forEach(c => c.classList.remove("selected"));
-            card.classList.add("selected");
-            radios[index].checked = true;
+cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+        cards.forEach(c => c.classList.remove("selected"));
+        card.classList.add("selected");
+        radios[index].checked = true;
 
-            if (radios[index].value === "freelancer") {
-                joinBtn.innerText = "Join as a Freelancer";} 
-                else {joinBtn.innerText = "Join as a Client";}
-        });
+        if (radios[index].value === "freelancer") {
+            joinBtn.innerText = "Join as a Freelancer";
+        } else {
+            joinBtn.innerText = "Join as a Client";
+        }
     });
+});
+
+// 🔴 ده الجزء المهم الجديد
+joinBtn.addEventListener("click", () => {
+    const selectedRadio = document.querySelector("input[name='user-type']:checked");
+
+    if (!selectedRadio) {
+        alert("Please choose Freelancer or Client first");
+        return;
+    }
+
+    if (selectedRadio.value === "freelancer") {
+        window.location.href = "../signup/signup.html"; // غيرها باسم صفحتك
+    } else {
+        window.location.href = "client.html"; // غيرها باسم صفحتك
+    }
+});
 </script>
 
 </body>
