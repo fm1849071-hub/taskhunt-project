@@ -379,8 +379,8 @@ nav ul li a:hover {
 /* ------------ CATEGORIES SECTION ------------ */
 .categories {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);  /* 5 كروت في الصف */
-  gap: 20px;                              /* المسافة بين الكروت */
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));  
+  gap: 25px;                              /* المسافة بين الكروت */
   padding: 40px 80px;
   background-color: #f7f9fc;
   justify-items: center;                   /* يخلي كل كارت في النص أفقياً */
@@ -410,7 +410,7 @@ nav ul li a:hover {
 
 /* الأيقونة */
 .icon {
-  font-size: 18px;
+  font-size: 28px;
   width: 45px;
   height: 45px;
   background-color: #e6f3fb;
