@@ -376,23 +376,64 @@ nav ul li a:hover {
   .trending-grid{ grid-template-columns:1fr; }
 }
 
-/* CATEGORIES */
-h2 {
-  text-align: center;
-  margin: 1px 0 20px 0;
-  font-size: 2rem;
-  color: var(--c1);
-}
-
-.cat-container {
+/* ------------ CATEGORIES SECTION ------------ */
+.categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 30px 50px 60px;
+  grid-template-columns: repeat(5, 1fr);  /* 5 كروت في الصف */
+  gap: 20px;                              /* المسافة بين الكروت */
+  padding: 40px 80px;
+  background-color: #f7f9fc;
+  justify-items: center;                   /* يخلي كل كارت في النص أفقياً */
 }
 
-a {
-  text-decoration: none;
+/* الكارت مستطيل أفقي */
+.category {
+  width: 100%;
+  max-width: 230px;                        /* عرض الكارت */
+  height: 80px;
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;                     /* يخلي الأيقونة والكلام في النص عمودي */
+  justify-content: flex-start;             /* الأيقونة على الشمال */
+  gap: 15px;
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 119, 184, 0.15);
+}
+
+/* الأيقونة */
+.icon {
+  font-size: 18px;
+  width: 45px;
+  height: 45px;
+  background-color: #e6f3fb;
+  color: #0077B8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.category:hover .icon {
+  background-color: #0077B8;
+  color: #fff;
+}
+
+/* العنوان */
+.category h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c3e50;
+  margin: 0;
+  text-align: left;
 }
 
 .cat-box {
