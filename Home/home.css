@@ -420,7 +420,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;                     /* يخلي الأيقونة والكلام في النص عمودي */
   justify-content: flex-start;             /* الأيقونة على الشمال */
-  gap: 15px;
+  gap: 20px;
   padding: 0 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: 0.3s ease;
