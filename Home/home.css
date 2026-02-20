@@ -403,7 +403,7 @@ nav ul li a:hover {
 /* ------------ CATEGORIES SECTION ------------ */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));  
+  grid-template-columns: repeat(5, 1fr);  
   gap: 25px;                              /* المسافة بين الكروت */
   padding: 40px 80px;
   background-color: #f7f9fc;
