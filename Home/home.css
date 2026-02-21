@@ -681,6 +681,121 @@ h3 {
   color: #6b7280;
 }
 
+/*اراء العملاء */
+
+:root {
+    --main-blue: #007bff;
+    --light-bg: #f8fbff;
+    --card-shadow: 0 8px 24px rgba(149, 157, 165, 0.1);
+    --text-color: #334155;
+    --gray-text: #8e96a3;
+}
+
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.section-main-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a2b40;
+    margin-bottom: 50px;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testi-card {
+    background: #fff;
+    border: 1px solid #e1e9f4; 
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    /* تحضير لأنميشن الـ JS */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.testi-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testi-category {
+    display: inline-block;
+    background: #eef5ff;
+    color: var(--main-blue);
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.testi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.client-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.client-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.client-name {
+    margin: 0;
+    font-size: 16px;
+    color: #1e293b;
+}
+
+.rating-box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+}
+
+.star-icon {
+    color: #ffc107;
+    font-size: 14px;
+}
+
+.rating-num {
+    font-size: 13px;
+    color: var(--gray-text);
+    font-weight: 600;
+}
+
+.testi-body {
+    margin-bottom: 20px;
+}
+
+.testi-text {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    font-style: italic;
+}
 /* CTA */
 .cta {
   padding: 60px 40px;
