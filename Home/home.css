@@ -616,185 +616,120 @@ h3 {
   }
 }
 
-/* TESTIMONIALS */
-.testimonials {
-  padding: 80px 40px;
+/* ================= TESTIMONIALS FINAL ================= */
 
-  text-align: center;
+.testimonials-section{
+  padding:80px 20px;
+  background:transparent;
+  text-align:center;
+  font-family:'Segoe UI',sans-serif;
 }
 
-.testimonials h2 {
-  font-size: 32px;
-  margin-bottom: 50px;
-  color: #111827;
+.section-main-title{
+  font-size:32px;
+  font-weight:700;
+  color:#1a2b40;
+  margin-bottom:50px;
 }
 
-.testimonials-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+/* grid في النص */
+.testimonials-container{
+  width:100%;
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:35px;
+  padding:0 20px;
 }
 
-.testimonial-card {
-  background: #ffffff;
-  width: 300px;
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* الكارت */
+.testi-card{
+  background:#fff;
+  border:1px solid #e1e9f4;
+  border-radius:20px;
+  padding:28px;
+  box-shadow:0 8px 24px rgba(149,157,165,0.1);
+  transition:.3s ease;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+.testi-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(0,0,0,0.12);
 }
 
-.testimonial-card img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
+/* الفئة */
+.testi-category{
+  display:inline-block;
+  background:#eef5ff;
+  color:#007bff;
+  padding:4px 14px;
+  border-radius:50px;
+  font-size:11px;
+  font-weight:600;
+  margin-bottom:15px;
 }
 
-.testimonial-text {
-  font-size: 15px;
-  color: #4b5563;
-  margin-bottom: 15px;
-  line-height: 1.6;
+/* الهيدر */
+.testi-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
 }
 
-.stars {
-  color: #facc15;
-  margin-bottom: 10px;
+/* بيانات العميل */
+.client-profile{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.testimonial-card h4 {
-  font-size: 16px;
-  color: #111827;
-  margin-bottom: 4px;
+.client-profile img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  object-fit:cover;
 }
 
-.testimonial-card span {
-  font-size: 13px;
-  color: #6b7280;
+.client-name{
+  margin:0;
+  font-size:16px;
+  color:#1e293b;
 }
 
-/*اراء العملاء */
-
-:root {
-    --main-blue: #007bff;
-    --light-bg: #f8fbff;
-    --card-shadow: 0 8px 24px rgba(149, 157, 165, 0.1);
-    --text-color: #334155;
-    --gray-text: #8e96a3;
+/* التقييم */
+.rating-box{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  margin-top:2px;
 }
 
-.testimonials-section {
-    padding: 80px 20px;
-    background-color: #fff;
-    font-family: 'Segoe UI', sans-serif;
+.star-icon{
+  color:#ffc107;
+  font-size:14px;
 }
 
-.section-main-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    color: #1a2b40;
-    margin-bottom: 50px;
+.rating-num{
+  font-size:13px;
+  color:#8e96a3;
+  font-weight:600;
 }
 
-.testimonials-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    max-width: 800px;
-    margin: 0 auto;
+/* النص */
+.testi-text{
+  font-size:15px;
+  color:#475569;
+  line-height:1.6;
+  font-style:italic;
 }
 
-.testi-card {
-    background: #fff;
-    border: 1px solid #e1e9f4; 
-    border-radius: 20px;
-    padding: 25px;
-    position: relative;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
-    /* تحضير لأنميشن الـ JS */
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.testi-card.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.testi-category {
-    display: inline-block;
-    background: #eef5ff;
-    color: var(--main-blue);
-    padding: 4px 14px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.testi-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.client-profile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.client-profile img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.client-name {
-    margin: 0;
-    font-size: 16px;
-    color: #1e293b;
-}
-
-.rating-box {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 2px;
-}
-
-.star-icon {
-    color: #ffc107;
-    font-size: 14px;
-}
-
-.rating-num {
-    font-size: 13px;
-    color: var(--gray-text);
-    font-weight: 600;
-}
-
-.testi-body {
-    margin-bottom: 20px;
-}
-
-.testi-text {
-    font-size: 15px;
-    color: #475569;
-    line-height: 1.6;
-    font-style: italic;
+/* موبايل */
+@media(max-width:768px){
+  .testimonials-container{
+    grid-template-columns:1fr;
+  }
 }
 /* CTA */
 .cta {
