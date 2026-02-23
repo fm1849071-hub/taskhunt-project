@@ -491,7 +491,7 @@ nav ul li a:hover {
   gap:10px;
 }
 .client strong{
-  color:#0b2545;     /* كحلي واضح من ألوان اللوجو */
+  color:#0b2545;     
   font-size:14px;
 }
 .client img{
@@ -532,7 +532,7 @@ nav ul li a:hover {
 .categories {
   display: grid;
   grid-template-columns: repeat(5, 1fr);  
-  gap: 25px;                              /* المسافة بين الكروت */
+  gap: 25px;                             
   padding: 40px 80px;
  
   justify-items: center;                   /* يخلي كل كارت في النص أفقياً */
@@ -627,7 +627,7 @@ h3 {
 .features-title {
   font-size: 28px;
   margin-bottom: 40px;
-  color: var(--c1);
+  color: #1e2a3a;
 }
 
 .features-box {
