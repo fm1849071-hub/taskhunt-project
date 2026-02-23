@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHunt | Find Work</title>
+    <style>
+        /* =========================================
+           1. الألوان والخطوط الأساسية (TaskHunt Theme)
+           ========================================= */
+        :root {
+            --primary-color: #2563eb; /* لون TaskHunt الأزرق */
+            --primary-hover: #1d4ed8;
+            --bg-light: #f9fafb;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* تنسيق عام للأقسام */
+        .section-padding { padding: 80px 0; }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        /* =========================================
+           2. شريط التنقل (Navbar)
+           ========================================= */
+        .navbar {
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1000;
+        }
+
+        .navbar .logo img { height: 40px; }
+
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-dark); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-primary { background: var(--primary-color); color: #fff; }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-outline { border: 2px solid var(--primary-color); color: var(--primary-color); background: transparent; }
+        .btn-outline:hover { background: var(--primary-color); color: #fff; }
+
+        /* =========================================
+           3. قسم الـ Hero (الهيدر الرئيسي - مقسم نص وصورة)
+           ========================================= */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        .hero-content { flex: 1; }
+        .hero-content h1 { font-size: 48px; line-height: 1.1; margin-bottom: 20px; }
+        .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 30px; max-width: 500px; }
+        
+        .search-box { display: flex; gap: 10px; max-width: 450px; }
+        .search-box input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            outline: none;
+        }
+        .search-box input:focus { border-color: var(--primary-color); }
+
+        .hero-image { flex: 1; text-align: right; }
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        /* =========================================
+           4. قسم: The work you want, all in one place
+           ========================================= */
+        .split-section {
+            background-color: var(--bg-light);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+
+        .split-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: var(--radius);
+        }
+
+        .split-text h2 { font-size: 32px; margin-bottom: 20px; }
+        .split-text ul li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .split-text ul li::before {
+            content: "✔";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* =========================================
+           5. قسم: Work that’s waiting for you (الوظائف + فلتر جانبي)
+           ========================================= */
+        .job-board {
+            display: flex;
+            gap: 40px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: var(--radius);
+            height: fit-content;
+        }
+        .sidebar h3 { margin-bottom: 15px; font-size: 18px; }
+        .sidebar ul li { margin-bottom: 10px; color: var(--text-muted); cursor: pointer; }
+        .sidebar ul li:hover { color: var(--primary-color); }
+
+        .job-list { flex: 1; }
+        
+        .job-card {
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .job-card:hover { border-color: var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .job-title { font-size: 20px; color: var(--primary-color); font-weight: bold; margin-bottom: 8px; display: inline-block; }
+        .job-info { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; }
+        .skills { display: flex; gap: 8px; margin: 15px 0; flex-wrap: wrap; }
+        .skill-tag { background: var(--bg-light); color: var(--text-muted); padding: 5px 12px; border-radius: 20px; font-size: 13px; }
+
+        /* =========================================
+           6. قسم: Our support
+           ========================================= */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .support-card {
+            padding: 30px;
+            border-radius: var(--radius);
+            background: var(--bg-light);
+            text-align: center;
+        }
+        .support-card img { width: 60px; margin-bottom: 20px; }
+        .support-card h3 { margin-bottom: 10px; }
+        .support-card p { color: var(--text-muted); }
+
+        /* =========================================
+           7. قسم: Ready to start? (CTA Banner)
+           ========================================= */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 20px;
+            margin: 80px 0;
+            background-image: linear-gradient(45deg, var(--primary-color), #3b82f6);
+        }
+        .cta-section h2 { font-size: 40px; margin-bottom: 20px; color: #fff;}
+        .cta-section p { font-size: 20px; margin-bottom: 30px; opacity: 0.9; }
+        .cta-section .btn { background: #fff; color: var(--primary-color); font-size: 18px; padding: 15px 35px; }
+
+        /* =========================================
+           8. الفوتر
+           ========================================= */
+        .footer { background: #0f172a; color: #fff; padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; border-bottom: 1px solid #334155; padding-bottom: 40px; }
+        .footer-grid h3 { margin-bottom: 20px; }
+        .footer-grid ul li { margin-bottom: 10px; }
+        .footer-grid ul li a { color: #94a3b8; }
+        .footer-grid ul li a:hover { color: #fff; }
+        .social-icons img { width: 25px; margin-right: 15px; filter: invert(1); cursor: pointer; }
+        .footer-bottom { text-align: center; color: #64748b; font-size: 14px; }
+
+        /* توافقية الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .hero, .split-section, .job-board { flex-direction: column; }
+            .sidebar { width: 100%; }
+            .hero-content h1 { font-size: 36px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../Home/home.html"><img src="images/logo.png" alt="TaskHunt Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Find Work</a></li>
+            <li><a href="#">Hire Talent</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../contactus/contactus.html">Contact</a></li>
+            <li><a href="../login/login.html">Login</a></li>
+            <li><button class="btn btn-primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find the best <span style="color: var(--primary-color);">freelance</span> jobs</h1>
+                <p>Meet clients you're excited to work with and take your career or business to new heights.</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for jobs or skills...">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Freelancer working">
+            </div>
+        </section>
+
+        <section class="split-section">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1665686306574-1ace09918530?q=80&w=600&auto=format&fit=crop" alt="Work from anywhere">
+            </div>
+            <div class="split-text">
+                <h2>The work you want, all in one place</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">TaskHunt has opportunities for every stage of your freelance career.</p>
+                <ul>
+                    <li>Find great clients and projects</li>
+                    <li>Grow your own independent business</li>
+                    <li>Get paid securely and on time</li>
+                    <li>Choose how and when you work</li>
+                </ul>
+                <button class="btn btn-outline" style="margin-top: 20px;">Create your profile</button>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <h2 class="section-title">Work that’s waiting for you</h2>
+            
+            <div class="job-board">
+                <aside class="sidebar">
+                    <h3>Filter by Category</h3>
+                    <ul>
+                        <li>💻 Development & IT</li>
+                        <li>🎨 Design & Creative</li>
+                        <li>📈 Sales & Marketing</li>
+                        <li>✍️ Writing & Translation</li>
+                        <li>📊 Finance & Accounting</li>
+                    </ul>
+                    <h3 style="margin-top: 25px;">Job Type</h3>
+                    <ul>
+                        <li><input type="checkbox"> Hourly</li>
+                        <li><input type="checkbox"> Fixed-Price</li>
+                    </ul>
+                </aside>
+
+                <div class="job-list">
+                    <div class="job-card">
+                        <a href="#" class="job-title">React Developer for SaaS Dashboard</a>
+                        <div class="job-info">Fixed-price - Est. Budget: $1,500 - Posted 2 hours ago</div>
+                        <p>We need an expert frontend developer to build a responsive admin dashboard using React, Tailwind CSS, and Chart.js. API endpoints are ready.</p>
+                        <div class="skills">
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Web Design</span>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <a href="#" class="job-title">UI/UX Designer for Mobile App</a>
+                        <div class="job-info">Hourly: $20-$40 - Est. Time: 1 to 3 months - Posted 5 hours ago</div>
+                        <p>Looking for a creative UI/UX designer to revamp our fitness application. Must have strong experience in Figma and mobile design principles.</p>
+                        <div class="skills">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">UI/UX</span>
+                            <span class="skill-tag">Mobile Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <h2 class="section-title" style="text-align: center;">Our support</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png" alt="Safe">
+                    <h3>Safe and secure</h3>
+                    <p>Focus on your work knowing we help protect your data and privacy.</p>
+                </div>
+                <div class="support-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Payment">
+                    <h3>Protected payments</h3>
+                    <p>Our payment protection ensures you get paid for the work you do.</p>
+                </div>
+                <div class="support-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/888/888063.png" alt="Support">
+                    <h3>24/7 Help</h3>
+                    <p>Our specialized support team is here to help you around the clock.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to start?</h2>
+            <p>Join thousands of freelancers and start earning today.</p>
+            <button class="btn" onclick="window.location.href='../signup/asksignup.html'">Sign up for free</button>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Task Hunt</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How it works</a></li>
+                        <li><a href="#">Trust & Safety</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help & Support</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Task Hunt — All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
