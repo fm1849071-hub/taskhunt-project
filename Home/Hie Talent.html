@@ -8,6 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+    /* COLOR PALETTE  */
+:root {
+  --c1: #00A8FF;
+  --c2: #0090E0;
+  --c3: #0077B8;
+  --c4: #051923;
+  --c5: #ffffff;
+  --white: #ffffff;
+  --light: #e6f7ff;
+}
 *{
     margin:0;
     padding:0;
@@ -21,7 +31,7 @@ body{
 }
 
 /* NAVBAR */
-    nav {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,14 +39,13 @@ body{
   height: 50px;
   background: var(--white);
 }
-    
 
-   .logo img {
+.logo img {
   height: 180px;
   align-items: center;
   padding-bottom: 25px;
 }
-   
+
 nav ul {
   list-style: none;
   display: flex;
@@ -61,6 +70,13 @@ nav ul li a:hover {
   border: none;
   cursor: pointer;
 }
+
+.primary {
+  background: var(--c3);
+  color: #fff;
+}
+
+
 
     .hero-title {
       display: flex;
@@ -89,136 +105,168 @@ nav ul li a:hover {
     }
 /* ===== HERO SECTION ===== */
 
-.hero-section{
-  height:93vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+.title {
+	color: #5C6AC4;
 }
+    :root {
+        --primary-blue: #4A90E2;
+        --dark-blue: #2C3E50;
+        --light-bg: #F4F7F9;
+    }
 
-/* ===== صورة الهيرو كارد ===== */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background-color: var(--light-bg);
+    }
 
-.hero-image-box{
-  position:relative;
-  width:100%;
-  max-width:1400px;
-  height:75vh;
-  border-radius:25px;
-  overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,0.15);
-}
+    /* السكشن الأساسي لضمان التوسط في الصفحة */
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh; /* ليأخذ أغلب طول الشاشة */
+        padding: 20px;
+    }
 
-.hero-image-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    /* الكارت الأبيض الكبير */
+    .hero-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        padding: 60px;
+        border-radius: 40px; /* حواف دائرية ناعمة */
+        box-shadow: 0 20px 60px rgba(0,0,0,0.05); /* ظل خفيف جداً */
+        max-width: 1200px;
+        width: 100%;
+        gap: 50px;
+    }
 
-/* تظليل خفيف يخلي النص واضح */
-.hero-image-box::before{
-  content:"";
-  position:absolute;
-  inset:0;
+    /* تنسيق المحتوى النصي */
+    .hero-left {
+        flex: 1.2;
+    }
 
-  z-index:1;
-}
+    .hero-content h1 {
+        font-size: 3.2rem;
+        color: var(--dark-blue);
+        margin-bottom: 10px;
+        line-height: 1.1;
+    }
 
-/* ===== المحتوى فوق الصورة ===== */
+    .hero-content h1 span {
+        color: var(--primary-blue);
+    }
 
-.hero-overlay-content{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start; /* يخلي النص شمال */
-  padding:70px;
-  z-index:2;
-}
- 
-/* Hero Section */
-.hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:60px 8%;
-}
+    .hero-content p {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        margin-bottom: 35px;
+    }
 
-.hero-text h1{
-    font-size:40px;
-    margin-bottom:15px;
-}
+    /* صندوق البحث */
+    .search-box-container {
+        max-width: 500px;
+    }
 
-.hero-text span{
-    color:#3b82f6;
-}
+    .search-input-wrapper {
+        display: flex;
+        background: #F0F4F8;
+        padding: 8px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        border: 1px solid #e1e8ed;
+    }
 
-.hero-text p{
-    color:#666;
-    margin-bottom:25px;
-}
+    .search-input-wrapper input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 12px 20px;
+        outline: none;
+        font-size: 1rem;
+    }
 
-.hero-buttons button{
-    padding:12px 22px;
-    border:none;
-    border-radius:8px;
-    margin-right:15px;
-    cursor:pointer;
-    font-weight:500;
-}
+    .search-btn {
+        background: var(--primary-blue);
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+    }
 
-.primary-btn{
-    background:#3b82f6;
-    color:white;
-}
+    .search-btn:hover {
+        background: #357ABD;
+    }
 
-.secondary-btn{
-    background:#e5e7eb;
-}
-.primary{
-  background: #3b82f6;
-  color: #fff;
-  font-weight: 500;
-  transition: 0.3s;
-}
+    .quick-actions {
+        display: flex;
+        gap: 15px;
+    }
 
-.primary:hover{
-  background: #2563eb;
-}
+    .action-btn {
+        padding: 12px 25px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+    }
 
-/* Search Box */
-.search-box{
-    margin:20px 8%;
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
+    .action-btn.blue {
+        background: var(--primary-blue);
+        color: white;
+    }
 
-.search-box input{
-    width:70%;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ddd;
-}
+    .action-btn.outline {
+        background: #E8F0F8;
+        color: var(--dark-blue);
+    }
 
-.search-box button{
-    padding:12px 20px;
-    background:#3b82f6;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-}
+    .action-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
-/* Section Title */
-.section{
-    padding:40px 8%;
-}
+    /* تنسيق الصورة */
+    .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
 
-.section h2{
-    margin-bottom:25px;
-}
+    .hero-image img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        /* إضافة تأثير بسيط لجعل الصورة تبدو كأنها عائمة */
+        filter: none;
+    }
+
+    /* لجعل التصميم متجاوب مع الموبايل */
+    @media (max-width: 992px) {
+        .hero-wrapper {
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .hero-image {
+            order: -1; /* الصورة تظهر فوق الكلام في الموبايل */
+        }
+        .search-box-container {
+            margin: 0 auto;
+        }
+        .quick-actions {
+            justify-content: center;
+        }
+    }
+
 
 /* Cards */
 .cards{
@@ -348,7 +396,7 @@ nav ul li a:hover {
     display:flex;
     justify-content:space-between;
     gap:40px;
-    padding:60px 8%;
+    padding:60px 8% 0;
     background:#f4f7fc;
 }
 
@@ -553,11 +601,22 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: flex-start;
   }
-}
+
   .footer-col {
     width: 100%;
   }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
+  .footer-col {
+    width: 100%;
+  }
+}
 /* Responsive */
 @media(max-width:1000px){
     .card,.step{
@@ -600,41 +659,33 @@ nav ul li a:hover {
       </li>
     </ul>
   </nav>
- <section class="hero-section">
-
-    <div class="hero-image-box">
-        <img src="../Home/images/228.png" alt="hero">
-
-
-        <div class="hero-overlay-content">
-            <div class="container">
-                <div class="content">
-                 <h1>Hire Top <span>Freelancers</span><br>For Your Project</h1>
+ 
+     <section class="hero-section">
+    <div class="hero-wrapper">
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1>Hire Top <span>Freelancers</span><br>For Your Project</h1>
         <p>Post a job and connect with skilled professionals in minutes.</p>
-        <div class="hero-buttons">
-            <button class="primary-btn">Post a Job</button>
-            <button class="secondary-btn">Browse Freelancers</button>
-        </div>
-       
-                    <div class="search-box">
-                        <div class="search-tabs">
-                            <span>Browse projects</span>
-                        </div>
+            </div>
 
-                        <div class="search-input-wrapper">
-                            <input type="text" placeholder="Look for a skill, a programming language, or a programmer...">
-                            <button class="search-btn">search</button>
-                        </div>
-                        <br>
-                    </div>
-
+            <div class="search-box-container">
+                <div class="search-input-wrapper">
+                    <input type="text" placeholder="Look for a skill, a programming language...">
+                    <button class="search-btn">Search</button>
+                </div>
+                <div class="quick-actions">
+                   <a href="../Home/Hie Talent.html"><button class="action-btn blue">Hire Talent</button></a>
+                    <a href="../Home/findwork.html"><button class="action-btn outline">Find Work</button></a>
                 </div>
             </div>
         </div>
 
+        <div class="hero-image">
+            <img src="Gemini_Generated_Image_lx8darlx8darlx8d.png" alt="Hero Illustration">
+        </div>
     </div>
-
 </section>
+
 
 
 
@@ -823,6 +874,8 @@ nav ul li a:hover {
       <p>© 2025 Task Hunt — All rights reserved</p>
     </div>
   </footer>
+
+
 
 </body>
 </html>

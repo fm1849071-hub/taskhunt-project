@@ -34,12 +34,7 @@ img,video{
 .container, section, div{
   max-width:100%;
 }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--c5);
-  color: var(--white);
-}
+
 
 /* NAVBAR */
 nav {
@@ -92,9 +87,6 @@ nav ul li a:hover {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        body{
-  padding: 25px;
-}
 .title {
 	color: #5C6AC4;
 }
@@ -234,7 +226,7 @@ nav ul li a:hover {
         max-width: 500px;
         height: auto;
         /* إضافة تأثير بسيط لجعل الصورة تبدو كأنها عائمة */
-        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+        filter: none;
     }
 
     /* لجعل التصميم متجاوب مع الموبايل */
