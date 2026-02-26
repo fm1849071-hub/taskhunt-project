@@ -526,7 +526,7 @@ nav ul li a:hover {
   grid-template-columns: repeat(5, 1fr);  
   gap: 25px;                             
   padding: 40px 80px;
- 
+  
   justify-items: center;                   /* يخلي كل كارت في النص أفقياً */
 }
 
