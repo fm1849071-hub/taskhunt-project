@@ -120,7 +120,7 @@ nav ul li a:hover {
         padding: 60px;
         border-radius: 40px; /* حواف دائرية ناعمة */
         box-shadow: 0 20px 60px rgba(0,0,0,0.05); /* ظل خفيف جداً */
-        max-width: 1200px;
+        max-width: 1450px;
         width: 100%;
         gap: 50px;
     }
@@ -547,6 +547,7 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+
 .category:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 119, 184, 0.15);
@@ -737,114 +738,123 @@ h3 {
 }
 
 /* ================= TESTIMONIALS FINAL ================= */
+/*اراء العملاء */
 
-.testimonials-section{
-  padding:80px 20px;
-  background:transparent;
-  text-align:center;
-  font-family:'Segoe UI',sans-serif;
+:root {
+    --main-blue: #007bff;
+    --light-bg: #f8fbff;
+    --card-shadow: 0 8px 24px rgba(149, 157, 165, 0.1);
+    --text-color: #334155;
+    --gray-text: #8e96a3;
 }
 
-.section-main-title{
-  font-size:32px;
-  font-weight:700;
-  color:#1a2b40;
-  margin-bottom:50px;
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: #fff;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* grid في النص */
-.testimonials-container{
-  width:100%;
-  max-width:1100px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:35px;
-  padding:0 20px;
+.section-main-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a2b40;
+    margin-bottom: 50px;
 }
 
-/* الكارت */
-.testi-card{
-  background:#fff;
-  border:1px solid #e1e9f4;
-  border-radius:20px;
-  padding:28px;
-  box-shadow:0 8px 24px rgba(149,157,165,0.1);
-  transition:.3s ease;
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.testi-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 14px 30px rgba(0,0,0,0.12);
+.testi-card {
+    background: #fff;
+    border: 1px solid #e1e9f4; 
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
 }
 
-/* الفئة */
-.testi-category{
-  display:inline-block;
-  background:#eef5ff;
-  color:#007bff;
-  padding:4px 14px;
-  border-radius:50px;
-  font-size:11px;
-  font-weight:600;
-  margin-bottom:15px;
+.testi-card.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* الهيدر */
-.testi-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:15px;
+.testi-category {
+    display: inline-block;
+    background: #eef5ff;
+    color: var(--main-blue);
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-/* بيانات العميل */
-.client-profile{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.testi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.client-profile img{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  object-fit:cover;
+.client-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.client-name{
-  margin:0;
-  font-size:16px;
-  color:#1e293b;
+.client-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* التقييم */
-.rating-box{
-  display:flex;
-  align-items:center;
-  gap:4px;
-  margin-top:2px;
+.client-name {
+    margin: 0;
+    font-size: 16px;
+    color: #1e293b;
 }
 
-.star-icon{
-  color:#ffc107;
-  font-size:14px;
+.rating-box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
 }
 
-.rating-num{
-  font-size:13px;
-  color:#8e96a3;
-  font-weight:600;
+.star-icon {
+    color: #ffc107;
+    font-size: 14px;
 }
 
-/* النص */
-.testi-text{
-  font-size:15px;
-  color:#475569;
-  line-height:1.6;
-  font-style:italic;
+.rating-num {
+    font-size: 13px;
+    color: var(--gray-text);
+    font-weight: 600;
 }
 
+.testi-body {
+    margin-bottom: 20px;
+}
+
+.testi-text {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.alink{
+  text-decoration: none;
+  width: 500px;
+}
 /* موبايل */
 @media(max-width:768px){
   .testimonials-container{

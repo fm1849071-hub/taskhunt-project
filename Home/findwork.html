@@ -1,117 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskHunt | Find Work</title>
     <style>
-        /* =========================================
-           1. الألوان والخطوط الأساسية (TaskHunt Theme)
-           ========================================= */
+        /* COLOR PALETTE  */
         :root {
-            --primary-color: #2563eb; /* لون TaskHunt الأزرق */
-            --primary-hover: #1d4ed8;
-            --bg-light: #f9fafb;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --border-color: #e2e8f0;
-            --radius: 12px;
+            --c1: #00A8FF;
+            --c2: #0090E0;
+            --c3: #0077B8;
+            --c4: #051923;
+            --c5: #ffffff;
+            --white: #ffffff;
+            --light: #e6f7ff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-dark);
-            background-color: #fff;
-            line-height: 1.6;
+            background: #f4f7fc;
+            color: #222;
         }
 
-        a { text-decoration: none; }
-        ul { list-style: none; }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        /* تنسيق عام للأقسام */
-        .section-padding { padding: 80px 0; }
-        
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 40px;
-            font-weight: bold;
-            color: var(--text-dark);
-        }
-
-        /* =========================================
-           2. شريط التنقل (Navbar)
-           ========================================= */
-        .navbar {
-            padding: 15px 5%;
+        /* NAVBAR */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            background: #fff;
-            z-index: 1000;
+            padding: 0px 30px;
+            height: 50px;
+            background: var(--white);
         }
 
-        .navbar .logo img { height: 40px; }
+        .logo img {
+            height: 180px;
+            align-items: center;
+            padding-bottom: 25px;
+        }
 
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { color: var(--text-dark); font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary-color); }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
 
-        .btn {
-            padding: 10px 24px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
+        nav ul li a {
+            color: var(--c4);
+            text-decoration: none;
+            font-size: 18px;
             transition: 0.3s;
-            border: none;
         }
-        .btn-primary { background: var(--primary-color); color: #fff; }
-        .btn-primary:hover { background: var(--primary-hover); }
-        .btn-outline { border: 2px solid var(--primary-color); color: var(--primary-color); background: transparent; }
-        .btn-outline:hover { background: var(--primary-color); color: #fff; }
 
-        /* =========================================
-           3. قسم الـ Hero (الهيدر الرئيسي - مقسم نص وصورة)
-           ========================================= */
-        .hero {
+        nav ul li a:hover {
+            color: var(--c1);
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .primary {
+            background: var(--c3);
+            color: #fff;
+        }
+
+
+
+        .hero-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 60px 6% 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .hero-title h2 {
+            font-size: 20px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .hero-title h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .hero-divider {
+            font-size: 26px;
+            color: #9ca3af;
+        }
+
+        /* ===== HERO SECTION ===== */
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        .title {
+            color: #5C6AC4;
+        }
+
+        :root {
+            --primary-blue: #4A90E2;
+            --dark-blue: #2C3E50;
+            --light-bg: #F4F7F9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--light-bg);
+        }
+
+        /* السكشن الأساسي لضمان التوسط في الصفحة */
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            /* ليأخذ أغلب طول الشاشة */
+            padding: 20px;
+        }
+
+        /* الكارت الأبيض الكبير */
+        .hero-wrapper {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
-            padding: 60px 0;
+            background: white;
+            padding: 60px;
+            border-radius: 40px;
+            /* حواف دائرية ناعمة */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+            /* ظل خفيف جداً */
+            max-width: 1200px;
+            width: 100%;
+            gap: 50px;
         }
 
-        .hero-content { flex: 1; }
-        .hero-content h1 { font-size: 48px; line-height: 1.1; margin-bottom: 20px; }
-        .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 30px; max-width: 500px; }
-        
-        .search-box { display: flex; gap: 10px; max-width: 450px; }
-        .search-box input {
+        /* تنسيق المحتوى النصي */
+        .hero-left {
+            flex: 1.2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-blue);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 35px;
+        }
+
+        /* صندوق البحث */
+        .search-box-container {
+            max-width: 500px;
+        }
+
+        .search-input-wrapper {
+            display: flex;
+            background: #ffffff;
+            padding: 8px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid #e1e8ed;
+        }
+
+        .search-input-wrapper input {
             flex: 1;
-            padding: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border: none;
+            background: transparent;
+            padding: 12px 20px;
             outline: none;
+            font-size: 1rem;
         }
-        .search-box input:focus { border-color: var(--primary-color); }
 
-        .hero-image { flex: 1; text-align: right; }
+        .search-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #357ABD;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-btn {
+            padding: 12px 25px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .action-btn.blue {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .action-btn.outline {
+            background: #E8F0F8;
+            color: var(--dark-blue);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* تنسيق الصورة */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
         .hero-image img {
             width: 100%;
             max-width: 500px;
-            border-radius: var(--radius);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            height: auto;
+            /* إضافة تأثير بسيط لجعل الصورة تبدو كأنها عائمة */
+            filter: none;
         }
+
+        /* لجعل التصميم متجاوب مع الموبايل */
+        @media (max-width: 992px) {
+            .hero-wrapper {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .hero-image {
+                order: -1;
+                /* الصورة تظهر فوق الكلام في الموبايل */
+            }
+
+            .search-box-container {
+                margin: 0 auto;
+            }
+
+            .quick-actions {
+                justify-content: center;
+            }
+        }
+
+
 
         /* =========================================
            4. قسم: The work you want, all in one place
@@ -132,7 +296,11 @@
             border-radius: var(--radius);
         }
 
-        .split-text h2 { font-size: 32px; margin-bottom: 20px; }
+        .split-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
         .split-text ul li {
             margin-bottom: 15px;
             font-size: 18px;
@@ -141,6 +309,7 @@
             align-items: center;
             gap: 10px;
         }
+
         .split-text ul li::before {
             content: "✔";
             color: var(--primary-color);
@@ -163,12 +332,26 @@
             border-radius: var(--radius);
             height: fit-content;
         }
-        .sidebar h3 { margin-bottom: 15px; font-size: 18px; }
-        .sidebar ul li { margin-bottom: 10px; color: var(--text-muted); cursor: pointer; }
-        .sidebar ul li:hover { color: var(--primary-color); }
 
-        .job-list { flex: 1; }
-        
+        .sidebar h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            color: var(--primary-color);
+        }
+
+        .job-list {
+            flex: 1;
+        }
+
         .job-card {
             border: 1px solid var(--border-color);
             padding: 25px;
@@ -176,11 +359,40 @@
             margin-bottom: 20px;
             transition: 0.3s;
         }
-        .job-card:hover { border-color: var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .job-title { font-size: 20px; color: var(--primary-color); font-weight: bold; margin-bottom: 8px; display: inline-block; }
-        .job-info { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; }
-        .skills { display: flex; gap: 8px; margin: 15px 0; flex-wrap: wrap; }
-        .skill-tag { background: var(--bg-light); color: var(--text-muted); padding: 5px 12px; border-radius: 20px; font-size: 13px; }
+
+        .job-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .job-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .job-info {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .skills {
+            display: flex;
+            gap: 8px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            background: var(--bg-light);
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
 
         /* =========================================
            6. قسم: Our support
@@ -190,15 +402,26 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
+
         .support-card {
             padding: 30px;
             border-radius: var(--radius);
             background: var(--bg-light);
             text-align: center;
         }
-        .support-card img { width: 60px; margin-bottom: 20px; }
-        .support-card h3 { margin-bottom: 10px; }
-        .support-card p { color: var(--text-muted); }
+
+        .support-card img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+
+        .support-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .support-card p {
+            color: var(--text-muted);
+        }
 
         /* =========================================
            7. قسم: Ready to start? (CTA Banner)
@@ -212,72 +435,179 @@
             margin: 80px 0;
             background-image: linear-gradient(45deg, var(--primary-color), #3b82f6);
         }
-        .cta-section h2 { font-size: 40px; margin-bottom: 20px; color: #fff;}
-        .cta-section p { font-size: 20px; margin-bottom: 30px; opacity: 0.9; }
-        .cta-section .btn { background: #fff; color: var(--primary-color); font-size: 18px; padding: 15px 35px; }
+
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #0b2545;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            color: #0b2545;
+        }
+
+        .cta-section .btn {
+            background:#0b2545;
+            color: var(--primary-color);
+            font-size: 18px;
+            padding: 15px 35px;
+        }
 
         /* =========================================
            8. الفوتر
            ========================================= */
-        .footer { background: #0f172a; color: #fff; padding: 60px 0 20px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; border-bottom: 1px solid #334155; padding-bottom: 40px; }
-        .footer-grid h3 { margin-bottom: 20px; }
-        .footer-grid ul li { margin-bottom: 10px; }
-        .footer-grid ul li a { color: #94a3b8; }
-        .footer-grid ul li a:hover { color: #fff; }
-        .social-icons img { width: 25px; margin-right: 15px; filter: invert(1); cursor: pointer; }
-        .footer-bottom { text-align: center; color: #64748b; font-size: 14px; }
+     /* Footer */
+.footer {
+  background: #051923;
+  padding: 40px 20px;
+  font-family: "Cairo", sans-serif;
+  direction: ltr;
+  text-align: left;
+}
 
-        /* توافقية الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            .hero, .split-section, .job-board { flex-direction: column; }
-            .sidebar { width: 100%; }
-            .hero-content h1 { font-size: 36px; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  width: 30%;
+  min-width: 250px;
+}
+
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-col p {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 10px 0;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  opacity: 0.8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+}
     </style>
 </head>
+
 <body>
-  <!-- NAVBAR -->
-  <nav class="nav">
-    <div class="logo">
-      <a href="../Home/home.html" class="logo">
-      <img src="images/logo.png" alt="Logo"></a>
-    </div>
-    <ul>
-      <li><a href="../Home/findwork.html">Find Work</a></li>
-      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-      <li><a href="../about/about.html">About</a></li>
-      <li><a href="../contactus/contactus.html">Contact</a></li>
-      <li><a href="../login/login.html">Login</a></li>
-      <li>
-        <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
-      </li>
-    </ul>
-  </nav>
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <div class="logo">
+            <a href="../Home/home.html" class="logo">
+                <img src="images/logo.png" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a href="../Home/findwork.html">Find Work</a></li>
+            <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../contactus/contactus.html">Contact</a></li>
+            <li><a href="../login/login.html">Login</a></li>
+            <li>
+                <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+            </li>
+        </ul>
+    </nav>
     <div class="container">
-        
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Find the best <span style="color: var(--primary-color);">freelance</span> jobs</h1>
-                <p>Meet clients you're excited to work with and take your career or business to new heights.</p>
-                <div class="search-box">
-                    <input type="text" placeholder="Search for jobs or skills...">
-                    <button class="btn btn-primary">Search</button>
+
+        <section class="hero-section">
+            <div class="hero-wrapper">
+                <div class="hero-left">
+                    <div class="hero-content">
+                        <h1>Find the best <span style="color: var(--primary-color);">freelance</span> jobs</h1>
+                        <p>Meet clients you're excited to work with and take your career or business to new heights.</p>
+                    </div>
+
+                    <div class="search-box-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Look for a skill, a programming language...">
+                            <button class="search-btn">Search</button>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Freelancer working">
+
+                <div class="hero-image">
+                    <img src="im.png" alt="Hero Illustration">
+                </div>
             </div>
         </section>
 
+
+
         <section class="split-section">
             <div class="split-image">
-                <img src="https://images.unsplash.com/photo-1665686306574-1ace09918530?q=80&w=600&auto=format&fit=crop" alt="Work from anywhere">
+                <img src="https://images.unsplash.com/photo-1665686306574-1ace09918530?q=80&w=600&auto=format&fit=crop"
+                    alt="Work from anywhere">
             </div>
             <div class="split-text">
                 <h2>The work you want, all in one place</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">TaskHunt has opportunities for every stage of your freelance career.</p>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">TaskHunt has opportunities for every stage of
+                    your freelance career.</p>
                 <ul>
                     <li>Find great clients and projects</li>
                     <li>Grow your own independent business</li>
@@ -290,7 +620,7 @@
 
         <section class="section-padding">
             <h2 class="section-title">Work that’s waiting for you</h2>
-            
+
             <div class="job-board">
                 <aside class="sidebar">
                     <h3>Filter by Category</h3>
@@ -312,7 +642,8 @@
                     <div class="job-card">
                         <a href="#" class="job-title">React Developer for SaaS Dashboard</a>
                         <div class="job-info">Fixed-price - Est. Budget: $1,500 - Posted 2 hours ago</div>
-                        <p>We need an expert frontend developer to build a responsive admin dashboard using React, Tailwind CSS, and Chart.js. API endpoints are ready.</p>
+                        <p>We need an expert frontend developer to build a responsive admin dashboard using React,
+                            Tailwind CSS, and Chart.js. API endpoints are ready.</p>
                         <div class="skills">
                             <span class="skill-tag">React.js</span>
                             <span class="skill-tag">Tailwind CSS</span>
@@ -323,7 +654,8 @@
                     <div class="job-card">
                         <a href="#" class="job-title">UI/UX Designer for Mobile App</a>
                         <div class="job-info">Hourly: $20-$40 - Est. Time: 1 to 3 months - Posted 5 hours ago</div>
-                        <p>Looking for a creative UI/UX designer to revamp our fitness application. Must have strong experience in Figma and mobile design principles.</p>
+                        <p>Looking for a creative UI/UX designer to revamp our fitness application. Must have strong
+                            experience in Figma and mobile design principles.</p>
                         <div class="skills">
                             <span class="skill-tag">Figma</span>
                             <span class="skill-tag">UI/UX</span>
@@ -362,40 +694,47 @@
         </section>
 
     </div>
+  <footer class="footer">
+    <div class="footer-container">
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>Task Hunt</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">How it works</a></li>
-                        <li><a href="#">Trust & Safety</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Help & Support</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Task Hunt — All rights reserved</p>
-            </div>
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
         </div>
-    </footer>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+
 
 </body>
+
 </html>
