@@ -663,7 +663,7 @@ body {
   grid-template-columns: repeat(5, 1fr);  
   gap: 25px;                              /* المسافة بين الكروت */
   padding: 40px 80px;
- 
+  
   justify-items: center;                   /* يخلي كل كارت في النص أفقياً */
 }
 
@@ -691,10 +691,9 @@ body {
 
 /* الأيقونة */
 .icon {
-  font-size: 28px;
+  font-size: 35px;
   width: 45px;
   height: 45px;
-  background-color: #e6f3fb;
   color: #0077B8;
   border-radius: 10px;
   display: flex;
@@ -702,15 +701,26 @@ body {
   justify-content: center;
   transition: 0.3s ease;
 }
-
-.category:hover .icon {
-  background-color: #0077B8;
-  color: #fff;
+.category {
+  width: 200px;
+  height: 80px;              /* ثبتي الارتفاع */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-sizing: border-box;    /* يمنع تغيير الحجم بسبب البادينج */
 }
+
+.alink{
+  text-decoration: none;
+}
+
 
 /* العنوان */
 .category h3 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: #2c3e50;
   margin: 0;
