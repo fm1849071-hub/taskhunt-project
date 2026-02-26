@@ -577,10 +577,9 @@ nav ul li a:hover {
   box-sizing: border-box;    /* يمنع تغيير الحجم بسبب البادينج */
 }
 
-.alink{
+.lin{
   text-decoration: none;
 }
-
 
 /* العنوان */
 .category h3 {
