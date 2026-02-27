@@ -272,6 +272,8 @@ nav ul li a:hover {
 
 
 /* Cards */
+
+/* Cards */
 .cards{
     display:flex;
     gap:20px;
@@ -291,32 +293,53 @@ nav ul li a:hover {
     transform:translateY(-5px);
 }
 
-.card img{
-    width:100%;
-    border-radius:10px;
+/* Header (صورة + بيانات) */
+.card-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
     margin-bottom:15px;
 }
 
+/* الصورة تبقى مدورة وصغيرة */
+.card-header img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* النصوص */
 .card h3{
-    font-size:18px;
+    font-size:16px;
+    margin-bottom:5px;
 }
 
 .card p{
-    font-size:14px;
+    font-size:13px;
     color:#666;
 }
 
+/* النجوم */
+.rate{
+    color:gold;
+    font-size:14px;
+}
+
+/* السعر */
 .price{
     margin:10px 0;
     font-weight:600;
 }
 
+/* الأزرار */
 .card-buttons{
     display:flex;
-    justify-content:space-between;
+    gap:10px; /* مسافة بسيطة بينهم */
 }
 
 .card-buttons button{
+    flex:1;
     padding:8px 12px;
     border:none;
     border-radius:6px;
@@ -331,6 +354,9 @@ nav ul li a:hover {
 .hire{
     background:#3b82f6;
     color:white;
+}
+.featured-section{
+    padding:60px 8%;
 }
 .how-section{
     padding:60px 8%;
@@ -691,26 +717,41 @@ nav ul li a:hover {
 
 
 
-
 <!-- Featured -->
-<section class="section">
-    <h2>Featured Freelancers</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+ <section class="featured-section">
+    <h2 class="section-title">Featured Freelancers</h2>
+        <div class="cards">
+<div class="card">
+    <div class="card-header">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <div class="info">
             <h3>Sara Ali</h3>
             <p>UI/UX Designer</p>
-            <div class="price">$20/hr</div>
-            <div class="card-buttons">
-                <button class="view">View</button>
-                <button class="hire">Hire</button>
+            <div class="rate">
+                ★★★★★
             </div>
         </div>
+    </div>
+    <div class="price">$20/hr</div>
+    <div class="card-buttons">
+        <button class="view">View</button>
+        <button class="hire">Hire</button>
+    </div>
+</div>
 
+
+        
         <div class="card">
+              <div class="card-header">
             <img src="https://randomuser.me/api/portraits/men/32.jpg">
+            <div class="info">
             <h3>Ahmed Omar</h3>
             <p>Full Stack Developer</p>
+            <div class="rate">
+                ★★★★☆
+            </div>
+            </div>
+        </div>
             <div class="price">$25/hr</div>
             <div class="card-buttons">
                 <button class="view">View</button>
@@ -719,9 +760,16 @@ nav ul li a:hover {
         </div>
 
         <div class="card">
+               <div class="card-header">
             <img src="https://randomuser.me/api/portraits/women/68.jpg">
+            <div class="info">
             <h3>Layla Hassan</h3>
             <p>Graphic Designer</p>
+            <div class="rate">
+                ★★★★★
+            </div>
+            </div>
+        </div>
             <div class="price">$18/hr</div>
             <div class="card-buttons">
                 <button class="view">View</button>
@@ -730,9 +778,16 @@ nav ul li a:hover {
         </div>
 
         <div class="card">
+                <div class="card-header">
             <img src="https://randomuser.me/api/portraits/men/45.jpg">
+            <div class="info">
             <h3>Omar Mahmoud</h3>
             <p>SEO Expert</p>
+            <div class="rate">
+                ★★★★★
+            </div>
+            </div>
+        </div>
             <div class="price">$22/hr</div>
             <div class="card-buttons">
                 <button class="view">View</button>
@@ -740,53 +795,6 @@ nav ul li a:hover {
             </div>
         </div>
     </div>
-</section>
-
-<!-- How it works -->
-<section class="how-section">
-
-    <h2 class="section-title">How It Works</h2>
-
-    <div class="how-container">
-
-        <div class="how-card">
-            <div class="icon-circle">
-                <i class="fa-solid fa-file-lines"></i>
-            </div>
-            <div class="how-text">
-                <h4>Post your <br> project</h4>
-            </div>
-        </div>
-
-        <div class="how-card">
-            <div class="icon-circle">
-                <i class="fa-solid fa-comments"></i>
-            </div>
-            <div class="how-text">
-                <h4>Receive <br> proposals</h4>
-            </div>
-        </div>
-
-        <div class="how-card">
-            <div class="icon-circle">
-                <i class="fa-solid fa-handshake"></i>
-            </div>
-            <div class="how-text">
-                <h4>Hire the <br> best freelancer</h4>
-            </div>
-        </div>
-
-        <div class="how-card">
-            <div class="icon-circle">
-                <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div class="how-text">
-                <h4>Pay <br> securely</h4>
-            </div>
-        </div>
-
-    </div>
-
 </section>
 <!-- CTA -->
 <section class="why-wrapper">
@@ -881,4 +889,5 @@ nav ul li a:hover {
 
 
 </body>
+
 </html>
