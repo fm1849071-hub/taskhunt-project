@@ -491,7 +491,7 @@ body {
 
 .trending-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:30px;
 }
 
@@ -536,7 +536,7 @@ body {
 
 .task-desc{
   color:#555;
-  font-size:14px;
+  font-size:18px;
   line-height:1.5;
 }
 
@@ -545,7 +545,7 @@ body {
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  font-size:13px;
+  font-size:18px;
   color:#6b7280;
 }
 
@@ -586,11 +586,41 @@ body {
   border-radius:50%;
 }
 
-.rating{
-  font-size:12px;
-  color:#f59e0b;
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
 }
 
+.stars {
+  --star-size: 16px;
+  --star-color: #ddd;
+  --star-fill: #ffc107;
+  
+  position: relative;
+  display: inline-block;
+  font-size: var(--star-size);
+  line-height: 1;
+}
+
+.stars::before {
+  content: "★★★★★";
+  letter-spacing: 2px;
+  color: var(--star-color);
+}
+
+.stars::after {
+  content: "★★★★★";
+  letter-spacing: 2px;
+  color: var(--star-fill);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--rating) / 5 * 100%);
+  overflow: hidden;
+  white-space: nowrap;
+}
 .posted{
   font-size:12px;
   color:#9aa3af;

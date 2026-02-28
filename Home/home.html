@@ -5,466 +5,412 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TaskHunt | Home</title>
-<!-- Font Awesome -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="fontawesome-free-7.2.0-web/css/all.min.css">
   <link rel="stylesheet" href="home.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body> 
+<body>
 
   <!-- NAVBAR -->
- <nav class="nav">
-  <div class="logo">
-    <a href="../Home/home.html">
-      <img src="images/logo.png" alt="Logo">
-    </a>
-  </div>
+  <nav class="nav">
+    <div class="logo">
+      <a href="../Home/home.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+    </div>
 
-  <ul class="nav-links">
-    <li><a href="../Home/findwork.html">Find Work</a></li>
-    <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-    <li><a href="../about/about.html">About</a></li>
-    <li><a href="../contactus/contactus.html">Contact</a></li>
-  </ul>
+    <ul class="nav-links">
+      <li><a href="../Home/findwork.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="../about/about.html">About</a></li>
+      <li><a href="../contactus/contactus.html">Contact</a></li>
+    </ul>
 
- <div class="auth-buttons">
-  <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
-  <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
-</div>
-</nav>
-     <section class="hero-section">
+    <div class="auth-buttons">
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+  <section class="hero-section">
     <div class="hero-wrapper">
-        <div class="hero-left">
-            <div class="hero-content">
-                <h1>Welcome to <span>TaskHunt</span></h1>
-                <p>Connecting experts with the best opportunities.</p>
-            </div>
-
-            <div class="search-box-container">
-                <div class="search-input-wrapper">
-                    <input type="text" placeholder="Look for a skill, a programming language...">
-                    <button class="search-btn">Search</button>
-                </div>
-                <div class="quick-actions">
-                    <button class="action-btn blue">Hire Talent</button>
-                    <button class="action-btn outline">Find Work</button>
-                </div>
-            </div>
+      <div class="hero-left">
+        <div class="hero-content">
+          <h1>Welcome to <span>TaskHunt</span></h1>
+          <p>Connecting experts with the best opportunities.</p>
         </div>
 
-        <div class="hero-image">
-            <img src="Gemini_Generated_Image_lx8darlx8darlx8d.png" alt="Hero Illustration">
-        </div>
-    </div>
-</section>
-
-
- <!-- TRENDING TASKS -->
-<section class="trending-pro">
-
-  <div class="trending-header">
-    <h2>Trending Tasks</h2>
-  </div>
-
-  <div class="trending-grid">
-
-    <!-- TASK 1 -->
-    <div class="task-card">
-      <div class="task-top">
-        <span class="task-category">Development & IT</span>
-        <span class="task-price">$120</span>
-      </div>
-
-      <h3>Build Responsive Business Website</h3>
-
-      <p class="task-desc">
-        Need full stack developer to build responsive company website with modern UI and fast performance.
-      </p>
-
-      <div class="task-info">
-        <span>📍 Egypt</span>
-        <span>⏱ 3 days left</span>
-        <span>📩 12 offers</span>
-      </div>
-
-      <div class="task-skills">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
-      </div>
-
-      <div class="task-footer">
-        <div class="client">
-          <img src="https://i.pravatar.cc/40?img=12">
-          <div>
-            <strong>Ahmed Hassan</strong>
-            <div class="rating">⭐ 4.8</div>
+        <div class="search-box-container">
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="Look for a skill, a programming language...">
+            <button class="search-btn">Search</button>
           </div>
-        </div>
-        <span class="posted">Posted 2h ago</span>
-      </div>
-    </div>
-
-    <!-- TASK 2 -->
-    <div class="task-card">
-      <div class="task-top">
-        <span class="task-category">Design</span>
-        <span class="task-price">$60</span>
-      </div>
-
-      <h3>Logo Design for AI Startup</h3>
-
-      <p class="task-desc">
-        Looking for creative designer to create modern logo and brand identity for new tech startup.
-      </p>
-
-      <div class="task-info">
-        <span>📍 UAE</span>
-        <span>⏱ 2 days left</span>
-        <span>📩 7 offers</span>
-      </div>
-
-      <div class="task-skills">
-        <span>Logo</span><span>Branding</span><span>Illustrator</span>
-      </div>
-
-      <div class="task-footer">
-        <div class="client">
-          <img src="https://i.pravatar.cc/40?img=5">
-          <div>
-            <strong>Sarah Ali</strong>
-            <div class="rating">⭐ 4.9</div>
-          </div>
-        </div>
-        <span class="posted">Posted 5h ago</span>
-      </div>
-    </div>
-
-    <!-- TASK 3 -->
-    <div class="task-card">
-      <div class="task-top">
-        <span class="task-category">Writing</span>
-        <span class="task-price">$30</span>
-      </div>
-
-      <h3>Translate 10 Pages EN → AR</h3>
-
-      <p class="task-desc">
-        Need professional translator to translate business document accurately within 48 hours.
-      </p>
-
-      <div class="task-info">
-        <span>📍 Saudi</span>
-        <span>⏱ 1 day left</span>
-        <span>📩 15 offers</span>
-      </div>
-
-      <div class="task-skills">
-        <span>Translation</span><span>Arabic</span><span>English</span>
-      </div>
-
-      <div class="task-footer">
-        <div class="client">
-          <img src="https://i.pravatar.cc/40?img=22">
-          <div>
-            <strong>Mohamed Tarek</strong>
-            <div class="rating">⭐ 4.7</div>
-          </div>
-        </div>
-        <span class="posted">Posted 1d ago</span>
-      </div>
-    </div>
-
-    <!-- TASK 4 -->
-    <div class="task-card">
-      <div class="task-top">
-        <span class="task-category">Marketing</span>
-        <span class="task-price">$80</span>
-      </div>
-
-      <h3>Social Media Ads Campaign</h3>
-
-      <p class="task-desc">
-        Need marketing expert to manage Facebook & Instagram ads campaign for ecommerce store.
-      </p>
-
-      <div class="task-info">
-        <span>📍 Qatar</span>
-        <span>⏱ 4 days left</span>
-        <span>📩 9 offers</span>
-      </div>
-
-      <div class="task-skills">
-        <span>Facebook Ads</span><span>Marketing</span>
-      </div>
-
-      <div class="task-footer">
-        <div class="client">
-          <img src="https://i.pravatar.cc/40?img=33">
-          <div>
-            <strong>Omar Adel</strong>
-            <div class="rating">⭐ 4.6</div>
-          </div>
-        </div>
-        <span class="posted">Posted today</span>
-      </div>
-    </div>
-
-    <!-- TASK 5 -->
-    <div class="task-card">
-      <div class="task-top">
-        <span class="task-category">Mobile App</span>
-        <span class="task-price">$200</span>
-      </div>
-
-      <h3>Flutter Mobile App Development</h3>
-
-      <p class="task-desc">
-        Need Flutter developer to build booking mobile application with payment integration.
-      </p>
-
-      <div class="task-info">
-        <span>📍 Kuwait</span>
-        <span>⏱ 6 days left</span>
-        <span>📩 5 offers</span>
-      </div>
-
-      <div class="task-skills">
-        <span>Flutter</span><span>Firebase</span>
-      </div>
-
-      <div class="task-footer">
-        <div class="client">
-          <img src="https://i.pravatar.cc/40?img=41">
-          <div>
-            <strong>Hassan Saleh</strong>
-            <div class="rating">⭐ 5.0</div>
-          </div>
-        </div>
-        <span class="posted">Posted 3h ago</span>
-      </div>
-    </div>
-
-    <!-- TASK 6 -->
-    <div class="task-card">
-      <div class="task-top">
-        <span class="task-category">Data & AI</span>
-        <span class="task-price">$150</span>
-      </div>
-
-      <h3>Data Analysis Dashboard</h3>
-
-      <p class="task-desc">
-        Need data analyst to build dashboard and visualize sales dataset using Power BI or Python.
-      </p>
-
-      <div class="task-info">
-        <span>📍 Remote</span>
-        <span>⏱ 5 days left</span>
-        <span>📩 6 offers</span>
-      </div>
-
-      <div class="task-skills">
-        <span>Power BI</span><span>Python</span><span>Data Analysis</span>
-      </div>
-
-      <div class="task-footer">
-        <div class="client">
-          <img src="https://i.pravatar.cc/40?img=8">
-          <div>
-            <strong>Khaled Samy</strong>
-            <div class="rating">⭐ 4.8</div>
-          </div>
-        </div>
-        <span class="posted">Posted yesterday</span>
-      </div>
-    </div>
-
-  </div>
-</section><!-- ===== CLIENT TESTIMONIALS ===== -->
-<section class="testimonials-section">
-
-  <h2 class="section-main-title">What Clients Say</h2>
-
-  <div class="testimonials-container">
-
-    <!-- CARD 1 -->
-    <div class="testi-card">
-      <div class="testi-category">Development & IT</div>
-
-      <div class="testi-header">
-        <div class="client-profile">
-          <img src="https://i.pravatar.cc/150?u=a" alt="Client">
-          <div>
-            <h4 class="client-name">Ahmed Rayan</h4>
-            <div class="rating-box">
-              <span class="star-icon">★</span>
-              <span class="rating-num">4.9</span>
-            </div>
+          <div class="quick-actions">
+            <button class="action-btn blue">Hire Talent</button>
+            <button class="action-btn outline">Find Work</button>
           </div>
         </div>
       </div>
 
-      <p class="testi-text">
-        "The quality of the website delivered was outstanding. Very professional communication and the project was completed right on time."
-      </p>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="testi-card">
-      <div class="testi-category">Design & Creative</div>
-
-      <div class="testi-header">
-        <div class="client-profile">
-          <img src="https://i.pravatar.cc/150?u=b" alt="Client">
-          <div>
-            <h4 class="client-name">Sarah J.</h4>
-            <div class="rating-box">
-              <span class="star-icon">★</span>
-              <span class="rating-num">5.0</span>
-            </div>
-          </div>
-        </div>
+      <div class="hero-image">
+        <img src="Gemini_Generated_Image_lx8darlx8darlx8d.png" alt="Hero Illustration">
       </div>
-
-      <p class="testi-text">
-        "Amazing logo design! They really understood my vision for the startup and brought it to life with modern aesthetics."
-      </p>
-    </div>
-
-  </div>
-
-</section>
- 
-<!-- CATEGORIES -->
-
- <h2 class="section-title">Popular Categories</h2>
-
-<section class="categories">
-<a href="../Home/AI/Data Analysis & Visualization.html" class="lin">
-    <div class="category">
-    <i class="fa-solid fa-brain icon"></i>
-    <h3>Data & AI</h3>
-  </div>
-  </a>
-<a href="../Home/Development&it/dotnet.html" class="lin">
-  <div class="category">
-    <i class="fa-solid fa-code icon"></i>
-    <h3>Development & IT</h3>
-  </div>
-</a>
-
-  <div class="category">
-    <i class="fa-solid fa-palette icon"></i>
-    <h3>Design & Creative</h3>
-  </div>
-
-  <div class="category">
-    <i class="fa-solid fa-chart-line icon"></i>
-    <h3>Sales & Marketing</h3>
-  </div>
-
-  <div class="category">
-    <i class="fa-solid fa-language icon"></i>
-    <h3>Writing & Translation</h3>
-  </div>
-
-<a href="../Home/Admin & Support Specialties/Editors.html"class="lin">
-  <div class="category">
-    <i class="fa-solid fa-headset icon"></i>
-    <h3>Admin & Support</h3>
-  </div>
-  </a>
-<a href="../Home/F&A/Business Analysts.html"class="lin">
-  <div class="category">
-    <i class="fa-solid fa-calculator icon"></i>
-    <h3>Finance & Accounting</h3>
-  </div>
-  </a>
-<a href="../Home/legal/Corporate law/corporate.html"class="lin">
-  <div class="category">
-    <i class="fa-solid fa-scale-balanced icon"></i>
-    <h3>Legal</h3>
-  </div>
-  </a>
-<a href="../Home/HR/change-management.html"class="lin">
-  <div class="category">
-    <i class="fa-solid fa-users icon"></i>
-    <h3>HR & Training</h3>
-  </div>
-  </a>
-<a href="../Home/Engineering & Architecture/Aerospace Engineers.html"class="lin">
-  <div class="category">
-    <i class="fa-solid fa-building icon"></i>
-    <h3>Engineering & Architecture</h3>
-  </div>
-</a>
-</section>
- 
-<!-- about -->
-
-<<section class="about-section">
-    <div class="about-container">
-        <div class="about-text">
-            <h2>Empowering Your <span class="blue">Success</span></h2>
-            <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration, ensure secure growth, and turn professional goals into reality.</p>
-        </div>
-        <div class="about-visual">
-            <div class="dot-animation">
-                <div class="pulse-dot"></div>
-                <div class="orbit-dot"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <!-- FEATURED SERVICES -->
-  
-
-  <section class="features">
-    <h2 class="features-title">Why Task Hunt is Your Best Choice to Get Work Done</h2>
-
-    <div class="features-box">
-
-      <div class="feature-item">
-        <img src="images/1.jpeg" alt="24/7 Customer Support">
-        <h3>24/7 Customer Support</h3>
-        <p>Professional team to respond to inquiries and solve issues quickly</p>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/2.jpeg" alt="Affordable Prices">
-        <h3>Affordable Prices</h3>
-        <p>High-quality services starting from just $5</p>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/3.jpeg" alt="Over 350 Categories">
-        <h3>Over 350 Categories</h3>
-        <p>+350 categories offering the best services in all fields</p>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/4.jpeg" alt="Professional Service Providers">
-        <h3>Professional Service Providers</h3>
-        <p>Profiles showcasing sellers' services and previous ratings</p>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/5.jpeg" alt="Safe and Reliable Transactions">
-        <h3>Safe and Reliable Transactions</h3>
-        <p>Task providers verify their accounts to ensure security and quality</p>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/6.jpeg" alt="Rights Protection">
-        <h3>Rights Protection</h3>
-        <p>Task Hunt ensures your financial rights and that you receive the work as promised</p>
-      </div>
-
     </div>
   </section>
 
- 
+
+  <!-- TRENDING TASKS -->
+  <section class="trending-pro">
+
+    <div class="trending-header">
+      <h2>Trending Tasks</h2>
+    </div>
+
+    <div class="trending-grid">
+
+      <!-- TASK 1 -->
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-category">Development & IT</span>
+          <span class="task-price">$120</span>
+        </div>
+
+        <h3>Build Responsive Business Website</h3>
+
+        <p class="task-desc">
+          Need full stack developer to build responsive company website with modern UI and fast performance.
+        </p>
+
+        <div class="task-info">
+          <span>📍 Egypt</span>
+          <span>⏱ 3 days left</span>
+          <span>📩 12 offers</span>
+        </div>
+
+        <div class="task-skills">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+        </div>
+
+        <div class="task-footer">
+          <div class="client">
+            <img src="https://i.pravatar.cc/40?img=12">
+            <div>
+              <strong>Ahmed Hassan</strong>
+              <div class="rating">
+                <div class="stars" style="--rating: 3.5;"></div>
+                <span>3.5</span>
+              </div>
+            </div>
+          </div>
+          <span class="posted">Posted 2h ago</span>
+        </div>
+      </div>
+
+      <!-- TASK 2 -->
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-category">Design</span>
+          <span class="task-price">$60</span>
+        </div>
+
+        <h3>Logo Design for AI Startup</h3>
+
+        <p class="task-desc">
+          Looking for creative designer to create modern logo and brand identity for new tech startup.
+        </p>
+
+        <div class="task-info">
+          <span>📍 UAE</span>
+          <span>⏱ 2 days left</span>
+          <span>📩 7 offers</span>
+        </div>
+
+        <div class="task-skills">
+          <span>Logo</span><span>Branding</span><span>Illustrator</span>
+        </div>
+
+        <div class="task-footer">
+          <div class="client">
+            <img src="https://i.pravatar.cc/40?img=5">
+            <div>
+              <strong>Sarah Ali</strong>
+              <div class="rating">
+                <div class="stars" style="--rating: 3.8;"></div>
+                <span>3.8</span>
+              </div>
+            </div>
+          </div>
+          <span class="posted">Posted 5h ago</span>
+        </div>
+      </div>
+
+      <!-- TASK 3 -->
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-category">Writing</span>
+          <span class="task-price">$30</span>
+        </div>
+
+        <h3>Translate 10 Pages EN → AR</h3>
+
+        <p class="task-desc">
+          Need professional translator to translate business document accurately within 48 hours.
+        </p>
+
+        <div class="task-info">
+          <span>📍 Saudi</span>
+          <span>⏱ 1 day left</span>
+          <span>📩 15 offers</span>
+        </div>
+
+        <div class="task-skills">
+          <span>Translation</span><span>Arabic</span><span>English</span>
+        </div>
+
+        <div class="task-footer">
+          <div class="client">
+            <img src="https://i.pravatar.cc/40?img=22">
+            <div>
+              <strong>Mohamed Tarek</strong>
+              <div class="rating">
+                <div class="stars" style="--rating: 4.5;"></div>
+                <span>4.5</span>
+              </div>
+            </div>
+          </div>
+          <span class="posted">Posted 1d ago</span>
+        </div>
+      </div>
+
+      <!-- TASK 4 -->
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-category">Marketing</span>
+          <span class="task-price">$80</span>
+        </div>
+
+        <h3>Social Media Ads Campaign</h3>
+
+        <p class="task-desc">
+          Need marketing expert to manage Facebook & Instagram ads campaign for ecommerce store.
+        </p>
+
+        <div class="task-info">
+          <span>📍 Qatar</span>
+          <span>⏱ 4 days left</span>
+          <span>📩 9 offers</span>
+        </div>
+
+        <div class="task-skills">
+          <span>Facebook Ads</span><span>Marketing</span>
+        </div>
+
+        <div class="task-footer">
+          <div class="client">
+            <img src="https://i.pravatar.cc/40?img=33">
+            <div>
+              <strong>Omar Adel</strong>
+              <div class="rating">
+                <div class="stars" style="--rating: 4.1;"></div>
+                <span>4.1</span>
+              </div>
+            </div>
+          </div>
+          <span class="posted">Posted today</span>
+        </div>
+      </div>
+
+
+  </section>
+  <!-- ===== CLIENT TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+
+    <h2 class="section-main-title">What Clients Say</h2>
+
+    <div class="testimonials-container">
+
+      <!-- CARD 1 -->
+      <div class="testi-card">
+        <div class="testi-category">Development & IT</div>
+
+        <div class="testi-header">
+          <div class="client-profile">
+            <img src="https://i.pravatar.cc/150?u=a" alt="Client">
+            <div>
+              <h4 class="client-name">Ahmed Rayan</h4>
+              <div class="rating-box">
+                <span class="star-icon">★</span>
+                <span class="rating-num">4.9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="testi-text">
+          "The quality of the website delivered was outstanding. Very professional communication and the project was
+          completed right on time."
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="testi-card">
+        <div class="testi-category">Design & Creative</div>
+
+        <div class="testi-header">
+          <div class="client-profile">
+            <img src="https://i.pravatar.cc/150?u=b" alt="Client">
+            <div>
+              <h4 class="client-name">Sarah J.</h4>
+              <div class="rating-box">
+                <span class="star-icon">★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="testi-text">
+          "Amazing logo design! They really understood my vision for the startup and brought it to life with modern
+          aesthetics."
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CATEGORIES -->
+
+  <h2 class="section-title">Popular Categories</h2>
+
+  <section class="categories">
+    <a href="../Home/AI/Data Analysis & Visualization.html" class="lin">
+      <div class="category">
+        <i class="fa-solid fa-brain icon"></i>
+        <h3>Data & AI</h3>
+      </div>
+    </a>
+    <a href="../Home/Development&it/dotnet.html" class="lin">
+      <div class="category">
+        <i class="fa-solid fa-code icon"></i>
+        <h3>Development & IT</h3>
+      </div>
+    </a>
+
+    <div class="category">
+      <i class="fa-solid fa-palette icon"></i>
+      <h3>Design & Creative</h3>
+    </div>
+
+    <div class="category">
+      <i class="fa-solid fa-chart-line icon"></i>
+      <h3>Sales & Marketing</h3>
+    </div>
+
+    <div class="category">
+      <i class="fa-solid fa-language icon"></i>
+      <h3>Writing & Translation</h3>
+    </div>
+
+    <a href="../Home/Admin & Support Specialties/Editors.html" class="lin">
+      <div class="category">
+        <i class="fa-solid fa-headset icon"></i>
+        <h3>Admin & Support</h3>
+      </div>
+    </a>
+    <a href="../Home/F&A/Business Analysts.html" class="lin">
+      <div class="category">
+        <i class="fa-solid fa-calculator icon"></i>
+        <h3>Finance & Accounting</h3>
+      </div>
+    </a>
+    <a href="../Home/legal/Corporate law/corporate.html" class="lin">
+      <div class="category">
+        <i class="fa-solid fa-scale-balanced icon"></i>
+        <h3>Legal</h3>
+      </div>
+    </a>
+    <a href="../Home/HR/change-management.html" class="lin">
+      <div class="category">
+        <i class="fa-solid fa-users icon"></i>
+        <h3>HR & Training</h3>
+      </div>
+    </a>
+    <a href="../Home/Engineering & Architecture/Aerospace Engineers.html" class="lin">
+      <div class="category">
+        <i class="fa-solid fa-building icon"></i>
+        <h3>Engineering & Architecture</h3>
+      </div>
+    </a>
+  </section>
+
+  <!-- about -->
+
+  <<section class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Empowering Your <span class="blue">Success</span></h2>
+        <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration,
+          ensure secure growth, and turn professional goals into reality.</p>
+      </div>
+      <div class="about-visual">
+        <div class="dot-animation">
+          <div class="pulse-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- FEATURED SERVICES -->
+
+
+    <section class="features">
+      <h2 class="features-title">Why Task Hunt is Your Best Choice to Get Work Done</h2>
+
+      <div class="features-box">
+
+        <div class="feature-item">
+          <img src="images/1.jpeg" alt="24/7 Customer Support">
+          <h3>24/7 Customer Support</h3>
+          <p>Professional team to respond to inquiries and solve issues quickly</p>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/2.jpeg" alt="Affordable Prices">
+          <h3>Affordable Prices</h3>
+          <p>High-quality services starting from just $5</p>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/3.jpeg" alt="Over 350 Categories">
+          <h3>Over 350 Categories</h3>
+          <p>+350 categories offering the best services in all fields</p>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/4.jpeg" alt="Professional Service Providers">
+          <h3>Professional Service Providers</h3>
+          <p>Profiles showcasing sellers' services and previous ratings</p>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/5.jpeg" alt="Safe and Reliable Transactions">
+          <h3>Safe and Reliable Transactions</h3>
+          <p>Task providers verify their accounts to ensure security and quality</p>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/6.jpeg" alt="Rights Protection">
+          <h3>Rights Protection</h3>
+          <p>Task Hunt ensures your financial rights and that you receive the work as promised</p>
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- CTA -->
     <section class="cta">
       <h2>Ready to get started?</h2>
@@ -475,45 +421,45 @@
     </section>
 
     <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
+    <footer class="footer">
+      <div class="footer-container">
 
-      <div class="footer-col">
-        <h3>Task Hunt</h3>
-        <ul>
-          <li><a href="#">About Task Hunt</a></li>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Rights Protection</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Community</h3>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Discussions</a></li>
-          <li><a href="#">Topics</a></li>
-          <li><a href="#">User Experiences</a></li>
-        </ul>
-      </div>
-    
-      <div class="footer-col">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        <div class="footer-col">
+          <h3>Task Hunt</h3>
+          <ul>
+            <li><a href="#">About Task Hunt</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Rights Protection</a></li>
+          </ul>
         </div>
+
+        <div class="footer-col">
+          <h3>Community</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Topics</a></li>
+            <li><a href="#">User Experiences</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+          </div>
+        </div>
+
       </div>
 
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Task Hunt — All rights reserved</p>
-    </div>
-  </footer>
+      <div class="footer-bottom">
+        <p>© 2025 Task Hunt — All rights reserved</p>
+      </div>
+    </footer>
 
 
 </body>
