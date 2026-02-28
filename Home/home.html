@@ -25,11 +25,11 @@
       <li><a href="../Home/findwork.html">Find Work</a></li>
       <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
       <li><a href="../about/about.html">About</a></li>
-      <li><a href="../contactus/contactus.html">Contact</a></li>
+      <li><a href="#contact-section">Contact</a></li>
     </ul>
 
     <div class="auth-buttons">
-      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
       <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
     </div>
   </nav>
@@ -239,15 +239,15 @@
             <img src="https://i.pravatar.cc/150?u=a" alt="Client">
             <div>
               <h4 class="client-name">Ahmed Rayan</h4>
-              <div class="rating-box">
-                <span class="star-icon">★</span>
-                <span class="rating-num">4.9</span>
+              <div class="rating">
+                <div  class="stars" style="--rating: 4.1;"></div>
+                <span>4.1</span>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="testi-text">
+        <p style="font-size: 18px;" class="testi-text">
           "The quality of the website delivered was outstanding. Very professional communication and the project was
           completed right on time."
         </p>
@@ -261,16 +261,16 @@
           <div class="client-profile">
             <img src="https://i.pravatar.cc/150?u=b" alt="Client">
             <div>
-              <h4 class="client-name">Sarah J.</h4>
-              <div class="rating-box">
-                <span class="star-icon">★</span>
-                <span class="rating-num">5.0</span>
+              <h4 class="client-name">Sarah Jamal</h4>
+              <div class="rating">
+                <div class="stars" style="--rating: 4.5;"></div>
+                <span>4.1</span>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="testi-text">
+        <p style="font-size: 18px;" class="testi-text">
           "Amazing logo design! They really understood my vision for the startup and brought it to life with modern
           aesthetics."
         </p>
@@ -453,7 +453,7 @@
       </ul>
     </div>
 
-    <div class="footer-col contact-col">
+    <div id="contact-section" class="footer-col contact-col">
       <div class="contact-box">
         <form id="contactForm">
           <h3>Drop us a message</h3>
