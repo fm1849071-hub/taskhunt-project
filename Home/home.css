@@ -532,6 +532,7 @@ body {
 .task-card h3{
   margin:10px 0;
   color:#0b2545;
+  font-size: 22px;
 }
 
 .task-desc{
@@ -622,7 +623,7 @@ body {
   white-space: nowrap;
 }
 .posted{
-  font-size:12px;
+  font-size:16px;
   color:#9aa3af;
 }
 
