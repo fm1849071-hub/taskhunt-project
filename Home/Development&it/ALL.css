@@ -25,14 +25,14 @@
 /* NAVBAR FIX */
 
 .navbar{
-height:80px;
+height:50px;
 background:#ffffff;
 }
 
 /* LOGO */
 
 .navbar-brand img{
-height:100px;
+height:80px;
 }
 
 /* LINKS */

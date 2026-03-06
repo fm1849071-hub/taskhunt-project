@@ -4,21 +4,17 @@
   --c2: #0090E0;
   --c3: #0077B8;
   --c4: #051923;
-  --c5: #ffffff;
-  --white: #ffffff;
-  --light: #e6f7ff;
+  
 }
 
-    body {
-      background: #f9fafb;
-      color: #111827;
-    }
+    
+  
   
 
 /* NAVBAR FIX */
 
 .navbar{
-height:80px;
+height:50px;
 background:#ffffff;
 }
 
@@ -90,7 +86,14 @@ margin-top:10px;
 }
 
 
+.btn-primary{
+background:#0077B8;
+border:none;
+}
 
+.btn-primary:hover{
+background:#005b84;
+}
 
 .hero-section {
     display: flex;
