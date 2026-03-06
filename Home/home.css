@@ -86,7 +86,40 @@ border:none;
 
 /* SIGN UP BUTTON */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+
+.btn-primary{
+background:#0077B8;
+border:none;
+}
+
+.btn-primary:hover{
+background:#005b84;
+}
+
+/* MOBILE FIX */
+
+@media (max-width:991px){
+
+.navbar{
+height:auto;
+padding:10px 0;
+}
+
+.navbar-nav{
+text-align:center;
+margin-top:10px;
+}
+
+.navbar .d-flex{
+justify-content:center;
+margin-top:10px;
+}
+
+}
+>>>>>>> Stashed changes
 
 .btn-primary{
 background:#0077B8;
