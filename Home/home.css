@@ -42,124 +42,79 @@ body {
 }
 
 
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 30px;
-  height: 50px;
-  background: var(--white);
+/* NAVBAR FIX */
+
+.navbar{
+height:80px;
+background:#ffffff;
 }
 
-.logo img {
-  height: 180px;
-  align-items: center;
-  padding-bottom: 25px;
+/* LOGO */
+
+.navbar-brand img{
+height:100px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+/* LINKS */
+
+.navbar-nav .nav-link{
+font-size:17px;
+font-weight:500;
+color:#333;
+margin:0 10px;
+transition:0.3s;
 }
 
-nav ul li a {
-  color: var(--c4);
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-nav ul li a:hover {
-  color: var(--c1);
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  padding: 0 50px;
-  height: 50px;
-  background: #fff;
-  position: relative;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); 
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.auth-buttons .btn {
-    width: 90px; 
-    height: 35px;
-    padding: 8px 0; 
-    text-align: center;
-    display: inline-block;
-    border-radius: 8px; 
-    font-size: 17px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.login-blue {
-    background-color: #f0f6ff;
-    color: white;
-    border: none;
-}
-
-.login-btn {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff; 
-}
-
-.auth-buttons .btn:hover {
-    opacity: 0.8;
-    transform: translateY(-0.5px);
-}
-
-.signup-blue {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.login-text {
-  background: none;
-  border: none;
-  color: #000000;
-  cursor: pointer;
-  font-weight: 500;
-
+.navbar-nav .nav-link:hover{
+color:#0077B8;
 }
 
 /* BUTTONS */
-.btn {
-  padding: 10px 18px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+
+.navbar .btn{
+padding:8px 18px;
+border-radius:8px;
+font-weight:500;
 }
 
-.primary {
-  background: var(--c3);
-  color: #fff;
+/* LOGIN BUTTON */
+
+.btn-light{
+background:#eef3ff;
+border:none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* SIGN UP BUTTON */
+
+.btn-primary{
+background:#0077B8;
+border:none;
+}
+
+.btn-primary:hover{
+background:#005b84;
+}
+
+/* MOBILE FIX */
+
+@media (max-width:991px){
+
+.navbar{
+height:auto;
+padding:10px 0;
+}
+
+.navbar-nav{
+text-align:center;
+margin-top:10px;
+}
+
+.navbar .d-flex{
+justify-content:center;
+margin-top:10px;
+}
+
+}
 
 :root {
     --primary-blue: #4A90E2;
