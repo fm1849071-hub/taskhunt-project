@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Design & Creative | TaskHunt</title>
+  <link rel="stylesheet" href="Youtube Video Editors.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html" class="logo">
+      <img src="../images/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+      <li><a href="#">Find Work</a></li>
+      <li><a href="#">Hire Talent</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../contactus/contactus.html">Contact</a></li>
+      <li><a href="../../login/login.html">Login</a></li>
+      <li>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="hero-title">
+    <h2>Design & Creative</h2>
+    <span class="hero-divider">|</span>
+    <h1>Youtube Video Editors</h1>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <div class="filter-container">
+
+      <select id="skillFilter">
+        <option value="all">All Skills</option>
+<option value="YouTube Video Editing">YouTube Video Editing</option>
+<option value="Video Editing">Video Editing</option>
+<option value="Adobe Premiere Pro">Adobe Premiere Pro</option>
+<option value="YouTube Shorts">YouTube Shorts</option>
+<option value="Motion Graphics">Motion Graphics</option>
+<option value="Color Grading">Color Grading</option>
+<option value="YouTube SEO">YouTube SEO</option>
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior</option>
+        <option value="mid">Mid</option>
+        <option value="senior">Senior</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $30</option>
+        <option value="high">Above $30</option>
+      </select>
+
+      
+    </div>
+  </section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+          <li><a href="#">LLM Specialist</a></li>
+          <li><a href="#">Computer Vision</a></li>
+          <li><a href="#">Python Automation</a></li>
+          <li><a href="#">AI Scripting</a></li>
+          <li><a href="#">Data Scraping & Cleaning</a></li>
+          <li><a href="#">Sentiment Analysis</a></li>
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href=".net.html">.NET Developers</a></li>
+          <li><a href="ai.html">AI Developers</a></li>
+          <li><a href="android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="#">Game Developers</a></li>
+          <li><a href="#">Golang Developers</a></li>
+          <li><a href="#">Java Developers</a></li>
+          <li><a href="#">Laravel Developers</a></li>
+          <li><a href="#">Minecraft Developers</a></li>
+          <li><a href="#">Next.js Developers</a></li>
+          <li><a href="#">Odoo Developers</a></li>
+          <li><a href="#">PHP Developers</a></li>
+          <li><a href="#">Product Managers</a></li>
+          <li><a href="#">QA Engineers</a></li>
+          <li><a href="#">React.js Developers</a></li>
+          <li><a href="#">Salesforce Developers</a></li>
+          <li><a href="#">WooCommerce Developers</a></li>
+          <li><a href="#">Zapier Automation Developers</a></li>
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+          <li><a href="#">Creative Strategy</a></li>
+          <li><a href="#">Layout Design</a></li>
+          <li><a href="#">Brand Guidelines</a></li>
+          <li><a href="#">Interaction Design</a></li>
+          <li><a href="#">Social Media Imagery</a></li>
+          <li><a href="#">Banner Ad Design</a></li>
+          <li><a href="#">Brand Identity & Guidelines</a></li>
+          <li><a href="#">User Interface Design</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+          <li><a href="#">Ghostwriters</a></li>
+          <li><a href="#">HubSpot Experts</a></li>
+          <li><a href="#">Market Researchers</a></li>
+          <li><a href="#">Marketing Managers</a></li>
+          <li><a href="#">Pitch Deck Writers</a></li>
+          <li><a href="#">Public Relations Specialists</a></li>
+          <li><a href="#">Sales Directors</a></li>
+          <li><a href="#">Sales Engineers</a></li>
+          <li><a href="#">Sales Representatives</a></li>
+          <li><a href="#">SEO Experts</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">T-Shirt Designers</a></li>
+          <li><a href="#">TikTok Experts</a></li>
+          <li><a href="#">Virtual Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+          <li><a href="#">Headline Writers</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Medical Writers</a></li>
+          <li><a href="#">Proposal Writers</a></li>
+          <li><a href="#">Report Writers</a></li>
+          <li><a href="#">Research Paper Writers</a></li>
+          <li><a href="#">Resume Writers</a></li>
+          <li><a href="#">Scientific Writers</a></li>
+          <li><a href="#">Screenwriters</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">Speech Writers</a></li>
+          <li><a href="#">Technical Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="#">Microsoft Outlook Specialists</a></li>
+          <li><a href="#">Microsoft Word Experts</a></li>
+          <li><a href="#">Personal Assistants</a></li>
+          <li><a href="#">PowerPoint Experts</a></li>
+          <li><a href="#">Project Managers</a></li>
+          <li><a href="#">Proofreaders</a></li>
+          <li><a href="#">Recruiters</a></li>
+          <li><a href="#">Research Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+          <li><a href="#">Payroll Processing Specialists</a></li>
+          <li><a href="#">Financial Accountants</a></li>
+          <li><a href="#">Financial Managers</a></li>
+          <li><a href="#">Financial Reporting Specialists</a></li>
+          <li><a href="#">M&A Consultants</a></li>
+          <li><a href="#">Project Managers</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- HR & Training -->
+      <div class="category">
+        <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+          <li><a href="#">Landscape Architects</a></li>
+          <li><a href="#">Polymer Engineers</a></li>
+          <li><a href="#">Architectural Rendering Specialists</a></li>
+          <li><a href="#">Design Engineers</a></li>
+          <li><a href="#">Fire Protection Engineers</a></li>
+          <li><a href="#">Infrastructure Engineers</a></li>
+          <li><a href="#">Naval Architects</a></li>
+          <li><a href="#">Structural Engineers</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+
+
+    <section class="cards-wrapper">
+
+      <div class="cards-grid">
+
+        <!-- CARD 1 -->
+        <div class="up-card" data-skill="kotlin">
+          <div class="card-header">
+            <img src="Ha J..jpg" class="avatar">
+            <div class="user-info">
+              <h3>Ha J.</h3>
+              <span class="location"> Ho Chi Minh City, Vietnam</span>
+              <div class="stats">
+                <span class="price">$12/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 9 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+          I’m proficient in Adobe Premiere Pro, Sony Vegas, Adobe Photoshop, and other editing tools,
+           with experience producing everything from brand-building videos to
+            engaging TikTok and social media content.
+        </p>
+          <div class="tags"><span>Video Editor</span><span>Adobe Premiere pro</span>
+         <span>Sony Vegas</span><span>Content Editing</span><span>Adobe Photoshop</span>
+         <span>Video Editing Pluguin</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card hidden-card" data-skill="java">
+          <div class="card-header">
+            <img src="Hanane B..webp" class="avatar">
+            <div class="user-info">
+              <h3>Hanane B. </h3>
+              <span class="location"> Agadir, Morocco</span>
+              <div class="stats">
+                <span class="price">$70/hr</span>
+                <span class="rating">⭐ 4.9 </span>
+                <span class="jobs">💼 13 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            We are Hanane & Aya — a passionate duo of content creators, public speakers,
+             creative visionaries, and skilled video editors. Together,
+              we specialize in delivering powerful, impactful messages that
+               captivate audiences and elevate brand stories
+          </p>
+          <div class="tags"><span></span>Content Creators<span> Video Editors</span>
+            <span>Presenting Coaches</span><span> Creative Duo</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card hidden-card" data-skill="kotlin mvvm">
+          <div class="card-header">
+            <img src="Thuan D..webp" class="avatar">
+            <div class="user-info">
+              <h3>Thuan D.</h3>
+              <span class="location"> Bac Giang, Vietnam</span>
+              <div class="stats">
+                <span class="price">$15/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 180 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">✨ I'm Thuan Dang, a full-time freelance video editor with 
+            over 5 years of experience in the field. I've honed my skills working on platforms
+             like YouTube, Twitter and Instagram, always striving to create content that not only meets
+              but exceeds the expectations of my clients. Whether it's editing your footage or creating 
+              a video from scratch, let's work together to create something special!
+            </p>
+          <div class="tags"><span>Video Editor</span><span>YouTube, TikTok & IG Video Editing</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card hidden-card" data-skill="firebase">
+          <div class="card-header">
+            <img src="Gabriele T..webp" class="avatar">
+            <div class="user-info">
+              <h3>Gabriele T.</h3>
+              <span class="location"> Torino, Italy</span>
+              <div class="stats">
+                <span class="price">$25/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 26 jobs</span>
+              </div>
+            </div>
+          </div>
+          Hi,
+          I’ve been working in post-production since 2018, focusing mostly on video editing and color grading,
+           with a growing passion for VFX. I use Fusion and Adobe After Effects for compositing, 
+           and I do CGI with Blender. I’m proficient with DaVinci Resolve, Avid Media Composer, 
+           and the full Adobe suite. Whether it’s building a narrative through editing or 
+         refining visuals with effects and color, I love shaping stories through the post-production process.
+        </p>
+          <div class="tags"><span>Video Editing</span><span>Videography</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card hidden-card" data-skill="firebase maps">
+          <div class="card-header">
+            <img src="Zahid A..webp" class="avatar">
+            <div class="user-info">
+              <h3>Zahid A.</h3>
+              <span class="location">Abbottabad, Pakistan</span>
+              <div class="stats">
+                <span class="price">$20/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 19 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            I’m Zahid Ali Tahir, a Video Ad Strategist and Creative Media Specialist with 5+ years 
+            of experience helping over 50 brands—from lifestyle to luxury—win attention and convert
+             viewers into buyers. My content has generated 100M+ views and directly impacted brand sales,
+              visibility, and identity.
+          </p>
+          <div class="tags"><span>Video Production</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card hidden-card" data-skill="java sqlite">
+          <div class="card-header">
+            <img src="Roshan I..webp" class="avatar">
+            <div class="user-info">
+              <h3>Roshan I.</h3>
+              <span class="location"> Karachi, Pakistan</span>
+              <div class="stats">
+                <span class="price">$6/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 57jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">   
+           🔴 A Professional 𝐕𝐢𝐝𝐞𝐨 𝐄𝐝𝐢𝐭𝐨𝐫 & 𝐁𝐫𝐚𝐧𝐝𝐢𝐧𝐠 𝐃𝐞𝐬𝐢𝐠𝐧𝐞𝐫 with 5+ years of solid experience.
+         🔴 My expertise in video editing, working on diverse projects such as 𝐓𝐚𝐥𝐤𝐢𝐧𝐠 𝐇𝐞𝐚𝐝 𝐯𝐢𝐝𝐞𝐨𝐬,
+          𝐅𝐚𝐜𝐞𝐥𝐞𝐬𝐬 𝐂𝐨𝐧𝐭𝐞𝐧𝐭, 𝐏𝐨𝐝𝐜𝐚𝐬𝐭𝐬, 𝐂𝐢𝐧𝐞𝐦𝐚𝐭𝐢𝐜 𝐕𝐢𝐝𝐞𝐨 𝐄𝐝𝐢𝐭𝐢𝐧𝐠, 𝐀𝐝𝐝𝐢𝐧𝐠 𝐂𝐥𝐨𝐬𝐞𝐝 𝐂𝐚𝐩𝐭𝐢𝐨𝐧𝐬/𝐒𝐮𝐛𝐭𝐢𝐭𝐥𝐞𝐬,
+           𝐖𝐞𝐝𝐝𝐢𝐧𝐠 𝐕𝐢𝐝𝐞𝐨𝐬 and many more. 🔴 My skills include proficient use of editing software 
+           like 𝐀𝐝𝐨𝐛𝐞 𝐏𝐫𝐞𝐦𝐢𝐞𝐫𝐞 𝐏𝐫𝐨 𝐚𝐧𝐝 𝐀𝐟𝐭𝐞𝐫 𝐄𝐟𝐟𝐞𝐜𝐭𝐬, 𝐅𝐢𝐧𝐚𝐥 𝐂𝐮𝐭 𝐏𝐫𝐨, 𝐂𝐚𝐩𝐂𝐮𝐭, 𝐀𝐝𝐨𝐛𝐞 𝐀𝐮𝐝𝐢𝐨 𝐀𝐮𝐝𝐢𝐭𝐢𝐨𝐧, 𝐂𝐚𝐧𝐯𝐚 𝐄𝐓𝐂.
+        </p>
+          <div class="tags"><span>Video Editing</span><span>Intellectual Property Law</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 7 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="Sibt E H..webp" class="avatar">
+            <div class="user-info">
+              <h3>Sibt E H.</h3>
+              <span class="location"> Lahore, Pakistan </span>
+              <div class="stats">
+                <span class="price">$5/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 28 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            Hi! You will get a professional and fantastic video with fast and quick turnarounds.
+             I have past five years of experience in this field and delivering you a tremendous result. 
+             I can create your desired video in 2 to 3 working days, giving you unlimited revisions until
+              you are 100% satisfied.
+          </p>
+          <div class="tags"><span>Video Editing</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+
+        <!-- CARD 8 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin firebase">
+          <div class="card-header">
+            <img src="Barzaan Ali K..jpg" class="avatar">
+            <div class="user-info">
+              <h3>Barzaan Ali K.</h3>
+              <span class="location"> Karachi, Pakistan</span>
+              <div class="stats">
+                <span class="price">$9/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 122 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+           🎯 I reverse-engineer YouTube’s algorithm to help channels go viral in their first 10–15 videos.
+            It’s not luck, it’s structure, editing psychology, and retention science.
+         </p>
+          <div class="tags"><span>Video Editing</span><span>Video Production</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 9 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="Tahir N..webp" class="avatar">
+            <div class="user-info">
+              <h3>Tahir N.</h3>
+              <span class="location"> Layyah, Pakistan</span>
+              <div class="stats">
+                <span class="price">$5/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 28 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            Hello there! Thanks for landing on my gig! I am Noman, a creative and passionate video editor who
+            specializes in motion graphics, sound design, and mixing green screen video.
+            Social media etc.! My experience with Adobe After Effects, Premiere Pro, 
+            & Photoshop is over three years. I have worked locally and am now interested in freelance work.
+                 
+          </p>
+          <div class="tags"><span>Video Editing</span><span>Video Production</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+       
+
+        <!-- CARD 10 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="Muhammad Z..webp" class="avatar">
+            <div class="user-info">
+              <h3>Muhammad Z.</h3>
+              <span class="location"> London, United Kingdom </span>
+              <div class="stats">
+                <span class="price">$8/hr</span>
+                <span class="rating">⭐ 4.2</span>
+                <span class="jobs">💼 27 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+           Hello there! I'm Muhammad Zain, a seasoned video editor with over 4 years of expertise
+            in transforming ordinary content into extraordinary visual experiences. Specializing in Cash Cow,
+             Faceless, and Automation YouTube videos, I bring a unique blend of creativity and
+              technical prowess to the table. 
+                 
+          </p>
+          <div class="tags"><span>Video Editing</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+       
+        
+
+<!-- CARD 11 (NEW) -->
+<div class="up-card hidden-card" data-skill="instagram reels editing">
+  <div class="card-header">
+    <img src="Maya S..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Maya S.</h3>
+      <span class="location"> London, United Kingdom </span>
+      <div class="stats">
+        <span class="price">$18/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 156 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Creative reel editor delivering high-retention social media videos.
+    Skilled in motion graphics, subtitles, and trendy effects.
+  </p>
+  <div class="tags"><span>Instagram Reels</span><span>Motion Graphics</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+
+<!-- CARD 12 (NEW) -->
+<div class="up-card hidden-card" data-skill="instagram reels editing">
+  <div class="card-header">
+    <img src="Omar N..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Omar N.</h3>
+      <span class="location"> Cairo, Egypt </span>
+      <div class="stats">
+        <span class="price">$10/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 94 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Professional social media video editor focused on Instagram growth content.
+    Fast delivery and optimized vertical videos.
+  </p>
+  <div class="tags"><span>Instagram Reels</span><span>Vertical Video</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 13 (NEW) -->
+<div class="up-card hidden-card" data-skill="instagram reels editing">
+  <div class="card-header">
+    <img src="Sofia L..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Sofia L.</h3>
+      <span class="location"> Madrid, Spain </span>
+      <div class="stats">
+        <span class="price">$16/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 132 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Reel editor creating eye-catching social media videos with smooth transitions.
+    Perfect for influencers and brands.
+  </p>
+  <div class="tags"><span>Instagram Reels</span><span>Transitions</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 14 (NEW) -->
+<div class="up-card hidden-card" data-skill="instagram reels editing">
+  <div class="card-header">
+    <img src="Daniel K..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Daniel K.</h3>
+      <span class="location"> Toronto, Canada </span>
+      <div class="stats">
+        <span class="price">$20/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 88 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Social media video editor focused on storytelling and audience retention.
+    Experienced with Premiere Pro and After Effects.
+  </p>
+  <div class="tags"><span>Instagram Reels</span><span>Premiere Pro</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 15 (NEW) -->
+<div class="up-card hidden-card" data-skill="instagram reels editing">
+  <div class="card-header">
+    <img src="Hannah R..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Hannah R.</h3>
+      <span class="location"> Sydney, Australia </span>
+      <div class="stats">
+        <span class="price">$17/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 119 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Viral reel editor helping brands grow on Instagram and TikTok.
+    Specialized in captions, hooks, and fast-paced edits.
+  </p>
+  <div class="tags"><span>Instagram Reels</span><span>Subtitles</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+      
+      
+      
+      
+      </div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Youtube Video Editors</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire Youtube Video Editors from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Verified Talent</h4>
+        <p>All Youtube Video Editors are screened and tested.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Flexible Pricing</h4>
+        <p>Hourly or fixed-price projects that fit your budget.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Secure Payments</h4>
+        <p>Pay only when you’re satisfied with the work.</p>
+      </div>
+    </div>
+  </section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Post your job</div>
+      <div class="step">2️⃣ Choose your developer</div>
+      <div class="step">3️⃣ Start building your app</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How much does it cost to hire an YouTube Video Editor</summary>
+      <p>Prices depend on experience and project scope.</p>
+    </details>
+
+    <details>
+      <summary>Can I hire developers hourly?</summary>
+      <p>Yes, both hourly and fixed-price contracts are available.</p>
+    </details>
+  </section>
+
+
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Rights Protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Topics</a></li>
+          <li><a href="#">User Experiences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
+
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Design & Creative | TaskHunt</title>
+  <link rel="stylesheet" href="UX Designers.css">
+</head>
+
+<body>
+
+ <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html" class="logo">
+      <img src="../images/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+      <li><a href="#">Find Work</a></li>
+      <li><a href="#">Hire Talent</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../contactus/contactus.html">Contact</a></li>
+      <li><a href="../../login/login.html">Login</a></li>
+      <li>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="hero-title">
+    <h2>Design & Creative</h2>
+    <span class="hero-divider">|</span>
+    <h1>UX Designers</h1>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <div class="filter-container">
+
+      <select id="skillFilter">
+        <option value="all">All Skills</option>
+<option value="UX Design">UX Design</option>
+<option value="User Research">User Research</option>
+<option value="Wireframing">Wireframing</option>
+<option value="Prototyping">Prototyping</option>
+<option value="Usability Testing">Usability Testing</option>
+<option value="Figma">Figma</option>
+<option value="Interaction Design">Interaction Design</option>
+
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior</option>
+        <option value="mid">Mid</option>
+        <option value="senior">Senior</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $30</option>
+        <option value="high">Above $30</option>
+      </select>
+
+      
+
+    </div>
+  </section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+          <li><a href="#">LLM Specialist</a></li>
+          <li><a href="#">Computer Vision</a></li>
+          <li><a href="#">Python Automation</a></li>
+          <li><a href="#">AI Scripting</a></li>
+          <li><a href="#">Data Scraping & Cleaning</a></li>
+          <li><a href="#">Sentiment Analysis</a></li>
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href=".net.html">.NET Developers</a></li>
+          <li><a href="ai.html">AI Developers</a></li>
+          <li><a href="android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="#">Game Developers</a></li>
+          <li><a href="#">Golang Developers</a></li>
+          <li><a href="#">Java Developers</a></li>
+          <li><a href="#">Laravel Developers</a></li>
+          <li><a href="#">Minecraft Developers</a></li>
+          <li><a href="#">Next.js Developers</a></li>
+          <li><a href="#">Odoo Developers</a></li>
+          <li><a href="#">PHP Developers</a></li>
+          <li><a href="#">Product Managers</a></li>
+          <li><a href="#">QA Engineers</a></li>
+          <li><a href="#">React.js Developers</a></li>
+          <li><a href="#">Salesforce Developers</a></li>
+          <li><a href="#">WooCommerce Developers</a></li>
+          <li><a href="#">Zapier Automation Developers</a></li>
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+          <li><a href="#">Creative Strategy</a></li>
+          <li><a href="#">Layout Design</a></li>
+          <li><a href="#">Brand Guidelines</a></li>
+          <li><a href="#">Interaction Design</a></li>
+          <li><a href="#">Social Media Imagery</a></li>
+          <li><a href="#">Banner Ad Design</a></li>
+          <li><a href="#">Brand Identity & Guidelines</a></li>
+          <li><a href="#">User Interface Design</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+          <li><a href="#">Ghostwriters</a></li>
+          <li><a href="#">HubSpot Experts</a></li>
+          <li><a href="#">Market Researchers</a></li>
+          <li><a href="#">Marketing Managers</a></li>
+          <li><a href="#">Pitch Deck Writers</a></li>
+          <li><a href="#">Public Relations Specialists</a></li>
+          <li><a href="#">Sales Directors</a></li>
+          <li><a href="#">Sales Engineers</a></li>
+          <li><a href="#">Sales Representatives</a></li>
+          <li><a href="#">SEO Experts</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">T-Shirt Designers</a></li>
+          <li><a href="#">TikTok Experts</a></li>
+          <li><a href="#">Virtual Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+          <li><a href="#">Headline Writers</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Medical Writers</a></li>
+          <li><a href="#">Proposal Writers</a></li>
+          <li><a href="#">Report Writers</a></li>
+          <li><a href="#">Research Paper Writers</a></li>
+          <li><a href="#">Resume Writers</a></li>
+          <li><a href="#">Scientific Writers</a></li>
+          <li><a href="#">Screenwriters</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">Speech Writers</a></li>
+          <li><a href="#">Technical Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="#">Microsoft Outlook Specialists</a></li>
+          <li><a href="#">Microsoft Word Experts</a></li>
+          <li><a href="#">Personal Assistants</a></li>
+          <li><a href="#">PowerPoint Experts</a></li>
+          <li><a href="#">Project Managers</a></li>
+          <li><a href="#">Proofreaders</a></li>
+          <li><a href="#">Recruiters</a></li>
+          <li><a href="#">Research Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+          <li><a href="#">Payroll Processing Specialists</a></li>
+          <li><a href="#">Financial Accountants</a></li>
+          <li><a href="#">Financial Managers</a></li>
+          <li><a href="#">Financial Reporting Specialists</a></li>
+          <li><a href="#">M&A Consultants</a></li>
+          <li><a href="#">Project Managers</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- HR & Training -->
+      <div class="category">
+        <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+          <li><a href="#">Landscape Architects</a></li>
+          <li><a href="#">Polymer Engineers</a></li>
+          <li><a href="#">Architectural Rendering Specialists</a></li>
+          <li><a href="#">Design Engineers</a></li>
+          <li><a href="#">Fire Protection Engineers</a></li>
+          <li><a href="#">Infrastructure Engineers</a></li>
+          <li><a href="#">Naval Architects</a></li>
+          <li><a href="#">Structural Engineers</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+
+
+    <section class="cards-wrapper">
+
+      <div class="cards-grid">
+
+        <!-- CARD 1 -->
+        <div class="up-card" data-skill="kotlin">
+          <div class="card-header">
+            <img src="Rizwan A..webp" class="avatar">
+            <div class="user-info">
+              <h3>Rizwan A.</h3>
+              <span class="location">Swat, Pakistan</span>
+              <div class="stats">
+                <span class="price">$15/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 189 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📱 Senior UI/UX Designer Mobile App & Web App Design, Website Design, SaaS Design Specialist -
+             🎨 Figma Expert – Clean, Responsive, Dev-Ready - 🚀 AI-Powered, SaaS & MVP Product Design - 
+             🎯 400+ 5-Star Projects Completed - ⏱ 6+ Years of Experience </p>
+          <div class="tags"><span>UX/UI Design</span><span>Mobile Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card hidden-card" data-skill="java">
+          <div class="card-header">
+            <img src="Roman O..webp" class="avatar">
+            <div class="user-info">
+              <h3>Roman O</h3>
+              <span class="location">Alexandria, Egypt</span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 8 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">I’m a product-minded UI UX Designer with 100+ digital product designs and over 15 years of experience crafting user-centered design solutions 
+            that deliver results across mobile apps, SaaS platforms, and scalable web applications.</p>
+          <div class="tags"><span>UX/UI Design</span><span>Mobile Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card hidden-card" data-skill="kotlin mvvm">
+          <div class="card-header">
+            <img src="Valeriia K..webp" class="avatar">
+            <div class="user-info">
+              <h3>Valeriia K.</h3>
+              <span class="location">Bucharest, Romania</span>
+              <div class="stats">
+                <span class="price">$45/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 47 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌟 Designs That Deliver Real Results — Websites, Apps, and Landing Pages Built to Grow Users and Business 📈</p>
+          <div class="tags"><span>UX/UI Design</span><span>Mobile Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card hidden-card" data-skill="firebase">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=24" class="avatar">
+            <div class="user-info">
+              <h3>Courtney H.</h3>
+              <span class="location"> Boulder, CO, USA</span>
+              <div class="stats">
+                <span class="price">$50/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 27 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">Squarespace web designer for businesses looking to grow their online presence.
+          I specialize in creating semi-custom Squarespace websites that are conversion-focused and are customized to fit your business needs.</p>
+          <div class="tags"><span>Web Design</span><span>Web & UX Writing</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card hidden-card" data-skill="firebase maps">
+          <div class="card-header">
+            <img src="Artem B..webp" class="avatar">
+            <div class="user-info">
+              <h3>Artem B.</h3>
+              <span class="location">les Escaldes, Andorra</span>
+              <div class="stats">
+                <span class="price">$50/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 159 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">I have 12+ years of experience as a UI UX designer and has made over 600 UI UX design projects
+          ⭐️⭐️⭐️⭐️⭐️ TOP 1% Expert-Vetted Web Designer / UI UX Designer on Upwork</p>
+          <div class="tags"><span>UX/UI Design</span><span>Web Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card hidden-card" data-skill="java sqlite">
+          <div class="card-header">
+            <img src="Alexander I..webp" class="avatar">
+            <div class="user-info">
+              <h3>Alexander I.</h3>
+              <span class="location">Kiev, Ukraine</span>
+              <div class="stats">
+                <span class="price">$40/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 267jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            I am an experienced product designer, and I lead a team of excellent UX designers and development professionals. 
+            I am proud of being a part of BN Digital, a team of creators, software engineers, and strategists.
+            We worked with dozens of the world’s largest brands and partnered with hundreds of innovative startups, 
+            helping them grow and succeed by unleashing the power of design and technology.</p>
+          <div class="tags"><span>UX/UI Design</span><span>Full Stack Development</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 7 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="Mila S..webp" class="avatar">
+            <div class="user-info">
+              <h3>Mila S.</h3>
+              <span class="location">Khmelnytskyy, Ukraine</span>
+              <div class="stats">
+                <span class="price">$29/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 17 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">𝗧𝗼𝗽-𝗥𝗮𝘁𝗲𝗱 𝗠𝗼𝗯𝗶𝗹𝗲 𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗗𝗲𝘀𝗶𝗴𝗻𝗲𝗿 | 0 ➡️ 1 | 𝗔𝗽𝗽 𝗦𝗽𝗲𝗰𝗶𝗮𝗹𝗶𝘀𝘁 𝗳𝗼𝗿 𝗦𝘁𝗮𝗿𝘁𝘂𝗽𝘀 | Transforming rough concepts into feature-rich, scalable iOS & Android Apps.
+          You have a 𝗴𝗿𝗼𝘂𝗻𝗱𝗯𝗿𝗲𝗮𝗸𝗶𝗻𝗴 𝗶𝗱𝗲𝗮. I provide the visual architecture to turn it into a functional, revenue-generating product.</p>
+          <div class="tags"><span>Mobile Design</span><span>UX/UI Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        
+        <!-- CARD 8 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin firebase">
+          <div class="card-header">
+            <img src="Liz K..webp" class="avatar">
+            <div class="user-info">
+              <h3>Liz K.</h3>
+              <span class="location"> Warsaw, Poland</span>
+              <div class="stats">
+                <span class="price">$45/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 287 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            🚀 Top-Rated Upwork Designer - Top 1%
+            🏆 Senior UX/UI Designer - 𝟕+ 𝐲𝐞𝐚𝐫𝐬 𝐨𝐟 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞 𝐢𝐧 𝐔𝐈/𝐔𝐗 𝐝𝐞𝐬𝐢𝐠𝐧
+            🚨𝐏𝐫𝐞𝐬𝐬 𝐭𝐡𝐞 “𝐈𝐧𝐯𝐢𝐭𝐞” 𝐛𝐮𝐭𝐭𝐨𝐧 𝐚𝐭 𝐭𝐡𝐞 𝐭𝐨𝐩 𝐨𝐟 𝐦𝐲 𝐩𝐫𝐨𝐟𝐢𝐥𝐞 𝐚𝐧𝐝 𝐥𝐞𝐭’𝐬 𝐜𝐡𝐚𝐭 - Available to start working the same day you first text me!</p>
+          <div class="tags"><span>Mobile Design</span><span>UX/UI Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+        <!-- CARD 9 -->
+        <div class="up-card hidden-card" data-skill="kotlin clean-architecture">
+          <div class="card-header">
+            <img src="Bohdan H..webp" class="avatar">
+            <div class="user-info">
+              <h3>Bohdan H.</h3>
+              <span class="location"> Kharkiv, Ukraine </span>
+              <div class="stats">
+                <span class="price">$40/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 114 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            I have 10 years of experience in UI UX design and helping 𝘀𝘁𝗮𝗿𝘁𝘂𝗽𝘀, 𝗦𝗮𝗮𝗦 𝗰𝗼𝗺𝗽𝗮𝗻𝗶𝗲𝘀,
+             𝗮𝗻𝗱 𝘀𝗰𝗮𝗹𝗶𝗻𝗴 𝗯𝘂𝘀𝗶𝗻𝗲𝘀𝘀𝗲𝘀 build products that are usable, beautiful, and built to perform
+             - across 𝘄𝗲𝗯 𝗮𝗽𝗽𝘀, 𝗺𝗼𝗯𝗶𝗹𝗲 𝗮𝗽𝗽𝘀, 𝗱𝗮𝘀𝗵𝗯𝗼𝗮𝗿𝗱𝘀, 𝗹𝗮𝗻𝗱𝗶𝗻𝗴 𝗽𝗮𝗴𝗲𝘀, 𝗮𝗻𝗱 𝗱𝗲𝘀𝗶𝗴𝗻 𝘀𝘆𝘀𝘁𝗲𝗺𝘀.
+          </p>
+          <div class="tags"><span>Kotlin</span><span>Clean Architecture</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+
+        <!-- CARD 10 -->
+        <div class="up-card hidden-card" data-skill="ux design">
+  <div class="card-header">
+    <img src="Jason W..webp" class="avatar">
+    <div class="user-info">
+      <h3>Jason W.</h3>
+      <span class="location"> San Francisco, USA </span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 150 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Senior UX designer specializing in user-centered product design and usability improvements.
+    Experienced with SaaS platforms and mobile apps.
+  </p>
+  <div class="tags"><span>UX Design</span><span>User Research</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="ux design">
+  <div class="card-header">
+    <img src="Maya L..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Maya L.</h3>
+      <span class="location"> Berlin, Germany </span>
+      <div class="stats">
+        <span class="price">$38/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 92 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    UX/UI designer focused on clean interfaces and smooth user journeys.
+    Skilled in wireframing, prototyping, and usability testing.
+  </p>
+  <div class="tags"><span>UX Design</span><span>Wireframing</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="ux design">
+  <div class="card-header">
+    <img src="Omar A..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Omar A.</h3>
+      <span class="location"> Cairo, Egypt </span>
+      <div class="stats">
+        <span class="price">$25/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 67 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Product-focused UX designer delivering intuitive and conversion-driven experiences.
+    Strong background in mobile-first design.
+  </p>
+  <div class="tags"><span>UX Design</span><span>Mobile UX</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="ux design">
+  <div class="card-header">
+    <img src="Sophie K..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Sophie K.</h3>
+      <span class="location"> London, United Kingdom </span>
+      <div class="stats">
+        <span class="price">$42/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 118 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Experienced UX consultant helping startups improve usability and engagement.
+    Expert in user flows, personas, and interaction design.
+  </p>
+  <div class="tags"><span>UX Design</span><span>User Flows</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="ux design">
+  <div class="card-header">
+    <img src="Carlos R..png" class="avatar">
+    <div class="user-info">
+      <h3>Carlos R.</h3>
+      <span class="location"> Madrid, Spain </span>
+      <div class="stats">
+        <span class="price">$33/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 81 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    UX designer creating intuitive digital products with a strong focus on accessibility.
+    Skilled in Figma, prototyping, and usability audits.
+  </p>
+  <div class="tags"><span>UX Design</span><span>Figma</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="ux design">
+  <div class="card-header">
+    <img src="Emily J..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Emily J.</h3>
+      <span class="location"> Toronto, Canada </span>
+      <div class="stats">
+        <span class="price">$36/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 104 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    UX/UI specialist delivering modern, user-friendly designs for web and mobile.
+    Focused on improving engagement and conversion rates.
+  </p>
+  <div class="tags"><span>UX Design</span><span>Prototyping</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+        
+
+      </div>
+
+
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Android developers</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire UX Designers from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Verified Talent</h4>
+        <p>All UX Designers are screened and tested.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Flexible Pricing</h4>
+        <p>Hourly or fixed-price projects that fit your budget.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Secure Payments</h4>
+        <p>Pay only when you’re satisfied with the work.</p>
+      </div>
+    </div>
+  </section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Post your job</div>
+      <div class="step">2️⃣ Choose your developer</div>
+      <div class="step">3️⃣ Start building your app</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How much does it cost to hire an UX Designer ?</summary>
+      <p>Prices depend on experience and project scope.</p>
+    </details>
+
+    <details>
+      <summary>Can I hire developers hourly?</summary>
+      <p>Yes, both hourly and fixed-price contracts are available.</p>
+    </details>
+  </section>
+
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
+
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+
+</body>
+
+</html>
