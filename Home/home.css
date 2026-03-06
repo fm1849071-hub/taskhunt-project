@@ -14,15 +14,16 @@
 /* NAVBAR FIX */
 
 .navbar{
-height:80px;
+height:60px;
 background:#ffffff;
 }
 
 /* LOGO */
 
-.navbar-brand img{
-height:100px;
-}
+.logo img {
+  height: 180px;
+  align-items: center;
+  padding-bottom: 25px;}
 
 /* LINKS */
 
