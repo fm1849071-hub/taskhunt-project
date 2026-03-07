@@ -490,97 +490,99 @@ nav ul li a:hover {
 
 
 
-   /* Footer Styles */
-.footer {
-  background: #051923; /* اللون الغامق الأساسي */
-  padding: 40px 20px;
-  color: white;
-}
+   /* Footer */
+    .footer {
+      background: #051923;
+      padding: 40px 20px;
+      font-family: "Cairo", sans-serif;
+      direction: ltr;
+      text-align: left;
+    }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
 
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
+    .footer-col {
+      width: 30%;
+      min-width: 250px;
+    }
 
-.footer-col h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-}
+    .footer-col h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
 
-.footer-col ul li {
-  margin-bottom: 10px;
-}
+    .footer-col p {
+      color: #ddd;
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-.footer-col ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  transition: 0.3s;
-  font-size: 14px;
-}
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.footer-col ul li a:hover {
-  color: #00A8FF; /* درجة الأزرق الفاتح عند الوقوف بالماوس */
-}
+    .footer-col ul li {
+      margin: 10px 0;
+    }
 
-/* Social Icons */
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
+    .footer-col ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      transition: 0.3s;
+    }
 
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* لتحويل الأيقونات للون الأبيض */
-  transition: 0.3s;
-}
+    .footer-col ul li a:hover {
+      opacity: 0.8;
+    }
 
-.social-icons img:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
 
-.footer-bottom {
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 13px;
-}
+    .icon {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-/* Media Query Responsive */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .social-icons {
-    justify-content: center;
-  }
-}
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero-title { flex-direction: column; gap: 6px; }
-      .hero-divider { display: none; }
-      .page-layout { flex-direction: column; }
-      .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #e5e7eb; padding-bottom: 20px; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .filter-container { flex-direction: column; width: 100%; }
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-col {
+        width: 100%;
+      }
     }
-   /* تم تعديل الألوان هنا لتناسب الهوية الجديدة */
+
     .load-more {
       width: 100%;
       display: flex;
@@ -589,9 +591,10 @@ nav ul li a:hover {
       margin-top: 10px;
     }
 
+
     .load-more button {
       padding: 14px 40px;
-      background: #0077B8; /* اللون الموحد الجديد */
+      background: #005b84;
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -599,11 +602,14 @@ nav ul li a:hover {
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
+
+
     }
 
     .load-more button:hover {
-      background: #005b84; /* لون الـ Hover الموحد */
+      background: #004666;
     }
+
 
     /* ===== WHY SECTION ===== */
     .why-section {
