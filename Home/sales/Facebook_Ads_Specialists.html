@@ -1,0 +1,1330 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Facebook Ads Specialists | TaskHunt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../sales/ALL.css">
+
+
+    <style>
+      :root {
+        --c1: #00A8FF;
+        --c2: #0090E0;
+        --c3: #0077B8;
+        --c4: #051923;
+        --c5: #ffffff;
+        --white: #ffffff;
+        --light: #e6f7ff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      body {
+        background: #f9fafb;
+        color: #111827
+      }
+
+
+  /* NAVBAR */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px;
+        height: 50px;
+        background: var(--white);
+      }
+      .logo img{
+        height: 180px;
+        align-items: center;
+        padding-bottom: 25px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      nav ul li a {
+        color: var(--c4);
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+      nav ul li a:hover {
+        color: var(--c1);
+      }
+      /* BUTTONS */
+      .btn {
+      padding: 10px 18px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      }
+
+      .primary {
+      background: var(--c3);
+      color: #fff;
+      }
+
+
+      .hero-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 60px 6% 30px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .hero-title h2 {
+        font-size: 20px;
+        color: #6b7280;
+        font-weight: 500;
+      }
+
+      .hero-title h1 {
+        font-size: 38px;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .hero-divider {
+        font-size: 26px;
+        color: #9ca3af;
+      }
+
+      /* موبايل */
+      @media (max-width:768px) {
+        .hero-title {
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .hero-divider {
+          display: none;
+        }
+      }
+
+
+      /* ===== FILTER BAR ===== */
+      .filter-bar {
+        width: 100%;
+        padding: 25px 6%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .filter-container {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 18px 22px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .filter-container select {
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        outline: none;
+        cursor: pointer;
+        min-width: 160px;
+      }
+
+      .filter-container select:focus {
+        border-color: #005b84;
+      }
+
+      .filter-container button {
+        padding: 12px 26px;
+        background: #005b84;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .filter-container button:hover {
+        background: #004666;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .filter-container {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .filter-container select,
+        .filter-container button {
+          width: 100%;
+        }
+      }
+
+      /* PAGE LAYOUT */
+      .page-layout {
+        display: flex;
+        gap: 30px;
+        padding: 40px 6% 10px;
+        /* ✅ قلل المسافة تحت */
+        align-items: flex-start;
+      }
+
+
+      /* SIDEBAR */
+      .sidebar {
+        width: 260px;
+        flex-shrink: 0;
+        border-right: 1px solid #e5e7eb;
+        padding-right: 20px;
+      }
+
+      /* TITLE */
+      .sidebar h3 {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      /* CATEGORY */
+      .category {
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      /* CATEGORY BUTTON */
+      .category-btn {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 12px 0;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: #111827;
+      }
+
+      .category-btn:hover {
+        color: #005b84;
+      }
+
+      /* ARROW */
+      .arrow {
+        transition: transform 0.3s ease;
+        font-size: 18px;
+      }
+
+      /* SUB CATEGORIES */
+      .sub-categories {
+        list-style: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        padding-left: 10px;
+        margin-bottom: 6px;
+      }
+
+      /* LINK INSIDE LIST */
+      .sub-categories li a {
+        display: block;
+        font-size: 13px;
+        padding: 6px 0;
+        color: #374151;
+        text-decoration: none;
+        transition: color 0.2s ease, padding-left 0.2s ease;
+      }
+
+      .sub-categories li a:hover {
+        color: #005b84;
+        padding-left: 6px;
+      }
+
+      /* ACTIVE STATE */
+      .category.active .sub-categories {
+        max-height: 900px;
+        /* كبير عشان كل القوائم */
+      }
+
+      .category.active .arrow {
+        transform: rotate(90deg);
+      }
+
+
+      /* CARDS */
+      .cards-wrapper {
+        flex: 1;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .up-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.25s;
+      }
+
+      .up-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-4px);
+      }
+
+      .card-header {
+        display: flex;
+        gap: 12px;
+      }
+
+      .avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+      }
+
+      .user-info h3 {
+        font-size: 15px;
+      }
+
+      .location {
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      .stats {
+        display: flex;
+        gap: 10px;
+        font-size: 13px;
+        margin-top: 6px;
+      }
+
+      .rating {
+        color: #f59e0b;
+      }
+
+      .description {
+        font-size: 13px;
+        margin: 12px 0;
+        line-height: 1.5;
+      }
+
+      .tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      .tags span {
+        background: #f3f4f6;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+      }
+
+      .profile-btn {
+        margin-top: auto;
+        text-align: center;
+        padding: 12px;
+        background: #005b84;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1200px) {
+        .cards-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .page-layout {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid #e5e7eb;
+          padding-bottom: 20px;
+        }
+
+        .cards-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+
+
+
+      /* Footer */
+      .footer {
+        background: #051923;
+        padding: 40px 20px;
+        font-family: "Cairo", sans-serif;
+        direction: ltr;
+        text-align: left;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-col {
+        width: 30%;
+        min-width: 250px;
+      }
+
+      .footer-col h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #ffffff;
+      }
+
+      .footer-col p {
+        color: #ddd;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin: 10px 0;
+      }
+
+      .footer-col ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .footer-col ul li a:hover {
+        opacity: 0.8;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 12px;
+        margin-top: 15px;
+      }
+
+      .icon {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .icon:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #ffffff;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-col {
+          width: 100%;
+        }
+      }
+
+      .load-more {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+
+      .load-more button {
+        padding: 14px 40px;
+        background: #005b84;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+
+
+      }
+
+      .load-more button:hover {
+        background: #004666;
+      }
+
+      /* ===== WHY SECTION ===== */
+      .why-section {
+        padding: 70px 6%;
+
+        text-align: center;
+      }
+
+      .why-section h2 {
+        font-size: 30px;
+        margin-bottom: 40px;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .why-box {
+        background: #ffffff;
+        padding: 30px 20px;
+        border-radius: 14px;
+        border: 1px solid #e5e7eb;
+      }
+
+      .why-box h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #005b84;
+      }
+
+      .why-box p {
+        font-size: 14px;
+        color: #4b5563;
+        line-height: 1.6;
+      }
+
+      /* ===== HOW IT WORKS ===== */
+      .steps {
+        padding: 70px 6%;
+        text-align: center;
+      }
+
+      .steps h2 {
+        font-size: 30px;
+        margin-bottom: 40px;
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .step {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 30px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      /* ===== FAQ ===== */
+      .faq {
+        padding: 70px 6%;
+
+      }
+
+      .faq h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+
+      .faq details {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+      }
+
+      .faq summary {
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .faq p {
+        font-size: 14px;
+        color: #4b5563;
+        margin-top: 10px;
+        line-height: 1.6;
+      }
+
+      .hidden-card {
+        display: none;
+      }
+
+
+      /* ===== CTA ===== */
+      .cta {
+        padding: 80px 6%;
+        text-align: center;
+
+        color: #ffffff;
+      }
+
+      .cta h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        padding: 15px 45px;
+        background: #005b84;
+        color: #ffffff;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-3px);
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 900px) {
+
+        .why-grid,
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="nav">
+      <div class="logo">
+        <a href="../../Home/home.html" class="logo">
+        <img src="../images/logo.png" alt="Logo"></a>
+      </div>
+      <ul>
+        <li><a href="#">Find Work</a></li>
+        <li><a href="#">Hire Talent</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../contactus/contactus.html">Contact</a></li>
+        <li><a href="../../login/login.html">Login</a></li>
+        <li>
+          <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
+        </li>
+      </ul>
+    </nav>
+    <section class="hero-title">
+      <h2>Sales & Marketing</h2>
+      <span class="hero-divider">|</span>
+      <h1>Facebook Ads Specialists</h1>
+    </section>
+
+  <section class="filter-bar">
+    <div class="filter-container">
+
+      <select id="skillFilter">
+  <option value="all">All Facebook Ads Skills</option>
+  <option value="conversion-optimization">Conversion Optimization</option>
+  <option value="audience-research">Audience Research</option>
+  <option value="video-ads">Video Ads</option>
+  <option value="catalog-ads">Catalog Ads</option>
+  <option value="remarketing">Remarketing</option>
+  <option value="analytics-reporting">Analytics Reporting</option>
+  </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior</option>
+        <option value="mid">Mid</option>
+        <option value="senior">Senior</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $40</option>
+        <option value="high">Above $40</option>
+      </select>
+
+
+    </div>
+  </section>
+
+    <div class="page-layout">
+
+      <aside class="sidebar">
+        <h3>Categories</h3>
+
+
+        <!-- Data & AI -->
+        <div class="category">
+          <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+            <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+            <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+            <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+            <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+            <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+            <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+            <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+            <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+            <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+          
+          </ul>
+        </div>
+
+        <!-- Development & IT -->
+    <div class="category">
+          <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+            <li><a href="../Development&it/ai.html">AI Developers</a></li>
+            <li><a href="../Development&it/android.html">Android Developers</a></li>
+            <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+            <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+            <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+            <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+            <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+            <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+            <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+          
+          </ul>
+        </div>
+
+        <!-- Design & Creative -->
+        <div class="category">
+          <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Adobe Photoshop</a></li>
+            <li><a href="#">Adobe Illustrator</a></li>
+            <li><a href="#">Logo Design</a></li>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Adobe InDesign</a></li>
+            <li><a href="#">Illustration</a></li>
+            <li><a href="#">Print Design</a></li>
+            <li><a href="#">Design Thinking</a></li>
+            <li><a href="#">Infographic</a></li>
+          </ul>
+        </div>
+
+        <!-- Sales & Marketing -->
+        <div class="category">
+          <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="#">Affiliate Marketers</a></li>
+            <li><a href="#">Amazon PPC Experts</a></li>
+            <li><a href="#">Branding Experts</a></li>
+            <li><a href="#">Business Development Managers</a></li>
+            <li><a href="#">Campaign Managers</a></li>
+            <li><a href="#">Cold Callers</a></li>
+            <li><a href="#">Community Managers</a></li>
+            <li><a href="#">Digital Marketers</a></li>
+            <li><a href="#">Ecommerce Consultants</a></li>
+            <li><a href="#">Facebook Ads Specialists</a></li>
+          </ul>
+        </div>
+
+        <!-- Writing & Translation -->
+        <div class="category">
+          <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="#">Academic Writers</a></li>
+            <li><a href="#">Biography Writers</a></li>
+            <li><a href="#">Business Plan Writers</a></li>
+            <li><a href="#">Copy Editors</a></li>
+            <li><a href="#">Creative Writers</a></li>
+            <li><a href="#">eBook Writers</a></li>
+            <li><a href="#">English to Spanish Translators</a></li>
+            <li><a href="#">Essay Writers</a></li>
+            <li><a href="#">Fiction Writers</a></li>
+            <li><a href="#">Grant Writers</a></li>
+          </ul>
+        </div>
+
+        <!-- Admin & Support -->
+        <div class="category">
+          <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+                <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+            <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+            <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+            <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+            <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+            <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+            <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+            <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+            <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+            <li><a href="../Admin & Support Specialties/PowerPoint Experts.html">PowerPoint Experts</a></li>
+
+          </ul>
+        </div>
+
+        <!-- Finance & Accounting -->
+        <div class="category">
+          <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="#">Business Analysts</a></li>
+            <li><a href="#">Financial Analysts</a></li>
+            <li><a href="#">Financial Modelers</a></li>
+            <li><a href="#">Forex Traders</a></li>
+            <li><a href="#">Management Consultants</a></li>
+            <li><a href="#">Tax Preparers</a></li>
+            <li><a href="#">Data Entry Specialists</a></li>
+            <li><a href="#">Financial Forecasting Specialists</a></li>
+            <li><a href="#">Financial Reporting Analysts</a></li>
+            <li><a href="#">Intuit TurboTax Specialists</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="category">
+          <button class="category-btn">Legal <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="#">Corporate Law Professionals</a></li>
+            <li><a href="#">Criminal Law Professionals</a></li>
+            <li><a href="#">Family Law Professionals</a></li>
+            <li><a href="#">Fraud Analysts</a></li>
+            <li><a href="#">GDPR Specialists</a></li>
+            <li><a href="#">Immigration Law Professionals</a></li>
+            <li><a href="#">International Law Professionals</a></li>
+            <li><a href="#">Legal Advisors</a></li>
+            <li><a href="#">Legal Assistants</a></li>
+            <li><a href="#">Legal Consultants</a></li>
+          </ul>
+        </div>
+
+      <!-- HR & Training -->
+  <div class="category">
+    <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+    <ul class="sub-categories">
+      <li><a href="#">Change Management Specialists</a></li>
+      <li><a href="#">Employee Engagement Specialists</a></li>
+      <li><a href="#">Facilitators</a></li>
+      <li><a href="#">Interviewers</a></li>
+      <li><a href="#">Leadership Development Specialists</a></li>
+      <li><a href="#">QHSE Specialists</a></li>
+      <li><a href="#">SCORM Specialists</a></li>
+      <li><a href="#">Technical Recruiters</a></li>
+
+      <li><a href="#">Curriculum Developers</a></li>
+      <li><a href="#">Employee Relations Specialists</a></li>
+    </ul>
+  </div>
+
+        <!-- Engineering & Architecture -->
+        <div class="category">
+          <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+          <ul class="sub-categories">
+            <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+            <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+            <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+            <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+            <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+            <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+            <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+            <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+            <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+            <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
+          </ul>
+        </div>
+      </aside>
+
+
+
+      <section class="cards-wrapper">
+
+      <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-skill="conversion-optimization" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=5" class="avatar">
+      <div class="user-info">
+        <h3>Brian C.</h3>
+        <span class="location">USA</span>
+        <div class="stats">
+          <span class="price">$55/hr</span>
+          <span class="rating">⭐ 4.9</span>
+          <span class="jobs">💼 78 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Improving ROAS through landing page & funnel optimization.</p>
+    <div class="tags"><span>Conversion Optimization</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="up-card hidden-card" data-skill="audience-research" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=6" class="avatar">
+      <div class="user-info">
+        <h3>Laura T.</h3>
+        <span class="location">Ireland</span>
+        <div class="stats">
+          <span class="price">$32/hr</span>
+          <span class="rating">⭐ 4.7</span>
+          <span class="jobs">💼 29 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Deep audience targeting and persona development.</p>
+    <div class="tags"><span>Audience Research</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="up-card hidden-card" data-skill="video-ads" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=7" class="avatar">
+      <div class="user-info">
+        <h3>Marco R.</h3>
+        <span class="location">Italy</span>
+        <div class="stats">
+          <span class="price">$49/hr</span>
+          <span class="rating">⭐ 4.8</span>
+          <span class="jobs">💼 51 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Video ad funnels and storytelling for ecommerce brands.</p>
+    <div class="tags"><span>Video Ads</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="up-card hidden-card" data-skill="catalog-ads" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=8" class="avatar">
+      <div class="user-info">
+        <h3>Natalie W.</h3>
+        <span class="location">Australia</span>
+        <div class="stats">
+          <span class="price">$37/hr</span>
+          <span class="rating">⭐ 4.6</span>
+          <span class="jobs">💼 34 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Dynamic product catalog and retargeting ads specialist.</p>
+    <div class="tags"><span>Catalog Ads</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 5 -->
+  <div class="up-card hidden-card" data-skill="local-ads" data-level="junior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=9" class="avatar">
+      <div class="user-info">
+        <h3>Omar H.</h3>
+        <span class="location">Jordan</span>
+        <div class="stats">
+          <span class="price">$21/hr</span>
+          <span class="rating">⭐ 4.5</span>
+          <span class="jobs">💼 11 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Facebook ads for local restaurants & service businesses.</p>
+    <div class="tags"><span>Local Ads</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 6 -->
+  <div class="up-card hidden-card" data-skill="funnel-building" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=10" class="avatar">
+      <div class="user-info">
+        <h3>Kevin L.</h3>
+        <span class="location">Singapore</span>
+        <div class="stats">
+          <span class="price">$53/hr</span>
+          <span class="rating">⭐ 5.0</span>
+          <span class="jobs">💼 67 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Full Facebook ad funnel building from cold traffic to conversion.</p>
+    <div class="tags"><span>Funnels</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 7 -->
+  <div class="up-card hidden-card" data-skill="copywriting" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=11" class="avatar">
+      <div class="user-info">
+        <h3>Sarah M.</h3>
+        <span class="location">UK</span>
+        <div class="stats">
+          <span class="price">$34/hr</span>
+          <span class="rating">⭐ 4.7</span>
+          <span class="jobs">💼 25 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">High converting Facebook ad copy & hooks.</p>
+    <div class="tags"><span>Ad Copywriting</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 8 -->
+  <div class="up-card hidden-card" data-skill="split-testing" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=12" class="avatar">
+      <div class="user-info">
+        <h3>Diego F.</h3>
+        <span class="location">Brazil</span>
+        <div class="stats">
+          <span class="price">$31/hr</span>
+          <span class="rating">⭐ 4.6</span>
+          <span class="jobs">💼 22 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">A/B testing creatives and audiences for performance growth.</p>
+    <div class="tags"><span>Split Testing</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 9 -->
+  <div class="up-card hidden-card" data-skill="ecommerce-growth" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=13" class="avatar">
+      <div class="user-info">
+        <h3>Jonathan P.</h3>
+        <span class="location">USA</span>
+        <div class="stats">
+          <span class="price">$58/hr</span>
+          <span class="rating">⭐ 4.9</span>
+          <span class="jobs">💼 83 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Scaling ecommerce stores using Facebook paid traffic.</p>
+    <div class="tags"><span>Ecommerce Growth</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 10 -->
+  <div class="up-card hidden-card" data-skill="remarketing" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=14" class="avatar">
+      <div class="user-info">
+        <h3>Lina S.</h3>
+        <span class="location">Lebanon</span>
+        <div class="stats">
+          <span class="price">$28/hr</span>
+          <span class="rating">⭐ 4.6</span>
+          <span class="jobs">💼 20 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Remarketing ads to recover lost customers and carts.</p>
+    <div class="tags"><span>Remarketing</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 11 -->
+  <div class="up-card hidden-card" data-skill="brand-awareness" data-level="junior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=15" class="avatar">
+      <div class="user-info">
+        <h3>Tom B.</h3>
+        <span class="location">Netherlands</span>
+        <div class="stats">
+          <span class="price">$24/hr</span>
+          <span class="rating">⭐ 4.4</span>
+          <span class="jobs">💼 9 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Brand awareness Facebook campaigns for startups.</p>
+    <div class="tags"><span>Brand Awareness</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 12 -->
+  <div class="up-card hidden-card" data-skill="app-installs" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=16" class="avatar">
+      <div class="user-info">
+        <h3>Yara E.</h3>
+        <span class="location">Egypt</span>
+        <div class="stats">
+          <span class="price">$30/hr</span>
+          <span class="rating">⭐ 4.7</span>
+          <span class="jobs">💼 18 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Facebook mobile app install campaigns & optimization.</p>
+    <div class="tags"><span>App Installs</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 13 -->
+  <div class="up-card hidden-card" data-skill="lookalike-audiences" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=17" class="avatar">
+      <div class="user-info">
+        <h3>Patrick V.</h3>
+        <span class="location">Belgium</span>
+        <div class="stats">
+          <span class="price">$47/hr</span>
+          <span class="rating">⭐ 4.8</span>
+          <span class="jobs">💼 46 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Advanced lookalike audiences & scaling strategies.</p>
+    <div class="tags"><span>Lookalike Audiences</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 14 -->
+  <div class="up-card hidden-card" data-skill="messenger-ads" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=18" class="avatar">
+      <div class="user-info">
+        <h3>Hassan Z.</h3>
+        <span class="location">Morocco</span>
+        <div class="stats">
+          <span class="price">$29/hr</span>
+          <span class="rating">⭐ 4.6</span>
+          <span class="jobs">💼 21 jobs</span>
+        </div>
+      </div>
+    </div>
+    <p class="description">Messenger ads and chatbot marketing funnels.</p>
+    <div class="tags"><span>Messenger Ads</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 15 -->
+  <div class="up-card hidden-card" data-skill="analytics-reporting" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=19" class="avatar">
+      <div class="user-info">
+        <h3>Elena K.</h3>
+        <span class="location">Germany</span>
+        <div class="stats">
+          <span class="price">$45/hr</span>
+          <span class="rating">⭐ 4.9</span>
+          <span class="jobs">💼 52 jobs</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="description">Detailed Facebook ads analytics & performance dashboards.</p>
+    <div class="tags"><span>Analytics Reporting</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+
+
+
+
+        <!-- LOAD MORE BUTTON -->
+        <div class="load-more">
+        </div>
+
+      </section>
+    </div>
+    <section class="why-section">
+      <h2>Why hire Facebook Ads specialists from TaskHunt?</h2>
+      
+      <div class="why-grid">
+        <div class="why-box">
+          <h4>✔ Verified Talent</h4>
+          <p>All Android developers are screened and tested.</p>
+        </div>
+
+        <div class="why-box">
+          <h4>✔ Flexible Pricing</h4>
+          <p>Hourly or fixed-price projects that fit your budget.</p>
+        </div>
+
+        <div class="why-box">
+          <h4>✔ Secure Payments</h4>
+          <p>Pay only when you’re satisfied with the work.</p>
+        </div>
+      </div>
+    </section>
+    <section class="steps">
+      <h2>How it works</h2>
+
+      <div class="steps-grid">
+        <div class="step">1️⃣ Launch your campaigns</div>
+        <div class="step">2️⃣ Choose your specialist</div>
+        <div class="step">3️⃣ Grow your business</div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How much does it cost to hire an Android developer?</summary>
+        <p>Prices depend on experience and project scope.</p>
+      </details>
+
+      <details>
+        <summary>Can I hire developers hourly?</summary>
+        <p>Yes, both hourly and fixed-price contracts are available.</p>
+      </details>
+    </section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
+
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    // اخفاء كل الكاردات
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    // اظهار الكاردات المطلوبة
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    // التحكم في زر Load More
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* فلترة تلقائية عند أي تغيير */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+
+
+
+
+  </body>
+
+  </html>

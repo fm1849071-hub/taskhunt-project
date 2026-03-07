@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Hunt | Find Work</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="w.css">
+
+    <style>
+
+         /* --- 1. CSS VARIABLES & RESET --- */
+        :root {
+            --primary:  #0077B8;
+            --primary-light: #eef2ff;
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+
+        /* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  height: 50px;
+  background: var(--white);
+}
+
+.logo img {
+  height: 180px;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: var(--c4);
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--c1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 50px;
+  height: 50px;
+  background: #fff;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.auth-buttons .btn {
+    width: 90px; 
+    height: 35px;
+    padding: 8px 0; 
+    text-align: center;
+    display: inline-block;
+    border-radius: 8px; 
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-blue {
+    background-color: #f0f6ff;
+    color: white;
+    border: none;
+}
+
+.login-btn {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff; 
+}
+
+.auth-buttons .btn:hover {
+    opacity: 0.8;
+    transform: translateY(-0.5px);
+}
+
+.signup-blue {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-text {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  font-weight: 500;
+
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--c3);
+  color: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-blue: #0077B8;
+    --dark-blue: #005b84;
+    --light-bg: #F4F7F9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--light-bg);
+}
+
+    
+        /* --- 3. HERO SEARCH --- */
+        .hero {
+            background: linear-gradient(#f8fafc);
+            padding: 50px 5%;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 25px; font-weight: 800; }
+        .search-wrapper {
+            background: var(--white);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8px;
+            border-radius: 50px;
+            display: flex;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+        .search-box { flex: 1; display: flex; align-items: center; padding: 0 20px; border-right: 1px solid var(--border); }
+        .search-box i { color: var(--primary); margin-right: 10px; }
+        .search-box input { border: none; outline: none; width: 100%; font-size: 1rem; }
+        .hero-btn { background: var(--primary); color: white; border: none; padding: 12px 35px; border-radius: 40px; font-weight: 600; cursor: pointer; margin-left: 10px; }
+
+        /* --- 4. MAIN CONTENT LAYOUT --- */
+        .container {
+            display: grid;
+            grid-template-columns: 300px 1fr; /* Exact match to your drawing: Sidebar Left, Content Right */
+            gap: 30px;
+            padding: 40px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* --- 5. SIDEBAR (Your Filter List) --- */
+        .sidebar { background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--border); height: fit-content; }
+        .filter-group { margin-bottom: 25px; }
+        .filter-group h3 { font-size: 1rem; margin-bottom: 15px; font-weight: 700; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; }
+        
+        .filter-option { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; font-size: 0.95rem; color: var(--text-muted); }
+        .filter-option input { margin-right: 10px; accent-color: var(--primary); width: 16px; height: 16px; }
+        .filter-option:hover { color: var(--primary); }
+
+
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 16px; /* حجم عنوان مناسب */
+    color: #333;
+    font-weight: 700;
+}
+
+.clear-btn {
+    /* 1.الشكل البيضاوي م */
+    display: inline-block;
+    padding: 6px 18px; /* تصغير الحجم عشان يناسب السايد بار */
+    border: none; /* إلغاء الإطار */
+    border-radius: 50px; 
+    
+    /* 2. (الألوان والخط ) */
+    background-color: #0077B8; 
+    color: #ffffff; 
+    font-size: 12px; 
+    font-weight: 600; 
+    text-transform: capitalize; 
+    
+    /* 3. تأثيرات بصرية وحركة */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف جداً */
+    transition: all 0.3s ease; /* حركة ناعمة */
+    outline: none; /* إخفاء الإطار الأصفر الافتراضي عند الضغط */
+}
+
+/* 4. تأثير عند مرور الماوس (Hover) */
+.clear-btn:hover {
+    background-color: #005b84; /* يفتح اللون سنة بسيطة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* يزيد الظل شوية */
+    transform: translateY(-1px); /* يترفع لفوق خطوة بسيطة جداً */
+}
+
+/* 5. تأثير عند الضغط الفعلي (Active) */
+.clear-btn:active {
+    transform: translateY(0); /* يرجع لمكانه الطبيعي */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* يقل الظل كأنه اتداس عليه */
+}
+
+
+
+       
+        /* --- 6. JOB CARDS (Your Drawing's Boxes) --- */
+        .job-feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        
+        .job-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .job-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+
+        .job-main-info { display: flex; gap: 20px; }
+        .company-logo { width: 60px; height: 60px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary); font-size: 1.2rem; }
+        
+        .job-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 5px; color: var(--text-main); }
+        .job-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+        .job-tags { display: flex; gap: 8px; }
+        .tag { background: var(--primary-light); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+
+        .job-side-info { text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
+        .job-price { font-size: 1rem; font-weight: 800; color: #293555; }
+        .apply-btn { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { display: none; } /* Hide sidebar on small screens or make it a drawer */
+        }
+
+        /* Footer */ 
+.footer {
+  background: #051923;
+  padding: 20px 10px;
+  font-family: "Cairo", sans-serif;
+  direction: ltr;
+  text-align: left;
+  color: #ffffff;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  width: 30%;
+  min-width: 200px;
+}
+
+/* تخصيص مساحة أكبر للفورم */
+.contact-col {
+  flex: 1; 
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 14px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #adb5bd;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+  opacity: 0.8;
+}
+
+/* Contact Form Styling */
+.contact-box h3 {
+  margin-bottom: 7px;
+}
+
+.contact-box p {
+  font-size: 14px;
+  color: #adb5bd;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 13px;
+}
+
+.footer-input {
+  width: 92%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.footer-input:focus {
+  border-color: #00a8e8; 
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-btn {
+  width: 92%;
+  padding: 12px;
+  background: #00a8e8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-btn:hover {
+  background: #007ea7;
+  transform: translateY(-2px);
+}
+
+/* Social Icons */
+.social-section {
+    justify-items: left;
+  margin-top: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(1) invert(1); /* جعل الأيقونات بيضاء لتناسب التصميم */
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  opacity: 1;
+  filter: none; /* ترجع لألوانها الأصلية عند المرور عليها */
+  transform: scale(1.2);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #6c757d;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-col, .contact-col {
+    width: 100%;
+  }
+}
+
+    </style>
+
+    
+   
+</head>
+<body>
+
+<!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../Home/home.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="../Home/findwork.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="../about/about.html">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+    <section class="hero">
+        <h1>Find The Perfect Job For You</h1>
+        <div class="search-wrapper">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Job title">
+            </div>
+            <div class="search-box">
+                <i class="fas fa-location-dot"></i>
+                <input type="text" placeholder="Location ">
+            </div>
+            <button class="hero-btn">Search</button>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h3>Category</h3>
+                <label class="filter-option"><input type="checkbox"> Data & AI</label>
+                <label class="filter-option"><input type="checkbox"> Development & IT</label>
+                <label class="filter-option"><input type="checkbox"> Design & Creative</label>
+                <label class="filter-option"><input type="checkbox"> Sales & Marketing</label>
+                 <label class="filter-option"><input type="checkbox"> Writing & Translation</label>
+                  <label class="filter-option"><input type="checkbox"> Admin & Support</label>
+                   <label class="filter-option"><input type="checkbox">Finance & Accounting</label>
+                    <label class="filter-option"><input type="checkbox"> Legal </label>
+                <label class="filter-option"><input type="checkbox"> HR & Training</label>
+                <label class="filter-option"><input type="checkbox"> Engineering & Architecture </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Job Type</h3>
+                <label class="filter-option"><input type="checkbox"> Fixed Price</label>
+                <label class="filter-option"><input type="checkbox"> Hourly Rate</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Experience Level</h3>
+                <label class="filter-option"><input type="checkbox"> Entry Level</label>
+                <label class="filter-option"><input type="checkbox"> Intermediate</label>
+                <label class="filter-option"><input type="checkbox"> Expert</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Budget Range</h3>
+                <label class="filter-option"><input type="checkbox"> Under $100</label>
+                <label class="filter-option"><input type="checkbox"> $100 - $500</label>
+                <label class="filter-option"><input type="checkbox"> $500 - $1k</label>
+                <label class="filter-option"><input type="checkbox"> Custom Range</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Project Duration</h3>
+                <label class="filter-option"><input type="checkbox"> Less than 1 month</label>
+                <label class="filter-option"><input type="checkbox"> 1 to 3 months</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Client History</h3>
+                <label class="filter-option"><input type="checkbox"> Payment Verified</label>
+                <label class="filter-option"><input type="checkbox"> Stars Clients +4</label>
+            </div>
+
+            <div class="sidebar-header">
+        <h3>Filters</h3>
+        <button class="clear-btn">Clear All</button> </div>
+        
+        </aside>
+
+        <main class="feed">
+            <div class="job-feed-header">
+                <h2>Recommended Jobs</h2>
+               
+            </div>
+
+            <div class="job-card">
+                <div class="job-main-info">
+                    <div class="company-logo">TH</div>
+                    <div class="details">
+                        <h3 class="job-title">Machine Learning Engineer</h3>
+                        <p class="job-sub">DataSync • Remote</p>
+                        <div class="job-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Data & AI</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-side-info">
+                    <span class="job-price">$3,000</span>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="job-card">
+    <div class="job-main-info">
+        <div class="company-logo" style="background: #ede9fe; color: #6d28d9;">SD</div>
+        <div class="details">
+            <h3 class="job-title">Full-Stack Web Developer</h3>
+            <p class="job-sub">WebCore Studio • Remote</p>
+            <div class="job-tags">
+                <span class="tag">React</span>
+                <span class="tag">Development & IT</span>
+                <span class="tag">Docker</span>
+            </div>
+        </div>
+    </div>
+    <div class="job-side-info">
+        <span class="job-price">$2,500</span>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+</div>
+
+        
+
+            <div class="job-card">
+    <div class="job-main-info">
+        <div class="company-logo" style="background: #fce7f3; color: #be185d;">TR</div>
+        <div class="details">
+            <h3 class="job-title">Senior UI/UX Designer</h3>
+            <p class="job-sub">Creative Agency • Remote</p>
+            <div class="job-tags">
+                <span class="tag">Figma</span>
+                <span class="tag">Design & Creative</span>
+                <span class="tag">Proofreading</span>
+            </div>
+        </div>
+    </div>
+    <div class="job-side-info">
+        <span class="job-price">$1,800</span>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+</div>
+
+            
+
+            <div class="job-card">
+    <div class="job-main-info">
+        <div class="company-logo" style="background: #dcfce7; color: #15803d;">DA</div>
+        <div class="details">
+            <h3 class="job-title">Digital Marketing Specialist</h3>
+            <p class="job-sub">Growth Mark • Hybrid</p>
+            <div class="job-tags">
+                <span class="tag">Ads</span>
+                <span class="tag">Sales & Marketing</span>
+                <span class="tag">Tableau</span>
+            </div>
+        </div>
+    </div>
+    <div class="job-side-info">
+        <span class="job-price">$1,200</span>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+</div>
+
+
+            <div class="job-card">
+    <div class="job-main-info">
+        <div class="company-logo" style="background: #fef3c7; color: #d97706;">PX</div>
+        <div class="details">
+            <h3 class="job-title">Arabic to English Translator</h3>
+            <p class="job-sub">Global Connect • Remote</p>
+            <div class="job-tags">
+                <span class="tag">Legal</span>
+                <span class="tag">Writing & Translation</span>
+                <span class="tag">Mobile Design</span>
+            </div>
+        </div>
+    </div>
+    <div class="job-side-info">
+        <span class="job-price">$100</span>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+</div>
+
+          <div class="job-card">
+    <div class="job-main-info">
+        <div class="company-logo" style="background: #e0f2fe; color: #0369a1;">CW</div>
+        <div class="details">
+            <h3 class="job-title">Virtual Executive Assistant</h3>
+            <p class="job-sub">Elite Support • Remote</p>
+            <div class="job-tags">
+                <span class="tag">Office</span>
+                <span class="tag">Admin & Support</span>
+                <span class="tag">Tech</span>
+            </div>
+        </div>
+    </div>
+    <div class="job-side-info">
+        <span class="job-price">$800</span>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+</div>
+
+
+ </div>
+
+
+     <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
+    </div>
+
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. تعريف العناصر
+    const searchInput = document.querySelector('.search-wrapper input[placeholder="Job title"]');
+    const locationInput = document.querySelector('.search-wrapper input[placeholder="Location "]');
+    const searchBtn = document.querySelector('.hero-btn');
+    const jobCards = document.querySelectorAll('.job-card');
+    const checkboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
+    const clearBtn = document.querySelector('.clear-btn');
+
+    // 2. وظيفة التصفية والبحث الأساسية
+    const filterJobs = () => {
+        const searchText = searchInput.value.toLowerCase();
+        const locationText = locationInput.value.toLowerCase();
+        
+        // الحصول على الفئات المختارة
+        const selectedFilters = Array.from(checkboxes)
+            .filter(i => i.checked)
+            .map(i => i.parentElement.textContent.trim().toLowerCase());
+
+        jobCards.forEach(card => {
+            const title = card.querySelector('.job-title').textContent.toLowerCase();
+            const subText = card.querySelector('.job-sub').textContent.toLowerCase();
+            const tags = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent.toLowerCase());
+            
+            // التحقق من نص البحث والموقع
+            const matchesSearch = title.includes(searchText);
+            const matchesLocation = subText.includes(locationText);
+            
+            // التحقق من الفئات (إذا لم يتم اختيار شيء، تظهر الكل)
+            const matchesCategory = selectedFilters.length === 0 || 
+                selectedFilters.some(filter => 
+                    title.includes(filter) || 
+                    tags.some(tag => tag.includes(filter)) ||
+                    subText.includes(filter)
+                );
+
+            // إظهار أو إخفاء الكارت
+            if (matchesSearch && matchesLocation && matchesCategory) {
+                card.style.display = 'flex';
+                card.style.animation = 'fadeIn 0.4s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    };
+
+    // 3. إضافة الأحداث (Events)
+    
+    // عند الضغط على زر البحث
+    searchBtn.addEventListener('click', filterJobs);
+
+    // البحث الفوري أثناء الكتابة
+    searchInput.addEventListener('input', filterJobs);
+    locationInput.addEventListener('input', filterJobs);
+
+    // عند تغيير خيارات التصفية (Checkboxes)
+    checkboxes.forEach(box => {
+        box.addEventListener('change', filterJobs);
+    });
+
+    // زر مسح التصفية
+    clearBtn.addEventListener('click', () => {
+        checkboxes.forEach(box => box.checked = false);
+        searchInput.value = '';
+        locationInput.value = '';
+        filterJobs();
+    });
+
+    // أزرار التقديم (Apply Now)
+    const applyButtons = document.querySelectorAll('.apply-btn');
+    applyButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+            alert(`Applying for: ${jobTitle}\nSuccess: Your application has been sent!`);
+            this.textContent = 'Applied';
+            this.style.background = '#64748b';
+            this.disabled = true;
+        });
+    });
+});
+
+// إضافة تأثير دخول بسيط للوظائف
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(style);
+
+
+
+
+  </script>
+
+
+</body>
+</html>
+
+
+        

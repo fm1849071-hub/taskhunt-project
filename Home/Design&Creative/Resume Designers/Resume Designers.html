@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Design & Creative | TaskHunt</title>
+  <link rel="stylesheet" href="Resume Designers.css">
+</head>
+
+<body>
+
+  
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html" class="logo">
+      <img src="../images/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+      <li><a href="#">Find Work</a></li>
+      <li><a href="#">Hire Talent</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../contactus/contactus.html">Contact</a></li>
+      <li><a href="../../login/login.html">Login</a></li>
+      <li>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero-title">
+    <h2>Design & Creative</h2>
+    <span class="hero-divider">|</span>
+    <h1>Resume Designers</h1>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <div class="filter-container">
+
+      <select id="skillFilter">
+        <option value="all">All Skills</option>
+<option value="Resume Design">Resume Design</option>
+<option value="CV Writing">CV Writing</option>
+<option value="Cover Letter Writing">Cover Letter Writing</option>
+<option value="LinkedIn Profile Optimization">LinkedIn Profile Optimization</option>
+<option value="ATS-Friendly Resume">ATS-Friendly Resume</option>
+<option value="Professional Resume">Professional Resume</option>
+<option value="Resume Formatting">Resume Formatting</option>
+
+
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior</option>
+        <option value="mid">Mid</option>
+        <option value="senior">Senior</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $30</option>
+        <option value="high">Above $30</option>
+      </select>
+
+      
+
+    </div>
+  </section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Data Analysis & Visualization</a></li>
+          <li><a href="#">AI Developers</a></li>
+          <li><a href="#">Machine Learning Models</a></li>
+          <li><a href="#">AI Chatbots & Automations</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Deep Learning</a></li>
+          <li><a href="#">Neural Networks</a></li>
+          <li><a href="#">Predictive Analytics</a></li>
+          <li><a href="#">Generative AI</a></li>
+          <li><a href="#">LLM Specialist</a></li>
+          <li><a href="#">Computer Vision</a></li>
+          <li><a href="#">Python Automation</a></li>
+          <li><a href="#">AI Scripting</a></li>
+          <li><a href="#">Data Scraping & Cleaning</a></li>
+          <li><a href="#">Sentiment Analysis</a></li>
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href=".net.html">.NET Developers</a></li>
+          <li><a href="ai.html">AI Developers</a></li>
+          <li><a href="android.html">Android Developers</a></li>
+          <li><a href="#">Backend Developers</a></li>
+          <li><a href="#">Bubble.io Developers</a></li>
+          <li><a href="#">Chatbot Developers</a></li>
+          <li><a href="#">Cyber Security Engineers</a></li>
+          <li><a href="#">Data Engineers</a></li>
+          <li><a href="#">DevOps Engineers</a></li>
+          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="#">Game Developers</a></li>
+          <li><a href="#">Golang Developers</a></li>
+          <li><a href="#">Java Developers</a></li>
+          <li><a href="#">Laravel Developers</a></li>
+          <li><a href="#">Minecraft Developers</a></li>
+          <li><a href="#">Next.js Developers</a></li>
+          <li><a href="#">Odoo Developers</a></li>
+          <li><a href="#">PHP Developers</a></li>
+          <li><a href="#">Product Managers</a></li>
+          <li><a href="#">QA Engineers</a></li>
+          <li><a href="#">React.js Developers</a></li>
+          <li><a href="#">Salesforce Developers</a></li>
+          <li><a href="#">WooCommerce Developers</a></li>
+          <li><a href="#">Zapier Automation Developers</a></li>
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Adobe Photoshop</a></li>
+          <li><a href="#">Adobe Illustrator</a></li>
+          <li><a href="#">Logo Design</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Adobe InDesign</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Print Design</a></li>
+          <li><a href="#">Design Thinking</a></li>
+          <li><a href="#">Infographic</a></li>
+          <li><a href="#">Creative Strategy</a></li>
+          <li><a href="#">Layout Design</a></li>
+          <li><a href="#">Brand Guidelines</a></li>
+          <li><a href="#">Interaction Design</a></li>
+          <li><a href="#">Social Media Imagery</a></li>
+          <li><a href="#">Banner Ad Design</a></li>
+          <li><a href="#">Brand Identity & Guidelines</a></li>
+          <li><a href="#">User Interface Design</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Affiliate Marketers</a></li>
+          <li><a href="#">Amazon PPC Experts</a></li>
+          <li><a href="#">Branding Experts</a></li>
+          <li><a href="#">Business Development Managers</a></li>
+          <li><a href="#">Campaign Managers</a></li>
+          <li><a href="#">Cold Callers</a></li>
+          <li><a href="#">Community Managers</a></li>
+          <li><a href="#">Digital Marketers</a></li>
+          <li><a href="#">Ecommerce Consultants</a></li>
+          <li><a href="#">Facebook Ads Specialists</a></li>
+          <li><a href="#">Ghostwriters</a></li>
+          <li><a href="#">HubSpot Experts</a></li>
+          <li><a href="#">Market Researchers</a></li>
+          <li><a href="#">Marketing Managers</a></li>
+          <li><a href="#">Pitch Deck Writers</a></li>
+          <li><a href="#">Public Relations Specialists</a></li>
+          <li><a href="#">Sales Directors</a></li>
+          <li><a href="#">Sales Engineers</a></li>
+          <li><a href="#">Sales Representatives</a></li>
+          <li><a href="#">SEO Experts</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">T-Shirt Designers</a></li>
+          <li><a href="#">TikTok Experts</a></li>
+          <li><a href="#">Virtual Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+          <li><a href="#">Headline Writers</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Medical Writers</a></li>
+          <li><a href="#">Proposal Writers</a></li>
+          <li><a href="#">Report Writers</a></li>
+          <li><a href="#">Research Paper Writers</a></li>
+          <li><a href="#">Resume Writers</a></li>
+          <li><a href="#">Scientific Writers</a></li>
+          <li><a href="#">Screenwriters</a></li>
+          <li><a href="#">SEO Writers</a></li>
+          <li><a href="#">Speech Writers</a></li>
+          <li><a href="#">Technical Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="#">Microsoft Outlook Specialists</a></li>
+          <li><a href="#">Microsoft Word Experts</a></li>
+          <li><a href="#">Personal Assistants</a></li>
+          <li><a href="#">PowerPoint Experts</a></li>
+          <li><a href="#">Project Managers</a></li>
+          <li><a href="#">Proofreaders</a></li>
+          <li><a href="#">Recruiters</a></li>
+          <li><a href="#">Research Assistants</a></li>
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Business Analysts</a></li>
+          <li><a href="#">Financial Analysts</a></li>
+          <li><a href="#">Financial Modelers</a></li>
+          <li><a href="#">Forex Traders</a></li>
+          <li><a href="#">Management Consultants</a></li>
+          <li><a href="#">Tax Preparers</a></li>
+          <li><a href="#">Data Entry Specialists</a></li>
+          <li><a href="#">Financial Forecasting Specialists</a></li>
+          <li><a href="#">Financial Reporting Analysts</a></li>
+          <li><a href="#">Intuit TurboTax Specialists</a></li>
+          <li><a href="#">Payroll Processing Specialists</a></li>
+          <li><a href="#">Financial Accountants</a></li>
+          <li><a href="#">Financial Managers</a></li>
+          <li><a href="#">Financial Reporting Specialists</a></li>
+          <li><a href="#">M&A Consultants</a></li>
+          <li><a href="#">Project Managers</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- HR & Training -->
+      <div class="category">
+        <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="#">Criminal Law Professionals</a></li>
+          <li><a href="#">Family Law Professionals</a></li>
+          <li><a href="#">Fraud Analysts</a></li>
+          <li><a href="#">GDPR Specialists</a></li>
+          <li><a href="#">Immigration Law Professionals</a></li>
+          <li><a href="#">International Law Professionals</a></li>
+          <li><a href="#">Legal Advisors</a></li>
+          <li><a href="#">Legal Assistants</a></li>
+          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="#">Legal Researchers</a></li>
+          <li><a href="#">Legal Transcriptionists</a></li>
+          <li><a href="#">Legal Translators</a></li>
+          <li><a href="#">Legal Writers</a></li>
+          <li><a href="#">Patent Law Professionals</a></li>
+          <li><a href="#">Real Estate Law Professionals</a></li>
+        </ul>
+      </div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Aerospace Engineers</a></li>
+          <li><a href="#">AutoCAD Developers</a></li>
+          <li><a href="#">Engineering Consultants</a></li>
+          <li><a href="#">Home Designers</a></li>
+          <li><a href="#">Interior Architects</a></li>
+          <li><a href="#">Parametric Designers</a></li>
+          <li><a href="#">Architectural Modelers</a></li>
+          <li><a href="#">CI/CD Engineers</a></li>
+          <li><a href="#">Engineering Designers</a></li>
+          <li><a href="#">Hydraulic Engineers</a></li>
+          <li><a href="#">Landscape Architects</a></li>
+          <li><a href="#">Polymer Engineers</a></li>
+          <li><a href="#">Architectural Rendering Specialists</a></li>
+          <li><a href="#">Design Engineers</a></li>
+          <li><a href="#">Fire Protection Engineers</a></li>
+          <li><a href="#">Infrastructure Engineers</a></li>
+          <li><a href="#">Naval Architects</a></li>
+          <li><a href="#">Structural Engineers</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+
+
+    <section class="cards-wrapper">
+
+      <div class="cards-grid">
+
+        <!-- CARD 1 -->
+        <div class="up-card" data-skill="kotlin">
+          <div class="card-header">
+            <img src="Murad K..webp" class="avatar">
+            <div class="user-info">
+              <h3>Murad K.</h3>
+              <span class="location">  Seongnam-si, South Korea</span>
+              <div class="stats">
+                <span class="price">$20/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 248 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+         I am an experienced resume writer and career expert. I can help you create a strong resume 
+         and cover letter that will make you stand out from other job applicants. 
+         Whether you're applying for a job, higher education programs, scholarships, research positions,
+          or international opportunities, I can assist you..
+        </p>
+          <div class="tags"><span>Professional CV, Resume (ATS) & Cover Letter</span>
+          <span>Biography</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card hidden-card" data-skill="java">
+          <div class="card-header">
+            <img src="Sami Ullah Z..webp" class="avatar">
+            <div class="user-info">
+              <h3>Sami Ullah Z. </h3>
+              <span class="location"> Okara Cantonment, Pakistan </span>
+              <div class="stats">
+                <span class="price">$10/hr</span>
+                <span class="rating">⭐ 4.9 </span>
+                <span class="jobs">💼 113 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            As a Certified Professional Resume/CV Writer & Designer, I specialize in crafting ATS-compatible resumes,
+             CVs, LinkedIn profiles, and cover letters that help professionals stand out and land their dream jobs.
+          </p>
+          <div class="tags"><span>Resume & Cover Letter Writing<span>Presentation Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card hidden-card" data-skill="kotlin mvvm">
+          <div class="card-header">
+            <img src="Everlyne M..webp" class="avatar">
+            <div class="user-info">
+              <h3>Everlyne M.</h3>
+              <span class="location"> Nairobi, Kenya </span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 205 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            Are you ready to take your career to the next level? I specialize in crafting compelling, achievement-focused resumes that grab attention 
+            and secure interviews. With over 10 years of experience, I’ve helped 15,000+ clients land roles at top companies like Coca-Cola, Apple, Google, and NASA.
+
+            </p>
+          <div class="tags"><span>Recruiting & Talent Sourcing</span><span>Cover letter |LinkedIn | Recruiter, HR & Career Consultant</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card hidden-card" data-skill="firebase">
+          <div class="card-header">
+            <img src="Kenny F..webp" class="avatar">
+            <div class="user-info">
+              <h3>Kenny F.</h3>
+              <span class="location">  Luton, United Kingdom </span>
+              <div class="stats">
+                <span class="price">$35/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 116 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+          3X Certified Professional Resume Writer with over 1000 Successes | Update your Resume, Cover Letter, and LinkedIn Profile | Co-founder of Hirelu.com
+
+            </p>
+          <div class="tags"><span>Resume & Cover Letter Writing</span><span>Recruiting & Talent Sourcing</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card hidden-card" data-skill="firebase maps">
+          <div class="card-header">
+            <img src="Muhammad I..webp" class="avatar">
+            <div class="user-info">
+              <h3>Muhammad I.</h3>
+              <span class="location">Lahore, Pakistan</span>
+              <div class="stats">
+                <span class="price">$7.90/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 30 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            
+            🌟 Certified Resume/CV Writer | Enabling People to Land Jobs Since 2011 🌟
+            ✔ 3K+ Job Interviews Secured for Executives & Freshers across 60+ Sectors ✔ ATS & LinkedIn Expert ✔ Active Member of the Professional Association of Résumé Writers
+             & Career Coaches™ (PARW/CC) ✔ Crafting ATS-Optimized Resumes That Open Doors
+
+
+          </p>
+          <div class="tags"><span>Resume & Cover Letter Writing</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card hidden-card" data-skill="java sqlite">
+          <div class="card-header">
+            <img src="Farhan K..webp" class="avatar">
+            <div class="user-info">
+              <h3>Farhan K.</h3>
+              <span class="location"> Islamabad, Pakistan </span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 854 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">   
+         ✅ Why Hire Me?
+         As a Certified ATS Resume Writer and Software Engineer, I merge technical precision with HR insights to create job-winning resumes,
+          LinkedIn profiles, and career documents that pass ATS algorithms while showcasing your unique value. For developers and businesses,
+           I build scalable web apps, data-driven tools, and SEO-optimized sites using modern stacks like React, Angular, and C#.    
+        </p>
+          <div class="tags"><span>Resume & Cover Letter Writing</span><span>Web Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 7 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="Jessica J..webp" class="avatar">
+            <div class="user-info">
+              <h3>Jessica J.</h3>
+              <span class="location">  Leland, NC, USA </span>
+              <div class="stats">
+                <span class="price">$14/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 6 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+            Here’s how I can help you:
+           📌 Project Management Support – Task coordination, progress tracking, and team updates so projects run smoothly.
+           📌 Resume & Career Docs – ATS-friendly resumes, CVs, and LinkedIn profiles that stand out.
+           📌 Admin & Data Entry – Accurate, reliable data entry, inbox support, and reporting with fast turnaround.
+          </p>
+          <div class="tags"><span>General Virtual Assistance</span><span>Business Project Management</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+
+        <!-- CARD 8 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin firebase">
+          <div class="card-header">
+            <img src="Akta V..jpg" class="avatar">
+            <div class="user-info">
+              <h3>Akta V.</h3>
+              <span class="location"> Satkhira, Bangladesh </span>
+              <div class="stats">
+                <span class="price">$39/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 551 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+           For over six years, I've been a staunch pillar in the realm of Graphic Design. I've been fortunate to collaborate with over 850+ partners—ranging
+            from individuals, corporate juggernauts to altruistic non-profits. Together, we've breathed life into their creative dreams, establishing vibrant, 
+            tangible manifestations. My custom solutions have been sought after across numerous sectors, leaving an indelible mark.
+         </p>
+          <div class="tags"><span>Graphic Design</span><span>Presentation Design</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+        <!-- CARD 9 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="Craig C..webp" class="avatar">
+            <div class="user-info">
+              <h3>Craig C.</h3>
+              <span class="location"> Sittingbourne, United Kingdom</span>
+              <div class="stats">
+                <span class="price">$235/hr</span>
+                <span class="rating">⭐ 4.1</span>
+                <span class="jobs">💼 32 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+           🚀 15+ Years Global Recruitment & Coaching | 800+ Clients | 30+ Countries | 1,000s of Hours | Award-Winning Career Strategist
+           🔍 Resume | Cover Letter | LinkedIn | Interview Coaching | Executive Branding
+                 
+          </p>
+          <div class="tags"><span>Resume & Cover Letter Writing </span><span>Career Coaching</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+       
+
+        <!-- CARD 10 (NEW) -->
+        <div class="up-card hidden-card" data-skill="kotlin performance">
+          <div class="card-header">
+            <img src="Maribel Q..webp" class="avatar">
+            <div class="user-info">
+              <h3>Maribel Q.</h3>
+              <span class="location"> Taguig City, Philippines</span>
+              <div class="stats">
+                <span class="price">$20/hr</span>
+                <span class="rating">⭐ 4.2</span>
+                <span class="jobs">💼 27 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">
+          Resume | LinkedIn | Cover Letters
+          My resume services can provide you with the resume writing assistance you need to be successful -
+           maximizing your best traits while being fluid and effective for your target jobs.
+                 
+          </p>
+          <div class="tags"><span>Professional Resume Writer</span></div>
+          <a href="#" class="profile-btn">See profile</a>
+        </div>
+
+
+        <!-- CARD 11 (NEW) -->
+        <div class="up-card hidden-card" data-skill="resume design">
+  <div class="card-header">
+    <img src="Laura M..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Laura M.</h3>
+      <span class="location"> New York, USA </span>
+      <div class="stats">
+        <span class="price">$20/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 210 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Professional resume designer helping job seekers stand out with ATS-friendly resumes.
+    Specialized in modern layouts and keyword optimization.
+  </p>
+  <div class="tags"><span>Resume Design</span><span>ATS Optimization</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 12 (NEW) -->
+<div class="up-card hidden-card" data-skill="resume design">
+  <div class="card-header">
+    <img src="Daniel F..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Daniel F.</h3>
+      <span class="location"> London, United Kingdom </span>
+      <div class="stats">
+        <span class="price">$18/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 134 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Certified resume writer and designer creating clean, recruiter-focused resumes.
+    Experienced with LinkedIn profile optimization and cover letters.
+  </p>
+  <div class="tags"><span>Resume Design</span><span>LinkedIn Optimization</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 13 (NEW) -->
+<div class="up-card hidden-card" data-skill="resume design">
+  <div class="card-header">
+    <img src="Nadia K..jpgw" class="avatar">
+    <div class="user-info">
+      <h3>Nadia K.</h3>
+      <span class="location"> Cairo, Egypt </span>
+      <div class="stats">
+        <span class="price">$12/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 98 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Creative CV and resume designer delivering professional and visually appealing formats.
+    Focused on fast delivery and high interview success rates.
+  </p>
+  <div class="tags"><span>Resume Design</span><span>CV Formatting</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 14 (NEW) -->
+<div class="up-card hidden-card" data-skill="resume design">
+  <div class="card-header">
+    <img src="Kevin P..avif" class="avatar">
+    <div class="user-info">
+      <h3>Kevin P.</h3>
+      <span class="location"> Toronto, Canada </span>
+      <div class="stats">
+        <span class="price">$22/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 176 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Expert in executive and tech resumes with strong ATS compliance.
+    Helping professionals land interviews at top companies.
+  </p>
+  <div class="tags"><span>Resume Design</span><span>Executive Resumes</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+<!-- CARD 15 (NEW) -->
+<div class="up-card hidden-card" data-skill="resume design">
+  <div class="card-header">
+    <img src="Sofia R..jpg" class="avatar">
+    <div class="user-info">
+      <h3>Sofia R.</h3>
+      <span class="location"> Madrid, Spain </span>
+      <div class="stats">
+        <span class="price">$16/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 142 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">
+    Modern resume designer creating clean and visually impressive CVs.
+    Skilled in Canva and Adobe InDesign resume templates.
+  </p>
+  <div class="tags"><span>Resume Design</span><span>Canva</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+       
+        
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Resume Designers</button>
+      </div>
+
+    </section>
+  </div>
+  <section class="why-section">
+    <h2>Why hire Resume Designers from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Verified Talent</h4>
+        <p>All Resume Designers are screened and tested.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Flexible Pricing</h4>
+        <p>Hourly or fixed-price projects that fit your budget.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Secure Payments</h4>
+        <p>Pay only when you’re satisfied with the work.</p>
+      </div>
+    </div>
+  </section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ Post your job</div>
+      <div class="step">2️⃣ Choose your developer</div>
+      <div class="step">3️⃣ Start building your app</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How much does it cost to hire a Resume Designer </summary>
+      <p>Prices depend on experience and project scope.</p>
+    </details>
+
+    <details>
+      <summary>Can I hire developers hourly?</summary>
+      <p>Yes, both hourly and fixed-price contracts are available.</p>
+    </details>
+  </section>
+
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
+
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+
+</body>
+
+</html>
