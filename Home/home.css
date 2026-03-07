@@ -189,7 +189,7 @@ background:#005b84;
     transition: 0.3s;
 }
 
-.action-btn.blue { background: var(--primary-blue); color: white; }
+.action-btn.blue { background: var(--c3); color: white; }
 .action-btn.outline { background: #E8F0F8; color: var(--dark-blue); }
 
 /* الجزء الأيمن (الصورة بدون بروز) */
@@ -659,7 +659,7 @@ h3 {
 
 /* ده بتاع الصور */
 .feature-item img {
-  width: 120px;
+  width: 140px;
   margin-bottom: 15px;
 }
 
