@@ -15,7 +15,7 @@
   <nav class="nav">
     <div class="logo">
       <a href="../Home/home.html">
-        <img src="images/logo.png" alt="Logo">
+        <img src="../images/logo.png" alt="Logo">
       </a>
     </div>
 
@@ -31,7 +31,7 @@
       <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
     </div>
   </nav>
-  
+
     <section class="hero-title">
         <h2>Development & IT</h2>
         <span class="hero-divider">|</span>
@@ -625,49 +625,66 @@
         </details>
     </section>
 
+ <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
 
-
-
-
-    <footer class="footer">
-        <div class="footer-container">
-
-            <div class="footer-col">
-                <h3>Task Hunt</h3>
-                <ul>
-                    <li><a href="#">About Task Hunt</a></li>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Rights Protection</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Community</h3>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Discussions</a></li>
-                    <li><a href="#">Topics</a></li>
-                    <li><a href="#">User Experiences</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
-                </div>
-            </div>
-
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
         </div>
+      </div>
+    </div>
 
-        <div class="footer-bottom">
-            <p>© 2025 Task Hunt — All rights reserved</p>
-        </div>
-    </footer>
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
+    </div>
+
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
