@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Business Analysts | TaskHunt</title>
+ <!-- Font Awesome -->
+  <link rel="stylesheet" href="fontawesome-free-7.2.0-web/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     :root {
@@ -30,38 +34,88 @@
 
 
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0px 30px;
-      height: 50px;
-      background: var(--white);
-    }
+   /* NAVBAR FIX */
 
-    .logo img {
-      height: 180px;
-      align-items: center;
-      padding-bottom: 25px;
-    }
+.navbar{
+height:80px;
+background:#ffffff;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
+/* LOGO */
 
-    nav ul li a {
-      color: var(--c4);
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s;
-    }
+.navbar-brand img{
+height:100px;
+}
 
-    nav ul li a:hover {
-      color: var(--c1);
-    }
+/* LINKS */
+
+.navbar-nav .nav-link{
+font-size:17px;
+font-weight:500;
+color:#333;
+margin:0 10px;
+transition:0.3s;
+}
+
+.navbar-nav .nav-link:hover{
+color:#0077B8;
+}
+
+/* BUTTONS */
+
+.navbar .btn{
+padding:8px 18px;
+border-radius:8px;
+font-weight:500;
+}
+
+/* LOGIN BUTTON */
+
+.btn-light{
+background:#eef3ff;
+border:none;
+}
+
+/* SIGN UP BUTTON */
+
+.btn-primary{
+background:#0077B8;
+border:none;
+}
+
+.btn-primary:hover{
+background:#005b84;
+}
+
+/* MOBILE FIX */
+
+@media (max-width:991px){
+
+.navbar{
+height:auto;
+padding:10px 0;
+}
+
+.navbar-nav{
+text-align:center;
+margin-top:10px;
+}
+
+.navbar .d-flex{
+justify-content:center;
+margin-top:10px;
+}
+
+}
+
+.btn-primary{
+background:#0077B8;
+border:none;
+}
+
+.btn-primary:hover{
+background:#005b84;
+}
 
 
     .hero-title {
@@ -371,6 +425,7 @@
 
 
 
+
     /* Footer */
     .footer {
       background: #051923;
@@ -635,18 +690,64 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="nav">
-    <div class="logo">
-      <img src="../images/logo.png" alt="Logo">
-    </div>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../../about/about.html">About</a></li>
-      <li><a href="../../cont/contactus.html">Contact</a></li>
-      <li><a href="../../regg/indexreggggg.html">sign up</a></li>
-      <li><a href="../../login/Login_page.html">Login</a></li>
-    </ul>
-  </nav>
+   <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="../Home/home.html">
+                <img src="images/logo.png" >
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../work.html">Find Work</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Home/Hie Talent.html">Hire Talent</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="d-flex gap-2">
+
+                <button class="btn btn-light" onclick="window.location.href='../signup/asksignup.html'">
+
+                    Login
+
+                </button>
+
+                <button class="btn btn-primary" onclick="window.location.href='../signup/asksignup.html'">
+
+                    Sign Up
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
   <section class="hero-title">
     <h2>Finance & Accounting</h2>
     <span class="hero-divider">|</span>
@@ -656,12 +757,13 @@
   <!-- FILTER BAR -->
   <section class="filter-bar">
     <div class="filter-container">
-
       <select id="skillFilter">
-        <option value="all">All Skills</option>
-        <option value="kotlin">Kotlin</option>
-        <option value="java">Java</option>
-        <option value="firebase">Firebase</option>
+                <option value="all">All Skills</option>
+                <option value="ManagementConsulting">Management Consulting</option>
+                <option value="AccountantsPayable">Accountants Payable</option>
+                <option value="BusinessConsulting">Business Consulting</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Bookkeeping">Bookkeeping</option>
       </select>
 
       <select id="levelFilter">
@@ -1240,14 +1342,98 @@
   </section>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-  <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.classList.toggle("active");
-      });
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
+
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
     });
-  </script>
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
 
   <footer class="footer">
     <div class="footer-container">
@@ -1288,73 +1474,6 @@
       <p>© 2025 Task Hunt — All rights reserved</p>
     </div>
   </footer>
-  <script>
-    const cards = document.querySelectorAll(".up-card");
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
-
-    const skillFilter = document.getElementById("skillFilter");
-    const levelFilter = document.getElementById("levelFilter");
-    const priceFilter = document.getElementById("priceFilter");
-    const applyFilterBtn = document.getElementById("applyFilter");
-
-    let visible = 6;
-    const step = 6;
-
-    /* ===== HELPERS ===== */
-    function getFilteredCards() {
-      return [...cards].filter(card => {
-        const skills = card.dataset.skill || "";
-
-        /* SKILL FILTER */
-        const skillMatch =
-          skillFilter.value === "all" ||
-          skills.includes(skillFilter.value);
-
-        /* PRICE FILTER */
-        let priceMatch = true;
-        const priceText = card.querySelector(".price")?.innerText || "";
-        const price = parseInt(priceText.replace(/\D/g, ""));
-
-        if (priceFilter.value === "low") priceMatch = price < 25;
-        if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 30;
-        if (priceFilter.value === "high") priceMatch = price > 30;
-
-        return skillMatch && priceMatch;
-      });
-    }
-
-    function updateCards() {
-      const filteredCards = getFilteredCards();
-
-      cards.forEach(card => card.classList.add("hidden-card"));
-
-      filteredCards.slice(0, visible).forEach(card => {
-        card.classList.remove("hidden-card");
-      });
-
-      if (loadMoreBtn) {
-        loadMoreBtn.style.display =
-          visible < filteredCards.length ? "block" : "none";
-      }
-    }
-
-    /* ===== APPLY FILTER BUTTON ===== */
-    applyFilterBtn.addEventListener("click", () => {
-      visible = 12;
-      updateCards();
-    });
-
-    /* ===== LOAD MORE ===== */
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener("click", () => {
-        visible += step;
-        updateCards();
-      });
-    }
-
-    /* ===== INIT ===== */
-    updateCards();
-  </script>
 
 </body>
 
