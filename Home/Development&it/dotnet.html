@@ -5,32 +5,63 @@
   <meta charset="UTF-8">
  <title>.NET Developers | TaskHunt</title>
 <link rel="stylesheet" href="../Development&it/ALL.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
- 
-  <!-- NAVBAR -->
-  <nav class="nav">
-    <div class="logo">
-      <a href="../Home/home.html">
-        <img src="images/logo.png" alt="Logo">
-      </a>
+ <nav class="navbar navbar-expand-lg shadow-sm">
+
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand" href="#">
+      <img src="../images/logo.png" class="nav-logo" alt="TaskHunt">
+    </a>
+
+    <!-- زر الموبايل -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- القائمة -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <!-- LINKS -->
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Find Work</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hire Talent</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+
+      </ul>
+
+      <!-- BUTTONS -->
+      <div class="nav-buttons ms-auto">
+
+        <button class="btn-login">Login</button>
+
+        <button class="btn-signup">Sign Up</button>
+
+      </div>
+
     </div>
 
-    <ul class="nav-links">
-      <li><a href="../work.html">Find Work</a></li>
-      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-      <li><a href="#about-section">About</a></li>
-      <li><a href="#contact-section">Contact</a></li>
-    </ul>
+  </div>
 
-    <div class="auth-buttons">
-      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
-      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
-    </div>
-  </nav>
-  
+</nav>
  <section class="hero-title">
   <h2>Development & IT</h2>
   <span class="hero-divider">|</span>
@@ -755,6 +786,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
