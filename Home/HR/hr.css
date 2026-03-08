@@ -1,15 +1,12 @@
 :root {
-      --c1: #00A8FF;
+     --c1: #00A8FF;
       --c2: #0090E0;
-      --c3: #0077B8; /* اللون الأزرق الموحد الذي طلبتِه */
-  --c3-hover: #005b84; /* لون الـ Hover */
+      --c3: #0077B8;
       --c4: #051923;
       --c5: #ffffff;
       --white: #ffffff;
       --light: #e6f7ff;
-      --bg-global: #f7f9fc; /* لون الخلفية الموحد للموقع */
     }
-
    * {
       margin: 0;
       padding: 0;
@@ -35,9 +32,9 @@ nav {
 /* NAVBAR FIX */
 
 .logo img {
-  height: 60px;
+  height: 33px;
   align-items: center;
-  padding-bottom: 25px;
+  margin-left: 40px;
 }
 nav ul {
   list-style: none;
@@ -387,6 +384,7 @@ nav ul li a:hover {
       padding: 18px;
       display: flex;
       flex-direction: column;
+      
       transition: 0.25s;
     }
 
@@ -411,14 +409,14 @@ nav ul li a:hover {
     }
 
     .location {
-      font-size: 12px;
+      font-size: 14px;
       color: #6b7280;
     }
 
     .stats {
       display: flex;
       gap: 10px;
-      font-size: 13px;
+      font-size: 14px;
       margin-top: 6px;
     }
 
@@ -450,7 +448,7 @@ nav ul li a:hover {
       margin-top: auto;
       text-align: center;
       padding: 12px;
-      background: #005b84;
+      background: #0077B8;
       color: white;
       border-radius: 10px;
       text-decoration: none;
