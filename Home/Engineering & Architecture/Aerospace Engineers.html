@@ -99,48 +99,104 @@
         display: none;
       }
     }
-  /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0px 30px;
-      height: 50px;
-      background: var(--white);
-    }
-    .logo img{
-      height: 180px;
-      align-items: center;
-      padding-bottom: 25px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-    nav ul li a {
-      color: var(--c4);
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-    nav ul li a:hover {
-      color: var(--c1);
-    }
-    /* BUTTONS */
-    .btn {
-    padding: 10px 18px;
-    border-radius: 6px;
-    border: none;
+ /* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  height: 50px;
+  background: #ffffff;
+}
+/* NAVBAR FIX */
+
+.logo img {
+  height: 180px;
+  align-items: center;
+  padding-bottom: 25px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+nav ul li a {
+  color: var(--c4);
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: var(--c1);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+/* BUTTONS */
+
+.auth-buttons .btn {
+    width: 90px; 
+    height: 35px;
+    padding: 8px 0; 
+    text-align: center;
+    display: inline-block;
+    border-radius: 8px; 
+    font-size: 17px;
+    font-weight: 500;
     cursor: pointer;
-    }
+}
+.login-blue {
+    background-color: #f0f6ff;
+    color: white;
+    border: none;
+}
+/* LOGIN BUTTON */
 
-    .primary {
-    background: var(--c3);
-    color: #fff;
-    }
-
-
+.login-btn {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff; 
+}
+.auth-buttons .btn:hover {
+    opacity: 0.8;
+    transform: translateY(-0.5px);
+}
+.signup-blue {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-text {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  font-weight: 500;
+}
+/* BUTTONS */
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.primary {
+  background: var(--c3);
+  color: #fff;
+}
     /* ===== FILTER BAR ===== */
     .filter-bar {
       width: 100%;
@@ -733,21 +789,31 @@
 <body>
 
  <!-- NAVBAR -->
-  <nav class="nav">
+ <nav class="nav">
     <div class="logo">
-      <a href="../../Home/home.html" class="logo">
-      <img src="../images/logo.png" alt="Logo"></a>
+      <a href="../Home/home.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
     </div>
-    <ul>
-      <li><a href="#">Find Work</a></li>
-      <li><a href="#">Hire Talent</a></li>
-      <li><a href="../../about/about.html">About</a></li>
-      <li><a href="../../contactus/contactus.html">Contact</a></li>
-      <li><a href="../../login/login.html">Login</a></li>
-      <li>
-        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
-      </li>
+
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
     </ul>
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+          
+           <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    </div>
   </nav>
   <section class="hero-title">
     <h2>Engineering & Architecture</h2>
