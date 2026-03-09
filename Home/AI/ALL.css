@@ -19,8 +19,8 @@
       background: #f9fafb;
       color: #111827;
     }
-
-/* NAVBAR */
+ 
+ /* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
@@ -83,11 +83,7 @@ nav ul li a:hover {
 }
 /* LOGIN BUTTON */
 
-.login-btn {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff; 
-}
+
 .auth-buttons .btn:hover {
     opacity: 0.8;
     transform: translateY(-0.5px);
@@ -119,6 +115,7 @@ nav ul li a:hover {
   color: #fff;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 
     .hero-title {
       display: flex;
@@ -194,7 +191,7 @@ nav ul li a:hover {
 
     .filter-container button {
       padding: 12px 26px;
-      background: #0077B8 ;
+      background: #005b84;
       color: #ffffff;
       border: none;
       border-radius: 10px;
@@ -233,7 +230,7 @@ nav ul li a:hover {
 
     /* SIDEBAR */
     .sidebar {
-      width: 200px;
+      width: 180px;
       flex-shrink: 0;
       border-right: 1px solid #e5e7eb;
       padding-right: 20px;
@@ -323,13 +320,11 @@ nav ul li a:hover {
       gap: 24px;
     }
 
-   
-
     .up-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 14px;
-      padding: 20px;
+      padding: 18px;
       display: flex;
       flex-direction: column;
       transition: 0.25s;
@@ -342,7 +337,7 @@ nav ul li a:hover {
 
     .card-header {
       display: flex;
-      gap: 15px;
+      gap: 12px;
     }
 
     .avatar {
@@ -356,14 +351,14 @@ nav ul li a:hover {
     }
 
     .location {
-      font-size: 15px;
+      font-size: 14px;
       color: #6b7280;
     }
 
     .stats {
       display: flex;
       gap: 10px;
-      font-size: 15px;
+      font-size: 14px;
       margin-top: 6px;
     }
 
@@ -372,7 +367,7 @@ nav ul li a:hover {
     }
 
     .description {
-      font-size: 15px;
+      font-size: 13px;
       margin: 12px 0;
       line-height: 1.5;
     }
@@ -388,14 +383,14 @@ nav ul li a:hover {
       background: #f3f4f6;
       padding: 5px 10px;
       border-radius: 999px;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .profile-btn {
       margin-top: auto;
       text-align: center;
       padding: 12px;
-      background: #0077B8 ;
+      background:#0077B8 ;
       color: white;
       border-radius: 10px;
       text-decoration: none;
@@ -427,30 +422,8 @@ nav ul li a:hover {
     }
 
 
-    .load-more {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
 
-
-    .load-more button {
-      padding: 14px 40px;
-      background: #0077B8;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-
-    }
-
-
-        /* Footer */ 
+/* Footer */ 
 .footer {
   background: #051923;
   padding: 20px 10px;
@@ -603,7 +576,28 @@ nav ul li a:hover {
     width: 100%;
   }
 }
+    .load-more {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
 
+
+    .load-more button {
+      padding: 14px 40px;
+      background: #0077B8 ;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+
+    }
 
     .load-more button:hover {
       background: #004666;

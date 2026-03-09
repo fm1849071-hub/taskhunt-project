@@ -3,7 +3,7 @@
   --c1: #00A8FF;
   --c2: #0090E0;
   --c3: #0077B8;
-    --c4: #051923;
+  --c4: #051923;
   --c5: #ffffff;
   --white: #ffffff;
   --light: #e6f7ff;
@@ -42,7 +42,7 @@ nav ul li a {
   transition: 0.3s;
 }
 nav ul li a:hover {
-  color: var(--c1);
+  color: var(--c3);
 }
 .nav-links {
   display: flex;
@@ -79,28 +79,18 @@ nav ul li a:hover {
 
 .login-btn {
     background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff; 
+    color: var(--c3);
+    
 }
 .auth-buttons .btn:hover {
     opacity: 0.8;
     transform: translateY(-0.5px);
 }
 .signup-blue {
-  background-color: #007bff;
+  background-color: var(--c3);
   color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
 }
-.login-text {
-  background: none;
-  border: none;
-  color: #000000;
-  cursor: pointer;
-  font-weight: 500;
-}
+
 /* BUTTONS */
 .btn {
   padding: 10px 18px;
@@ -108,10 +98,7 @@ nav ul li a:hover {
   border: none;
   cursor: pointer;
 }
-.primary {
-  background: var(--c3);
-  color: #fff;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 .hero-section {
@@ -184,7 +171,7 @@ nav ul li a:hover {
 }
 
 .search-btn {
-    background: var(--primary-blue);
+    background: var(--c3);
     color: white;
     border: none;
     padding: 10px 25px;
@@ -208,7 +195,7 @@ nav ul li a:hover {
 }
 
 .action-btn.blue { background: var(--c3); color: white; }
-.action-btn.outline { background: #E8F0F8; color: var(--dark-blue); }
+.action-btn.outline { background: #f0f6ff; color: var(--dark-blue); }
 
 /* الجزء الأيمن (الصورة بدون بروز) */
 .hero-image {
@@ -639,58 +626,157 @@ h3 {
 }
 
 
-
+/*features section*/
+/* Container Section */
 .features {
-  
-  padding: 50px 20px;
-  text-align: center;
-  direction: rtl;
-  font-family: "Cairo", sans-serif;
+    padding: 60px 20px;
+    text-align: center;
+    direction: ltr; /* تم التعديل للإنجليزية بناءً على محتوى الكروت، اجعليها rtl لو النصوص عربية */
+    font-family: "Cairo", sans-serif;
+    background-color: #fff;
 }
 
 .features-title {
-  font-size: 28px;
-  margin-bottom: 40px;
-  color: var(--c1);
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: var(--c1);
+    font-weight: 700;
 }
 
+/* Grid Box */
 .features-box {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 أعمدة متساوية */
+    gap: 30px;
+    align-items: stretch; /* يضمن أن جميع الكروت في الصف لها نفس الارتفاع */
 }
 
-.feature-item {
-  background: var(--c5);
-  padding: 30px 20px;
-  border-radius: 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Individual Card */
+:root {
+    --primary-color: #0090E0;
+    --text-dark:--dark-blue;
+    --text-gray:--dark-blue;
+    --card-bg: #ffffff;
+    --section-bg: #f8fbff; /* خلفية هادئة جداً لتمييز القسم */
 }
 
-.feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+.features-section {
+    padding: 100px 0;
+    background-color: var(--section-bg);
+    font-family: 'Inter', 'Cairo', sans-serif;
 }
 
-/* ده بتاع الصور */
-.feature-item img {
-  width: 140px;
-  margin-bottom: 15px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.feature-item h3 {
-  font-size: 20px;
-  color: var(--c1);
-  margin-bottom: 10px;
+/* الترويسة */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.feature-item p {
-  font-size: 15px;
-  color: black;
-  line-height: 1.5;
+.features-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.features-subtitle {
+    color: var(--text-gray);
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* الشبكة الاحترافية */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* الكارت الاحترافي */
+.feature-card {
+    background: var(--card-bg);
+    padding: 45px 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 144, 224, 0.08); /* إطار خفيف جداً */
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(145deg, rgba(0, 144, 224, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 30, 0, 0.08);
+    border-color: var(--primary-color);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+/* تنسيق الصور */
+.icon-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f7ff;
+    border-radius: 50%; /* شكل دائري أنيق للصور */
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+.icon-wrapper img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* النصوص داخل الكارت */
+.feature-card h3 {
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.7;
+    position: relative;
+}
+
+/* موبايل وتجاوب */
+@media (max-width: 768px) {
+    .features-title { font-size: 28px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .feature-card { padding: 35px 25px; }
 }
 
 /* TRUST SECTION */
@@ -1075,7 +1161,7 @@ h3 {
 }
 
 .footer-btn {
-  width: 92%;
+  width: 100%;
   padding: 12px;
   background: #00a8e8;
   border: none;

@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Neural Networks | TaskHunt</title>
+  <title>Neural Networks Specialists | TaskHunt</title>
 
   <style>
-     :root {
+    :root {
       --c1: #00A8FF;
       --c2: #0090E0;
       --c3: #0077B8;
@@ -25,8 +25,10 @@
 
     body {
       background: #f9fafb;
-      color: #111827;
+      color: #111827
     }
+
+
 
     /* NAVBAR */
     nav {
@@ -37,29 +39,38 @@
       height: 50px;
       background: var(--white);
     }
-
-    .logo img {
+    .logo img{
       height: 180px;
       align-items: center;
       padding-bottom: 25px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 30px;
     }
-
     nav ul li a {
       color: var(--c4);
       text-decoration: none;
       font-size: 18px;
       transition: 0.3s;
     }
-
     nav ul li a:hover {
       color: var(--c1);
     }
+    /* BUTTONS */
+    .btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .primary {
+    background: var(--c3);
+    color: #fff;
+    }
+
 
     .hero-title {
       display: flex;
@@ -87,15 +98,18 @@
       color: #9ca3af;
     }
 
+    /* موبايل */
     @media (max-width:768px) {
       .hero-title {
         flex-direction: column;
         gap: 6px;
       }
+
       .hero-divider {
         display: none;
       }
     }
+
 
     /* ===== FILTER BAR ===== */
     .filter-bar {
@@ -146,11 +160,13 @@
       background: #004666;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .filter-container {
         flex-direction: column;
         width: 100%;
       }
+
       .filter-container select,
       .filter-container button {
         width: 100%;
@@ -162,8 +178,10 @@
       display: flex;
       gap: 30px;
       padding: 40px 6% 10px;
+      /* ✅ قلل المسافة تحت */
       align-items: flex-start;
     }
+
 
     /* SIDEBAR */
     .sidebar {
@@ -173,16 +191,19 @@
       padding-right: 20px;
     }
 
+    /* TITLE */
     .sidebar h3 {
       margin-bottom: 20px;
       font-size: 18px;
       font-weight: 600;
     }
 
+    /* CATEGORY */
     .category {
       border-bottom: 1px solid #f1f5f9;
     }
 
+    /* CATEGORY BUTTON */
     .category-btn {
       width: 100%;
       background: none;
@@ -201,11 +222,13 @@
       color: #005b84;
     }
 
+    /* ARROW */
     .arrow {
       transition: transform 0.3s ease;
       font-size: 18px;
     }
 
+    /* SUB CATEGORIES */
     .sub-categories {
       list-style: none;
       max-height: 0;
@@ -215,6 +238,7 @@
       margin-bottom: 6px;
     }
 
+    /* LINK INSIDE LIST */
     .sub-categories li a {
       display: block;
       font-size: 13px;
@@ -229,13 +253,16 @@
       padding-left: 6px;
     }
 
+    /* ACTIVE STATE */
     .category.active .sub-categories {
       max-height: 900px;
+      /* كبير عشان كل القوائم */
     }
 
     .category.active .arrow {
       transform: rotate(90deg);
     }
+
 
     /* CARDS */
     .cards-wrapper {
@@ -325,6 +352,7 @@
       font-weight: 600;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 1200px) {
       .cards-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -335,16 +363,21 @@
       .page-layout {
         flex-direction: column;
       }
+
       .sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #e5e7eb;
         padding-bottom: 20px;
       }
+
       .cards-grid {
         grid-template-columns: repeat(1, 1fr);
       }
     }
+
+
+
 
     /* Footer */
     .footer {
@@ -427,11 +460,13 @@
       border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .footer-container {
         flex-direction: column;
         align-items: flex-start;
       }
+
       .footer-col {
         width: 100%;
       }
@@ -445,6 +480,7 @@
       margin-top: 10px;
     }
 
+
     .load-more button {
       padding: 14px 40px;
       background: #005b84;
@@ -455,6 +491,8 @@
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
+
+
     }
 
     .load-more button:hover {
@@ -464,6 +502,7 @@
     /* ===== WHY SECTION ===== */
     .why-section {
       padding: 70px 6%;
+
       text-align: center;
     }
 
@@ -526,6 +565,7 @@
     /* ===== FAQ ===== */
     .faq {
       padding: 70px 6%;
+
     }
 
     .faq h2 {
@@ -559,10 +599,12 @@
       display: none;
     }
 
+
     /* ===== CTA ===== */
     .cta {
       padding: 80px 6%;
       text-align: center;
+
       color: #ffffff;
     }
 
@@ -589,6 +631,7 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
+
       .why-grid,
       .steps-grid {
         grid-template-columns: 1fr;
@@ -599,20 +642,19 @@
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="nav">
+   <nav class="nav">
     <div class="logo">
-      <a href="../Home/home.html" class="logo">
-      <img src="images/logo.png" alt="Logo"></a>
+      <a href="../../Home/home.html" class="logo">
+      <img src="../images/logo.png" alt="Logo"></a>
     </div>
     <ul>
       <li><a href="#">Find Work</a></li>
       <li><a href="#">Hire Talent</a></li>
-      <li><a href="../about/about.html">About</a></li>
-      <li><a href="../contactus/contactus.html">Contact</a></li>
-      <li><a href="../login/login.html">Login</a></li>
+      <li><a href="../../about/about.html">About</a></li>
+      <li><a href="../../contactus/contactus.html">Contact</a></li>
+      <li><a href="../../login/login.html">Login</a></li>
       <li>
-        <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
       </li>
     </ul>
   </nav>
@@ -623,46 +665,44 @@
     <h1>Neural Networks</h1>
   </section>
 
-  <section class="filter-bar">
-    <div class="filter-container">
+ <section class="filter-bar">
+  <div class="filter-container">
 
-      <select id="skillFilter">
-        <option value="all">All Skills</option>
-        <option value="ann">ANN</option>
-        <option value="cnn">CNN</option>
-        <option value="rnn">RNN</option>
-        <option value="backprop">Backpropagation</option>
-        <option value="optimization">Optimization</option>
-        <option value="pytorch">PyTorch</option>
-        <option value="tensorflow">TensorFlow</option>
-      </select>
+    <select id="skillFilter">
+      <option value="all">All Architecture Skills</option>
+      <option value="cnn">CNN (Computer Vision)</option>
+      <option value="rnn">RNN/LSTM (Sequences)</option>
+      <option value="gan">GANs (Generative)</option>
+      <option value="transformers">Transformers (NLP)</option>
+      <option value="optimization">Weight Optimization</option>
+    </select>
 
-      <select id="levelFilter">
-        <option value="all">Experience Level</option>
-        <option value="junior">Junior</option>
-        <option value="mid">Mid</option>
-        <option value="senior">Senior</option>
-      </select>
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior</option>
+    </select>
 
-      <select id="priceFilter">
-        <option value="all">Hourly Rate</option>
-        <option value="low">Under $25</option>
-        <option value="mid">$25 – $30</option>
-        <option value="high">Above $30</option>
-      </select>
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $25</option>
+      <option value="mid">$25 – $40</option>
+      <option value="high">Above $40</option>
+    </select>
 
-      <button id="applyFilter">Apply Filter</button>
+   
 
-    </div>
-  </section>
+  </div>
+</section>
 
   <div class="page-layout">
 
     <aside class="sidebar">
       <h3>Categories</h3>
 
-      <!-- Data & AI -->
-  <div class="category">
+
+      <div class="category">
         <button class="category-btn">Data & AI <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
@@ -679,25 +719,23 @@
         </ul>
       </div>
 
-      <!-- Development & IT -->
       <div class="category">
         <button class="category-btn">Development & IT <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
           <li><a href="../Development&it/ai.html">AI Developers</a></li>
           <li><a href="../Development&it/android.html">Android Developers</a></li>
-          <li><a href="#">Backend Developers</a></li>
-          <li><a href="#">Bubble.io Developers</a></li>
-          <li><a href="#">Chatbot Developers</a></li>
-          <li><a href="#">Cyber Security Engineers</a></li>
-          <li><a href="#">Data Engineers</a></li>
-          <li><a href="#">DevOps Engineers</a></li>
-          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
          
         </ul>
       </div>
 
-      <!-- Design & Creative -->
       <div class="category">
         <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -714,7 +752,6 @@
         </ul>
       </div>
 
-      <!-- Sales & Marketing -->
       <div class="category">
         <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -731,7 +768,6 @@
         </ul>
       </div>
 
-      <!-- Writing & Translation -->
       <div class="category">
         <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -748,7 +784,6 @@
         </ul>
       </div>
 
-      <!-- Admin & Support -->
       <div class="category">
         <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -766,7 +801,6 @@
         </ul>
       </div>
 
-      <!-- Finance & Accounting -->
       <div class="category">
         <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -783,11 +817,10 @@
         </ul>
       </div>
 
-      <!-- Legal -->
       <div class="category">
         <button class="category-btn">Legal <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="../legal/Corporate law/">Corporate Law Professionals</a></li>
           <li><a href="#">Criminal Law Professionals</a></li>
           <li><a href="#">Family Law Professionals</a></li>
           <li><a href="#">Fraud Analysts</a></li>
@@ -800,8 +833,7 @@
         </ul>
       </div>
 
-     <!-- HR & Training -->
-<div class="category">
+     <div class="category">
   <button class="category-btn">HR & Training <span class="arrow">›</span></button>
   <ul class="sub-categories">
     <li><a href="#">Change Management Specialists</a></li>
@@ -818,7 +850,6 @@
   </ul>
 </div>
 
-      <!-- Engineering & Architecture -->
       <div class="category">
         <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -835,446 +866,439 @@
         </ul>
       </div>
     </aside>
+
+
+
     <section class="cards-wrapper">
 
-      <div class="cards-grid">
+    <div class="cards-grid">
 
-        <div class="up-card" data-skill="ann pytorch">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=17" class="avatar">
-            <div class="user-info">
-              <h3>Kareem F.</h3>
-              <span class="location">Giza, Egypt</span>
-              <div class="stats">
-                <span class="price">$50/hr</span>
-                <span class="rating">⭐ 4.9</span>
-                <span class="jobs">💼 15 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🕸️ Designing complex Artificial Neural Network architectures (ANN) from scratch.</p>
-          <div class="tags"><span>ANN</span><span>PyTorch</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="cnn tensorflow">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=18" class="avatar">
-            <div class="user-info">
-              <h3>Hoda A.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$45/hr</span>
-                <span class="rating">⭐ 4.8</span>
-                <span class="jobs">💼 12 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">👁️ Convolutional Neural Networks (CNN) for advanced image processing.</p>
-          <div class="tags"><span>CNN</span><span>TensorFlow</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="rnn optimization">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=19" class="avatar">
-            <div class="user-info">
-              <h3>Omar S.</h3>
-              <span class="location">Alexandria, Egypt</span>
-              <div class="stats">
-                <span class="price">$55/hr</span>
-                <span class="rating">⭐ 5.0</span>
-                <span class="jobs">💼 9 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📉 Recurrent Neural Networks (RNN) optimization for time-series data.</p>
-          <div class="tags"><span>RNN</span><span>Optimization</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="backprop math">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=20" class="avatar">
-            <div class="user-info">
-              <h3>Mona L.</h3>
-              <span class="location">Mansoura, Egypt</span>
-              <div class="stats">
-                <span class="price">$40/hr</span>
-                <span class="rating">⭐ 4.7</span>
-                <span class="jobs">💼 18 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🧮 Mathematical modeling of Backpropagation & Gradient Descent.</p>
-          <div class="tags"><span>Backprop</span><span>Math</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="pytorch cnn">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=21" class="avatar">
-            <div class="user-info">
-              <h3>Ahmed T.</h3>
-              <span class="location">Tanta, Egypt</span>
-              <div class="stats">
-                <span class="price">$38/hr</span>
-                <span class="rating">⭐ 4.6</span>
-                <span class="jobs">💼 20 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🚗 Vision-based Neural Networks for autonomous systems.</p>
-          <div class="tags"><span>CNN</span><span>PyTorch</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="tensorflow ann">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=22" class="avatar">
-            <div class="user-info">
-              <h3>Dina O.</h3>
-              <span class="location">Zagazig, Egypt</span>
-              <div class="stats">
-                <span class="price">$35/hr</span>
-                <span class="rating">⭐ 4.8</span>
-                <span class="jobs">💼 14 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🤖 Building Multi-Layer Perceptrons (MLP) for classification tasks.</p>
-          <div class="tags"><span>ANN</span><span>TensorFlow</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="optimization">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=23" class="avatar">
-            <div class="user-info">
-              <h3>Hassan B.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$60/hr</span>
-                <span class="rating">⭐ 5.0</span>
-                <span class="jobs">💼 8 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">⚡ Hyperparameter tuning & model architecture search.</p>
-          <div class="tags"><span>Optimization</span><span>Keras</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="rnn tensorflow">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=24" class="avatar">
-            <div class="user-info">
-              <h3>Sara Y.</h3>
-              <span class="location">Asyut, Egypt</span>
-              <div class="stats">
-                <span class="price">$42/hr</span>
-                <span class="rating">⭐ 4.7</span>
-                <span class="jobs">💼 16 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📝 Sequence-to-sequence models using LSTM and GRU units.</p>
-          <div class="tags"><span>RNN</span><span>TensorFlow</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="pytorch ann">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=25" class="avatar">
-            <div class="user-info">
-              <h3>Mahmoud E.</h3>
-              <span class="location">Sohag, Egypt</span>
-              <div class="stats">
-                <span class="price">$48/hr</span>
-                <span class="rating">⭐ 4.9</span>
-                <span class="jobs">💼 11 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🧠 Implementing custom loss functions and activation layers.</p>
-          <div class="tags"><span>ANN</span><span>PyTorch</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="cnn backprop">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=26" class="avatar">
-            <div class="user-info">
-              <h3>Nour H.</h3>
-              <span class="location">Minya, Egypt</span>
-              <div class="stats">
-                <span class="price">$32/hr</span>
-                <span class="rating">⭐ 4.6</span>
-                <span class="jobs">💼 22 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🔍 Deep visualization of CNN layers and feature maps.</p>
-          <div class="tags"><span>CNN</span><span>Backprop</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="optimization python">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=27" class="avatar">
-            <div class="user-info">
-              <h3>Tarek M.</h3>
-              <span class="location">Beni Suef, Egypt</span>
-              <div class="stats">
-                <span class="price">$36/hr</span>
-                <span class="rating">⭐ 4.8</span>
-                <span class="jobs">💼 13 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📈 Improving model convergence using Adam & RMSprop optimizers.</p>
-          <div class="tags"><span>Optimization</span><span>Python</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="ann">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=28" class="avatar">
-            <div class="user-info">
-              <h3>Salma K.</h3>
-              <span class="location">Alexandria, Egypt</span>
-              <div class="stats">
-                <span class="price">$28/hr</span>
-                <span class="rating">⭐ 4.5</span>
-                <span class="jobs">💼 25 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📊 Neural Network regression for financial prediction.</p>
-          <div class="tags"><span>ANN</span><span>Prediction</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="tensorflow rnn">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=29" class="avatar">
-            <div class="user-info">
-              <h3>Ramy S.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$52/hr</span>
-                <span class="rating">⭐ 4.9</span>
-                <span class="jobs">💼 10 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🗣️ Neural machine translation systems using Encoder-Decoder RNNs.</p>
-          <div class="tags"><span>RNN</span><span>TensorFlow</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="pytorch backprop">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=30" class="avatar">
-            <div class="user-info">
-              <h3>Yara T.</h3>
-              <span class="location">Giza, Egypt</span>
-              <div class="stats">
-                <span class="price">$46/hr</span>
-                <span class="rating">⭐ 4.8</span>
-                <span class="jobs">💼 17 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🎓 Academic research on Neural Network stability and gradients.</p>
-          <div class="tags"><span>PyTorch</span><span>Research</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="optimization">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=31" class="avatar">
-            <div class="user-info">
-              <h3>Ibrahim K.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$30/hr</span>
-                <span class="rating">⭐ 4.6</span>
-                <span class="jobs">💼 30 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📱 Pruning and quantizing Neural Networks for mobile devices.</p>
-          <div class="tags"><span>Optimization</span><span>Mobile AI</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
+<div class="up-card" data-skill="cnn optimization" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=40" class="avatar">
+    <div class="user-info">
+      <h3>Omar A.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 32 jobs</span>
       </div>
+    </div>
+  </div>
+  <p class="description">🧠 Senior Architect: Designing high-accuracy CNNs for medical image segmentation.</p>
+  <div class="tags"><span>CNN</span><span>PyTorch</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="rnn transformers" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar">
+    <div class="user-info">
+      <h3>Ahmed N.</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$38/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 21 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧠 Specialist in Sequential data: LSTM and Transformer-based prediction models.</p>
+  <div class="tags"><span>RNN</span><span>LSTM</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="gan optimization" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=42" class="avatar">
+    <div class="user-info">
+      <h3>Youssef M.</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$65/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 18 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚀 Generative Adversarial Networks (GANs) expert for synthetic data generation.</p>
+  <div class="tags"><span>GANs</span><span>Keras</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="cnn optimization" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=43" class="avatar">
+    <div class="user-info">
+      <h3>Mahmoud S.</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats">
+        <span class="price">$32/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 19 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📊 Neural Network Optimization: Pruning and Quantization for edge deployment.</p>
+  <div class="tags"><span>Optimization</span><span>TFLite</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="cnn" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar">
+    <div class="user-info">
+      <h3>Mostafa R.</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$25/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 12 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📘 Junior AI developer: Implementing MLP and simple CNN architectures.</p>
+  <div class="tags"><span>MLP</span><span>Python</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="transformers" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar">
+    <div class="user-info">
+      <h3>Islam H.</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$42/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 27 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🤖 Transformer Architect: Custom Attention mechanisms for NLP tasks.</p>
+  <div class="tags"><span>Attention</span><span>Transformers</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="gan cnn" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=46" class="avatar">
+    <div class="user-info">
+      <h3>Hassan K.</h3>
+      <span class="location">Fayoum, Egypt</span>
+      <div class="stats">
+        <span class="price">$58/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 25 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">👁️ Multi-modal Networks: Combining Vision and Language layers.</p>
+  <div class="tags"><span>Multi-modal</span><span>Deep Learning</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="rnn optimization" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar">
+    <div class="user-info">
+      <h3>Amr T.</h3>
+      <span class="location">Asyut, Egypt</span>
+      <div class="stats">
+        <span class="price">$36/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 18 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚙️ Time-series specialist: GRUs and LSTMs for financial forecasting.</p>
+  <div class="tags"><span>GRU</span><span>Time-series</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="optimization" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=48" class="avatar">
+    <div class="user-info">
+      <h3>Mahmoud N.</h3>
+      <span class="location">Sohag, Egypt</span>
+      <div class="stats">
+        <span class="price">$62/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 30 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧠 Reinforcement Learning networks for automated decision systems.</p>
+  <div class="tags"><span>DQN</span><span>PPO</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="neural transformers" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=49" class="avatar">
+    <div class="user-info">
+      <h3>Adel F.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$70/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 34 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧠 Deep Neural Architecture search and model scaling (EfficientNet/ViT).</p>
+  <div class="tags"><span>ViT</span><span>Architecture</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="cnn" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=50" class="avatar">
+    <div class="user-info">
+      <h3>Saad M.</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$22/hr</span>
+        <span class="rating">⭐ 4.5</span>
+        <span class="jobs">💼 11 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📈 Junior developer: Data labeling and augmentation for CNN training.</p>
+  <div class="tags"><span>Preprocessing</span><span>OpenCV</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="transformers rnn" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=51" class="avatar">
+    <div class="user-info">
+      <h3>Mohamed Z.</h3>
+      <span class="location">Beni Suef, Egypt</span>
+      <div class="stats">
+        <span class="price">$40/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 22 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🤖 Speech-to-Text architectures using WaveNet and Transformers.</p>
+  <div class="tags"><span>WaveNet</span><span>Speech</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="optimization" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar">
+    <div class="user-info">
+      <h3>Karim T.</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 20 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📊 Neural Network alignment and hyperparameter tuning expert.</p>
+  <div class="tags"><span>Hyperparameter</span><span>AutoML</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="cnn gan" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=53" class="avatar">
+    <div class="user-info">
+      <h3>Hany W.</h3>
+      <span class="location">Damietta, Egypt</span>
+      <div class="stats">
+        <span class="price">$44/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 24 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">👁️ Image-to-Image translation networks and Style Transfer.</p>
+  <div class="tags"><span>Style Transfer</span><span>CNN</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="cnn" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=54" class="avatar">
+    <div class="user-info">
+      <h3>Rami Z.</h3>
+      <span class="location">Luxor, Egypt</span>
+      <div class="stats">
+        <span class="price">$28/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 13 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚡ Junior developer: Training small-scale Neural Nets for IoT devices.</p>
+  <div class="tags"><span>Embedded AI</span><span>C++</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+
+
 
       <div class="load-more">
-        <button id="loadMoreBtn">Load more Neural Network Experts</button>
+        <button id="loadMoreBtn">Load more Neural experts</button>
       </div>
 
     </section>
   </div>
-  
   <section class="why-section">
-    <h2>Why hire Neural Network Experts from TaskHunt?</h2>
+    <h2>Why hire Neural Network Specialists from TaskHunt?</h2>
 
     <div class="why-grid">
-      <div class="why-box">
-        <h4>✔ Mathematical Precision</h4>
-        <p>Experts with strong background in Calculus and Linear Algebra.</p>
-      </div>
-
-      <div class="why-box">
-        <h4>✔ Custom Architectures</h4>
-        <p>Build models tailored exactly to your data's structure.</p>
-      </div>
-
-      <div class="why-box">
-        <h4>✔ Performance Optimization</h4>
-        <p>Tune models for highest accuracy and lowest latency.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="steps">
-    <h2>How it works</h2>
-    <div class="steps-grid">
-      <div class="step">1️⃣ Define the task</div>
-      <div class="step">2️⃣ Design the network</div>
-      <div class="step">3️⃣ Train & Optimize</div>
-    </div>
-  </section>
-
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>What is an Artificial Neural Network (ANN)?</summary>
-      <p>It's a computational model inspired by the human brain, used for pattern recognition.</p>
-    </details>
-    <details>
-      <summary>Can you build custom architectures?</summary>
-      <p>Yes, our experts can design custom layers and connections using PyTorch or TensorFlow.</p>
-    </details>
-  </section>
-
-  <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.classList.toggle("active");
-      });
-    });
-  </script>
-
-  <footer class="footer">
-    <div class="footer-container">
-
-      <div class="footer-col">
-        <h3>Task Hunt</h3>
-        <ul>
-          <li><a href="#">About Task Hunt</a></li>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Rights Protection</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Community</h3>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Discussions</a></li>
-          <li><a href="#">Topics</a></li>
-          <li><a href="#">User Experiences</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+        <div class="why-box">
+            <h4>✔ Custom Architectures</h4>
+            <p>Our specialists design bespoke neural networks tailored to your specific data patterns and performance goals.</p>
         </div>
-      </div>
 
+        <div class="why-box">
+            <h4>✔ Cutting-edge Innovation</h4>
+            <p>Access the latest research in Transformers, Attention mechanisms, and Generative Adversarial Networks.</p>
+        </div>
+
+        <div class="why-box">
+            <h4>✔ Efficient Training</h4>
+            <p>Optimize weights and biases for faster convergence and lower computational costs on cloud or edge hardware.</p>
+        </div>
     </div>
+</section>
 
-    <div class="footer-bottom">
-      <p>© 2025 Task Hunt — All rights reserved</p>
+<section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+        <div class="step">1️⃣ Outline your complex data or pattern goals</div>
+        <div class="step">2️⃣ Select a specialized Neural Architect</div>
+        <div class="step">3️⃣ Develop, train, and deploy your intelligent network</div>
     </div>
-  </footer>
+</section>
 
-  <script>
-    const cards = document.querySelectorAll(".up-card");
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
 
-    const skillFilter = document.getElementById("skillFilter");
-    const levelFilter = document.getElementById("levelFilter");
-    const priceFilter = document.getElementById("priceFilter");
-    const applyFilterBtn = document.getElementById("applyFilter");
+    <details>
+        <summary>What is a Neural Network?</summary>
+        <p>A neural network is a series of algorithms that endeavors to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates.</p>
+    </details>
 
-    let visible = 6;
-    const step = 6;
+    <details>
+        <summary>When should I use CNN vs. RNN?</summary>
+        <p>Use Convolutional Neural Networks (CNN) for spatial data like images. Use Recurrent Neural Networks (RNN) for sequential data like text or time-series.</p>
+    </details>
 
-    /* ===== HELPERS ===== */
-    function getFilteredCards() {
-      return [...cards].filter(card => {
-        const skills = card.dataset.skill || "";
+    <details>
+        <summary>Can you optimize a network for mobile devices?</summary>
+        <p>Yes, our experts use techniques like quantization and pruning to make large neural networks run efficiently on mobile and IoT hardware.</p>
+    </details>
+</section>
 
-        /* SKILL FILTER */
-        const skillMatch =
-          skillFilter.value === "all" ||
-          skills.includes(skillFilter.value);
 
-        /* PRICE FILTER */
-        let priceMatch = true;
-        const priceText = card.querySelector(".price")?.innerText || "";
-        const price = parseInt(priceText.replace(/\D/g, ""));
 
-        if (priceFilter.value === "low") priceMatch = price < 25;
-        if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 30;
-        if (priceFilter.value === "high") priceMatch = price > 30;
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-        return skillMatch && priceMatch;
-      });
-    }
+  const cards = Array.from(document.querySelectorAll(".up-card"));
 
-    function updateCards() {
-      const filteredCards = getFilteredCards();
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-      cards.forEach(card => card.classList.add("hidden-card"));
+  let visible = 6;
+  const step = 6;
 
-      filteredCards.slice(0, visible).forEach(card => {
-        card.classList.remove("hidden-card");
-      });
+  function getFilteredCards() {
+    return cards.filter(card => {
 
-      if (loadMoreBtn) {
-        loadMoreBtn.style.display =
-          visible < filteredCards.length ? "block" : "none";
-      }
-    }
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
 
-    /* ===== APPLY FILTER BUTTON ===== */
-    applyFilterBtn.addEventListener("click", () => {
-      visible = 12;
-      updateCards();
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
+
+  function updateCards() {
+    const filteredCards = getFilteredCards();
+
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
     });
 
-    /* ===== LOAD MORE ===== */
     if (loadMoreBtn) {
-      loadMoreBtn.addEventListener("click", () => {
-        visible += step;
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
         updateCards();
       });
     }
+  });
 
-    /* ===== INIT ===== */
-    updateCards();
-  </script>
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+
 
 </body>
 
