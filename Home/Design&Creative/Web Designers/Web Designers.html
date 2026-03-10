@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Design & Creative | TaskHunt</title>
-  <link rel="stylesheet" href="Web Designers.css">
+  <link rel="stylesheet" href="../../Development&it/ALL.css">
 </head>
 
 <body>
@@ -12,20 +12,24 @@
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="logo">
-      <a href="../../Home/home.html" class="logo">
-      <img src="../images/logo.png" alt="Logo"></a>
+      <a href="../Home/home.html">
+        <img src="../../images/logo.png" alt="Logo">
+      </a>
     </div>
-    <ul>
-      <li><a href="#">Find Work</a></li>
-      <li><a href="#">Hire Talent</a></li>
-      <li><a href="../../about/about.html">About</a></li>
-      <li><a href="../../contactus/contactus.html">Contact</a></li>
-      <li><a href="../../login/login.html">Login</a></li>
-      <li>
-        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
-      </li>
+
+    <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
     </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    </div>
   </nav>
+
   <section class="hero-title">
     <h2>Design & Creative</h2>
     <span class="hero-divider">|</span>
@@ -37,11 +41,15 @@
     <div class="filter-container">
 
       <select id="skillFilter">
-        <option value="all">All Skills</option>
-        <option value="kotlin">Kotlin</option>
-        <option value="java">Java</option>
-        <option value="firebase">Firebase</option>
-      </select>
+<option value="all">All Skills</option>
+<option value="Web Design">Web Design</option>
+<option value="UI Design">UI Design</option>
+<option value="UX Design">UX Design</option>
+<option value="Responsive Design">Responsive Design</option>
+<option value="Figma">Figma</option>
+<option value="Adobe XD">Adobe XD</option>
+<option value="Landing Page Design">Landing Page Design</option>
+</select>
 
       <select id="levelFilter">
         <option value="all">Experience Level</option>
@@ -331,7 +339,7 @@
       <div class="cards-grid">
 
         <!-- CARD 1 -->
-        <div class="up-card" data-skill="kotlin">
+        <div class="up-card" data-skill="web design ui design" data-level="junior">
           <div class="card-header">
             <img src="Valentine B..webp" class="avatar">
             <div class="user-info">
@@ -355,7 +363,7 @@
         </div>
 
         <!-- CARD 2 -->
-        <div class="up-card hidden-card" data-skill="java">
+        <div class="up-card hidden-card" data-skill="ux design responsive design" data-level="mid">
           <div class="card-header">
             <img src="Serhii C..webp" class="avatar">
             <div class="user-info">
@@ -377,7 +385,7 @@
         </div>
 
         <!-- CARD 3 -->
-        <div class="up-card hidden-card" data-skill="kotlin mvvm">
+        <div class="up-card hidden-card" data-skill="figma web design" data-level="senior">
           <div class="card-header">
             <img src="Keaira C..webp" class="avatar">
             <div class="user-info">
@@ -399,7 +407,7 @@
         </div>
 
         <!-- CARD 4 -->
-        <div class="up-card hidden-card" data-skill="firebase">
+        <div class="up-card hidden-card" data-skill="adobe xd ui design" data-level="junior">
           <div class="card-header">
             <img src="Yulia S..webp" class="avatar">
             <div class="user-info">
@@ -419,7 +427,7 @@
         </div>
 
         <!-- CARD 5 -->
-        <div class="up-card hidden-card" data-skill="firebase maps">
+        <div class="up-card hidden-card" data-skill="landing page design web design" data-level="mid">
           <div class="card-header">
             <img src="Olena M..webp" class="avatar">
             <div class="user-info">
@@ -440,7 +448,7 @@
         </div>
 
         <!-- CARD 6 -->
-        <div class="up-card hidden-card" data-skill="java sqlite">
+        <div class="up-card hidden-card" data-skill="responsive design ux design" data-level="senior">
           <div class="card-header">
             <img src="Anna L..webp" class="avatar">
             <div class="user-info">
@@ -461,8 +469,8 @@
           <a href="#" class="profile-btn">See profile</a>
         </div>
 
-        <!-- CARD 7 (NEW) -->
-        <div class="up-card hidden-card" data-skill="kotlin performance">
+        <!-- CARD 7 -->
+        <div class="up-card hidden-card" data-skill="figma ui design" data-level="junior">
           <div class="card-header">
             <img src="Ruslan K..webp" class="avatar">
             <div class="user-info">
@@ -485,8 +493,8 @@
         </div>
 
 
-        <!-- CARD 8 (NEW) -->
-        <div class="up-card hidden-card" data-skill="kotlin firebase">
+        <!-- CARD 8 -->
+        <div class="up-card hidden-card" data-skill="landing page design adobe xd" data-level="mid">
           <div class="card-header">
             <img src="Shaikh Zeeshan A..webp  " class="avatar">
             <div class="user-info">
@@ -511,8 +519,8 @@
         </div>
         
 
-        <!-- CARD 9 (NEW) -->
-       <div class="up-card hidden-card" data-skill="web design">
+        <!-- CARD 9 -->
+       <div class="up-card hidden-card" data-skill="web design responsive design" data-level="senior">
   <div class="card-header">
     <img src="Ryan H..jpg" class="avatar">
     <div class="user-info">
@@ -534,8 +542,8 @@
 </div>
 
 
-<!-- CARD 10 (NEW) -->
-<div class="up-card hidden-card" data-skill="web design">
+<!-- CARD 10 -->
+<div class="up-card hidden-card" data-skill="ux design figma" data-level="junior">
   <div class="card-header">
     <img src="Hannah K..jpg" class="avatar">
     <div class="user-info">
@@ -558,8 +566,8 @@
 
 
 
-<!-- CARD 11 (NEW) -->
-<div class="up-card hidden-card" data-skill="web design">
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="ui design landing page design" data-level="mid">
   <div class="card-header">
     <img src="Omar F..jpg" class="avatar">
     <div class="user-info">
@@ -581,8 +589,8 @@
 </div>
 
 
-<!-- CARD 12 (NEW) -->
-<div class="up-card hidden-card" data-skill="web design">
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="adobe xd web design" data-level="senior">
   <div class="card-header">
     <img src="Sophie M..jpg" class="avatar">
     <div class="user-info">
@@ -604,8 +612,8 @@
 </div>
 
 
-<!-- CARD 13 (NEW) -->
-<div class="up-card hidden-card" data-skill="web design">
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="responsive design landing page design" data-level="junior">
   <div class="card-header">
     <img src="Carlos D..jpeg" class="avatar">
     <div class="user-info">
@@ -627,8 +635,8 @@
 </div>
 
 
-<!-- CARD 14 (NEW) -->
-<div class="up-card hidden-card" data-skill="web design">
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="figma ux design" data-level="mid">
   <div class="card-header">
     <img src="Emily S..jpg" class="avatar">
     <div class="user-info">
@@ -650,8 +658,8 @@
 </div>
 
 
-<!-- CARD 15 (NEW) -->
-<div class="up-card hidden-card" data-skill="web design">
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="ui design adobe xd" data-level="senior">
   <div class="card-header">
     <img src="Daniel B..jpg" class="avatar">
     <div class="user-info">
@@ -674,11 +682,7 @@
 
       
       
-      </div>
-        
-
-
-
+      
       <!-- LOAD MORE BUTTON -->
       <div class="load-more">
         <button id="loadMoreBtn">Load more Web Designers</button>
@@ -731,147 +735,189 @@
   </section>
 
 
+  <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
 
-  <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.classList.toggle("active");
-      });
-    });
-  </script>
-
-  <footer class="footer">
-    <div class="footer-container">
-
-      <div class="footer-col">
-        <h3>Task Hunt</h3>
-        <ul>
-          <li><a href="#">About Task Hunt</a></li>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Rights Protection</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Community</h3>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Discussions</a></li>
-          <li><a href="#">Topics</a></li>
-          <li><a href="#">User Experiences</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
         </div>
       </div>
-
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2025 Task Hunt — All rights reserved</p>
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
     </div>
-  </footer>
-  
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
 
-  const cards = Array.from(document.querySelectorAll(".up-card"));
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
 
-  const skillFilter = document.getElementById("skillFilter");
-  const levelFilter = document.getElementById("levelFilter");
-  const priceFilter = document.getElementById("priceFilter");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  </div>
 
-  let visible = 6;
-  const step = 6;
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
 
-  function getFilteredCards() {
-    return cards.filter(card => {
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
 
-      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
-      const selectedSkill = skillFilter.value.toLowerCase();
+                const cards = Array.from(document.querySelectorAll(".up-card"));
 
-      const skillMatch =
-        selectedSkill === "all" || skills.includes(selectedSkill);
+                const skillFilter = document.getElementById("skillFilter");
+                const levelFilter = document.getElementById("levelFilter");
+                const priceFilter = document.getElementById("priceFilter");
 
-      const level = (card.dataset.level || "").toLowerCase();
-      const selectedLevel = levelFilter.value.toLowerCase();
+                const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-      const levelMatch =
-        selectedLevel === "all" || level === selectedLevel;
+                let visible = 6;
+                const step = 6;
 
-      const priceText = card.querySelector(".price")?.innerText || "";
-      const price = parseInt(priceText.replace(/\D/g, ""));
-      let priceMatch = true;
+                function getFilteredCards() {
 
-      if (priceFilter.value === "low")  priceMatch = price < 25;
-      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
-      if (priceFilter.value === "high") priceMatch = price > 40;
+                    return cards.filter(card => {
 
-      return skillMatch && levelMatch && priceMatch;
-    });
-  }
+                        /* ===== SKILL FILTER ===== */
+                        const skills = (card.dataset.skill || "").toLowerCase();
+                        const skillValue = skillFilter.value.toLowerCase();
 
-  function updateCards() {
-    const filteredCards = getFilteredCards();
+                        const skillMatch =
+                            skillValue === "all" || skills.includes(skillValue);
 
-    cards.forEach(card => card.classList.add("hidden-card"));
 
-    filteredCards.slice(0, visible).forEach(card => {
-      card.classList.remove("hidden-card");
-    });
+                        /* ===== LEVEL FILTER ===== */
+                        const level = (card.dataset.level || "").toLowerCase();
+                        const levelValue = levelFilter.value.toLowerCase();
 
-    if (loadMoreBtn) {
-      loadMoreBtn.style.display =
-        visible < filteredCards.length ? "block" : "none";
-    }
-  }
+                        const levelMatch =
+                            levelValue === "all" || level === levelValue;
 
-  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
-  [skillFilter, levelFilter, priceFilter].forEach(filter => {
-    if (filter) {
-      filter.addEventListener("change", () => {
-        visible = 6;     // يرجع يعرض من الأول
-        updateCards();
-      });
-    }
-  });
 
-  /* LOAD MORE */
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
-      visible += step;
-      updateCards();
-    });
-  }
+                        /* ===== PRICE FILTER ===== */
+                        const priceText = card.querySelector(".price")?.innerText || "";
+                        const price = parseInt(priceText.replace(/\D/g, ""));
 
-  updateCards();
+                        let priceMatch = true;
 
-  /* SIDEBAR ACCORDION */
-  const categoryButtons = document.querySelectorAll(".category-btn");
+                        if (priceFilter.value === "low") priceMatch = price < 25;
+                        if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 30;
+                        if (priceFilter.value === "high") priceMatch = price > 30;
 
-  categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const category = btn.closest(".category");
 
-      document.querySelectorAll(".category").forEach(cat => {
-        if (cat !== category) cat.classList.remove("active");
-      });
+                        return skillMatch && levelMatch && priceMatch;
 
-      category.classList.toggle("active");
-    });
-  });
+                    });
+                }
 
-});
-</script>
+                function updateCards() {
+
+                    const filteredCards = getFilteredCards();
+
+                    /* اخفاء كل الكاردات */
+                    cards.forEach(card => {
+                        card.classList.add("hidden-card");
+                    });
+
+                    /* اظهار الكاردات المناسبة */
+                    filteredCards.slice(0, visible).forEach(card => {
+                        card.classList.remove("hidden-card");
+                    });
+
+                    /* التحكم في زر Load More */
+                    if (visible >= filteredCards.length) {
+                        loadMoreBtn.style.display = "none";
+                    } else {
+                        loadMoreBtn.style.display = "block";
+                    }
+                }
+
+                /* ===== AUTO FILTER ===== */
+
+                [skillFilter, levelFilter, priceFilter].forEach(filter => {
+                    filter.addEventListener("change", () => {
+                        visible = 6;
+                        updateCards();
+                    });
+                });
+
+
+                /* ===== LOAD MORE ===== */
+
+                loadMoreBtn.addEventListener("click", () => {
+
+                    visible += step;
+
+                    updateCards();
+
+                });
+
+
+                /* ===== INIT ===== */
+
+                updateCards();
+
+
+
+                /* ===============================
+                   SIDEBAR ACCORDION
+                =============================== */
+
+                const categoryButtons = document.querySelectorAll(".category-btn");
+
+                categoryButtons.forEach(btn => {
+                    btn.addEventListener("click", () => {
+
+                        const currentCategory = btn.closest(".category");
+
+                        document.querySelectorAll(".category").forEach(cat => {
+                            if (cat !== currentCategory) {
+                                cat.classList.remove("active");
+                            }
+                        });
+
+                        currentCategory.classList.toggle("active");
+
+                    });
+                });
+
+            });
+        </script>
 
 </body>
 
