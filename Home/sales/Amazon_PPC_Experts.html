@@ -35,9 +35,9 @@
     </ul>
 
           
-           <div class="auth-buttons">
-      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
-      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
     </div>
   </nav>
  <section class="hero-title">
@@ -612,7 +612,7 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
   const skillFilter = document.getElementById("skillFilter");
   const levelFilter = document.getElementById("levelFilter");
@@ -621,39 +621,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cards = document.querySelectorAll(".up-card");
 
-  applyBtn.addEventListener("click", () => {
+  applyBtn.addEventListener("click", function () {
 
-    const skillValue = skillFilter.value;
-    const levelValue = levelFilter.value;
+    const skillValue = skillFilter.value.toLowerCase();
+    const levelValue = levelFilter.value.toLowerCase();
     const priceValue = priceFilter.value;
 
-    cards.forEach(card => {
+    cards.forEach(function(card){
 
-      const cardSkill = card.dataset.skill.toLowerCase();
-      const cardLevel = card.dataset.level.toLowerCase();
-      const cardPriceText = card.querySelector(".price").textContent;
-      const cardPrice = parseFloat(cardPriceText.replace("$",""));
+      const cardSkill = (card.dataset.skill || "").toLowerCase();
+      const cardLevel = (card.dataset.level || "").toLowerCase();
+
+      const priceElement = card.querySelector(".price");
+      const priceText = priceElement ? priceElement.textContent : "$0";
+      const cardPrice = parseFloat(priceText.replace(/[^0-9.]/g, ""));
 
       let show = true;
 
-      // Skill filter
-      if (skillValue !== "all" && !cardSkill.includes(skillValue)) {
+      /* Skill Filter */
+      if(skillValue !== "all" && !cardSkill.includes(skillValue)){
         show = false;
       }
 
-      // Level filter
-      if (levelValue !== "all" && cardLevel !== levelValue) {
+      /* Level Filter */
+      if(levelValue !== "all" && cardLevel !== levelValue){
         show = false;
       }
 
-      // Price filter
-      if (priceValue !== "all") {
+      /* Price Filter */
+      if(priceValue !== "all"){
 
-        if (priceValue === "low" && cardPrice >= 25) show = false;
+        if(priceValue === "low" && cardPrice >= 25) show = false;
 
-        if (priceValue === "mid" && (cardPrice < 25 || cardPrice > 40)) show = false;
+        if(priceValue === "mid" && (cardPrice < 25 || cardPrice > 40)) show = false;
 
-        if (priceValue === "high" && cardPrice <= 40) show = false;
+        if(priceValue === "high" && cardPrice <= 40) show = false;
+
       }
 
       card.style.display = show ? "flex" : "none";
@@ -664,7 +667,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
-
 </body>
 
 </html>
