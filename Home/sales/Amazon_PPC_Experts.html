@@ -615,40 +615,55 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const skillFilter = document.getElementById("skillFilter");
   const levelFilter = document.getElementById("levelFilter");
   const priceFilter = document.getElementById("priceFilter");
   const applyBtn = document.getElementById("applyFilter");
-  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const cards = document.querySelectorAll(".up-card");
 
   applyBtn.addEventListener("click", () => {
+
     const skillValue = skillFilter.value;
     const levelValue = levelFilter.value;
     const priceValue = priceFilter.value;
 
     cards.forEach(card => {
+
       const cardSkill = card.dataset.skill.toLowerCase();
       const cardLevel = card.dataset.level.toLowerCase();
-      const cardPrice = parseFloat(card.querySelector(".price").textContent.replace("$",""));
+      const cardPriceText = card.querySelector(".price").textContent;
+      const cardPrice = parseFloat(cardPriceText.replace("$",""));
 
       let show = true;
 
-      // فلترة المهارة
-      if(skillValue !== "all" && cardSkill !== skillValue) show = false;
+      // Skill filter
+      if (skillValue !== "all" && !cardSkill.includes(skillValue)) {
+        show = false;
+      }
 
-      // فلترة الخبرة
-      if(levelValue !== "all" && cardLevel !== levelValue) show = false;
+      // Level filter
+      if (levelValue !== "all" && cardLevel !== levelValue) {
+        show = false;
+      }
 
-      // فلترة السعر
-      if(priceValue !== "all") {
-        if(priceValue === "low" && cardPrice >= 25) show = false;
-        if(priceValue === "mid" && (cardPrice < 25 || cardPrice > 40)) show = false;
-        if(priceValue === "high" && cardPrice <= 40) show = false;
+      // Price filter
+      if (priceValue !== "all") {
+
+        if (priceValue === "low" && cardPrice >= 25) show = false;
+
+        if (priceValue === "mid" && (cardPrice < 25 || cardPrice > 40)) show = false;
+
+        if (priceValue === "high" && cardPrice <= 40) show = false;
       }
 
       card.style.display = show ? "flex" : "none";
+
     });
+
   });
+
 });
 </script>
 
