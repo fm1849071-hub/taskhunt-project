@@ -12,9 +12,10 @@
   
   
   <!-- NAVBAR -->
+ 
   <nav class="nav">
     <div class="logo">
-      <a href="../Home/home.html">
+      <a href="../../Home/home.html">
         <img src="../images/logo.png" alt="Logo">
       </a>
     </div>
@@ -26,9 +27,9 @@
       <li><a href="#contact-section">Contact</a></li>
     </ul>
 
-    <div class="auth-buttons">
-      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
-      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+   <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
     </div>
   </nav>
 
@@ -668,16 +669,11 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===============================
-     CARDS + FILTER + LOAD MORE
-  =============================== */
-
   const cards = Array.from(document.querySelectorAll(".up-card"));
 
   const skillFilter = document.getElementById("skillFilter");
   const levelFilter = document.getElementById("levelFilter");
   const priceFilter = document.getElementById("priceFilter");
-  const applyFilterBtn = document.getElementById("applyFilter");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
 
   let visible = 6;
@@ -686,26 +682,26 @@ document.addEventListener("DOMContentLoaded", () => {
   function getFilteredCards() {
     return cards.filter(card => {
 
-      /* ===== SKILL FILTER ===== */
+      /* SKILL FILTER */
       const skills = (card.dataset.skill || "").toLowerCase();
       const skillValue = skillFilter.value.toLowerCase();
       const skillMatch =
         skillValue === "all" || skills.includes(skillValue);
 
-      /* ===== LEVEL FILTER (FIXED) ===== */
+      /* LEVEL FILTER */
       const level = (card.dataset.level || "").toLowerCase();
       const levelValue = levelFilter.value.toLowerCase();
       const levelMatch =
-        levelValue === "all" || level === "" || level === levelValue;
+        levelValue === "all" || level === levelValue;
 
-      /* ===== PRICE FILTER ===== */
+      /* PRICE FILTER */
       const priceText = card.querySelector(".price")?.innerText || "";
       const price = parseInt(priceText.replace(/\D/g, ""));
       let priceMatch = true;
 
       if (priceFilter.value === "low")  priceMatch = price < 25;
-      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 30;
-      if (priceFilter.value === "high") priceMatch = price > 30;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
 
       return skillMatch && levelMatch && priceMatch;
     });
@@ -714,30 +710,27 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateCards() {
     const filteredCards = getFilteredCards();
 
-    // اخفاء كل الكاردات
     cards.forEach(card => card.classList.add("hidden-card"));
 
-    // اظهار العدد المناسب فقط
     filteredCards.slice(0, visible).forEach(card => {
       card.classList.remove("hidden-card");
     });
 
-    // التحكم في Load More
     if (loadMoreBtn) {
       loadMoreBtn.style.display =
         visible < filteredCards.length ? "block" : "none";
     }
   }
 
-  /* ===== APPLY FILTER BUTTON ===== */
-  if (applyFilterBtn) {
-    applyFilterBtn.addEventListener("click", () => {
+  /* AUTO FILTER عند تغيير أي فلتر */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    filter.addEventListener("change", () => {
       visible = 6;
       updateCards();
     });
-  }
+  });
 
-  /* ===== LOAD MORE ===== */
+  /* LOAD MORE */
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", () => {
       visible += step;
@@ -745,13 +738,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== INIT ===== */
   updateCards();
 
 
-  /* ===============================
-     SIDEBAR ACCORDION (FIXED)
-  =============================== */
+  /* SIDEBAR ACCORDION */
 
   const categoryButtons = document.querySelectorAll(".category-btn");
 
@@ -759,21 +749,18 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const currentCategory = btn.closest(".category");
 
-      // اقفل كل الأقسام التانية
       document.querySelectorAll(".category").forEach(cat => {
         if (cat !== currentCategory) {
           cat.classList.remove("active");
         }
       });
 
-      // افتح / اقفل القسم الحالي
       currentCategory.classList.toggle("active");
     });
   });
 
 });
 </script>
-
 </body>
 
 </html>
