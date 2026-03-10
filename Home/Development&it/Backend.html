@@ -14,7 +14,7 @@
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="logo">
-      <a href="../Home/home.html">
+      <a href="../../Home/home.html">
         <img src="../images/logo.png" alt="Logo">
       </a>
     </div>
@@ -667,7 +667,6 @@
     <p>© 2025 Task Hunt — All rights reserved</p>
   </div>
 </footer>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -680,7 +679,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const skillFilter = document.getElementById("skillFilter");
   const levelFilter = document.getElementById("levelFilter");
   const priceFilter = document.getElementById("priceFilter");
-  const applyFilterBtn = document.getElementById("applyFilter");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
 
   let visible = 6;
@@ -695,7 +693,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const skillMatch =
         skillValue === "all" || skills.includes(skillValue);
 
-      /* ===== LEVEL FILTER (FIXED) ===== */
+      /* ===== LEVEL FILTER ===== */
       const level = (card.dataset.level || "").toLowerCase();
       const levelValue = levelFilter.value.toLowerCase();
       const levelMatch =
@@ -717,30 +715,33 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateCards() {
     const filteredCards = getFilteredCards();
 
-    // اخفاء كل الكاردات
     cards.forEach(card => card.classList.add("hidden-card"));
 
-    // اظهار العدد المناسب فقط
     filteredCards.slice(0, visible).forEach(card => {
       card.classList.remove("hidden-card");
     });
 
-    // التحكم في Load More
     if (loadMoreBtn) {
       loadMoreBtn.style.display =
         visible < filteredCards.length ? "block" : "none";
     }
   }
 
-  /* ===== APPLY FILTER BUTTON ===== */
-  if (applyFilterBtn) {
-    applyFilterBtn.addEventListener("click", () => {
-      visible = 6;
-      updateCards();
-    });
-  }
+  /* ===============================
+     AUTO FILTER (بدل زرار Apply)
+  =============================== */
+
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;
+        updateCards();
+      });
+    }
+  });
 
   /* ===== LOAD MORE ===== */
+
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", () => {
       visible += step;
@@ -748,35 +749,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== INIT ===== */
   updateCards();
 
 
   /* ===============================
-     SIDEBAR ACCORDION (FIXED)
+     SIDEBAR ACCORDION
   =============================== */
 
   const categoryButtons = document.querySelectorAll(".category-btn");
 
   categoryButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+
       const currentCategory = btn.closest(".category");
 
-      // اقفل كل الأقسام التانية
       document.querySelectorAll(".category").forEach(cat => {
         if (cat !== currentCategory) {
           cat.classList.remove("active");
         }
       });
 
-      // افتح / اقفل القسم الحالي
       currentCategory.classList.toggle("active");
+
     });
   });
 
 });
 </script>
-
 </body>
 
 </html>
