@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Editors | TaskHunt</title>
-
- <link rel="stylesheet" href="../Development&it/ALL.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+   <title>Fiction Writers|TaskHunt</title>
+   <link rel="stylesheet" href="../Development&it/ALL.css">
 </head>
-
 <body>
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
    <nav class="nav">
     <div class="logo">
       <a href="../../Home/home.html">
@@ -37,24 +35,25 @@
     </div>
   </nav>
   <section class="hero-title">
-    <h2>Admin & Support</h2>
+    <h2>Writing& Translation</h2>
     <span class="hero-divider">|</span>
-    <h1>Editors</h1>
+    <h1>Fiction Writers</h1>
   </section>
 
   <!-- FILTER BAR -->
 <section class="filter-bar">
   <div class="filter-container">
 
-    <!-- Editor Type -->
-    <select id="editorTypeFilter">
-      <option value="all">All Editors</option>
-      <option value="content">Content Editor</option>
-      <option value="video">Video Editor</option>
-      <option value="photo">Photo Editor</option>
-    </select>
-
-    <!-- Experience Level -->
+    <!-- fiction type-->
+ <select id="writerTypeFilter">
+<option value="all">All Genres</option>
+<option value="fantasy">Fantasy</option>
+<option value="sci-fi">Sci-Fi</option>
+<option value="romance">Romance</option>
+<option value="thriller">Thriller</option>
+<option value="horror">Horror</option>
+</select>
+        <!-- Experience Level -->
     <select id="levelFilter">
       <option value="all">Experience Level</option>
       <option value="junior">Junior</option>
@@ -74,9 +73,7 @@
 
   </div>
 </section>
-
-
-  <div class="page-layout">
+<div class="page-layout">
 
     <aside class="sidebar">
       <h3>Categories</h3>
@@ -257,324 +254,330 @@
       </div>
     </aside>
 
-
-
     <section class="cards-wrapper">
 
-     <div class="cards-grid">
+<div class="cards-grid">
 
-  <!-- CARD 1 -->
-  <div class="up-card" data-editor="content" data-level="senior">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=41" class="avatar">
-      <div class="user-info">
-        <h3>Omar A.</h3>
-        <span class="location">Cairo, Egypt</span>
-        <div class="stats">
-          <span class="price">$30/hr</span>
-          <span class="rating">⭐ 4.9</span>
-          <span class="jobs">💼 26 jobs</span>
-        </div>
+<!-- CARD 1 -->
+<div class="up-card" data-writer="fantasy" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar">
+    <div class="user-info">
+      <h3>Omar A.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">📚 32 stories</span>
       </div>
     </div>
-    <p class="description">✍️ Senior Content Editor for blogs, articles & SEO content.</p>
-    <div class="tags"><span>Content Editing</span><span>SEO</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">📖 Senior fiction writer specializing in novels and fantasy storytelling.</p>
+  <div class="tags">
+    <span>Fantasy</span><span>Novel Writing</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- CARD 2 -->
-  <div class="up-card hidden-card" data-editor="content" data-level="mid">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=42" class="avatar">
-      <div class="user-info">
-        <h3>Ahmed N.</h3>
-        <span class="location">Alexandria, Egypt</span>
-        <div class="stats">
-          <span class="price">$22/hr</span>
-          <span class="rating">⭐ 4.8</span>
-          <span class="jobs">💼 18 jobs</span>
-        </div>
+<!-- CARD 2 -->
+<div class="up-card hidden-card" data-writer="sci-fi" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=42" class="avatar">
+    <div class="user-info">
+      <h3>Ahmed N.</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$25/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">📚 18 stories</span>
       </div>
     </div>
-    <p class="description">📝 Content editor focused on clarity and grammar accuracy.</p>
-    <div class="tags"><span>Proofreading</span><span>Grammar</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">✍️ Fiction writer focused on mystery and thriller stories.</p>
+  <div class="tags">
+    <span>Thriller</span><span>Mystery</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- CARD 3 -->
-  <div class="up-card hidden-card" data-editor="photo" data-level="junior">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=43" class="avatar">
-      <div class="user-info">
-        <h3>Youssef M.</h3>
-        <span class="location">Giza, Egypt</span>
-        <div class="stats">
-          <span class="price">$35/hr</span>
-          <span class="rating">⭐ 5.0</span>
-          <span class="jobs">💼 14 jobs</span>
-        </div>
+<!-- CARD 3 -->
+<div class="up-card hidden-card" data-writer="Romance" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=43" class="avatar">
+    <div class="user-info">
+      <h3>Youssef M.</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$20/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">📚 10 stories</span>
       </div>
     </div>
-    <p class="description">🖼️ Professional photo editor with creative retouching skills.</p>
-    <div class="tags"><span>Photoshop</span><span>Retouch</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">📚 Creative fiction writer who enjoys short stories and character development.</p>
+  <div class="tags">
+    <span>Short Stories</span>
+    <span>Drama</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- CARD 4 -->
-  <div class="up-card hidden-card" data-editor="video" data-level="mid">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=44" class="avatar">
-      <div class="user-info">
-        <h3>Mahmoud S.</h3>
-        <span class="location">Mansoura, Egypt</span>
-        <div class="stats">
-          <span class="price">$28/hr</span>
-          <span class="rating">⭐ 4.7</span>
-          <span class="jobs">💼 21 jobs</span>
-        </div>
+<!-- CARD 4 -->
+<div class="up-card hidden-card" data-writer="thriller" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar">
+    <div class="user-info">
+      <h3>Mahmoud S.</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats">
+        <span class="price">$30/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">📚 24 stories</span>
       </div>
     </div>
-    <p class="description">🎬 Video editor for social media and promotional videos.</p>
-    <div class="tags"><span>Premiere Pro</span><span>Short Videos</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
-
-  <!-- CARD 5 -->
-  <div class="up-card hidden-card" data-editor="content" data-level="junior">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=45" class="avatar">
-      <div class="user-info">
-        <h3>Islam H.</h3>
-        <span class="location">Tanta, Egypt</span>
-        <div class="stats">
-          <span class="price">$25/hr</span>
-          <span class="rating">⭐ 4.9</span>
-          <span class="jobs">💼 29 jobs</span>
-        </div>
+  <p class="description">🖋️ Fiction writer experienced in romance and emotional storytelling.</p>
+  <div class="tags">
+    <span>Romance</span>
+    <span>Drama</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 5 -->
+<div class="up-card hidden-card" data-writer="Horror" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar">
+    <div class="user-info">
+      <h3>Islam H.</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$22/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">📚 14 stories</span>
       </div>
     </div>
-    <p class="description">📚 Editing long-form articles and academic content.</p>
-    <div class="tags"><span>Academic</span><span>Formatting</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">📖 Fiction writer focusing on emotional storytelling and drama.</p>
+  <div class="tags"><span>Drama</span><span>Short Stories</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- CARD 6 -->
-  <div class="up-card hidden-card" data-editor="photo" data-level="senior">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=46" class="avatar">
-      <div class="user-info">
-        <h3>Mostafa R.</h3>
-        <span class="location">Zagazig, Egypt</span>
-        <div class="stats">
-          <span class="price">$18/hr</span>
-          <span class="rating">⭐ 4.6</span>
-          <span class="jobs">💼 15 jobs</span>
-        </div>
+<!-- CARD 6 -->
+<div class="up-card hidden-card" data-writer="fantasy" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=46" class="avatar">
+    <div class="user-info">
+      <h3>Mostafa R.</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$40/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">📚 40 stories</span>
       </div>
     </div>
-    <p class="description">📸 Junior photo editor for basic edits & enhancements.</p>
-    <div class="tags"><span>Lightroom</span><span>Color Fix</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">📚 Senior novelist specializing in fantasy worlds and epic stories.</p>
+  <div class="tags"><span>Fantasy</span><span>World Building</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- CARD 7 -->
-  <div class="up-card hidden-card" data-editor="video" data-level="mid">
-    <div class="card-header">
+<!-- CARD 7 -->
+<div class="up-card hidden-card" data-writer="thriller" data-level="mid">
+  <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=47" class="avatar">
     <div class="user-info">
-    <h3>Hassan R.</h3>
+      <h3>Hassan R.</h3>
       <span class="location">Zagazig, Egypt</span>
-        <div class="stats">
-          <span class="price">$20/hr</span>
-          <span class="rating">⭐ 4.6</span>
-          <span class="jobs">💼 15 jobs</span>
-        </div>
+      <div class="stats">
+        <span class="price">$26/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">📚 20 stories</span>
       </div>
     </div>
-    <p class="description">🎞️ Video editor focused on performance & fast delivery.</p>
-    <div class="tags"><span>Reels</span><span>Transitions</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
-  
+  <p class="description">🖊️ Fiction writer for thriller and suspense stories.</p>
+  <div class="tags"><span>Thriller</span><span>Suspense</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- CARD 8 -->
-  <div class="up-card hidden-card" data-editor="content" data-level="junior">
-    <div class="card-header">
+<!-- CARD 8 -->
+<div class="up-card hidden-card" data-writer="romance" data-level="junior">
+  <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=48" class="avatar">
     <div class="user-info">
-    <h3>Amr T.</h3>
-    <span class="location">Zagazig, Egypt</span>
-        <div class="stats">
-          <span class="price">$25/hr</span>
-          <span class="rating">⭐ 4.6</span>
-          <span class="jobs">💼 15 jobs</span>
-        </div>
+      <h3>Amr T.</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$20/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">📚 12 stories</span>
       </div>
     </div>
-    <p class="description">📰 Content editor with UX writing experience.</p>
-    <div class="tags"><span>UX Writing</span><span>Microcopy</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">📚 Creative fiction writer passionate about adventure stories.</p>
+  <div class="tags"><span>Adventure</span><span>Action</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- CARD 9 -->
-  <div class="up-card hidden-card" data-editor="photo" data-level="senior">
-    <div class="card-header">
+<!-- CARD 9 -->
+<div class="up-card hidden-card" data-writer="sci-fi" data-level="senior">
+  <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=49" class="avatar">
-      <div class="user-info">
-    <h3>Mahmoud N.</h3>
-    <span class="location">Zagazig, Egypt</span>
-        <div class="stats">
-          <span class="price">$30/hr</span>
-          <span class="rating">⭐ 4.6</span>
-          <span class="jobs">💼 15 jobs</span>
-        </div>
+    <div class="user-info">
+      <h3>Mahmoud N.</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$38/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">📚 35 stories</span>
       </div>
     </div>
-    <p class="description">🖌️ Creative photo editing for brands & ads.</p>
-    <div class="tags"><span>Branding</span><span>Design</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">📖 Fiction writer with experience in historical novels.</p>
+  <div class="tags"><span>Historical</span><span>Drama</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- NEW CARD 10 -->
-  <div class="up-card hidden-card" data-editor="video" data-level="junior">
-    <div class="card-header">
+<!-- CARD 10 -->
+<div class="up-card hidden-card" data-writer="horror" data-level="junior">
+  <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=50" class="avatar">
     <div class="user-info">
-    <h3>Karim E.</h3>
-    <span class="location">Zagazig, Egypt</span>
-        <div class="stats">
-          <span class="price">$18/hr</span>
-          <span class="rating">⭐ 4.6</span>
-          <span class="jobs">💼 15 jobs</span>
-        </div>
+      <h3>Karim E.</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$18/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">📚 9 stories</span>
       </div>
     </div>
-    <p class="description">🎥 YouTube & long-form video editor.</p>
-    <div class="tags"><span>YouTube</span><span>Color Grading</span></div>
-    <a href="#" class="profile-btn">See profile</a>
   </div>
+  <p class="description">📘 Beginner fiction writer creating engaging short stories.</p>
+  <div class="tags"><span>Short Stories</span><span>Drama</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- NEW CARD 11 -->
-  <div class="up-card hidden-card" data-editor="content" data-level="mid">
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-writer="romance" data-level="mid">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=51" class="avatar">
     <div class="user-info">
-    <h3>Salma H.</h3>
-    <span class="location">Minya, Egypt</span>
+      <h3>Salma H.</h3>
+      <span class="location">Minya, Egypt</span>
       <div class="stats">
-        <span class="price">$25/hr</span>
+        <span class="price">$27/hr</span>
         <span class="rating">⭐ 4.7</span>
-        <span class="jobs">💼 16 jobs</span>
+        <span class="jobs">📚 17 stories</span>
       </div>
     </div>
   </div>
-    <p class="description">✏️ Proofreader & content quality specialist.</p>
-    <div class="tags"><span>Proofreading</span><span>Editing</span></div>
-    <a href="#" class="profile-btn">See profile</a>
-  </div>
+  <p class="description">✍️ Fiction writer for romance novels and emotional narratives.</p>
+  <div class="tags"><span>Romance</span><span>Drama</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
 
-  <!-- NEW CARD 12 -->
-  <div class="up-card hidden-card" data-editor="photo" data-level="junior">
-    <div class="card-header">
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-writer="sci-fi" data-level="junior">
+  <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=52" class="avatar">
     <div class="user-info">
-    <h3>Nour A.</h3>
-    <span class="location">Minya, Egypt</span>
+      <h3>Nour A.</h3>
+      <span class="location">Minya, Egypt</span>
       <div class="stats">
-        <span class="price">$18/hr</span>
-        <span class="rating">⭐ 4.7</span>
-        <span class="jobs">💼 16 jobs</span>
+        <span class="price">$19/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">📚 11 stories</span>
       </div>
     </div>
   </div>
-    <p class="description">📷 Photo editor for e-commerce products.</p>
-    <div class="tags"><span>E-commerce</span><span>Background Remove</span></div>
-    <a href="#" class="profile-btn">See profile</a>
-  </div>
+  <p class="description">📚 Fiction writer interested in young adult storytelling.</p>
+  <div class="tags"><span>Young Adult</span><span>Adventure</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
 <!-- CARD 13 -->
-<div class="up-card hidden-card" data-editor="content" data-level="senior" data-price="high">
+<div class="up-card hidden-card" data-writer="fantasy" data-level="senior">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=53" class="avatar">
     <div class="user-info">
       <h3>Ali K.</h3>
       <span class="location">Minya, Egypt</span>
       <div class="stats">
-        <span class="price">$20/hr</span>
-        <span class="rating">⭐ 4.7</span>
-        <span class="jobs">💼 16 jobs</span>
+        <span class="price">$33/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">📚 28 stories</span>
       </div>
     </div>
   </div>
-  <p class="description">📝 Content editor for blogs, captions & social media posts.</p>
-  <div class="tags"><span>Social Media</span><span>Copy Editing</span></div>
+  <p class="description">📖 Experienced fiction writer for fantasy and adventure novels.</p>
+  <div class="tags"><span>Fantasy</span><span>Adventure</span></div>
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
 <!-- CARD 14 -->
-<div class="up-card hidden-card" data-editor="video" data-level="mid" data-price="mid">
+<div class="up-card hidden-card" data-writer="thriller" data-level="mid">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=54" class="avatar">
     <div class="user-info">
       <h3>Mina S.</h3>
       <span class="location">Assiut, Egypt</span>
       <div class="stats">
-        <span class="price">$39/hr</span>
+        <span class="price">$31/hr</span>
         <span class="rating">⭐ 4.9</span>
-        <span class="jobs">💼 27 jobs</span>
+        <span class="jobs">📚 23 stories</span>
       </div>
     </div>
   </div>
-  <p class="description">🎬 Senior video editor for ads & cinematic edits.</p>
-  <div class="tags"><span>After Effects</span><span>Motion Graphics</span></div>
+  <p class="description">✏️ Fiction storyteller with strong character development skills.</p>
+  <div class="tags"><span>Character Writing</span><span>Drama</span></div>
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
 <!-- CARD 15 -->
-<div class="up-card hidden-card" data-editor="photo" data-level="junior" data-price="low">
+<div class="up-card hidden-card" data-writer="romance" data-level="junior" data-price="high">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=55" class="avatar">
     <div class="user-info">
       <h3>Farah M.</h3>
       <span class="location">Cairo, Egypt</span>
       <div class="stats">
-        <span class="price">$28/hr</span>
+        <span class="price">$24/hr</span>
         <span class="rating">⭐ 4.8</span>
-        <span class="jobs">💼 19 jobs</span>
+        <span class="jobs">📚 15 stories</span>
       </div>
     </div>
   </div>
-  <p class="description">🖼️ Photo editor specialized in Instagram & branding visuals.</p>
-  <div class="tags"><span>Instagram</span><span>Brand Design</span></div>
+  <p class="description">📘 Fiction writer for romance and slice-of-life stories.</p>
+  <div class="tags"><span>Romance</span><span>Slice of Life</span></div>
   <a href="#" class="profile-btn">See profile</a>
 </div>
-     </div>
+</div>
 
-      <!-- LOAD MORE BUTTON -->
+    <!-- LOAD MORE BUTTON -->
       <div class="load-more">
-        <button id="loadMoreBtn">Load more Editors</button>
+        <button id="loadMoreBtn">Load more Fiction Writers</button>
       </div>
-
     </section>
-    
   </div>
-  
+
+
   <section class="why-section">
-    <h2>Why hire Editors from TaskHunt?</h2>
+    <h2>Why hire Fiction Writers from TaskHunt?</h2>
 
     <div class="why-grid">
         <div class="why-box">
-            <h4>✔ Verified Professional Editors</h4>
-            <p>All editors are carefully vetted and tested on real-world editing, proofreading, and content review tasks.</p>
+            <h4>✔ Creative & Experienced Storytellers</h4>
+            <p>Our fiction writers are talented storytellers who can craft engaging plots, memorable characters, and immersive worlds.</p>
         </div>
 
         <div class="why-box">
-            <h4>✔ Clear, Polished & Error-Free Content</h4>
-            <p>Ensure your content is grammatically correct, well-structured, and easy to read across all formats.</p>
+            <h4>✔ Unique and Original Stories</h4>
+            <p>Get original fiction content tailored to your ideas, whether it's a short story, novel chapter, or creative narrative.</p>
         </div>
 
         <div class="why-box">
-            <h4>✔ Fast Turnaround & Consistent Quality</h4>
-            <p>Get high-quality edits delivered on time while maintaining your original tone and message.</p>
+            <h4>✔ Engaging Writing that Captivates Readers</h4>
+            <p>Our writers focus on emotional depth, storytelling techniques, and creative imagination to keep readers hooked.</p>
         </div>
     </div>
 </section>
@@ -583,9 +586,9 @@
     <h2>How it works</h2>
 
     <div class="steps-grid">
-        <div class="step">1️⃣ Share your content and editing requirements</div>
-        <div class="step">2️⃣ Choose the right editor for your needs</div>
-        <div class="step">3️⃣ Review, approve, and publish with confidence</div>
+        <div class="step">1️⃣ Share your story idea, genre, or writing requirements</div>
+        <div class="step">2️⃣ Choose the fiction writer that fits your style</div>
+        <div class="step">3️⃣ Review the story and receive your creative content</div>
     </div>
 </section>
 
@@ -593,23 +596,22 @@
     <h2>Frequently Asked Questions</h2>
 
     <details>
-        <summary>What does an editor do?</summary>
-        <p>Editors review and improve written content by correcting grammar, spelling, structure, clarity, and overall readability.</p>
+        <summary>What does a fiction writer do?</summary>
+        <p>Fiction writers create imaginative stories, including novels, short stories, and scripts with characters, plots, and fictional worlds.</p>
     </details>
 
     <details>
-        <summary>How much does it cost to hire an editor?</summary>
-        <p>Pricing depends on the type of editing, content length, complexity, and the editor’s experience level.</p>
+        <summary>How much does it cost to hire a fiction writer?</summary>
+        <p>Pricing depends on the type of story, length of the content, complexity of the plot, and the writer’s experience level.</p>
     </details>
 
     <details>
-        <summary>What types of content can editors work on?</summary>
-        <p>Articles, blog posts, academic papers, books, business documents, website content, and marketing materials.</p>
+        <summary>What types of fiction can writers create?</summary>
+        <p>Fantasy, romance, thriller, mystery, science fiction, adventure, and many other creative genres.</p>
     </details>
 </section>
 
-  
-    <!-- FOOTER -->
+<!-- FOOTER -->
      <footer class="footer">
   <div class="footer-container">
 
@@ -672,101 +674,73 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* =========================
-     ELEMENTS
-  ========================= */
   const cards = document.querySelectorAll(".up-card");
-  const editorFilter = document.getElementById("editorTypeFilter");
+  const writerFilter = document.getElementById("writerTypeFilter");
   const levelFilter  = document.getElementById("levelFilter");
   const priceFilter  = document.getElementById("priceFilter");
   const loadMoreBtn  = document.getElementById("loadMoreBtn");
-  const applyFilterBtn = document.getElementById("applyFilter"); // تم تعريف الزرار هنا
+  const applyFilterBtn = document.getElementById("applyFilter");
 
   let visible = 6;
   const step = 6;
 
-  /* =========================
-     FILTER LOGIC
-  ========================= */
   function getFilteredCards(){
     return Array.from(cards).filter(function(card){
 
-      /* ---- EDITOR TYPE ---- */
-      const editor = (card.getAttribute("data-editor") || "").toLowerCase();
-      const selectedEditor = (editorFilter?.value || "all").toLowerCase();
-      const editorMatch = selectedEditor === "all" || editor === selectedEditor;
+      const writer = (card.getAttribute("data-writer") || "").toLowerCase();
+      const selectedWriter = (writerFilter?.value || "all").toLowerCase();
+      const writerMatch = selectedWriter === "all" || writer === selectedWriter;
 
-      /* ---- LEVEL ---- */
       const level = (card.getAttribute("data-level") || "").toLowerCase();
       const selectedLevel = (levelFilter?.value || "all").toLowerCase();
       const levelMatch = selectedLevel === "all" || level === selectedLevel;
 
-      /* ---- PRICE ---- */
       const priceText = card.querySelector(".price")?.innerText || "";
       const price = parseInt(priceText.replace(/\D/g,"")) || 0;
 
       let priceMatch = true;
-      // تم تعديل الأرقام لتتطابق مع اختيارات الـ HTML بالضبط
+
       if(priceFilter?.value === "low")  priceMatch = price < 15;
       if(priceFilter?.value === "mid")  priceMatch = price >= 15 && price <= 30;
       if(priceFilter?.value === "high") priceMatch = price > 30;
 
-      return editorMatch && levelMatch && priceMatch;
+      return writerMatch && levelMatch && priceMatch;
     });
   }
 
-  /* =========================
-     UPDATE VIEW
-  ========================= */
   function updateCards(){
     const filtered = getFilteredCards();
 
-    // إخفاء كل الكروت أولاً
     cards.forEach(card => card.classList.add("hidden-card"));
 
-    // إظهار الكروت المطابقة للفلتر بناءً على العدد المسموح (visible)
     filtered.slice(0, visible).forEach(card => {
       card.classList.remove("hidden-card");
     });
 
-    // إخفاء أو إظهار زرار Load More
     if(loadMoreBtn){
       loadMoreBtn.style.display = visible < filtered.length ? "block" : "none";
     }
   }
 
-
-  /* =========================
-     FILTER EVENTS
-  ========================= */
-
-  [editorFilter, levelFilter, priceFilter].forEach(function(filter){
-
+/* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [writerFilter, levelFilter, priceFilter].forEach(function(filter){
     if(!filter) return;
 
     filter.addEventListener("change", function(){
-
       visible = 6;
       updateCards();
-
     });
-
   });
 
-
-  /* =========================
-     FILTER EVENTS
-  ========================= */
-  // تشغيل الفلتر عند الضغط على زرار Apply Filter
   if(applyFilterBtn){
     applyFilterBtn.addEventListener("click", function(e){
-      e.preventDefault(); // لمنع الزرار من عمل ريفريش للصفحة
-      visible = 6; // إعادة تصفير عدد الكروت الظاهرة لـ 6
+      e.preventDefault();
+      visible = 6;
       updateCards();
     });
   }
 
-  /* LOAD MORE */
+/* LOAD MORE */
   if(loadMoreBtn){
     loadMoreBtn.addEventListener("click", function(){
       visible += step;
@@ -774,22 +748,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* =========================
-     SIDEBAR ACCORDION
-  ========================= */
+
+ /* SIDEBAR ACCORDION */
   const categoryButtons = document.querySelectorAll(".category-btn");
 
   categoryButtons.forEach(function(btn){
     btn.addEventListener("click", function(){
       const category = btn.closest(".category");
+
       document.querySelectorAll(".category").forEach(function(cat){
         if(cat !== category) cat.classList.remove("active");
       });
+
       category.classList.toggle("active");
     });
   });
 
-  /* INIT */
   updateCards();
 
 });
