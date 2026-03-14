@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>TaskHunt Admin</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>body{
+margin:0;
+font-family:Arial;
+background:#f4f6f9;
+}
+
+.layout{
+display:flex;
+}
+
+.sidebar{
+width:240px;
+height:100vh;
+background:white;
+border-right:1px solid #eee;
+padding:20px;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+padding:15px;
+cursor:pointer;
+border-radius:8px;
+}
+
+.sidebar li:hover{
+background:#f1f1f1;
+}
+
+.main{
+flex:1;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+padding:15px;
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.stats{
+display:flex;
+gap:20px;
+padding:20px;
+}
+
+.stat{
+flex:1;
+padding:20px;
+border:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<h2 class="logo">TaskHunt</h2>
+
+<ul>
+
+<li><i class="fa fa-chart-line"></i> Dashboard</li>
+
+<li><i class="fa fa-users"></i> Users</li>
+
+<li><i class="fa fa-briefcase"></i> Services</li>
+
+<li><i class="fa fa-cart-shopping"></i> Orders</li>
+
+<li><i class="fa fa-wallet"></i> Withdraw</li>
+
+<li><i class="fa fa-chart-bar"></i> Reports</li>
+
+<li><i class="fa fa-envelope"></i> Messages</li>
+
+<li><i class="fa fa-gear"></i> Settings</li>
+
+</ul>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main">
+
+<!-- Topbar -->
+
+<header class="topbar">
+
+<div class="search">
+
+<input type="text" placeholder="Search...">
+
+</div>
+
+<div class="top-icons">
+
+<i class="fa fa-bell"></i>
+
+<i class="fa fa-moon" id="darkModeToggle"></i>
+
+<img src="https://i.pravatar.cc/40">
+
+</div>
+
+</header>
+
+<!-- Dashboard Stats -->
+
+<section class="stats">
+
+<div class="card stat">
+<h4>Total Users</h4>
+<h2>1200</h2>
+</div>
+
+<div class="card stat">
+<h4>Total Services</h4>
+<h2>340</h2>
+</div>
+
+<div class="card stat">
+<h4>Total Orders</h4>
+<h2>890</h2>
+</div>
+
+<div class="card stat">
+<h4>Revenue</h4>
+<h2>$24,000</h2>
+</div>
+
+</section>
+
+<!-- Chart -->
+
+<section class="chart">
+
+<canvas id="ordersChart"></canvas>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script >const ctx=document.getElementById("ordersChart")
+
+new Chart(ctx,{
+
+type:"line",
+
+data:{
+
+labels:["Jan","Feb","Mar","Apr","May","Jun"],
+
+datasets:[{
+
+label:"Orders",
+
+data:[12,25,40,30,55,80]
+
+}]
+
+}
+
+})
+
+const toggle=document.getElementById("darkModeToggle")
+
+toggle.onclick=function(){
+
+document.body.classList.toggle("dark")
+
+}</script>
+
+</body>
+
+</html>
