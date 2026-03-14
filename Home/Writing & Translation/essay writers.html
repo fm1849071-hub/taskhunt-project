@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essay Writers | TaskHunt</title>
+  <style>
+    /* ===== ALL CSS STYLES (مطابق للأصل مع تعديلات طفيفة) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* NAVBAR */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .login-blue {
+      background: transparent;
+      border: 1px solid #2563eb;
+    }
+
+    .login-blue:hover {
+      background: #e6f0ff;
+    }
+
+    .signup-blue {
+      background: #2563eb;
+      color: white !important;
+    }
+
+    .signup-blue:hover {
+      background: #1d4ed8;
+    }
+
+    /* HERO TITLE */
+    .hero-title {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      padding: 3rem 5%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-title h2 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .hero-divider {
+      font-size: 2rem;
+      opacity: 0.5;
+    }
+
+    .hero-title h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #60a5fa, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      background: white;
+      padding: 1.5rem 5%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .filter-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .filter-container select {
+      padding: 0.8rem 2rem 0.8rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      min-width: 200px;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem center;
+      background-size: 1rem;
+    }
+
+    .filter-container button {
+      padding: 0.8rem 2rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-left: auto;
+    }
+
+    .filter-container button:hover {
+      background: #1d4ed8;
+    }
+
+    /* PAGE LAYOUT */
+    .page-layout {
+      display: flex;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 5%;
+      gap: 2rem;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      height: fit-content;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #0f172a;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .category {
+      margin-bottom: 0.5rem;
+    }
+
+    .category-btn {
+      width: 100%;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      background: none;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+
+    .category-btn:hover {
+      background: #f1f5f9;
+      color: #2563eb;
+    }
+
+    .category.active .category-btn {
+      background: #e6f0ff;
+      color: #2563eb;
+    }
+
+    .arrow {
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .category.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    .sub-categories {
+      list-style: none;
+      padding-left: 1rem;
+      margin: 0.5rem 0 1rem 0;
+      display: none;
+    }
+
+    .category.active .sub-categories {
+      display: block;
+    }
+
+    .sub-categories li {
+      margin: 0.5rem 0;
+    }
+
+    .sub-categories a {
+      text-decoration: none;
+      color: #64748b;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+      display: block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+    }
+
+    .sub-categories a:hover {
+      color: #2563eb;
+      background: #f1f5f9;
+    }
+
+    /* CARDS WRAPPER */
+    .cards-wrapper {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* CARD STYLES */
+    .up-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .up-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+      border-color: #2563eb;
+    }
+
+    .card-header {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e2e8f0;
+    }
+
+    .user-info {
+      flex: 1;
+    }
+
+    .user-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+      color: #0f172a;
+    }
+
+    .location {
+      font-size: 0.85rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      color: #475569;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .rating {
+      color: #f59e0b;
+    }
+
+    .description {
+      color: #334155;
+      font-size: 0.95rem;
+      margin: 1rem 0;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .tags span {
+      background: #f1f5f9;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .profile-btn {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .profile-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .hidden-card {
+      display: none !important;
+    }
+
+    /* LOAD MORE */
+    .load-more {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .load-more button {
+      padding: 1rem 3rem;
+      background: white;
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .load-more button:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* WHY SECTION */
+    .why-section {
+      padding: 4rem 5%;
+      background: white;
+      margin-top: 2rem;
+    }
+
+    .why-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #0f172a;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .why-box {
+      padding: 2rem;
+      background: #f8fafc;
+      border-radius: 20px;
+      transition: transform 0.2s;
+    }
+
+    .why-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .why-box h4 {
+      color: #2563eb;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .why-box p {
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* STEPS */
+    .steps {
+      padding: 4rem 5%;
+      background: linear-gradient(135deg, #f8fafc 0%, #e6f0ff 100%);
+    }
+
+    .steps h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #0f172a;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .step {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #1e293b;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 4rem 5%;
+      background: white;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #0f172a;
+    }
+
+    details {
+      max-width: 800px;
+      margin: 1rem auto;
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    summary {
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    details p {
+      padding: 1rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0f172a;
+      color: white;
+      padding: 4rem 5% 1rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #94a3b8;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #2563eb;
+    }
+
+    .social-section {
+      margin-top: 2rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .social-icon:hover {
+      opacity: 1;
+    }
+
+    .contact-box {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .contact-box h3 {
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p {
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .footer-input {
+      width: 100%;
+      padding: 0.8rem;
+      background: #334155;
+      border: 1px solid #475569;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .footer-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .footer-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .footer-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 2rem 0 0;
+      margin-top: 3rem;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .page-layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .filter-container button {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .hero-title {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-divider {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR (مطابق للأصل) ===== -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html">
+        <img src="../images/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/120x40?text=TaskHunt'">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO TITLE (معدل لصفحة Essay) ===== -->
+  <section class="hero-title">
+    <h2>Writing & Translation</h2>
+    <span class="hero-divider">|</span>
+    <h1>Essay Writers</h1>
+  </section>
+
+  <!-- ===== FILTER BAR (معدل ليتناسب مع Essay) ===== -->
+  <section class="filter-bar">
+    <div class="filter-container">
+      <select id="skillFilter">
+        <option value="all">All Essay Skills</option>
+        <option value="argumentative">Argumentative Essay</option>
+        <option value="persuasive">Persuasive Essay</option>
+        <option value="narrative">Narrative Essay</option>
+        <option value="descriptive">Descriptive Essay</option>
+        <option value="research">Research Paper</option>
+        <option value="admission">Admission Essay</option>
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior (1-3 years)</option>
+        <option value="mid">Mid (3-6 years)</option>
+        <option value="senior">Senior (7+ years)</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $20</option>
+        <option value="mid">$20 – $35</option>
+        <option value="high">Above $35</option>
+      </select>
+
+      <button id="applyFilter">Apply Filters</button>
+    </div>
+  </section>
+
+  <!-- ===== PAGE LAYOUT: SIDEBAR + CARDS ===== -->
+  <div class="page-layout">
+    <!-- SIDEBAR (تم إضافة Essay للقائمة) -->
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation (نشط ومعدل ليشمل Essay) -->
+      <div class="category active">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" style="color:#2563eb; font-weight:500;">Essay Writers</a></li>
+          <li><a href="#">Research Paper Writers</a></li>
+          <li><a href="#">Admission Essay</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Arabic Translators</a></li>
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- CARDS SECTION (15 بطاقة جديدة لكتّاب المقالات) -->
+    <section class="cards-wrapper">
+      <div class="cards-grid">
+        <!-- ESSAY CARD 1 -->
+        <div class="up-card" data-skill="argumentative persuasive" data-level="senior" data-price="40">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=7" class="avatar" alt="Dr. Sarah H.">
+            <div class="user-info">
+              <h3>Dr. Sarah H.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$40/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 51 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🎓 PhD in English Literature. 12+ years crafting compelling argumentative and persuasive essays for top universities. Published author.</p>
+          <div class="tags"><span>Argumentative</span><span>Persuasive</span><span>Research</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card" data-skill="narrative descriptive" data-level="mid" data-price="28">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=16" class="avatar" alt="Omar Z.">
+            <div class="user-info">
+              <h3>Omar Z.</h3>
+              <span class="location">📍 Alexandria, Egypt</span>
+              <div class="stats">
+                <span class="price">$28/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 34 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">✍️ Creative essayist specializing in narrative and descriptive essays. I bring stories to life with vivid language and emotional depth.</p>
+          <div class="tags"><span>Narrative</span><span>Descriptive</span><span>Creative</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card" data-skill="research admission" data-level="senior" data-price="45">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Nadia A.">
+            <div class="user-info">
+              <h3>Nadia A.</h3>
+              <span class="location">📍 Giza, Egypt</span>
+              <div class="stats">
+                <span class="price">$45/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 62 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📚 Former admissions officer. I help students write standout college admission essays that get results. Expert in research papers too.</p>
+          <div class="tags"><span>Admission</span><span>Research</span><span>Editing</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card" data-skill="argumentative research" data-level="mid" data-price="32">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=34" class="avatar" alt="Karim F.">
+            <div class="user-info">
+              <h3>Karim F.</h3>
+              <span class="location">📍 Mansoura, Egypt</span>
+              <div class="stats">
+                <span class="price">$32/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 27 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🔍 Political science researcher. I write well-structured argumentative essays and policy papers with proper citations (APA/MLA/Chicago).</p>
+          <div class="tags"><span>Argumentative</span><span>Research</span><span>Citations</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card" data-skill="persuasive narrative" data-level="junior" data-price="22">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=42" class="avatar" alt="Mona S.">
+            <div class="user-info">
+              <h3>Mona S.</h3>
+              <span class="location">📍 Tanta, Egypt</span>
+              <div class="stats">
+                <span class="price">$22/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 18 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌟 Enthusiastic writer with a gift for persuasive storytelling. Great for personal statements and reflective essays.</p>
+          <div class="tags"><span>Persuasive</span><span>Narrative</span><span>Personal</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card" data-skill="descriptive research" data-level="mid" data-price="29">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=49" class="avatar" alt="Youssef R.">
+            <div class="user-info">
+              <h3>Youssef R.</h3>
+              <span class="location">📍 Asyut, Egypt</span>
+              <div class="stats">
+                <span class="price">$29/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 23 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌿 Environmental science graduate. I combine descriptive flair with solid research for essays on nature, sustainability, and science.</p>
+          <div class="tags"><span>Descriptive</span><span>Science</span><span>Research</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="up-card" data-skill="admission persuasive" data-level="senior" data-price="48">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=53" class="avatar" alt="Samira Z.">
+            <div class="user-info">
+              <h3>Samira Z.</h3>
+              <span class="location">📍 Luxor, Egypt</span>
+              <div class="stats">
+                <span class="price">$48/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 39 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🏆 Ivy League consultant. Specializes in admission essays and persuasive personal statements. 90% acceptance rate to top 50 universities.</p>
+          <div class="tags"><span>Admission</span><span>Ivy League</span><span>Personal</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="up-card" data-skill="research argumentative" data-level="mid" data-price="34">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=57" class="avatar" alt="Hossam M.">
+            <div class="user-info">
+              <h3>Hossam M.</h3>
+              <span class="location">📍 Zagazig, Egypt</span>
+              <div class="stats">
+                <span class="price">$34/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 29 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📊 Economics PhD candidate. Expert in data-driven argumentative essays and research papers. Fluent in Stata, Excel, and clear writing.</p>
+          <div class="tags"><span>Economics</span><span>Research</span><span>Data</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="up-card" data-skill="narrative descriptive" data-level="junior" data-price="21">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=62" class="avatar" alt="Dina L.">
+            <div class="user-info">
+              <h3>Dina L.</h3>
+              <span class="location">📍 Fayoum, Egypt</span>
+              <div class="stats">
+                <span class="price">$21/hr</span>
+                <span class="rating">⭐ 4.5</span>
+                <span class="jobs">💼 15 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📖 Creative writing graduate. I love crafting vivid narrative and descriptive essays that captivate readers. Great for college entry.</p>
+          <div class="tags"><span>Narrative</span><span>Descriptive</span><span>Creative</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="up-card" data-skill="persuasive argumentative" data-level="senior" data-price="50">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=65" class="avatar" alt="Amr N.">
+            <div class="user-info">
+              <h3>Amr N.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$50/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 47 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">⚖️ Lawyer and writer. I construct airtight argumentative essays and persuasive pieces for law school applications and debates.</p>
+          <div class="tags"><span>Persuasive</span><span>Law</span><span>Debate</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="up-card" data-skill="research descriptive" data-level="mid" data-price="27">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Reham E.">
+            <div class="user-info">
+              <h3>Reham E.</h3>
+              <span class="location">📍 Minya, Egypt</span>
+              <div class="stats">
+                <span class="price">$27/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 21 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🔬 Medical researcher. I write detailed descriptive and research essays on health, medicine, and life sciences. Accurate and thorough.</p>
+          <div class="tags"><span>Medical</span><span>Research</span><span>Descriptive</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="up-card" data-skill="admission narrative" data-level="mid" data-price="31">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=71" class="avatar" alt="Tamer W.">
+            <div class="user-info">
+              <h3>Tamer W.</h3>
+              <span class="location">📍 Sohag, Egypt</span>
+              <div class="stats">
+                <span class="price">$31/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 26 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🎯 High school counselor. I help students tell their unique story through admission essays and narrative pieces that stand out.</p>
+          <div class="tags"><span>Admission</span><span>Narrative</span><span>High School</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 13 -->
+        <div class="up-card" data-skill="argumentative persuasive" data-level="junior" data-price="19">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=18" class="avatar" alt="Ghada F.">
+            <div class="user-info">
+              <h3>Ghada F.</h3>
+              <span class="location">📍 Port Said, Egypt</span>
+              <div class="stats">
+                <span class="price">$19/hr</span>
+                <span class="rating">⭐ 4.4</span>
+                <span class="jobs">💼 12 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">💬 Communication graduate. Eager to help with argumentative and persuasive essays. Great listener and fast learner.</p>
+          <div class="tags"><span>Argumentative</span><span>Persuasive</span><span>Entry</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 14 -->
+        <div class="up-card" data-skill="research admission" data-level="senior" data-price="44">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=23" class="avatar" alt="Mahmoud T.">
+            <div class="user-info">
+              <h3>Mahmoud T.</h3>
+              <span class="location">📍 Ismailia, Egypt</span>
+              <div class="stats">
+                <span class="price">$44/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 41 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📐 Engineering professor. I craft precise, well-researched technical essays and research papers. Expert in STEM fields.</p>
+          <div class="tags"><span>STEM</span><span>Research</span><span>Technical</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 15 -->
+        <div class="up-card" data-skill="descriptive narrative" data-level="mid" data-price="26">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Noha D.">
+            <div class="user-info">
+              <h3>Noha D.</h3>
+              <span class="location">📍 Damietta, Egypt</span>
+              <div class="stats">
+                <span class="price">$26/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 24 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌍 Travel writer & blogger. I bring places and experiences to life in descriptive and narrative essays. Perfect for creative assignments.</p>
+          <div class="tags"><span>Descriptive</span><span>Travel</span><span>Creative</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+      </div>
+
+      <!-- LOAD MORE -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load More Writers</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== WHY SECTION (معدل لصفحة Essay) ===== -->
+  <section class="why-section">
+    <h2>Why hire Essay Writers from TaskHunt?</h2>
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Academic Excellence</h4>
+        <p>All essay writers hold advanced degrees and have proven experience in academic writing. They understand structure, citation styles, and grading rubrics.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ Plagiarism-Free Guarantee</h4>
+        <p>Every essay is written from scratch, thoroughly researched, and checked for originality. You receive a unique piece tailored to your requirements.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ Timely Delivery & Revisions</h4>
+        <p>Deadlines matter. Our writers deliver on time and offer free revisions to ensure your complete satisfaction with the final essay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEPS SECTION (معدل) ===== -->
+  <section class="steps">
+    <h2>How to order your Essay</h2>
+    <div class="steps-grid">
+      <div class="step">1️⃣ Share your topic, deadline & requirements</div>
+      <div class="step">2️⃣ Choose the writer with the right expertise</div>
+      <div class="step">3️⃣ Receive your draft and request revisions if needed</div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION (أسئلة مخصصة للمقالات) ===== -->
+  <section class="faq">
+    <h2>Frequently Asked Questions about Essay Writing</h2>
+    <details>
+      <summary>Can you write an essay on any topic?</summary>
+      <p>Yes, our writers cover a vast range of subjects – from literature and history to STEM, business, and medicine. Just provide your topic and we'll match you with an expert.</p>
+    </details>
+    <details>
+      <summary>What citation styles do you support?</summary>
+      <p>Our team is proficient in APA, MLA, Chicago/Turabian, Harvard, and IEEE. Please specify your preferred style when ordering.</p>
+    </details>
+    <details>
+      <summary>Is my essay confidential and original?</summary>
+      <p>Absolutely. All work is 100% confidential and written from scratch. We do not reuse or sell your paper to anyone else.</p>
+    </details>
+    <details>
+      <summary>How do you handle tight deadlines?</summary>
+      <p>Many writers specialize in urgent orders (as short as 3 hours). Contact us with your deadline and we'll find a writer who can deliver quality work on time.</p>
+    </details>
+  </section>
+
+  <!-- ===== FOOTER (مطابق للأصل) ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Academic Integrity</a></li>
+        </ul>
+        <div class="social-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Writing Tips</a></li>
+          <li><a href="#">Success Stories</a></li>
+        </ul>
+      </div>
+      <div id="contact-section" class="footer-col contact-col">
+        <div class="contact-box">
+          <form id="contactForm">
+            <h3>Drop us a message</h3>
+            <p>We'd love to hear from you!</p>
+            <div class="form-group">
+              <input type="text" class="footer-input" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="footer-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="footer-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT (مطابق للأصل مع تحديث أسماء الفلاتر) ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = Array.from(document.querySelectorAll(".up-card"));
+      const skillFilter = document.getElementById("skillFilter");
+      const levelFilter = document.getElementById("levelFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const applyFilterBtn = document.getElementById("applyFilter");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+      let visible = 6;
+      const step = 6;
+
+      function getFilteredCards() {
+        return cards.filter(card => {
+          // Skill filter
+          const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+          const selectedSkill = skillFilter.value.toLowerCase();
+          const skillMatch = selectedSkill === "all" || skills.includes(selectedSkill);
+
+          // Level filter
+          const level = (card.dataset.level || "").toLowerCase();
+          const selectedLevel = levelFilter.value.toLowerCase();
+          const levelMatch = selectedLevel === "all" || level === selectedLevel;
+
+          // Price filter
+          const price = parseInt(card.dataset.price) || 0;
+          let priceMatch = true;
+          if (priceFilter.value === "low") priceMatch = price < 20;
+          if (priceFilter.value === "mid") priceMatch = price >= 20 && price <= 35;
+          if (priceFilter.value === "high") priceMatch = price > 35;
+
+          return skillMatch && levelMatch && priceMatch;
+        });
+      }
+
+      function updateCards() {
+        const filteredCards = getFilteredCards();
+
+        cards.forEach(card => card.classList.add("hidden-card"));
+
+        filteredCards.slice(0, visible).forEach(card => {
+          card.classList.remove("hidden-card");
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.style.display = visible < filteredCards.length ? "block" : "none";
+        }
+
+        // Show message if no cards
+        const grid = document.querySelector('.cards-grid');
+        const existingMsg = document.querySelector('.no-results');
+        if (filteredCards.length === 0) {
+          if (!existingMsg) {
+            const msg = document.createElement('div');
+            msg.className = 'no-results';
+            msg.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 3rem; background: white; border-radius: 20px; color: #64748b;';
+            msg.innerHTML = '😕 No essay writers match your filters. Try adjusting your criteria.';
+            grid.appendChild(msg);
+          }
+        } else if (existingMsg) {
+          existingMsg.remove();
+        }
+      }
+
+      // Apply filters button
+      if (applyFilterBtn) {
+        applyFilterBtn.addEventListener("click", () => {
+          visible = 6;
+          updateCards();
+        });
+      }
+
+      // Load more
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+          visible += step;
+          updateCards();
+        });
+      }
+
+      // Initialize
+      updateCards();
+
+      // Sidebar accordion
+      const categoryButtons = document.querySelectorAll(".category-btn");
+      categoryButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const category = btn.closest(".category");
+          category.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

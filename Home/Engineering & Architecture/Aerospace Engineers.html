@@ -24,11 +24,10 @@
     }
 
     body {
-      background: #f9fafb;
+      background: #f7f9fc;
+
       color: #111827;
     }
-
-
 
     /* NAVBAR */
     nav {
@@ -62,7 +61,6 @@
     nav ul li a:hover {
       color: var(--c1);
     }
-
 
     .hero-title {
       display: flex;
@@ -101,8 +99,104 @@
         display: none;
       }
     }
+ /* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  height: 50px;
+  background: #ffffff;
+}
+/* NAVBAR FIX */
 
+.logo img {
+  height: 180px;
+  align-items: center;
+  padding-bottom: 25px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+nav ul li a {
+  color: var(--c4);
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: var(--c1);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+/* BUTTONS */
 
+.auth-buttons .btn {
+    width: 90px; 
+    height: 35px;
+    padding: 8px 0; 
+    text-align: center;
+    display: inline-block;
+    border-radius: 8px; 
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.login-blue {
+    background-color: #f0f6ff;
+    color: white;
+    border: none;
+}
+/* LOGIN BUTTON */
+
+.login-btn {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff; 
+}
+.auth-buttons .btn:hover {
+    opacity: 0.8;
+    transform: translateY(-0.5px);
+}
+.signup-blue {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-text {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  font-weight: 500;
+}
+/* BUTTONS */
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.primary {
+  background: var(--c3);
+  color: #fff;
+}
     /* ===== FILTER BAR ===== */
     .filter-bar {
       width: 100%;
@@ -133,12 +227,12 @@
     }
 
     .filter-container select:focus {
-      border-color: #005b84;
+      border-color: #0077b8;
     }
 
     .filter-container button {
       padding: 12px 26px;
-      background: #005b84;
+      background: #0077b8;
       color: #ffffff;
       border: none;
       border-radius: 10px;
@@ -177,7 +271,7 @@
 
     /* SIDEBAR */
     .sidebar {
-      width: 260px;
+      width: 180px;
       flex-shrink: 0;
       border-right: 1px solid #e5e7eb;
       padding-right: 20px;
@@ -193,6 +287,8 @@
     /* CATEGORY */
     .category {
       border-bottom: 1px solid #f1f5f9;
+      max-width: 100%;
+      width: 180px;
     }
 
     /* CATEGORY BUTTON */
@@ -207,11 +303,11 @@
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
-      color: #111827;
+      color: #242c3d;
     }
 
     .category-btn:hover {
-      color: #005b84;
+      color: #0077B8;
     }
 
     /* ARROW */
@@ -241,7 +337,7 @@
     }
 
     .sub-categories li a:hover {
-      color: #005b84;
+      color: #0077b8;
       padding-left: 6px;
     }
 
@@ -337,7 +433,7 @@
       margin-top: auto;
       text-align: center;
       padding: 12px;
-      background: #005b84;
+      background: #0077b8;
       color: white;
       border-radius: 10px;
       text-decoration: none;
@@ -367,91 +463,149 @@
         grid-template-columns: repeat(1, 1fr);
       }
     }
+/* Footer */ 
+.footer {
+  background: #051923;
+  padding: 20px 10px;
+  font-family: "Cairo", sans-serif;
+  direction: ltr;
+  text-align: left;
+  color: #ffffff;
+}
 
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 
+.footer-col {
+  flex: 1;
+  width: 30%;
+  min-width: 200px;
+}
 
+/* تخصيص مساحة أكبر للفورم */
+.contact-col {
+  flex: 1; 
+  min-width: 200px;
+}
 
-    /* Footer */
-    .footer {
-      background: #051923;
-      padding: 40px 20px;
-      font-family: "Cairo", sans-serif;
-      direction: ltr;
-      text-align: left;
-    }
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
 
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
 
-    .footer-col {
-      width: 30%;
-      min-width: 250px;
-    }
+.footer-col ul li {
+  margin-bottom: 14px;
+}
 
-    .footer-col h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
+.footer-col ul li a {
+  text-decoration: none;
+  color: #adb5bd;
+  font-size: 16px;
+  transition: 0.3s;
+}
 
-    .footer-col p {
-      color: #ddd;
-      font-size: 15px;
-      line-height: 1.6;
-    }
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+  opacity: 0.8;
+}
 
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-    }
+/* Contact Form Styling */
+.contact-box h3 {
+  margin-bottom: 7px;
+}
 
-    .footer-col ul li {
-      margin: 10px 0;
-    }
+.contact-box p {
+  font-size: 14px;
+  color: #adb5bd;
+  margin-bottom: 10px;
+}
 
-    .footer-col ul li a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 16px;
-      transition: 0.3s;
-    }
+.form-group {
+  margin-bottom: 13px;
+}
 
-    .footer-col ul li a:hover {
-      opacity: 0.8;
-    }
+.footer-input {
+  width: 92%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
 
-    .social-icons {
-      display: flex;
-      gap: 12px;
-      margin-top: 15px;
-    }
+.footer-input:focus {
+  border-color: #00a8e8; 
+  background: rgba(255, 255, 255, 0.1);
+}
 
-    .icon {
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.footer-btn {
+  width: 92%;
+  padding: 12px;
+  background: #00a8e8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .icon:hover {
-      transform: scale(1.1);
-    }
+.footer-btn:hover {
+  background: #007ea7;
+  transform: translateY(-2px);
+}
 
-    .footer-bottom {
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
-      font-size: 14px;
-      color: #ffffff;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
+/* Social Icons */
+.social-section {
+    justify-items: left;
+  margin-top: 30px;
+}
 
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(1) invert(1); /* جعل الأيقونات بيضاء لتناسب التصميم */
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  filter: none; /* ترجع لألوانها الأصلية عند المرور عليها */
+  transform: scale(1.2);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #6c757d;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
     /* Responsive */
     @media (max-width: 768px) {
       .footer-container {
@@ -475,7 +629,7 @@
 
     .load-more button {
       padding: 14px 40px;
-      background: #005b84;
+      background: #0077b8;
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -634,24 +788,26 @@
 
 <body>
 
-    <!-- NAVBAR -->
-  <nav class="nav">
+ <!-- NAVBAR -->
+ <nav class="nav">
     <div class="logo">
-      <a href="../Home/home.html" class="logo">
-      <img src="images/logo.png" alt="Logo"></a>
+      <a href="../../Home/home.html">
+        <img src="../images/logo.png" alt="Logo">
+      </a>
     </div>
-    <ul>
-      <li><a href="#">Find Work</a></li>
-      <li><a href="#">Hire Talent</a></li>
-      <li><a href="../about/about.html">About</a></li>
-      <li><a href="../contactus/contactus.html">Contact</a></li>
-      <li><a href="../login/login.html">Login</a></li>
-      <li>
-        <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
-      </li>
+
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
     </ul>
+       
+      <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+    </div>
   </nav>
-  
   <section class="hero-title">
     <h2>Engineering & Architecture</h2>
     <span class="hero-divider">|</span>
@@ -662,13 +818,16 @@
 <section class="filter-bar">
   <div class="filter-container">
 
-    <!-- Editor Type -->
-    <select id="editorTypeFilter">
-      <option value="all">All Editors</option>
-      <option value="content">Content Editor</option>
-      <option value="video">Video Editor</option>
-      <option value="photo">Photo Editor</option>
-    </select>
+    <!-- skill Type -->
+   <select id="skillFilter">
+  <option value="all">All Skills</option>
+  <option value="cad">CAD Design</option>
+  <option value="aerodynamics">Aerodynamics</option>
+  <option value="propulsion">Propulsion Systems</option>
+  <option value="avionics">Avionics</option>
+  <option value="simulation">Flight Simulation</option>
+</select>
+
 
     <!-- Experience Level -->
     <select id="levelFilter">
@@ -685,9 +844,7 @@
       <option value="mid">$15 – $30</option>
       <option value="high">Above $30</option>
     </select>
-
-    <button id="applyFilter">Apply Filter</button>
-
+  <button id="applyFilter">Apply Filter</button>
   </div>
 </section>
 
@@ -699,8 +856,8 @@
 
 
       
-   <!-- Data & AI -->
-  <div class="category">
+      <!-- Data & AI -->
+       <div class="category">
         <button class="category-btn">Data & AI <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
@@ -718,19 +875,19 @@
       </div>
 
       <!-- Development & IT -->
-      <div class="category">
+   <div class="category">
         <button class="category-btn">Development & IT <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
           <li><a href="../Development&it/ai.html">AI Developers</a></li>
           <li><a href="../Development&it/android.html">Android Developers</a></li>
-          <li><a href="#">Backend Developers</a></li>
-          <li><a href="#">Bubble.io Developers</a></li>
-          <li><a href="#">Chatbot Developers</a></li>
-          <li><a href="#">Cyber Security Engineers</a></li>
-          <li><a href="#">Data Engineers</a></li>
-          <li><a href="#">DevOps Engineers</a></li>
-          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
          
         </ul>
       </div>
@@ -739,16 +896,18 @@
       <div class="category">
         <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Graphic Design</a></li>
-          <li><a href="#">Adobe Photoshop</a></li>
-          <li><a href="#">Adobe Illustrator</a></li>
-          <li><a href="#">Logo Design</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Adobe InDesign</a></li>
-          <li><a href="#">Illustration</a></li>
-          <li><a href="#">Print Design</a></li>
-          <li><a href="#">Design Thinking</a></li>
-          <li><a href="#">Infographic</a></li>
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
         </ul>
       </div>
 
@@ -756,16 +915,16 @@
       <div class="category">
         <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Affiliate Marketers</a></li>
-          <li><a href="#">Amazon PPC Experts</a></li>
-          <li><a href="#">Branding Experts</a></li>
-          <li><a href="#">Business Development Managers</a></li>
-          <li><a href="#">Campaign Managers</a></li>
-          <li><a href="#">Cold Callers</a></li>
-          <li><a href="#">Community Managers</a></li>
-          <li><a href="#">Digital Marketers</a></li>
-          <li><a href="#">Ecommerce Consultants</a></li>
-          <li><a href="#">Facebook Ads Specialists</a></li>
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
         </ul>
       </div>
 
@@ -808,16 +967,16 @@
       <div class="category">
         <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Business Analysts</a></li>
-          <li><a href="#">Financial Analysts</a></li>
-          <li><a href="#">Financial Modelers</a></li>
-          <li><a href="#">Forex Traders</a></li>
-          <li><a href="#">Management Consultants</a></li>
-          <li><a href="#">Tax Preparers</a></li>
-          <li><a href="#">Data Entry Specialists</a></li>
-          <li><a href="#">Financial Forecasting Specialists</a></li>
-          <li><a href="#">Financial Reporting Analysts</a></li>
-          <li><a href="#">Intuit TurboTax Specialists</a></li>
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
         </ul>
       </div>
 
@@ -825,40 +984,39 @@
       <div class="category">
         <button class="category-btn">Legal <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Corporate Law Professionals</a></li>
-          <li><a href="#">Criminal Law Professionals</a></li>
-          <li><a href="#">Family Law Professionals</a></li>
-          <li><a href="#">Fraud Analysts</a></li>
-          <li><a href="#">GDPR Specialists</a></li>
-          <li><a href="#">Immigration Law Professionals</a></li>
-          <li><a href="#">International Law Professionals</a></li>
-          <li><a href="#">Legal Advisors</a></li>
-          <li><a href="#">Legal Assistants</a></li>
-          <li><a href="#">Legal Consultants</a></li>
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
         </ul>
       </div>
-
      <!-- HR & Training -->
 <div class="category">
   <button class="category-btn">HR & Training <span class="arrow">›</span></button>
   <ul class="sub-categories">
-    <li><a href="#">Change Management Specialists</a></li>
-    <li><a href="#">Employee Engagement Specialists</a></li>
-    <li><a href="#">Facilitators</a></li>
-    <li><a href="#">Interviewers</a></li>
-    <li><a href="#">Leadership Development Specialists</a></li>
-    <li><a href="#">QHSE Specialists</a></li>
-    <li><a href="#">SCORM Specialists</a></li>
-    <li><a href="#">Technical Recruiters</a></li>
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
 
-    <li><a href="#">Curriculum Developers</a></li>
-    <li><a href="#">Employee Relations Specialists</a></li>
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
   </ul>
 </div>
 
       <!-- Engineering & Architecture -->
       <div class="category">
-        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
           <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
@@ -880,417 +1038,510 @@
 
      <div class="cards-grid">
 
-  <!-- CARD 1 -->
-  <div class="up-card" data-editor="content">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=40" class="avatar">
-        <div class="user-info">
-          <h3>Eng. Reem Aslam.</h3>
-          <span class="location">Cairo, Egypt</span>
-          <div class="stats">
-            <span class="price">$35/hr</span>
-            <span class="rating">⭐ 4.9</span>
-            <span class="jobs">💼 32 jobs</span>
-          </div>
-      </div>
-    </div>
-    <p class="description">🏗️ Architect specialized in residential & commercial designs.</p>
-      <div class="tags"><span>AutoCAD</span><span>3D Max</span></div>
-      <a href="#" class="profile-btn">See profile</a>
-    </div>
+ <!-- CARD 1 -->
 
-  <!-- CARD 2 -->
-  <div class="up-card hidden-card" data-editor="content">
-    <div class="card-header">
-      <img src="https://i.pravatar.cc/100?img=41" class="avatar">
-        <div class="user-info">
-          <h3>Eng. Salma Hossam.</h3>
-          <span class="location">Alexandria, Egypt</span>
-          <div class="stats">
-            <span class="price">$30/hr</span>
-            <span class="rating">⭐ 4.8</span>
-            <span class="jobs">💼 24 jobs</span>
-          </div>
-      </div>
-    </div>
-   <p class="description">🏢 Civil Engineer expert in structural design & analysis.</p>
-      <div class="tags"><span>ETABS</span><span>SAFE</span></div>
-      <a href="#" class="profile-btn">See profile</a>
-    </div>
-
-  <!-- CARD 3 -->
-  <div class="up-card hidden-card" data-editor="photo">
-    <div class="card-header">
-        <img src="https://i.pravatar.cc/100?img=42" class="avatar">
-        <div class="user-info">
-          <h3>Eng. Nourr.</h3>
-          <span class="location">Giza, Egypt</span>
-          <div class="stats">
-            <span class="price">$28/hr</span>
-            <span class="rating">⭐ 4.9</span>
-            <span class="jobs">💼 27 jobs</span>
-          </div>
-      </div>
-    </div>
-    <p class="description">🎨 Interior designer creating modern & functional spaces.</p>
-      <div class="tags"><span>SketchUp</span><span>V-Ray</span></div>
-      <a href="#" class="profile-btn">See profile</a>
-    </div>
-
-  <!-- CARD 4 -->
-  <div class="up-card hidden-card" data-editor="video">
-    <div class="card-header">
-               <img src="https://i.pravatar.cc/100?img=43" class="avatar">
-        <div class="user-info">
-          <h3>Eng.Rahma Ahmed .</h3>
-          <span class="location">Mansoura, Egypt</span>
-          <div class="stats">
-            <span class="price">$33/hr</span>
-            <span class="rating">⭐ 4.7</span>
-            <span class="jobs">💼 20 jobs</span>
-          </div>
-      </div>
-    </div>
-     <p class="description">🏙️ Urban planner for smart cities & land development.</p>
-      <div class="tags"><span>Urban Design</span><span>GIS</span></div>
-      <a href="#" class="profile-btn">See profile</a>
-    </div>
-
-  <!-- CARD 5 -->
-  <div class="up-card hidden-card" data-editor="content">
-    <div class="card-header">
-       <img src="https://i.pravatar.cc/100?img=44" class="avatar">
-        <div class="user-info">
-          <h3>Eng. taghred .</h3>
-          <span class="location">Tanta, Egypt</span>
-          <div class="stats">
-            <span class="price">$29/hr</span>
-            <span class="rating">⭐ 4.8</span>
-            <span class="jobs">💼 25 jobs</span>
-          </div>
-        </div>
-      </div>
-      <p class="description">📐 Project engineer managing construction timelines & budgets.</p>
-      <div class="tags"><span>Project Management</span><span>Primavera</span></div>
-      <a href="#" class="profile-btn">See profile</a>
-    </div>
-
-  <!-- CARD 6 -->
-  <div class="up-card hidden-card" data-editor="photo">
-    <div class="card-header">
-       <img src="https://i.pravatar.cc/100?img=45" class="avatar">
-        <div class="user-info">
-          <h3>Eng. Lina .</h3>
-          <span class="location">Asyut, Egypt</span>
-          <div class="stats">
-            <span class="price">$31/hr</span>
-            <span class="rating">⭐ 5.0</span>
-            <span class="jobs">💼 19 jobs</span>
-          </div>
-        </div>
-      </div>
-      <p class="description">🏗️ BIM specialist for architectural & structural models.</p>
-      <div class="tags"><span>Revit</span><span>BIM</span></div>
-      <a href="#" class="profile-btn">See profile</a>
-    </div>
-  <!-- CARD 7 -->
-  <div class="up-card hidden-card" data-skill="structural analysis">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=27" class="avatar">
-    <div class="user-info">
-      <h3>Eng.Rana  Hassan .</h3>
-      <span class="location">Fayoum, Egypt</span>
-      <div class="stats">
-        <span class="price">$32/hr</span>
-        <span class="rating">⭐ 4.8</span>
-        <span class="jobs">💼 23 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">🏗️ Structural engineer ensuring safety & strong building design.</p>
-  <div class="tags"><span>ETABS</span><span>Structural Design</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+<div class="up-card" data-skill="cad"  data-level="junior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=40" class="avatar">
+<div class="user-info">
+<h3>Eng. Reem Aslam.</h3>
+<span class="location">Cairo, Egypt</span>
+<div class="stats">
+<span class="price">$35/hr</span>
+<span class="rating">⭐ 4.9</span>
+<span class="jobs">💼 32 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏗️ Architect specialized in residential & commercial designs.</p>
+<div class="tags"><span>AutoCAD</span><span>3D Max</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
-  <!-- CARD 8 -->
- <div class="up-card hidden-card" data-skill="landscape design">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=28" class="avatar">
-    <div class="user-info">
-      <h3>Eng. Amr Tarek.</h3>
-      <span class="location">Asyut, Egypt</span>
-      <div class="stats">
-        <span class="price">$26/hr</span>
-        <span class="rating">⭐ 4.7</span>
-        <span class="jobs">💼 18 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">🌿 Landscape architect designing outdoor spaces & parks.</p>
-  <div class="tags"><span>Landscape</span><span>3D Design</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+<!-- CARD 2 -->
+
+<div class="up-card hidden-card" data-skill="cad"  data-level="senior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=41" class="avatar">
+<div class="user-info">
+<h3>Eng. Salma Hossam.</h3>
+<span class="location">Alexandria, Egypt</span>
+<div class="stats">
+<span class="price">$30/hr</span>
+<span class="rating">⭐ 4.8</span>
+<span class="jobs">💼 24 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏢 Civil Engineer expert in structural design & analysis.</p>
+<div class="tags"><span>ETABS</span><span>SAFE</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
-  <!-- CARD 9 -->
-  <div class="up-card hidden-card" data-skill="revit bim">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=29" class="avatar">
-    <div class="user-info">
-      <h3>Eng.Noha Mahmoud .</h3>
-      <span class="location">Sohag, Egypt</span>
-      <div class="stats">
-        <span class="price">$30/hr</span>
-        <span class="rating">⭐ 4.8</span>
-        <span class="jobs">💼 20 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">🏢 BIM engineer creating detailed 3D building models.</p>
-  <div class="tags"><span>Revit</span><span>BIM</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+<!-- CARD 3 -->
+
+<div class="up-card hidden-card" data-skill="simulation" data-level="mid">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=42" class="avatar">
+<div class="user-info">
+<h3>Eng. Nourr.</h3>
+<span class="location">Giza, Egypt</span>
+<div class="stats">
+<span class="price">$28/hr</span>
+<span class="rating">⭐ 4.9</span>
+<span class="jobs">💼 27 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🎨 Interior designer creating modern & functional spaces.</p>
+<div class="tags"><span>SketchUp</span><span>V-Ray</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
-  <!-- NEW CARD 10 -->
-  <div class="up-card hidden-card" data-skill="architecture planning">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=30" class="avatar">
-    <div class="user-info">
-      <h3>Eng.  Fatma Adel .</h3>
-      <span class="location">Cairo, Egypt</span>
-      <div class="stats">
-        <span class="price">$34/hr</span>
-        <span class="rating">⭐ 4.9</span>
-        <span class="jobs">💼 22 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">📐 Architect specializing in modern residential projects.</p>
-  <div class="tags"><span>AutoCAD</span><span>Planning</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+<!-- CARD 4 -->
+
+<div class="up-card hidden-card" data-skill="avionics" data-level ="senior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=43" class="avatar">
+<div class="user-info">
+<h3>Eng. Rahma Ahmed.</h3>
+<span class="location">Mansoura, Egypt</span>
+<div class="stats">
+<span class="price">$33/hr</span>
+<span class="rating">⭐ 4.7</span>
+<span class="jobs">💼 20 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏙️ Urban planner for smart cities & land development.</p>
+<div class="tags"><span>Urban Design</span><span>GIS</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
-  <!-- NEW CARD 11 -->
-  <div class="up-card hidden-card" data-skill="site supervision">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=31" class="avatar">
-    <div class="user-info">
-      <h3>Eng. Saad .</h3>
-      <span class="location">Minya, Egypt</span>
-      <div class="stats">
-        <span class="price">$24/hr</span>
-        <span class="rating">⭐ 4.6</span>
-        <span class="jobs">💼 17 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">👷 Civil engineer supervising construction sites & quality.</p>
-  <div class="tags"><span>Site Work</span><span>Construction</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+<!-- CARD 5 -->
+
+<div class="up-card hidden-card" data-skill="propulsion" data-level="mid">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=44" class="avatar">
+<div class="user-info">
+<h3>Eng. Taghred.</h3>
+<span class="location">Tanta, Egypt</span>
+<div class="stats">
+<span class="price">$29/hr</span>
+<span class="rating">⭐ 4.8</span>
+<span class="jobs">💼 25 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">📐 Project engineer managing construction timelines & budgets.</p>
+<div class="tags"><span>Project Management</span><span>Primavera</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
-  <!-- NEW CARD 12 -->
-  <div class="up-card hidden-card" data-skill="interior architecture">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=32" class="avatar">
-    <div class="user-info">
-      <h3>Eng. Zeina Mohamed .</h3>
-      <span class="location">Beni Suef, Egypt</span>
-      <div class="stats">
-        <span class="price">$28/hr</span>
-        <span class="rating">⭐ 4.8</span>
-        <span class="jobs">💼 24 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">🏠 Interior architect blending aesthetics with functionality.</p>
-  <div class="tags"><span>Interior Design</span><span>3D Rendering</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+<!-- CARD 6 -->
+
+<div class="up-card hidden-card" data-skill="cad"  data-level="junior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=45" class="avatar">
+<div class="user-info">
+<h3>Eng. Lina.</h3>
+<span class="location">Asyut, Egypt</span>
+<div class="stats">
+<span class="price">$31/hr</span>
+<span class="rating">⭐ 5.0</span>
+<span class="jobs">💼 19 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏗️ BIM specialist for architectural & structural models.</p>
+<div class="tags"><span>Revit</span><span>BIM</span></div>
+<a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 7 -->
+
+<div class="up-card hidden-card" data-skill="aerodynamics" data-level="mid">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=27" class="avatar">
+<div class="user-info">
+<h3>Eng. Rana Hassan.</h3>
+<span class="location">Fayoum, Egypt</span>
+<div class="stats">
+<span class="price">$32/hr</span>
+<span class="rating">⭐ 4.8</span>
+<span class="jobs">💼 23 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏗️ Structural engineer ensuring safety & strong building design.</p>
+<div class="tags"><span>ETABS</span><span>Structural Design</span></div>
+<a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 8 -->
+
+<div class="up-card hidden-card" data-skill="simulation" data-level="mid">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=28" class="avatar">
+<div class="user-info">
+<h3>Eng. Amr Tarek.</h3>
+<span class="location">Asyut, Egypt</span>
+<div class="stats">
+<span class="price">$26/hr</span>
+<span class="rating">⭐ 4.7</span>
+<span class="jobs">💼 18 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🌿 Landscape architect designing outdoor spaces & parks.</p>
+<div class="tags"><span>Landscape</span><span>3D Design</span></div>
+<a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 9 -->
+
+<div class="up-card hidden-card" data-skill="cad" data-level="junior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=29" class="avatar">
+<div class="user-info">
+<h3>Eng. Noha Mahmoud.</h3>
+<span class="location">Sohag, Egypt</span>
+<div class="stats">
+<span class="price">$30/hr</span>
+<span class="rating">⭐ 4.8</span>
+<span class="jobs">💼 20 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏢 BIM engineer creating detailed 3D building models.</p>
+<div class="tags"><span>Revit</span><span>BIM</span></div>
+<a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 10 -->
+
+<div class="up-card hidden-card" data-skill="cad" data-level="senior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=30" class="avatar">
+<div class="user-info">
+<h3>Eng. Fatma Adel.</h3>
+<span class="location">Cairo, Egypt</span>
+<div class="stats">
+<span class="price">$34/hr</span>
+<span class="rating">⭐ 4.9</span>
+<span class="jobs">💼 22 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">📐 Architect specializing in modern residential projects.</p>
+<div class="tags"><span>AutoCAD</span><span>Planning</span></div>
+<a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+
+<div class="up-card hidden-card" data-skill="propulsion" data-level="senior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=31" class="avatar">
+<div class="user-info">
+<h3>Eng. Saad.</h3>
+<span class="location">Minya, Egypt</span>
+<div class="stats">
+<span class="price">$24/hr</span>
+<span class="rating">⭐ 4.6</span>
+<span class="jobs">💼 17 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">👷 Civil engineer supervising construction sites & quality.</p>
+<div class="tags"><span>Site Work</span><span>Construction</span></div>
+<a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 12 -->
+
+<div class="up-card hidden-card" data-skill="simulation" data-level="mid">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=32" class="avatar">
+<div class="user-info">
+<h3>Eng. Zeina Mohamed.</h3>
+<span class="location">Beni Suef, Egypt</span>
+<div class="stats">
+<span class="price">$28/hr</span>
+<span class="rating">⭐ 4.8</span>
+<span class="jobs">💼 24 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏠 Interior architect blending aesthetics with functionality.</p>
+<div class="tags"><span>Interior Design</span><span>3D Rendering</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
 <!-- CARD 13 -->
-<div class="up-card hidden-card" data-skill="structural concrete">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=52" class="avatar">
-    <div class="user-info">
-      <h3>Eng. Ahmed Samir</h3>
-      <span class="location">Nasr City, Egypt</span>
-      <div class="stats">
-        <span class="price">$33/hr</span>
-        <span class="rating">⭐ 4.9</span>
-        <span class="jobs">💼 28 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">🏗️ Structural engineer specialized in concrete buildings.</p>
-  <div class="tags"><span>Concrete Design</span><span>ETABS</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+
+<div class="up-card hidden-card" data-skill="aerodynamics" data-level="junior">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=52" class="avatar">
+<div class="user-info">
+<h3>Eng. Ahmed Samir</h3>
+<span class="location">Nasr City, Egypt</span>
+<div class="stats">
+<span class="price">$33/hr</span>
+<span class="rating">⭐ 4.9</span>
+<span class="jobs">💼 28 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏗️ Structural engineer specialized in concrete buildings.</p>
+<div class="tags"><span>Concrete Design</span><span>ETABS</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
 <!-- CARD 14 -->
-<div class="up-card hidden-card" data-skill="architecture rendering">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=53" class="avatar">
-    <div class="user-info">
-      <h3>Eng. Mohamed Adel</h3>
-      <span class="location">Heliopolis, Egypt</span>
-      <div class="stats">
-        <span class="price">$29/hr</span>
-        <span class="rating">⭐ 4.8</span>
-        <span class="jobs">💼 21 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">🏠 Architect creating realistic 3D visualizations.</p>
-  <div class="tags"><span>3D Rendering</span><span>Lumion</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+
+<div class="up-card hidden-card" data-skill="cad" data-level="mid">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=53" class="avatar">
+<div class="user-info">
+<h3>Eng. Mohamed Adel</h3>
+<span class="location">Heliopolis, Egypt</span>
+<div class="stats">
+<span class="price">$29/hr</span>
+<span class="rating">⭐ 4.8</span>
+<span class="jobs">💼 21 jobs</span>
+</div>
+</div>
+</div>
+<p class="description">🏠 Architect creating realistic 3D visualizations.</p>
+<div class="tags"><span>3D Rendering</span><span>Lumion</span></div>
+<a href="#" class="profile-btn">See profile</a>
 </div>
 
 <!-- CARD 15 -->
-<div class="up-card hidden-card" data-skill="site management">
-  <div class="card-header">
-    <img src="https://i.pravatar.cc/100?img=54" class="avatar">
-    <div class="user-info">
-      <h3>Eng. Omar Khaled</h3>
-      <span class="location">October, Egypt</span>
-      <div class="stats">
-        <span class="price">$25/hr</span>
-        <span class="rating">⭐ 4.7</span>
-        <span class="jobs">💼 19 jobs</span>
-      </div>
-    </div>
-  </div>
-  <p class="description">👷 Site engineer managing construction progress.</p>
-  <div class="tags"><span>Site Supervision</span><span>Project Control</span></div>
-  <a href="#" class="profile-btn">See profile</a>
+
+<div class="up-card hidden-card" data-skill="propulsion" data-level="mid">
+<div class="card-header">
+<img src="https://i.pravatar.cc/100?img=54" class="avatar">
+<div class="user-info">
+<h3>Eng. Omar Khaled</h3>
+<span class="location">October, Egypt</span>
+<div class="stats">
+<span class="price">$25/hr</span>
+<span class="rating">⭐ 4.7</span>
+<span class="jobs">💼 19 jobs</span>
 </div>
-
-
 </div>
-
-
-
+</div>
+<p class="description">👷 Site engineer managing construction progress.</p>
+<div class="tags"><span>Site Supervision</span><span>Project Control</span></div>
+<a href="#" class="profile-btn">See profile</a>
+</div>
+     </div>
       <!-- LOAD MORE BUTTON -->
       <div class="load-more">
-        <button id="loadMoreBtn">Load more Android developers</button>
+        <button id="loadMoreBtn">Load more Aerospace Engineers </button>
       </div>
 
     </section>
   </div>
-  
-  <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.classList.toggle("active");
-      });
-    });
-  </script>
+  <section class="why-section">
+  <h2>Why hire Engineers & Architects from TaskHunt?</h2>
 
-  <footer class="footer">
-    <div class="footer-container">
+  <div class="why-grid">
+    <div class="why-box">
+      <h4>✔ Certified Professionals</h4>
+      <p>All engineers and architects are verified with real project experience.</p>
+    </div>
 
-      <div class="footer-col">
-        <h3>Task Hunt</h3>
-        <ul>
-          <li><a href="#">About Task Hunt</a></li>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Rights Protection</a></li>
-        </ul>
-      </div>
+    <div class="why-box">
+      <h4>✔ Project-Based or Hourly Hiring</h4>
+      <p>Choose flexible pricing options that match your construction needs.</p>
+    </div>
 
-      <div class="footer-col">
-        <h3>Community</h3>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Discussions</a></li>
-          <li><a href="#">Topics</a></li>
-          <li><a href="#">User Experiences</a></li>
-        </ul>
-      </div>
+    <div class="why-box">
+      <h4>✔ Quality & Compliance</h4>
+      <p>Ensure your project follows safety standards and engineering codes.</p>
+    </div>
+  </div>
+</section>
 
-      <div class="footer-col">
+
+<section class="steps">
+  <h2>How it works</h2>
+
+  <div class="steps-grid">
+    <div class="step">1️⃣ Post your engineering project</div>
+    <div class="step">2️⃣ Review portfolios & proposals</div>
+    <div class="step">3️⃣ Start building your project</div>
+  </div>
+</section>
+
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>How much does it cost to hire an engineer or architect?</summary>
+    <p>Rates vary depending on specialization, experience, and project complexity.</p>
+  </details>
+
+  <details>
+    <summary>Can I hire engineers for short-term projects?</summary>
+    <p>Yes, you can hire professionals hourly, per milestone, or for full project delivery.</p>
+  </details>
+
+  <details>
+    <summary>Do engineers provide design drawings and 3D models?</summary>
+    <p>Most architects and engineers provide CAD drawings, 3D renderings, and full project documentation.</p>
+  </details>
+</section>
+
+  <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
         </div>
       </div>
-
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2025 Task Hunt — All rights reserved</p>
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
     </div>
-  </footer>
-  <script>
-  const cards = document.querySelectorAll(".up-card");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-  const editorFilter = document.getElementById("editorTypeFilter");
-  const priceFilter = document.getElementById("priceFilter");
-  const applyFilterBtn = document.getElementById("applyFilter");
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+const cards = Array.from(document.querySelectorAll(".up-card"));
+const skillFilter = document.getElementById("skillFilter");
+const levelFilter = document.getElementById("levelFilter");
+const priceFilter = document.getElementById("priceFilter");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+let visible = 6;
+const step = 6;
+/* FILTER FUNCTION */
+function getFilteredCards() {
+return cards.filter(card => {
+const skill = (card.dataset.skill || "").toLowerCase();
+const selectedSkill = skillFilter.value.toLowerCase();
+const skillMatch =
+selectedSkill === "all" || skill === selectedSkill;
+/* PRICE */
+const priceText = card.querySelector(".price")?.innerText || "";
+const price = parseInt(priceText.replace(/\D/g, ""));
+let priceMatch = true;
+if (priceFilter.value === "low")  priceMatch = price < 25;
+if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 35;
+if (priceFilter.value === "high") priceMatch = price > 35;
+/* LEVEL */
+const level = (card.dataset.level || "").toLowerCase();
+const selectedLevel = levelFilter.value.toLowerCase();
+const levelMatch =
+selectedLevel === "all" || level === selectedLevel;
+return skillMatch && priceMatch && levelMatch;
+});
+}
+/* UPDATE CARDS */
+function updateCards(){
+const filteredCards = getFilteredCards();
+cards.forEach(card => card.classList.add("hidden-card"));
+filteredCards.slice(0, visible).forEach(card=>{
+card.classList.remove("hidden-card");
+});
+if(loadMoreBtn){
+loadMoreBtn.style.display =
+visible < filteredCards.length ? "block" : "none";
+}
+}
+/* FILTER EVENTS */
+[skillFilter, levelFilter, priceFilter].forEach(filter => {
+if(filter){
+filter.addEventListener("change", () => {
+visible = 6;
+updateCards();
+});
+}
+});
+/* LOAD MORE */
+if(loadMoreBtn){
+loadMoreBtn.addEventListener("click", () => {
+visible += step;
+updateCards();
+});
+}
+/* START */
+updateCards();
+ 
+/* SIDEBAR ACCORDION */
 
-  let visible = 6;
-  const step = 6;
+const categoryButtons = document.querySelectorAll(".category-btn");
 
-  /* ===== HELPERS ===== */
-  function getFilteredCards() {
-    return [...cards].filter(card => {
+categoryButtons.forEach(btn => {
 
-      /* EDITOR TYPE FILTER */
-      const editor = card.dataset.editor || "";
-      const editorMatch =
-        editorFilter.value === "all" ||
-        editor === editorFilter.value;
+btn.addEventListener("click", () => {
 
-      /* PRICE FILTER */
-      let priceMatch = true;
-      const priceText = card.querySelector(".price")?.innerText || "";
-      const price = parseInt(priceText.replace(/\D/g, ""));
+const category = btn.closest(".category");
 
-      if (priceFilter.value === "low") priceMatch = price < 25;
-      if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 30;
-      if (priceFilter.value === "high") priceMatch = price > 30;
+document.querySelectorAll(".category").forEach(cat => {
 
-      return editorMatch && priceMatch;
-    });
-  }
+if(cat !== category){
+cat.classList.remove("active");
+}
 
-  function updateCards() {
-    const filteredCards = getFilteredCards();
+});
 
-    cards.forEach(card => card.classList.add("hidden-card"));
+category.classList.toggle("active");
 
-    filteredCards.slice(0, visible).forEach(card => {
-      card.classList.remove("hidden-card");
-    });
+});
 
-    if (loadMoreBtn) {
-      loadMoreBtn.style.display =
-        visible < filteredCards.length ? "block" : "none";
-    }
-  }
+});
 
-  /* ===== APPLY FILTER ===== */
-  applyFilterBtn.addEventListener("click", () => {
-    visible = 6;
-    updateCards();
-  });
+});
 
-  /* ===== LOAD MORE ===== */
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
-      visible += step;
-      updateCards();
-    });
-  }
-
-  /* ===== INIT ===== */
-  updateCards();
 </script>
-
 </body>
-
 </html>

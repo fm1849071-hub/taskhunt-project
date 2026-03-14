@@ -9,68 +9,40 @@
   <link rel="stylesheet" href="fontawesome-free-7.2.0-web/css/all.min.css">
   <link rel="stylesheet" href="home.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<!-- NAVBAR -->
+   <nav class="nav">
+    <div class="logo">
+      <a href="../Home/home.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+    </div>
 
-        <div class="container">
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
 
-            <a class="navbar-brand" href="../Home/home.html">
-                <img src="images/logo.png" >
-            </a>
+          
+           <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+           
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-
-                <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../work.html">Find Work</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Home/Hie Talent.html">Hire Talent</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about-section">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact-section">Contact</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="d-flex gap-2">
-
-                <button class="btn btn-light" onclick="window.location.href='../signup/asksignup.html'">
-
-                    Login
-
-                </button>
-
-                <button class="btn btn-primary" onclick="window.location.href='../signup/asksignup.html'">
-
-                    Sign Up
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </nav>
   <section class="hero-section">
     <div class="hero-wrapper">
       <div class="hero-left">
@@ -137,7 +109,7 @@
               <strong>Ahmed Hassan</strong>
               <div class="rating">
                 <div class="stars" style="--rating: 3.5;"></div>
-                <span>3.5</span>
+               
               </div>
             </div>
           </div>
@@ -175,7 +147,7 @@
               <strong>Sarah Ali</strong>
               <div class="rating">
                 <div class="stars" style="--rating: 3.8;"></div>
-                <span>3.8</span>
+                
               </div>
             </div>
           </div>
@@ -213,7 +185,7 @@
               <strong>Mohamed Tarek</strong>
               <div class="rating">
                 <div class="stars" style="--rating: 4.5;"></div>
-                <span>4.5</span>
+            
               </div>
             </div>
           </div>
@@ -251,7 +223,7 @@
               <strong>Omar Adel</strong>
               <div class="rating">
                 <div class="stars" style="--rating: 4.1;"></div>
-                <span>4.1</span>
+           
               </div>
             </div>
           </div>
@@ -279,7 +251,7 @@
               <h4 class="client-name">Ahmed Rayan</h4>
               <div class="rating">
                 <div  class="stars" style="--rating: 4.1;"></div>
-                <span>4.1</span>
+                
               </div>
             </div>
           </div>
@@ -302,7 +274,7 @@
               <h4 class="client-name">Sarah Jamal</h4>
               <div class="rating">
                 <div class="stars" style="--rating: 4.5;"></div>
-                <span>4.1</span>
+               
               </div>
             </div>
           </div>
@@ -335,22 +307,24 @@
         <h3>Development & IT</h3>
       </div>
     </a>
-
+<a href="../Home/Design&Creative/Graphic Designers/Graphic Designers.html"class="lin">
     <div class="category">
       <i class="fa-solid fa-palette icon"></i>
       <h3>Design & Creative</h3>
     </div>
-
+    </a>
+<a href="../Home/sales/Affiliate_Marketers.html"class="lin">
     <div class="category">
       <i class="fa-solid fa-chart-line icon"></i>
       <h3>Sales & Marketing</h3>
     </div>
-
+    </a>
+<a href="../Home/Writing & Translation/Business plan writers.html"class="lin">
     <div class="category">
       <i class="fa-solid fa-language icon"></i>
       <h3>Writing & Translation</h3>
     </div>
-
+</a>
     <a href="../Home/Admin & Support Specialties/Editors.html" class="lin">
       <div class="category">
         <i class="fa-solid fa-headset icon"></i>
@@ -402,51 +376,64 @@
     </section>
 
     <!-- FEATURED SERVICES -->
-
-
-    <section class="features">
-      <h2 class="features-title">Why Task Hunt is Your Best Choice to Get Work Done</h2>
-
-      <div class="features-box">
-
-        <div class="feature-item">
-          <img src="images/1.jpeg" alt="24/7 Customer Support">
-          <h3>24/7 Customer Support</h3>
-          <p>Professional team to respond to inquiries and solve issues quickly</p>
+    <section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="features-title">Why Task Hunt is Your Best Choice</h2>
+            <p class="features-subtitle">We provide a secure and efficient ecosystem for both freelancers and clients</p>
         </div>
 
-        <div class="feature-item">
-          <img src="images/2.jpeg" alt="Affordable Prices">
-          <h3>Affordable Prices</h3>
-          <p>High-quality services starting from just $5</p>
-        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <img src="images/3-removebg-preview.png" alt="Categories">
+                </div>
+                <h3>Over 350 Categories</h3>
+                <p>Explore a vast array of specialized categories tailored to meet every professional need.</p>
+            </div>
 
-        <div class="feature-item">
-          <img src="images/3.jpeg" alt="Over 350 Categories">
-          <h3>Over 350 Categories</h3>
-          <p>+350 categories offering the best services in all fields</p>
-        </div>
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <img src="images/074325ae7cdf4a80da970d8e30749536-removebg-preview.png" alt="Prices">
+                </div>
+                <h3>Affordable Prices</h3>
+                <p>Get high-quality results without breaking the bank, with services starting as low as $5.</p>
+            </div>
 
-        <div class="feature-item">
-          <img src="images/PM.png" alt="Professional Service Providers">
-          <h3>Professional Service Providers</h3>
-          <p>Profiles showcasing sellers' services and previous ratings</p>
-        </div>
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <img src="images/91ff3480-d383-4671-92d8-c2f70e31daa1-removebg-preview.png" alt="Support">
+                </div>
+                <h3>24/7 Customer Support</h3>
+                <p>Our dedicated support team is available around the clock to assist you with any inquiries.</p>
+            </div>
 
-        <div class="feature-item">
-          <img src="images/5.jpeg" alt="Safe and Reliable Transactions">
-          <h3>Safe and Reliable Transactions</h3>
-          <p>Task providers verify their accounts to ensure security and quality</p>
-        </div>
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <img src="images/6-removebg-preview.png" alt="Protection">
+                </div>
+                <h3>Rights Protection</h3>
+                <p>Secure payment systems that guarantee your financial rights until the work is delivered.</p>
+            </div>
 
-        <div class="feature-item">
-          <img src="images/6.jpeg" alt="Rights Protection">
-          <h3>Rights Protection</h3>
-          <p>Task Hunt ensures your financial rights and that you receive the work as promised</p>
-        </div>
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <img src="images/5-removebg-preview.png" alt="Transactions">
+                </div>
+                <h3>Safe Transactions</h3>
+                <p>Verified profiles and encrypted data ensure every transaction is 100% secure.</p>
+            </div>
 
-      </div>
-    </section>
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <img src="images/da2e6e42-6d51-4598-8d94-6a3058fcef9b-removebg-preview.png" alt="Providers">
+                </div>
+                <h3>Expert Providers</h3>
+                <p>Collaborate with top-tier freelancers vetted for their skills and professional history.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
     <!-- CTA -->
@@ -517,7 +504,7 @@
     <p>© 2025 Task Hunt — All rights reserved</p>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

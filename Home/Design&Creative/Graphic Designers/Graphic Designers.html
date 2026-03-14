@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Design & Creative | TaskHunt</title>
-  <link rel="stylesheet" href="Graphic Designers.css">
+  <link rel="stylesheet" href="../../Development&it/ALL.css">
 </head>
 
 <body>
@@ -13,20 +13,24 @@
  <!-- NAVBAR -->
   <nav class="nav">
     <div class="logo">
-      <a href="../../Home/home.html" class="logo">
-      <img src="../images/logo.png" alt="Logo"></a>
+      <a href="../Home/home.html">
+        <img src="../../images/logo.png" alt="Logo">
+      </a>
     </div>
-    <ul>
-      <li><a href="#">Find Work</a></li>
-      <li><a href="#">Hire Talent</a></li>
-      <li><a href="../../about/about.html">About</a></li>
-      <li><a href="../../contactus/contactus.html">Contact</a></li>
-      <li><a href="../../login/login.html">Login</a></li>
-      <li>
-        <a href="../../signup/asksignup.html"><button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button></a>
-      </li>
+
+    <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
     </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    </div>
   </nav>
+
   <section class="hero-title">
     <h2>Design & Creative</h2>
     <span class="hero-divider">|</span>
@@ -49,6 +53,7 @@
 
 
       </select>
+      
 
       <select id="levelFilter">
         <option value="all">Experience Level</option>
@@ -64,7 +69,7 @@
         <option value="high">Above $30</option>
       </select>
 
-      
+      <button id="applyFilter">Apply Filter</button>
 
     </div>
   </section>
@@ -76,56 +81,38 @@
 
 
       <!-- Data & AI -->
-      <div class="category">
+       <div class="category">
         <button class="category-btn">Data & AI <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Data Analysis & Visualization</a></li>
-          <li><a href="#">AI Developers</a></li>
-          <li><a href="#">Machine Learning Models</a></li>
-          <li><a href="#">AI Chatbots & Automations</a></li>
-          <li><a href="#">Data Engineering</a></li>
-          <li><a href="#">Chatbot Developers</a></li>
-          <li><a href="#">Deep Learning</a></li>
-          <li><a href="#">Neural Networks</a></li>
-          <li><a href="#">Predictive Analytics</a></li>
-          <li><a href="#">Generative AI</a></li>
-          <li><a href="#">LLM Specialist</a></li>
-          <li><a href="#">Computer Vision</a></li>
-          <li><a href="#">Python Automation</a></li>
-          <li><a href="#">AI Scripting</a></li>
-          <li><a href="#">Data Scraping & Cleaning</a></li>
-          <li><a href="#">Sentiment Analysis</a></li>
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
         </ul>
       </div>
 
       <!-- Development & IT -->
-      <div class="category">
+   <div class="category">
         <button class="category-btn">Development & IT <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href=".net.html">.NET Developers</a></li>
-          <li><a href="ai.html">AI Developers</a></li>
-          <li><a href="android.html">Android Developers</a></li>
-          <li><a href="#">Backend Developers</a></li>
-          <li><a href="#">Bubble.io Developers</a></li>
-          <li><a href="#">Chatbot Developers</a></li>
-          <li><a href="#">Cyber Security Engineers</a></li>
-          <li><a href="#">Data Engineers</a></li>
-          <li><a href="#">DevOps Engineers</a></li>
-          <li><a href="#">Full Stack Engineers</a></li>
-          <li><a href="#">Game Developers</a></li>
-          <li><a href="#">Golang Developers</a></li>
-          <li><a href="#">Java Developers</a></li>
-          <li><a href="#">Laravel Developers</a></li>
-          <li><a href="#">Minecraft Developers</a></li>
-          <li><a href="#">Next.js Developers</a></li>
-          <li><a href="#">Odoo Developers</a></li>
-          <li><a href="#">PHP Developers</a></li>
-          <li><a href="#">Product Managers</a></li>
-          <li><a href="#">QA Engineers</a></li>
-          <li><a href="#">React.js Developers</a></li>
-          <li><a href="#">Salesforce Developers</a></li>
-          <li><a href="#">WooCommerce Developers</a></li>
-          <li><a href="#">Zapier Automation Developers</a></li>
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
         </ul>
       </div>
 
@@ -133,24 +120,18 @@
       <div class="category">
         <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Graphic Design</a></li>
-          <li><a href="#">Adobe Photoshop</a></li>
-          <li><a href="#">Adobe Illustrator</a></li>
-          <li><a href="#">Logo Design</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Adobe InDesign</a></li>
-          <li><a href="#">Illustration</a></li>
-          <li><a href="#">Print Design</a></li>
-          <li><a href="#">Design Thinking</a></li>
-          <li><a href="#">Infographic</a></li>
-          <li><a href="#">Creative Strategy</a></li>
-          <li><a href="#">Layout Design</a></li>
-          <li><a href="#">Brand Guidelines</a></li>
-          <li><a href="#">Interaction Design</a></li>
-          <li><a href="#">Social Media Imagery</a></li>
-          <li><a href="#">Banner Ad Design</a></li>
-          <li><a href="#">Brand Identity & Guidelines</a></li>
-          <li><a href="#">User Interface Design</a></li>
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
         </ul>
       </div>
 
@@ -158,30 +139,16 @@
       <div class="category">
         <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Affiliate Marketers</a></li>
-          <li><a href="#">Amazon PPC Experts</a></li>
-          <li><a href="#">Branding Experts</a></li>
-          <li><a href="#">Business Development Managers</a></li>
-          <li><a href="#">Campaign Managers</a></li>
-          <li><a href="#">Cold Callers</a></li>
-          <li><a href="#">Community Managers</a></li>
-          <li><a href="#">Digital Marketers</a></li>
-          <li><a href="#">Ecommerce Consultants</a></li>
-          <li><a href="#">Facebook Ads Specialists</a></li>
-          <li><a href="#">Ghostwriters</a></li>
-          <li><a href="#">HubSpot Experts</a></li>
-          <li><a href="#">Market Researchers</a></li>
-          <li><a href="#">Marketing Managers</a></li>
-          <li><a href="#">Pitch Deck Writers</a></li>
-          <li><a href="#">Public Relations Specialists</a></li>
-          <li><a href="#">Sales Directors</a></li>
-          <li><a href="#">Sales Engineers</a></li>
-          <li><a href="#">Sales Representatives</a></li>
-          <li><a href="#">SEO Experts</a></li>
-          <li><a href="#">SEO Writers</a></li>
-          <li><a href="#">T-Shirt Designers</a></li>
-          <li><a href="#">TikTok Experts</a></li>
-          <li><a href="#">Virtual Assistants</a></li>
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
         </ul>
       </div>
 
@@ -199,18 +166,6 @@
           <li><a href="#">Essay Writers</a></li>
           <li><a href="#">Fiction Writers</a></li>
           <li><a href="#">Grant Writers</a></li>
-          <li><a href="#">Headline Writers</a></li>
-          <li><a href="#">Legal Writers</a></li>
-          <li><a href="#">Medical Writers</a></li>
-          <li><a href="#">Proposal Writers</a></li>
-          <li><a href="#">Report Writers</a></li>
-          <li><a href="#">Research Paper Writers</a></li>
-          <li><a href="#">Resume Writers</a></li>
-          <li><a href="#">Scientific Writers</a></li>
-          <li><a href="#">Screenwriters</a></li>
-          <li><a href="#">SEO Writers</a></li>
-          <li><a href="#">Speech Writers</a></li>
-          <li><a href="#">Technical Writers</a></li>
         </ul>
       </div>
 
@@ -218,20 +173,17 @@
       <div class="category">
         <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
           <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
           <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
           <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
           <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
           <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
-          <li><a href="#">Microsoft Outlook Specialists</a></li>
-          <li><a href="#">Microsoft Word Experts</a></li>
-          <li><a href="#">Personal Assistants</a></li>
-          <li><a href="#">PowerPoint Experts</a></li>
-          <li><a href="#">Project Managers</a></li>
-          <li><a href="#">Proofreaders</a></li>
-          <li><a href="#">Recruiters</a></li>
-          <li><a href="#">Research Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
         </ul>
       </div>
 
@@ -239,22 +191,16 @@
       <div class="category">
         <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Business Analysts</a></li>
-          <li><a href="#">Financial Analysts</a></li>
-          <li><a href="#">Financial Modelers</a></li>
-          <li><a href="#">Forex Traders</a></li>
-          <li><a href="#">Management Consultants</a></li>
-          <li><a href="#">Tax Preparers</a></li>
-          <li><a href="#">Data Entry Specialists</a></li>
-          <li><a href="#">Financial Forecasting Specialists</a></li>
-          <li><a href="#">Financial Reporting Analysts</a></li>
-          <li><a href="#">Intuit TurboTax Specialists</a></li>
-          <li><a href="#">Payroll Processing Specialists</a></li>
-          <li><a href="#">Financial Accountants</a></li>
-          <li><a href="#">Financial Managers</a></li>
-          <li><a href="#">Financial Reporting Specialists</a></li>
-          <li><a href="#">M&A Consultants</a></li>
-          <li><a href="#">Project Managers</a></li>
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
         </ul>
       </div>
 
@@ -262,73 +208,52 @@
       <div class="category">
         <button class="category-btn">Legal <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Corporate Law Professionals</a></li>
-          <li><a href="#">Criminal Law Professionals</a></li>
-          <li><a href="#">Family Law Professionals</a></li>
-          <li><a href="#">Fraud Analysts</a></li>
-          <li><a href="#">GDPR Specialists</a></li>
-          <li><a href="#">Immigration Law Professionals</a></li>
-          <li><a href="#">International Law Professionals</a></li>
-          <li><a href="#">Legal Advisors</a></li>
-          <li><a href="#">Legal Assistants</a></li>
-          <li><a href="#">Legal Consultants</a></li>
-          <li><a href="#">Legal Researchers</a></li>
-          <li><a href="#">Legal Transcriptionists</a></li>
-          <li><a href="#">Legal Translators</a></li>
-          <li><a href="#">Legal Writers</a></li>
-          <li><a href="#">Patent Law Professionals</a></li>
-          <li><a href="#">Real Estate Law Professionals</a></li>
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
         </ul>
       </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
 
-      <!-- HR & Training -->
-      <div class="category">
-        <button class="category-btn">HR & Training <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="#">Corporate Law Professionals</a></li>
-          <li><a href="#">Criminal Law Professionals</a></li>
-          <li><a href="#">Family Law Professionals</a></li>
-          <li><a href="#">Fraud Analysts</a></li>
-          <li><a href="#">GDPR Specialists</a></li>
-          <li><a href="#">Immigration Law Professionals</a></li>
-          <li><a href="#">International Law Professionals</a></li>
-          <li><a href="#">Legal Advisors</a></li>
-          <li><a href="#">Legal Assistants</a></li>
-          <li><a href="#">Legal Consultants</a></li>
-          <li><a href="#">Legal Researchers</a></li>
-          <li><a href="#">Legal Transcriptionists</a></li>
-          <li><a href="#">Legal Translators</a></li>
-          <li><a href="#">Legal Writers</a></li>
-          <li><a href="#">Patent Law Professionals</a></li>
-          <li><a href="#">Real Estate Law Professionals</a></li>
-        </ul>
-      </div>
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
 
       <!-- Engineering & Architecture -->
       <div class="category">
-        <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Aerospace Engineers</a></li>
-          <li><a href="#">AutoCAD Developers</a></li>
-          <li><a href="#">Engineering Consultants</a></li>
-          <li><a href="#">Home Designers</a></li>
-          <li><a href="#">Interior Architects</a></li>
-          <li><a href="#">Parametric Designers</a></li>
-          <li><a href="#">Architectural Modelers</a></li>
-          <li><a href="#">CI/CD Engineers</a></li>
-          <li><a href="#">Engineering Designers</a></li>
-          <li><a href="#">Hydraulic Engineers</a></li>
-          <li><a href="#">Landscape Architects</a></li>
-          <li><a href="#">Polymer Engineers</a></li>
-          <li><a href="#">Architectural Rendering Specialists</a></li>
-          <li><a href="#">Design Engineers</a></li>
-          <li><a href="#">Fire Protection Engineers</a></li>
-          <li><a href="#">Infrastructure Engineers</a></li>
-          <li><a href="#">Naval Architects</a></li>
-          <li><a href="#">Structural Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
         </ul>
       </div>
-
     </aside>
 
 
@@ -338,7 +263,7 @@
       <div class="cards-grid">
 
        <!-- card 1 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="graphic design brand identity design" data-level="junior">
   <div class="card-header">
     <img src="Ethan W..webp" class="avatar">
     <div class="user-info">
@@ -359,7 +284,7 @@
 </div>
 
 <!-- card 2 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="adobe illustrator graphic design" data-level="mid">
   <div class="card-header">
     <img src="Maya L..jpg" class="avatar">
     <div class="user-info">
@@ -380,7 +305,7 @@
 </div>
 
 <!-- card 3 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="print design graphic design" data-level="senior">
   <div class="card-header">
     <img src="Ahmed S..jpg" class="avatar">
     <div class="user-info">
@@ -401,7 +326,7 @@
 </div>
 
 <!-- card 4 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="brand identity design adobe illustrator" data-level="junior">
   <div class="card-header">
     <img src="Isabella G..jpg" class="avatar">
     <div class="user-info">
@@ -422,7 +347,7 @@
 </div>
 
 <!-- card 5 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="social media design adobe photoshop" data-level="mid">
   <div class="card-header">
     <img src="Noah P..jpg" class="avatar">
     <div class="user-info">
@@ -443,7 +368,7 @@
 </div>
 
 <!-- card 6 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="graphic design adobe illustrator" data-level="senior">
   <div class="card-header">
     <img src="Fatima Z..jpg" class="avatar">
     <div class="user-info">
@@ -464,7 +389,7 @@
 </div>
 
 <!-- card 7 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="photo editing adobe photoshop" data-level="junior">
   <div class="card-header">
     <img src="Leo K..webp" class="avatar">
     <div class="user-info">
@@ -485,7 +410,7 @@
 </div>
 
 <!-- card 8 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="graphic design adobe illustrator" data-level="mid">
   <div class="card-header">
     <img src="Grace H..jpg" class="avatar">
     <div class="user-info">
@@ -506,7 +431,7 @@
 </div>
 
 <!-- card 9 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="print design brand identity design" data-level="senior">
   <div class="card-header">
     <img src="Omar R..jpg" class="avatar">
     <div class="user-info">
@@ -527,7 +452,7 @@
 </div>
 
 <!-- card 10 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="social media design graphic design" data-level="junior">
   <div class="card-header">
     <img src="Hannah B..webp" class="avatar">
     <div class="user-info">
@@ -548,7 +473,7 @@
 </div>
 
 <!-- card 11 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="photo editing adobe photoshop" data-level="mid">
   <div class="card-header">
     <img src="Victor N..webp" class="avatar">
     <div class="user-info">
@@ -569,7 +494,7 @@
 </div>
 
 <!-- card 12 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="graphic design adobe illustrator" data-level="senior">
   <div class="card-header">
     <img src="Yuki T..jpg" class="avatar">
     <div class="user-info">
@@ -590,14 +515,14 @@
 </div>
 
 <!-- card 13 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="brand identity design graphic design" data-level="mid">
   <div class="card-header">
     <img src="Carlos E..jpg" class="avatar">
     <div class="user-info">
       <h3>Carlos E.</h3>
       <span class="location"> Bogotá, Colombia </span>
       <div class="stats">
-        <span class="price">$14/hr</span>
+        <span class="price">$34/hr</span>
         <span class="rating">⭐ 4.8</span>
         <span class="jobs">💼 163 jobs</span>
       </div>
@@ -611,7 +536,7 @@
 </div>
 
 <!-- card 14 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="print design adobe illustrator" data-level="senior">
   <div class="card-header">
     <img src="Sophie D..jpg" class="avatar">
     <div class="user-info">
@@ -632,7 +557,7 @@
 </div>
 
 <!-- card 15 -->
-<div class="up-card hidden-card" data-skill="graphic design">
+<div class="up-card hidden-card" data-skill="graphic design social media design" data-levle="junior">
   <div class="card-header">
     <img src="Daniel J..jpg" class="avatar">
     <div class="user-info">
@@ -712,98 +637,189 @@
 
 
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
+          <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
 
-  const cards = Array.from(document.querySelectorAll(".up-card"));
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+        </div>
+      </div>
+    </div>
 
-  const skillFilter = document.getElementById("skillFilter");
-  const levelFilter = document.getElementById("levelFilter");
-  const priceFilter = document.getElementById("priceFilter");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
+    </div>
 
-  let visible = 6;
-  const step = 6;
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
 
-  function getFilteredCards() {
-    return cards.filter(card => {
+  </div>
 
-      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
-      const selectedSkill = skillFilter.value.toLowerCase();
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
 
-      const skillMatch =
-        selectedSkill === "all" || skills.includes(selectedSkill);
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
 
-      const level = (card.dataset.level || "").toLowerCase();
-      const selectedLevel = levelFilter.value.toLowerCase();
+                const cards = Array.from(document.querySelectorAll(".up-card"));
 
-      const levelMatch =
-        selectedLevel === "all" || level === selectedLevel;
+                const skillFilter = document.getElementById("skillFilter");
+                const levelFilter = document.getElementById("levelFilter");
+                const priceFilter = document.getElementById("priceFilter");
 
-      const priceText = card.querySelector(".price")?.innerText || "";
-      const price = parseInt(priceText.replace(/\D/g, ""));
-      let priceMatch = true;
+                const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-      if (priceFilter.value === "low")  priceMatch = price < 25;
-      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
-      if (priceFilter.value === "high") priceMatch = price > 40;
+                let visible = 6;
+                const step = 6;
 
-      return skillMatch && levelMatch && priceMatch;
-    });
-  }
+                function getFilteredCards() {
 
-  function updateCards() {
-    const filteredCards = getFilteredCards();
+                    return cards.filter(card => {
 
-    cards.forEach(card => card.classList.add("hidden-card"));
+                        /* ===== SKILL FILTER ===== */
+                        const skills = (card.dataset.skill || "").toLowerCase();
+                        const skillValue = skillFilter.value.toLowerCase();
 
-    filteredCards.slice(0, visible).forEach(card => {
-      card.classList.remove("hidden-card");
-    });
+                        const skillMatch =
+                            skillValue === "all" || skills.includes(skillValue);
 
-    if (loadMoreBtn) {
-      loadMoreBtn.style.display =
-        visible < filteredCards.length ? "block" : "none";
-    }
-  }
 
-  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
-  [skillFilter, levelFilter, priceFilter].forEach(filter => {
-    if (filter) {
-      filter.addEventListener("change", () => {
-        visible = 6;     // يرجع يعرض من الأول
-        updateCards();
-      });
-    }
-  });
+                        /* ===== LEVEL FILTER ===== */
+                        const level = (card.dataset.level || "").toLowerCase();
+                        const levelValue = levelFilter.value.toLowerCase();
 
-  /* LOAD MORE */
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
-      visible += step;
-      updateCards();
-    });
-  }
+                        const levelMatch =
+                            levelValue === "all" || level === levelValue;
 
-  updateCards();
 
-  /* SIDEBAR ACCORDION */
-  const categoryButtons = document.querySelectorAll(".category-btn");
+                        /* ===== PRICE FILTER ===== */
+                        const priceText = card.querySelector(".price")?.innerText || "";
+                        const price = parseInt(priceText.replace(/\D/g, ""));
 
-  categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const category = btn.closest(".category");
+                        let priceMatch = true;
 
-      document.querySelectorAll(".category").forEach(cat => {
-        if (cat !== category) cat.classList.remove("active");
-      });
+                        if (priceFilter.value === "low") priceMatch = price < 25;
+                        if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 30;
+                        if (priceFilter.value === "high") priceMatch = price > 30;
 
-      category.classList.toggle("active");
-    });
-  });
 
-});
-</script>
+                        return skillMatch && levelMatch && priceMatch;
+
+                    });
+                }
+
+                function updateCards() {
+
+                    const filteredCards = getFilteredCards();
+
+                    /* اخفاء كل الكاردات */
+                    cards.forEach(card => {
+                        card.classList.add("hidden-card");
+                    });
+
+                    /* اظهار الكاردات المناسبة */
+                    filteredCards.slice(0, visible).forEach(card => {
+                        card.classList.remove("hidden-card");
+                    });
+
+                    /* التحكم في زر Load More */
+                    if (visible >= filteredCards.length) {
+                        loadMoreBtn.style.display = "none";
+                    } else {
+                        loadMoreBtn.style.display = "block";
+                    }
+                }
+
+                /* ===== AUTO FILTER ===== */
+
+                [skillFilter, levelFilter, priceFilter].forEach(filter => {
+                    filter.addEventListener("change", () => {
+                        visible = 6;
+                        updateCards();
+                    });
+                });
+
+
+                /* ===== LOAD MORE ===== */
+
+                loadMoreBtn.addEventListener("click", () => {
+
+                    visible += step;
+
+                    updateCards();
+
+                });
+
+
+                /* ===== INIT ===== */
+
+                updateCards();
+
+
+
+                /* ===============================
+                   SIDEBAR ACCORDION
+                =============================== */
+
+                const categoryButtons = document.querySelectorAll(".category-btn");
+
+                categoryButtons.forEach(btn => {
+                    btn.addEventListener("click", () => {
+
+                        const currentCategory = btn.closest(".category");
+
+                        document.querySelectorAll(".category").forEach(cat => {
+                            if (cat !== currentCategory) {
+                                cat.classList.remove("active");
+                            }
+                        });
+
+                        currentCategory.classList.toggle("active");
+
+                    });
+                });
+
+            });
+        </script>
 
 </body>
 

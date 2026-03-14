@@ -5,616 +5,31 @@
   <meta charset="UTF-8">
   <title>Machine Learning Models | TaskHunt</title>
 
-  <style>
-     :root {
-      --c1: #00A8FF;
-      --c2: #0090E0;
-      --c3: #0077B8;
-      --c4: #051923;
-      --c5: #ffffff;
-      --white: #ffffff;
-      --light: #e6f7ff;
-    }
+    <link rel="stylesheet" href="ALL.css">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
-
-    body {
-      background: #f9fafb;
-      color: #111827;
-    }
-
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0px 30px;
-      height: 50px;
-      background: var(--white);
-    }
-
-    .logo img {
-      height: 180px;
-      align-items: center;
-      padding-bottom: 25px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      color: var(--c4);
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: var(--c1);
-    }
-
-    .hero-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      padding: 60px 6% 30px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .hero-title h2 {
-      font-size: 20px;
-      color: #6b7280;
-      font-weight: 500;
-    }
-
-    .hero-title h1 {
-      font-size: 38px;
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .hero-divider {
-      font-size: 26px;
-      color: #9ca3af;
-    }
-
-    @media (max-width:768px) {
-      .hero-title {
-        flex-direction: column;
-        gap: 6px;
-      }
-      .hero-divider {
-        display: none;
-      }
-    }
-
-    /* ===== FILTER BAR ===== */
-    .filter-bar {
-      width: 100%;
-      padding: 25px 6%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .filter-container {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 18px 22px;
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .filter-container select {
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid #d1d5db;
-      font-size: 14px;
-      outline: none;
-      cursor: pointer;
-      min-width: 160px;
-    }
-
-    .filter-container select:focus {
-      border-color: #005b84;
-    }
-
-    .filter-container button {
-      padding: 12px 26px;
-      background: #005b84;
-      color: #ffffff;
-      border: none;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .filter-container button:hover {
-      background: #004666;
-    }
-
-    @media (max-width: 768px) {
-      .filter-container {
-        flex-direction: column;
-        width: 100%;
-      }
-      .filter-container select,
-      .filter-container button {
-        width: 100%;
-      }
-    }
-
-    /* PAGE LAYOUT */
-    .page-layout {
-      display: flex;
-      gap: 30px;
-      padding: 40px 6% 10px;
-      align-items: flex-start;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 260px;
-      flex-shrink: 0;
-      border-right: 1px solid #e5e7eb;
-      padding-right: 20px;
-    }
-
-    .sidebar h3 {
-      margin-bottom: 20px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .category {
-      border-bottom: 1px solid #f1f5f9;
-    }
-
-    .category-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 12px 0;
-      font-size: 14px;
-      font-weight: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      color: #111827;
-    }
-
-    .category-btn:hover {
-      color: #005b84;
-    }
-
-    .arrow {
-      transition: transform 0.3s ease;
-      font-size: 18px;
-    }
-
-    .sub-categories {
-      list-style: none;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-      padding-left: 10px;
-      margin-bottom: 6px;
-    }
-
-    .sub-categories li a {
-      display: block;
-      font-size: 13px;
-      padding: 6px 0;
-      color: #374151;
-      text-decoration: none;
-      transition: color 0.2s ease, padding-left 0.2s ease;
-    }
-
-    .sub-categories li a:hover {
-      color: #005b84;
-      padding-left: 6px;
-    }
-
-    .category.active .sub-categories {
-      max-height: 900px;
-    }
-
-    .category.active .arrow {
-      transform: rotate(90deg);
-    }
-
-    /* CARDS */
-    .cards-wrapper {
-      flex: 1;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .up-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      transition: 0.25s;
-    }
-
-    .up-card:hover {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transform: translateY(-4px);
-    }
-
-    .card-header {
-      display: flex;
-      gap: 12px;
-    }
-
-    .avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-    }
-
-    .user-info h3 {
-      font-size: 15px;
-    }
-
-    .location {
-      font-size: 12px;
-      color: #6b7280;
-    }
-
-    .stats {
-      display: flex;
-      gap: 10px;
-      font-size: 13px;
-      margin-top: 6px;
-    }
-
-    .rating {
-      color: #f59e0b;
-    }
-
-    .description {
-      font-size: 13px;
-      margin: 12px 0;
-      line-height: 1.5;
-    }
-
-    .tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .tags span {
-      background: #f3f4f6;
-      padding: 5px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-    }
-
-    .profile-btn {
-      margin-top: auto;
-      text-align: center;
-      padding: 12px;
-      background: #005b84;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    @media (max-width: 1200px) {
-      .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .page-layout {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #e5e7eb;
-        padding-bottom: 20px;
-      }
-      .cards-grid {
-        grid-template-columns: repeat(1, 1fr);
-      }
-    }
-
-    /* Footer */
-    .footer {
-      background: #051923;
-      padding: 40px 20px;
-      font-family: "Cairo", sans-serif;
-      direction: ltr;
-      text-align: left;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .footer-col {
-      width: 30%;
-      min-width: 250px;
-    }
-
-    .footer-col h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
-
-    .footer-col p {
-      color: #ddd;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-col ul li {
-      margin: 10px 0;
-    }
-
-    .footer-col ul li a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    .footer-col ul li a:hover {
-      opacity: 0.8;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 12px;
-      margin-top: 15px;
-    }
-
-    .icon {
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .icon:hover {
-      transform: scale(1.1);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
-      font-size: 14px;
-      color: #ffffff;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .footer-col {
-        width: 100%;
-      }
-    }
-
-    .load-more {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    .load-more button {
-      padding: 14px 40px;
-      background: #005b84;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .load-more button:hover {
-      background: #004666;
-    }
-
-    /* ===== WHY SECTION ===== */
-    .why-section {
-      padding: 70px 6%;
-      text-align: center;
-    }
-
-    .why-section h2 {
-      font-size: 30px;
-      margin-bottom: 40px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .why-box {
-      background: #ffffff;
-      padding: 30px 20px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .why-box h4 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #005b84;
-    }
-
-    .why-box p {
-      font-size: 14px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
-
-    /* ===== HOW IT WORKS ===== */
-    .steps {
-      padding: 70px 6%;
-      text-align: center;
-    }
-
-    .steps h2 {
-      font-size: 30px;
-      margin-bottom: 40px;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .step {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 30px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    /* ===== FAQ ===== */
-    .faq {
-      padding: 70px 6%;
-    }
-
-    .faq h2 {
-      text-align: center;
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-
-    .faq details {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      padding: 15px 20px;
-      margin-bottom: 15px;
-    }
-
-    .faq summary {
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .faq p {
-      font-size: 14px;
-      color: #4b5563;
-      margin-top: 10px;
-      line-height: 1.6;
-    }
-
-    .hidden-card {
-      display: none;
-    }
-
-    /* ===== CTA ===== */
-    .cta {
-      padding: 80px 6%;
-      text-align: center;
-      color: #ffffff;
-    }
-
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 25px;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      padding: 15px 45px;
-      background: #005b84;
-      color: #ffffff;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-3px);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .why-grid,
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+   <!-- NAVBAR -->
   <nav class="nav">
     <div class="logo">
-      <a href="../Home/home.html" class="logo">
-      <img src="images/logo.png" alt="Logo"></a>
+      <a href="../Home/home.html">
+        <img src="../images/logo.png" alt="Logo">
+      </a>
     </div>
-    <ul>
-      <li><a href="#">Find Work</a></li>
-      <li><a href="#">Hire Talent</a></li>
-      <li><a href="../about/about.html">About</a></li>
-      <li><a href="../contactus/contactus.html">Contact</a></li>
-      <li><a href="../login/login.html">Login</a></li>
-      <li>
-        <button class="btn primary" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
-      </li>
+
+    <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
     </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+    </div>
   </nav>
 
   <section class="hero-title">
@@ -623,46 +38,44 @@
     <h1>Machine Learning Models</h1>
   </section>
 
-  <section class="filter-bar">
-    <div class="filter-container">
+ <section class="filter-bar">
+  <div class="filter-container">
 
-      <select id="skillFilter">
-        <option value="all">All Skills</option>
-        <option value="python">Python</option>
-        <option value="tensorflow">TensorFlow</option>
-        <option value="pytorch">PyTorch</option>
-        <option value="openai">OpenAI / LLMs</option>
-        <option value="nlp">NLP</option>
-        <option value="cv">Computer Vision</option>
-      </select>
+    <select id="skillFilter">
+      <option value="all">All ML Models</option>
+      <option value="regression">Regression Models</option>
+      <option value="classification">Classification</option>
+      <option value="clustering">Clustering (Unsupervised)</option>
+      <option value="nlp">NLP Models</option>
+      <option value="cv">Computer Vision Models</option>
+    </select>
 
-      <select id="levelFilter">
-        <option value="all">Experience Level</option>
-        <option value="junior">Junior</option>
-        <option value="mid">Mid</option>
-        <option value="senior">Senior</option>
-      </select>
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior</option>
+    </select>
 
-      <select id="priceFilter">
-        <option value="all">Hourly Rate</option>
-        <option value="low">Under $25</option>
-        <option value="mid">$25 – $30</option>
-        <option value="high">Above $30</option>
-      </select>
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $25</option>
+      <option value="mid">$25 – $40</option>
+      <option value="high">Above $40</option>
+    </select>
 
-      <button id="applyFilter">Apply Filter</button>
+   
 
-    </div>
-  </section>
+  </div>
+</section>
 
   <div class="page-layout">
 
     <aside class="sidebar">
       <h3>Categories</h3>
 
-   
-      <!-- Data & AI -->
-  <div class="category">
+
+      <div class="category">
         <button class="category-btn">Data & AI <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
@@ -679,25 +92,23 @@
         </ul>
       </div>
 
-      <!-- Development & IT -->
       <div class="category">
         <button class="category-btn">Development & IT <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
           <li><a href="../Development&it/ai.html">AI Developers</a></li>
           <li><a href="../Development&it/android.html">Android Developers</a></li>
-          <li><a href="#">Backend Developers</a></li>
-          <li><a href="#">Bubble.io Developers</a></li>
-          <li><a href="#">Chatbot Developers</a></li>
-          <li><a href="#">Cyber Security Engineers</a></li>
-          <li><a href="#">Data Engineers</a></li>
-          <li><a href="#">DevOps Engineers</a></li>
-          <li><a href="#">Full Stack Engineers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
          
         </ul>
       </div>
 
-      <!-- Design & Creative -->
       <div class="category">
         <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -714,7 +125,6 @@
         </ul>
       </div>
 
-      <!-- Sales & Marketing -->
       <div class="category">
         <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -731,7 +141,6 @@
         </ul>
       </div>
 
-      <!-- Writing & Translation -->
       <div class="category">
         <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -748,7 +157,6 @@
         </ul>
       </div>
 
-      <!-- Admin & Support -->
       <div class="category">
         <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -766,7 +174,6 @@
         </ul>
       </div>
 
-      <!-- Finance & Accounting -->
       <div class="category">
         <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -783,11 +190,10 @@
         </ul>
       </div>
 
-      <!-- Legal -->
       <div class="category">
         <button class="category-btn">Legal <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#">Corporate Law Professionals</a></li>
+          <li><a href="../legal/Corporate law/">Corporate Law Professionals</a></li>
           <li><a href="#">Criminal Law Professionals</a></li>
           <li><a href="#">Family Law Professionals</a></li>
           <li><a href="#">Fraud Analysts</a></li>
@@ -800,8 +206,7 @@
         </ul>
       </div>
 
-     <!-- HR & Training -->
-<div class="category">
+     <div class="category">
   <button class="category-btn">HR & Training <span class="arrow">›</span></button>
   <ul class="sub-categories">
     <li><a href="#">Change Management Specialists</a></li>
@@ -818,7 +223,6 @@
   </ul>
 </div>
 
-      <!-- Engineering & Architecture -->
       <div class="category">
         <button class="category-btn">Engineering & Architecture <span class="arrow">›</span></button>
         <ul class="sub-categories">
@@ -835,444 +239,498 @@
         </ul>
       </div>
     </aside>
+
+
+
     <section class="cards-wrapper">
 
-      <div class="cards-grid">
+    <div class="cards-grid">
 
-        <div class="up-card" data-skill="python tensorflow">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=60" class="avatar">
-            <div class="user-info">
-              <h3>Hassan F.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$45/hr</span>
-                <span class="rating">⭐ 5.0</span>
-                <span class="jobs">💼 12 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🤖 AI Engineer building deep learning models using TensorFlow.</p>
-          <div class="tags"><span>TensorFlow</span><span>Python</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="pytorch nlp">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=61" class="avatar">
-            <div class="user-info">
-              <h3>Dina S.</h3>
-              <span class="location">Alexandria, Egypt</span>
-              <div class="stats">
-                <span class="price">$40/hr</span>
-                <span class="rating">⭐ 4.9</span>
-                <span class="jobs">💼 8 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🗣️ NLP Specialist expert in HuggingFace & PyTorch.</p>
-          <div class="tags"><span>PyTorch</span><span>NLP</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="openai python">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=62" class="avatar">
-            <div class="user-info">
-              <h3>Kareem A.</h3>
-              <span class="location">Giza, Egypt</span>
-              <div class="stats">
-                <span class="price">$50/hr</span>
-                <span class="rating">⭐ 5.0</span>
-                <span class="jobs">💼 15 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🧠 Integrating GPT-4 and LLMs into custom applications.</p>
-          <div class="tags"><span>OpenAI</span><span>Python</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="cv tensorflow">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=63" class="avatar">
-            <div class="user-info">
-              <h3>Mona L.</h3>
-              <span class="location">Mansoura, Egypt</span>
-              <div class="stats">
-                <span class="price">$35/hr</span>
-                <span class="rating">⭐ 4.7</span>
-                <span class="jobs">💼 20 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">👁️ Computer Vision Engineer (Object Detection & Recognition).</p>
-          <div class="tags"><span>Computer Vision</span><span>TensorFlow</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="python">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=64" class="avatar">
-            <div class="user-info">
-              <h3>Omar Z.</h3>
-              <span class="location">Tanta, Egypt</span>
-              <div class="stats">
-                <span class="price">$28/hr</span>
-                <span class="rating">⭐ 4.8</span>
-                <span class="jobs">💼 25 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🐍 Backend Developer specializing in AI model deployment (FastAPI).</p>
-          <div class="tags"><span>Python</span><span>Deployment</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="nlp openai">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=65" class="avatar">
-            <div class="user-info">
-              <h3>Laila K.</h3>
-              <span class="location">Zagazig, Egypt</span>
-              <div class="stats">
-                <span class="price">$42/hr</span>
-                <span class="rating">⭐ 4.9</span>
-                <span class="jobs">💼 10 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">💬 Building advanced chatbots using LangChain & OpenAI.</p>
-          <div class="tags"><span>NLP</span><span>OpenAI</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="pytorch cv">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=66" class="avatar">
-            <div class="user-info">
-              <h3>Ahmed B.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$38/hr</span>
-                <span class="rating">⭐ 4.8</span>
-                <span class="jobs">💼 18 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🖼️ Image generation and processing using GANs & PyTorch.</p>
-          <div class="tags"><span>PyTorch</span><span>Computer Vision</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="tensorflow">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=67" class="avatar">
-            <div class="user-info">
-              <h3>Sara Y.</h3>
-              <span class="location">Asyut, Egypt</span>
-              <div class="stats">
-                <span class="price">$30/hr</span>
-                <span class="rating">⭐ 4.6</span>
-                <span class="jobs">💼 14 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📊 Predictive analysis models using Keras & TensorFlow.</p>
-          <div class="tags"><span>TensorFlow</span><span>Keras</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="openai python">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=68" class="avatar">
-            <div class="user-info">
-              <h3>Mahmoud E.</h3>
-              <span class="location">Sohag, Egypt</span>
-              <div class="stats">
-                <span class="price">$55/hr</span>
-                <span class="rating">⭐ 5.0</span>
-                <span class="jobs">💼 6 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">✨ Expert in Generative AI and Fine-Tuning LLMs.</p>
-          <div class="tags"><span>OpenAI</span><span>Python</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="cv python">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=69" class="avatar">
-            <div class="user-info">
-              <h3>Nour H.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$32/hr</span>
-                <span class="rating">⭐ 4.7</span>
-                <span class="jobs">💼 22 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📹 Real-time video processing with OpenCV & YOLO.</p>
-          <div class="tags"><span>Computer Vision</span><span>Python</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="nlp python">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=70" class="avatar">
-            <div class="user-info">
-              <h3>Tarek M.</h3>
-              <span class="location">Minya, Egypt</span>
-              <div class="stats">
-                <span class="price">$29/hr</span>
-                <span class="rating">⭐ 4.8</span>
-                <span class="jobs">💼 16 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">📝 Text analysis and sentiment analysis expert using Spacy.</p>
-          <div class="tags"><span>NLP</span><span>Python</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="tensorflow pytorch">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=71" class="avatar">
-            <div class="user-info">
-              <h3>Salma R.</h3>
-              <span class="location">Beni Suef, Egypt</span>
-              <div class="stats">
-                <span class="price">$36/hr</span>
-                <span class="rating">⭐ 4.9</span>
-                <span class="jobs">💼 11 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🎓 AI Researcher specializing in model architecture design.</p>
-          <div class="tags"><span>TensorFlow</span><span>PyTorch</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="python">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=72" class="avatar">
-            <div class="user-info">
-              <h3>Ramy S.</h3>
-              <span class="location">Alexandria, Egypt</span>
-              <div class="stats">
-                <span class="price">$25/hr</span>
-                <span class="rating">⭐ 4.5</span>
-                <span class="jobs">💼 30 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🧹 Data Engineer for AI: Cleaning & preparing datasets.</p>
-          <div class="tags"><span>Python</span><span>Data Eng</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="openai">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=73" class="avatar">
-            <div class="user-info">
-              <h3>Yara T.</h3>
-              <span class="location">Giza, Egypt</span>
-              <div class="stats">
-                <span class="price">$48/hr</span>
-                <span class="rating">⭐ 5.0</span>
-                <span class="jobs">💼 9 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🤖 Building AI Agents and Autonomous systems.</p>
-          <div class="tags"><span>OpenAI</span><span>Agents</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
-        <div class="up-card hidden-card" data-skill="pytorch">
-          <div class="card-header">
-            <img src="https://i.pravatar.cc/100?img=74" class="avatar">
-            <div class="user-info">
-              <h3>Ibrahim K.</h3>
-              <span class="location">Cairo, Egypt</span>
-              <div class="stats">
-                <span class="price">$34/hr</span>
-                <span class="rating">⭐ 4.7</span>
-                <span class="jobs">💼 13 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p class="description">🧠 Deep Reinforcement Learning specialist.</p>
-          <div class="tags"><span>PyTorch</span><span>RL</span></div>
-          <a href="#" class="profile-btn">See profile</a>
-        </div>
-
+<div class="up-card" data-skill="classification regression" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=40" class="avatar">
+    <div class="user-info">
+      <h3>Omar A.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$50/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 32 jobs</span>
       </div>
+    </div>
+  </div>
+  <p class="description">🤖 Senior ML Engineer: Expert in Scikit-Learn, Random Forest, and XGBoost.</p>
+  <div class="tags"><span>XGBoost</span><span>Classification</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="clustering regression" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=41" class="avatar">
+    <div class="user-info">
+      <h3>Ahmed N.</h3>
+      <span class="location">Giza, Egypt</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 21 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧠 Customer Segmentation using K-Means clustering and churn prediction models.</p>
+  <div class="tags"><span>K-Means</span><span>Regression</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="nlp classification" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=42" class="avatar">
+    <div class="user-info">
+      <h3>Youssef M.</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats">
+        <span class="price">$60/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 18 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🚀 NLP Specialist: SVM, Naive Bayes, and BERT for text classification.</p>
+  <div class="tags"><span>NLP</span><span>SVM</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="regression" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=43" class="avatar">
+    <div class="user-info">
+      <h3>Mahmoud S.</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats">
+        <span class="price">$28/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 19 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📊 Predictive Analytics: Linear/Logistic Regression and feature engineering.</p>
+  <div class="tags"><span>Scikit-Learn</span><span>Regression</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="classification" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=44" class="avatar">
+    <div class="user-info">
+      <h3>Mostafa R.</h3>
+      <span class="location">Zagazig, Egypt</span>
+      <div class="stats">
+        <span class="price">$22/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 12 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📘 Junior ML Developer specializing in Decision Trees and data preprocessing.</p>
+  <div class="tags"><span>Python</span><span>Decision Trees</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="cv classification" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar">
+    <div class="user-info">
+      <h3>Islam H.</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$40/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 27 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🤖 Image Classification models using CNNs and Transfer Learning.</p>
+  <div class="tags"><span>PyTorch</span><span>CV</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="regression classification" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=46" class="avatar">
+    <div class="user-info">
+      <h3>Hassan K.</h3>
+      <span class="location">Fayoum, Egypt</span>
+      <div class="stats">
+        <span class="price">$55/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 25 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">👁️ Ensemble Methods: Boosting, Bagging, and custom model stacking.</p>
+  <div class="tags"><span>Ensemble</span><span>XGBoost</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="clustering" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=47" class="avatar">
+    <div class="user-info">
+      <h3>Amr T.</h3>
+      <span class="location">Asyut, Egypt</span>
+      <div class="stats">
+        <span class="price">$32/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 18 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚙️ Unsupervised Learning: PCA, DBSCAN, and anomaly detection.</p>
+  <div class="tags"><span>PCA</span><span>Clustering</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="regression" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=48" class="avatar">
+    <div class="user-info">
+      <h3>Mahmoud N.</h3>
+      <span class="location">Sohag, Egypt</span>
+      <div class="stats">
+        <span class="price">$52/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 30 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧠 Forecasting models: ARIMA, Prophet, and LSTM for time-series.</p>
+  <div class="tags"><span>Prophet</span><span>Regression</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="classification nlp" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=49" class="avatar">
+    <div class="user-info">
+      <h3>Adel F.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$65/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 34 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🧠 Full-cycle ML development: Training, Evaluation, and API Deployment.</p>
+  <div class="tags"><span>Flask</span><span>FastAPI</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="regression" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=50" class="avatar">
+    <div class="user-info">
+      <h3>Saad M.</h3>
+      <span class="location">Minya, Egypt</span>
+      <div class="stats">
+        <span class="price">$20/hr</span>
+        <span class="rating">⭐ 4.5</span>
+        <span class="jobs">💼 11 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📈 Junior ML analyst focused on cleaning data for model training.</p>
+  <div class="tags"><span>Pandas</span><span>Python</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="classification" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=51" class="avatar">
+    <div class="user-info">
+      <h3>Mohamed Z.</h3>
+      <span class="location">Beni Suef, Egypt</span>
+      <div class="stats">
+        <span class="price">$38/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 22 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🤖 Fraud Detection models using Classification and LightGBM.</p>
+  <div class="tags"><span>LightGBM</span><span>Classification</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="clustering" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=52" class="avatar">
+    <div class="user-info">
+      <h3>Karim T.</h3>
+      <span class="location">Tanta, Egypt</span>
+      <div class="stats">
+        <span class="price">$31/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 20 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📊 Recommender Systems: Collaborative and Content-based filtering.</p>
+  <div class="tags"><span>RecSys</span><span>Clustering</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="nlp classification" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=53" class="avatar">
+    <div class="user-info">
+      <h3>Hany W.</h3>
+      <span class="location">Damietta, Egypt</span>
+      <div class="stats">
+        <span class="price">$42/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 24 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">👁️ Sentiment Analysis bots for social media monitoring.</p>
+  <div class="tags"><span>NLP</span><span>Classification</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<div class="up-card hidden-card" data-skill="regression" data-level="junior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=54" class="avatar">
+    <div class="user-info">
+      <h3>Rami Z.</h3>
+      <span class="location">Luxor, Egypt</span>
+      <div class="stats">
+        <span class="price">$25/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 13 jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">⚡ Junior developer: Simple ML implementations for automation.</p>
+  <div class="tags"><span>Python</span><span>Regression</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+
+
 
       <div class="load-more">
-        <button id="loadMoreBtn">Load more AI Developers</button>
+        <button id="loadMoreBtn">Load more ML experts</button>
       </div>
 
     </section>
   </div>
-  
   <section class="why-section">
-    <h2>Why hire AI Developers from TaskHunt?</h2>
+    <h2>Why hire Machine Learning Experts from TaskHunt?</h2>
 
     <div class="why-grid">
-      <div class="why-box">
-        <h4>✔ Verified Experts</h4>
-        <p>Developers screened in Python, Mathematics, and Algorithms.</p>
-      </div>
+        <div class="why-box">
+            <h4>✔ Verified ML Proficiency</h4>
+            <p>Our experts are tested on their ability to build, tune, and validate models for real-world business scenarios.</p>
+        </div>
 
-      <div class="why-box">
-        <h4>✔ Cutting-Edge Tech</h4>
-        <p>Access talent skilled in LLMs, Generative AI, and Vision.</p>
-      </div>
+        <div class="why-box">
+            <h4>✔ Predictive Accuracy</h4>
+            <p>Get models that don't just work, but deliver high precision and recall for your critical tasks.</p>
+        </div>
 
-      <div class="why-box">
-        <h4>✔ Secure Payments</h4>
-        <p>Pay only when milestones are met.</p>
-      </div>
+        <div class="why-box">
+            <h4>✔ Full Lifecycle Support</h4>
+            <p>From data cleaning and feature engineering to model deployment and monitoring.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section class="steps">
+<section class="steps">
     <h2>How it works</h2>
+
     <div class="steps-grid">
-      <div class="step">1️⃣ Post your project</div>
-      <div class="step">2️⃣ Interview developers</div>
-      <div class="step">3️⃣ Build the future</div>
+        <div class="step">1️⃣ Describe your data and prediction goal</div>
+        <div class="step">2️⃣ Hire a specialized ML model developer</div>
+        <div class="step">3️⃣ Integrate and scale your intelligent model</div>
     </div>
-  </section>
+</section>
 
-  <section class="faq">
+<section class="faq">
     <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>How much does an AI Developer cost?</summary>
-      <p>Rates typically start from $25/hr for juniors up to $100+/hr for experts.</p>
-    </details>
-    <details>
-      <summary>Can I hire for a short-term project?</summary>
-      <p>Yes, we have freelancers available for both short tasks and long-term contracts.</p>
-    </details>
-  </section>
 
-  <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.classList.toggle("active");
-      });
+    <details>
+        <summary>What are Machine Learning Models?</summary>
+        <p>They are programs trained on a set of data to recognize patterns and make predictions or decisions without being explicitly programmed for that task.</p>
+    </details>
+
+    <details>
+        <summary>How much data do I need?</summary>
+        <p>The amount of data depends on the complexity of the problem. Simple models may need hundreds of rows, while deep learning requires thousands or more.</p>
+    </details>
+
+    <details>
+        <summary>Can you help with model deployment?</summary>
+        <p>Yes, our developers can deploy models using Docker, AWS SageMaker, or as simple APIs using Flask or FastAPI.</p>
+    </details>
+</section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const skillFilter = document.getElementById("skillFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 6;
+  const step = 6;
+
+  function getFilteredCards() {
+    return cards.filter(card => {
+
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
+
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
+
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
+
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
+
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
+
+      return skillMatch && levelMatch && priceMatch;
     });
-  </script>
+  }
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h3>Task Hunt</h3>
-        <ul>
-          <li><a href="#">About Task Hunt</a></li>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Rights Protection</a></li>
-        </ul>
-      </div>
+  function updateCards() {
+    const filteredCards = getFilteredCards();
 
-      <div class="footer-col">
-        <h3>Community</h3>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Discussions</a></li>
-          <li><a href="#">Topics</a></li>
-          <li><a href="#">User Experiences</a></li>
-        </ul>
-      </div>
+    cards.forEach(card => card.classList.add("hidden-card"));
 
-      <div class="footer-col">
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
+  });
+
+});
+</script>
+<!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="icon" alt="TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="icon" alt="Twitter">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
         </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2025 Task Hunt — All rights reserved</p>
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
     </div>
-  </footer>
 
-  <script>
-    const cards = document.querySelectorAll(".up-card");
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
 
-    const skillFilter = document.getElementById("skillFilter");
-    const levelFilter = document.getElementById("levelFilter");
-    const priceFilter = document.getElementById("priceFilter");
-    const applyFilterBtn = document.getElementById("applyFilter");
+  </div>
 
-    let visible = 6;
-    const step = 6;
-
-    /* ===== HELPERS ===== */
-    function getFilteredCards() {
-      return [...cards].filter(card => {
-        const skills = card.dataset.skill || "";
-
-        /* SKILL FILTER */
-        const skillMatch =
-          skillFilter.value === "all" ||
-          skills.includes(skillFilter.value);
-
-        /* PRICE FILTER */
-        let priceMatch = true;
-        const priceText = card.querySelector(".price")?.innerText || "";
-        const price = parseInt(priceText.replace(/\D/g, ""));
-
-        if (priceFilter.value === "low") priceMatch = price < 25;
-        if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 30;
-        if (priceFilter.value === "high") priceMatch = price > 30;
-
-        return skillMatch && priceMatch;
-      });
-    }
-
-    function updateCards() {
-      const filteredCards = getFilteredCards();
-
-      cards.forEach(card => card.classList.add("hidden-card"));
-
-      filteredCards.slice(0, visible).forEach(card => {
-        card.classList.remove("hidden-card");
-      });
-
-      if (loadMoreBtn) {
-        loadMoreBtn.style.display =
-          visible < filteredCards.length ? "block" : "none";
-      }
-    }
-
-    /* ===== APPLY FILTER BUTTON ===== */
-    applyFilterBtn.addEventListener("click", () => {
-      visible = 12;
-      updateCards();
-    });
-
-    /* ===== LOAD MORE ===== */
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener("click", () => {
-        visible += step;
-        updateCards();
-      });
-    }
-
-    /* ===== INIT ===== */
-    updateCards();
-  </script>
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
 
 </body>
+
 </html>

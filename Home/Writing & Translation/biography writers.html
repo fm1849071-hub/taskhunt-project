@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biography Writers | TaskHunt</title>
+  <style>
+    /* ===== ALL CSS STYLES (مطابقة للأصل) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* NAVBAR */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .login-blue {
+      background: transparent;
+      border: 1px solid #2563eb;
+    }
+
+    .login-blue:hover {
+      background: #e6f0ff;
+    }
+
+    .signup-blue {
+      background: #2563eb;
+      color: white !important;
+    }
+
+    .signup-blue:hover {
+      background: #1d4ed8;
+    }
+
+    /* HERO TITLE */
+    .hero-title {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      padding: 3rem 5%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-title h2 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .hero-divider {
+      font-size: 2rem;
+      opacity: 0.5;
+    }
+
+    .hero-title h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #60a5fa, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      background: white;
+      padding: 1.5rem 5%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .filter-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .filter-container select {
+      padding: 0.8rem 2rem 0.8rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      min-width: 200px;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem center;
+      background-size: 1rem;
+    }
+
+    .filter-container button {
+      padding: 0.8rem 2rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-left: auto;
+    }
+
+    .filter-container button:hover {
+      background: #1d4ed8;
+    }
+
+    /* PAGE LAYOUT */
+    .page-layout {
+      display: flex;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 5%;
+      gap: 2rem;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      height: fit-content;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #0f172a;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .category {
+      margin-bottom: 0.5rem;
+    }
+
+    .category-btn {
+      width: 100%;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      background: none;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+
+    .category-btn:hover {
+      background: #f1f5f9;
+      color: #2563eb;
+    }
+
+    .category.active .category-btn {
+      background: #e6f0ff;
+      color: #2563eb;
+    }
+
+    .arrow {
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .category.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    .sub-categories {
+      list-style: none;
+      padding-left: 1rem;
+      margin: 0.5rem 0 1rem 0;
+      display: none;
+    }
+
+    .category.active .sub-categories {
+      display: block;
+    }
+
+    .sub-categories li {
+      margin: 0.5rem 0;
+    }
+
+    .sub-categories a {
+      text-decoration: none;
+      color: #64748b;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+      display: block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+    }
+
+    .sub-categories a:hover {
+      color: #2563eb;
+      background: #f1f5f9;
+    }
+
+    /* CARDS WRAPPER */
+    .cards-wrapper {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* CARD STYLES */
+    .up-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .up-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+      border-color: #2563eb;
+    }
+
+    .card-header {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e2e8f0;
+    }
+
+    .user-info {
+      flex: 1;
+    }
+
+    .user-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+      color: #0f172a;
+    }
+
+    .location {
+      font-size: 0.85rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      color: #475569;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .rating {
+      color: #f59e0b;
+    }
+
+    .description {
+      color: #334155;
+      font-size: 0.95rem;
+      margin: 1rem 0;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .tags span {
+      background: #f1f5f9;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .profile-btn {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .profile-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .hidden-card {
+      display: none !important;
+    }
+
+    /* LOAD MORE */
+    .load-more {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .load-more button {
+      padding: 1rem 3rem;
+      background: white;
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .load-more button:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* WHY SECTION */
+    .why-section {
+      padding: 4rem 5%;
+      background: white;
+      margin-top: 2rem;
+    }
+
+    .why-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #0f172a;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .why-box {
+      padding: 2rem;
+      background: #f8fafc;
+      border-radius: 20px;
+      transition: transform 0.2s;
+    }
+
+    .why-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .why-box h4 {
+      color: #2563eb;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .why-box p {
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* STEPS */
+    .steps {
+      padding: 4rem 5%;
+      background: linear-gradient(135deg, #f8fafc 0%, #e6f0ff 100%);
+    }
+
+    .steps h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #0f172a;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .step {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #1e293b;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 4rem 5%;
+      background: white;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #0f172a;
+    }
+
+    details {
+      max-width: 800px;
+      margin: 1rem auto;
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    summary {
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    details p {
+      padding: 1rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0f172a;
+      color: white;
+      padding: 4rem 5% 1rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #94a3b8;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #2563eb;
+    }
+
+    .social-section {
+      margin-top: 2rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .social-icon:hover {
+      opacity: 1;
+    }
+
+    .contact-box {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .contact-box h3 {
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p {
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .footer-input {
+      width: 100%;
+      padding: 0.8rem;
+      background: #334155;
+      border: 1px solid #475569;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .footer-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .footer-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .footer-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 2rem 0 0;
+      margin-top: 3rem;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .page-layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .filter-container button {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .hero-title {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-divider {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR (مطابق للأصل) ===== -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html">
+        <img src="../images/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/120x40?text=TaskHunt'">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO TITLE (معدل لصفحة Biography) ===== -->
+  <section class="hero-title">
+    <h2>Writing & Translation</h2>
+    <span class="hero-divider">|</span>
+    <h1>Biography Writers</h1>
+  </section>
+
+  <!-- ===== FILTER BAR (معدل ليتناسب مع Biography) ===== -->
+  <section class="filter-bar">
+    <div class="filter-container">
+      <select id="skillFilter">
+        <option value="all">All Biography Skills</option>
+        <option value="biography">Biography Writing</option>
+        <option value="memoir">Memoir & Autobiography</option>
+        <option value="family">Family History</option>
+        <option value="cv">CV / LinkedIn Bio</option>
+        <option value="business">Business Bio</option>
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior (1-3 years)</option>
+        <option value="mid">Mid (3-6 years)</option>
+        <option value="senior">Senior (7+ years)</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $40</option>
+        <option value="high">Above $40</option>
+      </select>
+
+      <button id="applyFilter">Apply Filters</button>
+    </div>
+  </section>
+
+  <!-- ===== PAGE LAYOUT: SIDEBAR + CARDS ===== -->
+  <div class="page-layout">
+    <!-- SIDEBAR (تم إضافة Biography للقائمة) -->
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <!-- Data & AI -->
+      <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+      <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation (نشط ومعدل ليشمل Biography) -->
+      <div class="category active">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" style="color:#2563eb; font-weight:500;">Biography Writers</a></li>
+          <li><a href="#">Memoir Writers</a></li>
+          <li><a href="#">Family History Writers</a></li>
+          <li><a href="#">Business Bio Writers</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Arabic Translators</a></li>
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- CARDS SECTION (15 بطاقة جديدة لكتاب السيرة) -->
+    <section class="cards-wrapper">
+      <div class="cards-grid">
+        <!-- BIOGRAPHY CARD 1 -->
+        <div class="up-card" data-skill="biography memoir" data-level="senior" data-price="45">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=7" class="avatar" alt="Layla H.">
+            <div class="user-info">
+              <h3>Layla H.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$45/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 38 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📖 Bestselling ghostwriter with 10+ years experience. Specializes in compelling life stories for public figures and executives. Published 5 memoirs.</p>
+          <div class="tags"><span>Biography</span><span>Memoir</span><span>Ghostwriting</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card" data-skill="family history" data-level="mid" data-price="30">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=16" class="avatar" alt="Omar K.">
+            <div class="user-info">
+              <h3>Omar K.</h3>
+              <span class="location">📍 Alexandria, Egypt</span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 22 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌳 Family historian and genealogist. I turn scattered stories and photos into beautiful family legacy books. 5+ years tracing Middle Eastern roots.</p>
+          <div class="tags"><span>Family History</span><span>Genealogy</span><span>Legacy</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card" data-skill="business bio cv" data-level="mid" data-price="35">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Nadia A.">
+            <div class="user-info">
+              <h3>Nadia A.</h3>
+              <span class="location">📍 Giza, Egypt</span>
+              <div class="stats">
+                <span class="price">$35/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 31 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">💼 Executive bio specialist. I craft powerful LinkedIn profiles, "About Me" pages, and professional bios for C-level leaders. MBA background.</p>
+          <div class="tags"><span>Business Bio</span><span>LinkedIn</span><span>Executive</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card" data-skill="biography memoir" data-level="senior" data-price="50">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=34" class="avatar" alt="Dr. Karim F.">
+            <div class="user-info">
+              <h3>Dr. Karim F.</h3>
+              <span class="location">📍 Mansoura, Egypt</span>
+              <div class="stats">
+                <span class="price">$50/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 42 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🎓 PhD in Creative Writing. Award-winning author specializing in literary biographies and memoirs. Work featured in international publications.</p>
+          <div class="tags"><span>Literary</span><span>Memoir</span><span>Author</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card" data-skill="family history" data-level="junior" data-price="22">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=42" class="avatar" alt="Mona S.">
+            <div class="user-info">
+              <h3>Mona S.</h3>
+              <span class="location">📍 Tanta, Egypt</span>
+              <div class="stats">
+                <span class="price">$22/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 14 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📜 Oral historian. I conduct interviews and weave personal stories into beautiful family narratives. Perfect for preserving your grandparents' legacy.</p>
+          <div class="tags"><span>Oral History</span><span>Family</span><span>Interviews</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card" data-skill="biography cv" data-level="mid" data-price="28">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=49" class="avatar" alt="Youssef R.">
+            <div class="user-info">
+              <h3>Youssef R.</h3>
+              <span class="location">📍 Asyut, Egypt</span>
+              <div class="stats">
+                <span class="price">$28/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 19 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">✍️ Creative writer & editor. I help artists, musicians, and creators tell their story in a way that connects with their audience. 6 years experience.</p>
+          <div class="tags"><span>Artist Bio</span><span>Creative</span><span>Storytelling</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="up-card" data-skill="memoir biography" data-level="senior" data-price="48">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=53" class="avatar" alt="Samira Z.">
+            <div class="user-info">
+              <h3>Samira Z.</h3>
+              <span class="location">📍 Luxor, Egypt</span>
+              <div class="stats">
+                <span class="price">$48/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 29 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📚 Memoir specialist with 12+ years. I help people transform their life experiences into inspiring, publish-ready manuscripts. Fluent in Arabic & English.</p>
+          <div class="tags"><span>Memoir</span><span>Publishing</span><span>Bilingual</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="up-card" data-skill="business cv" data-level="mid" data-price="32">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=57" class="avatar" alt="Hossam M.">
+            <div class="user-info">
+              <h3>Hossam M.</h3>
+              <span class="location">📍 Zagazig, Egypt</span>
+              <div class="stats">
+                <span class="price">$32/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 26 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📈 Corporate storyteller. I write bios for company websites, annual reports, and executive summaries. Clear, professional, and impactful.</p>
+          <div class="tags"><span>Corporate</span><span>Website Bio</span><span>Professional</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="up-card" data-skill="biography family" data-level="junior" data-price="20">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=62" class="avatar" alt="Dina L.">
+            <div class="user-info">
+              <h3>Dina L.</h3>
+              <span class="location">📍 Fayoum, Egypt</span>
+              <div class="stats">
+                <span class="price">$20/hr</span>
+                <span class="rating">⭐ 4.5</span>
+                <span class="jobs">💼 11 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌟 Enthusiastic writer passionate about capturing life stories. Great with family biographies, personal profiles, and tribute speeches. </p>
+          <div class="tags"><span>Tribute</span><span>Personal</span><span>Entry Level</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="up-card" data-skill="memoir biography" data-level="senior" data-price="55">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=65" class="avatar" alt="Amr N.">
+            <div class="user-info">
+              <h3>Amr N.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$55/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 47 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🏆 Award-winning biographer. I've written for celebrities, politicians, and sports icons. Discreet, professional, and dedicated to your voice.</p>
+          <div class="tags"><span>Celebrity</span><span>Ghostwriter</span><span>Bestseller</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="up-card" data-skill="family history" data-level="mid" data-price="27">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Reham E.">
+            <div class="user-info">
+              <h3>Reham E.</h3>
+              <span class="location">📍 Minya, Egypt</span>
+              <div class="stats">
+                <span class="price">$27/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 21 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📇 Genealogist and scrapbook designer. I combine written biography with photo archiving to create heirloom-quality family books.</p>
+          <div class="tags"><span>Family Tree</span><span>Archiving</span><span>Design</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="up-card" data-skill="business cv" data-level="junior" data-price="24">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=71" class="avatar" alt="Tamer W.">
+            <div class="user-info">
+              <h3>Tamer W.</h3>
+              <span class="location">📍 Sohag, Egypt</span>
+              <div class="stats">
+                <span class="price">$24/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 13 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📋 LinkedIn profile optimizer. I turn boring job histories into compelling personal brand stories. Includes keyword strategy for recruiters.</p>
+          <div class="tags"><span>LinkedIn</span><span>CV</span><span>Personal Brand</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 13 -->
+        <div class="up-card" data-skill="biography memoir" data-level="mid" data-price="38">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=18" class="avatar" alt="Ghada F.">
+            <div class="user-info">
+              <h3>Ghada F.</h3>
+              <span class="location">📍 Port Said, Egypt</span>
+              <div class="stats">
+                <span class="price">$38/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 32 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🖋️ Memoir coach & writer. I guide first-time authors through the process of writing their own life story, providing structure and editing.</p>
+          <div class="tags"><span>Memoir</span><span>Coaching</span><span>Editing</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 14 -->
+        <div class="up-card" data-skill="biography family" data-level="senior" data-price="42">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=23" class="avatar" alt="Mahmoud T.">
+            <div class="user-info">
+              <h3>Mahmoud T.</h3>
+              <span class="location">📍 Ismailia, Egypt</span>
+              <div class="stats">
+                <span class="price">$42/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 35 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🏛️ Historian specializing in Middle Eastern family histories. I connect personal stories with historical context, creating rich, meaningful narratives.</p>
+          <div class="tags"><span>Historical</span><span>Middle East</span><span>Research</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 15 -->
+        <div class="up-card" data-skill="business cv" data-level="mid" data-price="33">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Noha D.">
+            <div class="user-info">
+              <h3>Noha D.</h3>
+              <span class="location">📍 Damietta, Egypt</span>
+              <div class="stats">
+                <span class="price">$33/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 24 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📌 "About Us" page specialist. I write compelling company histories and founder stories that build trust and connect with customers.</p>
+          <div class="tags"><span>Company Bio</span><span>Founder Story</span><span>Website</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+      </div>
+
+      <!-- LOAD MORE -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load More Writers</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== WHY SECTION (معدل لصفحة Biography) ===== -->
+  <section class="why-section">
+    <h2>Why hire Biography Writers from TaskHunt?</h2>
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Professional Storytellers</h4>
+        <p>All biography writers are experienced in capturing life stories with empathy, accuracy, and narrative flair. They know how to ask the right questions.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ Confidential & Trustworthy</h4>
+        <p>We understand that life stories are personal. All writers sign NDAs and your privacy is guaranteed. Your story is safe with us.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ From Interview to Publication</h4>
+        <p>Whether you need a short bio or a full book, our writers can handle everything from initial interviews to final editing and formatting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEPS SECTION (معدل) ===== -->
+  <section class="steps">
+    <h2>How to order your Biography</h2>
+    <div class="steps-grid">
+      <div class="step">1️⃣ Share your story idea & requirements</div>
+      <div class="step">2️⃣ Choose the writer who connects with you</div>
+      <div class="step">3️⃣ Receive your draft and provide feedback</div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION (أسئلة مخصصة للبيوغرافي) ===== -->
+  <section class="faq">
+    <h2>Frequently Asked Questions about Biography Writing</h2>
+    <details>
+      <summary>How do biography writers capture my story if I'm not a writer?</summary>
+      <p>They conduct in-depth interviews (online or by questionnaire) to gather stories, memories, and key events. They then weave these into a compelling narrative using their writing expertise.</p>
+    </details>
+    <details>
+      <summary>Can you write a biography about a family member who has passed away?</summary>
+      <p>Absolutely! This is called a tribute or memorial biography. Writers can work with photos, letters, and interviews with relatives to create a beautiful legacy piece.</p>
+    </details>
+    <details>
+      <summary>What's the difference between a memoir and a biography?</summary>
+      <p>A biography covers a person's entire life story, usually written by someone else. A memoir focuses on specific themes or periods in someone's life and is often written by the subject themselves (with a ghostwriter).</p>
+    </details>
+    <details>
+      <summary>How long does it take to write a full biography book?</summary>
+      <p>It depends on the length and complexity. A short family history (50 pages) might take 4-6 weeks. A full book (200+ pages) typically takes 3-6 months. We can discuss timelines with your chosen writer.</p>
+    </details>
+  </section>
+
+  <!-- ===== FOOTER (مطابق للأصل) ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Storytelling Ethics</a></li>
+        </ul>
+        <div class="social-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Writing Tips</a></li>
+          <li><a href="#">Success Stories</a></li>
+        </ul>
+      </div>
+      <div id="contact-section" class="footer-col contact-col">
+        <div class="contact-box">
+          <form id="contactForm">
+            <h3>Drop us a message</h3>
+            <p>We'd love to hear from you!</p>
+            <div class="form-group">
+              <input type="text" class="footer-input" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="footer-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="footer-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT (مطابق للأصل مع تحديث أسماء الفلاتر) ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = Array.from(document.querySelectorAll(".up-card"));
+      const skillFilter = document.getElementById("skillFilter");
+      const levelFilter = document.getElementById("levelFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const applyFilterBtn = document.getElementById("applyFilter");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+      let visible = 6;
+      const step = 6;
+
+      function getFilteredCards() {
+        return cards.filter(card => {
+          // Skill filter
+          const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+          const selectedSkill = skillFilter.value.toLowerCase();
+          const skillMatch = selectedSkill === "all" || skills.includes(selectedSkill);
+
+          // Level filter
+          const level = (card.dataset.level || "").toLowerCase();
+          const selectedLevel = levelFilter.value.toLowerCase();
+          const levelMatch = selectedLevel === "all" || level === selectedLevel;
+
+          // Price filter
+          const price = parseInt(card.dataset.price) || 0;
+          let priceMatch = true;
+          if (priceFilter.value === "low") priceMatch = price < 25;
+          if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 40;
+          if (priceFilter.value === "high") priceMatch = price > 40;
+
+          return skillMatch && levelMatch && priceMatch;
+        });
+      }
+
+      function updateCards() {
+        const filteredCards = getFilteredCards();
+
+        cards.forEach(card => card.classList.add("hidden-card"));
+
+        filteredCards.slice(0, visible).forEach(card => {
+          card.classList.remove("hidden-card");
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.style.display = visible < filteredCards.length ? "block" : "none";
+        }
+
+        // Show message if no cards
+        const grid = document.querySelector('.cards-grid');
+        const existingMsg = document.querySelector('.no-results');
+        if (filteredCards.length === 0) {
+          if (!existingMsg) {
+            const msg = document.createElement('div');
+            msg.className = 'no-results';
+            msg.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 3rem; background: white; border-radius: 20px; color: #64748b;';
+            msg.innerHTML = '😕 No biography writers match your filters. Try adjusting your criteria.';
+            grid.appendChild(msg);
+          }
+        } else if (existingMsg) {
+          existingMsg.remove();
+        }
+      }
+
+      // Apply filters button
+      if (applyFilterBtn) {
+        applyFilterBtn.addEventListener("click", () => {
+          visible = 6;
+          updateCards();
+        });
+      }
+
+      // Load more
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+          visible += step;
+          updateCards();
+        });
+      }
+
+      // Initialize
+      updateCards();
+
+      // Sidebar accordion
+      const categoryButtons = document.querySelectorAll(".category-btn");
+      categoryButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const category = btn.closest(".category");
+          category.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
