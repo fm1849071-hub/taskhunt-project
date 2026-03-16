@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHunt - Freelancer Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0077B8; 
+            --bg-color: #f7f9fc;  
+            --text-dark: #1a2b3c;
+            --text-gray: #6c7a89;
+            --card-bg: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            
+            background: linear-gradient(135deg, #f7f9fc 0%, #eef2f7 50%, #f0f4f8 100%);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+      
+
+.user-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+}
+
+.user-status {
+    font-size: 12px;
+    color: #9e9e9e;
+    margin-top: 2px;
+}
+
+        nav ul {
+             list-style: none; 
+            }
+
+        nav ul li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            color: var(--text-gray);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-radius: 12px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav ul li i {
+             margin-right: 15px;
+             width: 20px;
+              font-size: 18px;
+            }
+
+        nav ul li.active {
+             background: var(--primary-blue);
+              color: white;
+               box-shadow: 0 8px 15px rgba(0, 119, 184, 0.2);
+             }
+
+        nav ul li:hover:not(.active) { 
+            background: rgba(0, 119, 184, 0.05);
+             color: var(--primary-blue);
+             }
+
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 40px 50px;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+         .search-area {
+            
+            display: flex; align-items: center; background: white;
+            padding: 8px 15px; border-radius: 20px; width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .search-area input {
+            border: none; outline: none; padding-left: 10px; width: 100%;
+        }
+
+        
+
+        .welcome-msg p {
+             color: 0077b8;
+              font-weight: 600;
+               font-size: 30px;
+             }
+
+
+        .header-tools {
+             display: flex;
+              align-items: center;
+               gap: 25px;
+             }
+
+        .header-tools i {
+             color: var(--text-gray);
+              cursor: pointer;
+               font-size: 18px;
+             }
+
+        .user-profile {
+             display: flex;
+              align-items: center;
+               gap: 12px; padding: 6px 15px;
+                background: white;
+                 border-radius: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+                 }
+
+        .user-profile img {
+             width: 35px;
+              height: 35px;
+               border-radius: 50%;
+                object-fit: cover;
+             }
+
+
+        /* Layout Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .card-header h3 {
+             font-size: 19px;
+              color: var(--text-dark);
+             }
+
+        .card-header a {
+             font-size: 13px;
+              color: var(--primary-blue);
+               text-decoration: none;
+                font-weight: 600;
+             }
+
+
+        /* Active Project Section */
+        .project-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .client-info {
+             display: flex;
+              align-items: center;
+               gap: 15px; font-weight: 700;
+                color: var(--text-dark);
+             }
+        .progress-circle { 
+            width: 45px;
+             height: 45px;
+              border: 4px solid var(--primary-blue); 
+              border-radius: 50%; display: flex;
+               align-items: center; justify-content: center;
+                font-size: 11px; 
+                font-weight: 800;
+                 color: var(--primary-blue);
+                 }
+
+
+        /* Table */
+        table {
+             width: 100%;
+              border-collapse: collapse;
+             }
+
+        th {
+             text-align: left;
+              color: var(--text-gray);
+               font-size: 11px; text-transform: uppercase;
+                letter-spacing: 1px; padding-bottom: 15px; }
+        td { padding: 14px 0; font-size: 14px; font-weight: 600;
+             color: var(--text-dark);
+              border-bottom: 1px solid rgba(0,0,0,0.03);
+             }
+
+        .status-tag {
+             padding: 4px 10px;
+              border-radius: 8px;
+               font-size: 11px;
+             }
+        .status-ongoing {
+             background: #e3f2fd;
+              color: #1976d2;
+             }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .mini-card {
+             background: white;
+              padding: 25px; border-radius: 22px;
+               transition: 0.3s;
+                border: 1px solid rgba(0,0,0,0.02);
+             }
+
+        .mini-card:hover {
+             transform: translateY(-5px);
+              box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+             }
+
+        .mini-card p {
+             font-size: 11px;
+              color: var(--text-gray);
+               font-weight: 700; margin-bottom: 8px;
+             }
+
+        .mini-card h4 {
+             font-size: 22px;
+              color: var(--text-dark);
+             }
+
+        /* Training/Action Banner */
+        .action-banner {
+            grid-column: span 2;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0077B8 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 25px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .action-banner h4 { 
+            font-size: 20px;
+             margin-bottom: 10px;
+             }
+
+        .action-banner button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .action-banner button:hover { background: white; color: var(--primary-blue); }
+
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+
+
+
+        <nav>
+            <ul>
+                <li class="active"><i class="fas fa-chart-line"></i> Dashboard</li>
+                <li><i class="fas fa-briefcase"></i> My Projects</li>
+                <li><i class="fas fa-search"></i> Find Jobs</li>
+                <li><i class="fas fa-envelope"></i> Messages</li>
+                <li><i class="fas fa-file-invoice-dollar"></i> Finances</li>
+                <li><i class="fas fa-bookmark"></i> Saved</li>
+                <li><i class="fas fa-user-tie"></i> My Profile</li>
+                <hr style="opacity: 0.1; margin: 20px 0;">
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <div class="welcome-msg">
+                <p>Welcome Alex !</p>
+            </div>
+
+              <div class="search-area">
+                <i class="fas fa-search" style="color: #ccc;"></i>
+                <input type="text" placeholder="Search for anything...">
+            </div>
+
+                
+            </div>
+            <div class="header-tools">
+                
+                <i class="fas fa-bell"></i>
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?u=dev" alt="User">
+                    <span>Alex Morgan</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="left-col">
+                <div class="card" style="margin-bottom: 30px;">
+                    <div class="card-header">
+                        <h3>Ongoing Project</h3>
+                        <a href="#">Details</a>
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-gray); margin-bottom: 15px;">Deadline: 20 March, 2026</p>
+                    <div class="project-status">
+                        <div class="client-info"><i class="fas fa-laptop-code fa-2x" style="color: var(--primary-blue);"></i> Web App Design</div>
+                        <div class="progress-circle">75%</div>
+                        <div class="client-info">TechCorp Inc.</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Recent Proposals</h3>
+                        <a href="#">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr><th>JOB TITLE</th><th>BUDGET</th><th>STATUS</th><th>BIDS</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>UI/UX Designer</td><td>$2,400</td><td><span class="status-tag status-ongoing">Active</span></td><td>12</td></tr>
+                            <tr><td>React Developer</td><td>$4,800</td><td><span class="status-tag status-ongoing">Review</span></td><td>8</td></tr>
+                            <tr><td>API Integration</td><td>$1,200</td><td><span class="status-tag status-ongoing">Active</span></td><td>24</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                
+            </div>
+
+            
+
+            <div class="right-col">
+                <div class="card" style="margin-bottom: 30px;">
+                    <div class="card-header">
+                        <h3>Monthly Earnings</h3>
+                    </div>
+                    <div style="height: 10px; background: rgba(0,0,0,0.05); border-radius: 5px; overflow: hidden; display: flex; margin: 20px 0;">
+                        <div style="width: 70%; background: var(--primary-blue);"></div>
+                        <div style="width: 20%; background: #4db6ac;"></div>
+                        <div style="width: 10%; background: #ff8a80;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-gray);">
+                        <span>PAID <b>$5.2k</b></span><span>PENDING <b>$1.1k</b></span>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    
+                    <div class="mini-card">
+                        <p>ACTIVE PROJECTS</p>
+                        <h4>3 Projects</h4>
+                    </div>
+                    <div class="mini-card">
+                        <p>TOTAL COMPLETED</p>
+                        <h4>42 Jobs</h4>
+                    </div>
+                    <div class="mini-card">
+                        <p>SUCCESS RATE</p>
+                        <h4>98%</h4>
+                    </div>
+                    <div class="mini-card">
+                        <p>PROFILE VIEWS</p>
+                        <h4>1.2k</h4>
+
+                    </div>
+                    <div class="action-banner">
+                        <p style="font-size: 11px; opacity: 0.9;">NEW OPPORTUNITY</p>
+                        <h4>Update your skills to match more jobs</h4>
+                        <button>Edit Portfolio</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+    
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // 1. (Sidebar Navigation)
+        const setupSidebar = () => {
+            const navItems = document.querySelectorAll('.sidebar nav ul li');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // إزالة الكلاس النشط من الكل
+                    navItems.forEach(i => i.classList.remove('active'));
+                    // إضافة الكلاس للعنصر اللي ضغطنا عليه
+                    this.classList.add('active');
+                    
+                    console.log(`Navigating to: ${this.innerText.trim()}`);
+                });
+            });
+        };
+
+        // 2. تشغيل زرار التفاصيل (Ongoing Project Details)
+        const setupProjectDetails = () => {
+            const detailsBtn = document.querySelector('.card-header a[href="#"], .card-header a');
+            
+            // عشان نمنع اللينك يخلي الصفحة تطلع لفوق
+            detailsBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // هنا بنعمل محاكاة لفتح نافذة أو إظهار بيانات
+                const projectTitle = document.querySelector('.client-info').innerText;
+                alert(`Project: ${projectTitle}\nClient: TechCorp Inc.\nProgress: 75%\nNext Milestone: API Testing`);
+            });
+        };
+
+        // 3. تشغيل زرار عرض الكل في المقترحات (View All Proposals)
+        const setupProposalsTable = () => {
+            const viewAllBtn = document.querySelectorAll('.card-header a')[1]; // الزرار الثاني في الصفحة
+            const tableBody = document.querySelector('table tbody');
+
+            viewAllBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // إضافة صف جديد كمثال لما ندوس على View All
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>Mobile App Dev</td>
+                    <td>$3,200</td>
+                    <td><span class="status-tag status-ongoing">Pending</span></td>
+                    <td>15</td>
+                `;
+                
+                tableBody.appendChild(newRow);
+                
+                // تغيير شكل الزرار بعد الإضافة
+                viewAllBtn.innerText = "All Loaded";
+                viewAllBtn.style.opacity = "0.5";
+                viewAllBtn.style.pointerEvents = "none";
+            });
+        };
+
+        // 4. تشغيل كروت الإحصائيات (Mini Cards Interaction)
+        const setupMiniCards = () => {
+            const miniCards = document.querySelectorAll('.mini-card');
+            
+            miniCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const label = card.querySelector('p').innerText;
+                    const value = card.querySelector('h4').innerText;
+                    
+                    console.log(`Metric Clicked: ${label} - Current Value: ${value}`);
+                    
+                    // عمل تأثير "نبض" خفيف عند الضغط
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.transform = 'translateY(-5px)';
+                    }, 100);
+                });
+            });
+        };
+
+        // تشغيل كل الوظائف
+        setupSidebar();
+        setupProjectDetails();
+        setupProposalsTable();
+        setupMiniCards();
+
+    });
+</script>
+    
+
+</body>
+</html>
