@@ -1,5 +1,5 @@
 :root {
-     --c1: #00A8FF;
+      --c1: #00A8FF;
       --c2: #0090E0;
       --c3: #0077B8;
       --c4: #051923;
@@ -7,7 +7,8 @@
       --white: #ffffff;
       --light: #e6f7ff;
     }
-   * {
+
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -15,12 +16,11 @@
     }
 
     body {
-     background: var(--bg-global);
-      color: #111827
+      background: #f9fafb;
+      color: #111827;
     }
-
-
-/* NAVBAR */
+ 
+ /* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
@@ -32,9 +32,10 @@ nav {
 /* NAVBAR FIX */
 
 .logo img {
-  height: 33px;
+  height: 30px;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 41px;
+   
 }
 nav ul {
   list-style: none;
@@ -82,12 +83,12 @@ nav ul li a:hover {
     border: none;
 }
 /* LOGIN BUTTON */
-
 .login-btn {
     background-color: transparent;
     color: #007bff;
     border: 2px solid #007bff; 
 }
+
 .auth-buttons .btn:hover {
     opacity: 0.8;
     transform: translateY(-0.5px);
@@ -107,34 +108,19 @@ nav ul li a:hover {
   cursor: pointer;
   font-weight: 500;
 }
-    /* BUTTONS */
-    .btn {
-    padding: 10px 18px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    }
+/* BUTTONS */
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.primary {
+  background: var(--c3);
+  color: #fff;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-    .primary {
-    background: var(--c3);
-    color: #fff;
-    }
-     .primary, .profile-btn, #loadMoreBtn, .filter-container button, .cta-btn {
-      padding: 10px 22px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: var(--c3); /* اللون الموحد */
-      color: #fff;
-      font-weight: 600;
-      transition: 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .login-btn:hover, .primary:hover, .profile-btn:hover, #loadMoreBtn:hover, .filter-container button:hover, .cta-btn:hover {
-      background: var(--c3-hover); /* الـ Hover الموحد */
-    }
 
     .hero-title {
       display: flex;
@@ -203,9 +189,27 @@ nav ul li a:hover {
       cursor: pointer;
       min-width: 160px;
     }
-    
 
-   
+    .filter-container select:focus {
+      border-color: #005b84;
+    }
+
+    .filter-container button {
+      padding: 12px 26px;
+      background: #005b84;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-container button:hover {
+      background: #004666;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .filter-container {
@@ -231,68 +235,12 @@ nav ul li a:hover {
 
     /* SIDEBAR */
     .sidebar {
-      width: 260px;
+      width: 180px;
       flex-shrink: 0;
       border-right: 1px solid #e5e7eb;
       padding-right: 20px;
     }
-    .category {
-      border-bottom: 1px solid #f1f5f9;
-    }
 
-    .category-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 12px 0;
-      font-size: 14px;
-      font-weight: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      color: #111827;
-    }
-
-    .category-btn:hover {
-      color: var(--c3);
-    }
-
-    .arrow {
-      transition: transform 0.3s ease;
-      font-size: 18px;
-    }
-
-    .sub-categories {
-      list-style: none;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-      padding-left: 10px;
-      margin-bottom: 6px;
-    }
-
-    .sub-categories li a {
-      display: block;
-      font-size: 13px;
-      padding: 6px 0;
-      color: #374151;
-      text-decoration: none;
-      transition: color 0.2s ease, padding-left 0.2s ease;
-    }
-
-    .sub-categories li a:hover {
-      color: var(--c3);
-      padding-left: 6px;
-    }
-
-    .category.active .sub-categories {
-      max-height: 900px;
-    }
-
-    .category.active .arrow {
-      transform: rotate(90deg);
-    }
     /* TITLE */
     .sidebar h3 {
       margin-bottom: 20px;
@@ -320,8 +268,8 @@ nav ul li a:hover {
       color: #111827;
     }
 
-   .category-btn:hover {
-      color: var(--c3);
+    .category-btn:hover {
+      color: #005b84;
     }
 
     /* ARROW */
@@ -367,7 +315,7 @@ nav ul li a:hover {
 
 
     /* CARDS */
-   .cards-wrapper {
+    .cards-wrapper {
       flex: 1;
     }
 
@@ -384,7 +332,6 @@ nav ul li a:hover {
       padding: 18px;
       display: flex;
       flex-direction: column;
-      
       transition: 0.25s;
     }
 
@@ -441,37 +388,19 @@ nav ul li a:hover {
       background: #f3f4f6;
       padding: 5px 10px;
       border-radius: 999px;
-      font-size: 11px;
+      font-size: 14px;
     }
 
     .profile-btn {
       margin-top: auto;
       text-align: center;
       padding: 12px;
-      background: #0077B8;
+      background:#0077B8 ;
       color: white;
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
     }
-
-    
-
-   .hidden-card {
-  display: none !important;
-}
-.load-more {
-  width: 100%;
-  display: flex;
-  justify-content: center; /* بيخلي الزرار في النص عرضياً */
-  margin-top: 40px;      /* مسافة اختيارية فوق الزرار */
-  padding-bottom: 40px;   /* مسافة اختيارية تحت الزرار */
-}
-
-#loadMoreBtn {
-  display: block; /* لضمان استجابته للـ Flexbox بشكل صحيح */
-  margin: 0 auto;
-}
 
     /* RESPONSIVE */
     @media (max-width: 1200px) {
@@ -592,7 +521,7 @@ nav ul li a:hover {
 }
 
 .footer-btn {
-  width: 100%;
+  width: 92%;
   padding: 12px;
   background: #00a8e8;
   border: none;
@@ -652,13 +581,38 @@ nav ul li a:hover {
     width: 100%;
   }
 }
+    .load-more {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+
+    .load-more button {
+      padding: 14px 40px;
+      background: #0077B8 ;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+
+    }
+
+    .load-more button:hover {
+      background: #004666;
+    }
 
     /* ===== WHY SECTION ===== */
     .why-section {
       padding: 70px 6%;
+
       text-align: center;
-      background: var(--bg-global); /* تم تمييز القسم بخلفية بيضاء فوق الخلفية الرمادية للموقع */
-      margin: 40px 0;
     }
 
     .why-section h2 {
@@ -673,17 +627,16 @@ nav ul li a:hover {
     }
 
     .why-box {
-      background: #ffffff; /* خلفية البوكسات نفس خلفية الموقع للتماسك */
+      background: #ffffff;
       padding: 30px 20px;
       border-radius: 14px;
       border: 1px solid #e5e7eb;
-      transition: 0.3s;
     }
 
     .why-box h4 {
       font-size: 18px;
       margin-bottom: 10px;
-      color: #0077B8; /* تحديث اللون */
+      color: #005b84;
     }
 
     .why-box p {
@@ -715,13 +668,13 @@ nav ul li a:hover {
       border-radius: 14px;
       padding: 30px;
       font-size: 18px;
-      font-weight: 600; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      font-weight: 600;
     }
 
     /* ===== FAQ ===== */
     .faq {
       padding: 70px 6%;
+
     }
 
     .faq h2 {
@@ -736,21 +689,32 @@ nav ul li a:hover {
       border-radius: 10px;
       padding: 15px 20px;
       margin-bottom: 15px;
-      cursor: pointer;
     }
 
     .faq summary {
       font-size: 16px;
       font-weight: 600;
+      cursor: pointer;
     }
 
-    /* ===== CTA (Join Us Section) ===== */
+    .faq p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .hidden-card {
+      display: none;
+    }
+
+
+    /* ===== CTA ===== */
     .cta {
       padding: 80px 6%;
       text-align: center;
-      background: #051923; /* لون غامق ليعطي تباين قبل الفوتر */
+
       color: #ffffff;
-      margin-top: 40px;
     }
 
     .cta h2 {
@@ -761,7 +725,7 @@ nav ul li a:hover {
     .cta-btn {
       display: inline-block;
       padding: 15px 45px;
-      background: #0077B8; /* اللون الموحد */
+      background: #005b84;
       color: #ffffff;
       border-radius: 12px;
       font-size: 18px;
@@ -771,13 +735,14 @@ nav ul li a:hover {
     }
 
     .cta-btn:hover {
-      background: #005b84;
       transform: translateY(-3px);
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .why-grid, .steps-grid {
+
+      .why-grid,
+      .steps-grid {
         grid-template-columns: 1fr;
       }
     }
