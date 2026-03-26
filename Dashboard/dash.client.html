@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Hunt | Client Dashboard</title>
+    <style>
+        /* الأساسيات */
+        :root {
+            --primary: #0077B8;
+            --secondary: #3b82f6;
+            --bg-light: #f4f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-light);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        /* NAVBAR */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img { height: 40px; }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .auth-buttons .btn {
+            padding: 8px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .login-blue { background: transparent; border: 1px solid var(--primary) !important; margin-right: 10px; }
+        .signup-blue { background: var(--primary); color: white; }
+
+        /* DASHBOARD LAYOUT */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            flex: 1;
+            width: 95%;
+            max-width: 1400px;
+            margin: 30px auto;
+            gap: 25px;
+            z-index: 1;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--primary);
+            border-radius: 20px;
+            padding: 40px 20px;
+            color: white;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar h2 { font-size: 1.2rem; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+
+        .sidebar ul { list-style: none; padding: 0; }
+
+        .sidebar li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar li:hover, .sidebar li.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .profile { display: flex; align-items: center; gap: 15px; }
+        .profile img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--primary); }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-card p { color: #777; margin: 0; font-size: 0.9rem; }
+        .stat-card h3 { font-size: 1.8rem; margin: 10px 0 0; color: var(--primary); }
+
+        /* Sections Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
+        }
+
+        .box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .box h2 { font-size: 1.1rem; margin-top: 0; margin-bottom: 20px; }
+
+        /* Project Row */
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .progress-bar {
+            width: 150px;
+            height: 8px;
+            background: #eee;
+            border-radius: 10px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .progress-fill { height: 100%; background: var(--secondary); border-radius: 10px; transition: width 1s ease-in-out; }
+
+        .btn-action {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 50px 5% 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 { color: var(--secondary); margin-bottom: 20px; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .footer-col a:hover { color: white; }
+
+        .contact-box {
+            background: #252525;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .footer-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            background: #333;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .footer-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Canvas Animation */
+        #bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+/* Footer */ 
+.footer {
+  background: #051923;
+  padding: 20px 10px;
+  font-family: "Cairo", sans-serif;
+  direction: ltr;
+  text-align: left;
+  color: #ffffff;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  width: 30%;
+  min-width: 200px;
+}
+
+/* تخصيص مساحة أكبر للفورم */
+.contact-col {
+  flex: 1; 
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 14px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #adb5bd;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+  opacity: 0.8;
+}
+
+/* Contact Form Styling */
+.contact-box h3 {
+  margin-bottom: 7px;
+}
+
+.contact-box p {
+  font-size: 14px;
+  color: #adb5bd;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 13px;
+}
+
+.footer-input {
+  width: 92%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.footer-input:focus {
+  border-color: #00a8e8; 
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-btn {
+  width: 92%;
+  padding: 12px;
+  background: #00a8e8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-btn:hover {
+  background: #007ea7;
+  transform: translateY(-2px);
+}
+
+/* Social Icons */
+.social-section {
+    justify-items: left;
+  margin-top: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(1) invert(1); /* جعل الأيقونات بيضاء لتناسب التصميم */
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  filter: none; /* ترجع لألوانها الأصلية عند المرور عليها */
+  transform: scale(1.2);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #6c757d;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-col, .contact-col {
+    width: 100%;
+  }
+}
+
+        @media (max-width: 992px) {
+            .dashboard-container, .content-grid { grid-template-columns: 1fr; }
+            .sidebar { display: none; } /* يفضل عمل قائمة للهواتف لاحقاً */
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-animation"></canvas>
+
+    <nav class="nav">
+        <div class="logo">
+            <a href="#">
+                <img src="../images/logo.png" alt="Task Hunt Logo" onerror="this.src='https://via.placeholder.com/120x40?text=Task+Hunt'">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Find Work</a></li>
+            <li><a href="#">Hire Talent</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button class="btn login-blue">Login</button>
+            <button class="btn signup-blue">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <h2>Client Panel</h2>
+            <ul>
+                <li class="active">📊 Dashboard</li>
+                <li>💼 My Projects</li>
+                <li>💳 Payments</li>
+                <li>⭐ Favorites</li>
+                <li>💬 Messages</li>
+                <li>⚙️ Settings</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            
+            <div class="topbar">
+                <h1>Welcome back, Omar! 👋</h1>
+                <div class="profile">
+                    <span>Omar Ahmed</span>
+                    <img src="https://i.pravatar.cc/150?u=omar" alt="User">
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p>Total Spent</p>
+                    <h3>$1,240</h3>
+                </div>
+                <div class="stat-card">
+                    <p>Escrow Balance</p>
+                    <h3>$350</h3>
+                </div>
+                <div class="stat-card">
+                    <p>Active Projects</p>
+                    <h3>4</h3>
+                </div>
+                <div class="stat-card">
+                    <p>Completed</p>
+                    <h3>12</h3>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                
+                <div class="box">
+                    <h2>Active Projects</h2>
+                    <div class="project-item">
+                        <div>
+                            <strong>Website UI Redesign</strong>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                        </div>
+                        <button class="btn-action">Manage</button>
+                    </div>
+                    <div class="project-item">
+                        <div>
+                            <strong>Mobile App API</strong>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
+                        </div>
+                        <button class="btn-action">Manage</button>
+                    </div>
+                    <div class="project-item">
+                        <div>
+                            <strong>SEO Optimization</strong>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <button class="btn-action">Manage</button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2>Recent Messages</h2>
+                    <div style="border-left: 3px solid var(--primary); padding-left: 10px; margin-bottom: 15px;">
+                        <p style="margin: 0; font-weight: bold;">Ahmed (Designer)</p>
+                        <small>I've uploaded the new assets for review.</small>
+                    </div>
+                    <div style="border-left: 3px solid #ddd; padding-left: 10px;">
+                        <p style="margin: 0; font-weight: bold;">Sara (Writer)</p>
+                        <small>The blog post draft is ready!</small>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+   <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
+    </div>
+
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
+
+
+    <script>
+        const canvas = document.getElementById("bg-animation");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+
+        for(let i=0; i<60; i++){
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 3 + 1,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5
+            });
+        }
+
+        function animate(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+
+                if(p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if(p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = "#0077B8";
+                ctx.globalAlpha = 0.2;
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
