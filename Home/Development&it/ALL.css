@@ -318,7 +318,8 @@ nav ul li a:hover {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 18px;
-      row-gap: 5px;
+      row-gap: 6px;
+      
     }
 
     .up-card {
