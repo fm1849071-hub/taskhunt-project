@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 <title>Amazon PPC Experts | TaskHunt</title>
 <link rel="stylesheet" href="../sales/ALL.css">
-
-
-
- 
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-   <nav class="nav">
-    <div class="logo">
-      <a href="../../Home/home.html">
-        <img src="../images/logo.png" alt="Logo">
-      </a>
-    </div>
+<nav class="nav">
+  <div class="logo">
+    <a href="../../Home/home.html">
+      <img src="../images/logo.png" alt="Logo">
+    </a>
+  </div>
 
-           <ul class="nav-links">
-      <li><a href="../work.html">Find Work</a></li>
-      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-      <li><a href="#about-section">About</a></li>
-      <li><a href="#contact-section">Contact</a></li>
-    </ul>
-           <ul class="nav-links">
-      <li><a href="../work.html">Find Work</a></li>
-      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-      <li><a href="#about-section">About</a></li>
-      <li><a href="#contact-section">Contact</a></li>
-    </ul>
+  <ul class="nav-links">
+    <li><a href="../work.html">Find Work</a></li>
+    <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+    <li><a href="#about-section">About</a></li>
+    <li><a href="#contact-section">Contact</a></li>
+  </ul>
 
-          
-    <div class="auth-buttons">
-      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
-      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
-    </div>
-  </nav>
- <section class="hero-title">
+  <div class="auth-buttons">
+    <button class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+    <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-title">
   <h2>Sales & Marketing</h2>
   <span class="hero-divider">|</span>
   <h1>Amazon PPC Experts</h1>
 </section>
 
 
- <section class="filter-bar">
+<section class="filter-bar">
   <div class="filter-container">
 
-   <select id="skillFilter">
-  <option value="all">All Affiliate Skills</option>
-  <option value="seo">SEO Affiliate</option>
-  <option value="content">Content Marketing</option>
-  <option value="social">Social Media Affiliate</option>
-  <option value="email">Email Marketing</option>
-  <option value="paid">Paid Ads Affiliate</option>
-</select>
+    <select id="skillFilter">
+      <option value="all">All Affiliate Skills</option>
+      <option value="seo">SEO Affiliate</option>
+      <option value="content">Content Marketing</option>
+      <option value="social">Social Media Affiliate</option>
+      <option value="email">Email Marketing</option>
+      <option value="paid">Paid Ads Affiliate</option>
+    </select>
 
     <select id="levelFilter">
       <option value="all">Experience Level</option>
@@ -491,7 +481,7 @@
 </div>
 
 <!-- NEW CARD 13 -->
-<div class="up-card" data-skill="paid social" data-level="senior">
+<div class="up-card" data-skill="paid" data-level="senior">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=33" class="avatar">
     <div class="user-info">
@@ -547,24 +537,31 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-  <p class="description"></p>
-  <div class="tags"><span></span><span></span></div>
-  <a href="#" class="profile-btn">See profile</a>
+  
+
+</div> <!-- cards-grid -->
+
+<div class="load-more">
+  <button id="loadMoreBtn" class="load-btn">Load More</button>
 </div>
+<!-- about -->
 
-
-
-</div> <!-- ✅ القفل ح -->
-</section>
-</div>
-
-
-      <!-- LOAD MORE BUTTON -->
-      <div class="load-more">
+  <section id="about-section" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Empowering Your <span class="blue">Success</span></h2>
+        <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration,
+          ensure secure growth, and turn professional goals into reality.</p>
       </div>
-
-    </section>
-  </div>
+      <div class="about-visual">
+        <div class="dot-animation">
+          <div class="pulse-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+</section> <!-- cards-wrapper -->
+</div> <!-- page-layout -->
   <section class="why-section">
 <h2>Amazon Marketing</h2>
 
@@ -611,62 +608,101 @@
 </details>
 
 
+
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = Array.from(document.querySelectorAll(".up-card"));
 
   const skillFilter = document.getElementById("skillFilter");
   const levelFilter = document.getElementById("levelFilter");
   const priceFilter = document.getElementById("priceFilter");
-  const applyBtn = document.getElementById("applyFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-  const cards = document.querySelectorAll(".up-card");
+  let visible = 6;
+  const step = 6;
 
-  applyBtn.addEventListener("click", function () {
+  function getFilteredCards() {
+    return cards.filter(card => {
 
-    const skillValue = skillFilter.value.toLowerCase();
-    const levelValue = levelFilter.value.toLowerCase();
-    const priceValue = priceFilter.value;
+      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+      const selectedSkill = skillFilter.value.toLowerCase();
 
-    cards.forEach(function(card){
+      const skillMatch =
+        selectedSkill === "all" || skills.includes(selectedSkill);
 
-      const cardSkill = (card.dataset.skill || "").toLowerCase();
-      const cardLevel = (card.dataset.level || "").toLowerCase();
+      const level = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = levelFilter.value.toLowerCase();
 
-      const priceElement = card.querySelector(".price");
-      const priceText = priceElement ? priceElement.textContent : "$0";
-      const cardPrice = parseFloat(priceText.replace(/[^0-9.]/g, ""));
+      const levelMatch =
+        selectedLevel === "all" || level === selectedLevel;
 
-      let show = true;
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, ""));
+      let priceMatch = true;
 
-      /* Skill Filter */
-      if(skillValue !== "all" && !cardSkill.includes(skillValue)){
-        show = false;
-      }
+      if (priceFilter.value === "low")  priceMatch = price < 25;
+      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter.value === "high") priceMatch = price > 40;
 
-      /* Level Filter */
-      if(levelValue !== "all" && cardLevel !== levelValue){
-        show = false;
-      }
+      return skillMatch && levelMatch && priceMatch;
+    });
+  }
 
-      /* Price Filter */
-      if(priceValue !== "all"){
+  function updateCards() {
+    const filteredCards = getFilteredCards();
 
-        if(priceValue === "low" && cardPrice >= 25) show = false;
+    cards.forEach(card => card.classList.add("hidden-card"));
 
-        if(priceValue === "mid" && (cardPrice < 25 || cardPrice > 40)) show = false;
-
-        if(priceValue === "high" && cardPrice <= 40) show = false;
-
-      }
-
-      card.style.display = show ? "flex" : "none";
-
+    filteredCards.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
     });
 
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filteredCards.length ? "block" : "none";
+    }
+  }
+
+  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
+  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+    if (filter) {
+      filter.addEventListener("change", () => {
+        visible = 6;     // يرجع يعرض من الأول
+        updateCards();
+      });
+    }
+  });
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+  updateCards();
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+    });
   });
 
 });
 </script>
+
 </body>
 
 </html>
