@@ -316,8 +316,9 @@ nav ul li a:hover {
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 18px;
+      row-gap: 5px;
     }
 
     .up-card {
@@ -328,6 +329,8 @@ nav ul li a:hover {
       display: flex;
       flex-direction: column;
       transition: 0.25s;
+      height: 300px;
+      width: 250px;
     }
 
     .up-card:hover {
