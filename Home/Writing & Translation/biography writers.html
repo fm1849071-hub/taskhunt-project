@@ -3,673 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ALL.css">
   <title>Biography Writers | TaskHunt</title>
-  <style>
-    /* ===== ALL CSS STYLES (مطابقة للأصل) ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    }
-
-    body {
-      background-color: #f8fafc;
-      color: #1e293b;
-    }
-
-    /* NAVBAR */
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      background: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #1e293b;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #2563eb;
-    }
-
-    .auth-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .btn {
-      padding: 0.6rem 1.5rem;
-      border: none;
-      border-radius: 30px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .login-blue {
-      background: transparent;
-      border: 1px solid #2563eb;
-    }
-
-    .login-blue:hover {
-      background: #e6f0ff;
-    }
-
-    .signup-blue {
-      background: #2563eb;
-      color: white !important;
-    }
-
-    .signup-blue:hover {
-      background: #1d4ed8;
-    }
-
-    /* HERO TITLE */
-    .hero-title {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      color: white;
-      padding: 3rem 5%;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-title h2 {
-      font-weight: 400;
-      font-size: 1.5rem;
-      opacity: 0.9;
-    }
-
-    .hero-divider {
-      font-size: 2rem;
-      opacity: 0.5;
-    }
-
-    .hero-title h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, #60a5fa, #c084fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* FILTER BAR */
-    .filter-bar {
-      background: white;
-      padding: 1.5rem 5%;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
-    }
-
-    .filter-container {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .filter-container select {
-      padding: 0.8rem 2rem 0.8rem 1rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      background: white;
-      font-size: 0.95rem;
-      cursor: pointer;
-      min-width: 200px;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 0.7rem center;
-      background-size: 1rem;
-    }
-
-    .filter-container button {
-      padding: 0.8rem 2rem;
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-      margin-left: auto;
-    }
-
-    .filter-container button:hover {
-      background: #1d4ed8;
-    }
-
-    /* PAGE LAYOUT */
-    .page-layout {
-      display: flex;
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 0 5%;
-      gap: 2rem;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 280px;
-      flex-shrink: 0;
-      background: white;
-      border-radius: 20px;
-      padding: 1.5rem;
-      height: fit-content;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .sidebar h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: #0f172a;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #e2e8f0;
-    }
-
-    .category {
-      margin-bottom: 0.5rem;
-    }
-
-    .category-btn {
-      width: 100%;
-      text-align: left;
-      padding: 0.8rem 1rem;
-      background: none;
-      border: none;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #334155;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.2s;
-    }
-
-    .category-btn:hover {
-      background: #f1f5f9;
-      color: #2563eb;
-    }
-
-    .category.active .category-btn {
-      background: #e6f0ff;
-      color: #2563eb;
-    }
-
-    .arrow {
-      font-size: 1.2rem;
-      transition: transform 0.2s;
-    }
-
-    .category.active .arrow {
-      transform: rotate(90deg);
-    }
-
-    .sub-categories {
-      list-style: none;
-      padding-left: 1rem;
-      margin: 0.5rem 0 1rem 0;
-      display: none;
-    }
-
-    .category.active .sub-categories {
-      display: block;
-    }
-
-    .sub-categories li {
-      margin: 0.5rem 0;
-    }
-
-    .sub-categories a {
-      text-decoration: none;
-      color: #64748b;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-      display: block;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-    }
-
-    .sub-categories a:hover {
-      color: #2563eb;
-      background: #f1f5f9;
-    }
-
-    /* CARDS WRAPPER */
-    .cards-wrapper {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    /* CARD STYLES */
-    .up-card {
-      background: white;
-      border-radius: 20px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s;
-      border: 1px solid #e2e8f0;
-    }
-
-    .up-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
-      border-color: #2563eb;
-    }
-
-    .card-header {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #e2e8f0;
-    }
-
-    .user-info {
-      flex: 1;
-    }
-
-    .user-info h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.2rem;
-      color: #0f172a;
-    }
-
-    .location {
-      font-size: 0.85rem;
-      color: #64748b;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .stats {
-      display: flex;
-      gap: 0.8rem;
-      font-size: 0.85rem;
-      color: #475569;
-      flex-wrap: wrap;
-    }
-
-    .price {
-      color: #2563eb;
-      font-weight: 700;
-    }
-
-    .rating {
-      color: #f59e0b;
-    }
-
-    .description {
-      color: #334155;
-      font-size: 0.95rem;
-      margin: 1rem 0;
-      line-height: 1.5;
-    }
-
-    .tags {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-
-    .tags span {
-      background: #f1f5f9;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      color: #2563eb;
-      font-weight: 500;
-    }
-
-    .profile-btn {
-      display: inline-block;
-      padding: 0.6rem 1.5rem;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-
-    .profile-btn:hover {
-      background: #1d4ed8;
-    }
-
-    .hidden-card {
-      display: none !important;
-    }
-
-    /* LOAD MORE */
-    .load-more {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .load-more button {
-      padding: 1rem 3rem;
-      background: white;
-      border: 2px solid #2563eb;
-      color: #2563eb;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .load-more button:hover {
-      background: #2563eb;
-      color: white;
-    }
-
-    /* WHY SECTION */
-    .why-section {
-      padding: 4rem 5%;
-      background: white;
-      margin-top: 2rem;
-    }
-
-    .why-section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 3rem;
-      color: #0f172a;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .why-box {
-      padding: 2rem;
-      background: #f8fafc;
-      border-radius: 20px;
-      transition: transform 0.2s;
-    }
-
-    .why-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .why-box h4 {
-      color: #2563eb;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .why-box p {
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    /* STEPS */
-    .steps {
-      padding: 4rem 5%;
-      background: linear-gradient(135deg, #f8fafc 0%, #e6f0ff 100%);
-    }
-
-    .steps h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 3rem;
-      color: #0f172a;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .step {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #1e293b;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    /* FAQ */
-    .faq {
-      padding: 4rem 5%;
-      background: white;
-    }
-
-    .faq h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 3rem;
-      color: #0f172a;
-    }
-
-    details {
-      max-width: 800px;
-      margin: 1rem auto;
-      background: #f8fafc;
-      border-radius: 10px;
-      padding: 1rem;
-    }
-
-    summary {
-      font-weight: 600;
-      color: #1e293b;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    details p {
-      padding: 1rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #0f172a;
-      color: white;
-      padding: 4rem 5% 1rem;
-    }
-
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .footer-col h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: #94a3b8;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col li {
-      margin-bottom: 0.8rem;
-    }
-
-    .footer-col a {
-      color: #cbd5e1;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col a:hover {
-      color: #2563eb;
-    }
-
-    .social-section {
-      margin-top: 2rem;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .social-icon {
-      width: 30px;
-      height: 30px;
-      filter: brightness(0) invert(1);
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-
-    .social-icon:hover {
-      opacity: 1;
-    }
-
-    .contact-box {
-      background: #1e293b;
-      padding: 2rem;
-      border-radius: 20px;
-    }
-
-    .contact-box h3 {
-      color: white;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-box p {
-      color: #94a3b8;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    .footer-input {
-      width: 100%;
-      padding: 0.8rem;
-      background: #334155;
-      border: 1px solid #475569;
-      border-radius: 8px;
-      color: white;
-    }
-
-    .footer-input::placeholder {
-      color: #94a3b8;
-    }
-
-    .footer-btn {
-      width: 100%;
-      padding: 0.8rem;
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .footer-btn:hover {
-      background: #1d4ed8;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding: 2rem 0 0;
-      margin-top: 3rem;
-      border-top: 1px solid #1e293b;
-      color: #64748b;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .page-layout {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-      }
-
-      .filter-container button {
-        margin-left: 0;
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-
-      .hero-title {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-divider {
-        display: none;
-      }
-    }
-  </style>
+  
 </head>
 <body>
 
@@ -734,45 +70,187 @@
   <!-- ===== PAGE LAYOUT: SIDEBAR + CARDS ===== -->
   <div class="page-layout">
     <!-- SIDEBAR (تم إضافة Biography للقائمة) -->
-    <aside class="sidebar">
+     <aside class="sidebar">
       <h3>Categories</h3>
-      <!-- Data & AI -->
-      <div class="category">
+
+
+      
+  <!-- Data & AI -->
+       <div class="category">
         <button class="category-btn">Data & AI <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
           <li><a href="../AI/Al Developers.html">AI Developers</a></li>
           <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
           <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
         </ul>
       </div>
 
       <!-- Development & IT -->
-      <div class="category">
+   <div class="category">
         <button class="category-btn">Development & IT <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
           <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
           <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
         </ul>
       </div>
 
-      <!-- Writing & Translation (نشط ومعدل ليشمل Biography) -->
-      <div class="category active">
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
         <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
         <ul class="sub-categories">
-          <li><a href="#" style="color:#2563eb; font-weight:500;">Biography Writers</a></li>
-          <li><a href="#">Memoir Writers</a></li>
-          <li><a href="#">Family History Writers</a></li>
-          <li><a href="#">Business Bio Writers</a></li>
-          <li><a href="#">Creative Writers</a></li>
-          <li><a href="#">eBook Writers</a></li>
-          <li><a href="#">English to Arabic Translators</a></li>
-          <li><a href="#">Academic Writers</a></li>
-          <li><a href="#">Grant Writers</a></li>
+          <li><a href="../Writing & Translation/academic writers.html">Academic Writers</a></li>
+          <li><a href="../Writing & Translation/biography writers.html">Biography Writers</a></li>
+          <li><a href="../Writing & Translation/Business plan writers.html">Business Plan Writers</a></li>
+          <li><a href="../Writing & Translation/Copy Editors.html">Copy Editors</a></li>
+          <li><a href="../Writing & Translation/creative writers.html">Creative Writers</a></li>
+          <li><a href="../Writing & Translation/ebook writers.html">eBook Writers</a></li>
+          <li><a href="../Writing & Translation/EnglishToSpanish.html">English to Spanish Translators</a></li>
+          <li><a href="../Writing & Translation/essay writers.html">Essay Writers</a></li>
+          <li><a href="../Writing & Translation/Fiction Writers.html">Fiction Writers</a></li>
+          <li><a href="../Writing & Translation/Grant Writers.html">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
+        </ul>
+      </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
+
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
         </ul>
       </div>
     </aside>
+
 
     <!-- CARDS SECTION (15 بطاقة جديدة لكتاب السيرة) -->
     <section class="cards-wrapper">
