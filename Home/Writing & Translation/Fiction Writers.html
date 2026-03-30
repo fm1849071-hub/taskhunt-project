@@ -697,8 +697,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const loadMoreBtn  = document.getElementById("loadMoreBtn");
   const applyFilterBtn = document.getElementById("applyFilter");
 
-  let visible = 6;
-  const step = 6;
+  let visible = 8;
+  const step = 4;
+
 
   function getFilteredCards(){
     return Array.from(cards).filter(function(card){
