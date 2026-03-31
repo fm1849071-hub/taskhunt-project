@@ -744,3 +744,24 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
       }
     }
+
+    /* ================= about ================= */
+
+.about-section {
+    padding: 60px 5%;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text { flex: 2; }
+.about-text h2 { font-size: 2rem; color: #222; margin-bottom: 15px; }
+.blue { color: #00aaff; }
+.about-text p { font-size: 1.1rem; color: #555; line-height: 1.6; }
