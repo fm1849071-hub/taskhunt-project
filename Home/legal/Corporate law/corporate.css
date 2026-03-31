@@ -19,8 +19,8 @@
       background: #f9fafb;
       color: #111827;
     }
-
-    /* NAVBAR */
+ 
+ /* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
@@ -83,11 +83,7 @@ nav ul li a:hover {
 }
 /* LOGIN BUTTON */
 
-.login-btn {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff; 
-}
+
 .auth-buttons .btn:hover {
     opacity: 0.8;
     transform: translateY(-0.5px);
@@ -119,7 +115,6 @@ nav ul li a:hover {
   color: #fff;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 
 
     .hero-title {
@@ -196,7 +191,7 @@ nav ul li a:hover {
 
     .filter-container button {
       padding: 12px 26px;
-      background: #0077B8 ;
+      background: #005b84;
       color: #ffffff;
       border: none;
       border-radius: 10px;
@@ -235,7 +230,7 @@ nav ul li a:hover {
 
     /* SIDEBAR */
     .sidebar {
-      width: 200px;
+      width: 180px;
       flex-shrink: 0;
       border-right: 1px solid #e5e7eb;
       padding-right: 20px;
@@ -321,20 +316,22 @@ nav ul li a:hover {
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 18px;
+      row-gap: 6px;
+      
     }
-
-   
 
     .up-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 14px;
-      padding: 20px;
+      padding: 18px;
       display: flex;
       flex-direction: column;
       transition: 0.25s;
+      height: 300px;
+      width: 250px;
     }
 
     .up-card:hover {
@@ -344,7 +341,7 @@ nav ul li a:hover {
 
     .card-header {
       display: flex;
-      gap: 15px;
+      gap: 12px;
     }
 
     .avatar {
@@ -358,14 +355,14 @@ nav ul li a:hover {
     }
 
     .location {
-      font-size: 15px;
+      font-size: 14px;
       color: #6b7280;
     }
 
     .stats {
       display: flex;
       gap: 10px;
-      font-size: 15px;
+      font-size: 14px;
       margin-top: 6px;
     }
 
@@ -374,7 +371,7 @@ nav ul li a:hover {
     }
 
     .description {
-      font-size: 15px;
+      font-size: 13px;
       margin: 12px 0;
       line-height: 1.5;
     }
@@ -390,14 +387,14 @@ nav ul li a:hover {
       background: #f3f4f6;
       padding: 5px 10px;
       border-radius: 999px;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .profile-btn {
       margin-top: auto;
       text-align: center;
       padding: 12px;
-      background: #0077B8 ;
+      background:#0077B8 ;
       color: white;
       border-radius: 10px;
       text-decoration: none;
@@ -428,36 +425,69 @@ nav ul li a:hover {
       }
     }
 
+/* ================= about ================= */
 
-    .load-more {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
+.about-section {
+    padding: 60px 5%;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text { flex: 2; }
+.about-text h2 { font-size: 2rem; color: #222; margin-bottom: 15px; }
+.blue { color: #00aaff; }
+.about-text p { font-size: 1.1rem; color: #555; line-height: 1.6; }
+
+/* Animation Styling */
+.about-visual { flex: 1; display: flex; justify-content: center; }
+.dot-animation {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.pulse-dot {
+    width: 20px; height: 20px;
+    background: #00aaff;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%; left: 40%;
+    animation: pulse 2s infinite;
+}
+
+.orbit-dot {
+    width: 10px; height: 10px;
+    background: #00aaff;
+    border-radius: 50%;
+    position: absolute;
+    animation: orbit 4s infinite linear;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(0, 170, 255, 0.7); }
+    70% { transform: scale(1.2); opacity: 0.8; box-shadow: 0 0 0 20px rgba(0, 170, 255, 0); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg) translateX(45px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(45px) rotate(-360deg); }
+}
+
+@media (max-width: 768px) {
+    .about-container { flex-direction: column; text-align: center; }
+}
 
 
-    .load-more button {
-      padding: 14px 40px;
-      background: #0077B8;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-
-    }
-
-    .load-more button:hover {
-      background: #004666;
-    }
-
-
-
-        /* Footer */ 
+/* Footer */ 
 .footer {
   background: #051923;
   padding: 20px 10px;
@@ -610,7 +640,32 @@ nav ul li a:hover {
     width: 100%;
   }
 }
+    .load-more {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
 
+
+    .load-more button {
+      padding: 14px 40px;
+      background: #0077B8 ;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+
+    }
+
+    .load-more button:hover {
+      background: #004666;
+    }
 
     /* ===== WHY SECTION ===== */
     .why-section {
@@ -750,4 +805,3 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
       }
     }
-

@@ -3,511 +3,1402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskHunt - Freelancer Dashboard</title>
+    <title>TaskHunt | Freelancer Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         :root {
-            --primary-blue: #0077B8; 
-            --bg-color: #f7f9fc;  
+            --primary-blue: #0077B8;
+            --primary-dark: #005a8c;
+            --primary-light: #e3f2fd;
+            --bg-color: #f7f9fc;
             --text-dark: #1a2b3c;
             --text-gray: #6c7a89;
-            --card-bg: rgba(255, 255, 255, 0.7);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --border-color: rgba(0, 0, 0, 0.05);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
         }
 
         body {
-            
-            background: linear-gradient(135deg, #f7f9fc 0%, #eef2f7 50%, #f0f4f8 100%);
+            background: linear-gradient(135deg, #f7f9fc 0%, #eef2f7 100%);
             height: 100vh;
             display: flex;
             overflow: hidden;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 260px;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        /* Dark Mode */
+        body.dark {
+            background: linear-gradient(135deg, #1a1f2e 0%, #0f1119 100%);
         }
 
-      
+        body.dark .sidebar {
+            background: rgba(26, 31, 46, 0.95);
+            border-right-color: rgba(255, 255, 255, 0.05);
+        }
 
-.user-name {
-    font-size: 15px;
-    font-weight: 700;
-    color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
-}
+        body.dark .main-content {
+            background: transparent;
+        }
 
-.user-status {
-    font-size: 12px;
-    color: #9e9e9e;
-    margin-top: 2px;
-}
+        body.dark .card,
+        body.dark .mini-card,
+        body.dark .search-area,
+        body.dark .user-profile,
+        body.dark .table-container,
+        body.dark .modal-content {
+            background: rgba(31, 37, 55, 0.95);
+            border-color: rgba(255, 255, 255, 0.05);
+            color: #e5e7eb;
+        }
+
+        body.dark .card-header h3,
+        body.dark .mini-card h4,
+        body.dark td,
+        body.dark .welcome-msg p {
+            color: #e5e7eb;
+        }
+
+        body.dark .stat-value,
+        body.dark .stat-label {
+            color: #e5e7eb;
+        }
+
+        body.dark .sidebar nav ul li {
+            color: #9ca3af;
+        }
+
+        body.dark .sidebar nav ul li.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        body.dark input,
+        body.dark select {
+            background: #1f2937;
+            color: white;
+            border-color: #374151;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            overflow-y: auto;
+        }
+
+        .logo {
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .logo h2 {
+            font-size: 22px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        body.dark .logo h2 {
+            color: white;
+        }
+
+        .logo p {
+            font-size: 11px;
+            color: var(--text-gray);
+        }
 
         nav ul {
-             list-style: none; 
-            }
+            list-style: none;
+        }
 
         nav ul li {
-            padding: 12px 15px;
-            margin-bottom: 10px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
             color: var(--text-gray);
             cursor: pointer;
             display: flex;
             align-items: center;
+            gap: 12px;
             border-radius: 12px;
-            transition: 0.3s;
+            transition: all 0.3s;
             font-weight: 500;
         }
 
         nav ul li i {
-             margin-right: 15px;
-             width: 20px;
-              font-size: 18px;
-            }
+            width: 22px;
+            font-size: 18px;
+        }
 
         nav ul li.active {
-             background: var(--primary-blue);
-              color: white;
-               box-shadow: 0 8px 15px rgba(0, 119, 184, 0.2);
-             }
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 119, 184, 0.2);
+        }
 
-        nav ul li:hover:not(.active) { 
-            background: rgba(0, 119, 184, 0.05);
-             color: var(--primary-blue);
-             }
+        nav ul li:hover:not(.active) {
+            background: rgba(0, 119, 184, 0.08);
+            color: var(--primary-blue);
+            transform: translateX(5px);
+        }
 
+        hr {
+            margin: 20px 0;
+            border-color: var(--border-color);
+        }
 
         /* Main Content */
         .main-content {
             flex: 1;
-            padding: 40px 50px;
+            padding: 32px 40px;
             overflow-y: auto;
         }
 
-        header {
+        /* Top Header */
+        .top-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-         .search-area {
-            
-            display: flex; align-items: center; background: white;
-            padding: 8px 15px; border-radius: 20px; width: 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        .welcome-msg h1 {
+            font-size: 28px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .welcome-msg p {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-area {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            width: 280px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
         }
 
         .search-area input {
-            border: none; outline: none; padding-left: 10px; width: 100%;
+            border: none;
+            outline: none;
+            padding-left: 12px;
+            width: 100%;
+            background: transparent;
         }
 
-        
+        .notification-bell {
+            position: relative;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-gray);
+        }
 
-        .welcome-msg p {
-             color: 0077b8;
-              font-weight: 600;
-               font-size: 30px;
-             }
-
-
-        .header-tools {
-             display: flex;
-              align-items: center;
-               gap: 25px;
-             }
-
-        .header-tools i {
-             color: var(--text-gray);
-              cursor: pointer;
-               font-size: 18px;
-             }
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--danger);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
 
         .user-profile {
-             display: flex;
-              align-items: center;
-               gap: 12px; padding: 6px 15px;
-                background: white;
-                 border-radius: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-                 }
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 6px 16px 6px 12px;
+            background: white;
+            border-radius: 40px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
 
         .user-profile img {
-             width: 35px;
-              height: 35px;
-               border-radius: 50%;
-                object-fit: cover;
-             }
-
-
-        /* Layout Grid */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 30px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+        .dark-mode-toggle {
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--text-gray);
+            padding: 8px;
+            border-radius: 50%;
+            transition: 0.2s;
         }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .card-header h3 {
-             font-size: 19px;
-              color: var(--text-dark);
-             }
-
-        .card-header a {
-             font-size: 13px;
-              color: var(--primary-blue);
-               text-decoration: none;
-                font-weight: 600;
-             }
-
-
-        /* Active Project Section */
-        .project-status {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-        }
-        .client-info {
-             display: flex;
-              align-items: center;
-               gap: 15px; font-weight: 700;
-                color: var(--text-dark);
-             }
-        .progress-circle { 
-            width: 45px;
-             height: 45px;
-              border: 4px solid var(--primary-blue); 
-              border-radius: 50%; display: flex;
-               align-items: center; justify-content: center;
-                font-size: 11px; 
-                font-weight: 800;
-                 color: var(--primary-blue);
-                 }
-
-
-        /* Table */
-        table {
-             width: 100%;
-              border-collapse: collapse;
-             }
-
-        th {
-             text-align: left;
-              color: var(--text-gray);
-               font-size: 11px; text-transform: uppercase;
-                letter-spacing: 1px; padding-bottom: 15px; }
-        td { padding: 14px 0; font-size: 14px; font-weight: 600;
-             color: var(--text-dark);
-              border-bottom: 1px solid rgba(0,0,0,0.03);
-             }
-
-        .status-tag {
-             padding: 4px 10px;
-              border-radius: 8px;
-               font-size: 11px;
-             }
-        .status-ongoing {
-             background: #e3f2fd;
-              color: #1976d2;
-             }
 
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
         }
-        .mini-card {
-             background: white;
-              padding: 25px; border-radius: 22px;
-               transition: 0.3s;
-                border: 1px solid rgba(0,0,0,0.02);
-             }
 
-        .mini-card:hover {
-             transform: translateY(-5px);
-              box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-             }
+        .stat-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
 
-        .mini-card p {
-             font-size: 11px;
-              color: var(--text-gray);
-               font-weight: 700; margin-bottom: 8px;
-             }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
 
-        .mini-card h4 {
-             font-size: 22px;
-              color: var(--text-dark);
-             }
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
 
-        /* Training/Action Banner */
-        .action-banner {
-            grid-column: span 2;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #0077B8 100%);
+        .stat-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* Charts Section */
+        .charts-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chart-card h3 {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        /* Tables */
+        .table-container {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .table-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .search-filter {
+            display: flex;
+            gap: 12px;
+        }
+
+        .search-filter input {
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 40px;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
             color: white;
-            padding: 30px;
-            border-radius: 25px;
-            margin-top: 10px;
-            position: relative;
-        }
-        .action-banner h4 { 
-            font-size: 20px;
-             margin-bottom: 10px;
-             }
-
-        .action-banner button {
-            background: rgba(255, 255, 255, 0.2);
             border: none;
-            padding: 10px 20px;
-            color: white;
-            border-radius: 12px;
+            padding: 8px 20px;
+            border-radius: 40px;
             cursor: pointer;
             font-weight: 600;
-            margin-top: 10px;
-            transition: 0.3s;
+            transition: 0.2s;
         }
-        .action-banner button:hover { background: white; color: var(--primary-blue); }
 
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 16px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            color: var(--text-gray);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-banned {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            padding: 6px 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.2s;
+            color: var(--text-gray);
+        }
+
+        .btn-icon:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--primary-blue);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 28px;
+            padding: 32px;
+            width: 90%;
+            max-width: 500px;
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: white;
+            padding: 14px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            z-index: 1100;
+            animation: slideInRight 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Notification Dropdown */
+        .notifications-dropdown {
+            position: absolute;
+            top: 60px;
+            right: 120px;
+            background: white;
+            border-radius: 20px;
+            width: 320px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 100;
+            border: 1px solid var(--border-color);
+        }
+
+        .notifications-dropdown.show {
+            display: block;
+        }
+
+        .notification-item {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .notification-item:hover {
+            background: rgba(0, 119, 184, 0.05);
+        }
+
+        .notification-item.unread {
+            background: rgba(0, 119, 184, 0.08);
+        }
+
+        /* Loading Spinner */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 119, 184, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-blue);
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 240px;
+            }
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                z-index: 1000;
+            }
+            .main-content {
+                padding: 20px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <aside class="sidebar">
-
-
-
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-tasks"></i></div>
+            <div>
+                <h2>TaskHunt</h2>
+                <p>Freelancer Dashboard</p>
+            </div>
+        </div>
         <nav>
-            <ul>
-                <li class="active"><i class="fas fa-chart-line"></i> Dashboard</li>
-                <li><i class="fas fa-briefcase"></i> My Projects</li>
-                <li><i class="fas fa-search"></i> Find Jobs</li>
-                <li><i class="fas fa-envelope"></i> Messages</li>
-                <li><i class="fas fa-file-invoice-dollar"></i> Finances</li>
-                <li><i class="fas fa-bookmark"></i> Saved</li>
-                <li><i class="fas fa-user-tie"></i> My Profile</li>
-                <hr style="opacity: 0.1; margin: 20px 0;">
-                <li><i class="fas fa-cog"></i> Settings</li>
-            </ul>
+           <ul>
+    <li class="active" data-page="dashboard"><i class="fas fa-chart-line"></i> Dashboard</li>
+    <li data-page="projects"><i class="fas fa-briefcase"></i> My Projects</li>
+    <li data-page="find-jobs"><i class="fas fa-search"></i> Find Jobs</li>
+    <li data-page="earnings"><i class="fas fa-wallet"></i> Earnings</li>
+    <li data-page="community"><i class="fas fa-users"></i> Community</li>
+    <li data-page="settings"><i class="fas fa-cog"></i> Settings</li>
+    <hr>
+    <li data-page="profile"><i class="fas fa-user"></i> My Profile</li>
+</ul>
         </nav>
     </aside>
 
     <main class="main-content">
-        <header>
+        <div class="top-header">
             <div class="welcome-msg">
-                <p>Welcome Alex !</p>
+                <h1>Welcome back, Alex 👋</h1>
+                <p>Here's your freelancer activity today</p>
             </div>
-
-              <div class="search-area">
-                <i class="fas fa-search" style="color: #ccc;"></i>
-                <input type="text" placeholder="Search for anything...">
-            </div>
-
-                
-            </div>
-            <div class="header-tools">
-                
-                <i class="fas fa-bell"></i>
+            <div class="header-actions">
+                <div class="search-area">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search..." id="globalSearch">
+                </div>
+                <div class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="notification-bell" id="notificationBell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notificationCount">3</span>
+                </div>
                 <div class="user-profile">
-                    <img src="https://i.pravatar.cc/150?u=dev" alt="User">
-                    <span>Alex Morgan</span>
-                </div>
-            </div>
-        </header>
-
-        <div class="dashboard-grid">
-            <div class="left-col">
-                <div class="card" style="margin-bottom: 30px;">
-                    <div class="card-header">
-                        <h3>Ongoing Project</h3>
-                        <a href="#">Details</a>
-                    </div>
-                    <p style="font-size: 12px; color: var(--text-gray); margin-bottom: 15px;">Deadline: 20 March, 2026</p>
-                    <div class="project-status">
-                        <div class="client-info"><i class="fas fa-laptop-code fa-2x" style="color: var(--primary-blue);"></i> Web App Design</div>
-                        <div class="progress-circle">75%</div>
-                        <div class="client-info">TechCorp Inc.</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Recent Proposals</h3>
-                        <a href="#">View All</a>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr><th>JOB TITLE</th><th>BUDGET</th><th>STATUS</th><th>BIDS</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>UI/UX Designer</td><td>$2,400</td><td><span class="status-tag status-ongoing">Active</span></td><td>12</td></tr>
-                            <tr><td>React Developer</td><td>$4,800</td><td><span class="status-tag status-ongoing">Review</span></td><td>8</td></tr>
-                            <tr><td>API Integration</td><td>$1,200</td><td><span class="status-tag status-ongoing">Active</span></td><td>24</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                
-            </div>
-
-            
-
-            <div class="right-col">
-                <div class="card" style="margin-bottom: 30px;">
-                    <div class="card-header">
-                        <h3>Monthly Earnings</h3>
-                    </div>
-                    <div style="height: 10px; background: rgba(0,0,0,0.05); border-radius: 5px; overflow: hidden; display: flex; margin: 20px 0;">
-                        <div style="width: 70%; background: var(--primary-blue);"></div>
-                        <div style="width: 20%; background: #4db6ac;"></div>
-                        <div style="width: 10%; background: #ff8a80;"></div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-gray);">
-                        <span>PAID <b>$5.2k</b></span><span>PENDING <b>$1.1k</b></span>
-                    </div>
-                </div>
-
-                <div class="stats-grid">
-                    
-                    <div class="mini-card">
-                        <p>ACTIVE PROJECTS</p>
-                        <h4>3 Projects</h4>
-                    </div>
-                    <div class="mini-card">
-                        <p>TOTAL COMPLETED</p>
-                        <h4>42 Jobs</h4>
-                    </div>
-                    <div class="mini-card">
-                        <p>SUCCESS RATE</p>
-                        <h4>98%</h4>
-                    </div>
-                    <div class="mini-card">
-                        <p>PROFILE VIEWS</p>
-                        <h4>1.2k</h4>
-
-                    </div>
-                    <div class="action-banner">
-                        <p style="font-size: 11px; opacity: 0.9;">NEW OPPORTUNITY</p>
-                        <h4>Update your skills to match more jobs</h4>
-                        <button>Edit Portfolio</button>
-                    </div>
+                    <img src="https://i.pravatar.cc/150?u=Freelancer" alt="Freelancer">
+                    <span> Alex</span>
                 </div>
             </div>
         </div>
+
+        <div id="pageContent"></div>
     </main>
+
+    <!-- Modals -->
+    <div id="portfolioModal" class="modal">
+    <div class="modal-content">
+        <h2 id="modalTitle">Add Portfolio Project</h2>
+        <form id="portfolioForm">
+            <div class="form-group">
+                <label>Project Title</label>
+                <input type="text" id="projTitle" placeholder="e.g. Web Design" required>
+            </div>
+            <div class="form-group">
+                <label>Project Link</label>
+                <input type="url" id="projLink" placeholder="https://...">
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <select id="projCategory">
+                    <option value="Web">Web Development</option>
+                    <option value="UI">UI/UX Design</option>
+                    <option value="Mobile">Mobile App</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary">Add Project</button>
+            <button type="button" onclick="closeModal('portfolioModal')" style="margin-left: 10px;">Cancel</button>
+        </form>
+    </div>
+</div>
+    <div id="notificationsDropdown" class="notifications-dropdown"></div>
+
     <script>
+        // ==================== STATE MANAGEMENT ====================
+        let currentPage = 'dashboard';
+        let editingUserId = null;
+
+        // Data Stores
+
+        let myActiveProjects = [
+    { id: 1, title: 'Web App Design', client: 'TechCorp Inc.', budget: 1500, deadline: '2026-04-10', progress: 75 },
+    { id: 2, title: 'E-commerce UI', client: 'Retail Flow', budget: 2200, deadline: '2026-04-15', progress: 30 },
+    { id: 3, title: 'Portfolio Website', client: 'Personal Client', budget: 800, deadline: '2026-03-30', progress: 100 }
+];
+
+       let posts = [
+    { id: 1, author: 'Mariam', content: 'I am looking for a Backend Developer (Node.js) to help me finish a client project.', time: '5m ago' },
+    { id: 2, author: 'Ahmed', content: 'Does anyone have tips for React optimization?', time: '1h ago' }
+];
+       
+         let availableJobs = [
+    { id: 101, title: 'E-commerce Website', client: 'FashionHub', budget: 1200, status: 'Open', posted: '2 hours ago' },
+    { id: 102, title: 'Mobile App UI Fix', client: 'SwiftPay', budget: 450, status: 'Open', posted: '5 hours ago' },
+    { id: 103, title: 'Logo Design', client: 'Green-Energy', budget: 200, status: 'Urgent', posted: '1 day ago' },
+    { id: 104, title: 'React Dashboard', client: 'TechSolutions', budget: 3000, status: 'Open', posted: '3 days ago' }
+];
+
+        let proposals = [
+            { id: 1, title: 'UI/UX Designer', budget: 2400, status: 'Active', bids: 12 },
+            { id: 2, title: 'React Developer', budget: 4800, status: 'Review', bids: 8 },
+            { id: 3, title: 'API Integration', budget: 1200, status: 'Active', bids: 24 },
+        ];
+
+        // الكود المعدل للبيانات
+let withdrawRequests = [
+    { id: 1, user: "Emma", amount: 500, status: 'Pending', date: '2026-03-15' },
+    { id: 2, user: "Sophia", amount: 1200, status: 'Pending', date: '2026-03-28' },
+];
+
+let notifications = [
+    { id: 1, message: 'Your proposal for "Web App" was accepted!', time: '2 min ago', read: false },
+    { id: 2, message: 'New message from TechCorp Inc.', time: '15 min ago', read: false },
+    { id: 3, message: 'Payment for "Portfolio Website" received ($800)', time: '1 hour ago', read: false },
+];
+
+
+        let platformStats = {
+            totalUsers: 28,
+            activeJobs: 2,
+            totalRevenue: 38240,
+            reportsCount: 98
+        };
+
+        
+
+        // Helper Functions
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" style="color: ${type === 'success' ? '#28a745' : '#dc3545'}"></i> ${message}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+       
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            editingUserId = null;
+        }
+
+       function updateStats() {
     
-
-    document.addEventListener('DOMContentLoaded', () => {
-
-        // 1. (Sidebar Navigation)
-        const setupSidebar = () => {
-            const navItems = document.querySelectorAll('.sidebar nav ul li');
-            
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    // إزالة الكلاس النشط من الكل
-                    navItems.forEach(i => i.classList.remove('active'));
-                    // إضافة الكلاس للعنصر اللي ضغطنا عليه
-                    this.classList.add('active');
-                    
-                    console.log(`Navigating to: ${this.innerText.trim()}`);
-                });
-            });
-        };
-
-        // 2. تشغيل زرار التفاصيل (Ongoing Project Details)
-        const setupProjectDetails = () => {
-            const detailsBtn = document.querySelector('.card-header a[href="#"], .card-header a');
-            
-            // عشان نمنع اللينك يخلي الصفحة تطلع لفوق
-            detailsBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // هنا بنعمل محاكاة لفتح نافذة أو إظهار بيانات
-                const projectTitle = document.querySelector('.client-info').innerText;
-                alert(`Project: ${projectTitle}\nClient: TechCorp Inc.\nProgress: 75%\nNext Milestone: API Testing`);
-            });
-        };
-
-        // 3. تشغيل زرار عرض الكل في المقترحات (View All Proposals)
-        const setupProposalsTable = () => {
-            const viewAllBtn = document.querySelectorAll('.card-header a')[1]; // الزرار الثاني في الصفحة
-            const tableBody = document.querySelector('table tbody');
-
-            viewAllBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                // إضافة صف جديد كمثال لما ندوس على View All
-                const newRow = document.createElement('tr');
-                newRow.innerHTML = `
-                    <td>Mobile App Dev</td>
-                    <td>$3,200</td>
-                    <td><span class="status-tag status-ongoing">Pending</span></td>
-                    <td>15</td>
-                `;
-                
-                tableBody.appendChild(newRow);
-                
-                // تغيير شكل الزرار بعد الإضافة
-                viewAllBtn.innerText = "All Loaded";
-                viewAllBtn.style.opacity = "0.5";
-                viewAllBtn.style.pointerEvents = "none";
-            });
-        };
-
-        // 4. تشغيل كروت الإحصائيات (Mini Cards Interaction)
-        const setupMiniCards = () => {
-            const miniCards = document.querySelectorAll('.mini-card');
-            
-            miniCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const label = card.querySelector('p').innerText;
-                    const value = card.querySelector('h4').innerText;
-                    
-                    console.log(`Metric Clicked: ${label} - Current Value: ${value}`);
-                    
-                    // عمل تأثير "نبض" خفيف عند الضغط
-                    card.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        card.style.transform = 'translateY(-5px)';
-                    }, 100);
-                });
-            });
-        };
-
-        // تشغيل كل الوظائف
-        setupSidebar();
-        setupProjectDetails();
-        setupProposalsTable();
-        setupMiniCards();
-
-    });
-</script>
+    freelancerStats.activeProjects = myActiveProjects.length;
     
+    if (revenueChart && usersChart) {
+        // تحديث الرسم البياني للأرباح
+        revenueChart.data.datasets[0].data = [400, 900, 1500, 2300, 1800,  freelancerStats.totalEarnings];
+        revenueChart.update();
+    }
+}
 
+        // CRUD Operations
+       // إضافة مشروع للبورتفوليو بدل إضافة مستخدم
+function addPortfolioItem(data) {
+    const newItem = { id: Date.now(), ...data };
+    portfolioItems.push(newItem); 
+    showToast('Project added to portfolio!');
+    renderCurrentPage();
+}
+
+// مسح مشروع من البورتفوليو
+function deletePortfolioItem(id) {
+    if (confirm('Delete this project from your portfolio?')) {
+        portfolioItems = portfolioItems.filter(p => p.id !== id);
+        showToast('Project removed');
+        renderCurrentPage();
+    }
+}
+
+        function toggleUserStatus(id) {
+            const user = users.find(u => u.id === id);
+            if (user) {
+                user.status = user.status === 'Active' ? 'Banned' : 'Active';
+                showToast(`User ${user.status === 'Active' ? 'activated' : 'banned'}`);
+                renderCurrentPage();
+            }
+        }
+
+        function submitProposal(jobId) {
+    showToast('Proposal sent successfully!');
+    // هنا ممكن تضيفي منطق يغير حالة الشغل لـ "Applied"
+    renderCurrentPage();
+}
+
+function withdrawProposal(id) {
+    if (confirm('Withdraw your application?')) {
+        proposals = proposals.filter(p => p.id !== id);
+        showToast('Proposal withdrawn');
+        renderCurrentPage();
+    }
+}
+
+       function addPost() {
+    const content = document.getElementById('postInput').value;
+    if (content.trim() === '') return;
+
+    const newPost = {
+        id: Date.now(),
+        author: 'Mariam', // الاسم ثابت حالياً
+        content: content,
+        time: 'Just now'
+    };
+
+    posts.unshift(newPost); // بيضيف البوست في أول القائمة
+    renderCurrentPage(); // عشان يحدث الصفحة فوراً
+}
+
+
+
+        function deleteJob(id) {
+            if (confirm('Delete this job?')) {
+                jobs = jobs.filter(j => j.id !== id);
+                showToast('Job deleted');
+                renderCurrentPage();
+            }
+        }
+
+        function requestWithdrawal(amount) {
+    const newRequest = { 
+        id: Date.now(), 
+        amount: amount, 
+        status: 'Pending', 
+        date: new Date().toISOString().split('T')[0] 
+    };
+    withdrawRequests.push(newRequest);
+    showToast('Withdrawal request sent!');
+    renderCurrentPage();
+}
+
+
+        // Render Functions
+       function renderDashboard() {
+    return `
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-check-double"></i></div>
+                <div class="stat-value">28</div>
+                <div class="stat-label">Total Completed</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-spinner fa-spin-hover"></i></div>
+                <div class="stat-value">${platformStats.activeJobs.toLocaleString()}</div>
+                <div class="stat-label">Current Project</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                <div class="stat-value">$${platformStats.totalRevenue.toLocaleString()}</div>
+                <div class="stat-label">Total Earnings</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="stat-value">98%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <div class="chart-card">
+                <h3>Earnings Overview</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>My Monthly Tasks</h3>
+                <canvas id="usersChart"></canvas>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-header">
+                <h3>Recent Proposals</h3>
+                <a href="#" style="color: var(--primary-blue); text-decoration: none;">View All</a>
+            </div>
+            <div id="recentActivity"></div>
+        </div>
+    `;
+}
+       function renderMyProjects() {
+    return `
+        <div class="table-container">
+            <div class="table-header">
+                <h3><i class="fas fa-tasks"></i> My Active Projects</h3>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Client</th>
+                        <th>Budget</th>
+                        <th>Deadline</th>
+                        <th>Progress</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${myActiveProjects.map(proj => `
+                        <tr>
+                            <td><strong>${proj.title}</strong></td>
+                            <td>${proj.client}</td>
+                            <td>$${proj.budget}</td>
+                            <td>${proj.deadline}</td>
+                            <td>
+                                <div style="width: 100px; background: #eee; border-radius: 10px; height: 8px;">
+                                    <div style="width: ${proj.progress}%; background: var(--primary-blue); height: 100%; border-radius: 10px;"></div>
+                                </div>
+                                <span style="font-size: 10px;">${proj.progress}%</span>
+                            </td>
+                            <td>
+                                <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon" title="Send Message"><i class="fas fa-envelope"></i></button>
+                            </td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+        function renderJobs() {
+    return `
+        <div class="table-container">
+            <div class="table-header">
+                <h3><i class="fas fa-search"></i> Find New Jobs</h3> <div class="search-filter">
+                    <input type="text" id="jobSearch" placeholder="Search for skills, titles...">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Client</th>
+                        <th>Budget</th>
+                        <th>Status</th>
+                        <th>Posted</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="jobsTableBody"></tbody> </table>
+        </div>
+    `;
+}
+
+function renderFinance() {
+    return `
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #28a745;"><i class="fas fa-wallet"></i></div>
+                <div class="stat-value">$4,250</div> <div class="stat-label">Available for Withdrawal</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #0077B8;"><i class="fas fa-hand-holding-usd"></i></div>
+                <div class="stat-value">$800</div>
+                <div class="stat-label">Pending Earnings</div>
+            </div>
+        </div>
+        <div class="table-container">
+            <div class="table-header">
+                <h3><i class="fas fa-history"></i> My Withdrawal History</h3>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="withdrawTableBody">
+                    <tr>
+                        <td>$500</td>
+                        <td>2026-03-20</td>
+                        <td>Bank Transfer</td>
+                        <td><span class="status-badge status-active">Completed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+      
+      function renderCommunity() {
+    return `
+        <div class="table-container">
+            <h3><i class="fas fa-share-alt"></i> Share a Post</h3>
+            <div class="post-box" style="margin-top: 20px;">
+                <textarea id="postInput" placeholder="What's on your mind?" style="width: 100%; height: 80px; padding: 15px; border-radius: 10px; border: 1px solid #ddd;"></textarea>
+                <button onclick="addPost()" class="btn-primary" style="margin-top: 10px;">Post Now</button>
+            </div>
+            <hr style="margin: 30px 0;">
+            <div id="postsFeed">
+                ${posts.map(p => `
+                    <div class="post-card" style="background: #f9f9f9; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid var(--primary-blue);">
+                        <strong>${p.author}</strong> <span style="font-size: 12px; color: gray;">• ${p.time}</span>
+                        <p style="margin-top: 10px;">${p.content}</p>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+       function renderSettings() {
+    return `
+        <div class="table-container">
+            <h3><i class="fas fa-user-edit"></i> My Professional Profile</h3>
+            <form id="profileForm" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="freelancerName" value="Alex">
+                </div>
+                <div class="form-group">
+                    <label>Professional Title</label>
+                    <input type="text" placeholder="e.g. Web App" value="Web App">
+                </div>
+                <div class="form-group">
+                    <label>Hourly Rate ($)</label>
+                    <input type="number" value="30">
+                </div>
+                <div class="form-group">
+                    <label>Bio / Description</label>
+                    <textarea style="width: 100%; height: 100px; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">I am a professional frontend developer specializing in building premium UI/UX experiences...</textarea>
+                </div>
+                <button type="submit" class="btn-primary">Update Profile</button>
+            </form>
+            <hr style="margin: 30px 0;">
+            <h3><i class="fas fa-key"></i> Account Settings</h3>
+            <div class="form-group"><label><input type="checkbox" checked> Available for New Projects</label></div>
+            <div class="form-group"><label><input type="checkbox" checked> Email notifications for new jobs</label></div>
+            <button onclick="saveSettings()" class="btn-primary">Save Changes</button>
+        </div>
+    `;
+}
+
+        function renderRecentActivity() {
+    const container = document.getElementById('recentActivity');
+    if (container) {
+        container.innerHTML = `
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; color: var(--text-gray); font-size: 12px;">
+                        <th style="padding: 12px;">JOB TITLE</th>
+                        <th style="padding: 12px;">BUDGET</th>
+                        <th style="padding: 12px;">STATUS</th>
+                        <th style="padding: 12px;">BIDS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${proposals.map(prop => `
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 16px 12px;"><strong>${prop.title}</strong></td>
+                            <td style="padding: 16px 12px;">$${prop.budget.toLocaleString()}</td>
+                            <td style="padding: 16px 12px;">
+                                <span class="status-badge ${prop.status === 'Active' ? 'status-active' : 'status-pending'}">
+                                    ${prop.status}
+                                </span>
+                            </td>
+                            <td style="padding: 16px 12px;">${prop.bids}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        `;
+    }
+}
+
+        
+
+            function renderJobsTable() {
+    const searchTerm = document.getElementById('jobSearch')?.value.toLowerCase() || '';
+    
+    // فلترة الوظائف بناءً على البحث
+    const filteredJobs = availableJobs.filter(j => 
+        j.title.toLowerCase().includes(searchTerm) || 
+        j.client.toLowerCase().includes(searchTerm)
+    );
+
+    const tbody = document.getElementById('jobsTableBody');
+    
+    if (tbody) {
+        if (filteredJobs.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">No jobs found...</td></tr>`;
+            return;
+        }
+
+        tbody.innerHTML = filteredJobs.map(job => `
+            <tr>
+                <td><strong>${job.title}</strong></td>
+                <td>${job.client}</td>
+                <td>$${job.budget.toLocaleString()}</td>
+                <td><span class="status-badge ${job.status === 'Urgent' ? 'status-pending' : 'status-active'}">${job.status}</span></td>
+                <td>${job.posted}</td>
+                <td class="action-buttons">
+                    <button class="btn-primary" onclick="applyToJob(${job.id})" style="padding: 5px 15px; font-size: 12px;">
+                        Apply Now
+                    </button>
+                </td>
+            </tr>
+        `).join('');
+    }
+}
+
+        function renderWithdrawTable() {
+            const tbody = document.getElementById('withdrawTableBody');
+            if (tbody) {
+                tbody.innerHTML = withdrawRequests.map(req => `
+                    <tr>
+                        <td><strong>${req.user}</strong></td>
+                        <td>$${req.amount.toLocaleString()}</td>
+                        <td>${req.date}</td>
+                        <td><span class="status-badge status-pending">${req.status}</span></td>
+                        <td class="action-buttons">
+                            <button class="btn-icon" onclick="approveWithdraw(${req.id})"><i class="fas fa-check" style="color: #28a745;"></i></button>
+                            <button class="btn-icon" onclick="rejectWithdraw(${req.id})"><i class="fas fa-times" style="color: #dc3545;"></i></button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        function initCharts() {
+            const revenueCtx = document.getElementById('revenueChart')?.getContext('2d');
+            const usersCtx = document.getElementById('usersChart')?.getContext('2d');
+            if (revenueCtx) {
+                revenueChart = new Chart(revenueCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Earning ($)',
+                            data: [15000, 22000, 28000, 32000, 35000, platformStats.totalRevenue],
+                            borderColor: '#0077B8',
+                            backgroundColor: 'rgba(0, 119, 184, 0.05)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: { legend: { position: 'top' } }
+                    }
+                });
+            }
+            if (usersCtx) {
+                usersChart = new Chart(usersCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Completed Tasks',
+                            data: [1200, 1800, 2200, 2500, 2700, platformStats.totalUsers],
+                            borderColor: '#28a745',
+                            backgroundColor: 'rgba(40, 167, 69, 0.05)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: { legend: { position: 'top' } }
+                    }
+                });
+            }
+        }
+
+function renderCurrentPage() {
+    const contentDiv = document.getElementById('pageContent');
+
+    switch(currentPage) {
+
+        case 'dashboard':
+            contentDiv.innerHTML = renderDashboard();
+            initCharts();
+            renderRecentActivity();
+            break;
+
+        case 'projects':
+            contentDiv.innerHTML = renderMyProjects();
+           
+            break;
+
+        case 'find-jobs':
+            contentDiv.innerHTML = renderJobs();
+            renderJobsTable();
+            break;
+
+        case 'earnings':
+            contentDiv.innerHTML = renderFinance();
+            renderWithdrawTable();
+            break;
+
+        case 'community':
+    contentDiv.innerHTML = renderCommunity();
+    break;
+
+        case 'settings':
+            contentDiv.innerHTML = renderSettings();
+            break;
+
+        case 'profile':
+            contentDiv.innerHTML = renderSettings();
+            break;
+    }
+}
+        
+
+        function openAddUserModal() {
+            editingUserId = null;
+            document.getElementById('modalTitle').innerText = 'Add User';
+            document.getElementById('userForm').reset();
+            document.getElementById('userModal').style.display = 'flex';
+        }
+
+        function editUser(id) {
+            const user = users.find(u => u.id === id);
+            if (user) {
+                editingUserId = id;
+                document.getElementById('modalTitle').innerText = 'Edit User';
+                document.getElementById('userName').value = user.name;
+                document.getElementById('userEmail').value = user.email;
+                document.getElementById('userStatus').value = user.status;
+                document.getElementById('userModal').style.display = 'flex';
+            }
+        }
+
+        function saveSettings() {
+            showToast('Settings saved successfully');
+        }
+
+        // Notification Dropdown
+        function renderNotifications() {
+            const dropdown = document.getElementById('notificationsDropdown');
+            if (dropdown) {
+                dropdown.innerHTML = notifications.map(notif => `
+                    <div class="notification-item ${!notif.read ? 'unread' : ''}" onclick="markNotificationAsRead(${notif.id})">
+                        <div><strong>${notif.message}</strong></div>
+                        <div style="font-size: 11px; color: var(--text-gray);">${notif.time}</div>
+                    </div>
+                `).join('');
+                document.getElementById('notificationCount').innerText = notifications.filter(n => !n.read).length;
+            }
+        }
+
+        function markNotificationAsRead(id) {
+            const notif = notifications.find(n => n.id === id);
+            if (notif) notif.read = true;
+            renderNotifications();
+        }
+
+        // Event Listeners
+        document.getElementById('userForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userData = {
+                name: document.getElementById('userName').value,
+                email: document.getElementById('userEmail').value,
+                status: document.getElementById('userStatus').value
+            };
+            if (editingUserId) {
+                updateUser(editingUserId, userData);
+            } else {
+                addUser(userData);
+            }
+            closeModal('userModal');
+        });
+
+
+        // البحث في الوظائف
+document.addEventListener('input', (e) => {
+    if (e.target.id === 'jobSearch') {
+        renderJobsTable();
+    }
+});
+
+// دالة التقديم على الوظيفة
+function applyToJob(id) {
+    const job = availableJobs.find(j => j.id === id);
+    showToast(`Your proposal for "${job.title}" has been sent!`);
+}
+window.applyToJob = applyToJob; // عشان الزرار يشوفها
+
+        document.getElementById('profileForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('Profile updated successfully');
+        });
+
+        
+
+        document.querySelectorAll('.nav-item, .sidebar nav ul li').forEach(item => {
+            item.addEventListener('click', () => {
+                const page = item.dataset.page;
+                if (page) {
+                    document.querySelectorAll('.sidebar nav ul li').forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+                    currentPage = page;
+                    renderCurrentPage();
+                }
+            });
+        });
+
+
+        // دالة الموافقة (الصح)
+function approveWithdraw(id) {
+    const request = withdrawRequests.find(r => r.id === id);
+    if (request) {
+        request.status = 'Completed'; // تغيير الحالة لمكتمل
+        showToast('Withdrawal request approved successfully!');
+        renderCurrentPage(); // إعادة رسم الصفحة لإظهار التغيير فوراً
+    }
+}
+
+// دالة الرفض (الغلط)
+function rejectWithdraw(id) {
+    if (confirm('Are you sure you want to cancel this withdrawal request?')) {
+        // حذف الطلب من القائمة
+        withdrawRequests = withdrawRequests.filter(r => r.id !== id);
+        showToast('Request has been cancelled', 'danger');
+        renderCurrentPage(); // إعادة رسم الصفحة
+    }
+}
+
+        document.getElementById('darkModeToggle')?.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+
+        document.getElementById('notificationBell')?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const dropdown = document.getElementById('notificationsDropdown');
+            dropdown.classList.toggle('show');
+            renderNotifications();
+        });
+
+        document.addEventListener('click', () => {
+            document.getElementById('notificationsDropdown')?.classList.remove('show');
+        });
+
+        // Initialize
+        renderCurrentPage();
+
+        // Make functions global
+        window.openAddUserModal = openAddUserModal;
+        window.editUser = editUser;
+        window.deleteUser = deleteUser;
+        window.toggleUserStatus = toggleUserStatus;
+        window.approveJob = approveJob;
+        window.rejectJob = rejectJob;
+        window.deleteJob = deleteJob;
+        window.approveWithdraw = approveWithdraw;
+        window.rejectWithdraw = rejectWithdraw;
+        window.closeModal = closeModal;
+        window.showToast = showToast;
+        window.saveSettings = saveSettings;
+        window.markNotificationAsRead = markNotificationAsRead;
+    </script>
 </body>
 </html>
