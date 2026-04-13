@@ -154,7 +154,88 @@ nav ul li a:hover {
         display: none;
       }
     }
+    /* CATEGORY */
+   /* Sidebar Container */
+.modern-sidebar {
+    background: #ffffff;
+    padding: 25px 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+}
 
+.sidebar-header {
+    margin-bottom: 25px;
+    padding-left: 10px;
+    border-left: 4px solid #007bff; /* لون البراند بتاعك */
+}
+
+.sidebar-header h3 {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin: 0;
+    font-weight: 700;
+}
+
+.specialty-count {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation List */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin-bottom: 8px;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 12px 16px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.nav-list li a:hover {
+    background-color: #f0f7ff;
+    color: #007bff;
+    padding-left: 22px; /* حركة بسيطة لليمين */
+}
+
+/* Active Page State */
+.nav-list li a.active {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* إضافة سهم صغير يظهر عند الـ Hover */
+.nav-list li a:after {
+    content: '›';
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-list li a:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+ 
 
     /* ===== FILTER BAR ===== */
     .filter-bar {
@@ -318,7 +399,8 @@ nav ul li a:hover {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 18px;
-      row-gap: 5px;
+      row-gap: 6px;
+      
     }
 
     .up-card {
@@ -424,6 +506,66 @@ nav ul li a:hover {
       }
     }
 
+/* ================= about ================= */
+
+.about-section {
+    padding: 60px 5%;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text { flex: 2; }
+.about-text h2 { font-size: 2rem; color: #222; margin-bottom: 15px; }
+.blue { color: #00aaff; }
+.about-text p { font-size: 1.1rem; color: #555; line-height: 1.6; }
+
+/* Animation Styling */
+.about-visual { flex: 1; display: flex; justify-content: center; }
+.dot-animation {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.pulse-dot {
+    width: 20px; height: 20px;
+    background: #00aaff;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%; left: 40%;
+    animation: pulse 2s infinite;
+}
+
+.orbit-dot {
+    width: 10px; height: 10px;
+    background: #00aaff;
+    border-radius: 50%;
+    position: absolute;
+    animation: orbit 4s infinite linear;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(0, 170, 255, 0.7); }
+    70% { transform: scale(1.2); opacity: 0.8; box-shadow: 0 0 0 20px rgba(0, 170, 255, 0); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg) translateX(45px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(45px) rotate(-360deg); }
+}
+
+@media (max-width: 768px) {
+    .about-container { flex-direction: column; text-align: center; }
+}
 
 
 /* Footer */ 

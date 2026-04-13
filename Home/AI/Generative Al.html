@@ -43,224 +43,67 @@
     <h1>Generative AI</h1>
   </section>
 
- <section class="filter-bar">
-  <div class="filter-container">
 
-    <select id="skillFilter">
-      <option value="all">All GenAI Skills</option>
+<section class="filter-bar">
+  <div class="filter-container">
+    <select id="serviceFilter">
+      <option value="all">Service Options</option>
       <option value="llm">LLM (GPT/Llama)</option>
       <option value="images">Image Gen (Stable Diffusion)</option>
       <option value="prompt">Prompt Engineering</option>
       <option value="rag">RAG Systems</option>
       <option value="fine-tuning">Model Fine-tuning</option>
     </select>
-
-    <select id="levelFilter">
-      <option value="all">Experience Level</option>
-      <option value="junior">Junior</option>
-      <option value="mid">Mid</option>
-      <option value="senior">Senior</option>
+    <select id="budgetFilter">
+      <option value="all">Budget</option>
+      <option value="low">Under $30</option>
+      <option value="mid">$30 – $60</option>
+      <option value="high">Above $60</option>
     </select>
-
-    <select id="priceFilter">
-      <option value="all">Hourly Rate</option>
-      <option value="low">Under $25</option>
-      <option value="mid">$25 – $40</option>
-      <option value="high">Above $40</option>
+    <select id="ratingFilter">
+      <option value="all">Rating</option>
+      <option value="5">⭐ 5.0 Only</option>
+      <option value="4.5">⭐ 4.5 & Up</option>
+      <option value="4">⭐ 4.0 & Up</option>
     </select>
-
+    <select id="deliveryFilter">
+      <option value="all">Delivery Time</option>
+      <option value="1">Within 24 Hours</option>
+      <option value="3">Up to 3 Days</option>
+      <option value="7">Within a Week</option>
+    </select>
     <button id="applyFilter">Apply Filter</button>
-
   </div>
 </section>
 
   <div class="page-layout">
 
-    <aside class="sidebar">
-      <h3>Categories</h3>
 
-<!-- Data & AI -->
-       <div class="category">
-        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
-          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
-          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
-          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
-          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
-          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
-          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
-          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
-          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
-          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
-         
-        </ul>
-      </div>
-
-      <!-- Development & IT -->
-   <div class="category">
-        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
-          <li><a href="../Development&it/ai.html">AI Developers</a></li>
-          <li><a href="../Development&it/android.html">Android Developers</a></li>
-          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
-          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
-          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
-          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
-          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
-          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
-          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
-         
-        </ul>
-      </div>
-
-      <!-- Design & Creative -->
-      <div class="category">
-        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
-          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
-          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
-          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
-          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
-          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
-          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
-          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
-          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
-          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
-          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
-          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
-        </ul>
-      </div>
-
-      <!-- Sales & Marketing -->
-      <div class="category">
-        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
-          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
-          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
-          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
-          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
-          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
-          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
-          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
-          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
-          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
-        </ul>
-      </div>
-
-      <!-- Writing & Translation -->
-      <div class="category">
-        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="../Writing & Translation/academic writers.html">Academic Writers</a></li>
-          <li><a href="../Writing & Translation/biography writers.html">Biography Writers</a></li>
-          <li><a href="../Writing & Translation/Business plan writers.html">Business Plan Writers</a></li>
-          <li><a href="../Writing & Translation/Copy Editors.html">Copy Editors</a></li>
-          <li><a href="../Writing & Translation/creative writers.html">Creative Writers</a></li>
-          <li><a href="../Writing & Translation/ebook writers.html">eBook Writers</a></li>
-          <li><a href="../Writing & Translation/EnglishToSpanish.html">English to Spanish Translators</a></li>
-          <li><a href="../Writing & Translation/essay writers.html">Essay Writers</a></li>
-          <li><a href="../Writing & Translation/Fiction Writers.html">Fiction Writers</a></li>
-          <li><a href="../Writing & Translation/Grant Writers.html">Grant Writers</a></li>
-        </ul>
-      </div>
-
-      <!-- Admin & Support -->
-      <div class="category">
-        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
-          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
-          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
-          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
-          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
-          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
-          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
-          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
-          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
-          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
-
-        </ul>
-      </div>
-
-      <!-- Finance & Accounting -->
-      <div class="category">
-        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
-          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
-          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
-          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
-          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
-          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
-          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
-          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
-          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
-          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
-        </ul>
-      </div>
-
-      <!-- Legal -->
-      <div class="category">
-        <button class="category-btn">Legal <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
-          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
-          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
-          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
-          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
-          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
-          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
-          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
-          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
-          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
-        </ul>
-      </div>
-     <!-- HR & Training -->
-<div class="category">
-  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
-  <ul class="sub-categories">
-    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
-    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
-    <li><a href="../HR/facilitators.html">Facilitators</a></li>
-    <li><a href="../HR/interviewers.html">Interviewers</a></li>
-    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
-    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
-    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
-    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
-
-    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
-    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+<aside class="sidebar modern-sidebar">
+  <div class="sidebar-header">
+    <h3>Data & AI</h3>
+    <span class="specialty-count">10 Tracks</span>
+  </div>
+  <ul class="nav-list">
+    <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+    <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+    <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+    <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+    <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+    <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+    <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+    <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+    <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+    <li><a href="../AI/Generative Al.html" class="active">Generative AI</a></li>
   </ul>
-</div>
-
-      <!-- Engineering & Architecture -->
-      <div class="category">
-        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
-        <ul class="sub-categories">
-          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
-          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
-          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
-          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
-          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
-          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
-          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
-          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
-          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
-          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
-        </ul>
-      </div>
-    </aside>
+</aside>
 
 
     <section class="cards-wrapper">
 
     <div class="cards-grid">
 
-<div class="up-card" data-skill="llm fine-tuning" data-level="senior">
+<div class="up-card" data-skill="llm fine-tuning" data-level="senior" data-delivery="1">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=40" class="avatar">
     <div class="user-info">
@@ -270,6 +113,7 @@
         <span class="price">$60/hr</span>
         <span class="rating">⭐ 4.9</span>
         <span class="jobs">💼 32 jobs</span>
+        <span class="delivery-time">⏱️ 1 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -278,7 +122,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="rag llm" data-level="mid">
+<div class="up-card hidden-card" data-skill="rag llm" data-level="mid" data-delivery="3">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=41" class="avatar">
     <div class="user-info">
@@ -288,6 +132,7 @@
         <span class="price">$35/hr</span>
         <span class="rating">⭐ 4.8</span>
         <span class="jobs">💼 21 jobs</span>
+        <span class="delivery-time">⏱️ 3 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -296,7 +141,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="images prompt" data-level="senior">
+<div class="up-card hidden-card" data-skill="images prompt" data-level="senior" data-delivery="2">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=42" class="avatar">
     <div class="user-info">
@@ -306,6 +151,7 @@
         <span class="price">$55/hr</span>
         <span class="rating">⭐ 5.0</span>
         <span class="jobs">💼 18 jobs</span>
+        <span class="delivery-time">⏱️ 2 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -314,7 +160,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="llm prompt" data-level="mid">
+<div class="up-card hidden-card" data-skill="llm prompt" data-level="mid" data-delivery="1">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=43" class="avatar">
     <div class="user-info">
@@ -324,6 +170,7 @@
         <span class="price">$32/hr</span>
         <span class="rating">⭐ 4.7</span>
         <span class="jobs">💼 19 jobs</span>
+        <span class="delivery-time">⏱️ 1 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -332,7 +179,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="prompt" data-level="junior">
+<div class="up-card hidden-card" data-skill="prompt" data-level="junior" data-delivery="3">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=44" class="avatar">
     <div class="user-info">
@@ -342,6 +189,7 @@
         <span class="price">$20/hr</span>
         <span class="rating">⭐ 4.6</span>
         <span class="jobs">💼 12 jobs</span>
+        <span class="delivery-time">⏱️ 3 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -350,7 +198,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="images fine-tuning" data-level="mid">
+<div class="up-card hidden-card" data-skill="images fine-tuning" data-level="mid" data-delivery="2">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=45" class="avatar">
     <div class="user-info">
@@ -360,6 +208,7 @@
         <span class="price">$40/hr</span>
         <span class="rating">⭐ 4.9</span>
         <span class="jobs">💼 27 jobs</span>
+        <span class="delivery-time">⏱️ 2 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -368,7 +217,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="llm rag" data-level="senior">
+<div class="up-card hidden-card" data-skill="llm rag" data-level="senior" data-delivery="1">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=46" class="avatar">
     <div class="user-info">
@@ -378,6 +227,7 @@
         <span class="price">$58/hr</span>
         <span class="rating">⭐ 4.8</span>
         <span class="jobs">💼 25 jobs</span>
+        <span class="delivery-time">⏱️ 1 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -386,7 +236,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="llm prompt" data-level="mid">
+<div class="up-card hidden-card" data-skill="llm prompt" data-level="mid" data-delivery="2">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=47" class="avatar">
     <div class="user-info">
@@ -396,6 +246,7 @@
         <span class="price">$34/hr</span>
         <span class="rating">⭐ 4.7</span>
         <span class="jobs">💼 18 jobs</span>
+        <span class="delivery-time">⏱️ 2 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -404,7 +255,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="images" data-level="senior">
+<div class="up-card hidden-card" data-skill="images" data-level="senior" data-delivery="1">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=48" class="avatar">
     <div class="user-info">
@@ -414,6 +265,7 @@
         <span class="price">$52/hr</span>
         <span class="rating">⭐ 4.9</span>
         <span class="jobs">💼 30 jobs</span>
+        <span class="delivery-time">⏱️ 1 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -422,7 +274,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="llm fine-tuning" data-level="senior">
+<div class="up-card hidden-card" data-skill="llm fine-tuning" data-level="senior" data-delivery="2">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=49" class="avatar">
     <div class="user-info">
@@ -432,6 +284,7 @@
         <span class="price">$75/hr</span>
         <span class="rating">⭐ 5.0</span>
         <span class="jobs">💼 34 jobs</span>
+        <span class="delivery-time">⏱️ 2 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -440,7 +293,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="prompt" data-level="junior">
+<div class="up-card hidden-card" data-skill="prompt" data-level="junior" data-delivery="3">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=50" class="avatar">
     <div class="user-info">
@@ -450,6 +303,7 @@
         <span class="price">$22/hr</span>
         <span class="rating">⭐ 4.5</span>
         <span class="jobs">💼 11 jobs</span>
+        <span class="delivery-time">⏱️ 3 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -458,7 +312,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="rag llm" data-level="mid">
+<div class="up-card hidden-card" data-skill="rag llm" data-level="mid" data-delivery="2">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=51" class="avatar">
     <div class="user-info">
@@ -468,6 +322,7 @@
         <span class="price">$38/hr</span>
         <span class="rating">⭐ 4.8</span>
         <span class="jobs">💼 22 jobs</span>
+        <span class="delivery-time">⏱️ 2 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -476,7 +331,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="fine-tuning" data-level="mid">
+<div class="up-card hidden-card" data-skill="fine-tuning" data-level="mid" data-delivery="3">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=52" class="avatar">
     <div class="user-info">
@@ -486,6 +341,7 @@
         <span class="price">$40/hr</span>
         <span class="rating">⭐ 4.7</span>
         <span class="jobs">💼 20 jobs</span>
+        <span class="delivery-time">⏱️ 3 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -494,7 +350,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="llm" data-level="mid">
+<div class="up-card hidden-card" data-skill="llm" data-level="mid" data-delivery="1">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=53" class="avatar">
     <div class="user-info">
@@ -504,6 +360,7 @@
         <span class="price">$42/hr</span>
         <span class="rating">⭐ 4.8</span>
         <span class="jobs">💼 24 jobs</span>
+        <span class="delivery-time">⏱️ 1 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -512,7 +369,7 @@
   <a href="#" class="profile-btn">See profile</a>
 </div>
 
-<div class="up-card hidden-card" data-skill="prompt" data-level="junior">
+<div class="up-card hidden-card" data-skill="prompt" data-level="junior" data-delivery="3">
   <div class="card-header">
     <img src="https://i.pravatar.cc/100?img=54" class="avatar">
     <div class="user-info">
@@ -522,6 +379,7 @@
         <span class="price">$25/hr</span>
         <span class="rating">⭐ 4.6</span>
         <span class="jobs">💼 13 jobs</span>
+        <span class="delivery-time">⏱️ 3 Day Delivery</span>
       </div>
     </div>
   </div>
@@ -613,96 +471,82 @@
 
 
 
-<script>
 document.addEventListener("DOMContentLoaded", () => {
-
+<script>document.addEventListener("DOMContentLoaded", () => {
   const cards = Array.from(document.querySelectorAll(".up-card"));
-
-  const skillFilter = document.getElementById("skillFilter");
-  const levelFilter = document.getElementById("levelFilter");
-  const priceFilter = document.getElementById("priceFilter");
+  const serviceFilter = document.getElementById("serviceFilter");
+  const budgetFilter = document.getElementById("budgetFilter");
+  const ratingFilter = document.getElementById("ratingFilter");
+  const deliveryFilter = document.getElementById("deliveryFilter");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-  let visible = 8;
+  let visibleCount = 8; 
   const step = 4;
 
-  function getFilteredCards() {
-    return cards.filter(card => {
+  function updateUI() {
+    // 1. تصفية الكروت بناءً على الاختيارات
+    const filteredCards = cards.filter(card => {
+      // الخدمة
+      const cardSkills = (card.dataset.skill || "").toLowerCase();
+      const selectedService = serviceFilter.value.toLowerCase();
+      const serviceMatch = selectedService === "all" || cardSkills.includes(selectedService);
 
-      const skills = (card.dataset.skill || "").toLowerCase().split(" ");
-      const selectedSkill = skillFilter.value.toLowerCase();
+      // الميزانية (Budget)
+      const priceText = card.querySelector(".price")?.innerText || "0";
+      const priceValue = parseInt(priceText.replace(/\D/g, ""));
+      let budgetMatch = true;
+      if (budgetFilter.value === "low") budgetMatch = priceValue < 30;
+      else if (budgetFilter.value === "mid") budgetMatch = priceValue >= 30 && priceValue <= 60;
+      else if (budgetFilter.value === "high") budgetMatch = priceValue > 60;
 
-      const skillMatch =
-        selectedSkill === "all" || skills.includes(selectedSkill);
+      // التقييم
+      const ratingText = card.querySelector(".rating")?.innerText || "0";
+      const ratingValue = parseFloat(ratingText.replace(/[^\d.]/g, ""));
+      const selectedRating = ratingFilter.value === "all" ? 0 : parseFloat(ratingFilter.value);
+      const ratingMatch = ratingValue >= selectedRating;
 
-      const level = (card.dataset.level || "").toLowerCase();
-      const selectedLevel = levelFilter.value.toLowerCase();
+      // وقت التسليم
+      const cardDelivery = parseInt(card.dataset.delivery || "99");
+      const selectedDelivery = deliveryFilter.value === "all" ? 99 : parseInt(deliveryFilter.value);
+      const deliveryMatch = cardDelivery <= selectedDelivery;
 
-      const levelMatch =
-        selectedLevel === "all" || level === selectedLevel;
-
-      const priceText = card.querySelector(".price")?.innerText || "";
-      const price = parseInt(priceText.replace(/\D/g, ""));
-      let priceMatch = true;
-
-      if (priceFilter.value === "low")  priceMatch = price < 25;
-      if (priceFilter.value === "mid")  priceMatch = price >= 25 && price <= 40;
-      if (priceFilter.value === "high") priceMatch = price > 40;
-
-      return skillMatch && levelMatch && priceMatch;
+      return serviceMatch && budgetMatch && ratingMatch && deliveryMatch;
     });
-  }
 
-  function updateCards() {
-    const filteredCards = getFilteredCards();
-
+    // 2. إخفاء الكل أولاً باستخدام الكلاس فقط
     cards.forEach(card => card.classList.add("hidden-card"));
 
-    filteredCards.slice(0, visible).forEach(card => {
+    // 3. إظهار العدد المطلوب من الكروت المفلترة
+    filteredCards.slice(0, visibleCount).forEach(card => {
       card.classList.remove("hidden-card");
     });
 
+    // 4. تحكم في زرار Load More
     if (loadMoreBtn) {
-      loadMoreBtn.style.display =
-        visible < filteredCards.length ? "block" : "none";
+      loadMoreBtn.style.display = visibleCount < filteredCards.length ? "block" : "none";
     }
   }
 
-  /* ✅ فلترة تلقائية عند تغيير أي اختيار */
-  [skillFilter, levelFilter, priceFilter].forEach(filter => {
+  // مستمعي الأحداث للفلاتر
+  [serviceFilter, budgetFilter, ratingFilter, deliveryFilter].forEach(filter => {
     if (filter) {
       filter.addEventListener("change", () => {
-        visible = 6;     // يرجع يعرض من الأول
-        updateCards();
+        visibleCount = 8; // إعادة التصفير عند تغيير الفلتر
+        updateUI();
       });
     }
   });
 
-  /* LOAD MORE */
+  // زرار Load More
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", () => {
-      visible += step;
-      updateCards();
+      visibleCount += step;
+      updateUI();
     });
   }
 
-  updateCards();
-
-  /* SIDEBAR ACCORDION */
-  const categoryButtons = document.querySelectorAll(".category-btn");
-
-  categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const category = btn.closest(".category");
-
-      document.querySelectorAll(".category").forEach(cat => {
-        if (cat !== category) cat.classList.remove("active");
-      });
-
-      category.classList.toggle("active");
-    });
-  });
-
+  // تشغيل أولي
+  updateUI();
 });
 </script>
 <!-- FOOTER -->
