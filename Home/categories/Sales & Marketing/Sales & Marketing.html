@@ -697,179 +697,81 @@
 
     
     <script>
-        // ================= DRAWER =================
-        const drawer = document.getElementById('drawer');
-        const overlay = document.getElementById('overlay');
-        const closeBtn = document.getElementById('closeDrawer');
+const cards = document.querySelectorAll(".up-card");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-        document.querySelectorAll('.up-card').forEach(card => {
-            const openElements = [
-                card.querySelector('.avatar-img'),
-                card.querySelector('.view-profile-btn')
-            ];
+let visibleCards = 6;
+let currentFiltered = [...cards];
 
-            openElements.forEach(el => {
-                el.addEventListener('click', (e) => {
-                    e.stopPropagation();
+// ================= SHOW FUNCTION =================
+function showCards() {
+    cards.forEach(card => card.style.display = "none");
 
-                    document.getElementById('dName').innerText = card.dataset.name;
-                    document.getElementById('dType').innerText = card.dataset.type;
-                    document.getElementById('dImg').src = card.querySelector('.avatar-img').src;
+    currentFiltered.forEach((card, index) => {
+        if (index < visibleCards) {
+            card.style.display = "block";
+        }
+    });
 
-                    drawer.classList.add('open');
-                    overlay.style.display = 'block';
-                });
-            });
-        });
+    if (visibleCards >= currentFiltered.length) {
+        loadMoreBtn.style.display = "none";
+    } else {
+        loadMoreBtn.style.display = "inline-block";
+    }
+}
 
-        function closeDrawer() {
-            drawer.classList.remove('open');
-            overlay.style.display = 'none';
+// ================= FILTER =================
+function filterCards() {
+    const type = document.getElementById("typeFilter").value;
+    const price = document.getElementById("priceFilter").value;
+    const exp = document.getElementById("expFilter").value;
+
+    currentFiltered = [...cards].filter(card => {
+        const cType = card.dataset.type;
+        const cPrice = +card.dataset.price;
+        const cExp = +card.dataset.exp;
+
+        if (type !== "all" && cType !== type) return false;
+
+        if (price !== "all") {
+            const [min, max] = price.split("-").map(Number);
+            if (cPrice < min || cPrice > max) return false;
         }
 
-        closeBtn.onclick = closeDrawer;
-        overlay.onclick = closeDrawer;
-
-
-        // ================= SIDEBAR =================
-        document.querySelectorAll('.category-btn').forEach(btn => {
-            btn.onclick = () => btn.parentElement.classList.toggle('active');
-        });
-
-
-        // ================= FILTER =================
-        const typeFilter = document.getElementById("typeFilter");
-        const priceFilter = document.getElementById("priceFilter");
-        const expFilter = document.getElementById("expFilter");
-
-        let visibleCards = 6; // عدد الكروت الظاهرة
-
-        function filterCards() {
-            const selectedType = typeFilter.value;
-            const selectedPrice = priceFilter.value;
-            const selectedExp = expFilter.value;
-
-            let filtered = [];
-
-            document.querySelectorAll(".up-card").forEach(card => {
-                const type = card.dataset.type;
-                const price = parseInt(card.dataset.price);
-                const exp = parseInt(card.dataset.exp);
-
-                let show = true;
-
-                // type
-                if (selectedType !== "all" && type !== selectedType) show = false;
-
-                // price
-                if (selectedPrice !== "all") {
-                    const [min, max] = selectedPrice.split("-").map(Number);
-                    if (price < min || price > max) show = false;
-                }
-
-                // experience
-                if (selectedExp !== "all") {
-                    if (selectedExp === "6-10") {
-                        if (exp < 6) show = false;
-                    } else {
-                        const [minExp, maxExp] = selectedExp.split("-").map(Number);
-                        if (exp < minExp || exp > maxExp) show = false;
-                    }
-                }
-
-                if (show) {
-                    filtered.push(card);
-                }
-
-                card.style.display = "none"; // نخفي كله الأول
-            });
-
-            // نظهر حسب Load More
-            filtered.forEach((card, index) => {
-                card.style.display = index < visibleCards ? "block" : "none";
-            });
-
-            // زرار Load More
-            const loadMoreBtn = document.getElementById("loadMoreBtn");
-            if (visibleCards >= filtered.length) {
-                loadMoreBtn.style.display = "none";
+        if (exp !== "all") {
+            if (exp === "6-10") {
+                if (cExp < 6) return false;
             } else {
-                loadMoreBtn.style.display = "inline-block";
+                const [min, max] = exp.split("-").map(Number);
+                if (cExp < min || cExp > max) return false;
             }
-
-            // نخزن الكروت الحالية
-            window.currentFiltered = filtered;
         }
 
+        return true;
+    });
 
-        // ================= EVENTS =================
-        typeFilter.addEventListener("change", () => {
-            visibleCards = 6;
-            filterCards();
-        });
+    visibleCards = 6;
+    showCards();
+}
 
-        priceFilter.addEventListener("change", () => {
-            visibleCards = 6;
-            filterCards();
-        });
+// ================= EVENTS =================
+document.getElementById("typeFilter").onchange = filterCards;
+document.getElementById("priceFilter").onchange = filterCards;
+document.getElementById("expFilter").onchange = filterCards;
 
-        expFilter.addEventListener("change", () => {
-            visibleCards = 6;
-            filterCards();
-        });
+// ================= LOAD MORE =================
+loadMoreBtn.onclick = () => {
+    visibleCards += 3;
+    showCards();
+};
 
-
-        // ================= SIDEBAR FILTER =================
-        document.querySelectorAll(".filter-link").forEach(link => {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-
-                const selectedType = this.dataset.type;
-
-                document.getElementById("pageTitle").innerText = selectedType;
-                typeFilter.value = selectedType;
-
-                priceFilter.value = "all";
-                expFilter.value = "all";
-
-                visibleCards = 6;
-                filterCards();
-            });
-        });
-
-
-        // ================= LOAD MORE =================
-        document.getElementById("loadMoreBtn").addEventListener("click", () => {
-            visibleCards += 3;
-
-            const list = window.currentFiltered || document.querySelectorAll(".up-card");
-
-            list.forEach((card, index) => {
-                card.style.display = index < visibleCards ? "block" : "none";
-            });
-
-            if (visibleCards >= list.length) {
-                document.getElementById("loadMoreBtn").style.display = "none";
-            }
-        });
-
-
-        // ================= NAVBAR =================
-        const menuToggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
-
-        menuToggle.onclick = () => {
-            navLinks.classList.toggle("active");
-        };
-
-
-        // ================= INIT =================
-        window.onload = () => {
-            filterCards();
-        };
-    </script>
-
-
+// ================= FIRST LOAD =================
+document.addEventListener("DOMContentLoaded", () => {
+    visibleCards = 6;
+    currentFiltered = [...cards];
+    showCards();
+});
+</script>
 
 </body>
 </html>
