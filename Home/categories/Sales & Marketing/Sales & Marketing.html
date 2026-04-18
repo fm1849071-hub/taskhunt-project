@@ -511,7 +511,7 @@
         const priceFilter = document.getElementById("priceFilter");
         const expFilter = document.getElementById("expFilter");
 
-       let visibleCards = 1000; // عدد الكروت الظاهرة
+       let visibleCards = 6; // عدد الكروت الظاهرة
 
         function filterCards() {
             const selectedType = typeFilter.value;
@@ -609,8 +609,7 @@
 
         // ================= LOAD MORE =================
         document.getElementById("loadMoreBtn").addEventListener("click", () => {
-            visibleCards += 3;
-
+            visibleCards += 6;
             const list = window.currentFiltered || document.querySelectorAll(".up-card");
 
             list.forEach((card, index) => {
@@ -632,12 +631,9 @@
         };
 
 
-     window.onload = () => {
-    document.querySelectorAll(".up-card").forEach(card => {
-        card.style.display = "block";
-    });
-
-    document.getElementById("loadMoreBtn").style.display = "none";
+  window.onload = () => {
+    visibleCards = 6;
+    filterCards();
 };
     </script>
 </body>
