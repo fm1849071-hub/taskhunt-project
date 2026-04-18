@@ -723,20 +723,21 @@ body {
 /* --- FOOTER (Exactly as requested) --- */
 .footer {
   background: #051923;
-  padding: 40px 10px 20px;
+  padding: 40px 0 20px; /* بدل 10px */
   font-family: "Cairo", sans-serif;
   color: #ffffff;
+  width: 100%;          /* ✅ مهم */
 }
-
 .footer-container {
+  width: 100%;          /* ✅ مهم */
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 6%;        /* ✅ نفس Padding الصفحة */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
 }
-
 .footer-col {
   flex: 1;
   min-width: 200px;
