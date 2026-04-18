@@ -4,55 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskHunt | Data & Ai</title>
+    <title>TaskHunt | Development & IT</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Cairo:wght@400;600;700&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Cairo:wght@400;600;700&display=swap"rel="stylesheet">
 
-    <script src="../jquery-3.7.1.min.js"></script>
+<link rel="stylesheet" href="ALL.css">
 
-    <link rel="stylesheet" href="ALL.css">
+    <script src="/Home/categories/jquery-3.7.1.min.js"></script>
+    
 </head>
 
 <body>
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
-    <!-- LOGO -->
-    <div class="logo">
-        <a href="../../Home/home.html">
-            <img src="logo.png" alt="TaskHunt Logo">
-        </a>
-    </div>
-
-    <!-- LINKS -->
-    <ul class="nav-links" id="navLinks">
-        <li><a href="../findwork.html">Find Work</a></li>
-        <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-
-        <!-- MOBILE BUTTONS -->
-        <li class="mobile-auth">
+        <div class="logo">
+            <a href="../../Home/home.html">
+                <img src="logo.png" alt="TaskHunt Logo">
+            </a>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../findwork.html">Find Work</a></li>
+            <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="mobile-auth">
+                <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+                <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+            </li>
+        </ul>
+        <div class="auth-buttons">
             <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
             <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
-        </li>
-    </ul>
-
-    <!-- DESKTOP BUTTONS -->
-    <div class="auth-buttons">
-        <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
-        <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
-    </div>
-
-    <!-- MENU ICON -->
-    <div class="menu-toggle" id="menuToggle">☰</div>
-</nav>
+        </div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+    </nav>
 
     <section class="hero-title">
-       
-        <h1 id="pageTitle">Data & AI</h1>
+        <h1 id="pageTitle">Development & IT</h1>
     </section>
 
     <section class="filter-bar">
@@ -60,13 +51,12 @@
             <select id="typeFilter">
                 <option value="all">All Categories</option>
 
-                <!-- Data & AI -->
-                <option value="Data Analysis & Visualization">Data Analysis & Visualization</option>
-                <option value="Machine Learning Models">Machine Learning Models</option>
-                <option value="Data Engineering">Data Engineering</option>
-                <option value="Deep Learning">Deep Learning</option>
-                <option value="Predictive Analytics">Predictive Analytics</option>
-                <option value="Generative AI">Generative AI</option>
+                <!-- Development & IT -->
+                <option value="Full Stack Engineers">Full Stack Engineers</option>
+                <option value="Backend Developers">Backend Developers</option>
+                <option value="DevOps Engineers">DevOps Engineers</option>
+                <option value="Android Developers">Android Developers</option>
+                <option value="Cyber Security Engineers">Cyber Security Engineers</option>
             </select>
             <select id="priceFilter">
                 <option value="all">All Prices</option>
@@ -80,7 +70,7 @@
                 <option value="3-5">3 - 5 yrs</option>
                 <option value="6-10">6+ yrs</option>
             </select>
-            <button class="apply-filters-btn" id="applyFilters">Apply Filters</button>
+            <button id="applyFilterBtn">Apply Filter</button>
         </div>
     </section>
 
@@ -90,29 +80,26 @@
 
             <!-- Data & AI -->
             <div class="category">
-                <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+                <button class="category-btn" onclick="location.href='Data&Ai.html'">Data & AI <span class="arrow">›</span></button>
                 <ul class="sub-categories">
-                    <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis &
-                            Visualization</a></li>
-                    <li><a href="#" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a>
-                    </li>
-                    <li><a href="#" class="filter-link" data-type="Data Engineering">Data Engineering</a></li>
-                    <li><a href="#" class="filter-link" data-type="Deep Learning">Deep Learning</a></li>
-                    <li><a href="#" class="filter-link" data-type="Predictive Analytics">Predictive Analytics</a></li>
-                    <li><a href="#" class="filter-link" data-type="Generative AI">Generative AI</a></li>
+                    <li><a href="Data&Ai.html#Data Analysis & Visualization" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis & Visualization</a></li>
+                    <li><a href="Data&Ai.html#Machine Learning Models" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a></li>
+                    <li><a href="Data&Ai.html#Data Engineering" class="filter-link" data-type="Data Engineering">Data Engineering</a></li>
+                    <li><a href="Data&Ai.html#Deep Learning" class="filter-link" data-type="Deep Learning">Deep Learning</a></li>
+                    <li><a href="Data&Ai.html#Predictive Analytics" class="filter-link" data-type="Predictive Analytics">Predictive Analytics</a></li>
+                    <li><a href="Data&Ai.html#Generative AI" class="filter-link" data-type="Generative AI">Generative AI</a></li>
                 </ul>
             </div>
 
             <!-- Development & IT -->
-            <div class="category">
-                <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+            <div class="category active">
+                <button class="category-btn" onclick="window.location.href='Development & IT.html'">Development & IT <span class="arrow">›</span></button>
                 <ul class="sub-categories">
-                    <li><a href="#" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
-                    <li><a href="#" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
-                    <li><a href="#" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
-                    <li><a href="#" class="filter-link" data-type="Android Developers">Android Developers</a></li>
-                    <li><a href="#" class="filter-link" data-type="Cyber Security Engineers">Cyber Security
-                            Engineers</a></li>
+                    <li><a href="Development & IT.html#Full Stack Engineers" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
+                    <li><a href="Development & IT.html#Backend Developers" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
+                    <li><a href="Development & IT.html#DevOps Engineers" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
+                    <li><a href="Development & IT.html#Android Developers" class="filter-link" data-type="Android Developers">Android Developers</a></li>
+                    <li><a href="Development & IT.html#Cyber Security Engineers" class="filter-link" data-type="Cyber Security Engineers">Cyber Security Engineers</a></li>
                 </ul>
             </div>
 
@@ -232,381 +219,215 @@
         </aside>
 
         <main class="cards-grid">
-            <!-- ===================== Data Analysis & Visualization ===================== -->
 
-            <div class="up-card" data-name="Ahmed Samir" data-price="25" data-type="Data Analysis & Visualization"
-                data-exp="5">
+            <!-- ===================== Full Stack Engineers ===================== -->
+
+            <div class="up-card" data-name="Mohamed Fathy" data-price="40" data-type="Full Stack Engineers" data-exp="6">
                 <div class="card-image-wrapper">
                     <img src="userimages/men/1.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
-                    <h3>Ahmed Samir</h3>
-                    <p class="role-text">Data Analyst specialized in dashboards & reports</p>
+                    <h3>Mohamed Fathy</h3>
+                    <p class="role-text">Senior Full Stack Developer (React & Node.js)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$25/hr</span>
-                        <span class="rating-tag">⭐ 4.8</span>
-                        <span class="exp-tag">5 yrs</span>
+                        <span class="price-tag">$40/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">6 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>Excel</span><span>Power BI</span><span>SQL</span>
+                        <span>React</span><span>Node.js</span><span>MongoDB</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <div class="up-card" data-name="Mona Hassan" data-price="28" data-type="Data Analysis & Visualization"
-                data-exp="7">
+            <div class="up-card" data-name="Sara Yasser" data-price="38" data-type="Full Stack Engineers" data-exp="5">
                 <div class="card-image-wrapper">
                     <img src="userimages/women/1.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
-                    <h3>Mona Hassan</h3>
-                    <p class="role-text">Data Visualization Expert with Tableau</p>
+                    <h3>Sara Yasser</h3>
+                    <p class="role-text">Full Stack Engineer (Vue.js & Laravel)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$28/hr</span>
-                        <span class="rating-tag">⭐ 4.7</span>
-                        <span class="exp-tag">7 yrs</span>
+                        <span class="price-tag">$38/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">5 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>Tableau</span><span>Python</span><span>Pandas</span>
+                        <span>Vue.js</span><span>Laravel</span><span>MySQL</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <div class="up-card" data-name="Omar Khaled" data-price="30" data-type="Data Analysis & Visualization"
-                data-exp="2">
+            <!-- ===================== Backend Developers ===================== -->
+
+            <div class="up-card" data-name="Ahmed Gamal" data-price="35" data-type="Backend Developers" data-exp="4">
                 <div class="card-image-wrapper">
                     <img src="userimages/men/2.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
-                    <h3>Omar Khaled</h3>
-                    <p class="role-text">Business Data Analyst & Reporting Specialist</p>
+                    <h3>Ahmed Gamal</h3>
+                    <p class="role-text">Backend Developer (Django & REST APIs)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$30/hr</span>
-                        <span class="rating-tag">⭐ 4.9</span>
-                        <span class="exp-tag">2 yrs</span>
+                        <span class="price-tag">$35/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">4 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>SQL</span><span>Excel</span><span>Power BI</span>
+                        <span>Django</span><span>REST API</span><span>PostgreSQL</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <!-- ===================== Machine Learning Models ===================== -->
-
-            <div class="up-card" data-name="Sara Ali" data-price="40" data-type="Machine Learning Models" data-exp="6">
+            <div class="up-card" data-name="Mona Tarek" data-price="37" data-type="Backend Developers" data-exp="5">
                 <div class="card-image-wrapper">
                     <img src="userimages/women/2.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
-                    <h3>Sara Ali</h3>
-                    <p class="role-text">Machine Learning Engineer specializing in predictive models</p>
+                    <h3>Mona Tarek</h3>
+                    <p class="role-text">Backend Engineer (Spring Boot & Microservices)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$40/hr</span>
-                        <span class="rating-tag">⭐ 4.8</span>
-                        <span class="exp-tag">6 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>Python</span><span>Scikit-learn</span><span>TensorFlow</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-            </div>
-
-            <div class="up-card" data-name="Youssef Nabil" data-price="38" data-type="Machine Learning Models"
-                data-exp="4">
-                <div class="card-image-wrapper">
-                    <img src="userimages/men/10.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Youssef Nabil</h3>
-                    <p class="role-text">ML Engineer focused on NLP systems</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$38/hr</span>
-                        <span class="rating-tag">⭐ 4.7</span>
-                        <span class="exp-tag">4 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>NLP</span><span>Python</span><span>PyTorch</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-            </div>
-
-            <div class="up-card" data-name="Hassan Reda" data-price="42" data-type="Machine Learning Models"
-                data-exp="3">
-                <div class="card-image-wrapper">
-                    <img src="userimages/men/18.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Hassan Reda</h3>
-                    <p class="role-text">AI Model Developer & Data Scientist</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$42/hr</span>
-                        <span class="rating-tag">⭐ 4.9</span>
-                        <span class="exp-tag">3 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>Deep Learning</span><span>Python</span><span>Keras</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-            </div>
-
-            <!-- ===================== Deep Learning ===================== -->
-
-            <div class="up-card" data-name="Ali Mohamed" data-price="45" data-type="Deep Learning" data-exp="2">
-                <div class="card-image-wrapper">
-                    <img src="userimages/men/17.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Ali Mohamed</h3>
-                    <p class="role-text">Deep Learning Engineer (CNN & RNN specialist)</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$45/hr</span>
-                        <span class="rating-tag">⭐ 4.9</span>
-                        <span class="exp-tag">2 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>TensorFlow</span><span>PyTorch</span><span>AI</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-            </div>
-
-            <div class="up-card" data-name="Mostafa Gamal" data-price="50" data-type="Deep Learning" data-exp="5">
-                <div class="card-image-wrapper">
-                    <img src="userimages/men/14.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Mostafa Gamal</h3>
-                    <p class="role-text">Computer Vision & Deep Learning Expert</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$50/hr</span>
+                        <span class="price-tag">$37/hr</span>
                         <span class="rating-tag">⭐ 4.8</span>
                         <span class="exp-tag">5 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>OpenCV</span><span>CNN</span><span>Python</span>
+                        <span>Spring Boot</span><span>Java</span><span>Microservices</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <div class="up-card" data-name="Nour Adel" data-price="48" data-type="Deep Learning" data-exp="5">
-                <div class="card-image-wrapper">
-                    <img src="userimages/men/14.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Nour Adel</h3>
-                    <p class="role-text">AI Researcher in Deep Neural Networks</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$48/hr</span>
-                        <span class="rating-tag">⭐ 4.9</span>
-                        <span class="exp-tag">5 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>PyTorch</span><span>Research</span><span>AI</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-            </div>
-            <!-- ===================== Data Engineering ===================== -->
+            <!-- ===================== DevOps Engineers ===================== -->
 
-            <div class="up-card" data-name="Khaled Mahmoud" data-price="32" data-type="Data Engineering" data-exp="4">
+            <div class="up-card" data-name="Youssef Adel" data-price="42" data-type="DevOps Engineers" data-exp="6">
                 <div class="card-image-wrapper">
                     <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
-                    <h3>Khaled Mahmoud</h3>
-                    <p class="role-text">Data Engineer - ETL & Pipelines</p>
+                    <h3>Youssef Adel</h3>
+                    <p class="role-text">DevOps Engineer (AWS & Docker)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$32/hr</span>
-                        <span class="rating-tag">⭐ 4.7</span>
-                        <span class="exp-tag">4 yrs</span>
+                        <span class="price-tag">$42/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">6 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>Python</span><span>SQL</span><span>AWS</span>
+                        <span>AWS</span><span>Docker</span><span>Kubernetes</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <div class="up-card" data-name="Omar Saeed" data-price="28" data-type="Data Engineering" data-exp="5">
+            <div class="up-card" data-name="Omar Saeed" data-price="39" data-type="DevOps Engineers" data-exp="5">
                 <div class="card-image-wrapper">
                     <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
                     <h3>Omar Saeed</h3>
-                    <p class="role-text">Big Data Engineer</p>
+                    <p class="role-text">DevOps Specialist (CI/CD & Cloud)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$28/hr</span>
-                        <span class="rating-tag">⭐ 4.6</span>
-                        <span class="exp-tag">5 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>Hadoop</span><span>Spark</span><span>ETL</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-            </div>
-
-            <div class="up-card" data-name="Sara Adel" data-price="30" data-type="Data Engineering" data-exp="3">
-                <div class="card-image-wrapper">
-                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Sara Adel</h3>
-                    <p class="role-text">Cloud Data Engineer</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$30/hr</span>
-                        <span class="rating-tag">⭐ 4.8</span>
-                        <span class="exp-tag">3 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>Azure</span><span>AWS</span><span>SQL</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-            </div>
-
-            <!-- ===================== Predictive Analytics ===================== -->
-
-            <div class="up-card" data-name="Nourhan Ali" data-price="35" data-type="Predictive Analytics" data-exp="5">
-                <div class="card-image-wrapper">
-                    <img src="userimages/women/4.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Nourhan Ali</h3>
-                    <p class="role-text">Forecasting Specialist</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$35/hr</span>
+                        <span class="price-tag">$39/hr</span>
                         <span class="rating-tag">⭐ 4.8</span>
                         <span class="exp-tag">5 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>Python</span><span>Forecasting</span><span>Stats</span>
+                        <span>CI/CD</span><span>Azure</span><span>Linux</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <div class="up-card" data-name="Ahmed Tarek" data-price="33" data-type="Predictive Analytics" data-exp="6">
+            <!-- ===================== Android Developers ===================== -->
+
+            <div class="up-card" data-name="Hassan Reda" data-price="34" data-type="Android Developers" data-exp="4">
                 <div class="card-image-wrapper">
                     <img src="userimages/men/5.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
-                    <h3>Ahmed Tarek</h3>
-                    <p class="role-text">Business Forecast Analyst</p>
+                    <h3>Hassan Reda</h3>
+                    <p class="role-text">Android Developer (Kotlin & Java)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$33/hr</span>
+                        <span class="price-tag">$34/hr</span>
                         <span class="rating-tag">⭐ 4.7</span>
-                        <span class="exp-tag">6 yrs</span>
+                        <span class="exp-tag">4 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>Excel</span><span>Power BI</span><span>SQL</span>
+                        <span>Kotlin</span><span>Java</span><span>Android Studio</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <div class="up-card" data-name="Mona Hassan" data-price="37" data-type="Predictive Analytics" data-exp="2">
+            <div class="up-card" data-name="Nourhan Ali" data-price="36" data-type="Android Developers" data-exp="5">
                 <div class="card-image-wrapper">
-                    <img src="userimages/women/5.jfif" class="avatar-img" alt="Profile">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
-                    <h3>Mona Hassan</h3>
-                    <p class="role-text">Data Prediction Expert</p>
+                    <h3>Nourhan Ali</h3>
+                    <p class="role-text">Android App Developer (Flutter & Dart)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$37/hr</span>
-                        <span class="rating-tag">⭐ 4.9</span>
-                        <span class="exp-tag">2 yrs</span>
+                        <span class="price-tag">$36/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">5 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>Machine Learning</span><span>Python</span><span>AI</span>
+                        <span>Flutter</span><span>Dart</span><span>Firebase</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <!-- ===================== Generative AI ===================== -->
+            <!-- ===================== Cyber Security Engineers ===================== -->
 
-            <div class="up-card" data-name="Mostafa Nasser" data-price="50" data-type="Generative AI" data-exp="2">
+            <div class="up-card" data-name="Mostafa Nasser" data-price="45" data-type="Cyber Security Engineers" data-exp="6">
                 <div class="card-image-wrapper">
                     <img src="userimages/men/6.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
                     <h3>Mostafa Nasser</h3>
-                    <p class="role-text">LLM & Prompt Engineer</p>
+                    <p class="role-text">Cyber Security Engineer (Penetration Testing)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$50/hr</span>
+                        <span class="price-tag">$45/hr</span>
                         <span class="rating-tag">⭐ 4.9</span>
-                        <span class="exp-tag">2 yrs</span>
+                        <span class="exp-tag">6 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>OpenAI</span><span>LLMs</span><span>Prompt Engineering</span>
+                        <span>Penetration Testing</span><span>Network Security</span><span>Linux</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
             </div>
 
-            <div class="up-card" data-name="Sara Khaled" data-price="45" data-type="Generative AI" data-exp="5">
+            <div class="up-card" data-name="Sara Khaled" data-price="43" data-type="Cyber Security Engineers" data-exp="5">
                 <div class="card-image-wrapper">
                     <img src="userimages/women/6.jfif" class="avatar-img" alt="Profile">
                     <div class="status-badge"></div>
                 </div>
                 <div class="card-content">
                     <h3>Sara Khaled</h3>
-                    <p class="role-text">AI Content Generator Expert</p>
+                    <p class="role-text">Cyber Security Specialist (SOC & SIEM)</p>
                     <div class="stats-row">
-                        <span class="price-tag">$45/hr</span>
+                        <span class="price-tag">$43/hr</span>
                         <span class="rating-tag">⭐ 4.8</span>
                         <span class="exp-tag">5 yrs</span>
                     </div>
                     <div class="skills-tags">
-                        <span>GPT</span><span>Automation</span><span>AI Tools</span>
+                        <span>SOC</span><span>SIEM</span><span>Incident Response</span>
                     </div>
                     <button class="view-profile-btn">View Profile</button>
                 </div>
-            </div>
-
-            <div class="up-card" data-name="Youssef Adel" data-price="48" data-type="Generative AI" data-exp="7">
-                <div class="card-image-wrapper">
-                    <img src="userimages/men/7.jfif" class="avatar-img" alt="Profile">
-                    <div class="status-badge"></div>
-                </div>
-                <div class="card-content">
-                    <h3>Youssef Adel</h3>
-                    <p class="role-text">AI Research & LLM Fine-tuning</p>
-                    <div class="stats-row">
-                        <span class="price-tag">$48/hr</span>
-                        <span class="rating-tag">⭐ 4.9</span>
-                        <span class="exp-tag">7 yrs</span>
-                    </div>
-                    <div class="skills-tags">
-                        <span>PyTorch</span><span>Transformers</span><span>AI</span>
-                    </div>
-                    <button class="view-profile-btn">View Profile</button>
-                </div>
-
             </div>
 
         </main>
