@@ -1,0 +1,905 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHunt | Admin & Support </title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+<script src="../jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="ALL.css">
+</head>
+<body>
+   <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="../../Home/home.html">
+            <img src="logo.png" alt="TaskHunt Logo">
+        </a>
+    </div>
+
+    <!-- LINKS -->
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../findwork.html">Find Work</a></li>
+        <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+
+        <!-- MOBILE BUTTONS -->
+        <li class="mobile-auth">
+            <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+            <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+        </li>
+    </ul>
+
+    <!-- DESKTOP BUTTONS -->
+    <div class="auth-buttons">
+        <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+        <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+    </div>
+
+    <!-- MENU ICON -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+
+     <section class="hero-title">
+        <h1 id="pageTitle">Admin & Support</h1>
+    </section>
+
+    <section class="filter-bar">
+        <div class="filter-container">
+            <select id="typeFilter">
+                <option value="all">All Categories</option>
+
+                <!-- Admin & Support -->
+                <option value="Personal Assistants">Personal Assistants</option>
+                <option value="Google Docs Experts">Google Docs Experts</option>
+                <option value="Google Sheets Experts">Google Sheets Experts</option>
+                <option value="Microsoft Excel Experts">Microsoft Excel Experts</option>
+                <option value="Microsoft Office Specialists">Microsoft Office Specialists</option>
+                <option value="Microsoft Word Experts">Microsoft Word Experts</option>
+                <option value="PowerPoint Experts">PowerPoint Experts</option>
+            </select>
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="0-30">0 - 30$/hr</option>
+                <option value="31-40">31 - 40$/hr</option>
+                <option value="41-50">41 - 50$/hr</option>
+            </select>
+            <select id="expFilter">
+                <option value="all">All Experience</option>
+                <option value="0-2">0 - 2 yrs</option>
+                <option value="3-5">3 - 5 yrs</option>
+                <option value="6-10">6+ yrs</option>
+            </select>
+            <button id="applyFilterBtn">Apply Filter</button>
+        </div>
+    </section>
+
+    <div class="page-layout">
+    <aside class="sidebar">
+        <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
+      
+  <!-- Data & AI -->
+       <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis & Visualization</a></li>
+          <li><a href="#" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a></li>
+          <li><a href="#" class="filter-link" data-type="Data Engineering">Data Engineering</a></li>
+          <li><a href="#" class="filter-link" data-type="Deep Learning">Deep Learning</a></li>
+          <li><a href="#" class="filter-link" data-type="Predictive Analytics">Predictive Analytics</a></li>
+          <li><a href="#" class="filter-link" data-type="Generative AI">Generative AI</a></li>
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+   <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
+          <li><a href="#" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
+          <li><a href="#" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
+          <li><a href="#" class="filter-link" data-type="Android Developers">Android Developers</a></li>
+          <li><a href="#" class="filter-link" data-type="Cyber Security Engineers">Cyber Security Engineers</a></li> 
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo Designers</a></li>
+          <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
+          <li><a href="#" class="filter-link" data-type="UX Designers">UX Designers</a></li>
+          <li><a href="#" class="filter-link" data-type="Instagram Reel Editors">Instagram Reel Editors</a></li>
+          <li><a href="#" class="filter-link" data-type="Youtube Video Editors">Youtube Video Editors</a></li>
+          <li><a href="#" class="filter-link" data-type="Videographers">Videographers</a></li>
+          <li><a href="#" class="filter-link" data-type="Web Designers">Web Designers</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Branding Experts">Branding Experts</a></li>
+          <li><a href="#" class="filter-link" data-type="Business Development Managers">Business Development Managers</a></li>
+          <li><a href="#" class="filter-link" data-type="Digital Marketers">Digital Marketers</a></li>
+          <li><a href="#" class="filter-link" data-type="Facebook Ads Specialists">Facebook Ads Specialists</a></li>
+          <li><a href="#" class="filter-link" data-type="Ecommerce Consultants">Ecommerce Consultants</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Academic Writers">Academic Writers</a></li>
+          <li><a href="#" class="filter-link" data-type="Business Plan Writers">Business Plan Writers</a></li>
+          <li><a href="#" class="filter-link" data-type="Copy Editors">Copy Editors</a></li>
+          <li><a href="#" class="filter-link" data-type="Creative Writers">Creative Writers</a></li>
+          <li><a href="#" class="filter-link" data-type="English to Spanish Translators">English to Spanish Translators</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
+          <li><a href="#" class="filter-link" data-type="Google Docs Experts">Google Docs Experts</a></li>
+          <li><a href="#" class="filter-link" data-type="Google Sheets Experts">Google Sheets Experts</a></li>
+          <li><a href="#" class="filter-link" data-type="Microsoft Excel Experts">Microsoft Excel Experts</a></li>
+          <li><a href="#" class="filter-link" data-type="Microsoft Office Specialists">Microsoft Office Specialists</a></li>
+          <li><a href="#" class="filter-link" data-type="Microsoft Word Experts">Microsoft Word Experts</a></li>
+          <li><a href="#" class="filter-link" data-type="PowerPoint Experts">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Business Analysts">Business Analysts</a></li>
+          <li><a href="#" class="filter-link" data-type="Financial Analysts">Financial Analysts</a></li>
+          <li><a href="#" class="filter-link" data-type="Management Consultants">Management Consultants</a></li>
+          <li><a href="#" class="filter-link" data-type="Data Entry Specialists">Data Entry Specialists</a></li>
+          <li><a href="#" class="filter-link" data-type="Financial Reporting Analysts">Financial Reporting Analysts</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#" class="filter-link" data-type="Corporate Law Professionals">Corporate Law Professionals</a></li>
+          <li><a href="#" class="filter-link" data-type="Immigration Law Professionals">Immigration Law Professionals</a></li>
+          <li><a href="#" class="filter-link" data-type="Legal Advisors">Legal Advisors</a></li>
+          <li><a href="#" class="filter-link" data-type="Legal Consultants">Legal Consultants</a></li>
+        </ul>
+      </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="#" class="filter-link" data-type="Employee Engagement Specialists">Employee Engagement Specialists</a></li>
+    <li><a href="#" class="filter-link" data-type="Leadership Development Specialists">Leadership Development Specialists</a></li>
+    <li><a href="#" class="filter-link" data-type="Technical Recruiters">Technical Recruiters</a></li>
+    <li><a href="#" class="filter-link" data-type="Curriculum Developers">Curriculum Developers</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+<div class="category">
+    <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+    <ul class="sub-categories">
+      <li><a href="#" class="filter-link" data-type="AutoCAD Developers">AutoCAD Developers</a></li>
+      <li><a href="#" class="filter-link" data-type="Engineering Consultants">Engineering Consultants</a></li>
+      <li><a href="#" class="filter-link" data-type="Interior Architects">Interior Architects</a></li>
+      <li><a href="#" class="filter-link" data-type="Architectural Modelers">Architectural Modelers</a></li>
+    </ul>
+</div>
+</aside>
+      <main class="cards-grid">
+        
+<!-- Personal Assistants -->
+
+<div class="up-card" data-name="Ahmed Ali" data-price="25" data-type="Personal Assistants" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/1.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Ahmed Ali</h3>
+        <p class="role-text">Professional personal assistant for scheduling, emails, and task coordination</p>
+        <div class="stats-row">
+            <span class="price-tag">$25/hr</span>
+            <span class="rating-tag">⭐ 4.5</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Scheduling</span><span>Email Management</span><span>Organization</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Mona saber" data-price="28" data-type="Personal Assistants" data-exp="7">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/1.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Mona saber</h3>
+        <p class="role-text">Virtual assistant supporting business communication and coordination services</p>
+        <div class="stats-row">
+            <span class="price-tag">$28/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">7 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Communication</span><span>Planning</span><span>Admin Support</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Omar Khaled" data-price="30" data-type="Personal Assistants" data-exp="2">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/2.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Omar Khaled</h3>
+        <p class="role-text ">Remote assistant for data entry, follow-ups, and task tracking management operations </p>
+        <div class="stats-row">
+            <span class="price-tag">$30/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">2 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Data Entry</span><span>Organization</span><span>Follow-up</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+<!-- Google Docs Experts -->
+
+<div class="up-card" data-name="Sara Mohamed" data-price="40" data-type="Google Docs Experts" data-exp="6">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/2.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Sara Mohamed</h3>
+        <p class="role-text">Expert in professional document creation and formatting using Google Docs tools services and support  </p>
+        <div class="stats-row">
+            <span class="price-tag">$40/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">6 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Docs</span><span>Formatting</span><span>Editing</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Youssef Nabil" data-price="38" data-type="Google Docs Experts" data-exp="4">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/10.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Youssef Nabil</h3>
+        <p class="role-text">Skilled in creating structured reports and professional documents</p>
+        <div class="stats-row">
+            <span class="price-tag">$38/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Docs</span><span>Writing</span><span>Templates</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Hassan Reda" data-price="42" data-type="Google Docs Experts" data-exp="3">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/18.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Hassan Reda</h3>
+        <p class="role-text">Professional document layout and editing specialist</p>
+        <div class="stats-row">
+            <span class="price-tag">$42/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">3 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Docs</span><span>Layout</span><span>Editing</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+<!-- Google Sheets Experts -->
+
+<div class="up-card" data-name="Ali Mohamed" data-price="45" data-type="Google Sheets Experts" data-exp="2">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/17.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Ali Mohamed</h3>
+        <p class="role-text">Google Sheets expert in data analysis, formulas, and reporting</p>
+        <div class="stats-row">
+            <span class="price-tag">$45/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">2 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Sheets</span><span>Formulas</span><span>Data Analysis</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Mostafa Gamal" data-price="50" data-type="Google Sheets Experts" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/14.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Mostafa Gamal</h3>
+        <p class="role-text">Advanced automation and workflow optimization in Google Sheets</p>
+        <div class="stats-row">
+            <span class="price-tag">$50/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Automation</span><span>Scripts</span><span>Sheets</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Nour Adel" data-price="48" data-type="Google Sheets Experts" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/14.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Nour Adel</h3>
+        <p class="role-text">Expert in organizing and analyzing large datasets efficiently</p>
+        <div class="stats-row">
+            <span class="price-tag">$48/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Data Analysis</span><span>Sheets</span><span>Reporting</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<!-- Microsoft Excel Experts -->
+
+<div class="up-card" data-name="Khaled Mahmoud" data-price="32" data-type="Microsoft Excel Experts" data-exp="4">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Khaled Mahmoud</h3>
+        <p class="role-text">Excel expert in dashboards, formulas, and data reporting</p>
+        <div class="stats-row">
+            <span class="price-tag">$32/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Excel</span><span>Formulas</span><span>Dashboards</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Omar Saeed" data-price="28" data-type="Microsoft Excel Experts" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Omar Saeed</h3>
+        <p class="role-text">Specialist in Excel automation and business reports</p>
+        <div class="stats-row">
+            <span class="price-tag">$28/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>VBA</span><span>Automation</span><span>Reports</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Sara Adel" data-price="30" data-type="Microsoft Excel Experts" data-exp="3">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Sara Adel</h3>
+        <p class="role-text">Excel analyst for data visualization and reporting solutions</p>
+        <div class="stats-row">
+            <span class="price-tag">$30/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">3 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Charts</span><span>Analysis</span><span>Excel</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<!-- Microsoft Office Specialists -->
+
+<div class="up-card" data-name="Nourhan Ali" data-price="35" data-type="Microsoft Office Specialists" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/4.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Nourhan Ali</h3>
+        <p class="role-text">Office specialist in Word, Excel, and PowerPoint tools</p>
+        <div class="stats-row">
+            <span class="price-tag">$35/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Word</span><span>Excel</span><span>PowerPoint</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Ahmed Tarek" data-price="27" data-type="Microsoft Office Specialists" data-exp="6">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/5.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Ahmed Tarek</h3>
+        <p class="role-text">Professional in Microsoft Office documentation and reporting</p>
+        <div class="stats-row">
+            <span class="price-tag">$27/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">6 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Office</span><span>Docs</span><span>Reports</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Mona Hassan" data-price="35" data-type="Microsoft Office Specialists" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/5.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Mona Hassan</h3>
+        <p class="role-text">Expert in creating Word, Excel, and PowerPoint files professionally</p>
+        <div class="stats-row">
+            <span class="price-tag">$35/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Word</span><span>Excel</span><span>PowerPoint</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<!-- Microsoft Word Experts -->
+
+<div class="up-card" data-name="Mostafa Nasser" data-price="22" data-type="Microsoft Word Experts" data-exp="3">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/6.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Mostafa Nasser</h3>
+        <p class="role-text">Word expert in professional formatting and document design</p>
+        <div class="stats-row">
+            <span class="price-tag">$22/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">3 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Word</span><span>Formatting</span><span>Documents</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Sara Khaled" data-price="24" data-type="Microsoft Word Experts" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/6.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Sara Khaled</h3>
+        <p class="role-text">Professional writer and editor specialized in Word documents</p>
+        <div class="stats-row">
+            <span class="price-tag">$24/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Writing</span><span>Editing</span><span>Word</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Youssef Adel" data-price="23" data-type="Microsoft Word Experts" data-exp="4">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/7.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Youssef Adel</h3>
+        <p class="role-text">Expert in Word templates and structured professional reports</p>
+        <div class="stats-row">
+            <span class="price-tag">$23/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Templates</span><span>Reports</span><span>Word</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<!-- PowerPoint Experts -->
+
+<div class="up-card" data-name="Ahmed Adel" data-price="30" data-type="PowerPoint Experts" data-exp="3">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/8.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Ahmed Adel</h3>
+        <p class="role-text">PowerPoint designer creating modern and engaging presentations</p>
+        <div class="stats-row">
+            <span class="price-tag">$30/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">3 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Slides</span><span>Design</span><span>Storytelling</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Nour Ali" data-price="32" data-type="PowerPoint Experts" data-exp="5">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/7.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Nour Ali</h3>
+        <p class="role-text">Presentation expert focused on visual communication </p>
+        <div class="stats-row">
+            <span class="price-tag">$32/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Slides</span><span>Animation</span><span>Design</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Omar Fathy" data-price="29" data-type="PowerPoint Experts" data-exp="4">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/9.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Omar Fathy</h3>
+        <p class="role-text">Pitch deck specialist for startups and business presentations</p>
+        <div class="stats-row">
+            <span class="price-tag">$29/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Pitch Decks</span><span>Slides</span><span>Design</span>
+        </div>
+          <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+</main>
+    </div>
+      <div class="load-more-container">
+        <button id="loadMoreBtn">Load More</button>
+    </div>
+
+    <div class="drawer-overlay" id="overlay"></div>
+    <div class="profile-drawer" id="drawer">
+        <span class="close-drawer" id="closeDrawer">&times;</span>
+        <div class="drawer-header">
+            <img src="" id="dImg">
+            <h2 id="dName"></h2>
+            <p id="dType"></p>
+        </div>
+        <hr>
+        <div class="drawer-body">
+            <h5>Portfolio Highlights</h5>
+            <div class="portfolio-samples">
+                <div class="sample">Project A</div>
+                <div class="sample">Project B</div>
+                <div class="sample">Project C</div>
+                <div class="sample">Project D</div>
+            </div>
+            <div class="mt-4">
+                <h5>About</h5>
+                <p class="text-muted small">Top-rated professional delivering high-quality results consistently.</p>
+            </div>
+            <button class="hire-btn">Send Proposal</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Task Hunt</h3>
+                <ul>
+                    <li><a href="#">About Task Hunt</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Rights Protection</a></li>
+                </ul>
+                <div class="social-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Topics</a></li>
+                </ul>
+            </div>
+
+            <div id="contact-section" class="footer-col contact-col">
+                <div class="contact-box">
+                    <form id="contactForm">
+                        <h3>Drop us a message</h3>
+                        <div class="form-group">
+                            <input type="text" class="footer-input" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="footer-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="footer-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Task Hunt — All rights reserved</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        // ================= DRAWER =================
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeDrawer');
+
+        document.querySelectorAll('.up-card').forEach(card => {
+            const openElements = [
+                card.querySelector('.avatar-img'),
+                card.querySelector('.view-profile-btn')
+            ];
+
+            openElements.forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.stopPropagation();
+
+                    document.getElementById('dName').innerText = card.dataset.name;
+                    document.getElementById('dType').innerText = card.dataset.type;
+                    document.getElementById('dImg').src = card.querySelector('.avatar-img').src;
+
+                    drawer.classList.add('open');
+                    overlay.style.display = 'block';
+                });
+            });
+        });
+
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            overlay.style.display = 'none';
+        }
+
+        closeBtn.onclick = closeDrawer;
+        overlay.onclick = closeDrawer;
+
+
+        // ================= SIDEBAR =================
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.onclick = () => btn.parentElement.classList.toggle('active');
+        });
+
+
+        // ================= FILTER =================
+        const typeFilter = document.getElementById("typeFilter");
+        const priceFilter = document.getElementById("priceFilter");
+        const expFilter = document.getElementById("expFilter");
+
+        let visibleCards = 6; // عدد الكروت الظاهرة
+
+        function filterCards() {
+            const selectedType = typeFilter.value;
+            const selectedPrice = priceFilter.value;
+            const selectedExp = expFilter.value;
+
+            let filtered = [];
+
+            document.querySelectorAll(".up-card").forEach(card => {
+                const type = card.dataset.type;
+                const price = parseInt(card.dataset.price);
+                const exp = parseInt(card.dataset.exp);
+
+                let show = true;
+
+                // type
+                if (selectedType !== "all" && type !== selectedType) show = false;
+
+                // price
+                if (selectedPrice !== "all") {
+                    const [min, max] = selectedPrice.split("-").map(Number);
+                    if (price < min || price > max) show = false;
+                }
+
+                // experience
+                if (selectedExp !== "all") {
+                    if (selectedExp === "6-10") {
+                        if (exp < 6) show = false;
+                    } else {
+                        const [minExp, maxExp] = selectedExp.split("-").map(Number);
+                        if (exp < minExp || exp > maxExp) show = false;
+                    }
+                }
+
+                if (show) {
+                    filtered.push(card);
+                }
+
+                card.style.display = "none"; // نخفي كله الأول
+            });
+
+            // نظهر حسب Load More
+            filtered.forEach((card, index) => {
+                card.style.display = index < visibleCards ? "block" : "none";
+            });
+
+            // زرار Load More
+            const loadMoreBtn = document.getElementById("loadMoreBtn");
+            if (visibleCards >= filtered.length) {
+                loadMoreBtn.style.display = "none";
+            } else {
+                loadMoreBtn.style.display = "inline-block";
+            }
+
+            // نخزن الكروت الحالية
+            window.currentFiltered = filtered;
+        }
+
+
+        // ================= EVENTS =================
+        typeFilter.addEventListener("change", () => {
+            visibleCards = 6;
+            filterCards();
+        });
+
+        priceFilter.addEventListener("change", () => {
+            visibleCards = 6;
+            filterCards();
+        });
+
+        expFilter.addEventListener("change", () => {
+            visibleCards = 6;
+            filterCards();
+        });
+
+
+        // ================= SIDEBAR FILTER =================
+        document.querySelectorAll(".filter-link").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const selectedType = this.dataset.type;
+
+                document.getElementById("pageTitle").innerText = selectedType;
+                typeFilter.value = selectedType;
+
+                priceFilter.value = "all";
+                expFilter.value = "all";
+
+                visibleCards = 6;
+                filterCards();
+            });
+        });
+
+
+        // ================= LOAD MORE =================
+        document.getElementById("loadMoreBtn").addEventListener("click", () => {
+            visibleCards += 3;
+
+            const list = window.currentFiltered || document.querySelectorAll(".up-card");
+
+            list.forEach((card, index) => {
+                card.style.display = index < visibleCards ? "block" : "none";
+            });
+
+            if (visibleCards >= list.length) {
+                document.getElementById("loadMoreBtn").style.display = "none";
+            }
+        });
+
+
+        // ================= NAVBAR =================
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.onclick = () => {
+            navLinks.classList.toggle("active");
+        };
+
+
+        // ================= INIT =================
+        window.onload = () => {
+            filterCards();
+        };
+    </script>
+
+
+
+</body>
+</html>
