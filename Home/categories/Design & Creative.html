@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHunt |Design & Creative</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Cairo:wght@400;600;700&display=swap"rel="stylesheet">
+
+    <script src="../jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="ALL.css">
+</head>
+<body>
+    <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="../../Home/home.html">
+            <img src="logo.png" alt="TaskHunt Logo">
+        </a>
+    </div>
+
+    <!-- LINKS -->
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../findwork.html">Find Work</a></li>
+        <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+
+        <!-- MOBILE BUTTONS -->
+        <li class="mobile-auth">
+            <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+            <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+        </li>
+    </ul>
+
+    <!-- DESKTOP BUTTONS -->
+    <div class="auth-buttons">
+        <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+        <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+    </div>
+
+    <!-- MENU ICON -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+
+    <section class="hero-title">
+        <h1 id="pageTitle">Design & Creative</h1>
+    </section>
+
+
+<section class="filter-bar">
+        <div class="filter-container">
+            <select id="typeFilter">
+                <option value="all">All Categories</option>
+                <option value="Brand & Logo Designers">Brand & Logo Designers</option>
+                <option value="Graphic Designers">Graphic Designers</option>
+                <option value="UX Designers">UX Designers</option>
+                <option value="Instagram Reel Editors">Instagram Reel Editors</option>
+                <option value="Youtube Video Editors">Youtube Video Editors</option>
+                <option value="Videographers">Videographers</option>
+                <option value="Web Designers">Web Designers</option>
+            </select>
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="0-30">0 - 30$/hr</option>
+                <option value="31-40">31 - 40$/hr</option>
+                <option value="41-50">41 - 50$/hr</option>
+            </select>
+            <select id="expFilter">
+                <option value="all">All Experience</option>
+                <option value="0-2">0 - 2 yrs</option>
+                <option value="3-5">3 - 5 yrs</option>
+                <option value="6-10">6+ yrs</option>
+            </select>
+            <button id="applyFilterBtn">Apply Filter</button>
+        </div>
+    </section>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
+
+            <!-- Data & AI -->
+            <div class="category">
+                <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis & Visualization</a></li>
+                    <li><a href="#" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a></li>
+                    <li><a href="#" class="filter-link" data-type="Data Engineering">Data Engineering</a></li>
+                    <li><a href="#" class="filter-link" data-type="Deep Learning">Deep Learning</a></li>
+                    <li><a href="#" class="filter-link" data-type="Predictive Analytics">Predictive Analytics</a></li>
+                    <li><a href="#" class="filter-link" data-type="Generative AI">Generative AI</a></li>
+                </ul>
+            </div>
+
+            <!-- Development & IT -->
+            <div class="category">
+                <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Android Developers">Android Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Cyber Security Engineers">Cyber Security Engineers</a></li>
+                </ul>
+            </div>
+
+            <!-- Design & Creative -->
+            <div class="category">
+                <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="UX Designers">UX Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Instagram Reel Editors">Instagram Reel Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Youtube Video Editors">Youtube Video Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Videographers">Videographers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Web Designers">Web Designers</a></li>
+                </ul>
+            </div>
+
+            <!-- Sales & Marketing -->
+            <div class="category">
+                <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Branding Experts">Branding Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Business Development Managers">Business Development Managers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Digital Marketers">Digital Marketers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Facebook Ads Specialists">Facebook Ads Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Ecommerce Consultants">Ecommerce Consultants</a></li>
+                </ul>
+            </div>
+
+            <!-- Writing & Translation -->
+            <div class="category">
+                <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Academic Writers">Academic Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Business Plan Writers">Business Plan Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Copy Editors">Copy Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Creative Writers">Creative Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="English to Spanish Translators">English to Spanish Translators</a></li>
+                </ul>
+            </div>
+
+            <!-- Admin & Support -->
+            <div class="category">
+                <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Google Docs Experts">Google Docs Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Google Sheets Experts">Google Sheets Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Excel Experts">Microsoft Excel Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Office Specialists">Microsoft Office Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Word Experts">Microsoft Word Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="PowerPoint Experts">PowerPoint Experts</a></li>
+                </ul>
+            </div>
+
+            <!-- Finance & Accounting -->
+            <div class="category">
+                <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Business Analysts">Business Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Financial Analysts">Financial Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Management Consultants">Management Consultants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Data Entry Specialists">Data Entry Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Financial Reporting Analysts">Financial Reporting Analysts</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="category">
+                <button class="category-btn">Legal <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Corporate Law Professionals">Corporate Law Professionals</a></li>
+                    <li><a href="#" class="filter-link" data-type="Immigration Law Professionals">Immigration Law Professionals</a></li>
+                    <li><a href="#" class="filter-link" data-type="Legal Advisors">Legal Advisors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Legal Consultants">Legal Consultants</a></li>
+                </ul>
+            </div>
+            <!-- HR & Training -->
+            <div class="category">
+                <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Employee Engagement Specialists">Employee Engagement Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Leadership Development Specialists">Leadership Development Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Technical Recruiters">Technical Recruiters</a></li>
+                    <li><a href="#" class="filter-link" data-type="Curriculum Developers">Curriculum Developers</a></li>
+                </ul>
+            </div>
+
+            <!-- Engineering & Architecture -->
+            <div class="category">
+                <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="AutoCAD Developers">AutoCAD Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Engineering Consultants">Engineering Consultants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Interior Architects">Interior Architects</a></li>
+                    <li><a href="#" class="filter-link" data-type="Architectural Modelers">Architectural Modelers</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="cards-grid">
+            <!-- ===================== Brand & Logo Designers ===================== -->
+
+            <div class="up-card" data-name="Olivia M." data-price="18" data-type="Brand & Logo Designers" 
+                data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Olivia M.</h3>
+                    <p class="role-text">Creates unique brand identities and logos</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$18/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">9 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Illustrator</span><span>Vector Art </span><span>Typography</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Marcus T." data-price="22" data-type="Brand & Logo Designers"
+                data-exp="7">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/13.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Marcus T.</h3>
+                    <p class="role-text">Builds strong visual branding concepts</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$22/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">7 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Illustrator</span><span>Vector Art </span><span>Typography</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Sofia R." data-price="30" data-type="Brand & Logo Designers"
+                data-exp="2">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Sofia R.</h3>
+                    <p class="role-text">Brand & Logo Designer creating compelling visual identities</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$30/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">2 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Illustrator</span><span>Vector Art </span><span>Typography</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- ===================== Graphic Designers ===================== -->
+
+            <div class="up-card" data-name="Hannah B." data-price="40" data-type="Graphic Designers" data-exp="6">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/2.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Hannah B.</h3>
+                    <p class="role-text">Designs visuals for print and digital media</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$40/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">6 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Photoshop</span><span>Banner Design</span><span>Social Media Design</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Victor N." data-price="38" data-type="Graphic Designers"
+                data-exp="4">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/10.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Victor N.</h3>
+                    <p class="role-text">Improves usability through smart design</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$38/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">4 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Photoshop</span><span>Banner Design</span><span>Social Media Design</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Yuki T." data-price="42" data-type="Graphic Designers"
+                data-exp="3">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/18.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Yuki T.</h3>
+                    <p class="role-text">Designs visuals for print and digital media</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$42/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">3 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Photoshop</span><span>Banner Design</span><span>Social Media Design</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- ===================== UX Designers ===================== -->
+
+            <div class="up-card" data-name="Roman O." data-price="45" data-type="UX Designers" data-exp="2">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/17.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Roman O.</h3>
+                    <p class="role-text">Builds smooth and user-friendly experiences</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$45/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">2 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>User Research</span><span>Wireframing</span><span>Figma</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Mostafa Gamal" data-price="50" data-type="UX Designers" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/14.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Mostafa Gamal</h3>
+                    <p class="role-text">Designs intuitive digital product interfaces</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$50/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>User Research</span><span>Wireframing</span><span>Figma</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Nour Adel" data-price="48" data-type="UX Designers" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/1.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Nour Adel</h3>
+                    <p class="role-text">UX designer specializing in creating intuitive and engaging user experiences</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$48/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>User Research</span><span>Wireframing</span><span>Figma</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+            <!-- ===================== Instagram Reel Editors ===================== -->
+
+            <div class="up-card" data-name="Gabriele T." data-price="32" data-type="Instagram Reel Editors" data-exp="4">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Gabriele T.</h3>
+                    <p class="role-text">Edits engaging short-form reel content</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$32/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">4 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Short-form Editing</span><span>Transitions</span><span>Audio Sync</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Zahid A." data-price="28" data-type="Instagram Reel Editors" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Zahid A.</h3>
+                    <p class="role-text">Creates trendy Instagram video edits</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$28/hr</span>
+                        <span class="rating-tag">⭐ 4.6</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Short-form Editing</span><span>Transitions</span><span>Audio Sync</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Hanane B." data-price="30" data-type="Instagram Reel Editors" data-exp="3">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Hanane B.</h3>
+                    <p class="role-text">Produces fast-paced social media reels</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$30/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">3 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Short-form Editing</span><span>Transitions</span><span>Audio Sync</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- ===================== Youtube Video Editors ===================== -->
+
+            <div class="up-card" data-name="Muhammad Z." data-price="32" data-type="Youtube Video Editors" data-exp="4">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Muhammad Z.</h3>
+                    <p class="role-text">Produces polished videos for YouTube channels</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$32/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">4 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Premiere Pro</span><span>Thumbnail Design</span><span>Motion Graphics</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Tahir N." data-price="28" data-type="Youtube Video Editors" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Tahir N.</h3>
+                    <p class="role-text">Edits engaging long-form YouTube content</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$28/hr</span>
+                        <span class="rating-tag">⭐ 4.6</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Premiere Pro</span><span>Thumbnail Design</span><span>Motion Graphics</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Maya S." data-price="30" data-type="Youtube Video Editors" data-exp="3">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Maya S.</h3>
+                    <p class="role-text">Creates professional channel video edits</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$30/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">3 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Adobe Premiere Pro</span><span>Thumbnail Design</span><span>Motion Graphics</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+
+        <!-- ===================== Videographers ===================== -->
+
+            <div class="up-card" data-name="Michael T." data-price="32" data-type="Videographers" data-exp="4">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Michael T.</h3>
+                    <p class="role-text">Captures professional video content creatively</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$32/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">4 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Camera Operation</span><span>Lighting Setup</span><span>Color Grading</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Omar F." data-price="28" data-type="Videographers" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Omar F.</h3>
+                    <p class="role-text">Films cinematic footage for projects</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$28/hr</span>
+                        <span class="rating-tag">⭐ 4.6</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Camera Operation</span><span>Lighting Setup</span><span>Color Grading</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Sophie R." data-price="30" data-type="Videographers" data-exp="3">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Sophie R.</h3>
+                    <p class="role-text">Produces high-quality visual storytelling</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$30/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">3 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Camera Operation</span><span>Lighting Setup</span><span>Color Grading</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+
+             <!-- ===================== Web Designers ===================== -->
+
+            <div class="up-card" data-name="Ryan H." data-price="32" data-type="Web Designers" data-exp="4">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Ryan H.</h3>
+                    <p class="role-text">Designs modern and responsive websites</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$32/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">4 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Responsive Design</span><span>Figma</span><span>HTML/CSS</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Ruslan K." data-price="28" data-type="Web Designers" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Ruslan K.</h3>
+                    <p class="role-text">Creates clean and engaging web layouts</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$28/hr</span>
+                        <span class="rating-tag">⭐ 4.6</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Responsive Design</span><span>Figma</span><span>HTML/CSS</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Yulia S." data-price="30" data-type="Web Designers" data-exp="3">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Yulia S.</h3>
+                    <p class="role-text">Builds user-friendly website experiences</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$30/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">3 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Responsive Design</span><span>Figma</span><span>HTML/CSS</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
+    <div class="load-more-container">
+        <button id="loadMoreBtn">Load More</button>
+    </div>
+    <div class="drawer-overlay" id="overlay"></div>
+    <div class="profile-drawer" id="drawer">
+        <span class="close-drawer" id="closeDrawer">&times;</span>
+        <div class="drawer-header">
+            <img src="" id="dImg">
+            <h2 id="dName"></h2>
+            <p id="dType"></p>
+        </div>
+        <hr>
+        <div class="drawer-body">
+            <h5>Portfolio Highlights</h5>
+            <div class="portfolio-samples">
+                <div class="sample">Project A</div>
+                <div class="sample">Project B</div>
+                <div class="sample">Project C</div>
+                <div class="sample">Project D</div>
+            </div>
+            <div class="mt-4">
+                <h5>About</h5>
+                <p class="text-muted small">Top-rated professional delivering high-quality results consistently.</p>
+            </div>
+            <button class="hire-btn">Send Proposal</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Task Hunt</h3>
+                <ul>
+                    <li><a href="#">About Task Hunt</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Rights Protection</a></li>
+                </ul>
+                <div class="social-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon"
+                            alt="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon"
+                            alt="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon"
+                            alt="TikTok">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"
+                            alt="Twitter">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Topics</a></li>
+                </ul>
+            </div>
+
+            <div id="contact-section" class="footer-col contact-col">
+                <div class="contact-box">
+                    <form id="contactForm">
+                        <h3>Drop us a message</h3>
+                        <div class="form-group">
+                            <input type="text" class="footer-input" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="footer-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="footer-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Task Hunt — All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // ================= DRAWER =================
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeDrawer');
+
+        document.querySelectorAll('.up-card').forEach(card => {
+            const openElements = [
+                card.querySelector('.avatar-img'),
+                card.querySelector('.view-profile-btn')
+            ];
+
+            openElements.forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.stopPropagation();
+
+                    document.getElementById('dName').innerText = card.dataset.name;
+                    document.getElementById('dType').innerText = card.dataset.type;
+                    document.getElementById('dImg').src = card.querySelector('.avatar-img').src;
+
+                    drawer.classList.add('open');
+                    overlay.style.display = 'block';
+                });
+            });
+        });
+
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            overlay.style.display = 'none';
+        }
+
+        closeBtn.onclick = closeDrawer;
+        overlay.onclick = closeDrawer;
+
+
+        // ================= SIDEBAR =================
+        const pageMap = {
+            'Data & AI': 'Data&Ai.html',
+            'Development & IT': 'Development & IT.html',
+            'Design & Creative': 'Design & Creative.html',
+            'Admin & Support': 'Admin & Support.html',
+            'HR & Training': 'HR & Training.html',
+            'Legal': 'Legal.html'
+        };
+
+        const currentPage = 'Design & Creative';
+        const pageTitleElement = document.getElementById('pageTitle');
+
+        document.querySelectorAll('.sidebar .category').forEach(categoryEl => {
+            const btn = categoryEl.querySelector('.category-btn');
+            if (!btn) return;
+
+            const name = btn.textContent.replace('›', '').trim();
+            const targetPage = pageMap[name];
+
+            if (name === 'Categories') {
+                btn.onclick = () => btn.parentElement.classList.toggle('active');
+                return;
+            }
+
+            if (targetPage && name !== currentPage) {
+                btn.style.cursor = 'pointer';
+                btn.addEventListener('click', () => {
+                    window.location.href = targetPage;
+                });
+            } else {
+                btn.onclick = () => categoryEl.classList.toggle('active');
+            }
+
+            categoryEl.querySelectorAll('a.filter-link').forEach(link => {
+                const type = link.dataset.type;
+                if (targetPage && name !== currentPage && type) {
+                    link.href = targetPage + '#' + encodeURIComponent(type);
+                } else {
+                    link.href = '#';
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const selectedType = this.dataset.type;
+                        pageTitleElement.innerText = selectedType;
+                        typeFilter.value = selectedType;
+                        priceFilter.value = 'all';
+                        expFilter.value = 'all';
+                        visibleCards = 6;
+                        filterCards();
+                    });
+                }
+            });
+        });
+
+
+        // ================= FILTER =================
+        const typeFilter = document.getElementById('typeFilter');
+        const priceFilter = document.getElementById('priceFilter');
+        const expFilter = document.getElementById('expFilter');
+        const applyFilterBtn = document.getElementById('applyFilterBtn');
+
+        let visibleCards = 6; // عدد الكروت الظاهرة
+
+        function filterCards() {
+            const selectedType = typeFilter.value;
+            const selectedPrice = priceFilter.value;
+            const selectedExp = expFilter.value;
+
+            let filtered = [];
+
+            document.querySelectorAll('.up-card').forEach(card => {
+                const type = card.dataset.type;
+                const price = parseInt(card.dataset.price, 10);
+                const exp = parseInt(card.dataset.exp, 10);
+                let show = true;
+
+                if (selectedType !== 'all' && type !== selectedType) show = false;
+                if (selectedPrice !== 'all') {
+                    const [min, max] = selectedPrice.split('-').map(Number);
+                    if (price < min || price > max) show = false;
+                }
+                if (selectedExp !== 'all') {
+                    if (selectedExp === '6-10') {
+                        if (exp < 6) show = false;
+                    } else {
+                        const [minExp, maxExp] = selectedExp.split('-').map(Number);
+                        if (exp < minExp || exp > maxExp) show = false;
+                    }
+                }
+
+                if (show) filtered.push(card);
+                card.style.display = 'none';
+            });
+
+            filtered.forEach((card, index) => {
+                card.style.display = index < visibleCards ? 'block' : 'none';
+            });
+
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            loadMoreBtn.style.display = visibleCards >= filtered.length ? 'none' : 'inline-block';
+
+            window.currentFiltered = filtered;
+        }
+
+        function applyCurrentHashFilter() {
+            const hash = decodeURIComponent(window.location.hash.slice(1));
+            if (!hash) return;
+            const optionExists = Array.from(typeFilter.options).some(opt => opt.value === hash);
+            if (optionExists) {
+                typeFilter.value = hash;
+                priceFilter.value = 'all';
+                expFilter.value = 'all';
+                pageTitleElement.innerText = hash;
+                visibleCards = 6;
+                filterCards();
+            }
+        }
+
+        typeFilter.addEventListener('change', () => {
+            visibleCards = 6;
+            pageTitleElement.innerText = typeFilter.value === 'all' ? currentPage : typeFilter.value;
+            filterCards();
+        });
+        priceFilter.addEventListener('change', () => {
+            visibleCards = 6;
+            filterCards();
+        });
+        expFilter.addEventListener('change', () => {
+            visibleCards = 6;
+            filterCards();
+        });
+        applyFilterBtn.addEventListener('click', () => {
+            visibleCards = 6;
+            filterCards();
+        });
+
+
+        // ================= LOAD MORE =================
+        document.getElementById('loadMoreBtn').addEventListener('click', () => {
+            visibleCards += 3;
+            const list = window.currentFiltered || document.querySelectorAll('.up-card');
+            list.forEach((card, index) => {
+                card.style.display = index < visibleCards ? 'block' : 'none';
+            });
+            if (visibleCards >= list.length) {
+                document.getElementById('loadMoreBtn').style.display = 'none';
+            }
+        });
+
+
+        // ================= NAVBAR =================
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        menuToggle.onclick = () => {
+            navLinks.classList.toggle('active');
+        };
+
+
+        // ================= INIT =================
+        window.onload = () => {
+            applyCurrentHashFilter();
+            filterCards();
+        };
+    </script>
+</body>
+
+</html>
