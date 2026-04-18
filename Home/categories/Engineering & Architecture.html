@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHunt | Engineering & Architecture</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Cairo:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="../jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="ALL.css">
+</head>
+
+<body>
+    <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="../../Home/home.html">
+            <img src="logo.png" alt="TaskHunt Logo">
+        </a>
+    </div>
+
+    <!-- LINKS -->
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../findwork.html">Find Work</a></li>
+        <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+
+        <!-- MOBILE BUTTONS -->
+        <li class="mobile-auth">
+            <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+            <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+        </li>
+    </ul>
+
+    <!-- DESKTOP BUTTONS -->
+    <div class="auth-buttons">
+        <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+        <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+    </div>
+
+    <!-- MENU ICON -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+
+    <section class="hero-title">
+       
+        <h1 id="pageTitle">Engineering & Architecture</h1>
+    </section>
+
+    <section class="filter-bar">
+        <div class="filter-container">
+            <select id="typeFilter">
+                <option value="all">All Categories</option>
+
+                <!-- Engineering & Architecture -->
+                <option value="AutoCAD Developers">AutoCAD Developers</option>
+                <option value="Engineering Engineering Consultants">Engineering Consultants</option>
+                <option value="Interior Architects">Interior Architects</option>
+                <option value="Architectural Modelers">Architectural Modelers</option>
+   
+            </select>
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="0-30">0 - 30$/hr</option>
+                <option value="31-40">31 - 40$/hr</option>
+                <option value="41-50">41 - 50$/hr</option>
+            </select>
+            <select id="expFilter">
+                <option value="all">All Experience</option>
+                <option value="0-2">0 - 2 yrs</option>
+                <option value="3-5">3 - 5 yrs</option>
+                <option value="6-10">6+ yrs</option>
+            </select>
+            <button class="apply-filters-btn" id="applyFilters">Apply Filters</button>
+        </div>
+    </section>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
+
+            <!-- Data & AI -->
+            <div class="category">
+                <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis &
+                            Visualization</a></li>
+                    <li><a href="#" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Data Engineering">Data Engineering</a></li>
+                    <li><a href="#" class="filter-link" data-type="Deep Learning">Deep Learning</a></li>
+                    <li><a href="#" class="filter-link" data-type="Predictive Analytics">Predictive Analytics</a></li>
+                    <li><a href="#" class="filter-link" data-type="Generative AI">Generative AI</a></li>
+                </ul>
+            </div>
+
+            <!-- Development & IT -->
+            <div class="category">
+                <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Android Developers">Android Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Cyber Security Engineers">Cyber Security
+                            Engineers</a></li>
+                </ul>
+            </div>
+
+            <!-- Design & Creative -->
+            <div class="category">
+                <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo Designers</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="UX Designers">UX Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Instagram Reel Editors">Instagram Reel Editors</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Youtube Video Editors">Youtube Video Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Videographers">Videographers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Web Designers">Web Designers</a></li>
+                </ul>
+            </div>
+
+            <!-- Sales & Marketing -->
+            <div class="category">
+                <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Branding Experts">Branding Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Business Development Managers">Business Development
+                            Managers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Digital Marketers">Digital Marketers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Facebook Ads Specialists">Facebook Ads
+                            Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Ecommerce Consultants">Ecommerce Consultants</a></li>
+                </ul>
+            </div>
+
+            <!-- Writing & Translation -->
+            <div class="category">
+                <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Academic Writers">Academic Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Business Plan Writers">Business Plan Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Copy Editors">Copy Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Creative Writers">Creative Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="English to Spanish Translators">English to Spanish
+                            Translators</a></li>
+                </ul>
+            </div>
+
+            <!-- Admin & Support -->
+            <div class="category">
+                <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Google Docs Experts">Google Docs Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Google Sheets Experts">Google Sheets Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Excel Experts">Microsoft Excel Experts</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Office Specialists">Microsoft Office
+                            Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Word Experts">Microsoft Word Experts</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="PowerPoint Experts">PowerPoint Experts</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Finance & Accounting -->
+            <div class="category">
+                <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Business Analysts">Business Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Financial Analysts">Financial Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Management Consultants">Management Consultants</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Data Entry Specialists">Data Entry Specialists</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Financial Reporting Analysts">Financial Reporting
+                            Analysts</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="category">
+                <button class="category-btn">Legal <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Corporate Law Professionals">Corporate Law
+                            Professionals</a></li>
+                    <li><a href="#" class="filter-link" data-type="Immigration Law Professionals">Immigration Law
+                            Professionals</a></li>
+                    <li><a href="#" class="filter-link" data-type="Legal Advisors">Legal Advisors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Legal Consultants">Legal Consultants</a></li>
+                </ul>
+            </div>
+            <!-- HR & Training -->
+            <div class="category">
+                <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Employee Engagement Specialists">Employee Engagement
+                            Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Leadership Development Specialists">Leadership
+                            Development Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Technical Recruiters">Technical Recruiters</a></li>
+                    <li><a href="#" class="filter-link" data-type="Curriculum Developers">Curriculum Developers</a></li>
+                </ul>
+            </div>
+
+            <!-- Engineering & Architecture -->
+            <div class="category">
+                <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="AutoCAD Developers">AutoCAD Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Engineering Consultants">Engineering Consultants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Interior Architects">Interior Architects</a></li>
+                    <li><a href="#" class="filter-link" data-type="Architectural Modelers">Architectural Modelers</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="cards-grid">
+
+<!-- ===================== AutoCAD Developers ===================== -->
+
+<div class="up-card" data-name="Ahmed Samir" data-price="25" data-type="AutoCAD Developers" data-exp="5">
+    <div class="card-image-wrapper">
+         <img src="userimages/men/1.jfif" class="avatar-img" alt="Profile">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Ahmed Samir</h3>
+        <p class="role-text">AutoCAD Designer for 2D & 3D engineering drawings</p>
+        <div class="stats-row">
+            <span class="price-tag">$25/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>AutoCAD</span><span>Drafting</span><span>3D Modeling</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Mona Hassan" data-price="28" data-type="AutoCAD Developers" data-exp="7">
+   <div class="card-image-wrapper">
+                    <img src="userimages/women/1.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Mona Hassan</h3>
+        <p class="role-text">Mechanical AutoCAD Specialist</p>
+        <div class="stats-row">
+            <span class="price-tag">$30/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">3 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>AutoCAD</span><span>Mechanical Design</span><span>CAD</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Omar Khaled" data-price="30" data-type="AutoCAD Developers" data-exp="2">
+ <div class="card-image-wrapper">
+                    <img src="userimages/men/2.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Omar Khaledi</h3>
+        <p class="role-text">Electrical CAD Designer</p>
+        <div class="stats-row">
+            <span class="price-tag">$28/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>AutoCAD</span><span>Electrical Drawings</span><span>Layouts</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<!-- ===================== Engineering Consultants ===================== -->
+
+<div class="up-card" data-name="Sara Ali" data-price="40" data-type="Engineering Consultants" data-exp="6">
+     <div class="card-image-wrapper">
+                    <img src="userimages/women/2.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Sara Ali</h3>
+        <p class="role-text">Civil Engineering Consultant</p>
+        <div class="stats-row">
+            <span class="price-tag">$40/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">6 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Structural Analysis</span><span>Site Planning</span><span>Consulting</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Youssef Nabil" data-price="38" data-type="Engineering Consultants" data-exp="4">
+  <div class="card-image-wrapper">
+                    <img src="userimages/men/10.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div> 
+    <div class="card-content">
+        <h3>Youssef Nabil</h3>
+        <p class="role-text">Mechanical Engineering Consultant</p>
+        <div class="stats-row">
+            <span class="price-tag">$38/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>HVAC</span><span>Systems Design</span><span>Consulting</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Hassan Reda" data-price="42" data-type="Engineering Consultants" data-exp="3">
+    <div class="card-image-wrapper">
+                    <img src="userimages/men/18.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Hassan Reda</h3>
+        <p class="role-text">Project Engineering Advisor</p>
+        <div class="stats-row">
+            <span class="price-tag">$42/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">7 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Project Management</span><span>Risk Analysis</span><span>Planning</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<!-- ===================== Interior Architects ===================== -->
+
+<div class="up-card" data-name="Ali Mohamed" data-price="45" data-type="Interior Architects" data-exp="2">
+   <div class="card-image-wrapper">
+                    <img src="userimages/men/17.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Ali Mohamed</h3>
+        <p class="role-text">Interior Designer for modern spaces</p>
+        <div class="stats-row">
+            <span class="price-tag">$35/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>3Ds Max</span><span>Interior Design</span><span>Rendering</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Mostafa Gamal" data-price="50" data-type="Interior Architects" data-exp="5">
+    <div class="card-image-wrapper">
+                    <img src="userimages/men/14.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Nour Adel</h3>
+        <p class="role-text">Luxury Interior Architect</p>
+        <div class="stats-row">
+            <span class="price-tag">$37/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>SketchUp</span><span>Design</span><span>Visualization</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Nour Adel" data-price="48" data-type="Interior Architects" data-exp="5">
+   <div class="card-image-wrapper">
+                    <img src="userimages/men/14.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Nour Adel</h3>
+        <p class="role-text">Home Interior Specialist</p>
+        <div class="stats-row">
+            <span class="price-tag">$33/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">3 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>AutoCAD</span><span>Furniture Design</span><span>Decor</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<!-- ===================== Architectural Modelers ===================== -->
+
+<div class="up-card" data-name="Khaled Mahmoud" data-price="32" data-type="Architectural Modelers" data-exp="4">
+    <div class="card-image-wrapper">
+                    <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+    <div class="card-content">
+        <h3>Khaled Mahmoud</h3>
+        <p class="role-text">3D Architectural Modeler</p>
+        <div class="stats-row">
+            <span class="price-tag">$36/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Blender</span><span>3D Modeling</span><span>Rendering</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Omar Saeed" data-price="34" data-type="Architectural Modelers" data-exp="4">
+     <div class="card-image-wrapper">
+                    <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div> 
+    <div class="card-content">
+        <h3>Omar Saeed</h3>
+        <p class="role-text">Exterior & Landscape Modeler</p>
+        <div class="stats-row">
+            <span class="price-tag">$34/hr</span>
+            <span class="rating-tag">⭐ 4.6</span>
+            <span class="exp-tag">4 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>3Ds Max</span><span>V-Ray</span><span>Modeling</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+<div class="up-card" data-name="Sara Adel" data-price="30" data-type="Architectural Modelers" data-exp="3">
+    <div class="card-image-wrapper">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div> 
+    <div class="card-content">
+        <h3>Sara Adel</h3>
+        <p class="role-text">Architectural Visualization Expert</p>
+        <div class="stats-row">
+            <span class="price-tag">$38/hr</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">6 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Lumion</span><span>Rendering</span><span>3D</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+
+</main>
+
+    </div>
+    <div class="load-more-container">
+        <button id="loadMoreBtn">Load More</button>
+    </div>
+    <div class="drawer-overlay" id="overlay"></div>
+    <div class="profile-drawer" id="drawer">
+        <span class="close-drawer" id="closeDrawer">&times;</span>
+        <div class="drawer-header">
+            <img src="" id="dImg">
+            <h2 id="dName"></h2>
+            <p id="dType"></p>
+        </div>
+        <hr>
+        <div class="drawer-body">
+            <h5>Portfolio Highlights</h5>
+            <div class="portfolio-samples">
+                <div class="sample">Project A</div>
+                <div class="sample">Project B</div>
+                <div class="sample">Project C</div>
+                <div class="sample">Project D</div>
+            </div>
+            <div class="mt-4">
+                <h5>About</h5>
+                <p class="text-muted small">Top-rated professional delivering high-quality results consistently.</p>
+            </div>
+            <button class="hire-btn">Send Proposal</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Task Hunt</h3>
+                <ul>
+                    <li><a href="#">About Task Hunt</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Rights Protection</a></li>
+                </ul>
+                <div class="social-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon"
+                            alt="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon"
+                            alt="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon"
+                            alt="TikTok">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"
+                            alt="Twitter">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Topics</a></li>
+                </ul>
+            </div>
+
+            <div id="contact-section" class="footer-col contact-col">
+                <div class="contact-box">
+                    <form id="contactForm">
+                        <h3>Drop us a message</h3>
+                        <div class="form-group">
+                            <input type="text" class="footer-input" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="footer-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="footer-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Task Hunt — All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+    // ================= DRAWER =================
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeDrawer');
+
+    document.querySelectorAll('.up-card').forEach(card => {
+
+        const avatar = card.querySelector('.avatar-img');
+        const btn = card.querySelector('.view-profile-btn');
+
+        const openDrawer = (e) => {
+            e.stopPropagation();
+
+            // fallback values لو فيه غلط في الداتا
+            const name = card.dataset.name || card.querySelector('h3')?.innerText || "Unknown";
+            const type = card.dataset.type || "Unknown";
+            const img = avatar?.src || "";
+
+            // تأمين العناصر
+            const dName = document.getElementById('dName');
+            const dType = document.getElementById('dType');
+            const dImg = document.getElementById('dImg');
+
+            if (dName) dName.innerText = name;
+            if (dType) dType.innerText = type;
+            if (dImg) dImg.src = img;
+
+            drawer?.classList.add('open');
+            if (overlay) overlay.style.display = 'block';
+        };
+
+        avatar?.addEventListener('click', openDrawer);
+        btn?.addEventListener('click', openDrawer);
+    });
+
+    function closeDrawer() {
+        drawer?.classList.remove('open');
+        if (overlay) overlay.style.display = 'none';
+    }
+
+    closeBtn?.addEventListener('click', closeDrawer);
+    overlay?.addEventListener('click', closeDrawer);
+
+
+    // ================= SIDEBAR =================
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.toggle('active');
+        });
+    });
+
+
+    // ================= FILTER =================
+    const typeFilter = document.getElementById("typeFilter");
+    const priceFilter = document.getElementById("priceFilter");
+    const expFilter = document.getElementById("expFilter");
+
+    let visibleCards = 6;
+
+    function filterCards() {
+        const selectedType = typeFilter?.value || "all";
+        const selectedPrice = priceFilter?.value || "all";
+        const selectedExp = expFilter?.value || "all";
+
+        let filtered = [];
+
+        document.querySelectorAll(".up-card").forEach(card => {
+            const type = card.dataset.type;
+            const price = parseInt(card.dataset.price) || 0;
+            const exp = parseInt(card.dataset.exp) || 0;
+
+            let show = true;
+
+            // TYPE
+            if (selectedType !== "all" && type !== selectedType) {
+                show = false;
+            }
+
+            // PRICE
+            if (selectedPrice !== "all") {
+                const [min, max] = selectedPrice.split("-").map(Number);
+                if (price < min || price > max) show = false;
+            }
+
+            // EXPERIENCE
+            if (selectedExp !== "all") {
+                if (selectedExp === "6-10") {
+                    if (exp < 6) show = false;
+                } else {
+                    const [minExp, maxExp] = selectedExp.split("-").map(Number);
+                    if (exp < minExp || exp > maxExp) show = false;
+                }
+            }
+
+            if (show) filtered.push(card);
+
+            card.style.display = "none";
+        });
+
+        filtered.forEach((card, index) => {
+            card.style.display = index < visibleCards ? "block" : "none";
+        });
+
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
+        if (loadMoreBtn) {
+            loadMoreBtn.style.display =
+                visibleCards >= filtered.length ? "none" : "inline-block";
+        }
+
+        window.currentFiltered = filtered;
+    }
+
+
+    // ================= EVENTS =================
+    typeFilter?.addEventListener("change", () => {
+        visibleCards = 6;
+        filterCards();
+    });
+
+    priceFilter?.addEventListener("change", () => {
+        visibleCards = 6;
+        filterCards();
+    });
+
+    expFilter?.addEventListener("change", () => {
+        visibleCards = 6;
+        filterCards();
+    });
+
+
+    // ================= SIDEBAR FILTER =================
+    document.querySelectorAll(".filter-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const selectedType = this.dataset.type;
+
+            const pageTitle = document.getElementById("pageTitle");
+            if (pageTitle) pageTitle.innerText = selectedType;
+
+            if (typeFilter) typeFilter.value = selectedType;
+
+            if (priceFilter) priceFilter.value = "all";
+            if (expFilter) expFilter.value = "all";
+
+            visibleCards = 6;
+            filterCards();
+        });
+    });
+
+
+    // ================= LOAD MORE =================
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    loadMoreBtn?.addEventListener("click", () => {
+        visibleCards += 3;
+
+        const list = window.currentFiltered || document.querySelectorAll(".up-card");
+
+        list.forEach((card, index) => {
+            card.style.display = index < visibleCards ? "block" : "none";
+        });
+
+        if (visibleCards >= list.length) {
+            loadMoreBtn.style.display = "none";
+        }
+    });
+
+
+    // ================= NAVBAR =================
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle?.addEventListener("click", () => {
+        navLinks?.classList.toggle("active");
+    });
+
+
+    // ================= INIT =================
+    window.addEventListener("load", filterCards);
+</script>
+</body>
+
+</html>
