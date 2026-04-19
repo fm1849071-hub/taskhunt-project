@@ -57,18 +57,21 @@
 
     <section class="filter-bar">
         <div class="filter-container">
-            <select id="typeFilter">
-                <option value="all">All Categories</option>
+           <select id="typeFilter">
+    <option value="all">All Categories</option>
+    <option value="Digital Marketers">Digital Marketers</option>
+    <option value="Sales Representatives">Sales Representatives</option>
+    <option value="Business Development Managers">Business Development Managers</option>
+    <option value="SEO Specialists">SEO Specialists</option>
+    <option value="Social Media Managers">Social Media Managers</option>
+    <option value="Email Marketing Experts">Email Marketing Experts</option>
+    <option value="Lead Generation Experts">Lead Generation Experts</option>
+    <option value="Branding Experts">Branding Experts</option>
+    <option value="Ecommerce Consultants">Ecommerce Consultants</option>
+</select> <!-- ✅ مهم جداً -->
 
-                <!-- Sales & Marketing -->
-                <option value="Data Analysis & Visualization">Data Analysis & Visualization</option>
-                <option value="Machine Learning Models">Machine Learning Models</option>
-                <option value="Data Engineering">Data Engineering</option>
-                <option value="Deep Learning">Deep Learning</option>
-                <option value="Predictive Analytics">Predictive Analytics</option>
-                <option value="Generative AI">Generative AI</option>
-            </select>
-            <select id="priceFilter">
+<select id="priceFilter"> 
+                
                 <option value="all">All Prices</option>
                 <option value="0-30">0 - 30$/hr</option>
                 <option value="31-40">31 - 40$/hr</option>
@@ -88,20 +91,7 @@
         <aside class="sidebar">
             <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
 
-            <!--Sales & Marketing-->
-            <div class="category">
-                <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
-                <ul class="sub-categories">
-                    <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis &
-                            Visualization</a></li>
-                    <li><a href="#" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a>
-                    </li>
-                    <li><a href="#" class="filter-link" data-type="Data Engineering">Data Engineering</a></li>
-                    <li><a href="#" class="filter-link" data-type="Deep Learning">Deep Learning</a></li>
-                    <li><a href="#" class="filter-link" data-type="Predictive Analytics">Predictive Analytics</a></li>
-                    <li><a href="#" class="filter-link" data-type="Generative AI">Generative AI</a></li>
-                </ul>
-            </div>
+            
 
             <!-- Development & IT -->
             <div class="category">
@@ -136,13 +126,15 @@
             <div class="category">
                 <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
                 <ul class="sub-categories">
-                    <li><a href="#" class="filter-link" data-type="Branding Experts">Branding Experts</a></li>
-                    <li><a href="#" class="filter-link" data-type="Business Development Managers">Business Development
-                            Managers</a></li>
-                    <li><a href="#" class="filter-link" data-type="Digital Marketers">Digital Marketers</a></li>
-                    <li><a href="#" class="filter-link" data-type="Facebook Ads Specialists">Facebook Ads
-                            Specialists</a></li>
-                    <li><a href="#" class="filter-link" data-type="Ecommerce Consultants">Ecommerce Consultants</a></li>
+                <li><a href="#" class="filter-link" data-type="Digital Marketers">Digital Marketers</a></li>
+                <li><a href="#" class="filter-link" data-type="Sales Representatives">Sales Representatives</a></li>
+                <li><a href="#" class="filter-link" data-type="Business Development Managers">Business Development Managers</a></li>
+                <li><a href="#" class="filter-link" data-type="SEO Specialists">SEO Specialists</a></li>
+                <li><a href="#" class="filter-link" data-type="Social Media Managers">Social Media Managers</a></li>
+                <li><a href="#" class="filter-link" data-type="Email Marketing Experts">Email Marketing Experts</a></li>
+                <li><a href="#" class="filter-link" data-type="Lead Generation Experts">Lead Generation Experts</a></li>
+                <li><a href="#" class="filter-link" data-type="Branding Experts">Branding Experts</a></li>
+                <li><a href="#" class="filter-link" data-type="Ecommerce Consultants">Ecommerce Consultants</a></li>
                 </ul>
             </div>
 
@@ -232,384 +224,232 @@
         </aside>
 
      <main class="cards-grid">
-          <!-- ===================== 18 NEW CARDS ===================== -->
-
-<!-- 1 -->
-<div class="up-card" data-name="Amelia R." data-price="21" data-type="Brand & Logo Designers" data-exp="3">
+<div class="up-card" data-name="Adam K." data-price="25" data-type="Digital Marketers" data-exp="3">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="avatar-img">
+        <img src="userimages/men/6.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Amelia R.</h3>
-        <p class="role-text">Minimalist logo & identity designer</p>
+        <h3>Adam K.</h3>
+        <p class="role-text">Expert in SEO and performance marketing</p>
         <div class="stats-row">
-            <span class="price-tag">$21/hr</span>
-            <span class="rating-tag">⭐ 4.8</span>
+            <span class="price-tag">$25/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
             <span class="exp-tag">3 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Branding</span><span>Illustrator</span><span>Logos</span>
+            <span>SEO</span><span>Google Ads</span><span>Analytics</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
 </div>
-
-<!-- 2 -->
-<div class="up-card" data-name="Ethan W." data-price="26" data-type="Brand & Logo Designers" data-exp="5">
+<div class="up-card" data-name="Mona H." data-price="30" data-type="Facebook Ads Specialists" data-exp="5">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/13.jpg" class="avatar-img">
+        <img src="userimages/women/6.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Ethan W.</h3>
-        <p class="role-text">Creative branding strategist</p>
+        <h3>Mona H.</h3>
+        <p class="role-text">Builds high-converting ad campaigns</p>
         <div class="stats-row">
-            <span class="price-tag">$26/hr</span>
+            <span class="price-tag">$30/hr</span>
             <span class="rating-tag">⭐ 4.9</span>
             <span class="exp-tag">5 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Brand Identity</span><span>Vector</span><span>Typography</span>
+            <span>Facebook Ads</span><span>Funnels</span><span>Retargeting</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
 </div>
-
-<!-- 3 -->
-<div class="up-card" data-name="Lara N." data-price="34" data-type="Graphic Designers" data-exp="4">
+<div class="up-card" data-name="Omar N." data-price="28" data-type="Digital Marketers" data-exp="4">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/14.jpg" class="avatar-img">
+        <img src="userimages/men/7.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Lara N.</h3>
-        <p class="role-text">Social media & ad designer</p>
+        <h3>Omar N.</h3>
+        <p class="role-text">Growth marketer focused on ROI</p>
         <div class="stats-row">
-            <span class="price-tag">$34/hr</span>
-            <span class="rating-tag">⭐ 4.7</span>
+            <span class="price-tag">$28/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
             <span class="exp-tag">4 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Photoshop</span><span>Ads</span><span>Creatives</span>
+            <span>SEO</span><span>Email Marketing</span><span>Analytics</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
 </div>
-
-<!-- 4 -->
-<div class="up-card" data-name="Victor P." data-price="39" data-type="Graphic Designers" data-exp="6">
+<div class="up-card" data-name="Lina S." data-price="35" data-type="Business Development Managers" data-exp="6">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/15.jpg" class="avatar-img">
+        <img src="userimages/women/7.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Victor P.</h3>
-        <p class="role-text">Print & digital expert designer</p>
+        <h3>Lina S.</h3>
+        <p class="role-text">Drives business growth and partnerships</p>
         <div class="stats-row">
-            <span class="price-tag">$39/hr</span>
+            <span class="price-tag">$35/hr</span>
             <span class="rating-tag">⭐ 4.8</span>
             <span class="exp-tag">6 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Illustrator</span><span>Posters</span><span>Branding</span>
+            <span>Sales Strategy</span><span>Lead Generation</span><span>CRM</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
-</div>
-
-<!-- 5 -->
-<div class="up-card" data-name="Huda K." data-price="44" data-type="UX Designers" data-exp="5">
+</div><div class="up-card" data-name="Yousef A." data-price="22" data-type="Branding Experts" data-exp="2">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/16.jpg" class="avatar-img">
+        <img src="userimages/men/8.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Huda K.</h3>
-        <p class="role-text">UX designer for mobile apps</p>
+        <h3>Yousef A.</h3>
+        <p class="role-text">Builds strong brand identities</p>
         <div class="stats-row">
-            <span class="price-tag">$44/hr</span>
-            <span class="rating-tag">⭐ 4.9</span>
-            <span class="exp-tag">5 yrs</span>
+            <span class="price-tag">$22/hr</span>
+            <span class="rating-tag">⭐ 4.6</span>
+            <span class="exp-tag">2 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Figma</span><span>UX</span><span>Wireframe</span>
+            <span>Brand Strategy</span><span>Positioning</span><span>Identity</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
 </div>
-
-<!-- 6 -->
-<div class="up-card" data-name="Omar S." data-price="41" data-type="UX Designers" data-exp="4">
+<div class="up-card" data-name="Sara T." data-price="27" data-type="Ecommerce Consultants" data-exp="4">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/17.jpg" class="avatar-img">
+        <img src="userimages/women/8.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Omar S.</h3>
-        <p class="role-text">Designs smooth user journeys</p>
+        <h3>Sara T.</h3>
+        <p class="role-text">Optimizes ecommerce stores for sales</p>
         <div class="stats-row">
-            <span class="price-tag">$41/hr</span>
-            <span class="rating-tag">⭐ 4.8</span>
+            <span class="price-tag">$27/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
             <span class="exp-tag">4 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>User Flow</span><span>Research</span><span>Figma</span>
+            <span>Shopify</span><span>Conversion Rate</span><span>Marketing</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
 </div>
-
-<!-- 7 -->
-<div class="up-card" data-name="Noor A." data-price="29" data-type="Instagram Reel Editors" data-exp="3">
+<div class="up-card" data-name="Hassan M." data-price="31" data-type="Digital Marketers" data-exp="5">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/18.jpg" class="avatar-img">
+        <img src="userimages/men/9.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Noor A.</h3>
-        <p class="role-text">Creative reels editor</p>
+        <h3>Hassan M.</h3>
+        <p class="role-text">Specialist in PPC campaigns</p>
+        <div class="stats-row">
+            <span class="price-tag">$31/hr</span>
+            <span class="rating-tag">⭐ 4.8</span>
+            <span class="exp-tag">5 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>PPC</span><span>Google Ads</span><span>Analytics</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+<div class="up-card" data-name="Nour A." data-price="29" data-type="Facebook Ads Specialists" data-exp="3">
+    <div class="card-image-wrapper">
+        <img src="userimages/women/9.jfif" class="avatar-img">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Nour A.</h3>
+        <p class="role-text">Social media ads expert</p>
         <div class="stats-row">
             <span class="price-tag">$29/hr</span>
             <span class="rating-tag">⭐ 4.7</span>
             <span class="exp-tag">3 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Reels</span><span>Transitions</span><span>Audio</span>
+            <span>Facebook Ads</span><span>Instagram Ads</span><span>Targeting</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
-</div>
-
-<!-- 8 -->
-<div class="up-card" data-name="Adam F." data-price="27" data-type="Instagram Reel Editors" data-exp="4">
+</div><div class="up-card" data-name="Karim F." data-price="34" data-type="Business Development Managers" data-exp="7">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/19.jpg" class="avatar-img">
+        <img src="userimages/men/10.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Adam F.</h3>
-        <p class="role-text">Fast-paced video editor</p>
-        <div class="stats-row">
-            <span class="price-tag">$27/hr</span>
-            <span class="rating-tag">⭐ 4.6</span>
-            <span class="exp-tag">4 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>Editing</span><span>Music Sync</span><span>Reels</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 9 -->
-<div class="up-card" data-name="Karim H." data-price="36" data-type="Youtube Video Editors" data-exp="5">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/20.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Karim H.</h3>
-        <p class="role-text">Professional YouTube editor</p>
-        <div class="stats-row">
-            <span class="price-tag">$36/hr</span>
-            <span class="rating-tag">⭐ 4.9</span>
-            <span class="exp-tag">5 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>Premiere</span><span>Motion</span><span>Thumbnails</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 10 -->
-<div class="up-card" data-name="Salma T." data-price="31" data-type="Youtube Video Editors" data-exp="3">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/21.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Salma T.</h3>
-        <p class="role-text">YouTube content editor</p>
-        <div class="stats-row">
-            <span class="price-tag">$31/hr</span>
-            <span class="rating-tag">⭐ 4.8</span>
-            <span class="exp-tag">3 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>Editing</span><span>Color</span><span>Motion</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 11 -->
-<div class="up-card" data-name="Mona G." data-price="33" data-type="Videographers" data-exp="4">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/22.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Mona G.</h3>
-        <p class="role-text">Cinematic videographer</p>
-        <div class="stats-row">
-            <span class="price-tag">$33/hr</span>
-            <span class="rating-tag">⭐ 4.8</span>
-            <span class="exp-tag">4 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>Camera</span><span>Lighting</span><span>Color</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 12 -->
-<div class="up-card" data-name="Ibrahim Z." data-price="28" data-type="Videographers" data-exp="5">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/23.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Ibrahim Z.</h3>
-        <p class="role-text">Professional video production</p>
-        <div class="stats-row">
-            <span class="price-tag">$28/hr</span>
-            <span class="rating-tag">⭐ 4.7</span>
-            <span class="exp-tag">5 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>Filming</span><span>Editing</span><span>Lighting</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 13 -->
-<div class="up-card" data-name="Nada S." data-price="30" data-type="Web Designers" data-exp="3">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/24.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Nada S.</h3>
-        <p class="role-text">Modern UI web designer</p>
-        <div class="stats-row">
-            <span class="price-tag">$30/hr</span>
-            <span class="rating-tag">⭐ 4.8</span>
-            <span class="exp-tag">3 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>UI</span><span>Figma</span><span>Responsive</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 14 -->
-<div class="up-card" data-name="Ahmed T." data-price="32" data-type="Web Designers" data-exp="4">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/25.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Ahmed T.</h3>
-        <p class="role-text">Responsive website expert</p>
-        <div class="stats-row">
-            <span class="price-tag">$32/hr</span>
-            <span class="rating-tag">⭐ 4.7</span>
-            <span class="exp-tag">4 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>HTML</span><span>CSS</span><span>UX</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 15 -->
-<div class="up-card" data-name="Julia K." data-price="38" data-type="Graphic Designers" data-exp="6">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/26.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Julia K.</h3>
-        <p class="role-text">Creative visual designer</p>
-        <div class="stats-row">
-            <span class="price-tag">$38/hr</span>
-            <span class="rating-tag">⭐ 4.9</span>
-            <span class="exp-tag">6 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>Design</span><span>Ads</span><span>Branding</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
-</div>
-
-<!-- 16 -->
-<div class="up-card" data-name="Youssef N." data-price="34" data-type="Youtube Video Editors" data-exp="5">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/66.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Youssef N.</h3>
-        <p class="role-text">YouTube storytelling editor</p>
+        <h3>Karim F.</h3>
+        <p class="role-text">Expert in scaling startups</p>
         <div class="stats-row">
             <span class="price-tag">$34/hr</span>
-            <span class="rating-tag">⭐ 4.8</span>
-            <span class="exp-tag">5 yrs</span>
+            <span class="rating-tag">⭐ 4.9</span>
+            <span class="exp-tag">7 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Premiere</span><span>Story</span><span>Color</span>
+            <span>Sales</span><span>Strategy</span><span>Negotiation</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
 </div>
-
-<!-- 17 -->
-<div class="up-card" data-name="Karim E." data-price="31" data-type="Videographers" data-exp="4">
+<div class="up-card" data-name="Dina K." data-price="26" data-type="Branding Experts" data-exp="3">
     <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/men/70.jpg" class="avatar-img">
+        <img src="userimages/women/10.jfif" class="avatar-img">
         <div class="status-badge"></div>
     </div>
     <div class="card-content">
-        <h3>Karim E.</h3>
-        <p class="role-text">Cinematic video shooter</p>
+        <h3>Dina K.</h3>
+        <p class="role-text">Creates memorable brand experiences</p>
         <div class="stats-row">
-            <span class="price-tag">$31/hr</span>
+            <span class="price-tag">$26/hr</span>
+            <span class="rating-tag">⭐ 4.7</span>
+            <span class="exp-tag">3 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Branding</span><span>Identity</span><span>Strategy</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+<div class="up-card" data-name="Ali Z." data-price="24" data-type="Ecommerce Consultants" data-exp="2">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/11.jfif" class="avatar-img">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Ali Z.</h3>
+        <p class="role-text">Helps boost ecommerce sales</p>
+        <div class="stats-row">
+            <span class="price-tag">$24/hr</span>
+            <span class="rating-tag">⭐ 4.6</span>
+            <span class="exp-tag">2 yrs</span>
+        </div>
+        <div class="skills-tags">
+            <span>Shopify</span><span>Marketing</span><span>Optimization</span>
+        </div>
+        <button class="view-profile-btn">View Profile</button>
+    </div>
+</div>
+<div class="up-card" data-name="Mohamed A." data-price="27" data-type="Business Development Managers" data-exp="4">
+    <div class="card-image-wrapper">
+        <img src="userimages/men/16.jfif" class="avatar-img">
+        <div class="status-badge"></div>
+    </div>
+    <div class="card-content">
+        <h3>Mohamed A.</h3>
+        <p class="role-text">Sales executive specializing in client acquisition and deal closing</p>
+        <div class="stats-row">
+            <span class="price-tag">$27/hr</span>
             <span class="rating-tag">⭐ 4.7</span>
             <span class="exp-tag">4 yrs</span>
         </div>
         <div class="skills-tags">
-            <span>Camera</span><span>Lighting</span><span>Production</span>
+            <span>Cold Calling</span><span>Closing Deals</span><span>Negotiation</span>
         </div>
         <button class="view-profile-btn">View Profile</button>
     </div>
 </div>
-
-<!-- 18 -->
-<div class="up-card" data-name="Nada H." data-price="27" data-type="Web Designers" data-exp="3">
-    <div class="card-image-wrapper">
-        <img src="https://randomuser.me/api/portraits/women/72.jpg" class="avatar-img">
-        <div class="status-badge"></div>
-    </div>
-    <div class="card-content">
-        <h3>Nada H.</h3>
-        <p class="role-text">Clean UI & responsive designer</p>
-        <div class="stats-row">
-            <span class="price-tag">$27/hr</span>
-            <span class="rating-tag">⭐ 4.8</span>
-            <span class="exp-tag">3 yrs</span>
-        </div>
-        <div class="skills-tags">
-            <span>UI</span><span>Figma</span><span>Responsive</span>
-        </div>
-        <button class="view-profile-btn">View Profile</button>
-    </div>
 </div>
 
         </main>
@@ -737,16 +577,16 @@
 
 
         // ================= SIDEBAR =================
-        const pageMap = {
-            'Data & AI': 'Data&Ai.html',
-            'Development & IT': 'Development & IT.html',
-            'Design & Creative': 'Design & Creative.html',
-            'Admin & Support': 'Admin & Support.html',
-            'HR & Training': 'HR & Training.html',
-            'Legal': 'Legal.html'
-        };
+     const pageMap = {
+    'Development & IT': 'Development & IT.html',
+    'Design & Creative': 'Design & Creative.html',
+    'Admin & Support': 'Admin & Support.html',
+    'HR & Training': 'HR & Training.html',
+    'Legal': 'Legal.html',
+    'Sales & Marketing': 'Sales & Marketing.html'
+};
 
-        const currentPage = 'Design & Creative';
+         const currentPage = 'Sales & Marketing';        
         const pageTitleElement = document.getElementById('pageTitle');
 
         document.querySelectorAll('.sidebar .category').forEach(categoryEl => {
