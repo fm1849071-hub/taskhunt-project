@@ -39,10 +39,9 @@
         }
 
         .logo img {
-            height: 55px;
-            width: auto;
-            display: block;
-            object-fit: contain;
+           height: 180px;
+  align-items: center;
+  padding-bottom: 25px;
         }
 
         .nav-links {
