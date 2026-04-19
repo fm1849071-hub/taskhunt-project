@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ALL.css">
+  <title>Biography Writers | TaskHunt</title>
+  
+</head>
+<body>
+
+  <!-- ===== NAVBAR (مطابق للأصل) ===== -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html">
+        <img src="../images/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/120x40?text=TaskHunt'">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO TITLE (معدل لصفحة Biography) ===== -->
+  <section class="hero-title">
+    <h2>Writing & Translation</h2>
+    <span class="hero-divider">|</span>
+    <h1>Biography Writers</h1>
+  </section>
+
+  <!-- ===== FILTER BAR (معدل ليتناسب مع Biography) ===== -->
+  <section class="filter-bar">
+    <div class="filter-container">
+      <select id="skillFilter">
+        <option value="all">All Biography Skills</option>
+        <option value="biography">Biography Writing</option>
+        <option value="memoir">Memoir & Autobiography</option>
+        <option value="family">Family History</option>
+        <option value="cv">CV / LinkedIn Bio</option>
+        <option value="business">Business Bio</option>
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior (1-3 years)</option>
+        <option value="mid">Mid (3-6 years)</option>
+        <option value="senior">Senior (7+ years)</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $40</option>
+        <option value="high">Above $40</option>
+      </select>
+
+      <button id="applyFilter">Apply Filters</button>
+    </div>
+  </section>
+
+  <!-- ===== PAGE LAYOUT: SIDEBAR + CARDS ===== -->
+  <div class="page-layout">
+    <!-- SIDEBAR (تم إضافة Biography للقائمة) -->
+     <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      
+  <!-- Data & AI -->
+       <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+   <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Writing & Translation/academic writers.html">Academic Writers</a></li>
+          <li><a href="../Writing & Translation/biography writers.html">Biography Writers</a></li>
+          <li><a href="../Writing & Translation/Business plan writers.html">Business Plan Writers</a></li>
+          <li><a href="../Writing & Translation/Copy Editors.html">Copy Editors</a></li>
+          <li><a href="../Writing & Translation/creative writers.html">Creative Writers</a></li>
+          <li><a href="../Writing & Translation/ebook writers.html">eBook Writers</a></li>
+          <li><a href="../Writing & Translation/EnglishToSpanish.html">English to Spanish Translators</a></li>
+          <li><a href="../Writing & Translation/essay writers.html">Essay Writers</a></li>
+          <li><a href="../Writing & Translation/Fiction Writers.html">Fiction Writers</a></li>
+          <li><a href="../Writing & Translation/Grant Writers.html">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
+        </ul>
+      </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
+
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+    <!-- CARDS SECTION (15 بطاقة جديدة لكتاب السيرة) -->
+    <section class="cards-wrapper">
+      <div class="cards-grid">
+        <!-- BIOGRAPHY CARD 1 -->
+        <div class="up-card" data-skill="biography memoir" data-level="senior" data-price="45">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=7" class="avatar" alt="Layla H.">
+            <div class="user-info">
+              <h3>Layla H.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$45/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 38 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📖 Bestselling ghostwriter with 10+ years experience. Specializes in compelling life stories for public figures and executives. Published 5 memoirs.</p>
+          <div class="tags"><span>Biography</span><span>Memoir</span><span>Ghostwriting</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card" data-skill="family history" data-level="mid" data-price="30">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=16" class="avatar" alt="Omar K.">
+            <div class="user-info">
+              <h3>Omar K.</h3>
+              <span class="location">📍 Alexandria, Egypt</span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 22 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌳 Family historian and genealogist. I turn scattered stories and photos into beautiful family legacy books. 5+ years tracing Middle Eastern roots.</p>
+          <div class="tags"><span>Family History</span><span>Genealogy</span><span>Legacy</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card" data-skill="business bio cv" data-level="mid" data-price="35">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Nadia A.">
+            <div class="user-info">
+              <h3>Nadia A.</h3>
+              <span class="location">📍 Giza, Egypt</span>
+              <div class="stats">
+                <span class="price">$35/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 31 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">💼 Executive bio specialist. I craft powerful LinkedIn profiles, "About Me" pages, and professional bios for C-level leaders. MBA background.</p>
+          <div class="tags"><span>Business Bio</span><span>LinkedIn</span><span>Executive</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card" data-skill="biography memoir" data-level="senior" data-price="50">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=34" class="avatar" alt="Dr. Karim F.">
+            <div class="user-info">
+              <h3>Dr. Karim F.</h3>
+              <span class="location">📍 Mansoura, Egypt</span>
+              <div class="stats">
+                <span class="price">$50/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 42 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🎓 PhD in Creative Writing. Award-winning author specializing in literary biographies and memoirs. Work featured in international publications.</p>
+          <div class="tags"><span>Literary</span><span>Memoir</span><span>Author</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card" data-skill="family history" data-level="junior" data-price="22">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=42" class="avatar" alt="Mona S.">
+            <div class="user-info">
+              <h3>Mona S.</h3>
+              <span class="location">📍 Tanta, Egypt</span>
+              <div class="stats">
+                <span class="price">$22/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 14 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📜 Oral historian. I conduct interviews and weave personal stories into beautiful family narratives. Perfect for preserving your grandparents' legacy.</p>
+          <div class="tags"><span>Oral History</span><span>Family</span><span>Interviews</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card" data-skill="biography cv" data-level="mid" data-price="28">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=49" class="avatar" alt="Youssef R.">
+            <div class="user-info">
+              <h3>Youssef R.</h3>
+              <span class="location">📍 Asyut, Egypt</span>
+              <div class="stats">
+                <span class="price">$28/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 19 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">✍️ Creative writer & editor. I help artists, musicians, and creators tell their story in a way that connects with their audience. 6 years experience.</p>
+          <div class="tags"><span>Artist Bio</span><span>Creative</span><span>Storytelling</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="up-card" data-skill="memoir biography" data-level="senior" data-price="48">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=53" class="avatar" alt="Samira Z.">
+            <div class="user-info">
+              <h3>Samira Z.</h3>
+              <span class="location">📍 Luxor, Egypt</span>
+              <div class="stats">
+                <span class="price">$48/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 29 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📚 Memoir specialist with 12+ years. I help people transform their life experiences into inspiring, publish-ready manuscripts. Fluent in Arabic & English.</p>
+          <div class="tags"><span>Memoir</span><span>Publishing</span><span>Bilingual</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="up-card" data-skill="business cv" data-level="mid" data-price="32">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=57" class="avatar" alt="Hossam M.">
+            <div class="user-info">
+              <h3>Hossam M.</h3>
+              <span class="location">📍 Zagazig, Egypt</span>
+              <div class="stats">
+                <span class="price">$32/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 26 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📈 Corporate storyteller. I write bios for company websites, annual reports, and executive summaries. Clear, professional, and impactful.</p>
+          <div class="tags"><span>Corporate</span><span>Website Bio</span><span>Professional</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="up-card" data-skill="biography family" data-level="junior" data-price="20">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=62" class="avatar" alt="Dina L.">
+            <div class="user-info">
+              <h3>Dina L.</h3>
+              <span class="location">📍 Fayoum, Egypt</span>
+              <div class="stats">
+                <span class="price">$20/hr</span>
+                <span class="rating">⭐ 4.5</span>
+                <span class="jobs">💼 11 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🌟 Enthusiastic writer passionate about capturing life stories. Great with family biographies, personal profiles, and tribute speeches. </p>
+          <div class="tags"><span>Tribute</span><span>Personal</span><span>Entry Level</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="up-card" data-skill="memoir biography" data-level="senior" data-price="55">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=65" class="avatar" alt="Amr N.">
+            <div class="user-info">
+              <h3>Amr N.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$55/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 47 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🏆 Award-winning biographer. I've written for celebrities, politicians, and sports icons. Discreet, professional, and dedicated to your voice.</p>
+          <div class="tags"><span>Celebrity</span><span>Ghostwriter</span><span>Bestseller</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="up-card" data-skill="family history" data-level="mid" data-price="27">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Reham E.">
+            <div class="user-info">
+              <h3>Reham E.</h3>
+              <span class="location">📍 Minya, Egypt</span>
+              <div class="stats">
+                <span class="price">$27/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 21 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📇 Genealogist and scrapbook designer. I combine written biography with photo archiving to create heirloom-quality family books.</p>
+          <div class="tags"><span>Family Tree</span><span>Archiving</span><span>Design</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="up-card" data-skill="business cv" data-level="junior" data-price="24">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=71" class="avatar" alt="Tamer W.">
+            <div class="user-info">
+              <h3>Tamer W.</h3>
+              <span class="location">📍 Sohag, Egypt</span>
+              <div class="stats">
+                <span class="price">$24/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 13 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📋 LinkedIn profile optimizer. I turn boring job histories into compelling personal brand stories. Includes keyword strategy for recruiters.</p>
+          <div class="tags"><span>LinkedIn</span><span>CV</span><span>Personal Brand</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 13 -->
+        <div class="up-card" data-skill="biography memoir" data-level="mid" data-price="38">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=18" class="avatar" alt="Ghada F.">
+            <div class="user-info">
+              <h3>Ghada F.</h3>
+              <span class="location">📍 Port Said, Egypt</span>
+              <div class="stats">
+                <span class="price">$38/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 32 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🖋️ Memoir coach & writer. I guide first-time authors through the process of writing their own life story, providing structure and editing.</p>
+          <div class="tags"><span>Memoir</span><span>Coaching</span><span>Editing</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 14 -->
+        <div class="up-card" data-skill="biography family" data-level="senior" data-price="42">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=23" class="avatar" alt="Mahmoud T.">
+            <div class="user-info">
+              <h3>Mahmoud T.</h3>
+              <span class="location">📍 Ismailia, Egypt</span>
+              <div class="stats">
+                <span class="price">$42/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 35 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🏛️ Historian specializing in Middle Eastern family histories. I connect personal stories with historical context, creating rich, meaningful narratives.</p>
+          <div class="tags"><span>Historical</span><span>Middle East</span><span>Research</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 15 -->
+        <div class="up-card" data-skill="business cv" data-level="mid" data-price="33">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=47" class="avatar" alt="Noha D.">
+            <div class="user-info">
+              <h3>Noha D.</h3>
+              <span class="location">📍 Damietta, Egypt</span>
+              <div class="stats">
+                <span class="price">$33/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 24 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📌 "About Us" page specialist. I write compelling company histories and founder stories that build trust and connect with customers.</p>
+          <div class="tags"><span>Company Bio</span><span>Founder Story</span><span>Website</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+      </div>
+
+      <!-- LOAD MORE -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load More Writers</button>
+      </div>
+      <!-- about -->
+
+  <section id="about-section" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Empowering Your <span class="blue">Success</span></h2>
+        <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration,
+          ensure secure growth, and turn professional goals into reality.</p>
+      </div>
+      <div class="about-visual">
+        <div class="dot-animation">
+          <div class="pulse-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+
+  <!-- ===== WHY SECTION (معدل لصفحة Biography) ===== -->
+  <section class="why-section">
+    <h2>Why hire Biography Writers from TaskHunt?</h2>
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Professional Storytellers</h4>
+        <p>All biography writers are experienced in capturing life stories with empathy, accuracy, and narrative flair. They know how to ask the right questions.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ Confidential & Trustworthy</h4>
+        <p>We understand that life stories are personal. All writers sign NDAs and your privacy is guaranteed. Your story is safe with us.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ From Interview to Publication</h4>
+        <p>Whether you need a short bio or a full book, our writers can handle everything from initial interviews to final editing and formatting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEPS SECTION (معدل) ===== -->
+  <section class="steps">
+    <h2>How to order your Biography</h2>
+    <div class="steps-grid">
+      <div class="step">1️⃣ Share your story idea & requirements</div>
+      <div class="step">2️⃣ Choose the writer who connects with you</div>
+      <div class="step">3️⃣ Receive your draft and provide feedback</div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION (أسئلة مخصصة للبيوغرافي) ===== -->
+  <section class="faq">
+    <h2>Frequently Asked Questions about Biography Writing</h2>
+    <details>
+      <summary>How do biography writers capture my story if I'm not a writer?</summary>
+      <p>They conduct in-depth interviews (online or by questionnaire) to gather stories, memories, and key events. They then weave these into a compelling narrative using their writing expertise.</p>
+    </details>
+    <details>
+      <summary>Can you write a biography about a family member who has passed away?</summary>
+      <p>Absolutely! This is called a tribute or memorial biography. Writers can work with photos, letters, and interviews with relatives to create a beautiful legacy piece.</p>
+    </details>
+    <details>
+      <summary>What's the difference between a memoir and a biography?</summary>
+      <p>A biography covers a person's entire life story, usually written by someone else. A memoir focuses on specific themes or periods in someone's life and is often written by the subject themselves (with a ghostwriter).</p>
+    </details>
+    <details>
+      <summary>How long does it take to write a full biography book?</summary>
+      <p>It depends on the length and complexity. A short family history (50 pages) might take 4-6 weeks. A full book (200+ pages) typically takes 3-6 months. We can discuss timelines with your chosen writer.</p>
+    </details>
+  </section>
+
+  <!-- ===== FOOTER (مطابق للأصل) ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Storytelling Ethics</a></li>
+        </ul>
+        <div class="social-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Writing Tips</a></li>
+          <li><a href="#">Success Stories</a></li>
+        </ul>
+      </div>
+      <div id="contact-section" class="footer-col contact-col">
+        <div class="contact-box">
+          <form id="contactForm">
+            <h3>Drop us a message</h3>
+            <p>We'd love to hear from you!</p>
+            <div class="form-group">
+              <input type="text" class="footer-input" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="footer-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="footer-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT (مطابق للأصل مع تحديث أسماء الفلاتر) ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = Array.from(document.querySelectorAll(".up-card"));
+      const skillFilter = document.getElementById("skillFilter");
+      const levelFilter = document.getElementById("levelFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const applyFilterBtn = document.getElementById("applyFilter");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+      let visible = 8;
+      const step = 4;
+
+      function getFilteredCards() {
+        return cards.filter(card => {
+          // Skill filter
+          const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+          const selectedSkill = skillFilter.value.toLowerCase();
+          const skillMatch = selectedSkill === "all" || skills.includes(selectedSkill);
+
+          // Level filter
+          const level = (card.dataset.level || "").toLowerCase();
+          const selectedLevel = levelFilter.value.toLowerCase();
+          const levelMatch = selectedLevel === "all" || level === selectedLevel;
+
+          // Price filter
+          const price = parseInt(card.dataset.price) || 0;
+          let priceMatch = true;
+          if (priceFilter.value === "low") priceMatch = price < 25;
+          if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 40;
+          if (priceFilter.value === "high") priceMatch = price > 40;
+
+          return skillMatch && levelMatch && priceMatch;
+        });
+      }
+
+      function updateCards() {
+        const filteredCards = getFilteredCards();
+
+        cards.forEach(card => card.classList.add("hidden-card"));
+
+        filteredCards.slice(0, visible).forEach(card => {
+          card.classList.remove("hidden-card");
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.style.display = visible < filteredCards.length ? "block" : "none";
+        }
+
+        // Show message if no cards
+        const grid = document.querySelector('.cards-grid');
+        const existingMsg = document.querySelector('.no-results');
+        if (filteredCards.length === 0) {
+          if (!existingMsg) {
+            const msg = document.createElement('div');
+            msg.className = 'no-results';
+            msg.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 3rem; background: white; border-radius: 20px; color: #64748b;';
+            msg.innerHTML = '😕 No biography writers match your filters. Try adjusting your criteria.';
+            grid.appendChild(msg);
+          }
+        } else if (existingMsg) {
+          existingMsg.remove();
+        }
+      }
+
+      // Apply filters button
+      if (applyFilterBtn) {
+        applyFilterBtn.addEventListener("click", () => {
+          visible = 6;
+          updateCards();
+        });
+      }
+
+      // Load more
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+          visible += step;
+          updateCards();
+        });
+      }
+
+      // Initialize
+      updateCards();
+
+      // Sidebar accordion
+      const categoryButtons = document.querySelectorAll(".category-btn");
+      categoryButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const category = btn.closest(".category");
+          category.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

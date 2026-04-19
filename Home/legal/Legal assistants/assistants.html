@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Legal Assistants| TaskHunt</title>
+  <link rel="stylesheet" href="assistants.css">
+  
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+   <nav class="nav">
+    <div class="logo">
+      <a href="../../../Home/home.html">
+        <img src="../../images/logo.png" alt="Logo">
+      </a>
+    </div>
+
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+          
+          <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+           
+    <section class="hero-title">
+        <h2>Legal </h2>
+        <span class="hero-divider">|</span>
+        <h1>Legal Assistants</h1>
+    </section>
+
+   <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <select id="skillFilter">
+      <option value="all">All Assistant Tasks</option>
+      <option value="research">Legal Research</option>
+       <option value="drafting">Document Drafting</option>
+        <option value="notary">Notary & Filing</option>
+         <option value="admin">Legal Admin Support</option>
+         </select>
+
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid </option>
+      <option value="senior">Senior </option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">Hourly Rate</option>
+      <option value="low">Under $30</option>
+      <option value="mid">$30 – $60</option>
+      <option value="high">Above $60</option>
+    </select>
+
+    <button id="applyFilter">Apply Filter</button>
+
+  </div>
+</section>
+
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      
+
+      <!-- Data & AI -->
+       <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+   <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="#">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
+        </ul>
+      </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
+
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+    <section class="cards-wrapper">
+
+     <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-skill="research" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=32" class="avatar" alt="Emma Watson">
+    <div class="user-info">
+      <h3>Emma Watson</h3>
+      <span class="location">London, UK</span>
+      <div class="stats">
+        <span class="price">$25/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 120 Projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📚 Legal Research Assistant. I specialize in searching case laws, preparing summaries, and managing legal citations for law firms.</p>
+  <div class="tags">
+    <span>Research</span>
+    <span>Case Summary</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-skill="drafting" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=11" class="avatar" alt="Liam O'Connor">
+    <div class="user-info">
+      <h3>Liam O'Connor</h3>
+      <span class="location">Dublin, Ireland</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 85 Drafting Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">✍️ Certified Paralegal. Expert in drafting NDAs, employee handbooks, and simple commercial agreements at affordable rates.</p>
+  <div class="tags">
+    <span>Drafting</span>
+    <span>Paralegal</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-skill="admin" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=59" class="avatar" alt="Marcus Vinn">
+    <div class="user-info">
+      <h3>Marcus Vinn</h3>
+      <span class="location">New York, USA</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 210 Filing Jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📂 Senior Legal Clerk. Managing court filings, e-discovery, and complex legal database management for corporate legal departments.</p>
+  <div class="tags">
+    <span>E-Filing</span>
+    <span>Clerical</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 4 -->
+   <div class="up-card" data-skill="admin" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=45" class="avatar" alt="Sofia Rossi">
+    <div class="user-info">
+      <h3>Sofia Rossi</h3>
+      <span class="location">Milan, Italy</span>
+      <div class="stats">
+        <span class="price">$40/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 64 Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🗓️ Virtual Legal Assistant. Expert in calendar management, client intake, and organizing legal documents for busy law firms.</p>
+  <div class="tags">
+    <span>Admin</span>
+    <span>Organization</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 5 -->
+  <div class="up-card" data-skill="notary" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=18" class="avatar" alt="James Miller">
+    <div class="user-info">
+      <h3>James Miller</h3>
+      <span class="location">Sydney, Australia</span>
+      <div class="stats">
+        <span class="price">$65/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 132 Filings</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📜 Filing Specialist. Expert in submitting court documents, immigration forms, and public records across multiple jurisdictions.</p>
+  <div class="tags">
+    <span>Filing</span>
+    <span>Compliance</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 6 -->
+  <div class="up-card" data-skill="research" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=25" class="avatar" alt="Hassan Ali">
+    <div class="user-info">
+      <h3>Hassan Ali</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$28/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 50 Translations</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🌍 Legal Translator & Researcher. Specializing in translating legal documents (English/Arabic) and conducting regional case research.</p>
+  <div class="tags">
+    <span>Translation</span>
+    <span>Research</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 7 (NEW) -->
+<div class="up-card hidden-card" data-skill="drafting" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=3" class="avatar" alt="Lily Evans">
+    <div class="user-info">
+      <h3>Lily Evans</h3>
+      <span class="location">Manchester, UK</span>
+      <div class="stats">
+        <span class="price">$22/hr</span>
+        <span class="rating">⭐ 4.6</span>
+        <span class="jobs">💼 15 Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🖊️ Junior Drafting Assistant. Helping with initial drafts of NDAs, rental agreements, and simple service contracts.</p>
+  <div class="tags">
+    <span>Drafting</span>
+    <span>Contracts</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 8 (NEW) -->
+  <div class="up-card hidden-card" data-skill="admin" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=40" class="avatar" alt="Daniel Park">
+    <div class="user-info">
+      <h3>Daniel Park</h3>
+      <span class="location">Seoul, South Korea</span>
+      <div class="stats">
+        <span class="price">$50/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 42 Jobs</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💻 Legal Tech Assistant. Specialist in E-Discovery, managing digital evidence, and legal project management software.</p>
+  <div class="tags">
+    <span>E-Discovery</span>
+    <span>Tech</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+  <!-- CARD 9 (NEW) -->
+  <div class="up-card hidden-card" data-skill="notary" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=17" class="avatar" alt="Nina Gomez">
+    <div class="user-info">
+      <h3>Nina Gomez</h3>
+      <span class="location">Madrid, Spain</span>
+      <div class="stats">
+        <span class="price">$35/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 89 Formations</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏢 Corporate Clerk. Assisting with business registrations, filing annual reports, and managing shareholder records.</p>
+  <div class="tags">
+    <span>Corporate Filing</span>
+    <span>Entity Registration</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 10 -->
+ <div class="up-card hidden-card" data-skill="research" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=61" class="avatar" alt="Oliver Grant">
+    <div class="user-info">
+      <h3>Oliver Grant</h3>
+      <span class="location">Washington DC, USA</span>
+      <div class="stats">
+        <span class="price">$70/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 156 Projects</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🏛️ Senior Research Fellow. Providing deep-dive legal analysis, legislative history research, and constitutional law support.</p>
+  <div class="tags">
+    <span>Analysis</span>
+    <span>Policy Research</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 11 -->
+<div class="up-card hidden-card" data-skill="admin" data-level="mid" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=42" class="avatar" alt="Maya Brown">
+    <div class="user-info">
+      <h3>Maya Brown</h3>
+      <span class="location">Atlanta, USA</span>
+      <div class="stats">
+        <span class="price">$29/hr</span>
+        <span class="rating">⭐ 4.8</span>
+        <span class="jobs">💼 38 Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">💼 Employment Law Assistant. Preparing witness statements and organizing documents for labor court hearings.</p>
+  <div class="tags">
+    <span>Labor Law</span>
+    <span>Court Prep</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+<!-- CARD 12 -->
+<div class="up-card hidden-card" data-skill="notary" data-level="junior" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=65" class="avatar" alt="Leo Schmidt">
+    <div class="user-info">
+      <h3>Leo Schmidt</h3>
+      <span class="location">Vienna, Austria</span>
+      <div class="stats">
+        <span class="price">$32/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 21 Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🛡️ Compliance Assistant. Helping small businesses maintain legal records and ensuring timely renewal of licenses.</p>
+  <div class="tags">
+    <span>Compliance</span>
+    <span>Licensing</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 13 -->
+<div class="up-card hidden-card" data-skill="research" data-level="senior" data-price="high">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=33" class="avatar" alt="Sarah Jenkins">
+    <div class="user-info">
+      <h3>Sarah Jenkins</h3>
+      <span class="location">London, UK</span>
+      <div class="stats">
+        <span class="price">$75/hr</span>
+        <span class="rating">⭐ 5.0</span>
+        <span class="jobs">💼 142 Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">🔍 Senior Legal Researcher with 8+ years of experience in case law analysis and providing high-level litigation support for law firms.</p>
+  <div class="tags">
+    <span>Legal Research</span>
+    <span>Senior</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 14 -->
+<div class="up-card hidden-card" data-skill="drafting" data-level="mid" data-price="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=26" class="avatar" alt="Mark Stevens">
+    <div class="user-info">
+      <h3>Mark Stevens</h3>
+      <span class="location">Toronto, Canada</span>
+      <div class="stats">
+        <span class="price">$45/hr</span>
+        <span class="rating">⭐ 4.9</span>
+        <span class="jobs">💼 88 Documents</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📝 Document Drafting Specialist. Expert in preparing legal pleadings, affidavits, and comprehensive trial bundles with extreme accuracy.</p>
+  <div class="tags">
+    <span>Drafting</span>
+    <span>Trial Prep</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+<!-- CARD 15 -->
+<div class="up-card hidden-card" data-skill="notary" data-level="junior" data-price="low">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=54" class="avatar" alt="Laila Hassan">
+    <div class="user-info">
+      <h3>Laila Hassan</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats">
+        <span class="price">$20/hr</span>
+        <span class="rating">⭐ 4.7</span>
+        <span class="jobs">💼 31 Tasks</span>
+      </div>
+    </div>
+  </div>
+  <p class="description">📜 Junior Assistant focused on document attestation, notary coordination, and administrative legal support for small law offices.</p>
+  <div class="tags">
+    <span>Notary Support</span>
+    <span>Junior</span>
+  </div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+
+
+</div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Legal Assistants</button>
+      </div>
+
+    </section>
+  </div>
+  <!-- about -->
+
+  <section id="about-section" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Empowering Your <span class="blue">Success</span></h2>
+        <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration,
+          ensure secure growth, and turn professional goals into reality.</p>
+      </div>
+      <div class="about-visual">
+        <div class="dot-animation">
+          <div class="pulse-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+  <section class="why-section">
+    <h2>Why hire Legal Assistants from TaskHunt?</h2>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Cost-Effective Support</h4>
+        <p>Get professional legal help at a fraction of the cost of a senior lawyer. Perfect for research, drafting, and admin tasks.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Specialized Skillsets</h4>
+        <p>Our paralegals and clerks are experts in specific areas like e-discovery, court filings, and legislative research.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Scalable Efficiency</h4>
+        <p>Instantly expand your legal team's capacity during busy periods without the overhead of a full-time hire.</p>
+      </div>
+    </div>
+</section>
+  <section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+      <div class="step">1️⃣ List Your Tasks</div> 
+      <div class="step">2️⃣ Select a Certified Assistant</div>
+       <div class="step">3️⃣ Boost Your Productivity</div> 
+    </div>
+</section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>What is the difference between a Lawyer and a Legal Assistant?</summary>
+      <p>A Legal Assistant (Paralegal) handles legal research, document drafting, and administrative support but cannot represent you in court or provide independent legal advice like a licensed lawyer.</p>
+    </details>
+
+    <details>
+      <summary>Can an assistant help with my court filings?</summary>
+      <p>Yes, many of our senior assistants are experts in e-filing systems and can manage the submission of documents to various court portals efficiently.</p>
+    </details>
+
+</section>
+
+  <script>
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
+    </div>
+
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
+<script src="assistants.js"></script>
+
+</body>
+</html>

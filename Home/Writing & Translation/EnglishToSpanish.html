@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Spanish Translators | TaskHunt</title>
+    <link rel="stylesheet" href="../Development&it/ALL.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="../../Home/home.html">
+                <img src="../images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../work.html">Find Work</a></li>
+            <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+            <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+        </div>
+    </nav>
+
+    <section class="hero-title">
+        <h2>Writing & Translation</h2>
+        <span class="hero-divider">|</span>
+        <h1>English to Spanish Translators</h1>
+    </section>
+    <!-- FILTER BAR -->
+    <section class="filter-bar">
+        <div class="filter-container">
+                <!-- fiction type-->
+            <select id="writerTypeFilter">
+                <option value="all">All Specialties</option>
+                <option value="legal">Legal Translation</option>
+                <option value="medical">Medical Translation</option>
+                <option value="technical">Technical Translation</option>
+                <option value="creative">Creative & Literary</option>
+                <option value="general">General Translation</option>
+            </select>
+        <!-- Experience Level -->
+            <select id="levelFilter">
+                <option value="all">Experience Level</option>
+                <option value="junior">Junior</option>
+                <option value="mid">Mid</option>
+                <option value="senior">Senior</option>
+            </select>
+            <!-- Price -->
+            <select id="priceFilter">
+                <option value="all">Service Price</option>
+                <option value="low">Under $15</option>
+                <option value="mid">$15 – $30</option>
+                <option value="high">Above $30</option>
+            </select>
+
+            <button id="applyFilter">Apply Filter</button>
+        </div>
+    </section>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+      <h3>Categories</h3>
+
+      <!-- Data & AI -->
+       <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+   <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="#">Academic Writers</a></li>
+          <li><a href="#">Biography Writers</a></li>
+          <li><a href="#">Business Plan Writers</a></li>
+          <li><a href="#">Copy Editors</a></li>
+          <li><a href="#">Creative Writers</a></li>
+          <li><a href="#">eBook Writers</a></li>
+          <li><a href="#">English to Spanish Translators</a></li>
+          <li><a href="#">Essay Writers</a></li>
+          <li><a href="../Writing & Translation/Fiction Writers.html">Fiction Writers</a></li>
+          <li><a href="#">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
+        </ul>
+      </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
+
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+        <section class="cards-wrapper">
+            <div class="cards-grid">
+                <!-- CARD 1 -->
+                <div class="up-card" data-writer="legal" data-level="senior">
+                    <div class="card-header">
+                        <img src="https://i.pravatar.cc/100?img=1" class="avatar">
+                        <div class="user-info">
+                            <h3>Carlos R.</h3>
+                            <span class="location">Madrid, Spain</span>
+                            <div class="stats">
+                                <span class="price">$40/hr</span>
+                                <span class="rating">⭐ 5.0</span>
+                                <span class="jobs">✅ 120+ Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="description">⚖️ Certified Legal Translator specializing in contracts and official documents.</p>
+                    <div class="tags"><span>Legal</span><span>Official</span></div>
+                    <a href="#" class="profile-btn">See profile</a>
+                </div>
+                <!-- CARD 2 -->
+                <div class="up-card hidden-card" data-writer="creative" data-level="mid">
+                    <div class="card-header">
+                        <img src="https://i.pravatar.cc/100?img=5" class="avatar">
+                        <div class="user-info">
+                            <h3>Maria G.</h3>
+                            <span class="location">Mexico City</span>
+                            <div class="stats">
+                                <span class="price">$25/hr</span>
+                                <span class="rating">⭐ 4.9</span>
+                                <span class="jobs">✅ 85 Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="description">🎨 Passionate about creative writing and localizing marketing content to Spanish.</p>
+                    <div class="tags"><span>Marketing</span><span>Creative</span></div>
+                    <a href="#" class="profile-btn">See profile</a>
+                </div>
+                <!-- CARD 3 -->
+                <div class="up-card hidden-card" data-writer="technical" data-level="junior">
+                    <div class="card-header">
+                        <img src="https://i.pravatar.cc/100?img=12" class="avatar">
+                        <div class="user-info">
+                            <h3>Juan P.</h3>
+                            <span class="location">Bogota, Colombia</span>
+                            <div class="stats">
+                                <span class="price">$18/hr</span>
+                                <span class="rating">⭐ 4.7</span>
+                                <span class="jobs">✅ 30 Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="description">💻 Technical translator focusing on software documentation and manuals.</p>
+                    <div class="tags"><span>Tech</span><span>Manuals</span></div>
+                    <a href="#" class="profile-btn">See profile</a>
+                </div>
+                <!-- CARD 4 -->
+                <div class="up-card hidden-card" data-writer="legal" data-level="junior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=32" class="avatar">
+                    <div class="user-info">
+                        <h3>Luis M.</h3>
+                        <span class="location">Valencia, Spain</span>
+                        <div class="stats">
+                            <span class="price">$14/hr</span>
+                            <span class="rating">⭐ 4.6</span>
+                            <span class="jobs">✅ 10 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">⚖️ Junior legal translator assisting with basic contracts and certificates.</p>
+                <div class="tags"><span>Certificates</span><span>Legal</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="medical" data-level="senior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=33" class="avatar">
+                    <div class="user-info">
+                        <h3>Dr. Rosa B.</h3>
+                        <span class="location">Madrid, Spain</span>
+                        <div class="stats">
+                            <span class="price">$55/hr</span>
+                            <span class="rating">⭐ 5.0</span>
+                            <span class="jobs">✅ 180 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">⚕️ Expert in medical research papers and specialized surgical documentation.</p>
+                <div class="tags"><span>Surgery</span><span>Research</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="technical" data-level="mid">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=34" class="avatar">
+                    <div class="user-info">
+                        <h3>Oscar T.</h3>
+                        <span class="location">Monterrey, Mexico</span>
+                        <div class="stats">
+                            <span class="price">$27/hr</span>
+                            <span class="rating">⭐ 4.8</span>
+                            <span class="jobs">✅ 65 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">🔧 Specialized in automotive manuals and manufacturing technical sheets.</p>
+                <div class="tags"><span>Automotive</span><span>Manuals</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="creative" data-level="senior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=35" class="avatar">
+                    <div class="user-info">
+                        <h3>Sofia V.</h3>
+                        <span class="location">Buenos Aires, Argentina</span>
+                        <div class="stats">
+                            <span class="price">$36/hr</span>
+                            <span class="rating">⭐ 4.9</span>
+                            <span class="jobs">✅ 112 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">🎭 Literary translator with a focus on theater scripts and period dramas.</p>
+                <div class="tags"><span>Scripts</span><span>Drama</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="general" data-level="junior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=36" class="avatar">
+                    <div class="user-info">
+                        <h3>Lucas G.</h3>
+                        <span class="location">Asuncion, Paraguay</span>
+                        <div class="stats">
+                            <span class="price">$10/hr</span>
+                            <span class="rating">⭐ 4.4</span>
+                            <span class="jobs">✅ 8 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">📝 Fast and reliable translation for social media posts and newsletters.</p>
+                <div class="tags"><span>Social Media</span><span>General</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="legal" data-level="mid">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=37" class="avatar">
+                    <div class="user-info">
+                        <h3>Alicia N.</h3>
+                        <span class="location">San Juan, Puerto Rico</span>
+                        <div class="stats">
+                            <span class="price">$31/hr</span>
+                            <span class="rating">⭐ 4.7</span>
+                            <span class="jobs">✅ 48 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">📜 Expert in real estate legal documents and property deeds translation.</p>
+                <div class="tags"><span>Real Estate</span><span>Legal</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="technical" data-level="junior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=38" class="avatar">
+                    <div class="user-info">
+                        <h3>Hugo F.</h3>
+                        <span class="location">Lima, Peru</span>
+                        <div class="stats">
+                            <span class="price">$19/hr</span>
+                            <span class="rating">⭐ 4.6</span>
+                            <span class="jobs">✅ 20 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">🔌 Translating user guides for consumer electronics and mobile apps.</p>
+                <div class="tags"><span>Electronics</span><span>Apps</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="creative" data-level="mid">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=39" class="avatar">
+                    <div class="user-info">
+                        <h3>Elena S.</h3>
+                        <span class="location">Barcelona, Spain</span>
+                        <div class="stats">
+                            <span class="price">$29/hr</span>
+                            <span class="rating">⭐ 4.8</span>
+                            <span class="jobs">✅ 73 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">🎨 Branding and transcreation expert for international fashion labels.</p>
+                <div class="tags"><span>Branding</span><span>Fashion</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="medical" data-level="mid">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=40" class="avatar">
+                    <div class="user-info">
+                        <h3>Marco A.</h3>
+                        <span class="location">Santiago, Chile</span>
+                        <div class="stats">
+                            <span class="price">$33/hr</span>
+                            <span class="rating">⭐ 4.9</span>
+                            <span class="jobs">✅ 55 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">🔬 Technical medical translator for laboratory reports and health journals.</p>
+                <div class="tags"><span>Lab Reports</span><span>Health</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="general" data-level="senior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=41" class="avatar">
+                    <div class="user-info">
+                        <h3>Paula Q.</h3>
+                        <span class="location">Seville, Spain</span>
+                        <div class="stats">
+                            <span class="price">$39/hr</span>
+                            <span class="rating">⭐ 5.0</span>
+                            <span class="jobs">✅ 210 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">📖 Senior linguist providing top-tier general and commercial translations.</p>
+                <div class="tags"><span>Commercial</span><span>Editing</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="technical" data-level="senior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=42" class="avatar">
+                    <div class="user-info">
+                        <h3>Gabriel W.</h3>
+                        <span class="location">Mexico City, Mexico</span>
+                        <div class="stats">
+                            <span class="price">$48/hr</span>
+                            <span class="rating">⭐ 4.9</span>
+                            <span class="jobs">✅ 140 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">💻 Expert in API documentation and technical specifications for developers.</p>
+                <div class="tags"><span>API</span><span>DevDocs</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+
+            <div class="up-card hidden-card" data-writer="creative" data-level="junior">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/100?img=43" class="avatar">
+                    <div class="user-info">
+                        <h3>Ines J.</h3>
+                        <span class="location">Bogota, Colombia</span>
+                        <div class="stats">
+                            <span class="price">$15/hr</span>
+                            <span class="rating">⭐ 4.5</span>
+                            <span class="jobs">✅ 18 Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">🎞️ Junior subtitler and creative content localizer for creative startups.</p>
+                <div class="tags"><span>Subtitles</span><span>Startups</span></div>
+                <a href="#" class="profile-btn">See profile</a>
+            </div>
+                </div>
+                
+
+            <div class="load-more">
+                <button id="loadMoreBtn">Load more Translators</button>
+            </div>
+            <!-- about -->
+
+  <section id="about-section" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Empowering Your <span class="blue">Success</span></h2>
+        <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration,
+          ensure secure growth, and turn professional goals into reality.</p>
+      </div>
+      <div class="about-visual">
+        <div class="dot-animation">
+          <div class="pulse-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+        </section>
+    </div>
+
+    <section class="why-section">
+        <h2>Why hire Spanish Translators from TaskHunt?</h2>
+        <div class="why-grid">
+            <div class="why-box">
+                <h4>✔ Native Fluency</h4>
+                <p>Our translators are native speakers ensuring cultural nuances and accurate expressions.</p>
+            </div>
+            <div class="why-box">
+                <h4>✔ Subject Matter Experts</h4>
+                <p>From legal to medical, find professionals who understand the terminology of your industry.</p>
+            </div>
+            <div class="why-box">
+                <h4>✔ Quality & Speed</h4>
+                <p>Get high-quality translations with fast turnaround times and meticulous proofreading.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps">
+        <h2>How it works</h2>
+        <div class="steps-grid">
+            <div class="step">1️⃣ Upload your document and specify the target audience</div>
+            <div class="step">2️⃣ Choose a translator based on their portfolio and rating</div>
+            <div class="step">3️⃣ Receive your translated file and request edits if needed</div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+            <summary>Do you offer certified translations?</summary>
+            <p>Yes, many of our senior translators provide certified translations for legal and immigration purposes.</p>
+        </details>
+        <details>
+            <summary>How long does a translation take?</summary>
+            <p>It depends on the document length, but most small projects are delivered within 24-48 hours.</p>
+        </details>
+    </section>
+
+
+<!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
+    </div>
+
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
+
+    <script>
+        // السكريبت سيعمل تلقائياً لأننا حافظنا على نفس الـ IDs والكلاسات
+        // تأكدي فقط أن قيم الـ data-writer في الـ HTML تطابق قيم الـ option في الـ Select
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".up-card");
+            const writerFilter = document.getElementById("writerTypeFilter");
+            const levelFilter  = document.getElementById("levelFilter");
+            const priceFilter  = document.getElementById("priceFilter");
+            const loadMoreBtn  = document.getElementById("loadMoreBtn");
+            const applyFilterBtn = document.getElementById("applyFilter");
+
+            let visible = 8;
+            const step = 4;
+
+
+            function getFilteredCards(){
+                return Array.from(cards).filter(function(card){
+                    const writer = (card.getAttribute("data-writer") || "").toLowerCase();
+                    const selectedWriter = (writerFilter?.value || "all").toLowerCase();
+                    const writerMatch = selectedWriter === "all" || writer === selectedWriter;
+
+                    const level = (card.getAttribute("data-level") || "").toLowerCase();
+                    const selectedLevel = (levelFilter?.value || "all").toLowerCase();
+                    const levelMatch = selectedLevel === "all" || level === selectedLevel;
+
+                    const priceText = card.querySelector(".price")?.innerText || "";
+                    const price = parseInt(priceText.replace(/\D/g,"")) || 0;
+
+                    let priceMatch = true;
+                    if(priceFilter?.value === "low")  priceMatch = price < 15;
+                    if(priceFilter?.value === "mid")  priceMatch = price >= 15 && price <= 30;
+                    if(priceFilter?.value === "high") priceMatch = price > 30;
+
+                    return writerMatch && levelMatch && priceMatch;
+                });
+            }
+
+            function updateCards(){
+                const filtered = getFilteredCards();
+                cards.forEach(card => card.classList.add("hidden-card"));
+                filtered.slice(0, visible).forEach(card => {
+                    card.classList.remove("hidden-card");
+                });
+                if(loadMoreBtn){
+                    loadMoreBtn.style.display = visible < filtered.length ? "block" : "none";
+                }
+            }
+
+            [writerFilter, levelFilter, priceFilter].forEach(filter => {
+                filter?.addEventListener("change", () => { visible = 6; updateCards(); });
+            });
+
+            applyFilterBtn?.addEventListener("click", (e) => { e.preventDefault(); visible = 6; updateCards(); });
+            loadMoreBtn?.addEventListener("click", () => { visible += step; updateCards(); });
+
+            const categoryButtons = document.querySelectorAll(".category-btn");
+            categoryButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const category = btn.closest(".category");
+                    document.querySelectorAll(".category").forEach(cat => { if(cat !== category) cat.classList.remove("active"); });
+                    category.classList.toggle("active");
+                });
+            });
+
+            updateCards();
+        });
+    </script>
+</body>
+</html>
