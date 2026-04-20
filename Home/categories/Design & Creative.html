@@ -109,8 +109,8 @@
             </div>
 
             <!-- Design & Creative -->
-            <div class="category">
-                <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+            <div class="category active">
+                <button class="category-btn" onclick="window.location.href='Design & Creative'">Design & Creative <span class="arrow">›</span></button>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo Designers</a></li>
                     <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
@@ -772,58 +772,8 @@
 
 
         // ================= SIDEBAR =================
-        const pageMap = {
-            'Data & AI': 'Data&Ai.html',
-            'Development & IT': 'Development & IT.html',
-            'Design & Creative': 'Design & Creative.html',
-            'Admin & Support': 'Admin & Support.html',
-            'HR & Training': 'HR & Training.html',
-            'Legal': 'Legal.html'
-        };
-
-        const currentPage = 'Design & Creative';
-        const pageTitleElement = document.getElementById('pageTitle');
-
-        document.querySelectorAll('.sidebar .category').forEach(categoryEl => {
-            const btn = categoryEl.querySelector('.category-btn');
-            if (!btn) return;
-
-            const name = btn.textContent.replace('›', '').trim();
-            const targetPage = pageMap[name];
-
-            if (name === 'Categories') {
-                btn.onclick = () => btn.parentElement.classList.toggle('active');
-                return;
-            }
-
-            if (targetPage && name !== currentPage) {
-                btn.style.cursor = 'pointer';
-                btn.addEventListener('click', () => {
-                    window.location.href = targetPage;
-                });
-            } else {
-                btn.onclick = () => categoryEl.classList.toggle('active');
-            }
-
-            categoryEl.querySelectorAll('a.filter-link').forEach(link => {
-                const type = link.dataset.type;
-                if (targetPage && name !== currentPage && type) {
-                    link.href = targetPage + '#' + encodeURIComponent(type);
-                } else {
-                    link.href = '#';
-                    link.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        const selectedType = this.dataset.type;
-                        pageTitleElement.innerText = selectedType;
-                        typeFilter.value = selectedType;
-                        priceFilter.value = 'all';
-                        expFilter.value = 'all';
-                        visibleCards = 6;
-                        filterCards();
-                    });
-                }
-            });
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.onclick = () => btn.parentElement.classList.toggle('active');
         });
 
 
