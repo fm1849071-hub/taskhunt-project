@@ -40,7 +40,7 @@
 
         .logo img {
             height: 55px;
-            width: auto;
+            width: 55;
             display: block;
             object-fit: contain;
         }
@@ -79,6 +79,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
+
 
         .login {
             background: #f0f6ff;
@@ -125,6 +126,10 @@
             color: #111827;
             margin: 0;
         }
+        .lin{
+  text-decoration: none;
+
+  }
 
         .hero-title h2 {
             font-size: 18px;
@@ -732,3 +737,4 @@
 #loadMoreBtn:hover {
     background: #0056b3;
 }
+

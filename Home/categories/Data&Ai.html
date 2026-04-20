@@ -869,6 +869,14 @@
         window.onload = () => {
             filterCards();
         };
+                document.querySelectorAll(".filter-link").forEach(link => {
+        link.addEventListener("click", function () {
+            
+            document.querySelectorAll(".filter-link").forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
+
+        });
+        });
     </script>
 </body>
 
