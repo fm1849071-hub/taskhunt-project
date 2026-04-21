@@ -19,39 +19,39 @@
 
 <body>
     <nav class="navbar">
-    <!-- LOGO -->
-    <div class="logo">
-        <a href="../../Home/home.html">
-            <img src="logo.png" alt="TaskHunt Logo">
-        </a>
-    </div>
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="../../Home/home.html">
+                <img src="logo.png" alt="TaskHunt Logo">
+            </a>
+        </div>
 
-    <!-- LINKS -->
-    <ul class="nav-links" id="navLinks">
-        <li><a href="../findwork.html">Find Work</a></li>
-        <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <!-- LINKS -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../findwork.html">Find Work</a></li>
+            <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
 
-        <!-- MOBILE BUTTONS -->
-        <li class="mobile-auth">
+            <!-- MOBILE BUTTONS -->
+            <li class="mobile-auth">
+                <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+                <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+            </li>
+        </ul>
+
+        <!-- DESKTOP BUTTONS -->
+        <div class="auth-buttons">
             <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
             <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
-        </li>
-    </ul>
+        </div>
 
-    <!-- DESKTOP BUTTONS -->
-    <div class="auth-buttons">
-        <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
-        <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
-    </div>
-
-    <!-- MENU ICON -->
-    <div class="menu-toggle" id="menuToggle">☰</div>
-</nav>
+        <!-- MENU ICON -->
+        <div class="menu-toggle" id="menuToggle">☰</div>
+    </nav>
 
     <section class="hero-title">
-       
+
         <h1 id="pageTitle">Data & AI</h1>
     </section>
 
@@ -86,10 +86,10 @@
 
     <div class="page-layout">
         <aside class="sidebar">
-            <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
+                  <a href="../categories/AllCategories.html" class="lin"> <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button></a>
 
             <!-- Data & AI -->
-            <div class="category active">
+           <div class="category active">
                 <button class="category-btn" onclick="window.location.href='Data & AI.html'">Data & AI <span class="arrow">›</span></button>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis &
@@ -102,12 +102,12 @@
                     <li><a href="#" class="filter-link" data-type="Generative AI">Generative AI</a></li>
                 </ul>
             </div>
-
             <!-- Development & IT -->
             <div class="category">
-                <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+                <a href="../categories/Development & IT.html" class="lin"><button class="category-btn">Development & IT
+                        <span class="arrow">›</span></button></a>
                 <ul class="sub-categories">
-                    <li><a href="#" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
+                    <li><a href="" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
                     <li><a href="#" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
                     <li><a href="#" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
                     <li><a href="#" class="filter-link" data-type="Android Developers">Android Developers</a></li>
@@ -118,23 +118,26 @@
 
             <!-- Design & Creative -->
             <div class="category">
-                <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
-                <ul class="sub-categories">
-                    <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo Designers</a>
-                    </li>
-                    <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
-                    <li><a href="#" class="filter-link" data-type="UX Designers">UX Designers</a></li>
-                    <li><a href="#" class="filter-link" data-type="Instagram Reel Editors">Instagram Reel Editors</a>
-                    </li>
-                    <li><a href="#" class="filter-link" data-type="Youtube Video Editors">Youtube Video Editors</a></li>
-                    <li><a href="#" class="filter-link" data-type="Videographers">Videographers</a></li>
-                    <li><a href="#" class="filter-link" data-type="Web Designers">Web Designers</a></li>
-                </ul>
+                <a href="../categories/Design & Creative.html" class="lin"><button class="category-btn">Design &
+                        Creative <span class="arrow">›</span></button>
+                    <ul class="sub-categories">
+                        <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo
+                                Designers</a></li>
+                        <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
+                        <li><a href="#" class="filter-link" data-type="UX Designers">UX Designers</a></li>
+                        <li><a href="#" class="filter-link" data-type="Instagram Reel Editors">Instagram Reel
+                                Editors</a></li>
+                        <li><a href="#" class="filter-link" data-type="Youtube Video Editors">Youtube Video Editors</a>
+                        </li>
+                        <li><a href="#" class="filter-link" data-type="Videographers">Videographers</a></li>
+                        <li><a href="#" class="filter-link" data-type="Web Designers">Web Designers</a></li>
+                    </ul>
             </div>
 
             <!-- Sales & Marketing -->
             <div class="category">
-                <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+                <a href="../categories/Sales & Marketing.html" class="lin"><button class="category-btn">Sales &
+                        Marketing <span class="arrow">›</span></button></a>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Branding Experts">Branding Experts</a></li>
                     <li><a href="#" class="filter-link" data-type="Business Development Managers">Business Development
@@ -148,7 +151,8 @@
 
             <!-- Writing & Translation -->
             <div class="category">
-                <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+                <a href="../categories/Writing & Translation.html" class="lin"><button class="category-btn">Writing &
+                        Translation <span class="arrow">›</span></button></a>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Academic Writers">Academic Writers</a></li>
                     <li><a href="#" class="filter-link" data-type="Business Plan Writers">Business Plan Writers</a></li>
@@ -160,7 +164,7 @@
             </div>
 
             <!-- Admin & Support -->
-            <div class="category">
+          <div class="category">
                 <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
@@ -179,22 +183,24 @@
 
             <!-- Finance & Accounting -->
             <div class="category">
-                <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+                <a href="../categories/F&A..html" class="lin"><button class="category-btn">Finance & Accounting <span
+                            class="arrow">›</span></button></a>
                 <ul class="sub-categories">
-                    <li><a href="Business Consultants" class="filter-link" data-type="Business Consultants">Business Consultants</a></li>
-                    <li><a href="Accounts Payable Managers" class="filter-link" data-type="Accounts Payable Managers">Accounts Payable Managers</a></li>
-                    <li><a href="Financial Modelers" class="filter-link" data-type="Financial Modelers">Financial Modelers</a>
+                    <li><a href="#" class="filter-link" data-type="Business Analysts">Business Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Financial Analysts">Financial Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Management Consultants">Management Consultants</a>
                     </li>
-                    <li><a href="Management Consultants" class="filter-link" data-type="Management Consultants">Management Consultants</a>
+                    <li><a href="#" class="filter-link" data-type="Data Entry Specialists">Data Entry Specialists</a>
                     </li>
-                    <li><a href="Fractional CFOs" class="filter-link" data-type="Fractional CFOs">Fractional CFOs</a></li>
-                       <li><a href="Accountants" class="filter-link" data-type="Accountants">Accountants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Financial Reporting Analysts">Financial Reporting
+                            Analysts</a></li>
                 </ul>
             </div>
 
             <!-- Legal -->
             <div class="category">
-                <button class="category-btn">Legal <span class="arrow">›</span></button>
+                <a href="../categories/Legal.html" class="lin"><button class="category-btn">Legal <span
+                            class="arrow">›</span></button></a>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Corporate Law Professionals">Corporate Law
                             Professionals</a></li>
@@ -206,7 +212,8 @@
             </div>
             <!-- HR & Training -->
             <div class="category">
-                <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+                <a href="../categories/HR & Training.html" class="lin"><button class="category-btn">HR & Training <span
+                            class="arrow">›</span></button></a>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Employee Engagement Specialists">Employee Engagement
                             Specialists</a></li>
@@ -219,7 +226,8 @@
 
             <!-- Engineering & Architecture -->
             <div class="category">
-                <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+                <a href="../categories/Engineering & Architecture.html" class="lin"><button
+                        class="category-btn">Engineer & Architecture <span class="arrow">›</span></button></a>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="AutoCAD Developers">AutoCAD Developers</a></li>
                     <li><a href="#" class="filter-link" data-type="Engineering Consultants">Engineering Consultants</a>
@@ -869,13 +877,13 @@
         window.onload = () => {
             filterCards();
         };
-                document.querySelectorAll(".filter-link").forEach(link => {
-        link.addEventListener("click", function () {
-            
-            document.querySelectorAll(".filter-link").forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
+        document.querySelectorAll(".filter-link").forEach(link => {
+            link.addEventListener("click", function () {
 
-        });
+                document.querySelectorAll(".filter-link").forEach(l => l.classList.remove("active"));
+                this.classList.add("active");
+
+            });
         });
     </script>
 </body>
