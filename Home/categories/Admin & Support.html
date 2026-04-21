@@ -149,7 +149,7 @@
       </div>
 
       <!-- Admin & Support -->
-      <div class="category">
+      <div class="category active">
                 <button class="category-btn" onclick="window.location.href='Admin & Support.html'">Admin & Support <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
@@ -765,7 +765,6 @@
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.onclick = () => btn.parentElement.classList.toggle('active');
         });
-
 
         // ================= FILTER =================
         const typeFilter = document.getElementById("typeFilter");
