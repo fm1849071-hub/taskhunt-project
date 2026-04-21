@@ -83,15 +83,15 @@
     margin-right: 50px;
     margin-bottom: 25px;
 }
-        .nav-links {
+ .nav-links {
             display: flex;
             list-style: none;
             gap: 30px;
             margin: 0;
             padding: 0;
-        }
+         }
 
-        .nav-links li a {
+    .nav-links li a {
             text-decoration: none;
             color: #333;
             font-size: 16px;
@@ -121,7 +121,7 @@
 
         .login {
             background: #f0f6ff;
-            color: #007bff;
+            color:#0077B8;
         }
 
         .login:hover {
@@ -129,12 +129,12 @@
         }
 
         .signup {
-            background: #007bff;
+            background: #0077B8;
             color: white;
         }
 
         .signup:hover {
-            background: #0056b3;
+            background: #0077B8;
         }
 
         .menu-toggle {
@@ -361,7 +361,7 @@
         }
 
         .view-more-btn:hover {
-            background: var(--c1);
+            background: #0077B8;
             color: white;
         }
 
@@ -493,9 +493,9 @@
         }
 
         .view-profile-btn:hover {
-            background: var(--c1);
+            background: #0077B8;
             color: white;
-            border-color: var(--c1);
+            border-color: #0077B8;
         }
 
         .no-results {
@@ -576,7 +576,7 @@
         .footer-btn {
             width: 92%;
             padding: 12px;
-            background: #00a8e8;
+            background: #0077B8;
             border: none;
             border-radius: 8px;
             color: white;
@@ -742,7 +742,7 @@
           /* ===== APPLY FILTERS BUTTON - الأصلي ===== */
 .filter-container button {
     padding: 12px 26px;
-    background: #005b84;
+    background: #0077B8;
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -764,7 +764,7 @@
 
 #loadMoreBtn {
     padding: 12px 30px;
-    background: #007bff;
+    background: #0077B8;
     color: white;
     border: none;
     border-radius: 10px;
@@ -773,6 +773,6 @@
 }
 
 #loadMoreBtn:hover {
-    background: #0056b3;
+    background: #0090E0;
 }
 
