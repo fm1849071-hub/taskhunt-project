@@ -89,8 +89,8 @@
             <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
 
             <!-- Data & AI -->
-            <div class="category">
-                <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+            <div class="category active">
+                <button class="category-btn" onclick="window.location.href='Data & AI.html'">Data & AI <span class="arrow">›</span></button>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis &
                             Visualization</a></li>
@@ -869,6 +869,14 @@
         window.onload = () => {
             filterCards();
         };
+                document.querySelectorAll(".filter-link").forEach(link => {
+        link.addEventListener("click", function () {
+            
+            document.querySelectorAll(".filter-link").forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
+
+        });
+        });
     </script>
 </body>
 

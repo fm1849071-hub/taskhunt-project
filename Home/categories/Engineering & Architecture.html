@@ -217,8 +217,8 @@
             </div>
 
             <!-- Engineering & Architecture -->
-            <div class="category">
-                <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+            <div class="category active">
+                <button class="category-btn" onclick="window.location.href='Engineer & Architecture.html'">Engineer & Architecture <span class="arrow">›</span></button>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="AutoCAD Developers">AutoCAD Developers</a></li>
                     <li><a href="#" class="filter-link" data-type="Engineering Consultants">Engineering Consultants</a></li>
@@ -614,11 +614,9 @@
 
 
     // ================= SIDEBAR =================
-    document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.parentElement.classList.toggle('active');
+  document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.onclick = () => btn.parentElement.classList.toggle('active');
         });
-    });
 
 
     // ================= FILTER =================

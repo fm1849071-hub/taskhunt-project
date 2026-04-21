@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Writers | TaskHunt</title>
+    <link rel="stylesheet" href="ALL.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html">
+        <img src="../images/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/120x40?text=TaskHunt'">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+
+  <section class="hero-title">
+    <h2>Writing & Translation</h2>
+    <span class="hero-divider">|</span>
+    <h1>Academic Writers</h1>
+  </section>
+
+  <section class="filter-bar">
+    <div class="filter-container">
+      <select id="skillFilter">
+        <option value="all">All Writing Skills</option>
+        <option value="research">Research Writing</option>
+        <option value="editing">Editing & Proofreading</option>
+        <option value="academic">Academic Papers</option>
+        <option value="essays">Essay Writing</option>
+        <option value="thesis">Thesis & Dissertation</option>
+      </select>
+
+      <select id="levelFilter">
+        <option value="all">Experience Level</option>
+        <option value="junior">Junior (1-3 years)</option>
+        <option value="mid">Mid (3-6 years)</option>
+        <option value="senior">Senior (7+ years)</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">Hourly Rate</option>
+        <option value="low">Under $25</option>
+        <option value="mid">$25 – $40</option>
+        <option value="high">Above $40</option>
+      </select>
+
+      <button id="applyFilter">Apply Filters</button>
+    </div>
+  </section>
+
+  <div class="page-layout">
+     <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      
+  <!-- Data & AI -->
+       <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+   <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Writing & Translation/academic writers.html">Academic Writers</a></li>
+          <li><a href="../Writing & Translation/biography writers.html">Biography Writers</a></li>
+          <li><a href="../Writing & Translation/Business plan writers.html">Business Plan Writers</a></li>
+          <li><a href="../Writing & Translation/Copy Editors.html">Copy Editors</a></li>
+          <li><a href="../Writing & Translation/creative writers.html">Creative Writers</a></li>
+          <li><a href="../Writing & Translation/ebook writers.html">eBook Writers</a></li>
+          <li><a href="../Writing & Translation/EnglishToSpanish.html">English to Spanish Translators</a></li>
+          <li><a href="../Writing & Translation/essay writers.html">Essay Writers</a></li>
+          <li><a href="../Writing & Translation/Fiction Writers.html">Fiction Writers</a></li>
+          <li><a href="../Writing & Translation/Grant Writers.html">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
+        </ul>
+      </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
+
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+    <section class="cards-wrapper">
+      <div class="cards-grid">
+        <!-- CARD 1 -->
+        <div class="up-card" data-skill="research academic thesis" data-level="senior" data-price="38">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=60" class="avatar" alt="Dr. Ahmed M.">
+            <div class="user-info">
+              <h3>Dr. Ahmed M.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$38/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 41 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📚 PhD in English Literature with 8+ years experience. Expert in research papers, journal articles, and thesis writing. Published author in multiple peer-reviewed journals.</p>
+          <div class="tags"><span>Research</span><span>Academic</span><span>Thesis</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="up-card" data-skill="editing proofreading academic" data-level="mid" data-price="29">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=61" class="avatar" alt="Sarah K.">
+            <div class="user-info">
+              <h3>Sarah K.</h3>
+              <span class="location">📍 Alexandria, Egypt</span>
+              <div class="stats">
+                <span class="price">$29/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 23 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">✍️ MA in Linguistics, Certified editor with 5 years experience. Specializing in APA, MLA, and Chicago style formatting. Perfect for graduate students and researchers.</p>
+          <div class="tags"><span>Editing</span><span>Proofreading</span><span>Formatting</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="up-card" data-skill="essays academic writing" data-level="junior" data-price="20">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=62" class="avatar" alt="Mohamed H.">
+            <div class="user-info">
+              <h3>Mohamed H.</h3>
+              <span class="location">📍 Giza, Egypt</span>
+              <div class="stats">
+                <span class="price">$20/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 15 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📝 Undergraduate essay specialist. Fast turnaround, original content, and strict adherence to guidelines. Perfect for college and university assignments.</p>
+          <div class="tags"><span>Essay</span><span>Academic</span><span>Undergraduate</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="up-card" data-skill="research academic publications" data-level="senior" data-price="42">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=63" class="avatar" alt="Dr. Youssef A.">
+            <div class="user-info">
+              <h3>Dr. Youssef A.</h3>
+              <span class="location">📍 Mansoura, Egypt</span>
+              <div class="stats">
+                <span class="price">$42/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 34 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🔬 PhD in Molecular Biology with 12+ years research experience. Expert in scientific papers, systematic reviews, and meta-analyses. Published in Nature and Science.</p>
+          <div class="tags"><span>Research</span><span>Scientific</span><span>Publications</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="up-card" data-skill="editing proofreading academic" data-level="mid" data-price="27">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=64" class="avatar" alt="Omar S.">
+            <div class="user-info">
+              <h3>Omar S.</h3>
+              <span class="location">📍 Tanta, Egypt</span>
+              <div class="stats">
+                <span class="price">$27/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 19 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📘 Academic editor specializing in humanities and social sciences. 4 years experience with top university students. Plagiarism-free guarantee.</p>
+          <div class="tags"><span>Editing</span><span>Humanities</span><span>Proofreading</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="up-card" data-skill="research essays writing" data-level="mid" data-price="30">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=65" class="avatar" alt="Hassan F.">
+            <div class="user-info">
+              <h3>Hassan F.</h3>
+              <span class="location">📍 Asyut, Egypt</span>
+              <div class="stats">
+                <span class="price">$30/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 22 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📑 Research papers and essay writing expert. Background in political science and international relations. Timely delivery and 100% original content.</p>
+          <div class="tags"><span>Research</span><span>Essay</span><span>Political Science</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="up-card" data-skill="academic research consulting" data-level="senior" data-price="40">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=66" class="avatar" alt="Karim T.">
+            <div class="user-info">
+              <h3>Karim T.</h3>
+              <span class="location">📍 Luxor, Egypt</span>
+              <div class="stats">
+                <span class="price">$40/hr</span>
+                <span class="rating">⭐ 4.9</span>
+                <span class="jobs">💼 31 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">🎓 Academic writing consultant with 7+ years experience. Specializes in business, economics, and management papers. MBA from AUC.</p>
+          <div class="tags"><span>Academic</span><span>Research</span><span>Business</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="up-card" data-skill="editing research proofreading" data-level="mid" data-price="26">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=67" class="avatar" alt="Ali M.">
+            <div class="user-info">
+              <h3>Ali M.</h3>
+              <span class="location">📍 Zagazig, Egypt</span>
+              <div class="stats">
+                <span class="price">$26/hr</span>
+                <span class="rating">⭐ 4.7</span>
+                <span class="jobs">💼 18 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">✏️ Research paper editing specialist. Expert in engineering and technical writing. Ensures clarity, coherence, and proper citation.</p>
+          <div class="tags"><span>Editing</span><span>Research</span><span>Engineering</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="up-card" data-skill="essay academic writing" data-level="junior" data-price="19">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=68" class="avatar" alt="Mostafa K.">
+            <div class="user-info">
+              <h3>Mostafa K.</h3>
+              <span class="location">📍 Fayoum, Egypt</span>
+              <div class="stats">
+                <span class="price">$19/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 10 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📝 Essay writing assistant. Great with high school and early college assignments. Quick learner, follows instructions meticulously.</p>
+          <div class="tags"><span>Essay</span><span>Academic</span><span>Entry Level</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="up-card" data-skill="research academic thesis" data-level="senior" data-price="45">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=69" class="avatar" alt="Dr. Adel N.">
+            <div class="user-info">
+              <h3>Dr. Adel N.</h3>
+              <span class="location">📍 Cairo, Egypt</span>
+              <div class="stats">
+                <span class="price">$45/hr</span>
+                <span class="rating">⭐ 5.0</span>
+                <span class="jobs">💼 36 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📚 Scientific research and thesis writing expert. PhD in Chemistry with 15+ years in academia. Helps with methodology, data analysis, and discussion sections.</p>
+          <div class="tags"><span>Thesis</span><span>Research</span><span>STEM</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="up-card" data-skill="editing proofreading academic" data-level="mid" data-price="28">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=70" class="avatar" alt="Nada H.">
+            <div class="user-info">
+              <h3>Nada H.</h3>
+              <span class="location">📍 Minya, Egypt</span>
+              <div class="stats">
+                <span class="price">$28/hr</span>
+                <span class="rating">⭐ 4.8</span>
+                <span class="jobs">💼 21 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📖 Academic proofreading and editing. MA in Translation Studies. Perfect for bilingual projects and English-Arabic academic work.</p>
+          <div class="tags"><span>Proofreading</span><span>Editing</span><span>Bilingual</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="up-card" data-skill="essay research writing" data-level="junior" data-price="21">
+          <div class="card-header">
+            <img src="https://i.pravatar.cc/100?img=71" class="avatar" alt="Rami Z.">
+            <div class="user-info">
+              <h3>Rami Z.</h3>
+              <span class="location">📍 Sohag, Egypt</span>
+              <div class="stats">
+                <span class="price">$21/hr</span>
+                <span class="rating">⭐ 4.6</span>
+                <span class="jobs">💼 12 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p class="description">📝 Academic essay writer. Focuses on history, philosophy, and literature. Provides well-structured arguments and proper citations.</p>
+          <div class="tags"><span>Essay</span><span>Research</span><span>Humanities</span></div>
+          <a href="#" class="profile-btn">View Profile</a>
+        </div>
+      </div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load More Writers</button>
+      </div>
+      <!-- about -->
+
+  <section id="about-section" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Empowering Your <span class="blue">Success</span></h2>
+        <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration,
+          ensure secure growth, and turn professional goals into reality.</p>
+      </div>
+      <div class="about-visual">
+        <div class="dot-animation">
+          <div class="pulse-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+
+  <section class="why-section">
+    <h2>Why hire Academic Writers from TaskHunt?</h2>
+    <div class="why-grid">
+      <div class="why-box">
+        <h4>✔ Verified Academic Experts</h4>
+        <p>All academic writers are carefully vetted with verified educational backgrounds and tested on real academic writing projects.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ Plagiarism-Free Guarantee</h4>
+        <p>Every paper is checked for originality. We provide detailed plagiarism reports and ensure 100% unique content.</p>
+      </div>
+      <div class="why-box">
+        <h4>✔ On-Time Delivery</h4>
+        <p>Meeting deadlines is our priority. Whether it's a 24-hour essay or a 6-month dissertation, we deliver on time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <h2>How it works</h2>
+    <div class="steps-grid">
+      <div class="step">1️⃣ Describe your academic project</div>
+      <div class="step">2️⃣ Choose the right academic writer</div>
+      <div class="step">3️⃣ Get your completed paper and review</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>What types of academic writing do you cover?</summary>
+      <p>We cover all academic levels from high school to PhD, including essays, research papers, theses, dissertations, literature reviews, case studies, and lab reports across all disciplines.</p>
+    </details>
+    <details>
+      <summary>How do you ensure the quality of academic papers?</summary>
+      <p>All writers have advanced degrees in their fields. Each paper goes through multiple quality checks including plagiarism detection, grammar verification, and formatting review.</p>
+    </details>
+    <details>
+      <summary>What citation styles do your writers know?</summary>
+      <p>Our writers are proficient in all major citation styles including APA 7th, MLA 9th, Chicago/Turabian, Harvard, IEEE, and Vancouver. Just specify your requirement.</p>
+    </details>
+    <details>
+      <summary>Can you help with urgent deadlines?</summary>
+      <p>Yes! We have writers available 24/7 for urgent projects. We can handle deadlines as tight as 3-6 hours for shorter papers and 24-48 hours for longer research work.</p>
+    </details>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Task Hunt</h3>
+        <ul>
+          <li><a href="#">About Task Hunt</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Academic Integrity</a></li>
+        </ul>
+        <div class="social-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Writing Tips</a></li>
+          <li><a href="#">Success Stories</a></li>
+        </ul>
+      </div>
+      <div id="contact-section" class="footer-col contact-col">
+        <div class="contact-box">
+          <form id="contactForm">
+            <h3>Drop us a message</h3>
+            <p>We'd love to hear from you!</p>
+            <div class="form-group">
+              <input type="text" class="footer-input" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="footer-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="footer-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Task Hunt — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = Array.from(document.querySelectorAll(".up-card"));
+      const skillFilter = document.getElementById("skillFilter");
+      const levelFilter = document.getElementById("levelFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const applyFilterBtn = document.getElementById("applyFilter");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+      let visible = 8;
+  const step = 4;
+
+      function getFilteredCards() {
+        return cards.filter(card => {
+          // Skill filter
+          const skills = (card.dataset.skill || "").toLowerCase().split(" ");
+          const selectedSkill = skillFilter.value.toLowerCase();
+          const skillMatch = selectedSkill === "all" || skills.includes(selectedSkill);
+
+          // Level filter
+          const level = (card.dataset.level || "").toLowerCase();
+          const selectedLevel = levelFilter.value.toLowerCase();
+          const levelMatch = selectedLevel === "all" || level === selectedLevel;
+
+          // Price filter
+          const price = parseInt(card.dataset.price) || 0;
+          let priceMatch = true;
+          if (priceFilter.value === "low") priceMatch = price < 25;
+          if (priceFilter.value === "mid") priceMatch = price >= 25 && price <= 40;
+          if (priceFilter.value === "high") priceMatch = price > 40;
+
+          return skillMatch && levelMatch && priceMatch;
+        });
+      }
+
+      function updateCards() {
+        const filteredCards = getFilteredCards();
+
+        cards.forEach(card => card.classList.add("hidden-card"));
+
+        filteredCards.slice(0, visible).forEach(card => {
+          card.classList.remove("hidden-card");
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.style.display = visible < filteredCards.length ? "block" : "none";
+        }
+
+        // Show message if no cards
+        const grid = document.querySelector('.cards-grid');
+        const existingMsg = document.querySelector('.no-results');
+        if (filteredCards.length === 0) {
+          if (!existingMsg) {
+            const msg = document.createElement('div');
+            msg.className = 'no-results';
+            msg.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 3rem; background: white; border-radius: 20px; color: #64748b;';
+            msg.innerHTML = '😕 No academic writers match your filters. Try adjusting your criteria.';
+            grid.appendChild(msg);
+          }
+        } else if (existingMsg) {
+          existingMsg.remove();
+        }
+      }
+
+      // Apply filters button
+      if (applyFilterBtn) {
+        applyFilterBtn.addEventListener("click", () => {
+          visible = 6;
+          updateCards();
+        });
+      }
+
+      // Load more
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+          visible += step;
+          updateCards();
+        });
+      }
+
+      // Initialize
+      updateCards();
+
+      // Sidebar accordion
+      const categoryButtons = document.querySelectorAll(".category-btn");
+      categoryButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const category = btn.closest(".category");
+          category.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

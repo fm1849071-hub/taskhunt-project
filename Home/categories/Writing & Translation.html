@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHunt | Writing & Translation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Cairo:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="../jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="ALL.css">
+    <style>
+        /* Quick inline tweaks for consistency - preserve original design but ensure writing & translation feels right */
+        .hero-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e2a3a, #0f172a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .skills-tags span {
+            background: #eef2ff;
+            color: #1e293b;
+        }
+        .up-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .up-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15);
+        }
+        .apply-filters-btn {
+            background: #0f172a;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .apply-filters-btn:hover {
+            background: #1e293b;
+        }
+        .view-profile-btn {
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            color: #0f172a;
+            border-radius: 40px;
+            padding: 0.4rem 1rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .view-profile-btn:hover {
+            background: #0f172a;
+            color: white;
+            border-color: #0f172a;
+        }
+        .load-more-container button {
+            background: #f1f5f9;
+            border: none;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .load-more-container button:hover {
+            background: #e2e8f0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="../../Home/home.html">
+                <img src="logo.png" alt="TaskHunt Logo">
+            </a>
+        </div>
+
+        <!-- LINKS -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../findwork.html">Find Work</a></li>
+            <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+
+            <!-- MOBILE BUTTONS -->
+            <li class="mobile-auth">
+                <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+                <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+            </li>
+        </ul>
+
+        <!-- DESKTOP BUTTONS -->
+        <div class="auth-buttons">
+            <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+            <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+        </div>
+
+        <!-- MENU ICON -->
+        <div class="menu-toggle" id="menuToggle">☰</div>
+    </nav>
+
+    <section class="hero-title">
+        <h1 id="pageTitle">Writing & Translation</h1>
+    </section>
+
+    <section class="filter-bar">
+        <div class="filter-container">
+            <select id="typeFilter">
+                <option value="all">All Categories</option>
+                <!-- Writing & Translation Subcategories -->
+                <option value="Academic Writers">Academic Writers</option>
+                <option value="Business Plan Writers">Business Plan Writers</option>
+                <option value="Copy Editors">Copy Editors</option>
+                <option value="Creative Writers">Creative Writers</option>
+                <option value="English to Spanish Translators">English to Spanish Translators</option>
+                <option value="Technical Writers">Technical Writers</option>
+                <option value="SEO Content Writers">SEO Content Writers</option>
+                <option value="Resume Writers">Resume Writers</option>
+                <option value="Proofreaders">Proofreaders</option>
+            </select>
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="0-30">0 - 30$/hr</option>
+                <option value="31-40">31 - 40$/hr</option>
+                <option value="41-50">41 - 50$/hr</option>
+            </select>
+            <select id="expFilter">
+                <option value="all">All Experience</option>
+                <option value="0-2">0 - 2 yrs</option>
+                <option value="3-5">3 - 5 yrs</option>
+                <option value="6-10">6+ yrs</option>
+            </select>
+            <button class="apply-filters-btn" id="applyFilters">Apply Filters</button>
+        </div>
+    </section>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
+
+            <!-- Writing & Translation (Main) - expanded by default for this page -->
+            <div class="category active">
+                <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+                <ul class="sub-categories" style="display: block;">
+                    <li><a href="#" class="filter-link" data-type="Academic Writers">Academic Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Business Plan Writers">Business Plan Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Copy Editors">Copy Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Creative Writers">Creative Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="English to Spanish Translators">English to Spanish Translators</a></li>
+                    <li><a href="#" class="filter-link" data-type="Technical Writers">Technical Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="SEO Content Writers">SEO Content Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Resume Writers">Resume Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Proofreaders">Proofreaders</a></li>
+                </ul>
+            </div>
+
+            <!-- Other categories (collapsible, kept from original but focusing on writing) -->
+            <div class="category">
+                <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="UX Designers">UX Designers</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Digital Marketers">Digital Marketers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Facebook Ads Specialists">Facebook Ads Specialists</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Word Experts">Microsoft Word Experts</a></li>
+                </ul>
+            </div>
+            
+            <div class="category">
+                <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Accountants">Accountants</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="cards-grid">
+            <!-- =========== ACADEMIC WRITERS ========== -->
+            <div class="up-card" data-name="Dr. Laila Mahmoud" data-price="28" data-type="Academic Writers" data-exp="6">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/1.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Dr. Laila Mahmoud</h3>
+                    <p class="role-text">PhD Academic Writer | Research Papers & Theses</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$28/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">6 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>APA/MLA</span><span>Research</span><span>Citation</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="up-card" data-name="Omar Farouk" data-price="32" data-type="Academic Writers" data-exp="4">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/1.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Omar Farouk</h3>
+                    <p class="role-text">Academic Writer: Social Sciences & Humanities</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$32/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">4 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Critical Analysis</span><span>Chicago Style</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== BUSINESS PLAN WRITERS ========== -->
+            <div class="up-card" data-name="Nadia Hisham" data-price="35" data-type="Business Plan Writers" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/2.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Nadia Hisham</h3>
+                    <p class="role-text">Business Plan Consultant & Pitch Deck Expert</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$35/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Financial Projections</span><span>Market Research</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== COPY EDITORS ========== -->
+            <div class="up-card" data-name="Hossam El-Din" data-price="25" data-type="Copy Editors" data-exp="7">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/2.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Hossam El-Din</h3>
+                    <p class="role-text">Professional Copy Editor & Proofreader (English/Arabic)</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$25/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">7 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Grammar</span><span>Style Guide</span><span>Fact-checking</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== CREATIVE WRITERS ========== -->
+            <div class="up-card" data-name="Salma Youssef" data-price="30" data-type="Creative Writers" data-exp="3">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Salma Youssef</h3>
+                    <p class="role-text">Creative Storyteller | Scripts & Fiction Writer</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$30/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">3 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Short Stories</span><span>Blogs</span><span>Character Dev</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== ENGLISH TO SPANISH TRANSLATORS ========== -->
+            <div class="up-card" data-name="Carlos Mendez" data-price="38" data-type="English to Spanish Translators" data-exp="8">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/3.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Carlos Mendez</h3>
+                    <p class="role-text">Certified Translator EN ⇄ ES | Technical & Legal</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$38/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">8 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Localization</span><span>CAT Tools</span><span>Legal Trans</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== TECHNICAL WRITERS ========== -->
+            <div class="up-card" data-name="Yara Gamal" data-price="42" data-type="Technical Writers" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Yara Gamal</h3>
+                    <p class="role-text">Technical Writer | API Docs & User Manuals</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$42/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Markdown</span><span>MadCap Flare</span><span>Software Docs</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== SEO CONTENT WRITERS ========== -->
+            <div class="up-card" data-name="Khaled Samir" data-price="27" data-type="SEO Content Writers" data-exp="4">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/4.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Khaled Samir</h3>
+                    <p class="role-text">SEO Content Writer | Blog posts & Web copy</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$27/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">4 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Keyword Research</span><span>WordPress</span><span>SEMrush</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== RESUME WRITERS ========== -->
+            <div class="up-card" data-name="Mona Adel" data-price="40" data-type="Resume Writers" data-exp="6">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/5.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Mona Adel</h3>
+                    <p class="role-text">Certified Resume Writer & LinkedIn Optimizer</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$40/hr</span>
+                        <span class="rating-tag">⭐ 5.0</span>
+                        <span class="exp-tag">6 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>ATS-Friendly</span><span>Cover Letters</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- =========== PROOFREADERS ========== -->
+            <div class="up-card" data-name="Ahmed Nasser" data-price="22" data-type="Proofreaders" data-exp="2">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/5.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Ahmed Nasser</h3>
+                    <p class="role-text">Meticulous Proofreader | Academic & Business docs</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$22/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">2 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Grammarly</span><span>Track Changes</span><span>Consistency</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- Additional creative writer 2 -->
+            <div class="up-card" data-name="Lobna Sherif" data-price="34" data-type="Creative Writers" data-exp="5">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/6.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Lobna Sherif</h3>
+                    <p class="role-text">Content Writer & Ghostwriter for Novels</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$34/hr</span>
+                        <span class="rating-tag">⭐ 4.9</span>
+                        <span class="exp-tag">5 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>Ghostwriting</span><span>Editing</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- Additional Translator (French to English) but under English to Spanish? Adding more diversity: Business Plan Writer extra -->
+            <div class="up-card" data-name="Rania El-Sayed" data-price="37" data-type="Business Plan Writers" data-exp="7">
+                <div class="card-image-wrapper">
+                    <img src="userimages/women/7.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Rania El-Sayed</h3>
+                    <p class="role-text">Business & Startup Plan Specialist</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$37/hr</span>
+                        <span class="rating-tag">⭐ 4.8</span>
+                        <span class="exp-tag">7 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>VC Pitch</span><span>Financial Modeling</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- Additional academic writer -->
+            <div class="up-card" data-name="Tamer Hany" data-price="29" data-type="Academic Writers" data-exp="3">
+                <div class="card-image-wrapper">
+                    <img src="userimages/men/6.jfif" class="avatar-img" alt="Profile">
+                    <div class="status-badge"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Tamer Hany</h3>
+                    <p class="role-text">STEM Academic Writer & Lab Report Expert</p>
+                    <div class="stats-row">
+                        <span class="price-tag">$29/hr</span>
+                        <span class="rating-tag">⭐ 4.7</span>
+                        <span class="exp-tag">3 yrs</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span>LaTeX</span><span>Data Analysis</span>
+                    </div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="load-more-container">
+        <button id="loadMoreBtn">Load More</button>
+    </div>
+    <div class="drawer-overlay" id="overlay"></div>
+    <div class="profile-drawer" id="drawer">
+        <span class="close-drawer" id="closeDrawer">&times;</span>
+        <div class="drawer-header">
+            <img src="" id="dImg">
+            <h2 id="dName"></h2>
+            <p id="dType"></p>
+        </div>
+        <hr>
+        <div class="drawer-body">
+            <h5>Portfolio Highlights</h5>
+            <div class="portfolio-samples">
+                <div class="sample">Published Articles</div>
+                <div class="sample">Client Translations</div>
+                <div class="sample">Edited Books</div>
+                <div class="sample">Business Plans</div>
+            </div>
+            <div class="mt-4">
+                <h5>About</h5>
+                <p class="text-muted small">Professional linguist & writer, delivering polished content and precise translations. 100% client satisfaction.</p>
+            </div>
+            <button class="hire-btn">Send Proposal</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Task Hunt</h3>
+                <ul>
+                    <li><a href="#">About Task Hunt</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Rights Protection</a></li>
+                </ul>
+                <div class="social-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Topics</a></li>
+                </ul>
+            </div>
+
+            <div id="contact-section" class="footer-col contact-col">
+                <div class="contact-box">
+                    <form id="contactForm">
+                        <h3>Drop us a message</h3>
+                        <div class="form-group">
+                            <input type="text" class="footer-input" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="footer-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="footer-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Task Hunt — All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // ================= DRAWER =================
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeDrawer');
+
+        document.querySelectorAll('.up-card').forEach(card => {
+            const openElements = [
+                card.querySelector('.avatar-img'),
+                card.querySelector('.view-profile-btn')
+            ];
+
+            openElements.forEach(el => {
+                if (el) {
+                    el.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        document.getElementById('dName').innerText = card.dataset.name;
+                        document.getElementById('dType').innerText = card.dataset.type;
+                        const imgSrc = card.querySelector('.avatar-img').src;
+                        document.getElementById('dImg').src = imgSrc;
+                        drawer.classList.add('open');
+                        overlay.style.display = 'block';
+                    });
+                }
+            });
+        });
+
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            overlay.style.display = 'none';
+        }
+
+        closeBtn.onclick = closeDrawer;
+        overlay.onclick = closeDrawer;
+
+        // ================= SIDEBAR TOGGLE =================
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.onclick = (e) => {
+                e.stopPropagation();
+                btn.parentElement.classList.toggle('active');
+                const sub = btn.parentElement.querySelector('.sub-categories');
+                if (sub) {
+                    if (btn.parentElement.classList.contains('active')) {
+                        sub.style.display = 'block';
+                    } else {
+                        sub.style.display = 'none';
+                    }
+                }
+            };
+        });
+        // Ensure Writing & Translation subcategories are visible initially
+        const writingCat = document.querySelector('.sidebar .category.active');
+        if (writingCat) {
+            const subMenu = writingCat.querySelector('.sub-categories');
+            if (subMenu) subMenu.style.display = 'block';
+        }
+
+        // ================= FILTER & LOAD MORE =================
+        const typeFilter = document.getElementById("typeFilter");
+        const priceFilter = document.getElementById("priceFilter");
+        const expFilter = document.getElementById("expFilter");
+        let visibleCards = 9; // Show 9 initially for richer layout
+        let currentFiltered = [];
+
+        function filterCards() {
+            const selectedType = typeFilter.value;
+            const selectedPrice = priceFilter.value;
+            const selectedExp = expFilter.value;
+
+            const allCards = Array.from(document.querySelectorAll(".up-card"));
+            const filtered = [];
+
+            allCards.forEach(card => {
+                const type = card.dataset.type;
+                const price = parseInt(card.dataset.price);
+                const exp = parseInt(card.dataset.exp);
+                let show = true;
+
+                if (selectedType !== "all" && type !== selectedType) show = false;
+                if (selectedPrice !== "all") {
+                    const [min, max] = selectedPrice.split("-").map(Number);
+                    if (price < min || price > max) show = false;
+                }
+                if (selectedExp !== "all") {
+                    if (selectedExp === "6-10") {
+                        if (exp < 6) show = false;
+                    } else {
+                        const [minExp, maxExp] = selectedExp.split("-").map(Number);
+                        if (exp < minExp || exp > maxExp) show = false;
+                    }
+                }
+                if (show) filtered.push(card);
+                card.style.display = "none";
+            });
+
+            filtered.forEach((card, idx) => {
+                card.style.display = idx < visibleCards ? "block" : "none";
+            });
+
+            const loadMoreBtn = document.getElementById("loadMoreBtn");
+            if (visibleCards >= filtered.length) {
+                loadMoreBtn.style.display = "none";
+            } else {
+                loadMoreBtn.style.display = "inline-block";
+            }
+            currentFiltered = filtered;
+        }
+
+        function applyFiltersAndReset() {
+            visibleCards = 9;
+            filterCards();
+        }
+
+        typeFilter.addEventListener("change", applyFiltersAndReset);
+        priceFilter.addEventListener("change", applyFiltersAndReset);
+        expFilter.addEventListener("change", applyFiltersAndReset);
+        document.getElementById("applyFilters").addEventListener("click", applyFiltersAndReset);
+
+        // Sidebar filter links
+        document.querySelectorAll(".filter-link").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                const selectedType = this.dataset.type;
+                document.getElementById("pageTitle").innerText = selectedType;
+                typeFilter.value = selectedType;
+                priceFilter.value = "all";
+                expFilter.value = "all";
+                visibleCards = 9;
+                filterCards();
+            });
+        });
+
+        // Load More
+        document.getElementById("loadMoreBtn").addEventListener("click", () => {
+            visibleCards += 6;
+            const list = currentFiltered.length ? currentFiltered : document.querySelectorAll(".up-card");
+            list.forEach((card, idx) => {
+                card.style.display = idx < visibleCards ? "block" : "none";
+            });
+            if (visibleCards >= list.length) {
+                document.getElementById("loadMoreBtn").style.display = "none";
+            }
+        });
+
+        // ================= NAVBAR TOGGLE =================
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+        if (menuToggle) {
+            menuToggle.onclick = () => navLinks.classList.toggle("active");
+        }
+
+        // ================= INIT =================
+        window.onload = () => {
+            filterCards();
+        };
+    </script>
+</body>
+
+</html>

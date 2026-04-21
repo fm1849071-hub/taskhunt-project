@@ -192,8 +192,8 @@
             </div>
 
             <!-- Legal -->
-            <div class="category">
-                <button class="category-btn">Legal <span class="arrow">›</span></button>
+            <div class="category active">
+                <button class="category-btn" onclick="window.location.href='Legal.html'">Legal <span class="arrow">›</span></button>
                 <ul class="sub-categories">
                     <li><a href="#" class="filter-link" data-type="Corporate Law Professionals">Corporate Law Professionals</a></li>
                     <li><a href="#" class="filter-link" data-type="Immigration Law Professionals">Immigration Law Professionals</a></li>
@@ -609,7 +609,6 @@
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.onclick = () => btn.parentElement.classList.toggle('active');
         });
-
 
         // ================= FILTER =================
         const typeFilter = document.getElementById("typeFilter");

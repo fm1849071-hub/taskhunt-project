@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>.Google Sheets Experts| TaskHunt</title>
+<link rel="stylesheet" href="../Development&it/ALL.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+   <nav class="nav">
+    <div class="logo">
+      <a href="../../Home/home.html">
+        <img src="../images/logo.png" alt="Logo">
+      </a>
+    </div>
+
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+           <ul class="nav-links">
+      <li><a href="../work.html">Find Work</a></li>
+      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+
+          
+      <div class="auth-buttons">
+      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../../login/login.html'">Login</button>
+      <button class="btn signup-blue" onclick="window.location.href='../../signup/asksignup.html'">Sign Up</button>
+    </div>
+  </nav>
+  <section class="hero-title">
+  <h2>Admin & Support</h2>
+  <span class="hero-divider">|</span>
+  <h1>Google Sheets Experts</h1>
+  </section>
+
+  <!-- FILTER BAR -->
+<section class="filter-bar">
+  <div class="filter-container">
+
+    <!-- Google Sheets Type -->
+<select id="editorTypeFilter">
+  <option value="all">All Experts</option>
+  <option value="sheets">Google Sheets</option>
+  <option value="formulas">Formulas</option>
+  <option value="data">Data Analysis</option>
+  <option value="dashboards">Dashboards</option>
+</select>
+
+
+
+    <!-- Experience Level -->
+    <select id="levelFilter">
+      <option value="all">Experience Level</option>
+      <option value="junior">Junior</option>
+      <option value="mid">Mid</option>
+      <option value="senior">Senior</option>
+    </select>
+
+    <!-- Price -->
+    <select id="priceFilter">
+      <option value="all">Service Price</option>
+      <option value="low">Under $15</option>
+      <option value="mid">$15 – $30</option>
+      <option value="high">Above $30</option>
+    </select>
+<button id="applyFilter">Apply Filter</button>
+   
+
+  </div>
+</section>
+
+
+  <div class="page-layout">
+
+      <aside class="sidebar">
+      <h3>Categories</h3>
+
+
+      
+  <!-- Data & AI -->
+       <div class="category">
+        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li>
+          <li><a href="../AI/Al Developers.html">AI Developers</a></li>
+          <li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li>
+          <li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li>
+          <li><a href="../AI/Data Engineering.html">Data Engineering</a></li>
+          <li><a href="../AI/Chatbot Developers.html">Chatbot Developers</a></li>
+          <li><a href="../AI/Deep Learning.html">Deep Learning</a></li>
+          <li><a href="../AI/Neural Networks.html">Neural Networks</a></li>
+          <li><a href="../AI/Predictive Analytics.html">Predictive Analytics</a></li>
+          <li><a href="../AI/Generative Al.html">Generative AI</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Development & IT -->
+   <div class="category">
+        <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Development&it/dotnet.html">.NET Developers</a></li>
+          <li><a href="../Development&it/ai.html">AI Developers</a></li>
+          <li><a href="../Development&it/android.html">Android Developers</a></li>
+          <li><a href="../Development&it/Backend.html">Backend Developers</a></li>
+          <li><a href="../Development&it/Bubble.html">Bubble.io Developers</a></li>
+          <li><a href="../Development&it/Chatbot.html">Chatbot Developers</a></li>
+          <li><a href="../Development&it/Cyber Security.html">Cyber Security Engineers</a></li>
+          <li><a href="../Development&it/Data.html">Data Engineers</a></li>
+          <li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li>
+          <li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="category">
+        <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+            <li><a href="../Design&Creative/Brand & Logo Designers/Brand & Logo Designers.html">Brand & Logo Designers</a></li>
+          <li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Design&Creative/Interior Designers/Interior Designers.html">Interior Designers</a></li>
+          <li><a href="../Design&Creative/Real Estate Photographers/Real Estate Photographers.html">Real Estate Photographers</a></li>
+          <li><a href="../Design&Creative/Resume Designers/Resume Designers.html">Resume Designers</a></li>
+          <li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li>
+          <li><a href="../Design&Creative/Instagram Reel Editors/Instagram Reel Editors.html">Instagram Reel Editors</a></li>
+          <li><a href="../Design&Creative/Youtube Video Editors/Youtube Video Editors.html">Youtube Video Editors</a></li>
+          <li><a href="../Design&Creative/Videographers/Videographers.html">Videographers</a></li>
+          <li><a href="../Design&Creative/Virtual staging Developers/Virtual staging Developers.html">Virtual staging Developers</a></li>
+          <li><a href="../Design&Creative/Web Designers/Web Designers.html">Web Designers</a></li>
+          <li><a href="../Design&Creative/Wedding Photographers/Wedding Photographers.html">Wedding Photographers</a></li>
+        </ul>
+      </div>
+
+      <!-- Sales & Marketing -->
+      <div class="category">
+        <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../sales/Affiliate_Marketers.html">Affiliate Marketers</a></li>
+          <li><a href="../sales/Amazon_PPC_Experts.html">Amazon PPC Experts</a></li>
+          <li><a href="../sales/Branding_Experts.html">Branding Experts</a></li>
+          <li><a href="../sales/Business_Development_Managers.html">Business Development Managers</a></li>
+          <li><a href="../sales/Campaign_Managers.html">Campaign Managers</a></li>
+          <li><a href="../sales/Cold_Callers.html">Cold Callers</a></li>
+          <li><a href="../sales/Community_Managers.html">Community Managers</a></li>
+          <li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li>
+          <li><a href="../sales/Ecommerce_Consultants.html">Ecommerce Consultants</a></li>
+          <li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Writing & Translation -->
+      <div class="category">
+        <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Writing & Translation/academic writers.html">Academic Writers</a></li>
+          <li><a href="../Writing & Translation/biography writers.html">Biography Writers</a></li>
+          <li><a href="../Writing & Translation/Business plan writers.html">Business Plan Writers</a></li>
+          <li><a href="../Writing & Translation/Copy Editors.html">Copy Editors</a></li>
+          <li><a href="../Writing & Translation/creative writers.html">Creative Writers</a></li>
+          <li><a href="../Writing & Translation/ebook writers.html">eBook Writers</a></li>
+          <li><a href="../Writing & Translation/EnglishToSpanish.html">English to Spanish Translators</a></li>
+          <li><a href="../Writing & Translation/essay writers.html">Essay Writers</a></li>
+          <li><a href="../Writing & Translation/Fiction Writers.html">Fiction Writers</a></li>
+          <li><a href="../Writing & Translation/Grant Writers.html">Grant Writers</a></li>
+        </ul>
+      </div>
+
+      <!-- Admin & Support -->
+      <div class="category">
+        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+               <li><a href="../Admin & Support Specialties/Editors.html">Editors</a></li>
+          <li><a href="../Admin & Support Specialties/Google Docs Experts.html">Google Docs Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Google Sheets Experts.html">Google Sheets Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Graphic Designers.html">Graphic Designers</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Microsoft Excel Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Office Specialists.html">Microsoft Office Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Outlook Specialists.html">Microsoft Outlook Specialists</a></li>
+          <li><a href="../Admin & Support Specialties/Microsoft Word Experts.html">Microsoft Word Experts</a></li>
+          <li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li>
+          <li><a href="../Admin & Support Specialties/PowerPoint Experts .html">PowerPoint Experts</a></li>
+
+        </ul>
+      </div>
+
+      <!-- Finance & Accounting -->
+      <div class="category">
+        <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Finance & Accounting/Business Analysts.html">Business Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li>
+          <li><a href="../Finance & Accounting/Financial Modelers.html">Financial Modelers</a></li>
+          <li><a href="../Finance & Accounting/Forex Traders.html">Forex Traders</a></li>
+          <li><a href="../Finance & Accounting/Management Consultants.html">Management Consultants</a></li>
+          <li><a href="../Finance & Accounting/Tax Preparers.html">Tax Preparers</a></li>
+          <li><a href="../Finance & Accounting/Data Entry Specialists.html">Data Entry Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Forecasting Specialists.html">Financial Forecasting Specialists</a></li>
+          <li><a href="../Finance & Accounting/Financial Reporting Analysts.html">Financial Reporting Analysts</a></li>
+          <li><a href="../Finance & Accounting/Intuit TurboTax Specialists.html">Intuit TurboTax Specialists</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="category">
+        <button class="category-btn">Legal <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Corporate law/corporate.html">Corporate Law Professionals</a></li>
+          <li><a href="../criminal law/Criminal.html">Criminal Law Professionals</a></li>
+          <li><a href="../Family law/family.html">Family Law Professionals</a></li>
+          <li><a href="../Fraud Analysis/Fraud.html">Fraud Analysts</a></li>
+          <li><a href="../GDPR Specialists/GDPR.html">GDPR Specialists</a></li>
+          <li><a href="../immigration law/immigration.html">Immigration Law Professionals</a></li>
+          <li><a href="../Internation law/international.html">International Law Professionals</a></li>
+          <li><a href="../Legal advisors/advisors.html">Legal Advisors</a></li>
+          <li><a href="../Legal assistants/assistants.html">Legal Assistants</a></li>
+          <li><a href="../Legal consultants/consultants.html">Legal Consultants</a></li>
+        </ul>
+      </div>
+     <!-- HR & Training -->
+<div class="category">
+  <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+  <ul class="sub-categories">
+    <li><a href="../HR/change-management.html">Change Management Specialists</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Engagement Specialists</a></li>
+    <li><a href="../HR/facilitators.html">Facilitators</a></li>
+    <li><a href="../HR/interviewers.html">Interviewers</a></li>
+    <li><a href="../HR/leadership.html">Leadership Development Specialists</a></li>
+    <li><a href="../HR/qhse.html">QHSE Specialists</a></li>
+    <li><a href="../HR/scorm.html">SCORM Specialists</a></li>
+    <li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li>
+
+    <li><a href="../HR/curriculum.html">Curriculum Developers</a></li>
+    <li><a href="../HR/employee-relations.html">Employee Relations Specialists</a></li>
+  </ul>
+</div>
+
+      <!-- Engineering & Architecture -->
+      <div class="category">
+        <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+        <ul class="sub-categories">
+          <li><a href="../Engineering & Architecture/Aerospace Engineers.html">Aerospace Engineers</a></li>
+          <li><a href="../Engineering & Architecture/AutoCAD Developers.html">AutoCAD Developers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Consultants.html">Engineering Consultants</a></li>
+          <li><a href="../Engineering & Architecture/Home Designers.html">Home Designers</a></li>
+          <li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li>
+          <li><a href="../Engineering & Architecture/Parametric Designers.html">Parametric Designers</a></li>
+          <li><a href="../Engineering & Architecture/Architectural Modelers.html">Architectural Modelers</a></li>
+          <li><a href="../Engineering & Architecture/CICD Engineers.html">CI/CD Engineers</a></li>
+          <li><a href="../Engineering & Architecture/Engineering Designers.html">Engineering Designers</a></li>
+          <li><a href="../Engineering & Architecture/Hydraulic Engineers.html">Hydraulic Engineers</a></li>
+        </ul>
+      </div>
+    </aside>
+
+
+
+
+
+
+    <section class="cards-wrapper">
+
+   <div class="cards-grid">
+
+  <!-- CARD 1 -->
+  <div class="up-card" data-editor="sheets" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=1" class="avatar">
+      <div class="user-info">
+        <h3>Omar A.</h3>
+        <span class="location">Cairo, Egypt</span>
+        <div class="stats"><span class="price">$30/hr</span><span class="rating">⭐4.9</span><span class="jobs">💼26 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📊 Senior Google Sheets expert for advanced data analysis.</p>
+    <div class="tags"><span>Google Sheets</span><span>Data Analysis</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="up-card" data-editor="formulas" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=2" class="avatar">
+      <div class="user-info">
+        <h3>Ahmed N.</h3>
+        <span class="location">Alexandria, Egypt</span>
+        <div class="stats"><span class="price">$25/hr</span><span class="rating">⭐4.8</span><span class="jobs">💼18 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📝 Formula specialist for Google Sheets and automation tasks.</p>
+    <div class="tags"><span>Formulas</span><span>Automation</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="up-card" data-editor="sheets" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=16" class="avatar">
+    <div class="user-info">
+      <h3>Fatma S.</h3>
+      <span class="location">Cairo, Egypt</span>
+      <div class="stats"><span class="price">$34/hr</span><span class="rating">⭐5.0</span><span class="jobs">💼22 jobs</span></div>
+    </div>
+  </div>
+  <p class="description">📊 Senior Google Sheets expert for advanced reporting and dashboards.</p>
+  <div class="tags"><span>Google Sheets</span><span>Dashboards</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+  <!-- CARD 4 -->
+ <div class="up-card" data-editor="sheets" data-level="mid">
+   <div class="card-header">
+     <img src="https://i.pravatar.cc/100?img=17" class="avatar">
+     <div class="user-info">
+       <h3>Amr H.</h3>
+       <span class="location">Fayoum, Egypt</span>
+       <div class="stats"><span class="price">$28/hr</span><span class="rating">⭐4.8</span><span class="jobs">💼18 jobs</span></div>
+     </div>
+   </div>
+   <p class="description">📄 Intermediate Google Sheets expert for business data management.</p>
+   <div class="tags"><span>Google Sheets</span><span>Data Analysis</span></div>
+   <a href="#" class="profile-btn">See profile</a>
+ </div>
+
+  <!-- CARD 5 -->
+  <div class="up-card" data-editor="sheets" data-level="junior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=5" class="avatar">
+      <div class="user-info">
+        <h3>Islam H.</h3>
+        <span class="location">Tanta, Egypt</span>
+        <div class="stats"><span class="price">$20/hr</span><span class="rating">⭐4.6</span><span class="jobs">💼10 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📄 Junior Google Sheets expert for simple tasks and organization.</p>
+    <div class="tags"><span>Google Sheets</span><span>Basics</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 6 -->
+  <div class="up-card" data-editor="formulas" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=6" class="avatar">
+      <div class="user-info">
+        <h3>Mostafa R.</h3>
+        <span class="location">Zagazig, Egypt</span>
+        <div class="stats"><span class="price">$32/hr</span><span class="rating">⭐4.9</span><span class="jobs">💼19 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">🧮 Advanced formulas and spreadsheet automation specialist.</p>
+    <div class="tags"><span>Formulas</span><span>Automation</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 7 -->
+  <div class="up-card" data-editor="dashboards" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=7" class="avatar">
+      <div class="user-info">
+        <h3>Salma T.</h3>
+        <span class="location">Fayoum, Egypt</span>
+        <div class="stats"><span class="price">$27/hr</span><span class="rating">⭐4.8</span><span class="jobs">💼20 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📊 Dashboard creation and visualization for businesses.</p>
+    <div class="tags"><span>Dashboards</span><span>Reports</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 8 -->
+  <div class="up-card" data-editor="data" data-level="junior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=8" class="avatar">
+      <div class="user-info">
+        <h3>Khaled M.</h3>
+        <span class="location">Assiut, Egypt</span>
+        <div class="stats"><span class="price">$22/hr</span><span class="rating">⭐4.7</span><span class="jobs">💼12 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📈 Junior data analyst for spreadsheet tasks.</p>
+    <div class="tags"><span>Data Analysis</span><span>Entry Level</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 9 -->
+  <div class="up-card" data-editor="sheets" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=9" class="avatar">
+      <div class="user-info">
+        <h3>Nour H.</h3>
+        <span class="location">Minya, Egypt</span>
+        <div class="stats"><span class="price">$24/hr</span><span class="rating">⭐4.6</span><span class="jobs">💼15 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📊 Intermediate Google Sheets tasks for businesses.</p>
+    <div class="tags"><span>Google Sheets</span><span>Intermediate</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 10 -->
+  <div class="up-card" data-editor="formulas" data-level="mid">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=10" class="avatar">
+      <div class="user-info">
+        <h3>Hassan T.</h3>
+        <span class="location">Tanta, Egypt</span>
+        <div class="stats"><span class="price">$28/hr</span><span class="rating">⭐4.9</span><span class="jobs">💼22 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">🧮 Formulas specialist for medium-level tasks.</p>
+    <div class="tags"><span>Formulas</span><span>Intermediate</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 11 -->
+<div class="up-card" data-editor="sheets" data-level="senior">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=18" class="avatar">
+    <div class="user-info">
+      <h3>Sarah K.</h3>
+      <span class="location">Mansoura, Egypt</span>
+      <div class="stats"><span class="price">$35/hr</span><span class="rating">⭐5.0</span><span class="jobs">💼20 jobs</span></div>
+    </div>
+  </div>
+  <p class="description">📊 Expert in Google Sheets for data modeling and advanced formulas.</p>
+  <div class="tags"><span>Google Sheets</span><span>Advanced</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+
+  <!-- CARD 12 -->
+  <div class="up-card" data-editor="data" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=12" class="avatar">
+      <div class="user-info">
+        <h3>Ali R.</h3>
+        <span class="location">Giza, Egypt</span>
+        <div class="stats"><span class="price">$31/hr</span><span class="rating">⭐4.9</span><span class="jobs">💼20 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📈 Senior data analyst for complex datasets.</p>
+    <div class="tags"><span>Data Analysis</span><span>Advanced</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 13 -->
+  <div class="up-card" data-editor="sheets" data-level="senior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=13" class="avatar">
+      <div class="user-info">
+        <h3>Salma H.</h3>
+        <span class="location">Cairo, Egypt</span>
+        <div class="stats"><span class="price">$36/hr</span><span class="rating">⭐5.0</span><span class="jobs">💼25 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">📊 Expert in Google Sheets for data modeling and reporting.</p>
+    <div class="tags"><span>Google Sheets</span><span>Advanced</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 14 -->
+  <div class="up-card" data-editor="formulas" data-level="junior">
+    <div class="card-header">
+      <img src="https://i.pravatar.cc/100?img=14" class="avatar">
+      <div class="user-info">
+        <h3>Omar K.</h3>
+        <span class="location">Alexandria, Egypt</span>
+        <div class="stats"><span class="price">$19/hr</span><span class="rating">⭐4.5</span><span class="jobs">💼12 jobs</span></div>
+      </div>
+    </div>
+    <p class="description">🧮 Junior formulas expert for simple spreadsheet automation.</p>
+    <div class="tags"><span>Formulas</span><span>Basics</span></div>
+    <a href="#" class="profile-btn">See profile</a>
+  </div>
+
+  <!-- CARD 15 -->
+<div class="up-card" data-editor="sheets" data-level="mid">
+  <div class="card-header">
+    <img src="https://i.pravatar.cc/100?img=19" class="avatar">
+    <div class="user-info">
+      <h3>Heba M.</h3>
+      <span class="location">Alexandria, Egypt</span>
+      <div class="stats"><span class="price">$27/hr</span><span class="rating">⭐4.7</span><span class="jobs">💼17 jobs</span></div>
+    </div>
+  </div>
+  <p class="description">📄 Mid-level Google Sheets expert for task automation and reporting.</p>
+  <div class="tags"><span>Google Sheets</span><span>Automation</span></div>
+  <a href="#" class="profile-btn">See profile</a>
+</div>
+
+</div>
+
+
+
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more Google Sheets experts</button>
+
+      </div>
+
+    </section>
+  </div>
+  <!-- about -->
+
+  <section id="about-section" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Empowering Your <span class="blue">Success</span></h2>
+        <p>Task Hunt is a modern marketplace connecting top talent with ambitious projects. We simplify collaboration,
+          ensure secure growth, and turn professional goals into reality.</p>
+      </div>
+      <div class="about-visual">
+        <div class="dot-animation">
+          <div class="pulse-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+  <section class="why-section">
+    <h2>Why hire Google Sheets Experts from TaskHunt?</h2>
+
+    <div class="why-grid">
+        <div class="why-box">
+            <h4>✔ Verified Google Sheets Professionals</h4>
+            <p>All Google Sheets experts are carefully vetted and tested on real-world spreadsheet creation, formulas, and data management tasks.</p>
+        </div>
+
+        <div class="why-box">
+            <h4>✔ Smart Formulas & Data Automation</h4>
+            <p>Automate calculations, reports, and workflows using advanced formulas, functions, and scripts.</p>
+        </div>
+
+        <div class="why-box">
+            <h4>✔ Accurate Reports & Insights</h4>
+            <p>Turn raw data into clear, accurate, and actionable insights with well-structured spreadsheets and dashboards.</p>
+        </div>
+    </div>
+</section>
+
+<section class="steps">
+    <h2>How it works</h2>
+
+    <div class="steps-grid">
+        <div class="step">1️⃣ Share your data and spreadsheet requirements</div>
+        <div class="step">2️⃣ Choose the right Google Sheets expert</div>
+        <div class="step">3️⃣ Analyze, automate, and make data-driven decisions</div>
+    </div>
+</section>
+
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+        <summary>What does a Google Sheets expert do?</summary>
+        <p>Google Sheets experts build and manage spreadsheets, create formulas, automate tasks, and generate reports and dashboards.</p>
+    </details>
+
+    <details>
+        <summary>How much does it cost to hire a Google Sheets expert?</summary>
+        <p>Pricing depends on data size, complexity of formulas, automation level, and the expert’s experience.</p>
+    </details>
+
+    <details>
+        <summary>What tasks can Google Sheets experts handle?</summary>
+        <p>Formulas, data analysis, dashboards, automation with Apps Script, charts, data cleanup, and reporting.</p>
+    </details>
+</section>
+
+ 
+ <!-- FOOTER -->
+     <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Task Hunt</h3>
+      <ul>
+        <li><a href="#">About Task Hunt</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Rights Protection</a></li>
+      </ul>
+      <div class="social-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">User Experiences</a></li>
+      </ul>
+    </div>
+
+    <div id="contact-section" class="footer-col contact-col">
+      <div class="contact-box">
+        <form id="contactForm">
+          <h3>Drop us a message</h3>
+          <p>We'd love to hear from you!</p>
+          
+          <div class="form-group">
+            <input type="text" class="footer-input" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="footer-input" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="footer-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Task Hunt — All rights reserved</p>
+  </div>
+</footer>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ELEMENTS */
+  const cards = Array.from(document.querySelectorAll(".up-card"));
+
+  const typeFilter  = document.getElementById("editorTypeFilter");
+  const levelFilter = document.getElementById("levelFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visible = 8;
+  const step = 4;
+
+
+  /* FILTER */
+  function getFilteredCards() {
+
+    return cards.filter(card => {
+
+      /* TYPE */
+      const cardType = (card.dataset.editor || "").toLowerCase();
+      const selectedType = (typeFilter?.value || "all").toLowerCase();
+
+      const typeMatch =
+        selectedType === "all" || cardType === selectedType;
+
+
+      /* LEVEL */
+      const cardLevel = (card.dataset.level || "").toLowerCase();
+      const selectedLevel = (levelFilter?.value || "all").toLowerCase();
+
+      const levelMatch =
+        selectedLevel === "all" || cardLevel === selectedLevel;
+
+
+      /* PRICE */
+      const priceText = card.querySelector(".price")?.innerText || "";
+      const price = parseInt(priceText.replace(/\D/g, "")) || 0;
+
+      let priceMatch = true;
+
+      if (priceFilter?.value === "low")  priceMatch = price < 25;
+      if (priceFilter?.value === "mid")  priceMatch = price >= 25 && price <= 40;
+      if (priceFilter?.value === "high") priceMatch = price > 40;
+
+
+      return typeMatch && levelMatch && priceMatch;
+
+    });
+
+  }
+
+
+  /* UPDATE VIEW */
+  function updateCards() {
+
+    const filtered = getFilteredCards();
+
+    cards.forEach(card => card.classList.add("hidden-card"));
+
+    filtered.slice(0, visible).forEach(card => {
+      card.classList.remove("hidden-card");
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        visible < filtered.length ? "block" : "none";
+    }
+  }
+
+
+  /* EVENTS */
+  [typeFilter, levelFilter, priceFilter].forEach(filter => {
+
+    if (!filter) return;
+
+    filter.addEventListener("change", () => {
+      visible = 6;
+      updateCards();
+    });
+
+  });
+
+
+  /* LOAD MORE */
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      visible += step;
+      updateCards();
+    });
+  }
+
+
+  /* SIDEBAR ACCORDION */
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      const category = btn.closest(".category");
+
+      document.querySelectorAll(".category").forEach(cat => {
+        if (cat !== category) cat.classList.remove("active");
+      });
+
+      category.classList.toggle("active");
+
+    });
+  });
+
+
+  /* INIT */
+  updateCards();
+
+});
+</script>
+
+</body>
+
+</html>

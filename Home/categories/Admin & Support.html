@@ -87,7 +87,7 @@
       
   <!-- Data & AI -->
        <div class="category">
-        <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+        <a href="../categories/Data&Ai.html" class="lin"><button class="category-btn">Data & AI <span class="arrow">›</span></button></a>
         <ul class="sub-categories">
           <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis & Visualization</a></li>
           <li><a href="#" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a></li>
@@ -151,8 +151,8 @@
       </div>
 
       <!-- Admin & Support -->
-      <div class="category">
-        <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+      <div class="category active">
+                <button class="category-btn" onclick="window.location.href='Admin & Support.html'">Admin & Support <span class="arrow">›</span></button>
         <ul class="sub-categories">
           <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
           <li><a href="#" class="filter-link" data-type="Google Docs Experts">Google Docs Experts</a></li>
@@ -767,7 +767,6 @@
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.onclick = () => btn.parentElement.classList.toggle('active');
         });
-
 
         // ================= FILTER =================
         const typeFilter = document.getElementById("typeFilter");
