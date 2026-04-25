@@ -6,7 +6,7 @@
     <title>Hire Talent - TaskHunt</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
+         :root {
             --primary: #0077b8;
             --bg: #f4f7fb;
             --card: #ffffff;
@@ -26,103 +26,260 @@
             color: var(--text);
         }
 
-        /* NAVBAR */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px 30px;
-            height: 70px;
-            background: #ffffff;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        /* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;         
+    padding: 0 5%;        /* عشان ميبقاش لازق في الجوانب */
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    
+    /* أمان إضافي */
+    box-sizing: border-box;
+    overflow: hidden;    /* يمنع أي حاجة بداخل الناف بار إنها تمطه */
+}
 
-        .logo img { height: 50px; }
+.logo {
+    height: 100%;        /* خلي حاوية اللوجو تاخد طول الناف بار */
+    display: flex;
+    align-items: center; /* سنتر اللوجو عمودياً */
+}
 
-        .nav-links {
+.logo a {
+    display: flex;       /* يمنع وجود مسافات غريبة تحت اللينك */
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    
+    height: 145px;    
+    width: auto;         
+    display: block;
+    object-fit: contain;
+    margin-right: 50px;
+    margin-bottom: 25px;
+}
+ .nav-links {
             display: flex;
             list-style: none;
             gap: 30px;
             margin: 0;
             padding: 0;
-        }
+         }
 
-        .nav-links li a {
+    .nav-links li a {
             text-decoration: none;
             color: #333;
+            font-size: 16px;
             font-weight: 500;
-            transition: 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .nav-links li a:hover { color: var(--primary); }
+        .nav-links li a:hover {
+            color: #007bff;
+        }
 
-        .auth-buttons .btn {
-            padding: 8px 20px;
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 18px;
             border-radius: 8px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
             border: none;
-            margin-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .login-blue { background: #f0f6ff; color: var(--primary); border: 1px solid var(--primary) !important; }
-        .signup-blue { background: var(--primary); color: white; }
+
+        .login {
+            background: #f0f6ff;
+            color:#0077B8;
+        }
+
+        .login:hover {
+            background: #e0edff;
+        }
+
+        .signup {
+            background: #0077B8;
+            color: white;
+        }
+
+        .signup:hover {
+            background: #0077B8;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .mobile-auth {
+            display: none;
+        }
+
 
         /* HERO SECTION */
         .hero-section {
-            display: flex;
-            justify-content: center;
-            padding: 60px 20px;
-            background: #fff;
+          display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: auto; 
+    margin-top: 25px; 
+    padding: 20px;
+    background-color: var(--light-bg); 
+            
         }
-
+      .hero-image {
+        flex: 1;
+       display: flex;
+      justify-content: center;
+       } 
+          .hero-image img {
+    width: 100%;
+    max-width: 1000px; /* حجم متناسق مع اللاب توب */
+    height: auto;
+    filter: none; /* حذفنا أي بروز أو ظل للصورة */
+}
         .hero-wrapper {
-            display: flex;
-            align-items: center;
-            max-width: 1200px;
-            gap: 50px;
+                display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+      background: white;
+     padding: 50px 60px; 
+      border-radius: 40px;
+     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+     max-width: 1450px;
+     width: 100%;
+      gap: 40px;
+            
         }
+     
 
-        .hero-left { flex: 1.2; }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 15px; line-height: 1.2; }
-        .hero-content h1 span { color: var(--primary-blue); }
-        .hero-content p { font-size: 1.2rem; color: var(--muted); margin-bottom: 30px; }
+        .hero-left {
+    flex: 1.5; 
+    text-align: left;
+}
 
+
+        .hero-content h1 {
+    font-size: 3rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+
+        .hero-content h1 span { color: var(--primary-blue); } 
+
+        .hero-content p {  font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;  }
+
+
+
+
+    /* ===== search box ===== */
+.search-box{
+  background:#fff;
+  padding:28px;
+  border-radius:22px;
+  width:100%;
+  max-width:500px;
+  margin-left:-40px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+  color:#333;
+}
+
+/* tabs */
+.search-tabs{
+  margin-bottom:18px;
+}
+
+.search-tabs span{
+  cursor:pointer;
+  font-weight:600;
+  color:#666;
+  padding-bottom:6px;
+}
+
+.search-tabs span.active{
+  color:var(--c3);
+  border-bottom:2px solid var(--c3);
+}
+
+    /* صندوق البحث */
+.search-box-container {
+    max-width: 500px;
+}
+/* input wrapper */
         .search-input-wrapper {
-            display: flex;
-            background: #fff;
-            border: 1px solid #e1e8ed;
-            padding: 8px;
-            border-radius: 50px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+             display: flex;
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      border: 1px solid #e1e8ed;
         }
 
         .search-input-wrapper input {
-            flex: 1;
-            border: none;
-            padding: 12px 20px;
-            outline: none;
-            font-size: 1rem;
+               flex: 1;
+             border: none;
+            background: transparent;
+              padding: 12px 20px;
+             outline: none;
+             font-size: 1rem;
         }
+/* button */
+.search-btn{
+  background:#0077B8;
+  color:white;
+  border:none;
+  padding:12px 28px;
+  border-radius:40px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+}
+        .search-btn:hover{
+  background:#051923;
+}
 
-        .search-btn {
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 10px 30px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-        }
+
+
+        .quick-actions {
+    display: flex;
+    gap: 15px;
+}
 
         .hero-buttons { margin-top: 20px; display: flex; gap: 15px; }
+
         .action-btn { padding: 12px 25px; border-radius: 10px; cursor: pointer; font-weight: 600; border: none; }
         .action-btn.blue { background: var(--primary-blue); color: white; }
-        .action-btn.outline { background: #E8F0F8; color: var(--dark-blue); }
+        .action-btn.outline { background: #f0f6ff; color: var(--dark-blue); }
+
+        /* للموبايل */
+@media (max-width: 992px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .hero-left { text-align: center; order: 2; }
+    .hero-image { order: 1; margin-bottom: 20px; }
+    .search-box-container { margin: 0 auto; }
+    .quick-actions { justify-content: center; }
+}
 
         /* FILTER BAR */
         .filter-bar { padding: 30px 0; display: flex; justify-content: center; }
@@ -384,27 +541,37 @@
 </head>
 <body>
 
-   <!-- NAVBAR -->
-   <nav class="nav">
+   <nav class="navbar">
+    <!-- LOGO -->
     <div class="logo">
-      <a href="../Home/home.html">
-        <img src="images/logo.png" alt="Logo">
-      </a>
+        <a href="../Home/home.html">
+            <img src="images/logo.png" alt="TaskHunt Logo">
+        </a>
     </div>
 
-           <ul class="nav-links">
-      <li><a href="../work.html">Find Work</a></li>
-      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-      <li><a href="#about-section">About</a></li>
-      <li><a href="#contact-section">Contact</a></li>
+    <!-- LINKS -->
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../Home/findwork.html">Find Work</a></li>
+        <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+
+        <!-- MOBILE BUTTONS -->
+        <li class="mobile-auth">
+            <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+            <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+        </li>
     </ul>
-     
-          
-           <div class="auth-buttons">
-      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
-      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+
+    <!-- DESKTOP BUTTONS -->
+    <div class="auth-buttons">
+        <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+        <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
     </div>
-  </nav>
+
+    <!-- MENU ICON -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
  
      <section class="hero-section">
     <div class="hero-wrapper">
@@ -420,14 +587,14 @@
                     <button class="search-btn">Search</button>
                 </div>
                  <div class="hero-buttons">
-            <button class="action-btn blue">Post a Job</button>
+         <a href="../../taskhunt-project/Home/Post a Job.html"> <button class="action-btn blue">Post a Job</button></a>  
             <button class="action-btn outline">Browse Freelancers</button>
         </div>
             </div>
         </div>
 
         <div class="hero-image">
-            <img src="[[[.png" alt="Hero Illustration">
+            <img src="./Gemini_Generated_Image_lx8darlx8darlx8d.png" alt="Hero Illustration">
         </div>
     </div>
 </section>
@@ -893,7 +1060,7 @@
 
     <div class="cta-fixed">
         <p>Can't find the right talent?</p>
-        <button>Post a Project</button>
+       <a href="../Home/Post a Job.html"><button>Post a Project</button></a> 
     </div>
 
     <!-- ===== FOOTER ===== -->
@@ -1015,12 +1182,20 @@ function filterCards(){
     card.style.display = show ? "flex" : "none";
   });
 }
+   // ================= NAVBAR =================
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.onclick = () => {
+            navLinks.classList.toggle("active");
+        };
 
 // ================= SIDEBAR =================
     document.querySelectorAll('.category-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             btn.parentElement.classList.toggle('active');
         });
+
     });
 
 </script>
