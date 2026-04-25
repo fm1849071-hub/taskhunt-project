@@ -498,21 +498,26 @@
             font-size: 13px;
         }
         /* CTA */
-        .cta-fixed {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #fff;
-            padding: 15px 40px;
-            border-radius: 50px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            z-index: 1000;
-            border: 1px solid var(--primary);
-            
+   .cta-fixed {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+    border: 1px solid var(--primary);
+}
+
+/* لما توصل للفوتر */
+.cta-stop {
+    position: absolute;
+}
 .cta button {
   background: var(--primary);
   border: none;
@@ -525,7 +530,6 @@
   content: "💼";
   font-size: 30px;
 }
-        }
         .cta-fixed p { margin: 0; font-weight: 600; }
         .cta-fixed button { background: var(--primary); color: #fff; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
 
@@ -1246,6 +1250,23 @@ function filterCards(){
         });
 
     });
+    const cta = document.querySelector('.cta-fixed');
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop <= windowHeight) {
+    // وقف عند الفوتر
+    cta.classList.add('cta-stop');
+    cta.style.bottom = (windowHeight - footerTop + 20) + 'px';
+  } else {
+    // خليه fixed عادي
+    cta.classList.remove('cta-stop');
+    cta.style.bottom = '20px';
+  }
+});
 
 </script>
 </body>
