@@ -1,786 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hire Talent - TaskHunt</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire Talent - TaskHunt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary: #0077b8;
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --primary-blue: #4A90E2;
+            --dark-blue: #2C3E50;
+        }
 
-<style>
-    /* COLOR PALETTE  */
-:root {
-  --c1: #00A8FF;
-  --c2: #0090E0;
-  --c3: #0077B8;
-  --c4: #051923;
-  --c5: #ffffff;
-  --white: #ffffff;
-  --light: #e6f7ff;
-}
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;         
+    padding: 0 5%;        /* عشان ميبقاش لازق في الجوانب */
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    
+    /* أمان إضافي */
+    box-sizing: border-box;
+    overflow: hidden;    /* يمنع أي حاجة بداخل الناف بار إنها تمطه */
 }
 
-body{
-    background:#f4f7fc;
-    color:#222;
+.logo {
+    height: 100%;        /* خلي حاوية اللوجو تاخد طول الناف بار */
+    display: flex;
+    align-items: center; /* سنتر اللوجو عمودياً */
 }
 
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 30px;
-  height: 50px;
-  background: #ffffff;
+.logo a {
+    display: flex;       /* يمنع وجود مسافات غريبة تحت اللينك */
+    align-items: center;
+    height: 100%;
 }
-/* NAVBAR FIX */
 
 .logo img {
-  height: 180px;
-  align-items: center;
-  padding-bottom: 25px;
+    
+    height: 145px;    
+    width: auto;         
+    display: block;
+    object-fit: contain;
+    margin-right: 50px;
+    margin-bottom: 25px;
 }
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-nav ul li a {
-  color: var(--c4);
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-nav ul li a:hover {
-  color: var(--c1);
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); 
-}
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-/* BUTTONS */
+ .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+         }
 
-.auth-buttons .btn {
-    width: 90px; 
-    height: 35px;
-    padding: 8px 0; 
-    text-align: center;
-    display: inline-block;
-    border-radius: 8px; 
-    font-size: 17px;
-    font-weight: 500;
-    cursor: pointer;
-}
-.login-blue {
-    background-color: #f0f6ff;
-    color: white;
-    border: none;
-}
-/* LOGIN BUTTON */
+    .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-.login-btn {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff; 
-}
-.auth-buttons .btn:hover {
-    opacity: 0.8;
-    transform: translateY(-0.5px);
-}
-.signup-blue {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.login-text {
-  background: none;
-  border: none;
-  color: #000000;
-  cursor: pointer;
-  font-weight: 500;
-}
-/* BUTTONS */
-.btn {
-  padding: 10px 18px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-.primary {
-  background: var(--c3);
-  color: #fff;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        .nav-links li a:hover {
+            color: #007bff;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 18px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
 
 
-    .hero-title {
-      display: flex;
-      align-items: center;
+        .login {
+            background: #f0f6ff;
+            color:#0077B8;
+        }
+
+        .login:hover {
+            background: #e0edff;
+        }
+
+        .signup {
+            background: #0077B8;
+            color: white;
+        }
+
+        .signup:hover {
+            background: #0077B8;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .mobile-auth {
+            display: none;
+        }
+
+
+        /* HERO SECTION */
+        .hero-section {
+          display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: auto; 
+    margin-top: 25px; 
+    padding: 20px;
+    background-color: var(--light-bg); 
+            
+        }
+      .hero-image {
+        flex: 1;
+       display: flex;
       justify-content: center;
-      gap: 14px;
-      padding: 60px 6% 30px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .hero-title h2 {
-      font-size: 20px;
-      color: #6b7280;
-      font-weight: 500;
-    }
-
-    .hero-title h1 {
-      font-size: 38px;
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .hero-divider {
-      font-size: 26px;
-      color: #9ca3af;
-    }
-/* ===== HERO SECTION ===== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-.title {
-	color: #5C6AC4;
+       } 
+          .hero-image img {
+    width: 100%;
+    max-width: 1000px; /* حجم متناسق مع اللاب توب */
+    height: auto;
+    filter: none; /* حذفنا أي بروز أو ظل للصورة */
 }
-    :root {
-        --primary-blue: #4A90E2;
-        --dark-blue: #2C3E50;
-        --light-bg: #F4F7F9;
-    }
+        .hero-wrapper {
+                display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+      background: white;
+     padding: 50px 60px; 
+      border-radius: 40px;
+     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+     max-width: 1450px;
+     width: 100%;
+      gap: 40px;
+            
+        }
+     
 
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        background-color: var(--light-bg);
-    }
+        .hero-left {
+    flex: 1.5; 
+    text-align: left;
+}
 
-    /* السكشن الأساسي لضمان التوسط في الصفحة */
-    .hero-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 90vh; /* ليأخذ أغلب طول الشاشة */
-        padding: 20px;
-    }
 
-    /* الكارت الأبيض الكبير */
-    .hero-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: white;
-        padding: 60px;
-        border-radius: 40px; /* حواف دائرية ناعمة */
-        box-shadow: 0 20px 60px rgba(0,0,0,0.05); /* ظل خفيف جداً */
-        max-width: 1200px;
-        width: 100%;
-        gap: 50px;
-    }
+        .hero-content h1 {
+    font-size: 3rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
 
-    /* تنسيق المحتوى النصي */
-    .hero-left {
-        flex: 1.2;
-    }
 
-    .hero-content h1 {
-        font-size: 3.2rem;
-        color: var(--dark-blue);
-        margin-bottom: 10px;
-        line-height: 1.1;
-    }
+        .hero-content h1 span { color: var(--primary-blue); } 
 
-    .hero-content h1 span {
-        color: var(--primary-blue);
-    }
+        .hero-content p {  font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;  }
 
-    .hero-content p {
-        font-size: 1.2rem;
-        color: #7f8c8d;
-        margin-bottom: 35px;
-    }
+
+
+
+    /* ===== search box ===== */
+.search-box{
+  background:#fff;
+  padding:28px;
+  border-radius:22px;
+  width:100%;
+  max-width:500px;
+  margin-left:-40px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+  color:#333;
+}
+
+/* tabs */
+.search-tabs{
+  margin-bottom:18px;
+}
+
+.search-tabs span{
+  cursor:pointer;
+  font-weight:600;
+  color:#666;
+  padding-bottom:6px;
+}
+
+.search-tabs span.active{
+  color:var(--c3);
+  border-bottom:2px solid var(--c3);
+}
 
     /* صندوق البحث */
-    .search-box-container {
-        max-width: 500px;
-    }
-
-    .search-input-wrapper {
-        display: flex;
-        background:white;
-        background: #ffffff;
-        padding: 8px;
-        border-radius: 50px;
-        margin-bottom: 20px;
-        border: 1px solid #e1e8ed;
-    }
-
-    .search-input-wrapper input {
-        flex: 1;
-        border: none;
-        background: transparent;
-        padding: 12px 20px;
-        outline: none;
-        font-size: 1rem;
-    }
-
-    .search-btn {
-        background: var(--primary-blue);
-        color: white;
-        border: none;
-        padding: 10px 30px;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.3s;
-    }
-
-    .search-btn:hover {
-        background: #0077b8;
-    }
-
-    .quick-actions {
-        display: flex;
-        gap: 15px;
-    }
-
-    .action-btn {
-        padding: 12px 25px;
-        border-radius: 12px;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.3s;
-    }
-
-    .action-btn.blue {
-        background: var(--primary-blue);
-        color: white;
-    }
-
-    .action-btn.outline {
-        background: #E8F0F8;
-        color: var(--dark-blue);
-    }
-
-    .action-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* تنسيق الصورة */
-    .hero-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-    }
-
-    .hero-image img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        /* إضافة تأثير بسيط لجعل الصورة تبدو كأنها عائمة */
-        filter: none;
-    }
-
-    /* لجعل التصميم متجاوب مع الموبايل */
-    @media (max-width: 992px) {
-        .hero-wrapper {
-            flex-direction: column;
-            text-align: center;
-            padding: 40px 20px;
+.search-box-container {
+    max-width: 500px;
+}
+/* input wrapper */
+        .search-input-wrapper {
+             display: flex;
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      border: 1px solid #e1e8ed;
         }
-        .hero-image {
-            order: -1; /* الصورة تظهر فوق الكلام في الموبايل */
+
+        .search-input-wrapper input {
+               flex: 1;
+             border: none;
+            background: transparent;
+              padding: 12px 20px;
+             outline: none;
+             font-size: 1rem;
         }
-        .search-box-container {
-            margin: 0 auto;
-        }
+/* button */
+.search-btn{
+  background:#0077B8;
+  color:white;
+  border:none;
+  padding:12px 28px;
+  border-radius:40px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+}
+        .search-btn:hover{
+  background:#051923;
+}
+
+
+
         .quick-actions {
-            justify-content: center;
+    display: flex;
+    gap: 15px;
+}
+
+        .hero-buttons { margin-top: 20px; display: flex; gap: 15px; }
+
+        .action-btn { padding: 12px 25px; border-radius: 10px; cursor: pointer; font-weight: 600; border: none; }
+        .action-btn.blue { background: var(--primary-blue); color: white; }
+        .action-btn.outline { background: #f0f6ff; color: var(--dark-blue); }
+
+        /* للموبايل */
+@media (max-width: 992px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .hero-left { text-align: center; order: 2; }
+    .hero-image { order: 1; margin-bottom: 20px; }
+    .search-box-container { margin: 0 auto; }
+    .quick-actions { justify-content: center; }
+}
+
+        /* FILTER BAR */
+        .filter-bar { padding: 30px 0; display: flex; justify-content: center; }
+        .filter-container {
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 14px;
+            display: flex;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
         }
-    }
-/* Cards */
-.cards{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
+        .filter-container select { padding: 10px; border-radius: 8px; border: 1px solid #ddd; min-width: 150px; }
 
-.card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    width:23%;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    transition:0.3s;
-}
+        /* LAYOUT */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
 
-.card:hover{
-    transform:translateY(-5px);
-}
+        /* SIDEBAR */
+        .sidebar {
+            width: 280px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        .category-btn {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 10px 0;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+        .sub-categories { list-style: none; padding-left: 15px; margin: 10px 0; display: none; }
+        .category.active .sub-categories { display: block; }
+        .sub-categories li a { text-decoration: none; color: var(--muted); font-size: 14px; display: block; padding: 5px 0; }
+        .sub-categories li a:hover { color: var(--primary); }
 
-/* Header (صورة + بيانات) */
-.card-header{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:15px;
-}
+        /* MAIN CONTENT - LIST VIEW CARDS */
+        .main-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
 
-/* الصورة تبقى مدورة وصغيرة */
-.card-header img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    object-fit:cover;
-}
+        .up-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            width: 100%;
+        }
 
-/* النصوص */
-.card h3{
-    font-size:16px;
-    margin-bottom:5px;
-}
+        .up-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
 
-.card p{
-    font-size:13px;
-    color:#666;
-}
+        .card-left { display: flex; gap: 20px; align-items: center; }
+        .avatar-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; }
 
-/* النجوم */
-.rate{
-    color:gold;
-    font-size:14px;
-}
+        .card-info h3 { margin: 0 0 5px 0; font-size: 18px; color: #111; display: flex; align-items: center; gap: 8px; }
+        /* Verification Badge */
+        .card-info h3::after {
+            content: '✓';
+            background: #4A90E2;
+            color: #fff;
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
 
-/* السعر */
-.price{
-    margin:10px 0;
-    font-weight:600;
-}
+        .role { font-size: 15px; color: #4b5563; font-weight: 500; }
+        .category-tag { font-size: 13px; color: var(--primary); background: #eef6ff; padding: 2px 8px; border-radius: 4px; display: inline-block; margin: 5px 0; }
+        .meta { font-size: 14px; color: #6b7280; margin-top: 5px; }
+        .meta span { color: #f59e0b; font-weight: bold; }
 
-/* الأزرار */
-.card-buttons{
-    display:flex;
-    gap:10px; /* مسافة بسيطة بينهم */
-}
+        .card-right { text-align: right; }
+        .hours { font-size: 24px; font-weight: 700; color: #111; }
+        .hours span { font-size: 14px; color: var(--muted); font-weight: 400; }
+        
+        .view-profile-btn {
+            margin-top: 15px;
+            padding: 10px 25px;
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .view-profile-btn:hover { background: var(--primary); color: #fff; }
 
-.card-buttons button{
-    flex:1;
-    padding:8px 12px;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:13px;
-}
-
-.view{
-    background:#e5e7eb;
-}
-
-.hire{
-    background:#3b82f6;
-    color:white;
-}
-.featured-section{
-    padding:60px 8%;
-}
-.how-section{
-    padding:60px 8%;
-    background:#f4f7fc;
-}
-
-.section-title{
-    font-size:28px;
-    margin-bottom:30px;
-    font-weight:600;
-}
-
-.how-container{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.how-card{
-    background:white;
-    padding:25px 20px;
-    border-radius:14px;
-    width:23%;
-    display:flex;
-    align-items:center;
-    gap:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    transition:0.3s;
-}
-
-.how-card:hover{
-    transform:translateY(-5px);
-}
-
-.icon-circle{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#e8f1ff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#3b82f6;
-    font-size:22px;
-}
-
-.how-text h4{
-    font-size:16px;
-    font-weight:500;
-    margin:0;
-    line-height:1.4;
-}
-
-@media(max-width:1000px){
-    .how-card{
-        width:48%;
-    }
-}
-
-@media(max-width:600px){
-    .how-card{
-        width:100%;
-    }
-}
-.why-wrapper{
-    display:flex;
-    justify-content:space-between;
-    gap:40px;
-    padding:60px 8% 0;
-    background:#f4f7fc;
-}
-
-.why-left{
-    flex:1;
-}
-
-.why-title{
-    font-size:28px;
-    font-weight:600;
-}
-
-.why-sub{
-    color:#666;
-    margin:10px 0 30px;
-}
-
-.why-card{
-    background:white;
-    border-radius:14px;
-    padding:20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.why-icon{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#e8f1ff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:22px;
-    color:#3b82f6;
-    flex-shrink:0;
-}
-
-.why-content{
-    flex:1;
-}
-
-.why-content h4{
-    margin:0;
-    font-weight:600;
-}
-
-.why-content p{
-    margin:6px 0 0;
-    font-size:14px;
-    color:#666;
-}
-
-.why-badge{
-    text-align:right;
-    font-size:14px;
-}
-
-.rating{
+/* VIEW MORE */
+.view-more{ 
     display:block;
-    margin-bottom:5px;
-}
-
-.tag{
-    background:#eef4ff;
-    padding:6px 10px;
-    border-radius:6px;
-    font-size:13px;
-    color:#3b82f6;
-}
-
-/* Right CTA Box */
-
-.why-right{
-    width:40%;
-    background:white;
-    padding:40px;
-    border-radius:16px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    text-align:center;
-}
-
-.why-right h2{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.why-right p{
-    color:#666;
-    margin-bottom:25px;
-}
-
-.why-right button{
-    background:linear-gradient(135deg,#3b82f6,#2563eb);
-    color:white;
-    padding:14px 30px;
-    border:none;
+    margin:20px auto;
+    padding:12px 24px;
+    background:var(--primary);
+    color:#fff;border:none;
     border-radius:10px;
-    font-size:16px;
-    cursor:pointer;
+    cursor:pointer
 }
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #051923;
+            padding: 40px 10px 20px;
+            font-family: "Cairo", sans-serif;
+            color: #ffffff;
+        }
 
-/* Responsive */
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-@media(max-width:1000px){
-    .why-wrapper{
-        flex-direction:column;
-    }
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
 
-    .why-right{
-        width:100%;
-    }
-}
+        .footer-col h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-weight: 600;
+        }
 
-    /* Footer */ 
-.footer {
-  background: #051923;
-  padding: 20px 10px;
-  font-family: "Cairo", sans-serif;
-  direction: ltr;
-  text-align: left;
-  color: #ffffff;
-}
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+        .footer-col ul li {
+            margin-bottom: 14px;
+        }
 
-.footer-col {
-  flex: 1;
-  width: 30%;
-  min-width: 200px;
-}
+        .footer-col ul li a {
+            text-decoration: none;
+            color: #adb5bd;
+            transition: 0.3s;
+        }
 
-/* تخصيص مساحة أكبر للفورم */
-.contact-col {
-  flex: 1; 
-  min-width: 200px;
-}
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 5px;
+        }
 
-.footer-col h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #ffffff;
-  font-weight: 600;
-}
+        .footer-input {
+            width: 92%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            margin-bottom: 13px;
+            outline: none;
+        }
 
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
+        .footer-btn {
+            width: 92%;
+            padding: 12px;
+            background: #00a8e8;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-.footer-col ul li {
-  margin-bottom: 14px;
-}
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-.footer-col ul li a {
-  text-decoration: none;
-  color: #adb5bd;
-  font-size: 16px;
-  transition: 0.3s;
-}
+        .social-icon {
+            width: 28px;
+            height: 28px;
+            filter: grayscale(1) invert(1);
+            opacity: 0.7;
+            transition: 0.3s;
+        }
 
-.footer-col ul li a:hover {
-  color: #ffffff;
-  padding-left: 5px;
-  opacity: 0.8;
-}
+        .social-icon:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
 
-/* Contact Form Styling */
-.contact-box h3 {
-  margin-bottom: 7px;
-}
-
-.contact-box p {
-  font-size: 14px;
-  color: #adb5bd;
-  margin-bottom: 10px;
-}
-
-.form-group {
-  margin-bottom: 13px;
-}
-
-.footer-input {
-  width: 92%;
-  padding: 12px 15px;
-  background: rgba(255, 255, 255, 0.05); 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #6c757d;
+            font-size: 13px;
+        }
+        /* CTA */
+        .cta-fixed {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 1000;
+            border: 1px solid var(--primary);
+            
+.cta button {
+  background: var(--primary);
+  border: none;
+  padding: 10px 18px;
   border-radius: 8px;
   color: #fff;
-  font-size: 14px;
-  outline: none;
-  transition: 0.3s;
-}
-
-.footer-input:focus {
-  border-color: #00a8e8; 
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.footer-btn {
-  width: 92%;
-  padding: 12px;
-  background: #00a8e8;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
+.cta::before{
+  content: "💼";
+  font-size: 30px;
+}
+        }
+        .cta-fixed p { margin: 0; font-weight: 600; }
+        .cta-fixed button { background: var(--primary); color: #fff; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
 
-.footer-btn:hover {
-  background: #007ea7;
-  transform: translateY(-2px);
-}
-
-/* Social Icons */
-.social-section {
-    justify-items: left;
-  margin-top: 30px;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icon {
-  width: 28px;
-  height: 28px;
-  filter: grayscale(1) invert(1); /* جعل الأيقونات بيضاء لتناسب التصميم */
-  opacity: 0.7;
-  transition: 0.3s;
-}
-
-.social-icon:hover {
-  opacity: 1;
-  filter: none; /* ترجع لألوانها الأصلية عند المرور عليها */
-  transform: scale(1.2);
-}
-
-/* Bottom Bar */
-.footer-bottom {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  font-size: 13px;
-  color: #6c757d;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Responsive */
-@media(max-width:1000px){
-    .card,.step{
-        width:48%;
-    }
-}
-
-@media(max-width:600px){
-    .hero{
-        flex-direction:column;
-        text-align:center;
-    }
-    .card,.step{
-        width:100%;
-    }
-    .search-box input{
-        width:100%;
-        margin-bottom:10px;
-    }
-}
-</style>
+        @media (max-width: 768px) {
+            .hero-wrapper { flex-direction: column; text-align: center; }
+            .page-layout { flex-direction: column; }
+            .sidebar { width: 100%; position: static; }
+            .up-card { flex-direction: column; text-align: center; gap: 20px; }
+            .card-left { flex-direction: column; }
+            .card-right { text-align: center; border-top: 1px solid #eee; padding-top: 15px; width: 100%; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-   <nav class="nav">
+   <nav class="navbar">
+    <!-- LOGO -->
     <div class="logo">
-      <a href="../Home/home.html">
-        <img src="images/logo.png" alt="Logo">
-      </a>
+        <a href="../Home/home.html">
+            <img src="images/logo.png" alt="TaskHunt Logo">
+        </a>
     </div>
 
-           <ul class="nav-links">
-      <li><a href="../work.html">Find Work</a></li>
-      <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-      <li><a href="#about-section">About</a></li>
-      <li><a href="#contact-section">Contact</a></li>
+    <!-- LINKS -->
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../Home/findwork.html">Find Work</a></li>
+        <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+
+        <!-- MOBILE BUTTONS -->
+        <li class="mobile-auth">
+            <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+            <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
+        </li>
     </ul>
-     
-          
-           <div class="auth-buttons">
-      <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../signup/asksignup.html'">Login</button>
-      <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
+
+    <!-- DESKTOP BUTTONS -->
+    <div class="auth-buttons">
+        <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
+        <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
     </div>
-  </nav>
+
+    <!-- MENU ICON -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
  
      <section class="hero-section">
     <div class="hero-wrapper">
@@ -796,209 +587,617 @@ nav ul li a:hover {
                     <button class="search-btn">Search</button>
                 </div>
                  <div class="hero-buttons">
-            <button class="action-btn blue">Post a Job</button>
+         <a href="../../taskhunt-project/Home/Post a Job.html"> <button class="action-btn blue">Post a Job</button></a>  
             <button class="action-btn outline">Browse Freelancers</button>
         </div>
             </div>
         </div>
 
         <div class="hero-image">
-            <img src="[[[.png" alt="Hero Illustration">
+            <img src="./Gemini_Generated_Image_lx8darlx8darlx8d.png" alt="Hero Illustration">
         </div>
     </div>
 </section>
 
-
-
-<!-- Featured -->
- <section class="featured-section">
-    <h2 class="section-title">Featured Freelancers</h2>
-        <div class="cards">
-<div class="card">
-    <div class="card-header">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg">
-        <div class="info">
-            <h3>Sara Ali</h3>
-            <p>UI/UX Designer</p>
-            <div class="rate">
-                ★★★★★
-            </div>
-        </div>
-    </div>
-    <div class="price">$20/hr</div>
-    <div class="card-buttons">
-        <button class="view">View</button>
-        <button class="hire">Hire</button>
-    </div>
-</div>
-
-
-        
-        <div class="card">
-              <div class="card-header">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg">
-            <div class="info">
-            <h3>Ahmed Omar</h3>
-            <p>Full Stack Developer</p>
-            <div class="rate">
-                ★★★★☆
-            </div>
-            </div>
-        </div>
-            <div class="price">$25/hr</div>
-            <div class="card-buttons">
-                <button class="view">View</button>
-                <button class="hire">Hire</button>
-            </div>
-        </div>
-
-        <div class="card">
-               <div class="card-header">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg">
-            <div class="info">
-            <h3>Layla Hassan</h3>
-            <p>Graphic Designer</p>
-            <div class="rate">
-                ★★★★★
-            </div>
-            </div>
-        </div>
-            <div class="price">$18/hr</div>
-            <div class="card-buttons">
-                <button class="view">View</button>
-                <button class="hire">Hire</button>
-            </div>
-        </div>
-
-        <div class="card">
-                <div class="card-header">
-            <img src="https://randomuser.me/api/portraits/men/45.jpg">
-            <div class="info">
-            <h3>Omar Mahmoud</h3>
-            <p>SEO Expert</p>
-            <div class="rate">
-                ★★★★★
-            </div>
-            </div>
-        </div>
-            <div class="price">$22/hr</div>
-            <div class="card-buttons">
-                <button class="view">View</button>
-                <button class="hire">Hire</button>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- CTA -->
-<section class="why-wrapper">
-
-    <div class="why-left">
-        <h2 class="why-title">Why Choose Us?</h2>
-        <p class="why-sub">Work with verified and professional freelancers.</p>
-
-        <!-- Card 1 -->
-        <div class="why-card">
-            <div class="why-icon">
-                <i class="fa-solid fa-shield-check"></i>
-            </div>
-
-            <div class="why-content">
-                <h4>Verified Freelancers</h4>
-                <p>Work with verified and professional freelancers</p>
-            </div>
-
-            <div class="why-badge">
-                <span class="rating">⭐ 1/7</span>
-                <span class="tag">Fast & Finance <i class="fa-solid fa-check"></i></span>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="why-card">
-            <div class="why-icon">
-                <i class="fa-solid fa-location-dot"></i>
-            </div>
-
-            <div class="why-content">
-                <h4>Secure Payments</h4>
-                <p>Your payments are protected and secure.</p>
-            </div>
-
-            <div class="why-badge">
-                <span class="tag">Active protections <i class="fa-solid fa-check"></i></span>
-            </div>
+    <div class="filter-bar">
+        <div class="filter-container">
+            <select id="typeFilter">
+                <option value="all">All Categories</option>
+                <option value="Data & AI">Data & AI</option>
+                <option value="Development & IT">Development & IT</option>
+                <option value="Design & Creative">Design & Creative</option>
+            </select>
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="0-30">Up to $30/hr</option>
+                <option value="30-50">$30 - $50/hr</option>
+            </select>
+            <select id="expFilter">
+                <option value="all">All Experience</option>
+                <option value="0-3">Junior (0-3 yrs)</option>
+                <option value="4-7">Mid (4-7 yrs)</option>
+            </select>
         </div>
     </div>
 
-    <!-- Right Side CTA -->
-    <div class="why-right">
-        <h2>Ready to hire?</h2>
-        <p>Post your project today!</p>
-        <button>Post a Job</button>
-    </div>
+    <div class="page-layout">
+ <aside class="sidebar">
+            <button class="category-btn"><b>Categories</b><span class="arrow">›</span></button>
 
-</section>
+            <!-- Data & AI -->
+            <div class="category">
+                <button class="category-btn">Data & AI <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Data Analysis & Visualization">Data Analysis &
+                            Visualization</a></li>
+                    <li><a href="#" class="filter-link" data-type="Machine Learning Models">Machine Learning Models</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Data Engineering">Data Engineering</a></li>
+                    <li><a href="#" class="filter-link" data-type="Deep Learning">Deep Learning</a></li>
+                    <li><a href="#" class="filter-link" data-type="Predictive Analytics">Predictive Analytics</a></li>
+                    <li><a href="#" class="filter-link" data-type="Generative AI">Generative AI</a></li>
+                </ul>
+            </div>
 
-  <!-- FOOTER -->
-     <footer class="footer">
-  <div class="footer-container">
+            <!-- Development & IT -->
+            <div class="category">
+                <button class="category-btn">Development & IT <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Full Stack Engineers">Full Stack Engineers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Backend Developers">Backend Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="DevOps Engineers">DevOps Engineers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Android Developers">Android Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Cyber Security Engineers">Cyber Security
+                            Engineers</a></li>
+                </ul>
+            </div>
 
-    <div class="footer-col">
-      <h3>Task Hunt</h3>
-      <ul>
-        <li><a href="#">About Task Hunt</a></li>
-        <li><a href="#">How It Works</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Rights Protection</a></li>
-      </ul>
-      <div class="social-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon" alt="TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter">
+            <!-- Design & Creative -->
+            <div class="category">
+                <button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Brand & Logo Designers">Brand & Logo Designers</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Graphic Designers">Graphic Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="UX Designers">UX Designers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Instagram Reel Editors">Instagram Reel Editors</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Youtube Video Editors">Youtube Video Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Videographers">Videographers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Web Designers">Web Designers</a></li>
+                </ul>
+            </div>
+
+            <!-- Sales & Marketing -->
+            <div class="category">
+                <button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Branding Experts">Branding Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Business Development Managers">Business Development
+                            Managers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Digital Marketers">Digital Marketers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Facebook Ads Specialists">Facebook Ads
+                            Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Ecommerce Consultants">Ecommerce Consultants</a></li>
+                </ul>
+            </div>
+
+            <!-- Writing & Translation -->
+            <div class="category">
+                <button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Academic Writers">Academic Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Business Plan Writers">Business Plan Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Copy Editors">Copy Editors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Creative Writers">Creative Writers</a></li>
+                    <li><a href="#" class="filter-link" data-type="English to Spanish Translators">English to Spanish
+                            Translators</a></li>
+                </ul>
+            </div>
+
+            <!-- Admin & Support -->
+            <div class="category">
+                <button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Personal Assistants">Personal Assistants</a></li>
+                    <li><a href="#" class="filter-link" data-type="Google Docs Experts">Google Docs Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Google Sheets Experts">Google Sheets Experts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Excel Experts">Microsoft Excel Experts</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Office Specialists">Microsoft Office
+                            Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Microsoft Word Experts">Microsoft Word Experts</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="PowerPoint Experts">PowerPoint Experts</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Finance & Accounting -->
+            <div class="category">
+                <button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Business Analysts">Business Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Financial Analysts">Financial Analysts</a></li>
+                    <li><a href="#" class="filter-link" data-type="Management Consultants">Management Consultants</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Data Entry Specialists">Data Entry Specialists</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Financial Reporting Analysts">Financial Reporting
+                            Analysts</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="category">
+                <button class="category-btn">Legal <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Corporate Law Professionals">Corporate Law
+                            Professionals</a></li>
+                    <li><a href="#" class="filter-link" data-type="Immigration Law Professionals">Immigration Law
+                            Professionals</a></li>
+                    <li><a href="#" class="filter-link" data-type="Legal Advisors">Legal Advisors</a></li>
+                    <li><a href="#" class="filter-link" data-type="Legal Consultants">Legal Consultants</a></li>
+                </ul>
+            </div>
+            <!-- HR & Training -->
+            <div class="category">
+                <button class="category-btn">HR & Training <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="Employee Engagement Specialists">Employee Engagement
+                            Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Leadership Development Specialists">Leadership
+                            Development Specialists</a></li>
+                    <li><a href="#" class="filter-link" data-type="Technical Recruiters">Technical Recruiters</a></li>
+                    <li><a href="#" class="filter-link" data-type="Curriculum Developers">Curriculum Developers</a></li>
+                </ul>
+            </div>
+
+            <!-- Engineering & Architecture -->
+            <div class="category">
+                <button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+                <ul class="sub-categories">
+                    <li><a href="#" class="filter-link" data-type="AutoCAD Developers">AutoCAD Developers</a></li>
+                    <li><a href="#" class="filter-link" data-type="Engineering Consultants">Engineering Consultants</a>
+                    </li>
+                    <li><a href="#" class="filter-link" data-type="Interior Architects">Interior Architects</a></li>
+                    <li><a href="#" class="filter-link" data-type="Architectural Modelers">Architectural Modelers</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+<main class="main-content" id="mainContent">
+
+    <section id="data-ai" class="category-section" data-section-name="Data & AI">
+        <div class="up-card" data-price="25" data-type="Data & AI" data-exp="5">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Ahmed Samir</h3>
+                    <div class="role">Data Analyst - Excel & Power BI</div>
+                    <div class="category-tag">Data & AI</div>
+                    <div class="meta"><span>⭐ 4.8</span> | Exp: 5 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$25 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
         </div>
-      </div>
+
+        <div class="up-card" data-price="40" data-type="Data & AI" data-exp="6">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Sara Ali</h3>
+                    <div class="role">Machine Learning Engineer</div>
+                    <div class="category-tag">Data & AI</div>
+                    <div class="meta"><span>⭐ 4.9</span> | Exp: 6 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$40 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+
+        <div class="up-card" data-price="45" data-type="Data & AI" data-exp="4">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/3.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Ali Mohamed</h3>
+                    <div class="role">Deep Learning Specialist</div>
+                    <div class="category-tag">Data & AI</div>
+                    <div class="meta"><span>⭐ 4.8</span> | Exp: 4 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$45 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="dev-it" class="category-section" data-section-name="Development & IT">
+        <div class="up-card" data-price="35" data-type="Development & IT" data-exp="6">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/4.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Mahmoud Tarek</h3>
+                    <div class="role">Full Stack Developer</div>
+                    <div class="category-tag">Development & IT</div>
+                    <div class="meta"><span>⭐ 4.9</span> | Exp: 6 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$35 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+
+        <div class="up-card" data-price="30" data-type="Development & IT" data-exp="5">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/5.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Omar Hassan</h3>
+                    <div class="role">Backend Developer</div>
+                    <div class="category-tag">Development & IT</div>
+                    <div class="meta"><span>⭐ 4.7</span> | Exp: 5 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$30 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+
+        <div class="up-card" data-price="38" data-type="Development & IT" data-exp="4">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/women/3.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Nour Adel</h3>
+                    <div class="role">DevOps Engineer</div>
+                    <div class="category-tag">Development & IT</div>
+                    <div class="meta"><span>⭐ 4.8</span> | Exp: 4 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$38 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="design" class="category-section" data-section-name="Design & Creative">
+        <div class="up-card" data-price="22" data-type="Design & Creative" data-exp="4">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/women/4.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Farida Ahmed</h3>
+                    <div class="role">Graphic Designer</div>
+                    <div class="category-tag">Design & Creative</div>
+                    <div class="meta"><span>⭐ 4.9</span> | Exp: 4 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$22 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+        <div class="up-card" data-price="28" data-type="Design & Creative" data-exp="5">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/6.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Youssef Gamal</h3>
+                    <div class="role">UX/UI Designer</div>
+                    <div class="category-tag">Design & Creative</div>
+                    <div class="meta"><span>⭐ 4.8</span> | Exp: 5 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$28 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="marketing" class="category-section" data-section-name="Sales & Marketing">
+        <div class="up-card" data-price="20" data-type="Sales & Marketing" data-exp="4">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/women/5.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Salma Reda</h3>
+                    <div class="role">Digital Marketing Expert</div>
+                    <div class="category-tag">Sales & Marketing</div>
+                    <div class="meta"><span>⭐ 4.7</span> | Exp: 4 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$20 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+        <div class="up-card" data-price="25" data-type="Sales & Marketing" data-exp="3">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/8.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Ahmed Nabil</h3>
+                    <div class="role">SEO Specialist</div>
+                    <div class="category-tag">Sales & Marketing</div>
+                    <div class="meta"><span>⭐ 4.8</span> | Exp: 3 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$25 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="writing" class="category-section" data-section-name="Writing & Translation">
+        <div class="up-card" data-price="18" data-type="Writing & Translation" data-exp="4">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/women/7.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Nada Sherif</h3>
+                    <div class="role">Content Writer</div>
+                    <div class="category-tag">Writing & Translation</div>
+                    <div class="meta"><span>⭐ 4.9</span> | Exp: 4 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$18 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+        <div class="up-card" data-price="22" data-type="Writing & Translation" data-exp="6">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/9.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Mohamed Ibrahim</h3>
+                    <div class="role">Translator (EN/AR)</div>
+                    <div class="category-tag">Writing & Translation</div>
+                    <div class="meta"><span>⭐ 4.8</span> | Exp: 6 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$22 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="admin" class="category-section" data-section-name="Admin & Support">
+        <div class="up-card" data-price="15" data-type="Admin & Support" data-exp="5">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/10.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Khaled Emad</h3>
+                    <div class="role">Virtual Assistant</div>
+                    <div class="category-tag">Admin & Support</div>
+                    <div class="meta"><span>⭐ 4.7</span> | Exp: 5 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$15 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+        <div class="up-card" data-price="20" data-type="Admin & Support" data-exp="7">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Amr Adel</h3>
+                    <div class="role">Excel Expert</div>
+                    <div class="category-tag">Admin & Support</div>
+                    <div class="meta"><span>⭐ 4.9</span> | Exp: 7 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$20 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="finance" class="category-section" data-section-name="Finance & Accounting">
+        <div class="up-card" data-price="30" data-type="Finance & Accounting" data-exp="6">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Mona Lotfy</h3>
+                    <div class="role">Financial Analyst</div>
+                    <div class="category-tag">Finance & Accounting</div>
+                    <div class="meta"><span>⭐ 4.8</span> | Exp: 6 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$30 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="legal" class="category-section" data-section-name="Legal">
+        <div class="up-card" data-price="45" data-type="Legal" data-exp="10">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/men/14.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Hossam Reda</h3>
+                    <div class="role">Corporate Lawyer</div>
+                    <div class="category-tag">Legal</div>
+                    <div class="meta"><span>⭐ 5.0</span> | Exp: 10 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$45 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="hr" class="category-section" data-section-name="HR & Training">
+        <div class="up-card" data-price="25" data-type="HR & Training" data-exp="5">
+            <div class="card-left">
+                <img src="https://randomuser.me/api/portraits/women/12.jpg" class="avatar-img">
+                <div class="card-info">
+                    <h3>Reem Hany</h3>
+                    <div class="role">Technical Recruiter</div>
+                    <div class="category-tag">HR & Training</div>
+                    <div class="meta"><span>⭐ 4.7</span> | Exp: 5 yrs | Egypt</div>
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="hours">$25 <span>/hr</span></div>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+        </div>
+    </section>
+     <div id="cards"></div>
+<button class="view-more" onclick="loadMore()">View More</button>
+</main>
     </div>
 
-    <div class="footer-col">
-      <h3>Community</h3>
-      <ul>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Discussions</a></li>
-        <li><a href="#">Topics</a></li>
-        <li><a href="#">User Experiences</a></li>
-      </ul>
+    <div class="cta-fixed">
+        <p>Can't find the right talent?</p>
+       <a href="../Home/Post a Job.html"><button>Post a Project</button></a> 
     </div>
 
-    <div id="contact-section" class="footer-col contact-col">
-      <div class="contact-box">
-        <form id="contactForm">
-          <h3>Drop us a message</h3>
-          <p>We'd love to hear from you!</p>
-          
-          <div class="form-group">
-            <input type="text" class="footer-input" placeholder="Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" class="footer-input" placeholder="Email" required>
-          </div>
-          <div class="form-group">
-            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="footer-btn">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Task Hunt — All rights reserved</p>
-  </div>
-</footer>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Task Hunt</h3>
+                <ul>
+                    <li><a href="#">About Task Hunt</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Rights Protection</a></li>
+                </ul>
+                <div class="social-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon"
+                            alt="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon"
+                            alt="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" class="social-icon"
+                            alt="TikTok">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"
+                            alt="Twitter">
+                    </div>
+                </div>
+            </div>
 
+            <div class="footer-col">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Topics</a></li>
+                </ul>
+            </div>
 
+            <div id="contact-section" class="footer-col contact-col">
+                <div class="contact-box">
+                    <form id="contactForm">
+                        <h3>Drop us a message</h3>
+                        <div class="form-group">
+                            <input type="text" class="footer-input" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="footer-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="footer-input" rows="3" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="footer-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Task Hunt — All rights reserved</p>
+        </div>
+    </footer>
+<script>
+    let cards = document.querySelectorAll(".up-card");
+let visibleCards = 4;
 
+// اخفاء كل الكروت في البداية
+cards.forEach((card, index) => {
+  if (index >= visibleCards) {
+    card.style.display = "none";
+  }
+});
+function loadMore() {
+  let cards = document.querySelectorAll(".up-card");
+
+  let nextLimit = visibleCards + 4;
+
+  for (let i = visibleCards; i < nextLimit && i < cards.length; i++) {
+    cards[i].style.display = "flex";
+  }
+
+  visibleCards = nextLimit;
+
+  // لو خلصنا الكروت نخفي الزر
+  if (visibleCards >= cards.length) {
+    document.querySelector(".view-more").style.display = "none";
+  }
+}
+    const typeFilter = document.getElementById("typeFilter");
+const priceFilter = document.getElementById("priceFilter");
+const expFilter = document.getElementById("expFilter");
+
+function filterCards(){
+  const typeVal = typeFilter.value;
+  const priceVal = priceFilter.value;
+  const expVal = expFilter.value;
+
+  const cards = document.querySelectorAll(".up-card");
+
+  cards.forEach(card => {
+    let show = true;
+
+    // TYPE
+    if(typeVal !== "all" && card.dataset.type !== typeVal){
+      show = false;
+    }
+
+    // PRICE
+    if(priceVal !== "all"){
+      let price = parseInt(card.dataset.price);
+      let [min, max] = priceVal.split("-").map(Number);
+      if(price < min || price > max) show = false;
+    }
+
+    // EXPERIENCE
+    if(expVal !== "all"){
+      let exp = parseInt(card.dataset.exp);
+      let [min, max] = expVal.split("-").map(Number);
+      if(exp < min || exp > max) show = false;
+    }
+
+    card.style.display = show ? "flex" : "none";
+  });
+}
+   // ================= NAVBAR =================
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.onclick = () => {
+            navLinks.classList.toggle("active");
+        };
+
+// ================= SIDEBAR =================
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.toggle('active');
+        });
+
+    });
+
+</script>
 </body>
-
 </html>

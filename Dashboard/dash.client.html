@@ -623,6 +623,68 @@
                 padding: 20px;
             }
         }
+        /* Profile card styles copied from freelancer layout */
+        .unified-profile-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .profile-main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar-info-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-inline-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+        }
+
+        .inline-stat { text-align: center; }
+        .inline-stat strong { display: block; font-size: 18px; color: #333; }
+        .inline-stat span { font-size: 13px; color: #777; }
+
+        .btn-clean {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-left: 5px;
+        }
+
+        .btn-clean:hover { background: #eef2f5; }
+
+        .section-divider { border: 0; border-top: 1px solid #f0f0f0; margin: 10px 0; }
+
+        .profile-content-section h3 { margin-bottom: 10px; font-size: 16px; color: #444; }
+
+        .profile-avatar-container img {
+            width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .profile-action-buttons { display: flex; flex-direction: column; gap: 10px; }
+        .profile-action-buttons .btn-clean { width: 100%; justify-content: center; margin: 0; }
+
+        .profile-skills-section { margin-top: 25px; }
+        .profile-skills-section h3 { margin-bottom: 15px; font-size: 16px; color: #444; }
+        .skills-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag { background: #eef2f5; color: #555; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid #e0e6ed; }
     </style>
 </head>
 <body>
@@ -643,7 +705,7 @@
                 <li data-page="payments"><i class="fas fa-credit-card"></i> Payments</li>
                 <li data-page="settings"><i class="fas fa-cog"></i> Settings</li>
                 <hr>
-                <li data-page="profile"><i class="fas fa-building"></i> Company Profile</li>
+                <li data-page="profile"><i class="fas fa-user"></i> My Profile</li>
             </ul>
         </nav>
     </aside>
@@ -651,7 +713,7 @@
     <main class="main-content">
         <div class="top-header">
             <div class="welcome-msg">
-                <h1>Welcome back, TechCorp! 👋</h1>
+                <h1>Welcome back, Alex! 👋</h1>
                 <p>Post jobs, find talent, and manage your projects</p>
             </div>
             <div class="header-actions">
@@ -668,7 +730,7 @@
                 </div>
                 <div class="user-profile">
                     <img src="https://i.pravatar.cc/150?u=client_company" alt="Company">
-                    <span>TechCorp</span>
+                    <span>Alex</span>
                 </div>
             </div>
         </div>
@@ -1084,8 +1146,8 @@
                 <div class="table-container">
                     <h3><i class="fas fa-building"></i> Company Settings</h3>
                     <form id="profileForm" style="margin-top: 20px;">
-                        <div class="form-group"><label>Company Name</label><input type="text" id="companyName" value="TechCorp Solutions"></div>
-                        <div class="form-group"><label>Email</label><input type="email" id="companyEmail" value="contact@techcorp.com"></div>
+                        <div class="form-group"><label>Company Name</label><input type="text" id="companyName" value="Alex parker"></div>
+                        <div class="form-group"><label>Email</label><input type="email" id="companyEmail" value="alex5561@hotmail.com"></div>
                         <div class="form-group"><label>Phone</label><input type="text" id="companyPhone" value="+1 (555) 123-4567"></div>
                         <div class="form-group"><label>Address</label><input type="text" id="companyAddress" value="123 Business Ave, San Francisco, CA"></div>
                         <button type="submit" class="btn-primary">Update Company Info</button>
@@ -1101,7 +1163,66 @@
         }
 
         function renderProfile() {
-            return renderSettings();
+            const totalSpent = payments.filter(p => p.status === 'Paid').reduce((sum, p) => sum + p.amount, 0);
+            return `
+                <div class="unified-profile-card">
+                    <div class="profile-main-header">
+                        <div class="avatar-info-group">
+                            <div class="profile-avatar-container">
+                                <img src="https://i.pravatar.cc/150?u=Client" id="userProfileImg" alt="Profile">
+                            </div>
+                            <div class="profile-basic-data">
+                                <h2>Alex</h2>
+                                <p>I'm a client hiring freelancers for web and app projects.</p>
+                                <span class="loc"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-action-buttons">
+                            <button onclick="currentPage='settings'; renderCurrentPage();" class="btn-clean">
+                                <i class="fas fa-user-edit"></i> Edit Profile
+                            </button>
+                            <button onclick="document.getElementById('imgUpload').click()" class="btn-clean">
+                                <i class="fas fa-camera"></i> Change Photo
+                            </button>
+                            <input type="file" id="imgUpload" style="display:none" onchange="updateImagePreview(event)">
+                        </div>
+                    </div>
+
+                    <hr class="section-divider">
+
+                    <div class="profile-inline-stats">
+                        <div class="inline-stat">
+                            <strong>${myJobs.length}</strong> <span>Jobs Posted</span>
+                        </div>
+                        <div class="inline-stat">
+                            <strong>${hiredFreelancers.filter(h => h.status === 'In Progress').length}</strong> <span>Active Projects</span>
+                        </div>
+                        <div class="inline-stat">
+                            <strong>$${totalSpent.toLocaleString()}</strong> <span>Total Spent</span>
+                        </div>
+                    </div>
+
+                    <hr class="section-divider">
+
+                    <div class="profile-content-section">
+                        <h3>About Me</h3>
+                        <p>I hire talented freelancers to deliver reliable work on short to medium term projects. Use this dashboard to manage jobs, offers, and payments.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateImagePreview(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const profileImg = document.getElementById('userProfileImg');
+                    if (profileImg) profileImg.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
         }
 
         function renderMyJobsTable() {
