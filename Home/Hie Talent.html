@@ -529,6 +529,10 @@
             z-index: 1000;
             border: 1px solid var(--primary);
             backdrop-filter: blur(2px);
+
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
         }
 
         .cta-fixed p {
@@ -547,10 +551,6 @@
             cursor: pointer;
         }
 
-        .cta-fixed.cta-stop {
-            position: absolute;
-            bottom: 20px;
-        }
 
         /* FOOTER */
         .footer {
@@ -958,16 +958,29 @@
     const cta = document.querySelector('.cta-fixed');
     const footerElem = document.querySelector('footer');
     window.addEventListener('scroll', () => {
-        if (!footerElem || !cta) return;
-        const footerTop = footerElem.getBoundingClientRect().top;
-        const winH = window.innerHeight;
-        if (footerTop <= winH) {
-            cta.classList.add('cta-stop');
-            cta.style.bottom = (winH - footerTop + 20) + 'px';
-        } else {
-            cta.classList.remove('cta-stop');
-            cta.style.bottom = '24px';
-        }
+    if (!footerElem || !cta) return;
+
+    const scrollY = window.scrollY;
+
+    // 👇 يظهر بعد scroll
+    if (scrollY > 200) {
+        cta.style.opacity = "1";
+        cta.style.pointerEvents = "auto";
+    } else {
+        cta.style.opacity = "0";
+        cta.style.pointerEvents = "none";
+    }
+
+    // 👇 حساب المسافة من الفوتر
+    const footerRect = footerElem.getBoundingClientRect();
+    const winH = window.innerHeight;
+
+    if (footerRect.top < winH) {
+        const overlap = winH - footerRect.top;
+        cta.style.bottom = overlap + 20 + "px";
+    } else {
+        cta.style.bottom = "24px";
+    }
     });
 
     // Contact form dummy
