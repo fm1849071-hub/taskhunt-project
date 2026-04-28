@@ -123,6 +123,96 @@
             height: 50px;
             align-items: center;
         }
+        .user-menu-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* المسافة بين الجرس والبروفايل */
+}
+
+.nav-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--c3);
+    transition: 0.3s ease;
+}
+
+.nav-avatar:hover {
+    transform: translateY(-3px);
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* القائمة اللي بتفتح لما اقرب   من البروفايل */
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    min-width: 140px;
+    z-index: 1000;
+}
+
+.profile-wrapper:hover .nav-dropdown {
+    display: block;
+}
+
+.nav-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--c4);
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-dropdown a:last-child { border: none; }
+
+.nav-dropdown a:hover {
+    background: #f8f9fa;
+    color: var(--c3);
+}
+
+/* ستايل الجرس والتنبيهات */
+.notifications {
+    position: relative;
+    font-size: 20px;
+    color: var(--c4);
+    cursor: pointer;
+}
+
+/* ت(Bell Wobble Animation) */
+.animated-bell:hover .bell-icon {
+    animation: bell-wobble 0.6s ease-in-out infinite; /* سرعة ونوع الحركة */
+}
+
+.bell-dot {
+    position: absolute;
+    bottom: -3px;
+    right: 50%; 
+    transform: translateX(50%);
+    font-size: 6px; /* حجم النقطة */
+    color: var(--c4); 
+}
+
+/* الاهتزاز */
+@keyframes bell-wobble {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(10deg); }
+    30% { transform: rotate(-10deg); }
+    45% { transform: rotate(5deg); }
+    60% { transform: rotate(-5deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
 
         body {
             background: linear-gradient(135deg, #f7f9fc 0%, #eef2f7 100%);
@@ -995,37 +1085,54 @@
                 margin-top: 12px;
             }
         }
+        .lin{
+  text-decoration: none;
+
+  }
+  
+
+
+  
     </style>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="nav">
-        <div class="logo">
-            <a href="../Home/home.html">
-                <img src="/logo.png" alt="Logo">
-            </a>
-        </div>
+    
+<!-- NAVBAR -->
+  <nav class="nav">
+  <div class="logo">
+    <a href="../Home/home.html">
+      <img src="../logo.png" alt="Logo">
+    </a>
+  </div>
 
-        <ul class="nav-links">
-            <li><a href="../work.html">Find Work</a></li>
-            <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
-            <li><a href="#about-section">About</a></li>
-            <li><a href="#contact-section">Contact</a></li>
-        </ul>
-        <div class="user-menu-container">
-            <div class="auth-buttons">
-                <button style="color: rgb(0, 0, 0);" class="btn login-blue" onclick="window.location.href='../login/login.html'">Login</button>
-                <button class="btn signup-blue" onclick="window.location.href='../signup/asksignup.html'">Sign Up</button>
-            </div>
+
+  <ul class="nav-links">
+    <li><a href="../work.html">Find Work</a></li>
+    <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
+    <li><a href="#about-section">About</a></li>
+    <li><a href="#contact-section">Contact</a></li>
+  </ul>
+<div class="user-menu-container">
+    <div class="notifications animated-bell">
+        <i class="fa-solid fa-bell bell-icon"></i>
+        <i class="fa-solid fa-circle bell-dot"></i>
+    </div>
+    
+    <div class="profile-wrapper">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="nav-avatar">
+        <div class="nav-dropdown">
+            <a href="../Dashboard/dash.client.html">Dashboard</a>
+            <a href="../Home/home.html">Logout</a>
         </div>
-    </nav>
+    </div>
+</div>
+</nav>
 
     <aside class="sidebar">
         <div class="logo">
-            <div class="logo-icon"><i class="fas fa-tasks"></i></div>
+           
             <div>
-                <h2>TaskHunt</h2>
-                <p>Client Dashboard</p>
+                
             </div>
         </div>
         <nav id="mainNav">
@@ -1037,7 +1144,7 @@
                 <li data-page="payments"><i class="fas fa-credit-card"></i> Payments</li>
                 <li data-page="settings"><i class="fas fa-cog"></i> Settings</li>
                 <hr>
-                <li data-page="profile"><i class="fas fa-user"></i> My Profile</li>
+                <a href="../Dashboard/proclin.html" class="lin"><li > My Profile</li></a>
             </ul>
         </nav>
 
@@ -1052,29 +1159,7 @@
     </aside>
 
     <main class="main-content">
-        <div class="top-header">
-            <div class="welcome-msg">
-                <h1>Welcome back, Alex! 👋</h1>
-                <p>Post jobs, find talent, and manage your projects</p>
-            </div>
-            <div class="header-actions">
-                <div class="search-area">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search freelancers..." id="globalSearch">
-                </div>
-                <div class="dark-mode-toggle" id="darkModeToggle">
-                    <i class="fas fa-moon"></i>
-                </div>
-                <div class="notification-bell" id="notificationBell">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge" id="notificationCount">3</span>
-                </div>
-                <div class="user-profile">
-                    <img src="https://i.pravatar.cc/150?u=client_company" alt="Company">
-                    <span>Alex</span>
-                </div>
-            </div>
-        </div>
+     
 
         <div id="pageContent"></div>
     </main>
@@ -1888,6 +1973,6 @@
         window.closeModal = closeModal;
         window.saveSettings = saveSettings;
         window.markNotificationRead = markNotificationRead;
-    </script>
+    </script> 
 </body>
 </html>
