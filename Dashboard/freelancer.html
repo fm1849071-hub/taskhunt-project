@@ -533,149 +533,7 @@
         }
 
 
-      /* الكارت الموحد الكبير */
-.unified-profile-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    max-width: 900px;
-    margin: 20px auto;
-}
-
-/* الهيدر اللي فيه الصورة والاسم والزراير */
-.profile-main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.avatar-info-group {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* الإحصائيات In-line */
-.profile-inline-stats {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-}
-
-.inline-stat {
-    text-align: center;
-}
-
-.inline-stat strong {
-    display: block;
-    font-size: 18px;
-    color: #333;
-}
-
-.inline-stat span {
-    font-size: 13px;
-    color: #777;
-}
-
-/* أزرار نظيفة (Clean Buttons) */
-.btn-clean {
-    background: #f8f9fa;
-    border: 1px solid #eee;
-    padding: 8px 15px;
-    border-radius: 6px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-left: 5px;
-}
-
-.btn-clean:hover {
-    background: #eef2f5;
-}
-
-/* الخط الفاصل */
-.section-divider {
-    border: 0;
-    border-top: 1px solid #f0f0f0;
-    margin: 10px 0;
-}
-
-.profile-content-section h3 {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #444;
-}
-
-/* 1. عشان الصورة تبقى مدورة */
-.profile-avatar-container img {
-    width: 120px;       /* حجم الصورة الجديد */
-    height: 120px;
-    border-radius: 50%; /* ده السحر اللي بيخليها مدورة */
-    object-fit: cover;  /* عشان الصورة متتمطش */
-    border: 3px solid #fff; /* حدود بيضاء شيك */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* ظل خفيف */
-}
-
-/* 2. لتنظيم الصورة والمعلومات جنب بعض بمسافة */
-.profile-main-header {
-    display: flex;
-    justify-content: space-between; /* الهيدر والزراير على الأطراف */
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.avatar-info-group {
-    display: flex;
-    align-items: center; /* الصورة والاسم في نفس المستوى */
-    gap: 30px; /* مسافة بين الصورة والاسم */
-}
-
-/* 3. عشان الأزرار تيجي تحت بعض مش جنب بعض */
-.profile-action-buttons {
-    display: flex;
-    flex-direction: column; /* الأزرار تحت بعض */
-    gap: 10px;              /* مسافة بين الزرارين */
-}
-
-/* 4. عشان الأزرار متطلعش واسعة أوي */
-.profile-action-buttons .btn-clean {
-    width: 100%; /* عشان يملوا عرض الـ Container بتاعهم */
-    justify-content: center; /* النص والأيقونة في النص */
-    margin: 0; /* مسح أي margin قديم */
-}
-/* سكشن الـ Skills */
-.profile-skills-section {
-    margin-top: 25px; /* مسافة بينه وبين About Me */
-}
-
-.profile-skills-section h3 {
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #444;
-}
-
-/* حاوية الـ Tags */
-.skills-tags {
-    display: flex;
-    flex-wrap: wrap; /* عشان ينزلوا سطر لو المساحة مش كفاية */
-    gap: 10px;       /* مسافة بين الـ Tags */
-}
-
-/* شكل الـ Tag الواحد */
-.skill-tag {
-    background: #eef2f5; /* لون خلفية هادي جداً */
-    color: #555;          /* لون خط رمادي */
-    padding: 6px 14px;
-    border-radius: 20px; /* زوايا مدورة (pill style) */
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid #e0e6ed;
-}
-
-
-
+     
         /* Toast */
         .toast {
             position: fixed;
@@ -795,7 +653,11 @@
     <li data-page="community"><i class="fas fa-users"></i> Community</li>
     <li data-page="settings"><i class="fas fa-cog"></i> Settings</li>
     <hr>
-    <li data-page="profile"><i class="fas fa-user"></i> My Profile</li>
+    <li>
+    <a href="my profile.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; height: 100%;">
+        <i class="fas fa-user" style="margin-right: 10px;"></i> My Profile
+    </a>
+</li>
 </ul>
         </nav>
     </aside>
@@ -1192,6 +1054,7 @@ function renderFinance() {
 }
 
        function renderSettings() {
+        
     return `
         <div class="table-container">
             <h3><i class="fas fa-user-edit"></i> My Professional Profile</h3>
@@ -1222,71 +1085,10 @@ function renderFinance() {
         </div>
     `;
 }
-         
 
-       function renderProfile() {
-    return `
-        <div class="unified-profile-card">
-            <div class="profile-main-header">
-                <div class="avatar-info-group">
-                    <div class="profile-avatar-container">
-                        <img src="https://i.pravatar.cc/150?u=Freelancer" id="userProfileImg">
-                    </div>
-                    <div class="profile-basic-data">
-                        <h2>Alex</h2>
-                        <p>Professional Web Application Developer</p>
-                        <span class="loc"><i class="fas fa-map-marker-alt"></i> Beni Suef, Egypt</span>
-                    </div>
-                </div>
-                
-                <div class="profile-action-buttons">
-                    <button onclick="currentPage='settings'; renderCurrentPage();" class="btn-clean">
-                        <i class="fas fa-user-edit"></i> Edit Profile
-                    </button>
-                    <button onclick="document.getElementById('imgUpload').click()" class="btn-clean">
-                        <i class="fas fa-camera"></i> Change Photo
-                    </button>
-                    <input type="file" id="imgUpload" style="display:none" onchange="updateImagePreview(event)">
-                </div>
-            </div>
 
-            <hr class="section-divider">
 
-            <div class="profile-inline-stats">
-                <div class="inline-stat">
-                    <strong>32</strong> <span>Projects Completed</span>
-                </div>
-                <div class="inline-stat">
-                    <strong>18</strong> <span>Happy Clients</span>
-                </div>
-                <div class="inline-stat">
-                    <strong>4.9</strong> <span>Average Rating</span>
-                </div>
-            </div>
-
-            <hr class="section-divider">
-
-            <div class="profile-content-section">
-                <h3>About Me</h3>
-                <p>I am a professional software development student focusing on building minimalist and clean UI/UX designs. Specialized in Task Management platforms and Legal tech solutions.</p>
-            </div>
-            <hr class="section-divider">
-
-            <div class="profile-skills-section">
-                <h3>Skills & Expertise</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Web Dev</span>
-                    <span class="skill-tag">UI/UX Design</span>
-                    <span class="skill-tag">React.js</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Backend</span>
-                    <span class="skill-tag">Minimalist UI</span>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
+     
         function renderRecentActivity() {
     const container = document.getElementById('recentActivity');
     if (container) {
@@ -1455,7 +1257,7 @@ function renderCurrentPage() {
             break;
 
         case 'profile':
-            contentDiv.innerHTML = renderProfile();
+            contentDiv.innerHTML = renderMyProfile();
             break;
     }
 }
@@ -1475,7 +1277,6 @@ function renderCurrentPage() {
         reader.readAsDataURL(file);
     }
 }
-        
 
         function openAddUserModal() {
             editingUserId = null;
@@ -1591,6 +1392,8 @@ function rejectWithdraw(id) {
     }
 }
 
+
+
         document.getElementById('darkModeToggle')?.addEventListener('click', () => {
             document.body.classList.toggle('dark');
         });
@@ -1606,6 +1409,10 @@ function rejectWithdraw(id) {
             document.getElementById('notificationsDropdown')?.classList.remove('show');
         });
 
+        
+
+
+        
         // Initialize
         renderCurrentPage();
 

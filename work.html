@@ -422,7 +422,7 @@
 .card-left, .avatar-img, .card-info h3::after {
     display: none !important; 
 }
-/* VIEW MORE */
+/* 6. VIEW MORE */
 .view-more{ 
     display:block;
     margin:20px auto;
@@ -432,6 +432,38 @@
     border-radius:10px;
     cursor:pointer
 }
+
+/* 7. Message*/
+.cta-fixed {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    
+    /* الجزء الجديد للتحكم في الظهور */
+    opacity: 0; 
+    visibility: hidden;
+    transition: all 0.4s ease-in-out; /* حركة ناعمة */
+    
+    /* تنسيق إضافي عشان الشكل يبقى احترافي */
+    background: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #eee;
+}
+
+/* الكلاس اللي هيتضاف بالجافا سكريبت */
+.cta-fixed.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 30px; /* تترفع سنة لفوق لما تظهر */
+}
+
         /* ===== FOOTER ===== */
         .footer {
             background: #051923;
@@ -576,14 +608,14 @@
    <nav class="navbar">
     <!-- LOGO -->
     <div class="logo">
-      <a href="../taskhunt-project/index.html">
-        <img src="../taskhunt-project/Home/images/logo.png" alt="Logo">
+      <a href="../Home/home.html">
+        <img src="Home/images/logo.png" alt="Logo">
       </a>
     </div>
 
     <ul class="nav-links">
-      <li><a href="../taskhunt-project/work.html">Find Work</a></li>
-      <li><a href="../taskhunt-project/Home/Hie Talent.html">Hire Talent</a></li>
+      <li><a href="/work.html">Find Work</a></li>
+      <li><a href="/Home/Hie Talent.html">Hire Talent</a></li>
       <li><a href="../about/about.html">About</a></li>
       <li><a href="#contact-section">Contact</a></li>
     </ul>
@@ -1167,6 +1199,25 @@ function filterCards(){
     card.style.display = show ? "flex" : "none";
   });
 }
+
+
+//  برمجة أزرار التقديم
+document.querySelectorAll('.apply-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const jobTitle = this.closest('.up-card').querySelector('h3').innerText;
+        
+        // تغيير شكل الزرار
+        this.innerText = "Applied ✔";
+        this.style.backgroundColor = "#93c5fd";
+        this.disabled = true;
+
+        alert("Success! You have applied for: " + jobTitle);
+    });
+});
+
+
+
+
    // ================= NAVBAR =================
         const menuToggle = document.getElementById("menuToggle");
         const navLinks = document.getElementById("navLinks");
@@ -1182,6 +1233,30 @@ function filterCards(){
         });
 
     });
+
+    window.addEventListener('scroll', function() {
+    const ctaMsg = document.querySelector('.cta-fixed');
+    const footer = document.querySelector('footer');
+    
+    const scrollPosition = window.scrollY; // مكان السكرول الحالي
+    const windowHeight = window.innerHeight; // طول الشاشة
+    
+    // 1. إظهار العنصر بعد سكرول 300 بكسل (عشان ميبانش في أول الصفحة)
+    if (scrollPosition > 200) {
+        ctaMsg.classList.add('show');
+    } else {
+        ctaMsg.classList.remove('show');
+    }
+
+    // 2. إخفاء العنصر أول ما نقرب من الفوتر
+    if (footer) {
+        const footerPosition = footer.offsetTop;
+        if (scrollPosition + windowHeight > footerPosition +100) {
+            ctaMsg.style.transition="non";
+            ctaMsg.classList.remove('show');
+        }
+    }
+});
 
 </script>
 </body>
