@@ -25,11 +25,21 @@ nav {
 }
 /* NAVBAR FIX */
 
-.logo img {
+/*.logo img {
   height: 180px;
   align-items: center;
   padding-bottom: 25px;
+}*/
+.logo img {
+    
+    height: 145px;    
+    width: auto;         
+    display: block;
+    object-fit: contain;
+    margin-right: 50px;
+    margin-bottom: 25px;
 }
+
 nav ul {
   list-style: none;
   display: flex;

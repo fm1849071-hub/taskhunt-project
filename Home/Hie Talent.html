@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Hire Talent - TaskHunt</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,18 +15,19 @@
             --border: #e5e7eb;
             --primary-blue: #4A90E2;
             --dark-blue: #2C3E50;
+            --light-bg: #f8fafc;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
+            overflow-x: hidden;
         }
-
-        /* ===== NAVBAR ===== */
+ /* ===== NAVBAR ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -127,182 +128,170 @@
             display: none;
         }
 
-
         /* HERO SECTION */
         .hero-section {
-          display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    min-height: auto; 
-    margin-top: 25px; 
-    padding: 20px;
-    background-color: var(--light-bg); 
-            
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 35px;
+            padding: 10px 24px 40px;
         }
-      .hero-image {
-        flex: 1;
-       display: flex;
-      justify-content: center;
-       } 
-          .hero-image img {
-    width: 100%;
-    max-width: 1000px; /* حجم متناسق مع اللاب توب */
-    height: auto;
-    filter: none; /* حذفنا أي بروز أو ظل للصورة */
-}
+
         .hero-wrapper {
-                display: flex;
-     flex-direction: row;
-     align-items: center;
-     justify-content: space-between;
-      background: white;
-     padding: 50px 60px; 
-      border-radius: 40px;
-     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-     max-width: 1450px;
-     width: 100%;
-      gap: 40px;
-            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 40px 54px;
+            border-radius: 48px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.06);
+            max-width: 1400px;
+            width: 100%;
+            gap: 48px;
         }
-     
 
         .hero-left {
-    flex: 1.5; 
-    text-align: left;
-}
-
+            flex: 1.4;
+            text-align: left;
+        }
 
         .hero-content h1 {
-    font-size: 3rem;
-    color: var(--dark-blue);
-    margin-bottom: 15px;
-    line-height: 1.1;
-}
+            font-size: 3.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 18px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
 
+        .hero-content h1 span {
+            color: var(--primary-blue);
+        }
 
-        .hero-content h1 span { color: var(--primary-blue); } 
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #5a6874;
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
 
-        .hero-content p {  font-size: 1.1rem;
-    color: #7f8c8d;
-    margin-bottom: 30px;  }
+        /* search box */
+        .search-box-container {
+            max-width: 520px;
+        }
 
-
-
-
-    /* ===== search box ===== */
-.search-box{
-  background:#fff;
-  padding:28px;
-  border-radius:22px;
-  width:100%;
-  max-width:500px;
-  margin-left:-40px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.12);
-  color:#333;
-}
-
-/* tabs */
-.search-tabs{
-  margin-bottom:18px;
-}
-
-.search-tabs span{
-  cursor:pointer;
-  font-weight:600;
-  color:#666;
-  padding-bottom:6px;
-}
-
-.search-tabs span.active{
-  color:var(--c3);
-  border-bottom:2px solid var(--c3);
-}
-
-    /* صندوق البحث */
-.search-box-container {
-    max-width: 500px;
-}
-/* input wrapper */
         .search-input-wrapper {
-             display: flex;
-      background: #ffffff;
-      padding: 6px;
-      border-radius: 50px;
-      margin-bottom: 20px;
-      border: 1px solid #e1e8ed;
+            display: flex;
+            background: #ffffff;
+            padding: 5px;
+            border-radius: 80px;
+            margin-bottom: 24px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .search-input-wrapper input {
-               flex: 1;
-             border: none;
+            flex: 1;
+            border: none;
             background: transparent;
-              padding: 12px 20px;
-             outline: none;
-             font-size: 1rem;
+            padding: 14px 24px;
+            outline: none;
+            font-size: 1rem;
         }
-/* button */
-.search-btn{
-  background:#0077B8;
-  color:white;
-  border:none;
-  padding:12px 28px;
-  border-radius:40px;
-  cursor:pointer;
-  font-weight:600;
-  transition:.3s;
-}
-        .search-btn:hover{
-  background:#051923;
-}
 
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
 
+        .search-btn:hover {
+            background: #051923;
+        }
 
-        .quick-actions {
-    display: flex;
-    gap: 15px;
-}
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
 
-        .hero-buttons { margin-top: 20px; display: flex; gap: 15px; }
+        .action-btn {
+            padding: 12px 28px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            font-size: 0.95rem;
+        }
 
-        .action-btn { padding: 12px 25px; border-radius: 10px; cursor: pointer; font-weight: 600; border: none; }
-        .action-btn.blue { background: var(--primary-blue); color: white; }
-        .action-btn.outline { background: #f0f6ff; color: var(--dark-blue); }
+        .action-btn.blue {
+            background: var(--primary-blue);
+            color: white;
+        }
 
-        /* للموبايل */
-@media (max-width: 992px) {
-    .hero-wrapper {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-    .hero-left { text-align: center; order: 2; }
-    .hero-image { order: 1; margin-bottom: 20px; }
-    .search-box-container { margin: 0 auto; }
-    .quick-actions { justify-content: center; }
-}
+        .action-btn.outline {
+            background: #f0f6ff;
+            color: var(--dark-blue);
+            border: 1px solid #dce5f2;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 540px;
+            height: auto;
+        }
 
         /* FILTER BAR */
-        .filter-bar { padding: 30px 0; display: flex; justify-content: center; }
+        .filter-bar {
+            padding: 20px 20px 30px;
+            display: flex;
+            justify-content: center;
+        }
+
         .filter-container {
             background: #fff;
-            padding: 15px 25px;
-            border-radius: 14px;
+            padding: 16px 28px;
+            border-radius: 60px;
             display: flex;
-            gap: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
             border: 1px solid var(--border);
         }
-        .filter-container select { padding: 10px; border-radius: 8px; border: 1px solid #ddd; min-width: 150px; }
+
+        .filter-container select {
+            padding: 10px 18px;
+            border-radius: 40px;
+            border: 1px solid #d1d9e8;
+            background: white;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
 
         /* LAYOUT */
         .page-layout {
             display: flex;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
+            gap: 32px;
+            max-width: 1280px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
         }
 
+<<<<<<< HEAD
       
     /* SIDEBAR */
     .sidebar {
@@ -329,103 +318,291 @@
         .category.active .sub-categories { display: block; }
         .sub-categories li a { text-decoration: none; color: var(--muted); font-size: 14px; display: block; padding: 5px 0; }
         .sub-categories li a:hover { color: var(--primary); }
+=======
+        /* SIDEBAR */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            background: white;
+            border-radius: 28px;
+            padding: 20px 10px 20px 18px;
+            border: 1px solid #eef2f8;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
 
-        /* MAIN CONTENT - LIST VIEW CARDS */
-        .main-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 18px;
+            color: #0f172a;
+            font-weight: 600;
+            padding-left: 8px;
+        }
+
+        .category {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+        .category-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 12px 8px;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: #1e293b;
+            transition: 0.2s;
+        }
+>>>>>>> f3f58de244c0c5150561eb8068a5d0f3e295d931
+
+        .category-btn:hover {
+            color: var(--primary);
+        }
+
+        .sub-categories {
+            list-style: none;
+            padding-left: 20px;
+            margin: 6px 0 12px;
+            display: none;
+        }
+
+        .category.active .sub-categories {
+            display: block;
+        }
+
+        .sub-categories li a {
+            text-decoration: none;
+            color: #5b6e8c;
+            font-size: 13px;
+            display: block;
+            padding: 6px 0;
+            transition: 0.2s;
+        }
+
+        .sub-categories li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+
+        .category.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
 
         .up-card {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #fff;
-            border-radius: 16px;
-            padding: 25px;
+            border-radius: 28px;
+            padding: 24px 28px;
             border: 1px solid var(--border);
-            transition: 0.3s;
+            transition: all 0.25s;
             width: 100%;
         }
 
         .up-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
-        .card-left { display: flex; gap: 20px; align-items: center; }
-        .avatar-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; }
+        .card-left {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-        .card-info h3 { margin: 0 0 5px 0; font-size: 18px; color: #111; display: flex; align-items: center; gap: 8px; }
-        /* Verification Badge */
+        .avatar-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .card-info h3 {
+            margin: 0 0 6px 0;
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .card-info h3::after {
             content: '✓';
             background: #4A90E2;
             color: #fff;
-            font-size: 10px;
-            width: 16px;
-            height: 16px;
-            display: flex;
+            font-size: 11px;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
         }
 
-        .role { font-size: 15px; color: #4b5563; font-weight: 500; }
-        .category-tag { font-size: 13px; color: var(--primary); background: #eef6ff; padding: 2px 8px; border-radius: 4px; display: inline-block; margin: 5px 0; }
-        .meta { font-size: 14px; color: #6b7280; margin-top: 5px; }
-        .meta span { color: #f59e0b; font-weight: bold; }
+        .role {
+            font-size: 0.9rem;
+            color: #334155;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
 
-        .card-right { text-align: right; }
-        .hours { font-size: 24px; font-weight: 700; color: #111; }
-        .hours span { font-size: 14px; color: var(--muted); font-weight: 400; }
-        
+        .category-tag {
+            font-size: 12px;
+            color: var(--primary);
+            background: #eef6ff;
+            padding: 4px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 6px 0 5px;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #5b6e8c;
+            margin-top: 5px;
+        }
+
+        .meta span {
+            color: #f5a623;
+            font-weight: bold;
+        }
+
+        .card-right {
+            text-align: right;
+        }
+
+        .hours {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .hours span {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
         .view-profile-btn {
-            margin-top: 15px;
-            padding: 10px 25px;
-            border: 1px solid var(--primary);
+            margin-top: 16px;
+            padding: 8px 26px;
+            border: 1.5px solid var(--primary);
             background: transparent;
             color: var(--primary);
-            border-radius: 8px;
+            border-radius: 40px;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.2s;
         }
-        .view-profile-btn:hover { background: var(--primary); color: #fff; }
 
-/* VIEW MORE */
-.view-more{ 
-    display:block;
-    margin:20px auto;
-    padding:12px 24px;
-    background:var(--primary);
-    color:#fff;border:none;
-    border-radius:10px;
-    cursor:pointer
-}
-        /* ===== FOOTER ===== */
+        .view-profile-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .view-more {
+            display: block;
+            margin: 32px auto 20px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            width: fit-content;
+        }
+
+        /* CTA FIXED */
+        .cta-fixed {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            padding: 12px 32px;
+            border-radius: 80px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            z-index: 1000;
+            border: 1px solid var(--primary);
+            backdrop-filter: blur(2px);
+
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-fixed p {
+            margin: 0;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .cta-fixed button {
+            background: var(--primary);
+            border: none;
+            padding: 8px 22px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+
+        /* FOOTER */
         .footer {
             background: #051923;
-            padding: 40px 10px 20px;
-            font-family: "Cairo", sans-serif;
+            padding: 48px 32px 24px;
+            font-family: "Inter", sans-serif;
             color: #ffffff;
+            margin-top: 40px;
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
         }
 
         .footer-col {
             flex: 1;
-            min-width: 200px;
+            min-width: 180px;
         }
 
         .footer-col h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             font-weight: 600;
         }
 
@@ -435,54 +612,55 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .footer-col ul li a {
             text-decoration: none;
             color: #adb5bd;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
         .footer-col ul li a:hover {
-            color: #ffffff;
-            padding-left: 5px;
+            color: white;
+            padding-left: 4px;
         }
 
         .footer-input {
-            width: 92%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
             color: #fff;
-            margin-bottom: 13px;
+            margin-bottom: 14px;
             outline: none;
         }
 
         .footer-btn {
-            width: 92%;
+            width: 100%;
             padding: 12px;
             background: #00a8e8;
             border: none;
-            border-radius: 8px;
+            border-radius: 14px;
             color: white;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.2s;
         }
 
         .social-icons {
             display: flex;
-            gap: 15px;
+            gap: 18px;
             margin-top: 20px;
         }
 
         .social-icon {
             width: 28px;
             height: 28px;
-            filter: grayscale(1) invert(1);
+            filter: brightness(0) invert(1);
             opacity: 0.7;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
         .social-icon:hover {
@@ -493,10 +671,11 @@
         .footer-bottom {
             text-align: center;
             padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #6c757d;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #8e9aaf;
             font-size: 13px;
         }
+<<<<<<< HEAD
         /* CTA */
    .cta-fixed {
     position: fixed;
@@ -532,77 +711,118 @@
 }
         .cta-fixed p { margin: 0; font-weight: 600; }
         .cta-fixed button { background: var(--primary); color: #fff; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
+=======
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-wrapper { padding: 32px 32px; gap: 30px; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .page-layout { flex-direction: column; }
+            .sidebar { width: 100%; position: static; margin-bottom: 10px; }
+        }
+>>>>>>> f3f58de244c0c5150561eb8068a5d0f3e295d931
 
         @media (max-width: 768px) {
-            .hero-wrapper { flex-direction: column; text-align: center; }
-            .page-layout { flex-direction: column; }
-            .sidebar { width: 100%; position: static; }
-            .up-card { flex-direction: column; text-align: center; gap: 20px; }
-            .card-left { flex-direction: column; }
-            .card-right { text-align: center; border-top: 1px solid #eee; padding-top: 15px; width: 100%; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+                gap: 20px;
+                z-index: 99;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .auth-buttons {
+                display: none;
+            }
+            .mobile-auth {
+                display: flex;
+                gap: 12px;
+                margin-top: 10px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-wrapper {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 20px;
+            }
+            .hero-left { text-align: center; order: 2; }
+            .hero-image { order: 1; margin-bottom: 20px; }
+            .hero-buttons { justify-content: center; }
+            .up-card { flex-direction: column; text-align: center; gap: 16px; }
+            .card-left { flex-direction: column; text-align: center; }
+            .card-right { text-align: center; border-top: 1px solid #eef2f8; padding-top: 16px; width: 100%; }
+            .filter-container { border-radius: 32px; padding: 16px 20px; gap: 12px; }
+            .cta-fixed { padding: 8px 20px; gap: 12px; font-size: 13px; white-space: nowrap; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 1.9rem; }
+            .search-input-wrapper { flex-direction: column; background: white; border-radius: 32px; padding: 8px; gap: 8px; }
+            .search-btn { border-radius: 40px; width: 100%; }
+            .cta-fixed { width: 90%; justify-content: center; gap: 8px; flex-wrap: wrap; white-space: normal; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-   <nav class="navbar">
-    <!-- LOGO -->
+<nav class="navbar">
     <div class="logo">
         <a href="../Home/home.html">
-            <img src="images/logo.png" alt="TaskHunt Logo">
+            <img src="images/logo.png" ">
         </a>
     </div>
-
-    <!-- LINKS -->
     <ul class="nav-links" id="navLinks">
-        <li><a href="../Home/findwork.html">Find Work</a></li>
+        <li><a href="../Home/work.html">Find Work</a></li>
         <li><a href="../Home/Hie Talent.html">Hire Talent</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#contact-section">Contact</a></li>
-
-        <!-- MOBILE BUTTONS -->
         <li class="mobile-auth">
             <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
             <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
         </li>
     </ul>
-
-    <!-- DESKTOP BUTTONS -->
     <div class="auth-buttons">
         <button onclick="location.href='../../login/login.html'" class="btn login">Login</button>
         <button onclick="location.href='../../signup/asksignup.html'" class="btn signup">Sign Up</button>
     </div>
-
-    <!-- MENU ICON -->
     <div class="menu-toggle" id="menuToggle">☰</div>
 </nav>
- 
-     <section class="hero-section">
+
+<section class="hero-section">
     <div class="hero-wrapper">
         <div class="hero-left">
             <div class="hero-content">
                 <h1>Hire Top <span>Freelancers</span><br>For Your Project</h1>
-        <p>Post a job and connect with skilled professionals in minutes.</p>
+                <p>Post a job and connect with skilled professionals in minutes.</p>
             </div>
-
             <div class="search-box-container">
                 <div class="search-input-wrapper">
-                    <input type="text" placeholder="Look for a skill, a programming language...">
-                    <button class="search-btn">Search</button>
+                    <input type="text" placeholder="Look for a skill, a programming language..." id="searchKeyword">
+                    <button class="search-btn" id="searchBtn">Search</button>
                 </div>
-                 <div class="hero-buttons">
-         <a href="../../taskhunt-project/Home/Post a Job.html"> <button class="action-btn blue">Post a Job</button></a>  
-            <button class="action-btn outline">Browse Freelancers</button>
-        </div>
+                <div class="hero-buttons">
+                    <a href="../../taskhunt-project/Home/Post a Job.html"><button class="action-btn blue">Post a Job</button></a>
+                    <button class="action-btn outline" id="browseBtn">Browse Freelancers</button>
+                </div>
             </div>
         </div>
-
         <div class="hero-image">
-            <img src="./Gemini_Generated_Image_lx8darlx8darlx8d.png" alt="Hero Illustration">
+            <img src="./Gemini_Generated_Image_lx8darlx8darlx8d.png" alt="Hero Illustration" onerror="this.src='https://placehold.co/500x400?text=Talent+Hiring'">
         </div>
     </div>
 </section>
 
+<<<<<<< HEAD
     <div class="filter-bar">
         <div class="filter-container">
             <select id="typeFilter">
@@ -832,287 +1052,87 @@
                 <div class="hours">$25 <span>/hr</span></div>
                 <button class="view-profile-btn">View Profile</button>
             </div>
-        </div>
-
-        <div class="up-card" data-price="40" data-type="Data & AI" data-exp="6">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/women/2.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Sara Ali</h3>
-                    <div class="role">Machine Learning Engineer</div>
-                    <div class="category-tag">Data & AI</div>
-                    <div class="meta"><span>⭐ 4.9</span> | Exp: 6 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$40 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-
-        <div class="up-card" data-price="45" data-type="Data & AI" data-exp="4">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/3.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Ali Mohamed</h3>
-                    <div class="role">Deep Learning Specialist</div>
-                    <div class="category-tag">Data & AI</div>
-                    <div class="meta"><span>⭐ 4.8</span> | Exp: 4 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$45 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="dev-it" class="category-section" data-section-name="Development & IT">
-        <div class="up-card" data-price="35" data-type="Development & IT" data-exp="6">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/4.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Mahmoud Tarek</h3>
-                    <div class="role">Full Stack Developer</div>
-                    <div class="category-tag">Development & IT</div>
-                    <div class="meta"><span>⭐ 4.9</span> | Exp: 6 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$35 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-
-        <div class="up-card" data-price="30" data-type="Development & IT" data-exp="5">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/5.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Omar Hassan</h3>
-                    <div class="role">Backend Developer</div>
-                    <div class="category-tag">Development & IT</div>
-                    <div class="meta"><span>⭐ 4.7</span> | Exp: 5 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$30 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-
-        <div class="up-card" data-price="38" data-type="Development & IT" data-exp="4">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/women/3.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Nour Adel</h3>
-                    <div class="role">DevOps Engineer</div>
-                    <div class="category-tag">Development & IT</div>
-                    <div class="meta"><span>⭐ 4.8</span> | Exp: 4 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$38 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="design" class="category-section" data-section-name="Design & Creative">
-        <div class="up-card" data-price="22" data-type="Design & Creative" data-exp="4">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/women/4.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Farida Ahmed</h3>
-                    <div class="role">Graphic Designer</div>
-                    <div class="category-tag">Design & Creative</div>
-                    <div class="meta"><span>⭐ 4.9</span> | Exp: 4 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$22 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-        <div class="up-card" data-price="28" data-type="Design & Creative" data-exp="5">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/6.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Youssef Gamal</h3>
-                    <div class="role">UX/UI Designer</div>
-                    <div class="category-tag">Design & Creative</div>
-                    <div class="meta"><span>⭐ 4.8</span> | Exp: 5 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$28 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="marketing" class="category-section" data-section-name="Sales & Marketing">
-        <div class="up-card" data-price="20" data-type="Sales & Marketing" data-exp="4">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/women/5.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Salma Reda</h3>
-                    <div class="role">Digital Marketing Expert</div>
-                    <div class="category-tag">Sales & Marketing</div>
-                    <div class="meta"><span>⭐ 4.7</span> | Exp: 4 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$20 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-        <div class="up-card" data-price="25" data-type="Sales & Marketing" data-exp="3">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/8.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Ahmed Nabil</h3>
-                    <div class="role">SEO Specialist</div>
-                    <div class="category-tag">Sales & Marketing</div>
-                    <div class="meta"><span>⭐ 4.8</span> | Exp: 3 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$25 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="writing" class="category-section" data-section-name="Writing & Translation">
-        <div class="up-card" data-price="18" data-type="Writing & Translation" data-exp="4">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/women/7.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Nada Sherif</h3>
-                    <div class="role">Content Writer</div>
-                    <div class="category-tag">Writing & Translation</div>
-                    <div class="meta"><span>⭐ 4.9</span> | Exp: 4 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$18 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-        <div class="up-card" data-price="22" data-type="Writing & Translation" data-exp="6">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/9.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Mohamed Ibrahim</h3>
-                    <div class="role">Translator (EN/AR)</div>
-                    <div class="category-tag">Writing & Translation</div>
-                    <div class="meta"><span>⭐ 4.8</span> | Exp: 6 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$22 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="admin" class="category-section" data-section-name="Admin & Support">
-        <div class="up-card" data-price="15" data-type="Admin & Support" data-exp="5">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/10.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Khaled Emad</h3>
-                    <div class="role">Virtual Assistant</div>
-                    <div class="category-tag">Admin & Support</div>
-                    <div class="meta"><span>⭐ 4.7</span> | Exp: 5 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$15 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-        <div class="up-card" data-price="20" data-type="Admin & Support" data-exp="7">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/11.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Amr Adel</h3>
-                    <div class="role">Excel Expert</div>
-                    <div class="category-tag">Admin & Support</div>
-                    <div class="meta"><span>⭐ 4.9</span> | Exp: 7 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$20 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="finance" class="category-section" data-section-name="Finance & Accounting">
-        <div class="up-card" data-price="30" data-type="Finance & Accounting" data-exp="6">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/women/1.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Mona Lotfy</h3>
-                    <div class="role">Financial Analyst</div>
-                    <div class="category-tag">Finance & Accounting</div>
-                    <div class="meta"><span>⭐ 4.8</span> | Exp: 6 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$30 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="legal" class="category-section" data-section-name="Legal">
-        <div class="up-card" data-price="45" data-type="Legal" data-exp="10">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/men/14.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Hossam Reda</h3>
-                    <div class="role">Corporate Lawyer</div>
-                    <div class="category-tag">Legal</div>
-                    <div class="meta"><span>⭐ 5.0</span> | Exp: 10 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$45 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="hr" class="category-section" data-section-name="HR & Training">
-        <div class="up-card" data-price="25" data-type="HR & Training" data-exp="5">
-            <div class="card-left">
-                <img src="https://randomuser.me/api/portraits/women/12.jpg" class="avatar-img">
-                <div class="card-info">
-                    <h3>Reem Hany</h3>
-                    <div class="role">Technical Recruiter</div>
-                    <div class="category-tag">HR & Training</div>
-                    <div class="meta"><span>⭐ 4.7</span> | Exp: 5 yrs | Egypt</div>
-                </div>
-            </div>
-            <div class="card-right">
-                <div class="hours">$25 <span>/hr</span></div>
-                <button class="view-profile-btn">View Profile</button>
-            </div>
-        </div>
-    </section>
-     <div id="cards"></div>
-<button class="view-more" onclick="loadMore()">View More</button>
-</main>
+=======
+<div class="filter-bar">
+    <div class="filter-container">
+        <select id="typeFilter">
+            <option value="all">All Categories</option>
+            <option value="Data & AI">Data & AI</option>
+            <option value="Development & IT">Development & IT</option>
+            <option value="Design & Creative">Design & Creative</option>
+            <option value="Sales & Marketing">Sales & Marketing</option>
+            <option value="Writing & Translation">Writing & Translation</option>
+            <option value="Admin & Support">Admin & Support</option>
+            <option value="Finance & Accounting">Finance & Accounting</option>
+            <option value="Legal">Legal</option>
+            <option value="HR & Training">HR & Training</option>
+            <option value="Engineering & Architecture">Engineering & Architecture</option>
+        </select>
+        <select id="priceFilter">
+            <option value="all">All Prices</option>
+            <option value="0-30">0 - 30$/hr</option>
+            <option value="31-40">31 - 40$/hr</option>
+            <option value="41-50">41 - 50$/hr</option>
+        </select>
+        <select id="expFilter">
+            <option value="all">All Experience</option>
+            <option value="0-2">0 - 2 yrs</option>
+            <option value="3-5">3 - 5 yrs</option>
+            <option value="6-100">6+ yrs</option>
+        </select>
     </div>
+</div>
 
-    <div class="cta-fixed">
-        <p>Can't find the right talent?</p>
-       <a href="../Home/Post a Job.html"><button>Post a Project</button></a> 
-    </div>
+<div class="page-layout">
+    <aside class="sidebar">
+        <h3>Categories</h3>
+        <!-- Data & AI -->
+        <div class="category"><button class="category-btn">Data & AI <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../AI/Data Analysis & Visualization.html">Data Analysis & Visualization</a></li><li><a href="../AI/Al Developers.html">AI Developers</a></li><li><a href="../AI/Machine Learning Models.html">Machine Learning Models</a></li><li><a href="../AI/Al Chatbots & Automations.html">AI Chatbots & Automations</a></li></ul>
+>>>>>>> f3f58de244c0c5150561eb8068a5d0f3e295d931
+        </div>
+        <div class="category"><button class="category-btn">Development & IT <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../Development&it/dotnet.html">.NET Developers</a></li><li><a href="../Development&it/Full Stack.html">Full Stack Engineers</a></li><li><a href="../Development&it/DevOps.html">DevOps Engineers</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">Design & Creative <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../Design&Creative/Graphic Designers/Graphic Designers.html">Graphic Designers</a></li><li><a href="../Design&Creative/UX Designers/UX Designers.html">UX Designers</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">Sales & Marketing <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../sales/Digital_Marketers.html">Digital Marketers</a></li><li><a href="../sales/Facebook_Ads_Specialists.html">Facebook Ads Specialists</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">Writing & Translation <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../Writing & Translation/creative writers.html">Creative Writers</a></li><li><a href="../Writing & Translation/EnglishToSpanish.html">English to Spanish Translators</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">Admin & Support <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../Admin & Support Specialties/Personal Assistants.html">Personal Assistants</a></li><li><a href="../Admin & Support Specialties/Microsoft Excel Experts.html">Excel Experts</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">Finance & Accounting <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../Finance & Accounting/Financial Analysts.html">Financial Analysts</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">Legal <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../Corporate law/corporate.html">Corporate Law</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">HR & Training <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../HR/tech-recruitment.html">Technical Recruiters</a></li></ul>
+        </div>
+        <div class="category"><button class="category-btn">Engineer & Architecture <span class="arrow">›</span></button>
+            <ul class="sub-categories"><li><a href="../Engineering & Architecture/Interior Architects.html">Interior Architects</a></li></ul>
+        </div>
+    </aside>
 
-    <!-- ===== FOOTER ===== -->
+    <main class="main-content" id="mainContent">
+        <!-- cards will be within sections -->
+        <div id="cardsContainer"></div>
+        <button class="view-more" id="loadMoreBtn">View More</button>
+    </main>
+</div>
+
+<div class="cta-fixed" id="ctaFixed">
+    <p>Can't find the right talent?</p>
+    <a href="../Home/Post a Job.html"><button>Post a Project</button></a>
+</div>
+
+<!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -1169,19 +1189,34 @@
             <p>© 2025 Task Hunt — All rights reserved</p>
         </div>
     </footer>
+
 <script>
-    let cards = document.querySelectorAll(".up-card");
-let visibleCards = 4;
+    // ---------- FREELANCER DATA (full list) ----------
+    const freelancers = [
+        { name: "Ahmed Samir", role: "Data Analyst - Excel & Power BI", type: "Data & AI", price: 25, exp: 5, img: "https://randomuser.me/api/portraits/men/1.jpg", rating: 4.8 },
+        { name: "Sara Ali", role: "Machine Learning Engineer", type: "Data & AI", price: 40, exp: 6, img: "https://randomuser.me/api/portraits/women/2.jpg", rating: 4.9 },
+        { name: "Ali Mohamed", role: "Deep Learning Specialist", type: "Data & AI", price: 45, exp: 4, img: "https://randomuser.me/api/portraits/men/3.jpg", rating: 4.8 },
+        { name: "Mahmoud Tarek", role: "Full Stack Developer", type: "Development & IT", price: 35, exp: 6, img: "https://randomuser.me/api/portraits/men/4.jpg", rating: 4.9 },
+        { name: "Omar Hassan", role: "Backend Developer", type: "Development & IT", price: 30, exp: 5, img: "https://randomuser.me/api/portraits/men/5.jpg", rating: 4.7 },
+        { name: "Nour Adel", role: "DevOps Engineer", type: "Development & IT", price: 38, exp: 4, img: "https://randomuser.me/api/portraits/women/3.jpg", rating: 4.8 },
+        { name: "Farida Ahmed", role: "Graphic Designer", type: "Design & Creative", price: 22, exp: 4, img: "https://randomuser.me/api/portraits/women/4.jpg", rating: 4.9 },
+        { name: "Youssef Gamal", role: "UX/UI Designer", type: "Design & Creative", price: 28, exp: 5, img: "https://randomuser.me/api/portraits/men/6.jpg", rating: 4.8 },
+        { name: "Salma Reda", role: "Digital Marketing Expert", type: "Sales & Marketing", price: 20, exp: 4, img: "https://randomuser.me/api/portraits/women/5.jpg", rating: 4.7 },
+        { name: "Ahmed Nabil", role: "SEO Specialist", type: "Sales & Marketing", price: 25, exp: 3, img: "https://randomuser.me/api/portraits/men/8.jpg", rating: 4.8 },
+        { name: "Nada Sherif", role: "Content Writer", type: "Writing & Translation", price: 18, exp: 4, img: "https://randomuser.me/api/portraits/women/7.jpg", rating: 4.9 },
+        { name: "Mohamed Ibrahim", role: "Translator (EN/AR)", type: "Writing & Translation", price: 22, exp: 6, img: "https://randomuser.me/api/portraits/men/9.jpg", rating: 4.8 },
+        { name: "Khaled Emad", role: "Virtual Assistant", type: "Admin & Support", price: 15, exp: 5, img: "https://randomuser.me/api/portraits/men/10.jpg", rating: 4.7 },
+        { name: "Amr Adel", role: "Excel Expert", type: "Admin & Support", price: 20, exp: 7, img: "https://randomuser.me/api/portraits/men/11.jpg", rating: 4.9 },
+        { name: "Mona Lotfy", role: "Financial Analyst", type: "Finance & Accounting", price: 30, exp: 6, img: "https://randomuser.me/api/portraits/women/1.jpg", rating: 4.8 },
+        { name: "Hossam Reda", role: "Corporate Lawyer", type: "Legal", price: 45, exp: 10, img: "https://randomuser.me/api/portraits/men/14.jpg", rating: 5.0 },
+        { name: "Reem Hany", role: "Technical Recruiter", type: "HR & Training", price: 25, exp: 5, img: "https://randomuser.me/api/portraits/women/12.jpg", rating: 4.7 }
+    ];
 
-// اخفاء كل الكروت في البداية
-cards.forEach((card, index) => {
-  if (index >= visibleCards) {
-    card.style.display = "none";
-  }
-});
-function loadMore() {
-  let cards = document.querySelectorAll(".up-card");
+    let allCards = [];
+    let visibleCount = 4;
+    let filteredList = [...freelancers];
 
+<<<<<<< HEAD
   let nextLimit = visibleCards + 4;
 
   for (let i = visibleCards; i < nextLimit && i < cards.length; i++) {
@@ -1216,39 +1251,83 @@ function filterCards(){
     // TYPE
     if(typeVal !== "all" && card.dataset.type !== typeVal){
       show = false;
+=======
+    function renderCards() {
+        const container = document.getElementById("cardsContainer");
+        if (!container) return;
+        container.innerHTML = "";
+        const toShow = filteredList.slice(0, visibleCount);
+        toShow.forEach(f => {
+            const card = document.createElement("div");
+            card.className = "up-card";
+            card.setAttribute("data-price", f.price);
+            card.setAttribute("data-type", f.type);
+            card.setAttribute("data-exp", f.exp);
+            card.innerHTML = `
+                <div class="card-left">
+                    <img src="${f.img}" class="avatar-img" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'">
+                    <div class="card-info">
+                        <h3>${f.name}</h3>
+                        <div class="role">${f.role}</div>
+                        <div class="category-tag">${f.type}</div>
+                        <div class="meta"><span>⭐ ${f.rating}</span> | Exp: ${f.exp} yrs | Egypt</div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="hours">$${f.price} <span>/hr</span></div>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+        const loadBtn = document.getElementById("loadMoreBtn");
+        if (loadBtn) loadBtn.style.display = visibleCount >= filteredList.length ? "none" : "block";
+>>>>>>> f3f58de244c0c5150561eb8068a5d0f3e295d931
     }
 
-    // PRICE
-    if(priceVal !== "all"){
-      let price = parseInt(card.dataset.price);
-      let [min, max] = priceVal.split("-").map(Number);
-      if(price < min || price > max) show = false;
+    function filterAndRender() {
+        const typeVal = document.getElementById("typeFilter").value;
+        const priceVal = document.getElementById("priceFilter").value;
+        const expVal = document.getElementById("expFilter").value;
+        const searchVal = document.getElementById("searchKeyword")?.value.toLowerCase().trim() || "";
+
+        filteredList = freelancers.filter(f => {
+            if (typeVal !== "all" && f.type !== typeVal) return false;
+            if (priceVal !== "all") {
+                let [min, max] = priceVal.split("-").map(Number);
+                if (f.price < min || f.price > max) return false;
+            }
+            if (expVal !== "all") {
+                let [min, max] = expVal.split("-").map(Number);
+                if (f.exp < min || f.exp > max) return false;
+            }
+            if (searchVal && !f.name.toLowerCase().includes(searchVal) && !f.role.toLowerCase().includes(searchVal) && !f.type.toLowerCase().includes(searchVal)) return false;
+            return true;
+        });
+        visibleCount = 4;
+        renderCards();
     }
 
-    // EXPERIENCE
-    if(expVal !== "all"){
-      let exp = parseInt(card.dataset.exp);
-      let [min, max] = expVal.split("-").map(Number);
-      if(exp < min || exp > max) show = false;
+    function loadMore() {
+        visibleCount += 4;
+        renderCards();
     }
 
-    card.style.display = show ? "flex" : "none";
-  });
-}
-   // ================= NAVBAR =================
-        const menuToggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
+    // Event listeners
+    document.getElementById("typeFilter").addEventListener("change", filterAndRender);
+    document.getElementById("priceFilter").addEventListener("change", filterAndRender);
+    document.getElementById("expFilter").addEventListener("change", filterAndRender);
+    document.getElementById("searchBtn").addEventListener("click", filterAndRender);
+    document.getElementById("browseBtn").addEventListener("click", () => window.scrollTo({ top: document.querySelector(".page-layout").offsetTop - 30, behavior: "smooth" }));
+    document.getElementById("loadMoreBtn").addEventListener("click", loadMore);
+    document.getElementById("searchKeyword")?.addEventListener("keypress", (e) => { if(e.key === "Enter") filterAndRender(); });
 
-        menuToggle.onclick = () => {
-            navLinks.classList.toggle("active");
-        };
-
-// ================= SIDEBAR =================
+    // Sidebar toggle categories
     document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             btn.parentElement.classList.toggle('active');
         });
-
     });
     const cta = document.querySelector('.cta-fixed');
 const footer = document.querySelector('footer');
@@ -1268,6 +1347,49 @@ window.addEventListener('scroll', () => {
   }
 });
 
+    // mobile navbar
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    if(menuToggle) menuToggle.onclick = () => navLinks.classList.toggle("active");
+
+    // CTA scroll logic
+    const cta = document.querySelector('.cta-fixed');
+    const footerElem = document.querySelector('footer');
+    window.addEventListener('scroll', () => {
+    if (!footerElem || !cta) return;
+
+    const scrollY = window.scrollY;
+
+    // 👇 يظهر بعد scroll
+    if (scrollY > 200) {
+        cta.style.opacity = "1";
+        cta.style.pointerEvents = "auto";
+    } else {
+        cta.style.opacity = "0";
+        cta.style.pointerEvents = "none";
+    }
+
+    // 👇 حساب المسافة من الفوتر
+    const footerRect = footerElem.getBoundingClientRect();
+    const winH = window.innerHeight;
+
+    if (footerRect.top < winH) {
+        const overlap = winH - footerRect.top;
+        cta.style.bottom = overlap + 20 + "px";
+    } else {
+        cta.style.bottom = "24px";
+    }
+    });
+
+    // Contact form dummy
+    document.getElementById("contactForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Message sent! We'll get back soon.");
+        e.target.reset();
+    });
+
+    // init render
+    filterAndRender();
 </script>
 </body>
 
